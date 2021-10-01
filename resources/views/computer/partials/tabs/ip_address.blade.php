@@ -14,18 +14,26 @@
                     <th>DHCP Server</th>
                 </tr>
                 </thead>
-                <tbody>
-                @include('assets_shared.table_row')
+                <tbody id="ports_table_row">
+                @if(isset($item))
+                    @foreach($item->ports as $port)
+                        @include('assets_shared.port_row',['port' => $port])
+                    @endforeach
+                @endif
                 </tbody>
             </table>
         </div>
     </div>
+
 </div>
+<span class="btn-group" role="group">
+      <button onclick="getNewRow()" title="Add New" type="button" class="btn btn-primary btn-filter dropdown-toggle"
+              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-plus-circle">
+              New
+          </i>
+      </button>
+  </span>
 
 @section('script')
-    <script>
-        $(document).ready(function () {
-            $('.table-editable-edit-button').click();
-        });
-    </script>
 @endsection

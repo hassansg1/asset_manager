@@ -26,6 +26,12 @@ class Computer extends Model
     }
 
 
+    public function ports()
+    {
+        return $this->morphMany(Port::class, 'portable');
+    }
+
+
     /**
      * @param $value
      */
@@ -95,7 +101,12 @@ class Computer extends Model
         if (isset($request->source_file)) $item->source_file = $request->source_file;
 
         $item->save();
-        $this->updateParent($request,$item);
+        $this->updateParent($request, $item);
+
+        if (isset($request->ports)) {
+            Port::updatePorts($item, $request->ports);
+        }
+
         return $item;
     }
 }

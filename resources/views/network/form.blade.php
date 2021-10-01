@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title mb-4">{{ $heading }} Information</h4>
-                @include('computer.partials.tabs')
+                @include('network.partials.tabs')
             </div>
         </div>
     </div>

@@ -15,9 +15,9 @@
     </a>
     @php($classString .= $classString == '' ? $parent->combine_name_short : '-'.$parent->combine_name_short)
 
-    @if (count($parent->childs()) > 0)
+    @if (count($parent->noAssetChilds()) > 0)
         <ul class="tree_ul_a {{ $parent->combine_name_short }}">
-            @foreach($parent->childs() as $parent)
+            @foreach($parent->noAssetChilds() as $parent)
                 @include('tree_files.tree_node', $parent)
             @endforeach
         </ul>

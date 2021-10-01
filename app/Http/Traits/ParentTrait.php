@@ -43,7 +43,7 @@ trait ParentTrait
     public function parentModel($item = null)
     {
         $par = self::parent($this);
-        if ($par->parentable_type)
+        if ($par && $par->parentable_type)
             return $par->parentable_type::find($par->parentable_id);
 
         return null;
@@ -87,7 +87,8 @@ trait ParentTrait
     public function getParentCombineAttribute()
     {
         $par = self::parentModel($this);
-        return get_class($par) . "??" . $par->id;
+        if ($par)
+            return get_class($par) . "??" . $par->id;
     }
 
     /**

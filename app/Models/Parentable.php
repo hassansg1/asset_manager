@@ -58,12 +58,13 @@ class Parentable extends Model
             'parentable_id' => null,
         ];
 
-        return self::where($arr)->get();
+        $parents = self::where($arr)->get();
+        return $parents;
     }
 
     public function noAssetChilds()
     {
-        $arr = $this->childs()->whereNotIn('childable_type', [Asset::class]);
+        $arr = $this->childs()->whereNotIn('childable_type', [NetworkAsset::class])->whereNotIn('childable_type', [Computer::class])->whereNotIn('childable_type', [LoneAsset::class]);
 
         return $arr;
     }

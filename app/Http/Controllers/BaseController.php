@@ -15,7 +15,7 @@ class BaseController extends Controller
 {
     protected $paginateSize = 10;
 
-    public function fetchData($model, $request = null, $filter = null)
+    public function fetchData($model, $request = null, $filter = [])
     {
         $items = $model;
         $total = $model;
@@ -43,8 +43,8 @@ class BaseController extends Controller
         $data['start'] = ((int)($currentPage - 1) * $perPage) + 1;
         $data['end'] = $data['start'] + count($items) - 1;
         $data['paginateText'] = $data['start'] . '-' . $data['end'] . ' of' . $data['totalItems'];
-        if ($filter) {
-            $items = $items->where('parent_combine', $filter);
+        if (isset($filter) && count($filter) > 0) {
+            $items = $items->whereIn('parent_combine', $filter);
         }
 //        if (!checkIfSuperAdmin()) $items = $items->whereIn('parent_combine', Auth::user()->locationsArray());
 

@@ -13,6 +13,11 @@ class NetworkAsset extends Model
 
     protected $table = 'networks';
 
+    public function ports()
+    {
+        return $this->morphMany(Port::class, 'portable');
+    }
+
     protected $guarded = [];
 
     public $rules =
@@ -79,7 +84,6 @@ class NetworkAsset extends Model
      */
     public function saveFormData($item, $request)
     {
-
         if (isset($request->name)) $item->name = $request->name;
         if (isset($request->code)) $item->code = $request->code;
         if (isset($request->description)) $item->description = $request->description;
@@ -96,6 +100,10 @@ class NetworkAsset extends Model
 
         $item->save();
         $this->updateParent($request, $item);
+
+        if (isset($request->ports)) {
+            Port::updatePorts($item, $request->ports);
+        }
         return $item;
     }
 }

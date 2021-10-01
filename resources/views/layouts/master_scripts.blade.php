@@ -33,6 +33,46 @@
         });
     }
 
+    function deletePortRow(rand) {
+        if(confirm('Are you sure?'))
+        {
+            $('#'+rand).remove();
+        }
+    }
+
+    function getNewRow(network) {
+        $.ajax({
+            type: "GET",
+            url: '{{ url('getNewAjaxRow') }}',
+            data: {network: network},
+            success: function (result) {
+                $('#ports_table_row').append(result.html);
+                // $('.table-edits tr').editable({
+                //
+                //     edit: function edit(values) {
+                //         $(".edit i", this).removeClass('fa-pencil-alt').addClass('fa-save').attr('title', 'Save');
+                //     },
+                //     save: function save(values) {
+                //         $(".edit i", this).removeClass('fa-save').addClass('fa-pencil-alt').attr('title', 'Edit');
+                //
+                //         if (this in pickers) {
+                //             pickers[this].destroy();
+                //             delete pickers[this];
+                //         }
+                //     },
+                //     cancel: function cancel(values) {
+                //         $(".edit i", this).removeClass('fa-save').addClass('fa-pencil-alt').attr('title', 'Edit');
+                //
+                //         if (this in pickers) {
+                //             pickers[this].destroy();
+                //             delete pickers[this];
+                //         }
+                //     }
+                // });
+            }
+        });
+    }
+
     let defaultModal = 'default_modal';
     let centerModal = 'center_modal';
 
