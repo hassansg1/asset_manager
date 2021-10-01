@@ -8,7 +8,7 @@
                     <th>MAC Address</th>
                     <th>NIC</th>
                     <th>Default Gateway</th>
-                    <th>Network</th>
+                    <th>Port</th>
                     <th>SubNetMask</th>
                     {{--<th>DHCP Enabled</th>--}}
                     <th>DHCP Server</th>
