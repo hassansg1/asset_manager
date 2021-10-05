@@ -60,6 +60,18 @@
             }
         });
     }
+    function getBulckRows(network) {
+        var modal = 'exampleModalFullscreen';
+        $.ajax({
+            type: "GET",
+            url: '{{ url('getNewAjaxForm') }}',
+            data: {type: network,modal:modal},
+            success: function (result) {
+                showModal(modal,result.html)
+                // $('#ports_table_row').append(result.html);
+            }
+        });
+    }
 
     let defaultModal = 'default_modal';
     let centerModal = 'center_modal';

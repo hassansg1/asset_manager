@@ -15,7 +15,17 @@ class AjaxController extends Controller
     {
         return response()->json(
             [
-                'html' => view($request->type . '.partials.tabs.port_row')->render()
+                'html' => view($request->type . '.partials.tabs.port_row')->with('port',$request)->render()
+            ]
+        );
+    }
+
+    public function getNewAjaxForm(Request $request){
+
+        $modal = isset($request->modal)?$request->modal:'';
+        return response()->json(
+            [
+                'html' => view($request->type . '.partials.tabs.modal_row')->with(['modal'=>$modal])->render()
             ]
         );
     }

@@ -34,7 +34,15 @@
               New
           </i>
       </button>
+    <button onclick="getBulckRows('computer')" title="Add New" type="button"
+              class="btn btn-primary btn-filter dropdown-toggle"
+              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-plus-circle">
+Add Bulck Rows
+          </i>
+      </button>
   </span>
+
 
 @section('script')
 @endsection
