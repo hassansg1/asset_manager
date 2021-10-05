@@ -17,6 +17,11 @@ class CreatePortsableTable extends Migration
             $table->id();
             $table->string('portable_type', 255)->nullable();
             $table->integer('portable_id')->nullable();
+            $table->string('name', 255)->nullable();
+            $table->string('number', 255)->nullable();
+            $table->string('speed', 255)->nullable();
+            $table->string('type', 255)->nullable();
+            $table->integer('status')->default(1);
             $table->string('ip_address', 255)->nullable();
             $table->string('mac_address', 255)->nullable();
             $table->string('nic', 255)->nullable();

@@ -19,8 +19,13 @@ class Port extends Model
     public static function updatePorts($model, $ports)
     {
         $model->ports()->delete();
-        for ($count = 0; $count < count($ports['ip_address']); $count++) {
+        for ($count = 0; $count < count($ports['number']); $count++) {
             $model->ports()->create([
+                'name' => $ports['name'][$count] ?? '',
+                'number' => $ports['number'][$count] ?? '',
+                'type' => $ports['type'][$count] ?? '',
+                'speed' => $ports['speed'][$count] ?? '',
+                'status' => isset($ports['status'][$count]) && $ports['status'][$count] && $ports['status'][$count] == 'on' ? 1 : 0,
                 'ip_address' => $ports['ip_address'][$count] ?? '',
                 'mac_address' => $ports['mac_address'][$count] ?? '',
                 'nic' => $ports['nic'][$count] ?? '',

@@ -54,4 +54,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('getNewAjaxRow', [\App\Http\Controllers\AjaxController::class, 'getNewAjaxRow']);
     Route::post('unit/filter', [App\Http\Controllers\UnitController::class, 'filter'])->name('unit.filter');
     Route::post('saveHelp', [\App\Http\Controllers\HelpController::class, 'saveHelp']);
+    Route::get('getPortsOfNetwork', [\App\Http\Controllers\AjaxController::class, 'getPortsOfNetwork']);
+
+
+    Route::get('test', [\App\Http\Controllers\AjaxController::class, 'test']);
 });
