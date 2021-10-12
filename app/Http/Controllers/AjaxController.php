@@ -43,7 +43,7 @@ class AjaxController extends Controller
         $tables = ['companies', 'units', 'sites', 'sub_sites', 'buildings', 'rooms', 'cabinets', 'networks_list', 'networks', 'computers', 'lone_assets'];
 
         foreach ($tables as $table) {
-            $columns = ['parent_type', 'parent_id'];
+            $columns = ['parent_type', 'parent_name'];
             $columns = array_merge($columns, DB::getSchemaBuilder()->getColumnListing($table));
             $columns = array_diff($columns, ['created_at', 'updated_at']);
 
@@ -56,7 +56,7 @@ class AjaxController extends Controller
         $tables = ['ports'];
 
         foreach ($tables as $table) {
-            $columns = ['parent_type', 'parent_id'];
+            $columns = ['parent_type', 'parent_name'];
             $columns = array_merge($columns, DB::getSchemaBuilder()->getColumnListing($table));
             $columns = array_diff($columns, ['created_at', 'updated_at', 'portable_type', 'portable_id']);
 

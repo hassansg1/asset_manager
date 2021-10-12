@@ -43,6 +43,7 @@ Route::group(['middleware' => ['auth']], function () {
         'software' => \App\Http\Controllers\SoftwareController::class,
         'permission' => \App\Http\Controllers\PermissionController::class,
         'networks' => \App\Http\Controllers\NetworkController::class,
+        'import' => \App\Http\Controllers\ImportController::class,
     ]);
     Route::group(['prefix' => 'assets'], function () {
         Route::resource('network', \App\Http\Controllers\NetworkAssetController::class);
