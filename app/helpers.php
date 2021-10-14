@@ -173,3 +173,11 @@ if (!function_exists('getHelpSectionText')) {
     }
 }
 
+
+if (!function_exists('rec_id_replacer')) {
+    function rec_id_replacer($error)
+    {
+        return str_replace('rec id','id',$error);
+    }
+}
+

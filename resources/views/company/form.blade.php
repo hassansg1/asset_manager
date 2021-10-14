@@ -10,27 +10,28 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}short_name" class="form-label required">Short Name</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}rec_id" class="form-label required">ID</label>
+                            <input type="text" value="{{ isset($item) ? $item->rec_id:old('rec_id') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}rec_id" name="rec_id" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="mb-3">
+                            <label for="{{ isset($item) ? $item->id:'' }}short_name" class="form-label">Short Name</label>
                             <input type="text" value="{{ isset($item) ? $item->short_name:old('short_name') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}short_name"
-                                   name="short_name" required>
+                                   name="short_name">
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}long_name" class="form-label required">Long Name</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}long_name" class="form-label">Long Name</label>
                             <input type="text" value="{{ isset($item) ? $item->long_name:old('long_name') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}long_name"
-                                   name="long_name" required>
+                                   name="long_name">
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}code" class="form-label">ID</label>
-                            <input type="text" value="{{ isset($item) ? $item->code:old('code') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}code" name="code">
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>

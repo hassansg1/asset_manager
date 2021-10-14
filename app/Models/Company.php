@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use App\Http\Traits\ParentTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -14,11 +15,10 @@ class Company extends Model
 
     public $rules =
         [
-            'short_name' => 'required | max:255',
-            'long_name' => 'required | max:255',
+            'rec_id' => 'required | unique:companies,rec_id',
         ];
 
-    protected $appends = ['show_name','parentable_type','parentable_id'];
+    protected $appends = ['show_name', 'parentable_type', 'parentable_id'];
 
     public function getShowNameAttribute()
     {
@@ -31,11 +31,13 @@ class Company extends Model
      * @return mixed
      */
     public function saveFormData($item, $request)
-    {if (isset($request->short_name)) $item->short_name = $request->short_name;
+    {
+        if (isset($request->short_name)) $item->short_name = $request->short_name;
         if (isset($request->long_name)) $item->long_name = $request->long_name;
+        if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
 
         $item->save();
-        Parentable::addNew(null,null,self::class,$item->id);
+        Parentable::addNew(null, null, self::class, $item->id);
         return $item;
     }
 }

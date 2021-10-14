@@ -30,6 +30,7 @@ class CompanyController extends BaseController
     {
         $data = $this->fetchData($this->model);
 
+
         return view($this->route . "/index")
             ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading]);
     }

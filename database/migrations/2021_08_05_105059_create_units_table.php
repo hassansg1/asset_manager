@@ -15,11 +15,9 @@ class CreateUnitsTable extends Migration
     {
         Schema::create('units', function (Blueprint $table) {
             $table->id();
-            $table->string('parentable_type')->nullable();
-            $table->integer('parentable_id')->nullable();
+            $table->string('rec_id', 25)->unique();
             $table->string('short_name', 255)->nullable();
             $table->string('long_name', 255)->nullable();
-            $table->string('code', 25)->nullable();
             $table->string('contact_person', 255)->nullable();
             $table->string('ot_apn', 255)->nullable();
             $table->timestamps();

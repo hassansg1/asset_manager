@@ -15,7 +15,7 @@ class Room extends Model
 
     public $rules =
         [
-            'name' => 'required | max:255',
+            'rec_id' => 'required | unique:rooms,rec_id',
         ];
 
     protected $appends = ['show_name','parentable_type','parentable_id'];
@@ -35,7 +35,7 @@ class Room extends Model
     {
 
         if (isset($request->name)) $item->name = $request->name;
-        if (isset($request->code)) $item->code = $request->code;
+        if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
 
         $item->save();
         $this->updateParent($request,$item);

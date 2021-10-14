@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Building;
+use App\View\Components\breadcrumb;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Validator;
 
 class ImportController extends Controller
 {
@@ -50,19 +52,98 @@ class ImportController extends Controller
         $data = $csvContent['data'];
         $tableName = explode('.', $fileName)[0];
         $modelClass = config('models.' . $tableName);
-        $columns = Schema::getColumnListing($tableName);
+        $logs = [];
+        $success = true;
 
-        foreach ($data as $obj) {
-            $model = App::make($modelClass);
-            for ($i = 0; $i < count($obj); $i++) {
-                if (in_array($header[$i], $columns)) {
-                    $model->{$header[$i]} = $obj[$header[$i]];
-                }
+        if ($modelClass) {
+            $logs[] = 'File Validated successfully';
+            $logs[] = '<br>';
+            $columns = Schema::getColumnListing($tableName);
+
+            $count = 0;
+            DB::beginTransaction();
+            foreach ($data as $obj) {
+                if ($success) {
+                    $count++;
+                    $logs[] = 'Precessing row no. ' . $count;
+                    $model = App::make($modelClass);
+                    $arr = [];
+                    for ($i = 0; $i < count($obj); $i++) {
+                        if ($header[$i] == 'id') {
+                            $arr['rec_id'] = $obj[$header[$i]];
+                        } else {
+                            if (in_array($header[$i], $columns)) {
+                                $arr[$header[$i]] = $obj[$header[$i]];
+                            }
+                        }
+                    }
+
+                    $parentType = $obj['parent_type'];
+                    $parentId = $obj['parent_name'];
+
+                    if (!in_array($parentType, ['Company', 'Unit', 'Site', 'SubSite', 'Unit', 'Building', 'Room', 'Cabinet'])) {
+                        $logs[] = 'Error : Invalid Parent Type';
+                        $success = false;
+                        break;
+                    }
+                    if ($parentId == '' || !$parentType) {
+                        $logs[] = 'Error : Parent Id cannot be empty';
+                        $success = false;
+                        break;
+                    }
+
+                    $parentModel = App::make('App\Models\\' . $parentType);
+
+                    $parent = $parentModel->where('rec_id', $parentId)->first();
+                    if (!$parent) {
+                        $logs[] = 'Error : Parent not found.';
+                        $success = false;
+                        break;
+                    }
+
+                    $arr['parent'] = get_class($parent) . '??' . $parent->id;
+                    $request = new Request();
+                    $request->replace($arr);
+                    $validator = Validator::make($request->all(), $model->rules);
+                    if ($validator->fails()) {
+                        foreach ($validator->errors()->all() as $error) {
+                            $logs[] = 'Error : ' . rec_id_replacer($error);
+                            $success = false;
+                        }
+                        $logs[] = 'Rolling back the changes.';
+                        $success = false;
+                        break;
+                    } else {
+                        try {
+                            $model->saveFormData($model, $request);
+                        } catch (\Exception $exception) {
+                            $logs[] = 'Error : Unknown error. Please contact the administer.';
+                            $success = false;
+                            break;
+                        }
+                        $logs[] = 'Saving row no. ' . $count;
+                        $logs[] = 'Data saved.';
+                    }
+                } else
+                    break;
+                $logs[] = '<br>';
             }
-            $model->save();
+            if ($success) {
+                $logs[] = '<br>';
+                $logs[] = 'All the Data processed successfully.';
+                DB::commit();
+            } else {
+                $logs[] = '<br>';
+                $logs[] = 'Changes are rolled back.';
+                $success = false;
+                DB::rollBack();
+            }
+        } else {
+            $success = false;
+            $logs[] = 'Invalid file name';
         }
 
-        return 'Jobi done or what ever';
+        return view('import.index')->with(['status' => $success, 'logs' => $logs]);
     }
 
 

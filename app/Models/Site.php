@@ -15,10 +15,10 @@ class Site extends Model
 
     public $rules =
         [
-            'name' => 'required | max:255',
+            'rec_id' => 'required | unique:sites,rec_id',
         ];
 
-    protected $appends = ['show_name','parentable_type','parentable_id'];
+    protected $appends = ['show_name', 'parentable_type', 'parentable_id'];
 
     public function getShowNameAttribute()
     {
@@ -36,7 +36,7 @@ class Site extends Model
 
         if (isset($request->name)) $item->name = $request->name;
         if (isset($request->arabic_name)) $item->arabic_name = $request->arabic_name;
-        if (isset($request->code)) $item->code = $request->code;
+        if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
         if (isset($request->existing_code)) $item->existing_code = $request->existing_code;
         if (isset($request->descriptive_location)) $item->descriptive_location = $request->descriptive_location;
         if (isset($request->location_dec_coordinate)) $item->location_dec_coordinate = $request->location_dec_coordinate;
@@ -49,7 +49,7 @@ class Site extends Model
         if (isset($request->function)) $item->function = $request->function;
 
         $item->save();
-        $this->updateParent($request,$item);
+        $this->updateParent($request, $item);
         return $item;
     }
 }

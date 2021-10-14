@@ -15,11 +15,8 @@ class Unit extends Model
 
     public $rules =
         [
-            'short_name' => 'required | max:255',
-            'long_name' => 'required | max:255',
-            'code' => 'max:255',
-            'contact_person' => 'max:255',
-            'ot_apn' => 'max:255',
+            'parent' => 'required',
+            'rec_id' => 'required | unique:units,rec_id',
         ];
 
     protected $appends = ['show_name','parentable_type','parentable_id'];
@@ -37,7 +34,7 @@ class Unit extends Model
     public function saveFormData($item, $request)
     {if (isset($request->short_name)) $item->short_name = $request->short_name;
         if (isset($request->long_name)) $item->long_name = $request->long_name;
-        if (isset($request->code)) $item->code = $request->code;
+        if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
         if (isset($request->contact_person)) $item->contact_person = $request->contact_person;
         if (isset($request->ot_apn)) $item->ot_apn = $request->ot_apn;
 

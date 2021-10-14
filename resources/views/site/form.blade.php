@@ -10,21 +10,23 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}short_name" class="form-label required">Parent</label>
-                            <select class="form-control select2" name="parent" id="{{ isset($item) ? $item->id:'' }}short_name">
-                                <option>Search by Name</option>
+                            <label for="{{ isset($item) ? $item->id:'' }}parent"
+                                   class="form-label required">Parent</label>
+                            <select class="form-control select2" name="parent"
+                                    id="{{ isset($item) ? $item->id:'' }}parent" required>
+                                <option value="">Search by Name</option>
                                 <optgroup label="Company">
                                     @foreach(getCompanies() as $row)
                                         <option
-                                            {{ isset($item) && $item->parentable_type == \App\Models\Company::class && $item->parentable_id == $row->id ? 'selected' : '' }}
-                                            value="{{\App\Models\Company::class}}??{{ $row->id }}">{{ $row->show_name }}</option>
+                                                {{ isset($item) && $item->parentable_type == \App\Models\Company::class && $item->parentable_id == $row->id ? 'selected' : '' }}
+                                                value="{{\App\Models\Company::class}}??{{ $row->id }}">{{ $row->show_name }}</option>
                                     @endforeach
                                 </optgroup>
                                 <optgroup label="Unit">
                                     @foreach(\App\Models\Unit::all() as $row)
                                         <option
-                                            {{ isset($item) && $item->parentable_type == \App\Models\Unit::class && $item->parentable_id == $row->id ? 'selected' : '' }}
-                                            value="{{\App\Models\Unit::class}}??{{ $row->id }}">{{ $row->show_name }}</option>
+                                                {{ isset($item) && $item->parentable_type == \App\Models\Unit::class && $item->parentable_id == $row->id ? 'selected' : '' }}
+                                                value="{{\App\Models\Unit::class}}??{{ $row->id }}">{{ $row->show_name }}</option>
                                     @endforeach
                                 </optgroup>
                             </select>
@@ -33,42 +35,49 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}name" class="form-label required">Name</label>
-                            <input type="text" value="{{ isset($item) ? $item->name:old('name') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}name"
-                                   name="name" required>
+                            <label for="{{ isset($item) ? $item->id:'' }}rec_id" class="form-label required">ID</label>
+                            <input type="text" value="{{ isset($item) ? $item->rec_id:old('rec_id') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}rec_id" name="rec_id"
+                                   required>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}arabic_name" class="form-label">Arabic Name</label>
-                            <input type="text" value="{{ isset($item) ? $item->arabic_name:old('arabic_name') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}arabic_name" name="arabic_name">
+                            <label for="{{ isset($item) ? $item->id:'' }}name" class="form-label">Name</label>
+                            <input type="text" value="{{ isset($item) ? $item->name:old('name') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}name"
+                                   name="name">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}code" class="form-label">Code</label>
-                            <input type="text" value="{{ isset($item) ? $item->code:old('code') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}code" name="code">
+                            <label for="{{ isset($item) ? $item->id:'' }}arabic_name" class="form-label">Arabic
+                                Name</label>
+                            <input type="text" value="{{ isset($item) ? $item->arabic_name:old('arabic_name') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}arabic_name"
+                                   name="arabic_name">
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}existing_code" class="form-label">Existing Code</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}existing_site_id" class="form-label">Existing
+                                rec_id</label>
                             <input type="text"
-                                   value="{{ isset($item) ? $item->existing_code:old('existing_code') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}existing_code"
-                                   name="existing_code">
+                                   value="{{ isset($item) ? $item->existing_site_id:old('existing_site_id') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}existing_site_id"
+                                   name="existing_site_id">
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}descriptive_location" class="form-label">Descriptive Location</label>
-                            <input type="text" value="{{ isset($item) ? $item->descriptive_location:old('descriptive_location') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}descriptive_location" name="descriptive_location">
+                            <label for="{{ isset($item) ? $item->id:'' }}descriptive_location" class="form-label">Descriptive
+                                Location</label>
+                            <input type="text"
+                                   value="{{ isset($item) ? $item->descriptive_location:old('descriptive_location') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}descriptive_location"
+                                   name="descriptive_location">
                         </div>
                     </div>
                 </div>
@@ -76,8 +85,10 @@
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}location_dec_coordinate" class="form-label">Coordinates(DEC)</label>
-                            <input type="text" value="{{ isset($item) ? $item->location_dec_coordinate:old('location_dec_coordinate') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}location_dec_coordinate" name="location_dec_coordinate">
+                            <input type="text"
+                                   value="{{ isset($item) ? $item->location_dec_coordinate:old('location_dec_coordinate') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}location_dec_coordinate"
+                                   name="location_dec_coordinate">
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -91,43 +102,56 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}location_google_link" class="form-label">Location(Google Link)</label>
-                            <input type="text" value="{{ isset($item) ? $item->location_google_link:old('location_google_link') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}location_google_link" name="location_google_link">
+                            <label for="{{ isset($item) ? $item->id:'' }}location_google_link" class="form-label">Location(Google
+                                Link)</label>
+                            <input type="text"
+                                   value="{{ isset($item) ? $item->location_google_link:old('location_google_link') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}location_google_link"
+                                   name="location_google_link">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}remote_site" class="form-label">Remote Site</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}remote_site" class="form-label">Remote
+                                Site</label>
                             <input type="text" value="{{ isset($item) ? $item->remote_site:old('remote_site') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}remote_site" name="remote_site">
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}remote_site"
+                                   name="remote_site">
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}operator_control_center_site" class="form-label">Operator Control Site</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}operator_control_center_site"
+                                   class="form-label">Operator Control Site</label>
                             <input type="text"
                                    value="{{ isset($item) ? $item->operator_control_center_site:old('operator_control_center_site') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}operator_control_center_site"
+                                   class="form-control"
+                                   id="{{ isset($item) ? $item->id:'' }}operator_control_center_site"
                                    name="operator_control_center_site">
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}local_scada_site" class="form-label">Local Scada Site</label>
-                            <input type="text" value="{{ isset($item) ? $item->local_scada_site:old('local_scada_site') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}local_scada_site" name="local_scada_site">
+                            <label for="{{ isset($item) ? $item->id:'' }}local_scada_site" class="form-label">Local
+                                Scada Site</label>
+                            <input type="text"
+                                   value="{{ isset($item) ? $item->local_scada_site:old('local_scada_site') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}local_scada_site"
+                                   name="local_scada_site">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}central_scada_site" class="form-label">Central Scada Site</label>
-                            <input type="text" value="{{ isset($item) ? $item->central_scada_site:old('central_scada_site') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}central_scada_site" name="central_scada_site">
+                            <label for="{{ isset($item) ? $item->id:'' }}central_scada_site" class="form-label">Central
+                                Scada Site</label>
+                            <input type="text"
+                                   value="{{ isset($item) ? $item->central_scada_site:old('central_scada_site') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}central_scada_site"
+                                   name="central_scada_site">
                         </div>
                     </div>
                     <div class="col-lg-4">

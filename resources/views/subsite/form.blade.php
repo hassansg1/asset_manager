@@ -10,9 +10,9 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}short_name" class="form-label required">Parent</label>
-                            <select class="form-control select2" name="parent" id="{{ isset($item) ? $item->id:'' }}short_name">
-                                <option>Search by Name</option>
+                            <label for="{{ isset($item) ? $item->id:'' }}parent" class="form-label required">Parent</label>
+                            <select class="form-control select2" name="parent" id="{{ isset($item) ? $item->id:'' }}parent" required>
+                                <option value="">Search by Name</option>
                                 <optgroup label="Company">
                                     @foreach(getCompanies() as $row)
                                         <option
@@ -40,12 +40,21 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}name" class="form-label required">Name</label>
-                            <input type="text" value="{{ isset($item) ? $item->name:old('name') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}name"
-                                   name="name" required>
+                            <label for="{{ isset($item) ? $item->id:'' }}rec_id" class="form-label required">ID</label>
+                            <input type="text" value="{{ isset($item) ? $item->rec_id:old('rec_id') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}rec_id" name="rec_id" required>
                         </div>
                     </div>
+                    <div class="col-lg-4">
+                        <div class="mb-3">
+                            <label for="{{ isset($item) ? $item->id:'' }}name" class="form-label">Name</label>
+                            <input type="text" value="{{ isset($item) ? $item->name:old('name') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}name"
+                                   name="name">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}arabic_name" class="form-label">Arabic Name</label>
@@ -53,22 +62,13 @@
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}arabic_name" name="arabic_name">
                         </div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}code" class="form-label">Code</label>
-                            <input type="text" value="{{ isset($item) ? $item->code:old('code') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}code" name="code">
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}existing_code" class="form-label">Existing Code</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}existing_sub_site_id" class="form-label">Existing rec_id</label>
                             <input type="text"
-                                   value="{{ isset($item) ? $item->existing_code:old('existing_code') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}existing_code"
-                                   name="existing_code">
+                                   value="{{ isset($item) ? $item->existing_sub_site_id:old('existing_sub_site_id') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}existing_sub_site_id"
+                                   name="existing_sub_site_id">
                         </div>
                     </div>
                     <div class="col-lg-4">

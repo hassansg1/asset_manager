@@ -15,17 +15,18 @@ class AjaxController extends Controller
     {
         return response()->json(
             [
-                'html' => view($request->type . '.partials.tabs.port_row')->with('port',$request)->render()
+                'html' => view($request->type . '.partials.tabs.port_row')->with('port', $request)->render()
             ]
         );
     }
 
-    public function getNewAjaxForm(Request $request){
+    public function getNewAjaxForm(Request $request)
+    {
 
-        $modal = isset($request->modal)?$request->modal:'';
+        $modal = isset($request->modal) ? $request->modal : '';
         return response()->json(
             [
-                'html' => view($request->type . '.partials.tabs.modal_row')->with(['modal'=>$modal])->render()
+                'html' => view($request->type . '.partials.tabs.modal_row')->with(['modal' => $modal])->render()
             ]
         );
     }
@@ -45,7 +46,7 @@ class AjaxController extends Controller
         foreach ($tables as $table) {
             $columns = ['parent_type', 'parent_name'];
             $columns = array_merge($columns, DB::getSchemaBuilder()->getColumnListing($table));
-            $columns = array_diff($columns, ['created_at', 'updated_at']);
+            $columns = array_diff($columns, ['created_at', 'updated_at', 'rec_id']);
 
             $path = public_path('csv/' . $table . '.csv');
 
@@ -58,7 +59,7 @@ class AjaxController extends Controller
         foreach ($tables as $table) {
             $columns = ['parent_type', 'parent_name'];
             $columns = array_merge($columns, DB::getSchemaBuilder()->getColumnListing($table));
-            $columns = array_diff($columns, ['created_at', 'updated_at', 'portable_type', 'portable_id']);
+            $columns = array_diff($columns, ['created_at', 'updated_at', 'portable_type', 'portable_id', 'id']);
 
             $path = public_path('csv/' . $table . '.csv');
 

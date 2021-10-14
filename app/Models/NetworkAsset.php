@@ -11,7 +11,7 @@ class NetworkAsset extends Model
     use HasFactory;
     use ParentTrait;
 
-    protected $table = 'networks';
+    protected $table = 'network_assets';
 
     public function ports()
     {
@@ -22,7 +22,7 @@ class NetworkAsset extends Model
 
     public $rules =
         [
-            'name' => 'required | max:255',
+            'rec_id' => 'required | unique:network_assets,rec_id',
         ];
 
     protected $appends = ['name'];
@@ -85,7 +85,7 @@ class NetworkAsset extends Model
     public function saveFormData($item, $request)
     {
         if (isset($request->name)) $item->name = $request->name;
-        if (isset($request->code)) $item->code = $request->code;
+        if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
         if (isset($request->description)) $item->description = $request->description;
         if (isset($request->function)) $item->function = $request->function;
         if (isset($request->make)) $item->make = $request->make;
