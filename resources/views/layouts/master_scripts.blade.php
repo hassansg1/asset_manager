@@ -21,6 +21,9 @@
     function doSuccessToast(flashMessage = "Success...!!!") {
         doToast(flashMessage, 'success');
     }
+    function doErrorToast(flashMessage = "Success...!!!") {
+        doToast(flashMessage, 'error');
+    }
 
     function doToast(flashMessage, type) {
         toast(flashMessage, type);

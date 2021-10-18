@@ -57,6 +57,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('unit/filter', [App\Http\Controllers\UnitController::class, 'filter'])->name('unit.filter');
     Route::post('saveHelp', [\App\Http\Controllers\HelpController::class, 'saveHelp']);
     Route::get('getPortsOfNetwork', [\App\Http\Controllers\AjaxController::class, 'getPortsOfNetwork']);
+    Route::post('checkDeleteCriteria', [\App\Http\Controllers\AjaxController::class, 'checkDeleteCriteria'])->name('resource.deleteCheck');
 
 
     Route::get('test', [\App\Http\Controllers\AjaxController::class, 'test']);

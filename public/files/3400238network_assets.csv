@@ -1,0 +1,7 @@
+parent_type,parent_name,id,name,description,function,make,model,part_number,serial_number,security_zone,asset_firmware,redundant_pair_id,comments,column1
+Site,DHA,123,network asset 1,Hi,,,,,,,,,,
+Site,DHA,124,network asset 2,Hi,,,,,,,,,,
+Site,DHA,125,network asset 3,Hi,,,,,,,,,,
+Site,DHA,126,network asset 4,Hi,,,,,,,,,,
+Site,DHA,127,network asset 5,Hi,,,,,,,,,,
+Site,s,128,network asset 6,Hi,,,,,,,,,,

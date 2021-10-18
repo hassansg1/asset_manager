@@ -11,7 +11,8 @@
     </button>
 @endcan
 @can('delete'.$item->permission_string)
-    <button onclick="if(confirm('Are you sure you want to delete?')) $('#delete_'+{{ $item->id }}).submit()"
+{{--    $('#delete_'+{{ $item->id }}).submit()--}}
+    <button onclick="if(confirm('Are you sure you want to delete?')) deleteItem('{{ $item->combine_short }}','{{ $item->id }}')"
             title="Delete" type="button"
             class="btn btn-light btn-form btn-no-color dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">

@@ -121,6 +121,15 @@ trait ParentTrait
     /**
      * @return string
      */
+    public function getCombineShortAttribute()
+    {
+        $reflect = new ReflectionClass($this);
+        return $reflect->getShortName() . "??" . $this->id;
+    }
+
+    /**
+     * @return string
+     */
     public function getParentableIdAttribute()
     {
         $par = self::parentModel($this);

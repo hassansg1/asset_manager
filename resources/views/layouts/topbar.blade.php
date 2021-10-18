@@ -114,6 +114,17 @@
                     </a>
                 </div>
             </div>
+            <div class="dropdown d-inline-block">
+                <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    <span class="align-middle">Import / Export</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end" style="">
+                    <a href="{{ route('import.index') }}" class="dropdown-item notify-item language" data-lang="eng">
+                        <span class="align-middle">Import</span>
+                    </a>
+                </div>
+            </div>
 
         </div>
 

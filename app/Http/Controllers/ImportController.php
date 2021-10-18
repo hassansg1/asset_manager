@@ -82,7 +82,7 @@ class ImportController extends Controller
                     $parentId = $obj['parent_name'];
 
                     if (!in_array($parentType, ['Company', 'Unit', 'Site', 'SubSite', 'Unit', 'Building', 'Room', 'Cabinet'])) {
-                        $logs[] = 'Error : Invalid Parent Type';
+                        $logs[] = 'Error : Invalid Parent Type : '.$parentType;
                         $success = false;
                         break;
                     }
@@ -96,7 +96,7 @@ class ImportController extends Controller
 
                     $parent = $parentModel->where('rec_id', $parentId)->first();
                     if (!$parent) {
-                        $logs[] = 'Error : Parent not found.';
+                        $logs[] = 'Error : Parent not found : '.$parentId;
                         $success = false;
                         break;
                     }

@@ -26,7 +26,7 @@ function toast(flashMessage,type) {
     let title = '';
 
     $('#toastrOptions').text('Command: toastr["'+type+'"]("' + msg +  + '")\n\ntoastr.options = ' + JSON.stringify(toastr.options, null, 2));
-    var $toast = toastr['success'](msg, title); // Wire up an event handler to a button in the toast, if it exists
+    var $toast = toastr[type](msg, title); // Wire up an event handler to a button in the toast, if it exists
 
     $toastlast = $toast;
 
