@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Http\Traits\ParentTrait;
+use App\Http\Traits\Observable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,6 +11,7 @@ class Networks extends Model
 {
     use HasFactory;
     use ParentTrait;
+    use Observable;
 
     protected $table = 'networks_list';
 

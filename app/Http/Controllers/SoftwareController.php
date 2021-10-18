@@ -115,7 +115,7 @@ class SoftwareController extends BaseController
      */
     public function update(Request $request, $item)
     {
-        $request->validate($this->model->rules);
+
 
         $item = $this->model->find($item);
         $this->model->saveFormData($item, $request);

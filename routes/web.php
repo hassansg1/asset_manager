@@ -30,20 +30,21 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     Route::resources([
+        'log' => \App\Http\Controllers\LogController::class,
         'site' => \App\Http\Controllers\SiteController::class,
         'room' => \App\Http\Controllers\RoomController::class,
         'role' => \App\Http\Controllers\RoleController::class,
         'user' => \App\Http\Controllers\UserController::class,
         'unit' => \App\Http\Controllers\UnitController::class,
         'asset' => \App\Http\Controllers\AssetController::class,
+        'import' => \App\Http\Controllers\ImportController::class,
+        'subsite' => \App\Http\Controllers\SubSiteController::class,
         'company' => \App\Http\Controllers\CompanyController::class,
         'cabinet' => \App\Http\Controllers\CabinetController::class,
-        'subsite' => \App\Http\Controllers\SubSiteController::class,
+        'networks' => \App\Http\Controllers\NetworkController::class,
         'building' => \App\Http\Controllers\BuildingController::class,
         'software' => \App\Http\Controllers\SoftwareController::class,
         'permission' => \App\Http\Controllers\PermissionController::class,
-        'networks' => \App\Http\Controllers\NetworkController::class,
-        'import' => \App\Http\Controllers\ImportController::class,
     ]);
     Route::group(['prefix' => 'assets'], function () {
         Route::resource('network', \App\Http\Controllers\NetworkAssetController::class);

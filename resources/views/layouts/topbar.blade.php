@@ -125,6 +125,17 @@
                     </a>
                 </div>
             </div>
+            <div class="dropdown d-inline-block">
+                <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    <span class="align-middle">More</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end" style="">
+                    <a href="{{ route('log.index') }}" class="dropdown-item notify-item language" data-lang="eng">
+                        <span class="align-middle">Logs</span>
+                    </a>
+                </div>
+            </div>
 
         </div>
 
