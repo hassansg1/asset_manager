@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\NetworkAsset;
+use App\Models\Parentable;
 use App\Models\Port;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -41,7 +42,7 @@ class AjaxController extends Controller
 
     public function test()
     {
-        $tables = ['companies', 'units', 'sites', 'sub_sites', 'buildings', 'rooms', 'cabinets', 'networks_list', 'networks', 'computers', 'lone_assets'];
+        $tables = ['companies', 'units', 'sites', 'sub_sites', 'buildings', 'rooms', 'cabinets', 'networks_list', 'network_assets', 'computer_assets', 'lone_assets'];
 
         foreach ($tables as $table) {
             $columns = ['parent_type', 'parent_name'];
@@ -70,5 +71,24 @@ class AjaxController extends Controller
 
 
         dd("As");
+    }
+
+    public function checkDeleteCriteria(Request $request)
+    {
+        $input = explode('??', $request->item);
+        $class = 'App\Models\\' . $input[0];
+        $id = $input[1];
+
+        $childs = Parentable::where(['parentable_type' => $class, 'parentable_id' => $id])->count();
+        if ($childs == 0) {
+            Parentable::where(['childable_type' => $class, 'childable_id' => $id])->delete();
+            return response()->json([
+                'status' => true
+            ]);
+        }
+
+        return response()->json([
+            'status' => false
+        ]);
     }
 }

@@ -14,12 +14,14 @@
                         <div class="mt-2">
                         </div>
                         <div class="custom_table_div">
-                            <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100 dataTable no-footer dtr-inline">
+                            <table id="datatable-buttons"
+                                   class="table table-bordered dt-responsive nowrap w-100 dataTable no-footer dtr-inline">
                                 <thead class="table-light custom_table_head">
                                 <tr>
-                                    <th class="select_all_checkbox" style="width: 10px"><input onclick="toggleSelectAll()"
-                                                                                               type="checkbox" name=""
-                                                                                               id="select_all"></th>
+                                    <th class="select_all_checkbox" style="width: 10px"><input
+                                            onclick="toggleSelectAll()"
+                                            type="checkbox" name=""
+                                            id="select_all"></th>
                                     @yield('table_header')
                                     <th>
                                         Actions
@@ -42,6 +44,23 @@
     <script>
         function toggleSelectAll() {
             $('.select_row').prop('checked', $('#select_all').is(":checked"));
+        }
+
+        function deleteItem(item, id) {
+            $.ajax({
+                type: "POST",
+                url: '{{ route('resource.deleteCheck') }}',
+                data: {
+                    item: item,
+                    '_token': '{{ csrf_token() }}'
+                },
+                success: function (result) {
+                    if (result.status) {
+                        $('#delete_' + id).submit();
+                    } else
+                        doErrorToast('This company cannot be deleted. Reason : Underlying data exists.Delete underlying data first..');
+                },
+            });
         }
     </script>
     @include('scripts.script_datatable')
