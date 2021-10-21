@@ -21,6 +21,15 @@ trait ParentTrait
         }
     }
 
+
+//    /**
+//     * @return string
+//     */
+//    public function getNameAttribute(): string
+//    {
+//        return $this->name;
+//    }
+
     /**
      * @param $item
      * @return mixed

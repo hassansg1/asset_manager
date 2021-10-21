@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Traits\Observable;
 use App\Http\Traits\ParentTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,6 +11,7 @@ class Computer extends Model
 {
     use HasFactory;
     use ParentTrait;
+    use Observable;
 
     protected $table = 'computer_assets';
 

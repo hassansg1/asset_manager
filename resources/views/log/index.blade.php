@@ -27,15 +27,19 @@
                                 @foreach($items as $item)
                                     <tr>
                                         <td>{{ $item->type }}</td>
-                                        <td>{{ $item->item()->rec_id ?? $item->item()->name }}</td>
+                                        <td>{{ $item->new()->rec_id }}</td>
                                         <td>{{ $item->action }}</td>
                                         <td>
-                                            @foreach($item->changes() as $key => $value)
-                                                @if($key != 'updated_at')
-                                                    {{ $key }} changed from <strong>{{ $item->old()->{$key} }}</strong> to <strong>{{ $value }}</strong>
-                                                @endif
-                                                <br>
-                                            @endforeach
+                                            @if($item->changes())
+                                                @foreach($item->changes() as $key => $value)
+                                                    @if($key != 'updated_at')
+                                                        {{ $key }} changed from
+                                                        <strong>{{ $item->old()->{$key} }}</strong> to
+                                                        <strong>{{ $value }}</strong>
+                                                    @endif
+                                                    <br>
+                                                @endforeach
+                                            @endif
                                         </td>
                                         <td>{{ $item->user->name }}</td>
                                         <td>

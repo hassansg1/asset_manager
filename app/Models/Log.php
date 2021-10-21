@@ -32,6 +32,12 @@ class Log extends Model
         return json_decode($this->models)->old;
     }
 
+
+    public function new()
+    {
+        return json_decode($this->models)->new;
+    }
+
     public function changes()
     {
         return json_decode($this->models)->changed;

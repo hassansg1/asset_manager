@@ -31,12 +31,13 @@ trait Observable
 
     public static function logChange(Model $model, string $action)
     {
+        dd("asas");
         Log::create([
             'user_id' => Auth::user()->id ?? null,
             'model' => static::class,
             'model_id' => $model->id,
             'action' => $action,
-            'message' => static::logSubject($model),
+            'message' => '',
             'models' => json_encode([
                 'new' => $action !== 'DELETED' ? $model->getAttributes() : null,
                 'old' => $action !== 'CREATED' ? $model->getOriginal() : null,
