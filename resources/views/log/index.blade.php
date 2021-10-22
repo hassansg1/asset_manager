@@ -19,6 +19,7 @@
                                     <th>Id</th>
                                     <th>Action</th>
                                     <th>Changes</th>
+                                    <th>Status</th>
                                     <th>Changed by</th>
                                     <th>Changed At</th>
                                 </tr>
@@ -39,6 +40,15 @@
                                                     @endif
                                                     <br>
                                                 @endforeach
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($item->approved == 1)
+                                                Approved
+                                            @else
+                                                <button onclick="location.href='{{ url('log/approve',$item->id) }}'"
+                                                        class="btn btn-primary">Approve Now
+                                                </button>
                                             @endif
                                         </td>
                                         <td>{{ $item->user->name }}</td>

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\Log;
+use Illuminate\Support\Facades\DB;
 
 trait Observable
 {
@@ -31,11 +32,15 @@ trait Observable
 
     public static function logChange(Model $model, string $action)
     {
-        dd("asas");
+//        if ($action == 'CREATED')
+//            DB::table($model->getTable())->where('id', $model->id)->delete($model->getOriginal());
+        if ($action == 'UPDATED')
+            DB::table($model->getTable())->update($model->getOriginal());
         Log::create([
             'user_id' => Auth::user()->id ?? null,
             'model' => static::class,
             'model_id' => $model->id,
+            'table_name' => $model->getTable(),
             'action' => $action,
             'message' => '',
             'models' => json_encode([

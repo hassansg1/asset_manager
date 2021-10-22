@@ -11,15 +11,18 @@ class CreateLogsTable extends Migration
      *
      * @return void
      */
-    public function up() {
+    public function up()
+    {
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->string('model',100);
-            $table->integer('id');
-            $table->string('action',7);
+            $table->string('model', 100);
+            $table->integer('model_id');
+            $table->string('table_name')->nullable();
+            $table->string('action', 7);
             $table->text('message');
             $table->json('models');
+            $table->integer('approved')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

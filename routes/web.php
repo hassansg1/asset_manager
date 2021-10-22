@@ -61,5 +61,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('checkDeleteCriteria', [\App\Http\Controllers\AjaxController::class, 'checkDeleteCriteria'])->name('resource.deleteCheck');
 
 
+    Route::get('log/approve/{id}',[\App\Http\Controllers\LogController::class,'approve']);
     Route::get('test', [\App\Http\Controllers\AjaxController::class, 'test']);
 });
