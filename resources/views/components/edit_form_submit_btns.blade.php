@@ -11,6 +11,13 @@
             $('.submit_form').click();
         }
 
+        $(".item_form").submit(function (e) {
+            if ($('#change_justification_reason').val() == undefined) {
+                showModal(justificationModal, $('#justification_modal_content').html());
+                e.preventDefault();
+            }
+        });
+
         $(document).ready(function () {
             let canEdit = $('#can_edit').val();
             if (canEdit != 1)

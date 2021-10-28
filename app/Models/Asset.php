@@ -18,7 +18,7 @@ class Asset extends Model
             'rec_id' => 'required | max:255',
         ];
 
-    protected $appends = ['name'];
+    protected $appends = ['show_name'];];
 
     public function getShowNameAttribute()
     {

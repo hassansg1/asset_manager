@@ -21,6 +21,7 @@
     function doSuccessToast(flashMessage = "Success...!!!") {
         doToast(flashMessage, 'success');
     }
+
     function doErrorToast(flashMessage = "Success...!!!") {
         doToast(flashMessage, 'error');
     }
@@ -63,14 +64,15 @@
             }
         });
     }
+
     function getBulckRows(network) {
         var modal = 'exampleModalFullscreen';
         $.ajax({
             type: "GET",
             url: '{{ url('getNewAjaxForm') }}',
-            data: {type: network,modal:modal},
+            data: {type: network, modal: modal},
             success: function (result) {
-                showModal(modal,result.html)
+                showModal(modal, result.html)
                 // $('#ports_table_row').append(result.html);
             }
         });
@@ -78,12 +80,56 @@
 
     let defaultModal = 'default_modal';
     let centerModal = 'center_modal';
+    let rejectionModal = 'rejection_modal';
+    let justificationModal = 'justification_modal';
 
     function showModal(name, content) {
         $('#' + name + '_content').html(content);
         $('#' + name).modal('show');
     }
 
+    let reason = false;
+
+    function saveReason() {
+        let reason = $('textarea#change_justification').val();
+        if (reason == "") {
+            alert("Reason cannot be empty");
+        } else {
+            $('.item_form').append('<input type="hidden" id="change_justification_reason" name="change_justification_reason" value="' + reason + '" />');
+            $.ajax({
+                type: "POST",
+                url: '{{ url('saveJustificationReason') }}',
+                data: {'_token': '{{ csrf_token() }}', 'reason': reason},
+                success: function (result) {
+                    reason = true;
+                    $('.item_form').submit();
+                },
+            });
+        }
+    }
+
+    function openRejectionModal(url)
+    {
+        $('#rejection_url').val(url);
+        showModal(rejectionModal, $('#rejection_modal_content').html());
+    }
+
+    function saveRejectionReason() {
+        let reason = $('textarea#change_rejection').val();
+        if (reason == "") {
+            alert("Reason cannot be empty");
+        } else {
+            $.ajax({
+                type: "POST",
+                url: '{{ url('saveRejectionReason') }}',
+                data: {'_token': '{{ csrf_token() }}', 'reason': reason},
+                success: function (result) {
+                    alert($('#rejection_url').val());
+                    location.href = $('#rejection_url').val();
+                },
+            });
+        }
+    }
 
     $(document).ready(function () {
         var selectLocation = '{{  str_replace('??','_',$filter ?? '')}}';

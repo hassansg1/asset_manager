@@ -7,7 +7,7 @@
     @endcomponent
     <div class="row">
         <div class="col-lg-12">
-            <form method="post" enctype="multipart/form-data" action="{{ route($route.'.store') }}">
+            <form class="item_form" method="post" enctype="multipart/form-data" action="{{ route($route.'.store') }}">
                 @include($route.'.form')
                 @include('components.form_submit_btns')
             </form>

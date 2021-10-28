@@ -5,18 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\Log;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
 
-class LogController extends Controller
+class ApprovalController extends Controller
 {
     /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $logs = Log::orderBy('id', 'desc')->get();
+        $logs = Log::where('approval_request', 1)->orderBy('id', 'desc')->get();
 
-        return view('log.index')->with(['items' => $logs, 'heading' => 'Approval Request', 'route' => 'log']);
+        return view('approval.index')->with(['items' => $logs, 'heading' => 'Log', 'route' => 'log']);
     }
 
     /**
@@ -94,7 +95,7 @@ class LogController extends Controller
             DB::table($log->table_name)->insert((array)$log->new());
         } elseif ($log->action == 'UPDATED') {
             DB::table($log->table_name)->where('id', $log->new()->id)->update($arr);
-        } elseif ($log->action == 'DELETED') {
+        }elseif ($log->action == 'DELETED') {
             DB::table($log->table_name)->where('id', $log->old()->id)->delete();
         }
         $log->approved = 1;
@@ -110,13 +111,6 @@ class LogController extends Controller
         $log->approved = 2;
         $log->save();
 
-        return redirect()->back();
-    }
-
-    public function remove($id)
-    {
-        $log = Log::find($id);
-        $log->delete();
         return redirect()->back();
     }
 }

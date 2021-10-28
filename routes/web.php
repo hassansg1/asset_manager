@@ -27,6 +27,8 @@ Route::get('index/{locale}', [App\Http\Controllers\HomeController::class, 'lang'
 
 Route::group(['middleware' => ['auth']], function () {
     Route::post('clearSession', [App\Http\Controllers\HomeController::class, 'clearSession']);
+    Route::post('saveJustificationReason', [App\Http\Controllers\HomeController::class, 'saveJustificationReason']);
+    Route::post('saveRejectionReason', [App\Http\Controllers\HomeController::class, 'saveRejectionReason']);
 
 
     Route::resources([
@@ -44,6 +46,7 @@ Route::group(['middleware' => ['auth']], function () {
         'networks' => \App\Http\Controllers\NetworkController::class,
         'building' => \App\Http\Controllers\BuildingController::class,
         'software' => \App\Http\Controllers\SoftwareController::class,
+        'approval' => \App\Http\Controllers\ApprovalController::class,
         'permission' => \App\Http\Controllers\PermissionController::class,
     ]);
     Route::group(['prefix' => 'assets'], function () {
@@ -62,5 +65,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     Route::get('log/approve/{id}',[\App\Http\Controllers\LogController::class,'approve']);
+    Route::get('log/reject/{id}',[\App\Http\Controllers\LogController::class,'reject']);
+    Route::get('log/remove/{id}',[\App\Http\Controllers\LogController::class,'remove']);
     Route::get('test', [\App\Http\Controllers\AjaxController::class, 'test']);
 });

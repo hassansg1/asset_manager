@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\Log;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 trait Observable
 {
@@ -32,23 +33,31 @@ trait Observable
 
     public static function logChange(Model $model, string $action)
     {
-//        if ($action == 'CREATED')
-//            DB::table($model->getTable())->where('id', $model->id)->delete($model->getOriginal());
-        if ($action == 'UPDATED')
-            DB::table($model->getTable())->update($model->getOriginal());
+        if ($action == 'CREATED') {
+            DB::table($model->getTable())->where('id', $model->id)->delete();
+        } elseif ($action == 'UPDATED') {
+            $arr = array_diff_key($model->getOriginal(), ['id' => 'aa']);
+            DB::table($model->getTable())->where('id', $model->id)->update($arr);
+        } elseif ($action == 'DELETED') {
+            DB::table($model->getTable())->insert($model->getOriginal());
+        }
         Log::create([
             'user_id' => Auth::user()->id ?? null,
             'model' => static::class,
             'model_id' => $model->id,
             'table_name' => $model->getTable(),
             'action' => $action,
-            'message' => '',
+            'reason' => Session::get('reason') ?? '',
+            'message' => self::logSubject($model),
+            'approval_request' => 1,
             'models' => json_encode([
                 'new' => $action !== 'DELETED' ? $model->getAttributes() : null,
                 'old' => $action !== 'CREATED' ? $model->getOriginal() : null,
                 'changed' => $action === 'UPDATED' ? $model->getChanges() : null,
             ])
         ]);
+
+        Session::put('approvalRequest', 1);
     }
 
     /**

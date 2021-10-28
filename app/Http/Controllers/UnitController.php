@@ -114,8 +114,6 @@ class UnitController extends BaseController
      */
     public function update(Request $request, $item)
     {
-
-
         $item = $this->model->find($item);
         $this->model->saveFormData($item, $request);
 

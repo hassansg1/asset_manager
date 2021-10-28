@@ -20,7 +20,7 @@ class Software extends Model
             'name' => 'required | max:255',
         ];
 
-    protected $appends = ['name'];
+    protected $appends = ['show_name'];];
 
     public function getShowNameAttribute()
     {

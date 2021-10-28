@@ -42,4 +42,20 @@ class Log extends Model
     {
         return json_decode($this->models)->changed;
     }
+
+    public function descriptionItems(){
+        if($this->action == 'CREATED') return $this->new() ?? null;
+        if($this->action == 'UPDATED') return $this->changes() ?? null;
+        if($this->action == 'DELETED') [];
+
+        return [];
+    }
+
+    public function recId(){
+        if($this->action == 'CREATED') return $this->new()->rec_id ?? null;
+        if($this->action == 'UPDATED') return $this->new()->rec_id ?? null;
+        if($this->action == 'DELETED') return $this->old()->rec_id ?? null;
+
+        return [];
+    }
 }

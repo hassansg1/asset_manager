@@ -1,13 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab8ba830-06d6-43b5-99c0-f1ea02c95852" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="ab8ba830-06d6-43b5-99c0-f1ea02c95852" name="Changes" comment="ss">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ApprovalController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/approval/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/asset_manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/asset_manager.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UnitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UnitController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Traits/Observable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Traits/Observable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Traits/ParentTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Traits/ParentTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Asset.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Asset.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Computer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Computer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Log.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Log.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/LoneAsset.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/LoneAsset.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/NetworkAsset.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/NetworkAsset.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Parentable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Parentable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Software.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Software.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Unit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Unit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_18_052651_create_logs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_18_052651_create_logs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/asset/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/asset/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/asset/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/asset/edit_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/building/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/building/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/building/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/building/edit_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/edit_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/edit_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/company/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/company/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/company/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/company/edit_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/edit_form_submit_btns.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/edit_form_submit_btns.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/form_submit_btns.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/form_submit_btns.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/modals.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/modals.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/computer/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/computer/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/computer/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/computer/edit_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/l_one/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/l_one/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/l_one/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/l_one/edit_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master_scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master_scripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/log/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/log/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/network/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/network/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/network/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/network/edit_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/networks/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/networks/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/networks/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/networks/edit_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/old_unit/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/old_unit/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/old_unit/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/old_unit/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/old_unit/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/old_unit/edit_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/permission/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/permission/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/permission/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/permission/edit_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/role/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/role/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/role/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/role/edit_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/room/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/room/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/room/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/room/edit_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/edit_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/software/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/software/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software/edit_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/subsite/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subsite/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/subsite/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subsite/edit_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/unit/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/unit/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/unit/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/unit/edit_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/edit_form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -291,9 +347,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ahs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\asset_manager\resources\views" />
+      <recent name="C:\xampp\htdocs\asset_manager\app\Http\Controllers" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -301,7 +363,7 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -314,6 +376,11 @@
       <updated>1634201841170</updated>
       <workItem from="1634201844389" duration="3701000" />
       <workItem from="1634218857764" duration="98000" />
+      <workItem from="1634909700226" duration="15000" />
+      <workItem from="1634912923210" duration="2344000" />
+      <workItem from="1635124181593" duration="1974000" />
+      <workItem from="1635202886190" duration="11614000" />
+      <workItem from="1635221838196" duration="961000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <created>1634539765654</created>
@@ -322,7 +389,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634539765654</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ss">
+      <created>1634876905205</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1634876905205</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -354,7 +428,7 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -385,7 +459,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="sas" />
     <MESSAGE value="Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
+    <MESSAGE value="ss" />
+    <option name="LAST_COMMIT_MESSAGE" value="ss" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/Models/Asset.php">

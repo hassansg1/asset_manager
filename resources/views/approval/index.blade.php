@@ -18,7 +18,9 @@
                                     <th>Type</th>
                                     <th>Id</th>
                                     <th>Activity</th>
+                                    <th>Reason</th>
                                     <th>Changes</th>
+                                    <th>Status/Action</th>
                                     <th>Changed by</th>
                                     <th>Changed At</th>
                                 </tr>
@@ -29,6 +31,7 @@
                                         <td>{{ $item->model }}</td>
                                         <td>{{ $item->recId() ?? '' }}</td>
                                         <td>{{ $item->action }}</td>
+                                        <td>{{ $item->reason }}</td>
                                         <td>
                                             @if($item->descriptionItems())
                                                 @foreach($item->descriptionItems() as $key => $value)
@@ -41,6 +44,26 @@
                                                     @endif
                                                     <br>
                                                 @endforeach
+                                            @endif
+                                        </td>
+                                        <td>
+
+                                            @if($item->approved == 1)
+                                                <span class="alert-success">Approved</span>
+                                            @elseif($item->approved == 2)
+                                                <span class="alert-danger">Rejected</span>
+                                            @else
+
+                                                <div class="dropdown">
+                                                    <a href="#" class="dropdown-toggle card-drop" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="mdi mdi-dots-horizontal font-size-18"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-end" style="">
+                                                        <a class="dropdown-item" href="{{ url('log/approve',$item->id) }}">Approve</a>
+                                                        <a class="dropdown-item" onclick="openRejectionModal('{{ url('log/reject',$item->id) }}')" href="javascript:void(0)">Reject</a>
+                                                        <a class="dropdown-item" href="{{ url('log/remove',$item->id) }}">Delete</a>
+                                                    </div>
+                                                </div>
                                             @endif
                                         </td>
                                         <td>{{ $item->user->name }}</td>

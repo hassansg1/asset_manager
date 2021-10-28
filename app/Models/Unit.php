@@ -21,7 +21,7 @@ class Unit extends Model
             'rec_id' => 'required | unique:units,rec_id',
         ];
 
-    protected $appends = ['show_name','parentable_type','parentable_id'];
+    protected $appends = ['show_name', 'parentable_type', 'parentable_id'];
 
     public function getShowNameAttribute()
     {
@@ -34,7 +34,8 @@ class Unit extends Model
      * @return mixed
      */
     public function saveFormData($item, $request)
-    {if (isset($request->short_name)) $item->short_name = $request->short_name;
+    {
+        if (isset($request->short_name)) $item->short_name = $request->short_name;
         if (isset($request->long_name)) $item->long_name = $request->long_name;
         if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
         if (isset($request->contact_person)) $item->contact_person = $request->contact_person;

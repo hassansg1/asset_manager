@@ -24,8 +24,13 @@ if (!function_exists('universalDateFormatter')) {
 if (!function_exists('flashSession')) {
     function flashSession($message, $type = 'success')
     {
+        if(Session::get('approvalRequest') == 1)
+        {
+            $message = 'Change submitted for approval';
+            Session::forget('approvalRequest');
+        }
         Session::flash('message', $message);
-        Session::flash('alert-class', 'alert-' . $type);
+        Session::flash('alert-class', $type);
     }
 }
 

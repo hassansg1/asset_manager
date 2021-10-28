@@ -136,6 +136,43 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<div class="modal fade bs-example-modal-center" id="justification_modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" id="justification_modal_content">
+            <div class="modal-header">
+                <h5 class="modal-title">Change Justification</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="change_justification">Reason For change</label>
+                <textarea class="form-control" id="change_justification"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="saveReason()" class="btn btn-primary pull-right">Save</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<div class="modal fade bs-example-modal-center" id="rejection_modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" id="rejection_modal_content">
+            <div class="modal-header">
+                <h5 class="modal-title">Rejection Reason</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="rejection_url" value="">
+                <label for="change_rejection">Reason For Rejection</label>
+                <textarea class="form-control" id="change_rejection"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="saveRejectionReason()" class="btn btn-primary pull-right">Save</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
 <div class="modal fade bs-example-modal-center" id="center_modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content" id="center_modal_content">
@@ -160,7 +197,7 @@
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+</div>
 <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
      aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">

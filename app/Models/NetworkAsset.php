@@ -25,7 +25,7 @@ class NetworkAsset extends Model
             'rec_id' => 'required | unique:network_assets,rec_id',
         ];
 
-    protected $appends = ['name'];
+    protected $appends = ['show_name'];];
 
     public function getShowNameAttribute()
     {

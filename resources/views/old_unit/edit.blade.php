@@ -9,7 +9,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <form method="post" enctype="multipart/form-data" action="{{ route($route.'.store') }}">
+                    <form class="item_form" method="post" enctype="multipart/form-data" action="{{ route($route.'.store') }}">
                         @include($route.'.edit_form')
                     </form>
                 </div>

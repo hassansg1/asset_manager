@@ -15,8 +15,6 @@ trait ParentTrait
     {
         if (isset($request->parent)) {
             $prt = explode('??', $request->parent);
-            $item->parentable_type = $prt[0] ?? '';
-            $item->parentable_id = $prt[1] ?? '';
             Parentable::addNew($prt[0] ?? null, $prt[1] ?? null, self::class, $item->id);
         }
     }

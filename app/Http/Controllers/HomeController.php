@@ -133,4 +133,14 @@ class HomeController extends BaseController
     {
         Session::forget('message');
     }
+
+    public function saveJustificationReason(Request $request)
+    {
+        Session::put('reason', $request->reason);
+    }
+
+    public function saveRejectionReason(Request $request)
+    {
+        Session::put('rejection_reason', $request->reason);
+    }
 }

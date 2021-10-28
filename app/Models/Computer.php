@@ -22,7 +22,7 @@ class Computer extends Model
             'rec_id' => 'required | unique:computer_assets,rec_id',
         ];
 
-    protected $appends = ['name'];
+    protected $appends = ['show_name'];
 
     public function getShowNameAttribute()
     {
