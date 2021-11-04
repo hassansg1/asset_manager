@@ -1,0 +1,599 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"ab8ba830-06d6-43b5-99c0-f1ea02c95852\" name=\"Changes\" comment=\"ss\">\r\n      <change afterPath=\"$PROJECT_DIR$/app/Models/Notification.php\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/database/migrations/2021_10_28_123145_create_notifications_table.php\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/database/migrations/2021_10_28_123712_create_notification_user_table.php\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/database/migrations/2021_10_28_124051_create_configurations_table.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/Http/Controllers/ApprovalController.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/Http/Controllers/ApprovalController.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/Http/Controllers/LogController.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/Http/Controllers/LogController.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/Http/Traits/Observable.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/Http/Traits/Observable.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/Models/Log.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/Models/Log.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/Models/User.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/Models/User.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/helpers.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/helpers.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/database/migrations/2021_10_18_052651_create_logs_table.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/database/migrations/2021_10_18_052651_create_logs_table.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/resources/views/approval/index.blade.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/resources/views/approval/index.blade.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/resources/views/layouts/topbar.blade.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/resources/views/layouts/topbar.blade.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/resources/views/log/index.blade.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/resources/views/log/index.blade.php\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\" doNotAsk=\"true\" synchronizationState=\"SYNCHRONIZE\">\r\n    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>\r\n  </component>\r\n  <component name=\"DatabaseView\">\r\n    <option name=\"SHOW_INTERMEDIATE\" value=\"true\" />\r\n    <option name=\"GROUP_DATA_SOURCES\" value=\"true\" />\r\n    <option name=\"GROUP_SCHEMA\" value=\"true\" />\r\n    <option name=\"GROUP_CONTENTS\" value=\"false\" />\r\n    <option name=\"SORT_POSITIONED\" value=\"false\" />\r\n    <option name=\"SHOW_EMPTY_GROUPS\" value=\"false\" />\r\n    <option name=\"AUTO_SCROLL_FROM_SOURCE\" value=\"false\" />\r\n    <option name=\"HIDDEN_KINDS\">\r\n      <set />\r\n    </option>\r\n    <expand />\r\n    <select />\r\n  </component>\r\n  <component name=\"FileEditorManager\">\r\n    <leaf SIDE_TABS_SIZE_LIMIT_KEY=\"300\">\r\n      <file pinned=\"false\" current-in-tab=\"false\">\r\n        <entry file=\"file://$PROJECT_DIR$/resources/views/layouts/topbar.blade.php\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"424\">\r\n              <caret line=\"215\" column=\"35\" selection-start-line=\"215\" selection-start-column=\"35\" selection-end-line=\"215\" selection-end-column=\"35\" />\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n      <file pinned=\"false\" current-in-tab=\"false\">\r\n        <entry file=\"file://$PROJECT_DIR$/app/Models/Log.php\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"476\">\r\n              <caret line=\"50\" selection-start-line=\"50\" selection-end-line=\"50\" />\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n      <file pinned=\"false\" current-in-tab=\"true\">\r\n        <entry file=\"file://$PROJECT_DIR$/app/helpers.php\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"528\">\r\n              <caret line=\"216\" selection-start-line=\"216\" selection-end-line=\"216\" />\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n      <file pinned=\"false\" current-in-tab=\"false\">\r\n        <entry file=\"file://$PROJECT_DIR$/app/Models/Notification.php\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"528\">\r\n              <caret line=\"84\" column=\"50\" selection-start-line=\"84\" selection-start-column=\"50\" selection-end-line=\"84\" selection-end-column=\"50\" />\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n      <file pinned=\"false\" current-in-tab=\"false\">\r\n        <entry file=\"file://$PROJECT_DIR$/app/Http/Controllers/UnitController.php\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"442\">\r\n              <caret line=\"30\" column=\"29\" selection-start-line=\"30\" selection-start-column=\"29\" selection-end-line=\"30\" selection-end-column=\"29\" />\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n      <file pinned=\"false\" current-in-tab=\"false\">\r\n        <entry file=\"file://$PROJECT_DIR$/app/Http/Controllers/BaseController.php\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"476\">\r\n              <caret line=\"53\" selection-start-line=\"53\" selection-end-line=\"53\" />\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n      <file pinned=\"false\" current-in-tab=\"false\">\r\n        <entry file=\"file://$PROJECT_DIR$/resources/views/filters/common.blade.php\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"119\">\r\n              <caret line=\"7\" selection-start-line=\"7\" selection-end-line=\"7\" />\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n      <file pinned=\"false\" current-in-tab=\"false\">\r\n        <entry file=\"file://$PROJECT_DIR$/resources/views/components/edit_delete_button.blade.php\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\" />\r\n        </entry>\r\n      </file>\r\n      <file pinned=\"false\" current-in-tab=\"false\">\r\n        <entry file=\"file://$PROJECT_DIR$/app/Models/User.php\">\r\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n            <state relative-caret-position=\"494\">\r\n              <caret line=\"129\" column=\"37\" selection-start-line=\"129\" selection-start-column=\"20\" selection-end-line=\"129\" selection-end-column=\"37\" />\r\n            </state>\r\n          </provider>\r\n        </entry>\r\n      </file>\r\n    </leaf>\r\n  </component>\r\n  <component name=\"FindInProjectRecents\">\r\n    <findStrings>\r\n      <find>name</find>\r\n      <find>compamy_id</find>\r\n      <find>-&gt;string('name', '255')</find>\r\n      <find>$item-&gt;code</find>\r\n      <find>short_name</find>\r\n      <find>code</find>\r\n      <find>if (isset($request-&gt;code)) $item-&gt;code = $request-&gt;code</find>\r\n      <find>&lt;td&gt;{{ $item-&gt;code }}&lt;/td&gt;</find>\r\n      <find>{{ $row-&gt;show_name }}&lt;/option&gt;</find>\r\n      <find>asset_id</find>\r\n      <find>building_id</find>\r\n      <find>cabinet_id</find>\r\n      <find>company_id</find>\r\n      <find>room_id</find>\r\n      <find>site_id</find>\r\n      <find>sub_site_id</find>\r\n      <find>unit_id</find>\r\n      <find>logImplodeAssoc</find>\r\n      <find>logChange</find>\r\n      <find>impo</find>\r\n      <find>import</find>\r\n      <find>pagination</find>\r\n      <find>'</find>\r\n      <find>Attribute()</find>\r\n      <find>item-&gt;changes(</find>\r\n      <find>getNameAttribute</find>\r\n      <find>{{ $item-&gt;model }}</find>\r\n      <find>notifica</find>\r\n      <find>fulls</find>\r\n    </findStrings>\r\n    <replaceStrings>\r\n      <replace>asset_id</replace>\r\n      <replace>building_id</replace>\r\n      <replace>room_id</replace>\r\n      <replace>sub_site_id</replace>\r\n      <replace>unit_id</replace>\r\n      <replace>if (isset($request-&gt;code)) $item-&gt;code = $request-&gt;code</replace>\r\n      <replace>company_id</replace>\r\n      <replace>-&gt;string('name', '255')-&gt;nullable()</replace>\r\n      <replace>site_id</replace>\r\n      <replace>parent</replace>\r\n      <replace>cabinet_id</replace>\r\n      <replace>if (isset($request-&gt;asset_id)) $item-&gt;asset_id = $request-&gt;asset_id</replace>\r\n      <replace>&lt;td&gt;{{ $item-&gt;asset_id }}&lt;/td&gt;</replace>\r\n      <replace>{{ $row-&gt;show_name }}&lt;/option&gt;</replace>\r\n      <replace>rec_id</replace>\r\n      <replace>{{ explod() }}</replace>\r\n      <replace>{{ explod('\\\\',$item-&gt;model)[2] }}</replace>\r\n    </replaceStrings>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"IdeDocumentHistory\">\r\n    <option name=\"CHANGED_PATHS\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/resources/views/computer/form_rows.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/computer/index.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Models/NetworkAsset.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/network/form_rows.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/network/index.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/database/migrations/2021_08_05_105059_create_units_table.php\" />\r\n        <option value=\"$PROJECT_DIR$/database/migrations/2021_08_05_105128_create_sites_table.php\" />\r\n        <option value=\"$PROJECT_DIR$/database/migrations/2021_08_05_110739_create_buildings_table.php\" />\r\n        <option value=\"$PROJECT_DIR$/database/migrations/2021_08_05_114830_create_rooms_table.php\" />\r\n        <option value=\"$PROJECT_DIR$/database/migrations/2021_08_05_114945_create_cabinets_table.php\" />\r\n        <option value=\"$PROJECT_DIR$/database/migrations/2021_08_31_111354_create_sub_site_table.php\" />\r\n        <option value=\"$PROJECT_DIR$/database/migrations/2021_09_16_075214_create_computer_assets_table.php\" />\r\n        <option value=\"$PROJECT_DIR$/database/migrations/2021_09_16_123140_create_network_assets_table.php\" />\r\n        <option value=\"$PROJECT_DIR$/database/migrations/2021_09_17_130345_create_lone_assets_table.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Models/Cabinet.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Models/Company.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Models/LoneAsset.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Models/Room.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Models/Site.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Models/SubSite.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Controllers/AjaxController.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Models/Building.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/components/form_errors.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/config/models.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/import/index.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Controllers/ImportController.php\" />\r\n        <option value=\"$PROJECT_DIR$/database/migrations/2021_10_18_050836_create_logs_table.php\" />\r\n        <option value=\"$PROJECT_DIR$/.env\" />\r\n        <option value=\"$PROJECT_DIR$/app/Models/Asset.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Models/Networks.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Models/Unit.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Controllers/UnitController.php\" />\r\n        <option value=\"$PROJECT_DIR$/routes/web.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/filters/common.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Models/Computer.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Traits/ParentTrait.php\" />\r\n        <option value=\"$PROJECT_DIR$/database/migrations/2021_10_18_052651_create_logs_table.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Controllers/ApprovalController.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/approval/index.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/log/index.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/database/migrations/2021_10_28_123712_create_notification_user_table.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Models/User.php\" />\r\n        <option value=\"$PROJECT_DIR$/database/migrations/2021_10_28_124051_create_configurations_table.php\" />\r\n        <option value=\"$PROJECT_DIR$/database/migrations/2021_10_28_123145_create_notifications_table.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Traits/Observable.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Controllers/LogController.php\" />\r\n        <option value=\"$PROJECT_DIR$/resources/views/layouts/topbar.blade.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Models/Notification.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Http/Controllers/BaseController.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/Models/Log.php\" />\r\n        <option value=\"$PROJECT_DIR$/app/helpers.php\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"PhpWorkspaceProjectConfiguration\">\r\n    <include_path>\r\n      <path value=\"$PROJECT_DIR$/vendor/graham-campbell/result-type\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/dragonmantank/cron-expression\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/webmozart/assert\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/swiftmailer/swiftmailer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/fideloper/proxy\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpoption/phpoption\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/lexer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/fakerphp/faker\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/var-dumper\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/inflector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/translation\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/translation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/service-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/string\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/process\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/routing\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php80\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php81\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php72\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php73\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-mbstring\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-ctype\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-iconv\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-kernel\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/mime\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-client-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-foundation\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/finder\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/error-handler\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/css-selector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/deprecation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/monolog/monolog\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/console\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/laravel/framework\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/laravel/serializable-closure\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/dflydev/dot-access-data\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/egulias/email-validator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/ramsey/uuid\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/vlucas/phpdotenv\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/ramsey/collection\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/league/flysystem\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/league/mime-type-detection\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/league/commonmark\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/league/config\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/facade/ignition\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/facade/ignition-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/nette/utils\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/facade/flare-client-php\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/brick/math\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/nette/schema\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/voku/portable-ascii\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/asm89/stack-cors\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/simple-cache\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/opis/closure\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/log\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/container\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/composer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/myclabs/deep-copy\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/phpunit\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/spatie/laravel-permission\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpspec/prophecy\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phar-io/manifest\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phar-io/version\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-code-coverage\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/complexity\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/instantiator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/comparator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/code-unit\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/cli-parser\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/lines-of-code\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/http-factory\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-timer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/theseer/tokenizer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-invoker\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-text-template\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/filp/whoops\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-file-iterator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/nunomaduro/collision\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/laravel/sail\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/laravel/ui\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/laravel/tinker\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/nikic/php-parser\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/hamcrest/hamcrest-php\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/version\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/diff\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/resource-operations\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/type\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/object-reflector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/recursion-context\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/global-state\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/object-enumerator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/environment\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/exporter\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/ralouphie/getallheaders\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/guzzlehttp/psr7\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/guzzlehttp/guzzle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/guzzlehttp/promises\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psy/psysh\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/fruitcake/laravel-cors\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/mockery/mockery\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/type-resolver\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/reflection-common\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/nesbot/carbon\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/http-client\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/http-message\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir\" />\r\n    </include_path>\r\n  </component>\r\n  <component name=\"ProjectFrameBounds\" extendedState=\"6\">\r\n    <option name=\"x\" value=\"905\" />\r\n    <option name=\"y\" value=\"290\" />\r\n    <option name=\"width\" value=\"1555\" />\r\n    <option name=\"height\" value=\"840\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1zUTng31QSf5JhbtL2pD65PAHGq\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <OptionsSetting value=\"false\" id=\"Update\" />\r\n  </component>\r\n  <component name=\"ProjectView\">\r\n    <navigator proportions=\"\" version=\"1\">\r\n      <foldersAlwaysOnTop value=\"true\" />\r\n    </navigator>\r\n    <panes>\r\n      <pane id=\"Scope\" />\r\n      <pane id=\"ProjectPane\">\r\n        <subPane>\r\n          <expand>\r\n            <path>\r\n              <item name=\"asset_manager\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"asset_manager\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"asset_manager\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"asset_manager\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"app\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"asset_manager\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"asset_manager\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"app\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"Models\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"asset_manager\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"asset_manager\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"database\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n            <path>\r\n              <item name=\"asset_manager\" type=\"b2602c69:ProjectViewProjectNode\" />\r\n              <item name=\"asset_manager\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"database\" type=\"462c0819:PsiDirectoryNode\" />\r\n              <item name=\"migrations\" type=\"462c0819:PsiDirectoryNode\" />\r\n            </path>\r\n          </expand>\r\n          <select />\r\n        </subPane>\r\n      </pane>\r\n    </panes>\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/resources/views\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\xampp\\htdocs\\asset_manager\\resources\\views\" />\r\n      <recent name=\"C:\\xampp\\htdocs\\asset_manager\\app\\Http\\Controllers\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunDashboard\">\r\n    <option name=\"ruleStates\">\r\n      <list>\r\n        <RuleState>\r\n          <option name=\"name\" value=\"ConfigurationTypeDashboardGroupingRule\" />\r\n        </RuleState>\r\n        <RuleState>\r\n          <option name=\"name\" value=\"StatusDashboardGroupingRule\" />\r\n        </RuleState>\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"phpunit.xml\" type=\"PHPUnitRunConfigurationType\" factoryName=\"PHPUnit\">\r\n      <TestRunner scope=\"XML\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" BundledDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" Dictionaries=\"0\" CorrectionsLimit=\"5\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" />\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"ab8ba830-06d6-43b5-99c0-f1ea02c95852\" name=\"Changes\" comment=\"\" />\r\n      <created>1634201841170</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1634201841170</updated>\r\n      <workItem from=\"1634201844389\" duration=\"3701000\" />\r\n      <workItem from=\"1634218857764\" duration=\"98000\" />\r\n      <workItem from=\"1634909700226\" duration=\"15000\" />\r\n      <workItem from=\"1634912923210\" duration=\"2344000\" />\r\n      <workItem from=\"1635124181593\" duration=\"1974000\" />\r\n      <workItem from=\"1635202886190\" duration=\"11614000\" />\r\n      <workItem from=\"1635221838196\" duration=\"961000\" />\r\n      <workItem from=\"1634827461330\" duration=\"15000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Changes\">\r\n      <created>1634539765654</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1634539765654</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Changes\">\r\n      <created>1634827468975</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1634827468975</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TimeTrackingManager\">\r\n    <option name=\"totallyTimeSpent\" value=\"15128000\" />\r\n  </component>\r\n  <component name=\"ToolWindowManager\">\r\n    <frame x=\"-7\" y=\"-7\" width=\"1550\" height=\"838\" extended-state=\"6\" />\r\n    <editor active=\"true\" />\r\n    <layout>\r\n      <window_info content_ui=\"combo\" id=\"Project\" order=\"0\" weight=\"0.25637585\" />\r\n      <window_info id=\"Structure\" order=\"1\" side_tool=\"true\" weight=\"0.25\" />\r\n      <window_info id=\"npm\" order=\"2\" side_tool=\"true\" />\r\n      <window_info id=\"Favorites\" order=\"3\" side_tool=\"true\" />\r\n      <window_info anchor=\"bottom\" id=\"Message\" order=\"0\" />\r\n      <window_info anchor=\"bottom\" id=\"Find\" order=\"1\" weight=\"0.3286119\" />\r\n      <window_info anchor=\"bottom\" id=\"Run\" order=\"2\" />\r\n      <window_info anchor=\"bottom\" id=\"Debug\" order=\"3\" weight=\"0.4\" />\r\n      <window_info anchor=\"bottom\" id=\"Cvs\" order=\"4\" weight=\"0.25\" />\r\n      <window_info anchor=\"bottom\" id=\"Inspection\" order=\"5\" weight=\"0.4\" />\r\n      <window_info anchor=\"bottom\" id=\"TODO\" order=\"6\" />\r\n      <window_info anchor=\"bottom\" id=\"Docker\" order=\"7\" show_stripe_button=\"false\" />\r\n      <window_info anchor=\"bottom\" id=\"Version Control\" order=\"8\" weight=\"0.55382437\" />\r\n      <window_info anchor=\"bottom\" id=\"Database Changes\" order=\"9\" />\r\n      <window_info anchor=\"bottom\" id=\"Event Log\" order=\"10\" side_tool=\"true\" weight=\"0.3286119\" />\r\n      <window_info anchor=\"bottom\" auto_hide=\"true\" id=\"Terminal\" order=\"11\" weight=\"0.3286119\" />\r\n      <window_info anchor=\"right\" id=\"Commander\" internal_type=\"SLIDING\" order=\"0\" type=\"SLIDING\" weight=\"0.4\" />\r\n      <window_info anchor=\"right\" id=\"Ant Build\" order=\"1\" weight=\"0.25\" />\r\n      <window_info anchor=\"right\" content_ui=\"combo\" id=\"Hierarchy\" order=\"2\" weight=\"0.25\" />\r\n      <window_info anchor=\"right\" id=\"Database\" order=\"3\" />\r\n    </layout>\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"RECENTLY_FILTERED_USER_GROUPS\">\r\n                <collection />\r\n              </option>\r\n              <option name=\"RECENTLY_FILTERED_BRANCH_GROUPS\">\r\n                <collection />\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_FILTERS\">\r\n      <map>\r\n        <entry key=\"Branch\">\r\n          <value>\r\n            <list />\r\n          </value>\r\n        </entry>\r\n        <entry key=\"User\">\r\n          <value>\r\n            <list />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"sas\" />\r\n    <MESSAGE value=\"Changes\" />\r\n    <MESSAGE value=\"ss\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"ss\" />\r\n  </component>\r\n  <component name=\"editorHistoryManager\">\r\n    <entry file=\"file://$PROJECT_DIR$/app/Models/Asset.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"255\">\r\n          <caret line=\"17\" column=\"45\" selection-start-line=\"17\" selection-start-column=\"45\" selection-end-line=\"17\" selection-end-column=\"45\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Models/Networks.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"29\">\r\n          <caret line=\"5\" column=\"12\" selection-start-line=\"5\" selection-start-column=\"12\" selection-end-line=\"5\" selection-end-column=\"12\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Models/Unit.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"306\">\r\n          <caret line=\"18\" column=\"9\" selection-start-line=\"18\" selection-start-column=\"9\" selection-end-line=\"18\" selection-end-column=\"9\" />\r\n          <folding>\r\n            <element signature=\"e#30#61#0#PHP\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/routes/web.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"119\">\r\n          <caret line=\"32\" column=\"45\" lean-forward=\"true\" selection-start-line=\"32\" selection-start-column=\"45\" selection-end-line=\"32\" selection-end-column=\"45\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/user/index.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"187\">\r\n          <caret line=\"11\" lean-forward=\"true\" selection-end-line=\"11\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/user/form_rows.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state>\r\n          <caret selection-end-line=\"13\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/filters/pagination.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"289\">\r\n          <caret line=\"17\" column=\"17\" selection-start-line=\"17\" selection-start-column=\"12\" selection-end-line=\"17\" selection-end-column=\"17\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"227\">\r\n          <caret line=\"137\" column=\"20\" selection-start-line=\"137\" selection-start-column=\"20\" selection-end-line=\"137\" selection-end-column=\"20\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/database/migrations/2021_10_18_052651_create_logs_table.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"324\">\r\n          <caret line=\"22\" column=\"40\" selection-start-line=\"22\" selection-start-column=\"40\" selection-end-line=\"22\" selection-end-column=\"40\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Models/Computer.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"204\">\r\n          <caret line=\"12\" column=\"14\" selection-start-line=\"12\" selection-start-column=\"14\" selection-end-line=\"12\" selection-end-column=\"14\" />\r\n          <folding>\r\n            <element signature=\"e#30#61#0#PHP\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Traits/ParentTrait.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"357\">\r\n          <caret line=\"22\" selection-start-line=\"22\" selection-start-column=\"2\" selection-end-line=\"28\" selection-end-column=\"7\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/components/datatable.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"493\">\r\n          <caret line=\"29\" column=\"40\" selection-start-line=\"29\" selection-start-column=\"40\" selection-end-line=\"29\" selection-end-column=\"40\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Controllers/CompanyController.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"442\">\r\n          <caret line=\"30\" column=\"27\" selection-start-line=\"30\" selection-start-column=\"27\" selection-end-line=\"30\" selection-end-column=\"27\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/database/migrations/2021_10_28_123441_create_users_notifications_table.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\" />\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/database/migrations/2021_10_28_123712_create_notification_user_table.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"272\">\r\n          <caret line=\"18\" column=\"47\" selection-start-line=\"18\" selection-start-column=\"47\" selection-end-line=\"18\" selection-end-column=\"47\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/log/index.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"306\">\r\n          <caret line=\"30\" column=\"63\" selection-start-line=\"30\" selection-start-column=\"63\" selection-end-line=\"30\" selection-end-column=\"63\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/approval/index.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"408\">\r\n          <caret line=\"30\" selection-start-line=\"30\" selection-end-line=\"31\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Controllers/ApprovalController.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"289\">\r\n          <caret line=\"19\" column=\"93\" selection-start-line=\"19\" selection-start-column=\"93\" selection-end-line=\"19\" selection-end-column=\"93\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/database/migrations/2021_10_28_124051_create_configurations_table.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"425\">\r\n          <caret line=\"27\" column=\"7\" lean-forward=\"true\" selection-start-line=\"27\" selection-start-column=\"7\" selection-end-line=\"27\" selection-end-column=\"7\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/../theme_skote/Admin/Admin/resources/views/layouts/topbar.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"189\">\r\n          <caret line=\"381\" column=\"14\" lean-forward=\"true\" selection-start-line=\"296\" selection-start-column=\"8\" selection-end-line=\"381\" selection-end-column=\"14\" />\r\n          <folding>\r\n            <element signature=\"n#div#4;n#div#1;n#div#0;n#header#0;n#!!top\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Controllers/LogController.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"352\">\r\n          <caret line=\"105\" selection-start-line=\"105\" selection-end-line=\"105\" />\r\n          <folding>\r\n            <element signature=\"e#40#59#0#PHP\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/database/migrations/2021_10_28_123145_create_notifications_table.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"272\">\r\n          <caret line=\"18\" column=\"33\" selection-start-line=\"18\" selection-start-column=\"33\" selection-end-line=\"18\" selection-end-column=\"33\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Traits/Observable.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"221\">\r\n          <caret line=\"44\" column=\"9\" selection-start-line=\"44\" selection-start-column=\"9\" selection-end-line=\"44\" selection-end-column=\"9\" />\r\n          <folding>\r\n            <element signature=\"e#35#63#0#PHP\" expanded=\"true\" />\r\n          </folding>\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/layouts/topbar.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"424\">\r\n          <caret line=\"215\" column=\"35\" selection-start-line=\"215\" selection-start-column=\"35\" selection-end-line=\"215\" selection-end-column=\"35\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Models/User.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"494\">\r\n          <caret line=\"129\" column=\"37\" selection-start-line=\"129\" selection-start-column=\"20\" selection-end-line=\"129\" selection-end-column=\"37\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Controllers/UnitController.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"442\">\r\n          <caret line=\"30\" column=\"29\" selection-start-line=\"30\" selection-start-column=\"29\" selection-end-line=\"30\" selection-end-column=\"29\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/components/edit_delete_button.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\" />\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Http/Controllers/BaseController.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"476\">\r\n          <caret line=\"53\" selection-start-line=\"53\" selection-end-line=\"53\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/resources/views/filters/common.blade.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"119\">\r\n          <caret line=\"7\" selection-start-line=\"7\" selection-end-line=\"7\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Models/Notification.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"528\">\r\n          <caret line=\"84\" column=\"50\" selection-start-line=\"84\" selection-start-column=\"50\" selection-end-line=\"84\" selection-end-column=\"50\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/Models/Log.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"476\">\r\n          <caret line=\"50\" selection-start-line=\"50\" selection-end-line=\"50\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n    <entry file=\"file://$PROJECT_DIR$/app/helpers.php\">\r\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\r\n        <state relative-caret-position=\"528\">\r\n          <caret line=\"216\" selection-start-line=\"216\" selection-end-line=\"216\" />\r\n        </state>\r\n      </provider>\r\n    </entry>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 2df2c1a6836891b7b229d360c02ee5589cb51b6c)
++++ .idea/workspace.xml	(date 1636036451256)
+@@ -1,22 +1,26 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="BranchesTreeState">
++    <expand>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++    </expand>
++    <select />
++  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="ab8ba830-06d6-43b5-99c0-f1ea02c95852" name="Changes" comment="ss">
+-      <change afterPath="$PROJECT_DIR$/app/Models/Notification.php" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_10_28_123145_create_notifications_table.php" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_10_28_123712_create_notification_user_table.php" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_10_28_124051_create_configurations_table.php" afterDir="false" />
++    <list default="true" id="48d9b886-9222-41c8-b3bc-00d2bc7dc536" name="Default Changelist" comment="multiple row modals">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApprovalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApprovalController.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LogController.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/Http/Traits/Observable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Traits/Observable.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/Models/Log.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Log.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_18_052651_create_logs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_18_052651_create_logs_table.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/resources/views/approval/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/approval/index.blade.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/resources/views/log/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/log/index.blade.php" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -25,6 +29,7 @@
+   </component>
+   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
++    <execution />
+   </component>
+   <component name="DatabaseView">
+     <option name="SHOW_INTERMEDIATE" value="true" />
+@@ -39,87 +44,6 @@
+     </option>
+     <expand />
+     <select />
+-  </component>
+-  <component name="FileEditorManager">
+-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+-      <file pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/topbar.blade.php">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="424">
+-              <caret line="215" column="35" selection-start-line="215" selection-start-column="35" selection-end-line="215" selection-end-column="35" />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/app/Models/Log.php">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="476">
+-              <caret line="50" selection-start-line="50" selection-end-line="50" />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file pinned="false" current-in-tab="true">
+-        <entry file="file://$PROJECT_DIR$/app/helpers.php">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="528">
+-              <caret line="216" selection-start-line="216" selection-end-line="216" />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/app/Models/Notification.php">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="528">
+-              <caret line="84" column="50" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UnitController.php">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="442">
+-              <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BaseController.php">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="476">
+-              <caret line="53" selection-start-line="53" selection-end-line="53" />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/resources/views/filters/common.blade.php">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="119">
+-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/resources/views/components/edit_delete_button.blade.php">
+-          <provider selected="true" editor-type-id="text-editor" />
+-        </entry>
+-      </file>
+-      <file pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/app/Models/User.php">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="494">
+-              <caret line="129" column="37" selection-start-line="129" selection-start-column="20" selection-end-line="129" selection-end-column="37" />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-    </leaf>
+   </component>
+   <component name="FindInProjectRecents">
+     <findStrings>
+@@ -184,63 +108,6 @@
+       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+     </file-type-list>
+   </component>
+-  <component name="IdeDocumentHistory">
+-    <option name="CHANGED_PATHS">
+-      <list>
+-        <option value="$PROJECT_DIR$/resources/views/computer/form_rows.blade.php" />
+-        <option value="$PROJECT_DIR$/resources/views/computer/index.blade.php" />
+-        <option value="$PROJECT_DIR$/app/Models/NetworkAsset.php" />
+-        <option value="$PROJECT_DIR$/resources/views/network/form_rows.blade.php" />
+-        <option value="$PROJECT_DIR$/resources/views/network/index.blade.php" />
+-        <option value="$PROJECT_DIR$/database/migrations/2021_08_05_105059_create_units_table.php" />
+-        <option value="$PROJECT_DIR$/database/migrations/2021_08_05_105128_create_sites_table.php" />
+-        <option value="$PROJECT_DIR$/database/migrations/2021_08_05_110739_create_buildings_table.php" />
+-        <option value="$PROJECT_DIR$/database/migrations/2021_08_05_114830_create_rooms_table.php" />
+-        <option value="$PROJECT_DIR$/database/migrations/2021_08_05_114945_create_cabinets_table.php" />
+-        <option value="$PROJECT_DIR$/database/migrations/2021_08_31_111354_create_sub_site_table.php" />
+-        <option value="$PROJECT_DIR$/database/migrations/2021_09_16_075214_create_computer_assets_table.php" />
+-        <option value="$PROJECT_DIR$/database/migrations/2021_09_16_123140_create_network_assets_table.php" />
+-        <option value="$PROJECT_DIR$/database/migrations/2021_09_17_130345_create_lone_assets_table.php" />
+-        <option value="$PROJECT_DIR$/app/Models/Cabinet.php" />
+-        <option value="$PROJECT_DIR$/app/Models/Company.php" />
+-        <option value="$PROJECT_DIR$/app/Models/LoneAsset.php" />
+-        <option value="$PROJECT_DIR$/app/Models/Room.php" />
+-        <option value="$PROJECT_DIR$/app/Models/Site.php" />
+-        <option value="$PROJECT_DIR$/app/Models/SubSite.php" />
+-        <option value="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" />
+-        <option value="$PROJECT_DIR$/app/Models/Building.php" />
+-        <option value="$PROJECT_DIR$/resources/views/components/form_errors.blade.php" />
+-        <option value="$PROJECT_DIR$/config/models.php" />
+-        <option value="$PROJECT_DIR$/resources/views/import/index.blade.php" />
+-        <option value="$PROJECT_DIR$/app/Http/Controllers/ImportController.php" />
+-        <option value="$PROJECT_DIR$/database/migrations/2021_10_18_050836_create_logs_table.php" />
+-        <option value="$PROJECT_DIR$/.env" />
+-        <option value="$PROJECT_DIR$/app/Models/Asset.php" />
+-        <option value="$PROJECT_DIR$/app/Models/Networks.php" />
+-        <option value="$PROJECT_DIR$/app/Models/Unit.php" />
+-        <option value="$PROJECT_DIR$/app/Http/Controllers/UnitController.php" />
+-        <option value="$PROJECT_DIR$/routes/web.php" />
+-        <option value="$PROJECT_DIR$/resources/views/filters/common.blade.php" />
+-        <option value="$PROJECT_DIR$/app/Models/Computer.php" />
+-        <option value="$PROJECT_DIR$/app/Http/Traits/ParentTrait.php" />
+-        <option value="$PROJECT_DIR$/database/migrations/2021_10_18_052651_create_logs_table.php" />
+-        <option value="$PROJECT_DIR$/app/Http/Controllers/ApprovalController.php" />
+-        <option value="$PROJECT_DIR$/resources/views/approval/index.blade.php" />
+-        <option value="$PROJECT_DIR$/resources/views/log/index.blade.php" />
+-        <option value="$PROJECT_DIR$/database/migrations/2021_10_28_123712_create_notification_user_table.php" />
+-        <option value="$PROJECT_DIR$/app/Models/User.php" />
+-        <option value="$PROJECT_DIR$/database/migrations/2021_10_28_124051_create_configurations_table.php" />
+-        <option value="$PROJECT_DIR$/database/migrations/2021_10_28_123145_create_notifications_table.php" />
+-        <option value="$PROJECT_DIR$/app/Http/Traits/Observable.php" />
+-        <option value="$PROJECT_DIR$/app/Http/Controllers/LogController.php" />
+-        <option value="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" />
+-        <option value="$PROJECT_DIR$/app/Models/Notification.php" />
+-        <option value="$PROJECT_DIR$/app/Http/Controllers/BaseController.php" />
+-        <option value="$PROJECT_DIR$/app/Models/Log.php" />
+-        <option value="$PROJECT_DIR$/app/helpers.php" />
+-      </list>
+-    </option>
+-  </component>
+   <component name="PhpWorkspaceProjectConfiguration">
+     <include_path>
+       <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
+@@ -358,6 +225,13 @@
+       <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+       <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
++      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
++      <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
++      <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
++      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
++      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
++      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
++      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+     </include_path>
+   </component>
+   <component name="ProjectFrameBounds" extendedState="6">
+@@ -370,47 +244,6 @@
+   <component name="ProjectLevelVcsManager">
+     <OptionsSetting value="false" id="Update" />
+   </component>
+-  <component name="ProjectView">
+-    <navigator proportions="" version="1">
+-      <foldersAlwaysOnTop value="true" />
+-    </navigator>
+-    <panes>
+-      <pane id="Scope" />
+-      <pane id="ProjectPane">
+-        <subPane>
+-          <expand>
+-            <path>
+-              <item name="asset_manager" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="asset_manager" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="asset_manager" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="asset_manager" type="462c0819:PsiDirectoryNode" />
+-              <item name="app" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="asset_manager" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="asset_manager" type="462c0819:PsiDirectoryNode" />
+-              <item name="app" type="462c0819:PsiDirectoryNode" />
+-              <item name="Models" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="asset_manager" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="asset_manager" type="462c0819:PsiDirectoryNode" />
+-              <item name="database" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="asset_manager" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="asset_manager" type="462c0819:PsiDirectoryNode" />
+-              <item name="database" type="462c0819:PsiDirectoryNode" />
+-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-          </expand>
+-          <select />
+-        </subPane>
+-      </pane>
+-    </panes>
+-  </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+@@ -429,25 +262,13 @@
+       <recent name="C:\xampp\htdocs\asset_manager\app\Http\Controllers" />
+     </key>
+   </component>
+-  <component name="RunDashboard">
+-    <option name="ruleStates">
+-      <list>
+-        <RuleState>
+-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+-        </RuleState>
+-        <RuleState>
+-          <option name="name" value="StatusDashboardGroupingRule" />
+-        </RuleState>
+-      </list>
+-    </option>
+-  </component>
+   <component name="RunManager">
+     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+       <TestRunner scope="XML" />
+       <method v="2" />
+     </configuration>
+   </component>
+-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
++  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+   <component name="SvnConfiguration">
+     <configuration />
+   </component>
+@@ -484,35 +305,6 @@
+     <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+-  <component name="TimeTrackingManager">
+-    <option name="totallyTimeSpent" value="15128000" />
+-  </component>
+-  <component name="ToolWindowManager">
+-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+-    <editor active="true" />
+-    <layout>
+-      <window_info content_ui="combo" id="Project" order="0" weight="0.25637585" />
+-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+-      <window_info id="npm" order="2" side_tool="true" />
+-      <window_info id="Favorites" order="3" side_tool="true" />
+-      <window_info anchor="bottom" id="Message" order="0" />
+-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+-      <window_info anchor="bottom" id="Run" order="2" />
+-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+-      <window_info anchor="bottom" id="TODO" order="6" />
+-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.55382437" />
+-      <window_info anchor="bottom" id="Database Changes" order="9" />
+-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3286119" />
+-      <window_info anchor="bottom" auto_hide="true" id="Terminal" order="11" weight="0.3286119" />
+-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+-      <window_info anchor="right" id="Database" order="3" />
+-    </layout>
+-  </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
+@@ -521,14 +313,7 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State>
+-              <option name="RECENTLY_FILTERED_USER_GROUPS">
+-                <collection />
+-              </option>
+-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+-                <collection />
+-              </option>
+-            </State>
++            <State />
+           </value>
+         </entry>
+       </map>
+@@ -547,6 +332,7 @@
+         </entry>
+       </map>
+     </option>
++    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="sas" />
+@@ -554,237 +340,4 @@
+     <MESSAGE value="ss" />
+     <option name="LAST_COMMIT_MESSAGE" value="ss" />
+   </component>
+-  <component name="editorHistoryManager">
+-    <entry file="file://$PROJECT_DIR$/app/Models/Asset.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="255">
+-          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/app/Models/Networks.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="29">
+-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/app/Models/Unit.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="306">
+-          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+-          <folding>
+-            <element signature="e#30#61#0#PHP" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="119">
+-          <caret line="32" column="45" lean-forward="true" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/resources/views/user/index.blade.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="187">
+-          <caret line="11" lean-forward="true" selection-end-line="11" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/resources/views/user/form_rows.blade.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state>
+-          <caret selection-end-line="13" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/resources/views/filters/pagination.blade.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="289">
+-          <caret line="17" column="17" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="17" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="227">
+-          <caret line="137" column="20" selection-start-line="137" selection-start-column="20" selection-end-line="137" selection-end-column="20" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_10_18_052651_create_logs_table.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="324">
+-          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/app/Models/Computer.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="204">
+-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+-          <folding>
+-            <element signature="e#30#61#0#PHP" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/app/Http/Traits/ParentTrait.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="357">
+-          <caret line="22" selection-start-line="22" selection-start-column="2" selection-end-line="28" selection-end-column="7" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/resources/views/components/datatable.blade.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="493">
+-          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CompanyController.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="442">
+-          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_10_28_123441_create_users_notifications_table.php">
+-      <provider selected="true" editor-type-id="text-editor" />
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_10_28_123712_create_notification_user_table.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="272">
+-          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/resources/views/log/index.blade.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="306">
+-          <caret line="30" column="63" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/resources/views/approval/index.blade.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="408">
+-          <caret line="30" selection-start-line="30" selection-end-line="31" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApprovalController.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="289">
+-          <caret line="19" column="93" selection-start-line="19" selection-start-column="93" selection-end-line="19" selection-end-column="93" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_10_28_124051_create_configurations_table.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="425">
+-          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/../theme_skote/Admin/Admin/resources/views/layouts/topbar.blade.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="189">
+-          <caret line="381" column="14" lean-forward="true" selection-start-line="296" selection-start-column="8" selection-end-line="381" selection-end-column="14" />
+-          <folding>
+-            <element signature="n#div#4;n#div#1;n#div#0;n#header#0;n#!!top" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LogController.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="352">
+-          <caret line="105" selection-start-line="105" selection-end-line="105" />
+-          <folding>
+-            <element signature="e#40#59#0#PHP" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_10_28_123145_create_notifications_table.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="272">
+-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/app/Http/Traits/Observable.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="221">
+-          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+-          <folding>
+-            <element signature="e#35#63#0#PHP" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/topbar.blade.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="424">
+-          <caret line="215" column="35" selection-start-line="215" selection-start-column="35" selection-end-line="215" selection-end-column="35" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/app/Models/User.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="494">
+-          <caret line="129" column="37" selection-start-line="129" selection-start-column="20" selection-end-line="129" selection-end-column="37" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UnitController.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="442">
+-          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/resources/views/components/edit_delete_button.blade.php">
+-      <provider selected="true" editor-type-id="text-editor" />
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BaseController.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="476">
+-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/resources/views/filters/common.blade.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="119">
+-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/app/Models/Notification.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="528">
+-          <caret line="84" column="50" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/app/Models/Log.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="476">
+-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/app/helpers.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="528">
+-          <caret line="216" selection-start-line="216" selection-end-line="216" />
+-        </state>
+-      </provider>
+-    </entry>
+-  </component>
+ </project>
+\ No newline at end of file

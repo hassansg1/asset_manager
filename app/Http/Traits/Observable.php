@@ -3,6 +3,7 @@
 namespace App\Http\Traits;
 
 use App\Models\Notification;
+use App\Models\Task;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,7 +43,7 @@ trait Observable
         } elseif ($action == 'DELETED') {
             DB::table($model->getTable())->insert($model->getOriginal());
         }
-        Log::create([
+       $log =  Log::create([
             'user_id' => Auth::user()->id ?? null,
             'model' => static::class,
             'model_id' => $model->id,
@@ -59,7 +60,7 @@ trait Observable
         ]);
 
         Notification::addNotification(Notification::APPROVAL_REQUEST, 1);
-        Notification::addNotification(Notification::APPROVAL_REQUEST, 1);
+        Task::addTask(Notification::APPROVAL_REQUEST, 1,$log->id,$action.' '.$model->getTable(). ' entry');
 
         Session::put('approvalRequest', 1);
     }

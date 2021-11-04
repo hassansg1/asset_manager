@@ -63,4 +63,7 @@ class ComplianceData extends Model
 
 
     }
+    public function compliance(){
+        return $this->belongsTo(Compliance::class,'compliance_id');
+    }
 }

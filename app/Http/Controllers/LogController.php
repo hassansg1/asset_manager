@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Log;
 use App\Models\Notification;
+use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -91,6 +92,8 @@ class LogController extends Controller
     {
         $log = Log::find($id);
 
+        $taskId = $log->task->id;
+
         $arr = array_diff_key((array)$log->new(), ['id' => 'aa']);
         if ($log->action == 'CREATED') {
             DB::table($log->table_name)->insert((array)$log->new());
@@ -104,6 +107,9 @@ class LogController extends Controller
 
         Notification::addNotification(Notification::APPROVAL_REQUEST_APPROVED, $log->user_id);
         Log::addLog(currentUserId(), $log->model, $log->model_id, 'Approved', $log->table_name, 'Change Request Approved', $log->message, $log->models, 0, 0);
+        if($taskId){
+            Task::where('id',$taskId)->update(['status'=>Task::getTaskType('approval_request_close')]);
+        }
 
         return redirect()->back();
     }
@@ -118,16 +124,24 @@ class LogController extends Controller
         Notification::addNotification(Notification::APPROVAL_REQUEST_REJECTED, $log->user_id);
         Log::addLog(currentUserId(), $log->model, $log->model_id, 'Rejected', $log->table_name, 'Change Request Rejected', $log->message, $log->models, 0, 0);
 
+        $taskId = $log->task->id;
+        if($taskId){
+            Task::where('id',$taskId)->update(['status'=>Task::getTaskType('approval_request_close')]);
+        }
         return redirect()->back();
     }
 
     public function remove($id)
     {
         $log = Log::find($id);
+        $taskId = $log->task->id;
         $log->delete();
 
         Notification::addNotification(Notification::APPROVAL_REQUEST_REJECTED, $log->user_id);
         Log::addLog(currentUserId(), $log->model, $log->model_id, 'DELETED', $log->table_name, 'Change Request Deleted', $log->message, $log->models, 0, 0);
+        if($taskId){
+            Task::where('id',$taskId)->update(['status'=>Task::getTaskType('approval_request_close')]);
+        }
         return redirect()->back();
 
     }

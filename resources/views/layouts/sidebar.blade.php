@@ -8,7 +8,7 @@
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li>
-                    <a href="" class="waves-effect">
+                    <a href="{{url('dashboard')}}" class="waves-effect">
                         <i class="far fa-dot-circle"></i>
                         <span class="badge rounded-pill bg-info float-end"></span>
                         <span key="t-dashboards">Dashboard</span>
