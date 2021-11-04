@@ -144,6 +144,8 @@ class ComplianceController extends BaseController
 
     public function storeComplaiceData(Request $request)
     {
+        // ComplianceData::
+
         dd($request->all());
     }
 

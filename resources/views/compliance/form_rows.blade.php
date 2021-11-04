@@ -5,23 +5,23 @@
         <td>{{ $item->clause }}</td>
         <td>{{ $item->section }}</td>
         <td>
-            <input type="radio" id="yes" name="applicable" value="yes">
+            <input type="radio" id="yes" name="applicable" value="yes" onclick="complianceStatusChange({{ $item->id }},'applicable',this.value);">
             <label for="html">Yes</label><br>
-            <input type="radio" id="no" name="applicable" value="no">
+            <input type="radio" id="no" name="applicable" value="no" onclick="complianceStatusChange({{ $item->id }},'applicable',this.value);">
             <label for="css">No</label><br>
         </td>
         <td>
             <input type="text" class="form-control">
         </td>
         <td>
-            <select class="form-control" name="compliant" id="">
+            <select class="form-control" name="compliant" id="" >
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
                 <option value="under_process">Under Process</option>
             </select>
         </td>
         <td>
-            <a href="#" data-bs-toggle="modal" data-bs-target=".image-upload-modal">
+            <a href="#" data-bs-toggle="modal" data-bs-target=".image-upload-modal-{{ $item->id }}">
                <i class="fa fa-file-image" aria-hidden="true"></i>
             </a>
         </td>
@@ -29,9 +29,9 @@
             @include('components.edit_delete_button')
         </td>
     </tr>
-@endforeach
 
-<div class="modal fade image-upload-modal" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="modal fade image-upload-modal-{{ $item->id }}" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -66,3 +66,5 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+@endforeach
