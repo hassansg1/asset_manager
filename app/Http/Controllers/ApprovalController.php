@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Log;
+use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -89,7 +90,6 @@ class ApprovalController extends Controller
     public function approve($id)
     {
         $log = Log::find($id);
-
         $arr = array_diff_key((array)$log->new(), ['id' => 'aa']);
         if ($log->action == 'CREATED') {
             DB::table($log->table_name)->insert((array)$log->new());

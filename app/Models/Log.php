@@ -2,18 +2,24 @@
 
 namespace App\Models;
 
+use App\Http\Traits\ParentTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Log extends Model
 {
     use HasFactory;
+    use ParentTrait;
 
     protected $guarded = [];
 
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+    public function task()
+    {
+        return $this->hasOne(Task::class, 'log_id');
     }
 
     public function getTypeAttribute()
