@@ -2,69 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab8ba830-06d6-43b5-99c0-f1ea02c95852" name="Changes" comment="ss">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ApprovalController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/approval/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/asset_manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/asset_manager.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Notification.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_10_28_123145_create_notifications_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_10_28_123712_create_notification_user_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_10_28_124051_create_configurations_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApprovalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApprovalController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UnitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UnitController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Traits/Observable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Traits/Observable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Traits/ParentTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Traits/ParentTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Asset.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Asset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Computer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Computer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Log.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Log.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/LoneAsset.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/LoneAsset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/NetworkAsset.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/NetworkAsset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Parentable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Parentable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Software.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Software.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Unit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Unit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_18_052651_create_logs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_18_052651_create_logs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/asset/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/asset/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/asset/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/asset/edit_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/building/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/building/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/building/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/building/edit_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/edit_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/edit_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/company/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/company/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/company/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/company/edit_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/edit_form_submit_btns.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/edit_form_submit_btns.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/form_submit_btns.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/form_submit_btns.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/modals.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/modals.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/computer/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/computer/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/computer/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/computer/edit_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/l_one/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/l_one/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/l_one/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/l_one/edit_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master_scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master_scripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/approval/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/approval/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/log/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/log/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/network/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/network/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/network/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/network/edit_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/networks/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/networks/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/networks/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/networks/edit_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/old_unit/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/old_unit/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/old_unit/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/old_unit/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/old_unit/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/old_unit/edit_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/permission/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/permission/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/permission/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/permission/edit_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/role/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/role/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/role/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/role/edit_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/room/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/room/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/room/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/room/edit_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/edit_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software/edit_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/subsite/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subsite/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/subsite/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subsite/edit_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/unit/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/unit/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/unit/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/unit/edit_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/edit_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/edit_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +25,6 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -88,6 +39,87 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/topbar.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="424">
+              <caret line="215" column="35" selection-start-line="215" selection-start-column="35" selection-end-line="215" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Log.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/helpers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="216" selection-start-line="216" selection-end-line="216" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Notification.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="84" column="50" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UnitController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BaseController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/filters/common.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/components/edit_delete_button.blade.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="129" column="37" selection-start-line="129" selection-start-column="20" selection-end-line="129" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -117,6 +149,9 @@
       <find>Attribute()</find>
       <find>item-&gt;changes(</find>
       <find>getNameAttribute</find>
+      <find>{{ $item-&gt;model }}</find>
+      <find>notifica</find>
+      <find>fulls</find>
     </findStrings>
     <replaceStrings>
       <replace>asset_id</replace>
@@ -134,6 +169,8 @@
       <replace>&lt;td&gt;{{ $item-&gt;asset_id }}&lt;/td&gt;</replace>
       <replace>{{ $row-&gt;show_name }}&lt;/option&gt;</replace>
       <replace>rec_id</replace>
+      <replace>{{ explod() }}</replace>
+      <replace>{{ explod('\\',$item-&gt;model)[2] }}</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -150,14 +187,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/building/form.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/room/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/room/form.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/room/form_rows.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cabinet/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cabinet/form.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cabinet/form_rows.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/assets_shared/basic_info.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/computer/form_rows.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/computer/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/NetworkAsset.php" />
@@ -181,7 +210,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" />
         <option value="$PROJECT_DIR$/app/Models/Building.php" />
         <option value="$PROJECT_DIR$/resources/views/components/form_errors.blade.php" />
-        <option value="$PROJECT_DIR$/app/helpers.php" />
         <option value="$PROJECT_DIR$/config/models.php" />
         <option value="$PROJECT_DIR$/resources/views/import/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ImportController.php" />
@@ -191,16 +219,25 @@
         <option value="$PROJECT_DIR$/app/Models/Networks.php" />
         <option value="$PROJECT_DIR$/app/Models/Unit.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UnitController.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2021_10_18_052651_create_logs_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/filters/common.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/LogController.php" />
         <option value="$PROJECT_DIR$/app/Models/Computer.php" />
         <option value="$PROJECT_DIR$/app/Http/Traits/ParentTrait.php" />
-        <option value="$PROJECT_DIR$/app/Models/Log.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_10_18_052651_create_logs_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ApprovalController.php" />
+        <option value="$PROJECT_DIR$/resources/views/approval/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/log/index.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_10_28_123712_create_notification_user_table.php" />
+        <option value="$PROJECT_DIR$/app/Models/User.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_10_28_124051_create_configurations_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_10_28_123145_create_notifications_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Traits/Observable.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/LogController.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" />
+        <option value="$PROJECT_DIR$/app/Models/Notification.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BaseController.php" />
+        <option value="$PROJECT_DIR$/app/Models/Log.php" />
+        <option value="$PROJECT_DIR$/app/helpers.php" />
       </list>
     </option>
   </component>
@@ -337,7 +374,42 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="asset_manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asset_manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asset_manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asset_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asset_manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asset_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asset_manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asset_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asset_manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asset_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -357,13 +429,25 @@
       <recent name="C:\xampp\htdocs\asset_manager\app\Http\Controllers" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -381,6 +465,7 @@
       <workItem from="1635124181593" duration="1974000" />
       <workItem from="1635202886190" duration="11614000" />
       <workItem from="1635221838196" duration="961000" />
+      <workItem from="1634827461330" duration="15000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <created>1634539765654</created>
@@ -389,28 +474,29 @@
       <option name="project" value="LOCAL" />
       <updated>1634539765654</updated>
     </task>
-    <task id="LOCAL-00002" summary="ss">
-      <created>1634876905205</created>
+    <task id="LOCAL-00002" summary="Changes">
+      <created>1634827468975</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1634876905205</updated>
+      <updated>1634827468975</updated>
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6364000" />
+    <option name="totallyTimeSpent" value="15128000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25637585" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -435,7 +521,14 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -454,7 +547,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="sas" />
@@ -477,13 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_10_18_052651_create_logs_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Unit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -491,20 +576,6 @@
           <folding>
             <element signature="e#30#61#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UnitController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="116" selection-start-line="116" selection-end-line="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/topbar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="133" column="42" selection-start-line="133" selection-start-column="42" selection-end-line="133" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -529,34 +600,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/filters/common.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/filters/pagination.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="17" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LogController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="18" column="74" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
-          <folding>
-            <element signature="e#40#59#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -567,9 +614,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_10_18_052651_create_logs_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Computer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="204">
           <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
           <folding>
             <element signature="e#30#61#0#PHP" expanded="true" />
@@ -579,22 +633,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Traits/ParentTrait.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="24" selection-start-line="24" selection-start-column="2" selection-end-line="30" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="43" selection-start-line="43" selection-end-line="50" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+        <state relative-caret-position="357">
+          <caret line="22" selection-start-line="22" selection-start-column="2" selection-end-line="28" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -612,24 +652,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Log.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_10_28_123441_create_users_notifications_table.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_10_28_123712_create_notification_user_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="35" column="23" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="23" />
+        <state relative-caret-position="272">
+          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/log/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
+        <state relative-caret-position="306">
+          <caret line="30" column="63" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/approval/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="30" selection-start-line="30" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApprovalController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="93" selection-start-line="19" selection-start-column="93" selection-end-line="19" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_10_28_124051_create_configurations_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../theme_skote/Admin/Admin/resources/views/layouts/topbar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="381" column="14" lean-forward="true" selection-start-line="296" selection-start-column="8" selection-end-line="381" selection-end-column="14" />
+          <folding>
+            <element signature="n#div#4;n#div#1;n#div#0;n#header#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LogController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="105" selection-start-line="105" selection-end-line="105" />
+          <folding>
+            <element signature="e#40#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_10_28_123145_create_notifications_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Traits/Observable.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+        <state relative-caret-position="221">
+          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+          <folding>
+            <element signature="e#35#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/topbar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="215" column="35" selection-start-line="215" selection-start-column="35" selection-end-line="215" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="129" column="37" selection-start-line="129" selection-start-column="20" selection-end-line="129" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UnitController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/components/edit_delete_button.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/filters/common.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Notification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="84" column="50" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Log.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="216" selection-start-line="216" selection-end-line="216" />
         </state>
       </provider>
     </entry>

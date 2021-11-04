@@ -2,6 +2,7 @@
 
 namespace App\Http\Traits;
 
+use App\Models\Notification;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 
@@ -56,6 +57,8 @@ trait Observable
                 'changed' => $action === 'UPDATED' ? $model->getChanges() : null,
             ])
         ]);
+
+        Notification::addNotification(Notification::APPROVAL_REQUEST, 1);
 
         Session::put('approvalRequest', 1);
     }

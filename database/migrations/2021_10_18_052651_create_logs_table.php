@@ -20,7 +20,7 @@ class CreateLogsTable extends Migration
             $table->integer('model_id');
             $table->text('reason');
             $table->string('table_name')->nullable();
-            $table->string('action', 7);
+            $table->string('action', 255);
             $table->text('message');
             $table->json('models');
             $table->integer('approved')->default(0);

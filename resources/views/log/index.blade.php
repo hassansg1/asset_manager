@@ -17,18 +17,18 @@
                                 <tr>
                                     <th>Type</th>
                                     <th>Id</th>
-                                    <th>Activity</th>
+                                    <th>Action</th>
                                     <th>Changes</th>
-                                    <th>Changed by</th>
-                                    <th>Changed At</th>
+                                    <th>Approved by</th>
+                                    <th>Approved At</th>
                                 </tr>
                                 </thead>
                                 <tbody id="">
                                 @foreach($items as $item)
                                     <tr>
-                                        <td>{{ $item->model }}</td>
+                                        <td>{{ explode('\\',$item->model)[2] }}</td>
                                         <td>{{ $item->recId() ?? '' }}</td>
-                                        <td>{{ $item->action }}</td>
+                                        <td>{{ $item->reason }}</td>
                                         <td>
                                             @if($item->descriptionItems())
                                                 @foreach($item->descriptionItems() as $key => $value)

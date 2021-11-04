@@ -17,7 +17,7 @@ class ApprovalController extends Controller
     {
         $logs = Log::where('approval_request', 1)->orderBy('id', 'desc')->get();
 
-        return view('approval.index')->with(['items' => $logs, 'heading' => 'Log', 'route' => 'log']);
+        return view('approval.index')->with(['items' => $logs, 'heading' => 'Approval Request', 'route' => 'log']);
     }
 
     /**

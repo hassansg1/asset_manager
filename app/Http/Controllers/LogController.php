@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Log;
+use App\Models\Notification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
@@ -14,9 +16,9 @@ class LogController extends Controller
      */
     public function index()
     {
-        $logs = Log::orderBy('id', 'desc')->get();
+        $logs = Log::orderBy('id', 'desc')->where('approval_request', 0)->get();
 
-        return view('log.index')->with(['items' => $logs, 'heading' => 'Approval Request', 'route' => 'log']);
+        return view('log.index')->with(['items' => $logs, 'heading' => 'Log', 'route' => 'log']);
     }
 
     /**
@@ -100,6 +102,9 @@ class LogController extends Controller
         $log->approved = 1;
         $log->save();
 
+        Notification::addNotification(Notification::APPROVAL_REQUEST_APPROVED, $log->user_id);
+        Log::addLog(currentUserId(), $log->model, $log->model_id, 'Approved', $log->table_name, 'Change Request Approved', $log->message, $log->models, 0, 0);
+
         return redirect()->back();
     }
 
@@ -110,6 +115,9 @@ class LogController extends Controller
         $log->approved = 2;
         $log->save();
 
+        Notification::addNotification(Notification::APPROVAL_REQUEST_REJECTED, $log->user_id);
+        Log::addLog(currentUserId(), $log->model, $log->model_id, 'Rejected', $log->table_name, 'Change Request Rejected', $log->message, $log->models, 0, 0);
+
         return redirect()->back();
     }
 
@@ -117,6 +125,10 @@ class LogController extends Controller
     {
         $log = Log::find($id);
         $log->delete();
+
+        Notification::addNotification(Notification::APPROVAL_REQUEST_REJECTED, $log->user_id);
+        Log::addLog(currentUserId(), $log->model, $log->model_id, 'DELETED', $log->table_name, 'Change Request Deleted', $log->message, $log->models, 0, 0);
         return redirect()->back();
+
     }
 }

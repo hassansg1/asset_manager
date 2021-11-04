@@ -24,8 +24,7 @@ if (!function_exists('universalDateFormatter')) {
 if (!function_exists('flashSession')) {
     function flashSession($message, $type = 'success')
     {
-        if(Session::get('approvalRequest') == 1)
-        {
+        if (Session::get('approvalRequest') == 1) {
             $message = 'Change submitted for approval';
             Session::forget('approvalRequest');
         }
@@ -182,7 +181,40 @@ if (!function_exists('getHelpSectionText')) {
 if (!function_exists('rec_id_replacer')) {
     function rec_id_replacer($error)
     {
-        return str_replace('rec id','id',$error);
+        return str_replace('rec id', 'id', $error);
+    }
+}
+
+
+if (!function_exists('currentUserId')) {
+    function currentUserId()
+    {
+        return Auth::user()->id ?? null;
+    }
+}
+
+
+if (!function_exists('getNotifications')) {
+    function getNotifications($limited = false)
+    {
+        $notifications = Auth::user()->userNotifications;
+        return $notifications;
+    }
+}
+
+
+if (!function_exists('formatFieldsForFrontEnd')) {
+    function formatFieldsForFrontEnd($obj)
+    {
+        $object = new stdClass();
+        if($obj)
+        {
+            foreach ($obj as $item => $value) {
+
+                $object->{ucwords(str_replace('_',' ',$item))} = $value;
+            }
+        }
+        return $object;
     }
 }
 

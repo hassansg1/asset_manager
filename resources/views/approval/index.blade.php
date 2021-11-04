@@ -28,7 +28,7 @@
                                 <tbody id="">
                                 @foreach($items as $item)
                                     <tr>
-                                        <td>{{ $item->model }}</td>
+                                        <td>{{ explode('\\',$item->model)[2] }}</td>
                                         <td>{{ $item->recId() ?? '' }}</td>
                                         <td>{{ $item->action }}</td>
                                         <td>{{ $item->reason }}</td>

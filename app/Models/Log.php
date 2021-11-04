@@ -29,33 +29,53 @@ class Log extends Model
 
     public function old()
     {
-        return json_decode($this->models)->old;
+        return formatFieldsForFrontEnd(json_decode($this->models)->old);
     }
 
 
     public function new()
     {
-        return json_decode($this->models)->new;
+        return formatFieldsForFrontEnd(json_decode($this->models)->new);
     }
 
     public function changes()
     {
-        return json_decode($this->models)->changed;
+        return formatFieldsForFrontEnd(json_decode($this->models)->changed);
     }
 
-    public function descriptionItems(){
-        if($this->action == 'CREATED') return $this->new() ?? null;
-        if($this->action == 'UPDATED') return $this->changes() ?? null;
-        if($this->action == 'DELETED') [];
+    public function descriptionItems()
+    {
+        if ($this->action == 'CREATED') return $this->new() ?? null;
+        if ($this->action == 'UPDATED') return $this->changes() ?? null;
+        if ($this->action == 'DELETED') [];
 
         return [];
     }
 
-    public function recId(){
-        if($this->action == 'CREATED') return $this->new()->rec_id ?? null;
-        if($this->action == 'UPDATED') return $this->new()->rec_id ?? null;
-        if($this->action == 'DELETED') return $this->old()->rec_id ?? null;
+    public function recId()
+    {
+        if ($this->action == 'CREATED') return $this->new()->rec_id ?? null;
+        if ($this->action == 'UPDATED') return $this->new()->rec_id ?? null;
+        if ($this->action == 'DELETED') return $this->old()->rec_id ?? null;
 
-        return [];
+        return null;
+    }
+
+    public static function addLog($userId, $model, $modelId, $reason, $tableName, $action, $message, $models, $approved, $approvalRequest = 0)
+    {
+        $log = new Log();
+        $log->user_id = $userId;
+        $log->model = $model;
+        $log->model_id = $modelId;
+        $log->reason = $reason;
+        $log->table_name = $tableName;
+        $log->action = $action;
+        $log->message = $message;
+        $log->models = $models;
+        $log->approved = $approved;
+        $log->approval_request = $approvalRequest;
+        $log->save();
+
+        return $log;
     }
 }

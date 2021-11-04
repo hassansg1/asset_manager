@@ -126,4 +126,9 @@ class User extends Authenticatable
         $this->updateAssetPermissions($request, $item);
         return $item;
     }
+
+    public function userNotifications()
+    {
+        return $this->belongsToMany(Notification::class);
+    }
 }
