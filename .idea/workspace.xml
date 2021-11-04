@@ -19,16 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48d9b886-9222-41c8-b3bc-00d2bc7dc536" name="Default Changelist" comment="multiple row modals">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/task/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/task/log_detail.blade.php" afterDir="false" />
+    <list default="true" id="48d9b886-9222-41c8-b3bc-00d2bc7dc536" name="Default Changelist" comment="task setting">
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApprovalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApprovalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Traits/Observable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Traits/Observable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Log.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Log.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/top_heading.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/top_heading.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ComplianceData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ComplianceData.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -209,15 +203,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/task" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp7.4\htdocs\newOffice\asset_manager\resources\views" />
       <recent name="D:\xampp7.4\htdocs\newOffice\asset_manager\resources\views\task" />
       <recent name="D:\xampp7.4\htdocs\newOffice\asset_manager\app\Http\Controllers" />
-      <recent name="D:\xampp7.4\htdocs\newOffice\asset_manager\resources\views" />
       <recent name="C:\xampp\htdocs\asset_manager\resources\views" />
       <recent name="C:\xampp\htdocs\asset_manager\app\Http\Controllers" />
     </key>
@@ -262,7 +256,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634827468975</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="task setting">
+      <created>1636044116309</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1636044116309</updated>
+    </task>
+    <task id="LOCAL-00004" summary="task setting">
+      <created>1636044171431</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1636044171431</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +306,8 @@
     <MESSAGE value="sas" />
     <MESSAGE value="Changes" />
     <MESSAGE value="ss" />
-    <option name="LAST_COMMIT_MESSAGE" value="ss" />
+    <MESSAGE value="task setting" />
+    <option name="LAST_COMMIT_MESSAGE" value="task setting" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1636042659241">
@@ -309,13 +318,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="129" y="54" key="MergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1636036706212" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1636044193851">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1636044193851" />
     <state x="389" y="99" width="587" height="530" key="find.popup" timestamp="1636039778328">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="389" y="99" width="587" height="530" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1636039778328" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1636039488871">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1636044420109">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1636039488871" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1636044420109" />
   </component>
 </project>

@@ -141,6 +141,9 @@
                     <a href="{{ route('compliance.index') }}" class="dropdown-item notify-item language" data-lang="eng">
                         <span class="align-middle">Compliance</span>
                     </a>
+                    <a href="{{ route('task') }}" class="dropdown-item notify-item language" data-lang="eng">
+                        <span class="align-middle">Task</span>
+                    </a>
                 </div>
             </div>
 
@@ -204,7 +207,7 @@
                                     {{--<i class="bx bx-cart"></i>--}}
                                 {{--</span>--}}
                                     {{--</div>--}}
-                                    @php 
+                                    @php
                                         $day1 = $notification->created_at;
                                         $day1 = strtotime($day1);
                                         $day2 =  date("Y-m-d h:i:sa");
@@ -213,7 +216,7 @@
                                         $diffHours = round(($day2 - $day1) / 3600*60*60);
                                         $d1 = date_create('@' . (($day2 = time()) + $diffHours))->diff(date_create('@' . $day2));
 
-                                        $dateTime =""; 
+                                        $dateTime ="";
                                         // $d3 = $d1->format('%a days %h hours %i minutes');
 
 
@@ -237,7 +240,7 @@
                                         {
                                             $dateTime =  date('d ,M Y',strtotime($notification->created_at));
                                         }
-                               
+
                                     @endphp
                                     <div class="media-body">
                                         <h6 class="mt-0 mb-1"

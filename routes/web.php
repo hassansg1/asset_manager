@@ -74,7 +74,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('log/remove/{id}',[\App\Http\Controllers\LogController::class,'remove']);
     Route::get('test', [\App\Http\Controllers\AjaxController::class, 'test']);
 
-    Route::get('task',[\App\Http\Controllers\TaskController::class,'index']);
+    Route::get('dashboard',[\App\Http\Controllers\DashBoardController::class,'index']);
+    Route::get('task',[\App\Http\Controllers\TaskController::class,'index'])->name('task');
     Route::get('task/detail/{id}',[\App\Http\Controllers\TaskController::class,'viewLogDetais']);
     Route::get('change/task/{id}/{status}',[\App\Http\Controllers\TaskController::class,'changeTaskStatus']);
 });
