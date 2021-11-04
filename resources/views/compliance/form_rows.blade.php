@@ -5,19 +5,20 @@
         <td>{{ $item->clause }}</td>
         <td>{{ $item->section }}</td>
         <td>
-            <input type="radio" id="yes" name="applicable" value="yes" onclick="complianceStatusChange({{ $item->id }},'applicable',this.value);">
+            <input type="radio" id="yes" name="applicable" value="{{ App\Models\ComplianceData::APPLICABLE_YES }}" onclick="complianceStatusChange({{ $item->id }},'applicable',this.value);">
             <label for="html">Yes</label><br>
-            <input type="radio" id="no" name="applicable" value="no" onclick="complianceStatusChange({{ $item->id }},'applicable',this.value);">
+            <input type="radio" id="no" name="applicable" value="{{ App\Models\ComplianceData::APPLICABLE_NO }}" onclick="complianceStatusChange({{ $item->id }},'applicable',this.value);">
             <label for="css">No</label><br>
         </td>
         <td>
             <input type="text" class="form-control">
         </td>
         <td>
-            <select class="form-control" name="compliant" id="" >
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-                <option value="under_process">Under Process</option>
+            <select class="form-control" name="compliant" onclick="complianceStatusChange({{ $item->id }},'compliant',this.value);">
+                <option value="{{ App\Models\ComplianceData::COMPLIANT_ALL }}">Select Compliant</option>
+                <option value="{{ App\Models\ComplianceData::COMPLIANT_YES }}">Yes</option>
+                <option value="{{ App\Models\ComplianceData::COMPLIANT_NO }}">No</option>
+                <option value="{{ App\Models\ComplianceData::COMPLIANT_UNDEP_ROCESS }}">Under Process</option>
             </select>
         </td>
         <td>
