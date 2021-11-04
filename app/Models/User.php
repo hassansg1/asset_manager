@@ -129,6 +129,6 @@ class User extends Authenticatable
 
     public function userNotifications()
     {
-        return $this->belongsToMany(Notification::class);
+        return $this->belongsToMany(Notification::class)->orderBy('created_at','DESC');
     }
 }

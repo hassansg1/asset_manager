@@ -51,6 +51,9 @@ Route::group(['middleware' => ['auth']], function () {
         'permission' => \App\Http\Controllers\PermissionController::class,
         'compliance_import' => \App\Http\Controllers\ComplianceImportController::class,
     ]);
+    //................. ComplainceData...........
+    Route::post('complianceData/store',[App\Http\Controllers\ComplianceController::class,'storeComplaiceData'])->name('compliance.storeComplaiceData');
+
     Route::group(['prefix' => 'assets'], function () {
         Route::resource('network', \App\Http\Controllers\NetworkAssetController::class);
         Route::resource('computer', \App\Http\Controllers\ComputerAssetController::class);

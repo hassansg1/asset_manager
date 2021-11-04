@@ -10,3 +10,7 @@
 @section('table_rows')
     @include($route.'.form_rows')
 @endsection
+
+@section('script')
+    @include('compliance.script')
+@endsection

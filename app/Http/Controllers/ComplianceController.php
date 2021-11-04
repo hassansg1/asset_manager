@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Building;
 use App\Models\Compliance;
+use App\Models\ComplianceData;
+use App\Models\ComplianceDataFiles;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Foundation\Application;
+
 
 class ComplianceController extends BaseController
 {
@@ -138,4 +141,15 @@ class ComplianceController extends BaseController
 
         return redirect(route($this->route . ".index"));
     }
+
+    public function storeComplaiceData(Request $request)
+    {
+        // ComplianceData::
+
+        dd($request->all());
+    }
+
+
+
+
 }
