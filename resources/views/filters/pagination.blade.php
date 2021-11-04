@@ -1,3 +1,4 @@
+@if(isset($data))
 <span class="mr-5">
   <span class="btn-group" role="group">
       <input type="hidden" value="10" name="per_page" id="per_page">
@@ -26,6 +27,7 @@
          <i class="fas fa-angle-right"></i>
 </button>
 </span>
+@endif
 <script>
     function changePerPage(val)
     {

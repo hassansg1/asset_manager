@@ -47,7 +47,9 @@ Route::group(['middleware' => ['auth']], function () {
         'building' => \App\Http\Controllers\BuildingController::class,
         'software' => \App\Http\Controllers\SoftwareController::class,
         'approval' => \App\Http\Controllers\ApprovalController::class,
+        'compliance' => \App\Http\Controllers\ComplianceController::class,
         'permission' => \App\Http\Controllers\PermissionController::class,
+        'compliance_import' => \App\Http\Controllers\ComplianceImportController::class,
     ]);
     Route::group(['prefix' => 'assets'], function () {
         Route::resource('network', \App\Http\Controllers\NetworkAssetController::class);

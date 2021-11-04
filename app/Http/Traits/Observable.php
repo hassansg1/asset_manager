@@ -59,6 +59,7 @@ trait Observable
         ]);
 
         Notification::addNotification(Notification::APPROVAL_REQUEST, 1);
+        Notification::addNotification(Notification::APPROVAL_REQUEST, 1);
 
         Session::put('approvalRequest', 1);
     }

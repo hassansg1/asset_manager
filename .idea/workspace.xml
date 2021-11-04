@@ -2,21 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab8ba830-06d6-43b5-99c0-f1ea02c95852" name="Changes" comment="ss">
-      <change afterPath="$PROJECT_DIR$/app/Models/Notification.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_10_28_123145_create_notifications_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_10_28_123712_create_notification_user_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_10_28_124051_create_configurations_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ComplianceController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ComplianceImportController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Compliance.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_11_04_094403_create_compliances_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/compliance/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/compliance/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/compliance/edit_form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/compliance/edit_modal.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/compliance/form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/compliance/form_rows.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/compliance/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/compliance/view.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/compliance_import/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/asset_manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/asset_manager.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApprovalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApprovalController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImportController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LogController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Traits/Observable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Traits/Observable.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Log.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Log.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_18_052651_create_logs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_18_052651_create_logs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/approval/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/approval/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/log/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/log/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/csv/buildings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/public/csv/buildings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/filters/pagination.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/filters/pagination.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +38,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -39,87 +53,6 @@
     </option>
     <expand />
     <select />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/topbar.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="215" column="35" selection-start-line="215" selection-start-column="35" selection-end-line="215" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Log.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/helpers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="216" selection-start-line="216" selection-end-line="216" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Notification.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="84" column="50" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UnitController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BaseController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/filters/common.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/components/edit_delete_button.blade.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="129" column="37" selection-start-line="129" selection-start-column="20" selection-end-line="129" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -358,6 +291,13 @@
       <path value="$PROJECT_DIR$/vendor/psr/http-client" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -418,6 +358,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -429,25 +370,13 @@
       <recent name="C:\xampp\htdocs\asset_manager\app\Http\Controllers" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -465,6 +394,10 @@
       <workItem from="1635124181593" duration="1974000" />
       <workItem from="1635202886190" duration="11614000" />
       <workItem from="1635221838196" duration="961000" />
+      <workItem from="1635421613858" duration="311000" />
+      <workItem from="1635900970408" duration="12000" />
+      <workItem from="1636018610011" duration="4662000" />
+      <workItem from="1636026725362" duration="4541000" />
       <workItem from="1634827461330" duration="15000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
@@ -481,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634827468975</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ss">
+      <created>1635421633356</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1635421633356</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -521,14 +461,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -547,6 +480,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="sas" />

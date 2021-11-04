@@ -29,18 +29,18 @@ class Log extends Model
 
     public function old()
     {
-        return formatFieldsForFrontEnd(json_decode($this->models)->old);
+        return json_decode($this->models)->old;
     }
 
 
     public function new()
     {
-        return formatFieldsForFrontEnd(json_decode($this->models)->new);
+        return json_decode($this->models)->new;
     }
 
     public function changes()
     {
-        return formatFieldsForFrontEnd(json_decode($this->models)->changed);
+        return json_decode($this->models)->changed;
     }
 
     public function descriptionItems()

@@ -47,7 +47,7 @@ class ImportController extends Controller
 
         $file = public_path('files/' . $name);
 
-        $csvContent = $this->csvToArray($file);
+        $csvContent = csvToArray($file);
         $header = $csvContent['header'];
         $data = $csvContent['data'];
         $tableName = explode('.', $fileName)[0];
@@ -144,27 +144,6 @@ class ImportController extends Controller
         }
 
         return view('import.index')->with(['status' => $success, 'logs' => $logs]);
-    }
-
-
-    function csvToArray($filename = '', $delimiter = ',')
-    {
-        if (!file_exists($filename) || !is_readable($filename))
-            return false;
-
-        $header = null;
-        $data = array();
-        if (($handle = fopen($filename, 'r')) !== false) {
-            while (($row = fgetcsv($handle, 1000, $delimiter)) !== false) {
-                if (!$header)
-                    $header = $row;
-                else
-                    $data[] = array_combine($header, $row);
-            }
-            fclose($handle);
-        }
-
-        return ['header' => $header, 'data' => $data];
     }
 
     /**

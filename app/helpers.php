@@ -193,6 +193,37 @@ if (!function_exists('currentUserId')) {
     }
 }
 
+if (!function_exists('csvToArray')) {
+    function csvToArray($filename = '', $delimiter = ',', $includeHeader = false)
+    {
+        if (!file_exists($filename) || !is_readable($filename))
+            return false;
+
+        $header = null;
+        $data = array();
+        if (($handle = fopen($filename, 'r')) !== false) {
+            while (($row = fgetcsv($handle, 1000, $delimiter)) !== false) {
+                if (!$header)
+                    $header = $row;
+                else {
+                    if ($includeHeader)
+                        $data[] = $row;
+                    else
+                        $data[] = array_combine($header, $row);
+                }
+            }
+            fclose($handle);
+        }
+
+        if ($includeHeader) {
+            $data[] = $header;
+        }
+
+        return ['header' => $header, 'data' => $data];
+    }
+
+}
+
 
 if (!function_exists('getNotifications')) {
     function getNotifications($limited = false)
