@@ -234,6 +234,15 @@ if (!function_exists('getNotifications')) {
 }
 
 
+if (!function_exists('getThreeNotifications')) {
+    function getThreeNotifications($limited = false)
+    {
+        $notifications = Auth::user()->userFirstThreeNotifications;
+        return $notifications;
+    }
+}
+
+
 if (!function_exists('formatFieldsForFrontEnd')) {
     function formatFieldsForFrontEnd($obj)
     {

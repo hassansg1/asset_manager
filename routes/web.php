@@ -78,4 +78,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('task',[\App\Http\Controllers\TaskController::class,'index'])->name('task');
     Route::get('task/detail/{id}',[\App\Http\Controllers\TaskController::class,'viewLogDetais']);
     Route::get('change/task/{id}/{status}',[\App\Http\Controllers\TaskController::class,'changeTaskStatus']);
+
+    Route::get('notification',function (){
+        $heading = 'Notification';
+        return view('notification.index',compact('heading'));
+    });
+
 });

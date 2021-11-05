@@ -199,7 +199,7 @@
                         </div>
                     </div>
                     <div data-simplebar style="max-height: 230px;">
-                        @foreach(getNotifications() as $notification)
+                        @foreach(getThreeNotifications() as $notification)
                             <a href="" class="text-reset notification-item">
                                 <div class="media">
                                     {{--<div class="avatar-xs me-3">--}}
