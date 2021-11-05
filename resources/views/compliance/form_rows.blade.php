@@ -11,28 +11,49 @@
             <label for="css">No</label><br>
         </td>
         <td>
-            <input type="text" class="form-control" name="reason" onblur="complianceStatusChange({{ $item->id }},'reason',this.value);">
+            <select class="form-control" name="criteria" onclick="complianceStatusChange({{ $item->id }},'criteria',this.value);">
+                <option value="">Select Criteria</option>
+                <option value="{{ App\Models\ComplianceData::AUTOMATIC }}">AUTOMATIC</option>
+                <option value="{{ App\Models\ComplianceData::MANUAL }}">MANUAL</option>
+               
+            </select>
         </td>
         <td>
+            <select class="form-control" name="location" onclick="complianceStatusChange({{ $item->id }},'location',this.value);">
+                <option value="">Select Locations</option>
+                <option value="{{ App\Models\ComplianceData::COMPANIES }}">COMPANIES</option>
+                <option value="{{ App\Models\ComplianceData::UNITS }}">UNITS</option>
+                <option value="{{ App\Models\ComplianceData::SITES }}">SITES</option>
+                <option value="{{ App\Models\ComplianceData::SUBSITES }}">SUBSITES</option>
+                <option value="{{ App\Models\ComplianceData::BUILDINGS }}">BUILDINGS</option>
+                <option value="{{ App\Models\ComplianceData::ROOMS }}">ROOMS</option>
+                <option value="{{ App\Models\ComplianceData::CABINETS }}">CABINETS</option>
+                <option value="{{ App\Models\ComplianceData::ASSETS }}">ASSETS</option>
+            </select>
+        </td>
+        <td>
+            <input type="text" class="form-control" name="reason" onblur="complianceStatusChange({{ $item->id }},'reason',this.value);">
+        </td>
+        {{-- <td>
             <select class="form-control" name="compliant" onclick="complianceStatusChange({{ $item->id }},'compliant',this.value);">
                 <option value="{{ App\Models\ComplianceData::COMPLIANT_ALL }}">Select Compliant</option>
                 <option value="{{ App\Models\ComplianceData::COMPLIANT_YES }}">Yes</option>
                 <option value="{{ App\Models\ComplianceData::COMPLIANT_NO }}">No</option>
                 <option value="{{ App\Models\ComplianceData::COMPLIANT_UNDEP_ROCESS }}">Under Process</option>
             </select>
-        </td>
-        <td>
+        </td> --}}
+       {{--  <td>
             <a href="#" data-bs-toggle="modal" data-bs-target=".image-upload-modal-{{ $item->id }}">
                <i class="fa fa-file-image" aria-hidden="true"></i>
             </a>
-        </td>
+        </td> --}}
         <td>
             @include('components.edit_delete_button')
         </td>
     </tr>
 
 
-<div class="modal fade image-upload-modal-{{ $item->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+{{-- <div class="modal fade image-upload-modal-{{ $item->id }}" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -49,13 +70,7 @@
                                 <div class="fallback">
                                     <input name="file" type="file" multiple="multiple" style="visibility: hidden;">
                                 </div>
-                                {{-- <div class="dz-message needsclick">
-                                    <div class="mb-3">
-                                        <i class="display-4 text-muted bx bxs-cloud-upload"></i>
-                                    </div>
-                                    
-                                    <h4>Drop files here or click to upload.</h4>
-                                </div> --}}
+                                
                             </form>
                         </div>
 
@@ -64,10 +79,10 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- end col -->
+            </div> 
             </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+        </div>
+    </div>
+</div> --}}
 
 @endforeach
