@@ -11,7 +11,7 @@
             <label for="css">No</label><br>
         </td>
         <td>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="reason" onblur="complianceStatusChange({{ $item->id }},'reason',this.value);">
         </td>
         <td>
             <select class="form-control" name="compliant" onclick="complianceStatusChange({{ $item->id }},'compliant',this.value);">

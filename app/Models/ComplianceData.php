@@ -34,13 +34,15 @@ class ComplianceData extends Model
             if($request->has('column_name') && ($request->column_name == 'applicable' || $request->column_name == "applicable"))
             {
                 if (isset($request->column_name)) $found->applicable = $request->value;
-
             }
             if($request->has('column_name') && ($request->column_name == 'compliant' || $request->column_name == "compliant"))
             {
                 if (isset($request->column_name)) $found->compliant = $request->value;
             }
-            if (isset($request->reason)) $found->reason = $request->reason;
+            if($request->has('column_name') && ($request->column_name == 'reason' || $request->column_name == "reason"))
+            {
+                if (isset($request->value)) $found->reason = $request->value;
+            }
             $found->save();
         }
         else
@@ -55,12 +57,13 @@ class ComplianceData extends Model
             {
                 if (isset($request->column_name)) $obj->compliant = $request->value;
             }
-            if (isset($request->reason)) $obj->reason = $request->reason;
+            if($request->has('column_name') && ($request->column_name == 'reason' || $request->column_name == "reason"))
+            {
+                if (isset($request->value)) $obj->reason = $request->value;
+            }
             $obj->user_id = Auth::id();
             $obj->save();
-
         }
-
 
     }
     public function compliance(){
