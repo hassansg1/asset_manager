@@ -131,4 +131,8 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Notification::class)->orderBy('created_at','DESC');
     }
+    public function userFirstThreeNotifications()
+    {
+        return $this->belongsToMany(Notification::class)->skip(0)->take(3)->orderBy('created_at','DESC');
+    }
 }
