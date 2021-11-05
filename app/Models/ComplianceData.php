@@ -15,21 +15,30 @@ class ComplianceData extends Model
 
     const APPLICABLE_YES = 1;
     const APPLICABLE_NO = 2;
+
     const COMPLIANT_ALL = 0;
     const COMPLIANT_YES = 1;
     const COMPLIANT_NO = 2;
     const COMPLIANT_UNDEP_ROCESS = 3;
-    /**
-     * @param $item
-     * @param $request
-     * @return mixed
-     */
+///..... Locations
+    const COMPANIES = 1;
+    const UNITS = 2;
+    const SITES = 3;
+    const SUBSITES = 4;
+    const BUILDINGS = 5;
+    const ROOMS = 6;
+    const CABINETS = 7;
+    const ASSETS = 8;
+///..........
+///........ Criteria
+    const AUTOMATIC = 1;
+    const MANUAL = 2;
+//..............
+                    
     public static function saveFormData($request)
     {
         $found = ComplianceData::where('compliance_id','=',$request->compliance_id)->where('user_id','=',Auth::id())->first();
-        ///// This CHECK WRITE BECAUSE DID NOT Forcefully Inject In DataBase
-        if ($request->has('column_name') && ($request->column_name == 'applicable' || $request->column_name == 'reason' || $request->column_name == 'compliant' ) )   
-        {
+
             if($found !=null)
             {
                 if (isset($request->compliance_id)) $found->compliance_id = $request->compliance_id;
@@ -44,7 +53,7 @@ class ComplianceData extends Model
                 $obj->user_id = Auth::id();
                 $obj->save();
             }
-        }
+    
 
     }
     public function compliance(){
