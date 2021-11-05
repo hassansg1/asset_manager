@@ -27,19 +27,23 @@ class ComplianceData extends Model
     public static function saveFormData($request)
     {
         $found = ComplianceData::where('compliance_id','=',$request->compliance_id)->where('user_id','=',Auth::id())->first();
-        if($found !=null)
+        ///// This CHECK WRITE BECAUSE DID NOT Forcefully Inject In DataBase
+        if ($request->has('column_name') && ($request->column_name == 'applicable' || $request->column_name == 'reason' || $request->column_name == 'compliant' ) )   
         {
-            if (isset($request->compliance_id)) $found->compliance_id = $request->compliance_id;
-            if ($request->has('column_name') && isset($request->column_name)) $found[$request->column_name] = $request->value;
-            $found->save();
-        }
-        else
-        {   
-            $obj = new ComplianceData();
-            if (isset($request->compliance_id)) $obj->compliance_id = $request->compliance_id;
-            if ($request->has('column_name') && isset($request->column_name)) $obj[$request->column_name] = $request->value;
-            $obj->user_id = Auth::id();
-            $obj->save();
+            if($found !=null)
+            {
+                if (isset($request->compliance_id)) $found->compliance_id = $request->compliance_id;
+                if ($request->has('column_name') && isset($request->column_name)) $found[$request->column_name] = $request->value;
+                $found->save();
+            }
+            else
+            {   
+                $obj = new ComplianceData();
+                if (isset($request->compliance_id)) $obj->compliance_id = $request->compliance_id;
+                if ($request->has('column_name') && isset($request->column_name)) $obj[$request->column_name] = $request->value;
+                $obj->user_id = Auth::id();
+                $obj->save();
+            }
         }
 
     }

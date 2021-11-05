@@ -40,29 +40,31 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <div class="card">
-                                    <div class="card-body">
-                                        <div>
-                                            <form action="#" class="dropzone">
-                                                <div class="fallback">
-                                                    <input name="file" type="file" multiple="multiple" style="visibility: hidden;">
-                                                </div>
-                                                {{-- <div class="dz-message needsclick">
-                                                    <div class="mb-3">
-                                                        <i class="display-4 text-muted bx bxs-cloud-upload"></i>
-                                                    </div>
-                                                    
-                                                    <h4>Drop files here or click to upload.</h4>
-                                                </div> --}}
-                                            </form>
-                                        </div>
-        
-                                        <div class="text-center mt-4">
-                                            <button type="button" class="btn btn-primary waves-effect waves-light">Send Files</button>
-                                        </div>
-                                    </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <form action="#" method="post" class="dropzone" id="file_upload_form" enctype="multipart/form-data">
+                                @csrf
+                            <input type="hidden" name="compliance_id" value="{{ $item->id }}">
+                                <div class="fallback">
+                                    <input name="file" type="file" multiple="multiple" style="visibility: hidden;">
                                 </div>
-                            </div> <!-- end col -->
+                                {{-- <div class="dz-message needsclick">
+                                    <div class="mb-3">
+                                        <i class="display-4 text-muted bx bxs-cloud-upload"></i>
+                                    </div>
+                                    
+                                    <h4>Drop files here or click to upload.</h4>
+                                </div> --}}
+                            </form>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button type="button" class="btn btn-primary waves-effect waves-light">Send Files</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end col -->
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
