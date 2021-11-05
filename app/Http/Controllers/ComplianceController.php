@@ -147,8 +147,10 @@ class ComplianceController extends BaseController
         // dd($request->all());
         ComplianceData::saveFormData($request);
     }
+    public function complianceApplicable(){
 
-
-
-
+        $items = ComplianceData::where('applicable','=',1)->orderBy('id','desc')->get();
+        return view($this->route . "/applicable")
+            ->with(['items' => $items,  'route' => $this->route, 'heading' => $this->heading]);
+    }
 }

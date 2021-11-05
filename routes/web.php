@@ -53,6 +53,7 @@ Route::group(['middleware' => ['auth']], function () {
     ]);
     //................. ComplainceData...........
     Route::post('complianceData/store',[App\Http\Controllers\ComplianceController::class,'storeComplaiceData'])->name('compliance.storeComplaiceData');
+    Route::get('applicable/compliance',[App\Http\Controllers\ComplianceController::class,'complianceApplicable'])->name('compliance.applicable');
 
     Route::group(['prefix' => 'assets'], function () {
         Route::resource('network', \App\Http\Controllers\NetworkAssetController::class);
