@@ -26,7 +26,7 @@
                 <i class="fa fa-file-image" aria-hidden="true"></i>
             </a>
         </td>
-        <td><a href="#" >view detail</a></td>
+        <td><a href="{{ route('compliance.applicable_viewDetail',['id'=>$item->id]) }}" >view detail</a></td>
 {{--        <td>--}}
 {{--            @include('components.edit_delete_button')--}}
 {{--        </td>--}}

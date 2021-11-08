@@ -144,7 +144,7 @@ class ComplianceController extends BaseController
 
     public function storeComplaiceData(Request $request)
     {
-//         dd($request->all());
+        // dd($request->all());
         ComplianceData::saveFormData($request);
     }
     public function complianceFileStore(Request $request){
@@ -161,4 +161,17 @@ class ComplianceController extends BaseController
         return view($this->route . "/applicable")
             ->with(['items' => $items,  'route' => $this->route, 'heading' => $this->heading]);
     }
+
+    public function complianceApplicableViewDetail($id)
+    {
+        $items = ComplianceData::find($id);
+        return view($this->route . "/view_detail")
+            ->with(['items' => $items,  'route' => $this->route, 'heading' => $this->heading]);
+        // dd($id);
+    }
+    public function storeComplaiceDataLocations(Request $request)
+    {
+       ComplianceData::saveLocations($request);
+    } 
+
 }

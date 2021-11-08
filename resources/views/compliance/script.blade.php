@@ -24,7 +24,27 @@
         });
     }
 
+    function complianceAddLocation(compliance_data_id,column_name,value)
+    {
+         $.ajax({
+            type: "POST",
+            url: '{{ route('compliance.storeComplaiceDataLocations') }}',
+            data: {
+                    '_token': '{{ csrf_token() }}',
+                    'compliance_id' : compliance_id,
+                    'column_name' : column_name,
+                    'value' : value,
 
+                },
+            success: function (result) {
+                if (result.status) {
+                    console.log(result);
+                } else {
+                }
+            },
+        });
+         
+    }
 </script>
 
 
