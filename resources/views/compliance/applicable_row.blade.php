@@ -22,15 +22,52 @@
             </select>
         </td>
         <td>
-            <a href="#" data-bs-toggle="modal" data-bs-target=".image-upload-modal-{{ $item->compliance_id }}">
+            <a href="#" data-bs-toggle="modal" data-bs-target=".image-upload-modal-{{ $item->id }}">
                 <i class="fa fa-file-image" aria-hidden="true"></i>
             </a>
         </td>
+        <td><a href="#" >view detail</a></td>
 {{--        <td>--}}
 {{--            @include('components.edit_delete_button')--}}
 {{--        </td>--}}
     </tr>
 
      </div><!-- /.modal -->
+    <div class="modal fade image-upload-modal-{{ $item->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Upload Image</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card">
+                        <div class="card-body3058">
+                            <div>
+                                <form action="{{url('store/file/compliance')}}" method="get" class="dropzone" id="file_upload_form" enctype="multipart/form-data">
+                                    <input type="hidden" name="compliance_id" value="{{ $item->id }}">
+                                    <div class="fallback">
+                                        <input name="file" type="file" multiple="multiple" style="visibility: hidden;">
+                                    <div class="dz-message needsclick">
+                                        <div class="mb-3">
+                                            <i class="display-4 text-muted bx bxs-cloud-upload"></i>
+                                        </div>
+
+                                        <h4>Drop files here or click to upload.</h4>
+                                    </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="text-center mt-4">
+                                <button type="button" class="btn btn-primary waves-effect waves-light">Send Files</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+
 @endforeach
 
