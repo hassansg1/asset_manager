@@ -147,13 +147,14 @@ class ComplianceController extends BaseController
 //         dd($request->all());
         ComplianceData::saveFormData($request);
     }
-    public function complianceFileStore(Request $request){
+    public function complianceFileStore(Request $request, $id){
+
         $file = $request->file('file');
         $name = time() . $file->getClientOriginalName();
         $destinationPath = public_path('images/compliance');
         $file->move($destinationPath, $name);
-        ComplianceDataFiles::create();
-
+        $data =  ComplianceDataFiles::create(['compliance_data_id' => $id,'file_name'=>$name]);
+        return true;
     }
     public function complianceApplicable(){
 
