@@ -56,7 +56,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('store/file/compliance/{id}',[App\Http\Controllers\ComplianceController::class,'complianceFileStore']);
     Route::get('applicable/compliance',[App\Http\Controllers\ComplianceController::class,'complianceApplicable'])->name('compliance.applicable');
     Route::get('applicable/compliance/viewDetail/{id}',[App\Http\Controllers\ComplianceController::class,'complianceApplicableViewDetail'])->name('compliance.applicable_viewDetail');
-    Route::post('applicable/complianceData/storeLocation',[App\Http\Controllers\ComplianceController::class,'storeComplaiceDataLocations'])->name('compliance.storeComplaiceDataLocations');
+    Route::post('applicable/complianceData/storeLocation',[App\Http\Controllers\ComplianceController::class,'storeComplianceDataLocations'])->name('compliance.storeComplianceDataLocations');
 
     Route::group(['prefix' => 'assets'], function () {
         Route::resource('network', \App\Http\Controllers\NetworkAssetController::class);

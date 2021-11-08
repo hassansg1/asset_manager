@@ -24,16 +24,17 @@
         });
     }
 
-    function complianceAddLocation(compliance_data_id,column_name,value)
+    function complianceAddLocation(compliance_data_id)
     {
-         $.ajax({
+
+        var selected = $('.complianceDatalocation').select2("val");
+        $.ajax({
             type: "POST",
-            url: '{{ route('compliance.storeComplaiceDataLocations') }}',
+            url: '{{ route('compliance.storeComplianceDataLocations') }}',
             data: {
                     '_token': '{{ csrf_token() }}',
-                    'compliance_id' : compliance_id,
-                    'column_name' : column_name,
-                    'value' : value,
+                    'compliance_data_id' : compliance_data_id,
+                    'value' : selected,
 
                 },
             success: function (result) {
@@ -43,7 +44,7 @@
                 }
             },
         });
-         
+
     }
 </script>
 

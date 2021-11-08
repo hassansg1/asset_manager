@@ -6,6 +6,7 @@ use App\Http\Traits\ParentTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Auth;
+use App\Models\ComplianceDataLocation;
 
 class ComplianceData extends Model
 {
@@ -35,6 +36,10 @@ class ComplianceData extends Model
     const MANUAL = 2;
 //..............
                     
+    public function compliance(){
+        return $this->belongsTo(Compliance::class,'compliance_id');
+    }
+
     public static function saveFormData($request)
     {
         $found = ComplianceData::where('compliance_id','=',$request->compliance_id)->where('user_id','=',Auth::id())->first();
@@ -56,7 +61,21 @@ class ComplianceData extends Model
     
 
     }
-    public function compliance(){
-        return $this->belongsTo(Compliance::class,'compliance_id');
+
+    public static function saveLocations($request)
+    {
+        $found = ComplianceDataLocation::where('compliance_data_id',$request->compliance_data_id)->get();   
+        if(count($found)>0)
+        {
+            $found->each->delete();
+        }
+        foreach($request->value as $loop_var)
+        {
+            $obj = new ComplianceDataLocation();
+            $obj->compliance_data_id = $request->compliance_data_id;
+            $obj->location = $loop_var;
+            $obj->save();
+        }
     }
+
 }

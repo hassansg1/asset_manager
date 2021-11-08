@@ -4,7 +4,7 @@
     <td>{{ $items->compliance->clause }}</td>
     <td>{{ $items->compliance->section }}</td>
     <td>
-        <select class="form-control select2" multiple="multiple" name="location" onchange="complianceAddLocation({{ $items->compliance_id }},'location',this.value);">
+        <select class="form-control select2 complianceDatalocation" multiple="multiple" name="location" onchange="complianceAddLocation({{ $items->id }});">
             <option value="">Select Locations</option>
             <option value="{{ App\Models\ComplianceData::COMPANIES }}">COMPANIES</option>
             <option value="{{ App\Models\ComplianceData::UNITS }}">UNITS</option>
