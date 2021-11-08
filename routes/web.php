@@ -53,7 +53,7 @@ Route::group(['middleware' => ['auth']], function () {
     ]);
     //................. ComplainceData...........
     Route::post('complianceData/store',[App\Http\Controllers\ComplianceController::class,'storeComplaiceData'])->name('compliance.storeComplaiceData');
-    Route::post('store/file/compliance',[App\Http\Controllers\ComplianceController::class,'complianceFileStore']);
+    Route::post('store/file/compliance/{id}',[App\Http\Controllers\ComplianceController::class,'complianceFileStore']);
     Route::get('applicable/compliance',[App\Http\Controllers\ComplianceController::class,'complianceApplicable'])->name('compliance.applicable');
     Route::get('applicable/compliance/viewDetail/{id}',[App\Http\Controllers\ComplianceController::class,'complianceApplicableViewDetail'])->name('compliance.applicable_viewDetail');
     Route::post('applicable/complianceData/storeLocation',[App\Http\Controllers\ComplianceController::class,'storeComplaiceDataLocations'])->name('compliance.storeComplaiceDataLocations');

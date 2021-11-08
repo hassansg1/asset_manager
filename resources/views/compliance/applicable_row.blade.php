@@ -32,7 +32,6 @@
 {{--        </td>--}}
     </tr>
 
-     </div><!-- /.modal -->
     <div class="modal fade image-upload-modal-{{ $item->id }}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
@@ -44,8 +43,8 @@
                     <div class="card">
                         <div class="card-body3058">
                             <div>
-                                <form action="{{url('store/file/compliance')}}" method="get" class="dropzone" id="file_upload_form" enctype="multipart/form-data">
-                                    <input type="hidden" name="compliance_id" value="{{ $item->id }}">
+                                <form action="{{url('store/file/compliance')}}/{{$item->id}}" method="post" class="dropzone" id="file_upload_form" enctype="multipart/form-data">
+                                    <input type="hidden" name="compliance_data_id" value="{{ $item->id }}">
                                     <div class="fallback">
                                         <input name="file" type="file" multiple="multiple" style="visibility: hidden;">
                                     <div class="dz-message needsclick">
@@ -69,5 +68,6 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 
+    </div><!-- /.modal -->
 @endforeach
 
