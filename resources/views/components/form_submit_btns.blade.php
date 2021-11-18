@@ -10,12 +10,12 @@
 
 @section('script')
     <script>
-        $(".item_form").submit(function (e) {
-            if ($('#change_justification_reason').val() == undefined) {
-                showModal(justificationModal, $('#justification_modal_content').html());
-                e.preventDefault();
-            }
-        });
+        // $(".item_form").submit(function (e) {
+        //     if ($('#change_justification_reason').val() == undefined) {
+        //         showModal(justificationModal, $('#justification_modal_content').html());
+        //         e.preventDefault();
+        //     }
+        // });
 
         function addNewAfterSave() {
             $('form').append('<input type="hidden" name="add_new" value="1" />');

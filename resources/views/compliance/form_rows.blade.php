@@ -15,7 +15,7 @@
                 <option value="">Select Criteria</option>
                 <option value="{{ App\Models\ComplianceData::AUTOMATIC }}">AUTOMATIC</option>
                 <option value="{{ App\Models\ComplianceData::MANUAL }}">MANUAL</option>
-               
+
             </select>
         </td>
         <td>
@@ -70,16 +70,16 @@
                                 <div class="fallback">
                                     <input name="file" type="file" multiple="multiple" style="visibility: hidden;">
                                 </div>
-                                
+
                             </form>
                         </div>
 
                         <div class="text-center mt-4">
-                            <button type="button" class="btn btn-primary waves-effect waves-light">Send Files</button>
+                            <button type="button" class="btn btn-primary waves-effect waves-light">Send Attachment</button>
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
             </div>
         </div>
     </div>

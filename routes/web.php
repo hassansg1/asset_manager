@@ -50,10 +50,9 @@ Route::group(['middleware' => ['auth']], function () {
         'compliance' => \App\Http\Controllers\ComplianceController::class,
         'permission' => \App\Http\Controllers\PermissionController::class,
         'compliance_import' => \App\Http\Controllers\ComplianceImportController::class,
-        'files' => \App\Http\Controllers\FilesUploadController::class,
+        'attachment' => \App\Http\Controllers\AttachmentController::class,
     ]);
     //................. ComplainceData...........
-    Route::post('files/images',[App\Http\Controllers\FilesUploadController::class,'filesStore']);
 
     Route::post('complianceData/store',[App\Http\Controllers\ComplianceController::class,'storeComplaiceData'])->name('compliance.storeComplaiceData');
     Route::post('store/file/compliance/{id}',[App\Http\Controllers\ComplianceController::class,'complianceFileStore']);
