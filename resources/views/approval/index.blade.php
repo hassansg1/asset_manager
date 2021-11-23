@@ -2,6 +2,7 @@
 
 @section('title') {{ $heading }}s @endsection
 
+
 @section('content')
     @yield('top_content')
     @include('layouts.top_heading',['heading' => $heading."s"])
