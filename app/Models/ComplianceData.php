@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Auth;
 use App\Models\ComplianceDataLocation;
+use function Symfony\Component\VarDumper\Dumper\esc;
 
 class ComplianceData extends Model
 {
@@ -20,7 +21,7 @@ class ComplianceData extends Model
     const COMPLIANT_ALL = 0;
     const COMPLIANT_YES = 1;
     const COMPLIANT_NO = 2;
-    const COMPLIANT_UNDEP_ROCESS = 3;
+    const COMPLIANT_UNDER_PROCESS = 3;
 ///..... Locations
     const COMPANIES = 1;
     const UNITS = 2;
@@ -34,43 +35,65 @@ class ComplianceData extends Model
 ///........ Criteria
     const AUTOMATIC = 1;
     const MANUAL = 2;
+
 //..............
-                    
-    public function compliance(){
-        return $this->belongsTo(Compliance::class,'compliance_id');
+
+    public function compliance()
+    {
+        return $this->belongsTo(Compliance::class, 'compliance_id');
     }
 
     public static function saveFormData($request)
     {
-        $found = ComplianceData::where('compliance_id','=',$request->compliance_id)->where('user_id','=',Auth::id())->first();
+        $found = ComplianceData::where('compliance_id', '=', $request->compliance_id)->where('user_id', '=', Auth::id())->first();
 
-            if($found !=null)
+        if ($found != null) {
+            if (isset($request->compliance_id)) $found->compliance_id = $request->compliance_id;
+            if ($request->has('column_name') && isset($request->column_name)) $found[$request->column_name] = $request->value;
+            $found->save();
+        } else {
+            $obj = new ComplianceData();
+            if (isset($request->compliance_id)) $obj->compliance_id = $request->compliance_id;
+            if ($request->has('column_name') && isset($request->column_name)) $obj[$request->column_name] = $request->value;
+            $obj->user_id = Auth::id();
+            $obj->save();
+            $found = $obj;
+        }
+        if (isset($request->column_name) && $request->column_name == 'applicable') {
+            $parents = [];
+            $compliance = $found->compliance;
+            while ($compliance->parent)
             {
-                if (isset($request->compliance_id)) $found->compliance_id = $request->compliance_id;
-                if ($request->has('column_name') && isset($request->column_name)) $found[$request->column_name] = $request->value;
-                $found->save();
-            }
-            else
-            {   
-                $obj = new ComplianceData();
-                if (isset($request->compliance_id)) $obj->compliance_id = $request->compliance_id;
-                if ($request->has('column_name') && isset($request->column_name)) $obj[$request->column_name] = $request->value;
-                $obj->user_id = Auth::id();
-                $obj->save();
-            }
-    
+                $parents[] = $compliance->parent->id;
 
+                $nextObj = ComplianceData::where('compliance_id', '=', $compliance->parent->id)->where('user_id', '=', Auth::id())->first();
+                if($nextObj)
+                {
+                    $nextObj->applicable = $request->value;
+                    $nextObj->save();
+                }
+                else
+                {
+                    $nextObj = new ComplianceData();
+                    $nextObj->applicable = $request->value;
+                    $nextObj->compliance_id = $compliance->parent->id;
+                    $nextObj->user_id = Auth::id();
+                    $nextObj->save();
+                }
+                $compliance = $compliance->parent;
+            }
+
+            return ['parents' => $parents];
+        }
     }
 
     public static function saveLocations($request)
     {
-        $found = ComplianceDataLocation::where('compliance_data_id',$request->compliance_data_id)->get();   
-        if(count($found)>0)
-        {
+        $found = ComplianceDataLocation::where('compliance_data_id', $request->compliance_data_id)->get();
+        if (count($found) > 0) {
             $found->each->delete();
         }
-        foreach($request->value as $loop_var)
-        {
+        foreach ($request->value as $loop_var) {
             $obj = new ComplianceDataLocation();
             $obj->compliance_data_id = $request->compliance_data_id;
             $obj->location = $loop_var;

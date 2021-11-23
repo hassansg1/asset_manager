@@ -23,6 +23,8 @@ class CreateNetworkAssetsTable extends Migration
             $table->string('model')->nullable();
             $table->string('part_number')->nullable();
             $table->string('serial_number')->nullable();
+            $table->string('firmware')->nullable();
+            $table->string('redundant_pair_id')->nullable();
             $table->integer('security_zone')->nullable();
             $table->string('asset_firmware')->nullable();
             $table->string('redundant_pair_id')->nullable();

@@ -24,12 +24,10 @@ class CreateComputerAssetsTable extends Migration
             $table->string('part_number')->nullable();
             $table->string('serial_number')->nullable();
             $table->integer('security_zone')->nullable();
-            $table->string('client_description')->nullable();
             $table->string('vm_host')->nullable();
             $table->integer('operating_system')->nullable();
             $table->string('connected_scada_server')->nullable();
             $table->string('contact')->nullable();
-            $table->string('source_file')->nullable();
             $table->timestamps();
         });
     }

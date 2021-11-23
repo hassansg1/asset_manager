@@ -242,19 +242,35 @@ if (!function_exists('getThreeNotifications')) {
     }
 }
 
-
 if (!function_exists('formatFieldsForFrontEnd')) {
     function formatFieldsForFrontEnd($obj)
     {
         $object = new stdClass();
-        if($obj)
-        {
+        if ($obj) {
             foreach ($obj as $item => $value) {
 
-                $object->{ucwords(str_replace('_',' ',$item))} = $value;
+                $object->{ucwords(str_replace('_', ' ', $item))} = $value;
             }
         }
         return $object;
+    }
+}
+
+if (!function_exists('checkIdComplianceIsApplicable')) {
+    function checkIdComplianceIsApplicable($id)
+    {
+        $complianceData = \App\Models\ComplianceData::where('compliance_id', $id)->first();
+
+        return $complianceData && $complianceData->applicable == 1;
+    }
+}
+
+
+if (!function_exists('shortClassName')) {
+    function shortClassName($name)
+    {
+        $exp = explode('\\', $name);
+        return $exp[count($exp)-1];
     }
 }
 

@@ -19,6 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="ab8ba830-06d6-43b5-99c0-f1ea02c95852" name="Changes" comment="Compliance">
     <list default="true" id="48d9b886-9222-41c8-b3bc-00d2bc7dc536" name="Default Changelist" comment="task setting">
       <change afterPath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -222,6 +223,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -241,6 +243,8 @@
       <workItem from="1635202886190" duration="11614000" />
       <workItem from="1635221838196" duration="961000" />
       <workItem from="1634827461330" duration="15000" />
+      <workItem from="1636036651413" duration="1605000" />
+      <workItem from="1636043478490" duration="827000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <created>1634539765654</created>
@@ -263,6 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636044116309</updated>
     </task>
+    <task id="LOCAL-00004" summary="Compliance">
+      <created>1636036670233</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1636036670233</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <task id="LOCAL-00004" summary="task setting">
       <created>1636044171431</created>
       <option name="number" value="00004" />
@@ -306,8 +318,8 @@
     <MESSAGE value="sas" />
     <MESSAGE value="Changes" />
     <MESSAGE value="ss" />
-    <MESSAGE value="task setting" />
-    <option name="LAST_COMMIT_MESSAGE" value="task setting" />
+    <MESSAGE value="Compliance" />
+    <option name="LAST_COMMIT_MESSAGE" value="Compliance" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1636042659241">

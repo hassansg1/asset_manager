@@ -9,6 +9,8 @@
                 </button>
             @endif
         </div>
+        <?php try {
+                ?>
         @isset($item)
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
@@ -30,5 +32,8 @@
                 </ol>
             </div>
         @endisset
+
+    <?php
+        }catch (Exception $exception){} ?>
     </div>
 </div>

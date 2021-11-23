@@ -12,6 +12,21 @@ class Compliance extends Model
 
     protected $guarded = [];
 
+    public function standard()
+    {
+        return $this->belongsTo(Standard::class);
+    }
+
+    public function childs()
+    {
+        return $this->hasMany(Compliance::class, 'parent_id');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(Compliance::class, 'parent_id');
+    }
+
     /**
      * @param $item
      * @param $request

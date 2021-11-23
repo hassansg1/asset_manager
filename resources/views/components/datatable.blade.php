@@ -4,7 +4,7 @@
 
 @section('content')
     @yield('top_content')
-    @include('layouts.top_heading',['heading' => $heading."s"])
+    @include('layouts.top_heading',['heading' => $heading])
     <div>
         <div class="row">
             <div class="col-12">
@@ -14,18 +14,11 @@
                         <div class="mt-2">
                         </div>
                         <div class="custom_table_div">
-                            <table id="datatable-buttons"
+                            <table id="{{ $id ?? 'datatable-buttons' }}"
                                    class="table table-bordered dt-responsive nowrap w-100 dataTable no-footer dtr-inline">
                                 <thead class="table-light custom_table_head">
                                 <tr>
-                                    <th class="select_all_checkbox" style="width: 10px"><input
-                                            onclick="toggleSelectAll()"
-                                            type="checkbox" name=""
-                                            id="select_all"></th>
                                     @yield('table_header')
-                                    <th>
-                                        Actions
-                                    </th>
                                 </tr>
                                 </thead>
                                 <tbody id="table_content_div_body">

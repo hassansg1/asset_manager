@@ -15,7 +15,6 @@ class CreateSubSiteTable extends Migration
     {
         Schema::create('sub_sites', function (Blueprint $table) {
             $table->id();
-            $table->string('rec_id', 25)->unique();
             $table->string('name', 255);
             $table->string('arabic_name', 255)->nullable();
             $table->string('existing_code', 25)->nullable();
@@ -23,11 +22,7 @@ class CreateSubSiteTable extends Migration
             $table->text('location_dec_coordinate')->nullable();
             $table->text('location_deg_coordinate')->nullable();
             $table->text('location_google_link')->nullable();
-            $table->string('remote_site', 255)->nullable();
-            $table->string('operator_control_center_site', 255)->nullable();
-            $table->string('local_scada_site', 255)->nullable();
-            $table->string('central_scada_site', 255)->nullable();
-            $table->string('function', 255)->nullable();
+            $table->text('main_process_equipment')->nullable();
             $table->timestamps();
         });
     }

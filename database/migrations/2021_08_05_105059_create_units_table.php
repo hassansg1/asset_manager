@@ -19,7 +19,6 @@ class CreateUnitsTable extends Migration
             $table->string('short_name', 255)->nullable();
             $table->string('long_name', 255)->nullable();
             $table->string('contact_person', 255)->nullable();
-            $table->string('ot_apn', 255)->nullable();
             $table->timestamps();
         });
     }

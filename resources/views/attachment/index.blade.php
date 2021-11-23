@@ -9,6 +9,7 @@
     <th>Category</th>
     <th>Sub Category</th>
     <th>Attachment</th>
+    <th>Actions</th>
 @endsection
 @section('table_rows')
     @include($route.'.form_rows')

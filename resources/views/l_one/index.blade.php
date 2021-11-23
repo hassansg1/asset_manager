@@ -22,6 +22,7 @@
     <th>ID</th>
     <th>Name</th>
     <th>Description</th>
+    <th>Actions</th>
 @endsection
 @section('table_rows')
     @include($route.'.form_rows')

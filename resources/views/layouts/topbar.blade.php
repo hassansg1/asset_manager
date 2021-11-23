@@ -129,6 +129,30 @@
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
+                    <span class="align-middle">Standards / Compliance</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end" style="">
+                    <a href="{{ route('standard.index') }}" class="dropdown-item notify-item language" data-lang="eng">
+                        <span class="align-middle">Standards List</span>
+                    </a>
+                    <a href="{{ route('applicable_standard.index') }}" class="dropdown-item notify-item language" data-lang="eng">
+                        <span class="align-middle">Applicable Standards</span>
+                    </a>
+                    <a href="{{ route('version.index') }}" class="dropdown-item notify-item language" data-lang="eng">
+                        <span class="align-middle">Compliance Version</span>
+                    </a>
+                </div>
+            </div>
+            <div class="dropdown d-inline-block">
+                <button type="button" class="btn header-item waves-effect"
+                        onclick="location.href='{{ route('compliance.applicable') }}'" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    <span class="align-middle">Applicable Compliances</span>
+                </button>
+            </div>
+            <div class="dropdown d-inline-block">
+                <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                     <span class="align-middle">More</span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end" style="">
@@ -138,12 +162,12 @@
                     <a href="{{ route('log.index') }}" class="dropdown-item notify-item language" data-lang="eng">
                         <span class="align-middle">Logs</span>
                     </a>
-                    <a href="{{ route('compliance.index') }}" class="dropdown-item notify-item language" data-lang="eng">
-                        <span class="align-middle">Compliance</span>
-                    </a>
-                     <a href="{{ route('compliance.applicable') }}" class="dropdown-item notify-item language" data-lang="eng">
-                        <span class="align-middle">Applicable Compliance</span>
-                    </a>
+                    {{--                    <a href="{{ route('compliance.index') }}" class="dropdown-item notify-item language" data-lang="eng">--}}
+                    {{--                        <span class="align-middle">Compliance</span>--}}
+                    {{--                    </a>--}}
+                    {{--                     <a href="{{ route('compliance.applicable') }}" class="dropdown-item notify-item language" data-lang="eng">--}}
+                    {{--                        <span class="align-middle">Applicable Compliance</span>--}}
+                    {{--                    </a>--}}
                     <a href="{{ route('task') }}" class="dropdown-item notify-item language" data-lang="eng">
                         <span class="align-middle">Task</span>
                     </a>
@@ -206,9 +230,9 @@
                             <a href="" class="text-reset notification-item">
                                 <div class="media">
                                     {{--<div class="avatar-xs me-3">--}}
-                                {{--<span class="avatar-title bg-primary rounded-circle font-size-16">--}}
+                                    {{--<span class="avatar-title bg-primary rounded-circle font-size-16">--}}
                                     {{--<i class="bx bx-cart"></i>--}}
-                                {{--</span>--}}
+                                    {{--</span>--}}
                                     {{--</div>--}}
                                     @php
                                         $day1 = $notification->created_at;
@@ -252,7 +276,7 @@
                                             <p class="mb-1"
                                                key="t-grammer">{{ $notification->message }}</p>
                                             <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span
-                                                        key="t-min-ago">
+                                                    key="t-min-ago">
                                                         {{ $dateTime }}
                                                     {{-- @lang('translation.3_min_ago') --}}
                                                 </span></p>
@@ -265,7 +289,7 @@
                     <div class="p-2 border-top d-grid">
                         <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
                             <i class="mdi mdi-arrow-right-circle me-1"></i> <span
-                                    key="t-view-more">@lang('translation.View_More')</span>
+                                key="t-view-more">@lang('translation.View_More')</span>
                         </a>
                     </div>
                 </div>
@@ -285,13 +309,13 @@
 
                     <a class="dropdown-item d-block" href="#" data-bs-toggle="modal"
                        data-bs-target=".change-password"><i
-                                class="bx bx-wrench font-size-16 align-middle me-1"></i> <span
-                                key="t-settings">@lang('translation.Settings')</span></a>
+                            class="bx bx-wrench font-size-16 align-middle me-1"></i> <span
+                            key="t-settings">@lang('translation.Settings')</span></a>
 
                     <a class="dropdown-item text-danger" href="javascript:void(0);"
                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
-                                class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span
-                                key="t-logout">@lang('translation.Logout')</span></a>
+                            class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span
+                            key="t-logout">@lang('translation.Logout')</span></a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>

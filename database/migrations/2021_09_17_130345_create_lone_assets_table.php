@@ -23,6 +23,9 @@ class CreateLoneAssetsTable extends Migration
             $table->string('model')->nullable();
             $table->string('part_number')->nullable();
             $table->string('serial_number')->nullable();
+            $table->string('redundant_pair_id')->nullable();
+            $table->string('owner_contact')->nullable();
+            $table->string('process_equipment')->nullable();
             $table->integer('security_zone')->nullable();
             $table->string('existing_asset_id')->nullable();
             $table->string('existing_asset_name')->nullable();

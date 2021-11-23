@@ -18,7 +18,7 @@ class LoneAsset extends Model
             'rec_id' => 'required | unique:lone_assets,rec_id',
         ];
 
-    protected $appends = ['show_name'];];
+    protected $appends = ['show_name'];
 
     public function getShowNameAttribute()
     {
