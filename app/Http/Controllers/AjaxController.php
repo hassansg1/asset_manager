@@ -40,16 +40,13 @@ class AjaxController extends Controller
         ]);
     }
 
-    public function test()
+    public function exportDataTemplates()
     {
-        $tables = ['companies', 'units', 'sites', 'sub_sites', 'buildings', 'rooms', 'cabinets', 'networks_list', 'network_assets', 'computer_assets', 'lone_assets'];
+        $tables = ['units', 'sites', 'sub_sites', 'buildings', 'rooms', 'cabinets', 'network_assets', 'computer_assets', 'lone_assets'];
 
         foreach ($tables as $table) {
-            $columns = ['parent_type', 'parent_name'];
-            $columns = array_merge($columns, DB::getSchemaBuilder()->getColumnListing($table));
-            $columns = array_diff($columns, ['created_at', 'updated_at', 'rec_id']);
-
-            $path = public_path('csv/' . $table . '.csv');
+            $columns = tableColumnsMapping($table, 'export');
+            $path = public_path('csv/' . tableNamesMapping($table, 'export') . '.csv');
 
             $file = fopen($path, 'w');
             fputcsv($file, $columns);
@@ -69,8 +66,8 @@ class AjaxController extends Controller
             fclose($file);
         }
 
-
-        dd("As");
+        flashSuccess("Successfully generated");
+        return redirect()->back();
     }
 
     public function checkDeleteCriteria(Request $request)

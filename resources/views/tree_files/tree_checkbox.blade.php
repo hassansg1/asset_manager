@@ -46,7 +46,7 @@
         </div>
 {{--        <a class="collapsed float-end" data-bs-toggle="collapse" href="#collapse{{ $rand }}" aria-expanded="false"--}}
 {{--           aria-controls="collapse{{ $rand }}">--}}
-{{--            <i class="fas fa-edit" style="color: #c9a200"></i>--}}
+{{--            <i class="fas fa-edit" style="color: #556ee6"></i>--}}
 {{--        </a>--}}
 {{--        <div class="collapse" id="collapse{{ $rand }}" style="">--}}
 {{--            <div class="card shadow-none card-body text-muted mb-0">--}}

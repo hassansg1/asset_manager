@@ -6,7 +6,6 @@
         <td>{{ $item->short_name }}</td>
         <td>{{ $item->long_name }}</td>
         <td>{{ $item->contact_person }}</td>
-        <td>{{ $item->ot_apn }}</td>
         <td>
             @include('components.edit_delete_button')
         </td>

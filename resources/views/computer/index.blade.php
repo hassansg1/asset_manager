@@ -13,7 +13,7 @@
     </button>
     <button class="btn btn-primary mr-10">
         <a style="color: white"
-           href="{{ url( 'filterAssets/'.str_replace('\\','-',str_replace('??','_',$filter)).'/'.str_replace('\\','-',\App\Http\Controllers\NetworkAssetController::class)) }}">L01 Assets</a>
+           href="{{ url( 'filterAssets/'.str_replace('\\','-',str_replace('??','_',$filter)).'/'.str_replace('\\','-',\App\Http\Controllers\LoneAssetController::class)) }}">L01 Assets</a>
     </button>
 @endsection
 @section('table_header')

@@ -10,8 +10,10 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}parent" class="form-label required">Parent</label>
-                            <select class="form-control select2" name="parent" id="{{ isset($item) ? $item->id:'' }}parent" required>
+                            <label for="{{ isset($item) ? $item->id:'' }}parent"
+                                   class="form-label required">Parent</label>
+                            <select class="form-control select2" name="parent"
+                                    id="{{ isset($item) ? $item->id:'' }}parent" required>
                                 <option value="">Search by Name</option>
                                 <optgroup label="Company">
                                     @foreach(getCompanies() as $row)
@@ -42,7 +44,8 @@
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}rec_id" class="form-label required">ID</label>
                             <input type="text" value="{{ isset($item) ? $item->rec_id:old('rec_id') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}rec_id" name="rec_id" required>
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}rec_id" name="rec_id"
+                                   required>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -57,25 +60,30 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}arabic_name" class="form-label">Arabic Name</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}arabic_name" class="form-label">Arabic
+                                Name</label>
                             <input type="text" value="{{ isset($item) ? $item->arabic_name:old('arabic_name') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}arabic_name" name="arabic_name">
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}arabic_name"
+                                   name="arabic_name">
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}existing_sub_site_id" class="form-label">Existing rec_id</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}description" class="form-label">Description</label>
                             <input type="text"
-                                   value="{{ isset($item) ? $item->existing_sub_site_id:old('existing_sub_site_id') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}existing_sub_site_id"
-                                   name="existing_sub_site_id">
+                                   value="{{ isset($item) ? $item->description:old('description') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}description"
+                                   name="description">
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}descriptive_location" class="form-label">Descriptive Location</label>
-                            <input type="text" value="{{ isset($item) ? $item->descriptive_location:old('descriptive_location') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}descriptive_location" name="descriptive_location">
+                            <label for="{{ isset($item) ? $item->id:'' }}location_google_link" class="form-label">Location(Google
+                                Link)</label>
+                            <input type="text"
+                                   value="{{ isset($item) ? $item->location_google_link:old('location_google_link') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}location_google_link"
+                                   name="location_google_link">
                         </div>
                     </div>
                 </div>
@@ -83,8 +91,10 @@
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}location_dec_coordinate" class="form-label">Coordinates(DEC)</label>
-                            <input type="text" value="{{ isset($item) ? $item->location_dec_coordinate:old('location_dec_coordinate') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}location_dec_coordinate" name="location_dec_coordinate">
+                            <input type="text"
+                                   value="{{ isset($item) ? $item->location_dec_coordinate:old('location_dec_coordinate') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}location_dec_coordinate"
+                                   name="location_dec_coordinate">
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -98,50 +108,23 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}location_google_link" class="form-label">Location(Google Link)</label>
-                            <input type="text" value="{{ isset($item) ? $item->location_google_link:old('location_google_link') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}location_google_link" name="location_google_link">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}remote_site" class="form-label">Remote Site</label>
-                            <input type="text" value="{{ isset($item) ? $item->remote_site:old('remote_site') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}remote_site" name="remote_site">
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}operator_control_center_site" class="form-label">Operator Control Site</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}descriptive_location" class="form-label">Descriptive
+                                Location</label>
                             <input type="text"
-                                   value="{{ isset($item) ? $item->operator_control_center_site:old('operator_control_center_site') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}operator_control_center_site"
-                                   name="operator_control_center_site">
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}local_scada_site" class="form-label">Local Scada Site</label>
-                            <input type="text" value="{{ isset($item) ? $item->local_scada_site:old('local_scada_site') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}local_scada_site" name="local_scada_site">
+                                   value="{{ isset($item) ? $item->descriptive_location:old('descriptive_location') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}descriptive_location"
+                                   name="descriptive_location">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}central_scada_site" class="form-label">Central Scada Site</label>
-                            <input type="text" value="{{ isset($item) ? $item->central_scada_site:old('central_scada_site') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}central_scada_site" name="central_scada_site">
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}function" class="form-label">Function</label>
-                            <input type="text" value="{{ isset($item) ? $item->function:old('function') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}function" name="function">
+                            <label for="{{ isset($item) ? $item->id:'' }}main_process_equipment" class="form-label">Main
+                                Process / Equipment</label>
+                            <textarea class="form-control" name="main_process_equipment"
+                                      id="{{ isset($item) ? $item->id:'' }}main_process_equipment" cols="30"
+                                      rows="5">{{ isset($item) ? $item->main_process_equipment:old('main_process_equipment') ?? ''  }}  </textarea>
                         </div>
                     </div>
                 </div>

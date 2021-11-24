@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -15,7 +16,7 @@ class BaseController extends Controller
 {
     protected $paginateSize = 10;
 
-    public function fetchData($model, $request = null, $filter = [])
+    public function fetchData($model, $request = null, $filter = [], $hasPermissions = true)
     {
         $items = $model;
         $total = $model;
@@ -46,13 +47,30 @@ class BaseController extends Controller
         if (isset($filter) && count($filter) > 0) {
             $items = $items->whereIn('parent_combine', $filter);
         }
-//        if (!checkIfSuperAdmin()) $items = $items->whereIn('parent_combine', Auth::user()->locationsArray());
 
-        $items = $items->filter(function ($value, $key) {
-            return doUserHasPermission('view' . $value->permission_string) || checkIfSuperAdmin();
-        });
+        if ($hasPermissions) {
+            $items = $this->applyPermissions($items, $model);
+        }
+
+//        $items = $items->filter(function ($value, $key) {
+//            dd($value->permission_string);
+//            return doUserHasPermission('view' . $value->permission_string) || checkIfSuperAdmin();
+//        });
 
         $data['items'] = $items;
         return $data;
+    }
+
+    public function applyPermissions($items, $model)
+    {
+        if (!checkIfSuperAdmin()) {
+            if (hierarchyCondition($model)) {
+                $items = $items->whereIn('combine', Role::locationsArray());
+            } else {
+                $items = $items->whereIn('parent_combine', Role::locationsArray());
+            }
+        }
+
+        return $items;
     }
 }

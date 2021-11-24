@@ -9,7 +9,7 @@ if (!function_exists('getLang')) {
         $lang = __($key);
 
         if ($lang == $key)
-            $lang = str_replace('_', ' ', $lang);
+            $lang = str_replace('_', '', $lang);
         return $lang;
     }
 }
@@ -249,7 +249,7 @@ if (!function_exists('formatFieldsForFrontEnd')) {
         if ($obj) {
             foreach ($obj as $item => $value) {
 
-                $object->{ucwords(str_replace('_', ' ', $item))} = $value;
+                $object->{ucwords(str_replace('_', '', $item))} = $value;
             }
         }
         return $object;
@@ -270,7 +270,163 @@ if (!function_exists('shortClassName')) {
     function shortClassName($name)
     {
         $exp = explode('\\', $name);
-        return $exp[count($exp)-1];
+        return $exp[count($exp) - 1];
+    }
+}
+
+if (!function_exists('sanitizeInput')) {
+    function sanitizeInput($value)
+    {
+        return utf8_encode($value);
+    }
+}
+
+if (!function_exists('hierarchyCondition')) {
+    function hierarchyCondition($model)
+    {
+        $modelClass = get_class($model);
+        return $modelClass == "App\Models\Company" || $modelClass == "App\Models\Unit" || $modelClass == "App\Models\Site";
+    }
+}
+
+if (!function_exists('tableColumnsMapping')) {
+    function tableColumnsMapping($table, $method, $column = null)
+    {
+        $mappingArray = [
+            'units' => [
+                'rec_id' => 'Unit ID',
+                'short_name' => 'Unit Name',
+                'long_name' => 'Unit Long Name',
+                'contact_person' => 'Contact Person',
+            ],
+            'sites' => [
+                'parent_type' => 'Parent Type',
+                'parent_name' => 'Parent Name',
+                'rec_id' => 'Site ID',
+                'name' => 'Site Name',
+                'arabic_name' => 'Site Name(Arabic)',
+                'description' => 'Site Description',
+                'descriptive_location' => 'Site Location(Descriptive)',
+                'location_dec_coordinate' => 'Site Location(Coordinates - Dec)',
+                'location_deg_coordinate' => 'Site Location(Coordinates - Deg)',
+                'location_google_link' => 'Site Location(Google Link)',
+                'main_process_equipment' => 'Main Process / Equipment',
+            ],
+            'sub_sites' => [
+                'parent_type' => 'Parent Type',
+                'parent_name' => 'Parent Name',
+                'rec_id' => 'SubSite ID',
+                'name' => 'SubSite Name',
+                'arabic_name' => 'SubSite Name(Arabic)',
+                'description' => 'SubSite Description',
+                'descriptive_location' => 'SubSite Location(Descriptive)',
+                'location_dec_coordinate' => 'SubSite Location(Coordinates - Dec)',
+                'location_deg_coordinate' => 'SubSite Location(Coordinates - Deg)',
+                'location_google_link' => 'SubSite Location(Google Link)',
+                'main_process_equipment' => 'Main Process / Equipment',
+            ],
+            'buildings' => [
+                'parent_type' => 'Parent Type',
+                'parent_name' => 'Parent Name',
+                'rec_id' => 'Building ID',
+                'name' => 'Building Name',
+            ],
+            'rooms' => [
+                'parent_type' => 'Parent Type',
+                'parent_name' => 'Parent Name',
+                'rec_id' => 'Room ID',
+                'name' => 'Room Name',
+            ],
+            'cabinets' => [
+                'parent_type' => 'Parent Type',
+                'parent_name' => 'Parent Name',
+                'rec_id' => 'Cabinet ID',
+                'name' => 'Cabinet Name',
+            ],
+            'computer_assets' => [
+                'parent_type' => 'Parent Type',
+                'parent_name' => 'Parent Name',
+                'rec_id' => 'Asset ID',
+                'name' => 'Asset Name',
+                'description' => 'Asset Description',
+                'function' => 'Asset Function',
+                'make' => 'Asset Make',
+                'model' => 'Asset Model',
+                'part_number' => 'Asset Part Number',
+                'serial_number' => 'Asset Serial Number',
+                'security_zone' => 'Security Zone',
+                'operating_system' => 'Operating System',
+                'vm_host' => 'VM Host',
+                'connected_scada_server' => 'Connected SCADA Server',
+                'contact' => 'Asset Contact Person',
+                'comment' => 'Comments',
+            ],
+            'network_assets' => [
+                'parent_type' => 'Parent Type',
+                'parent_name' => 'Parent Name',
+                'rec_id' => 'Asset ID',
+                'name' => 'Asset Name',
+                'description' => 'Asset Description',
+                'function' => 'Asset Function',
+                'make' => 'Asset Make',
+                'model' => 'Asset Model',
+                'part_number' => 'Asset Part Number',
+                'serial_number' => 'Asset Serial Number',
+                'security_zone' => 'Security Zone',
+                'asset_firmware' => 'Asset Firmware',
+                'redundant_pair_id' => 'Redundant Asset Pair ID (If Applicable)',
+                'asset_contact_person' => 'Asset Contact Person',
+                'comment' => 'Comments',
+            ],
+            'lone_assets' => [
+                'parent_type' => 'Parent Type',
+                'parent_name' => 'Parent Name',
+                'rec_id' => 'Asset ID',
+                'name' => 'Asset Name',
+                'description' => 'Asset Description',
+                'function' => 'Asset Function',
+                'make' => 'Asset Make',
+                'model' => 'Asset Model',
+                'part_number' => 'Asset Part Number',
+                'serial_number' => 'Asset Serial Number',
+                'security_zone' => 'Security Zone',
+                'asset_firmware' => 'Asset Firmware',
+                'redundant_pair_id' => 'Redundant Asset Pair ID (If Applicable)',
+                'connected_scada_server' => 'Connected SCADA Server',
+                'owner_contact' => 'Asset Contact Person',
+                'asset_parent_code' => 'Asset Parent ID',
+                'comment' => 'Comments',
+            ],
+        ];
+
+        $tableMap = $mappingArray[$table];
+        if ($method == "export")
+            return array_values($tableMap);
+        if ($method == "import")
+            return array_search($column, $tableMap);
+    }
+}
+
+if (!function_exists('tableNamesMapping')) {
+    function tableNamesMapping($table, $method)
+    {
+        $mappingArray = [
+            'companies' => 'Company',
+            'units' => 'Unit',
+            'sites' => 'Site',
+            'sub_sites' => 'SubSite',
+            'buildings' => 'Building',
+            'rooms' => 'Room',
+            'cabinets' => 'Cabinet',
+            'network_assets' => 'Asset Computer',
+            'computer_assets' => 'Asset Network',
+            'lone_assets' => 'Asset L01',
+        ];
+
+        if ($method == "export")
+            return $mappingArray[$table];
+        if ($method == "import")
+            return array_search($table, $mappingArray);
     }
 }
 

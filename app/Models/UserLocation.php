@@ -39,7 +39,7 @@ class UserLocation extends Model
         $arr = [
             'locationable_type' => $locationAbleType,
             'locationable_id' => $locationAbleId,
-            'user_id' => $useId
+            'role_id' => $useId
         ];
 
         return self::create($arr);

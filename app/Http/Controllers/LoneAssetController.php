@@ -23,16 +23,15 @@ class LoneAssetController extends BaseController
         $this->heading = 'L01 Asset';
         \Illuminate\Support\Facades\View::share('top_heading', 'L01 Asset');
     }
-
     /**
      * @return Application|Factory|View
      */
-    public function index()
+    public function index($filter = [])
     {
-        $data = $this->fetchData($this->model);
+        $data = $this->fetchData($this->model, null, $filter);
 
         return view($this->route . "/index")
-            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading]);
+            ->with(['items' => $data['items'], 'data' => $data, 'filter' => $filter[0] ?? null, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**

@@ -62,33 +62,6 @@ class User extends Authenticatable
         return '';
     }
 
-    public function locations(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(UserLocation::class, 'user_id');
-    }
-
-    public function locationsArray()
-    {
-        return $this->locations->pluck('combine_name')->toArray();
-    }
-
-    /**
-     * @param $request
-     * @param $item
-     */
-    function updateLocations($request, $item)
-    {
-        UserLocation::where(['user_id' => $item->id])->delete();
-        if (isset($request->location)) {
-            foreach ($request->location as $location) {
-                $prt = explode('??', $location);
-                $item->parentable_type = $prt[0] ?? '';
-                $item->parentable_id = $prt[1] ?? '';
-                UserLocation::addNew($prt[0] ?? null, $prt[1] ?? null, $item->id);
-            }
-        }
-    }
-
     /**
      * @param $request
      * @param $item
@@ -117,22 +90,20 @@ class User extends Authenticatable
         if (isset($request->email)) $item->email = $request->email;
         if (isset($request->password)) $item->password = Hash::make($request->password);
         if (isset($request->dob)) $item->dob = Hash::make($request->dob);
+        $item->save();
         if (isset($request->roles)) {
             $item->syncRoles($request->roles);
         }
-
-        $item->save();
-        $this->updateLocations($request, $item);
-        $this->updateAssetPermissions($request, $item);
         return $item;
     }
 
     public function userNotifications()
     {
-        return $this->belongsToMany(Notification::class)->orderBy('created_at','DESC');
+        return $this->belongsToMany(Notification::class)->orderBy('created_at', 'DESC');
     }
+
     public function userFirstThreeNotifications()
     {
-        return $this->belongsToMany(Notification::class)->skip(0)->take(3)->orderBy('created_at','DESC');
+        return $this->belongsToMany(Notification::class)->skip(0)->take(3)->orderBy('created_at', 'DESC');
     }
 }

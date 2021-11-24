@@ -35,7 +35,7 @@ class ImportController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -52,6 +52,7 @@ class ImportController extends Controller
         $data = $csvContent['data'];
         $tableName = explode('.', $fileName)[0];
         $modelClass = config('models.' . $tableName);
+        $tableNameRaw = tableNamesMapping($tableName, 'import');
         $logs = [];
         $success = true;
 
@@ -69,20 +70,17 @@ class ImportController extends Controller
                     $model = App::make($modelClass);
                     $arr = [];
                     for ($i = 0; $i < count($obj); $i++) {
-                        if ($header[$i] == 'id') {
-                            $arr['rec_id'] = $obj[$header[$i]];
-                        } else {
-                            if (in_array($header[$i], $columns)) {
-                                $arr[$header[$i]] = $obj[$header[$i]];
-                            }
+                        $clm = tableColumnsMapping($tableNameRaw, 'import', $header[$i]);
+                        if ($clm) {
+                            $arr[$clm] = sanitizeInput($obj[$header[$i]]);
                         }
                     }
 
-                    $parentType = $obj['parent_type'];
-                    $parentId = $obj['parent_name'];
+                    $parentType = $obj['Parent Type'];
+                    $parentId = $obj['Parent Name'];
 
                     if (!in_array($parentType, ['Company', 'Unit', 'Site', 'SubSite', 'Unit', 'Building', 'Room', 'Cabinet'])) {
-                        $logs[] = 'Error : Invalid Parent Type : '.$parentType;
+                        $logs[] = 'Error : Invalid Parent Type : ' . $parentType;
                         $success = false;
                         break;
                     }
@@ -96,7 +94,7 @@ class ImportController extends Controller
 
                     $parent = $parentModel->where('rec_id', $parentId)->first();
                     if (!$parent) {
-                        $logs[] = 'Error : Parent not found : '.$parentId;
+                        $logs[] = 'Error : Parent not found : ' . $parentId;
                         $success = false;
                         break;
                     }
@@ -117,6 +115,7 @@ class ImportController extends Controller
                         try {
                             $model->saveFormData($model, $request);
                         } catch (\Exception $exception) {
+                            dd($exception->getMessage());
                             $logs[] = 'Error : Unknown error. Please contact the administer.';
                             $success = false;
                             break;
@@ -149,7 +148,7 @@ class ImportController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -160,7 +159,7 @@ class ImportController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -171,8 +170,8 @@ class ImportController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -183,7 +182,7 @@ class ImportController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

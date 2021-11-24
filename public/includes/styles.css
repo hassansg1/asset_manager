@@ -55,7 +55,7 @@ table.dataTable > thead .sorting:after, table.dataTable > thead .sorting_asc:aft
 }
 
 table.dataTable > thead .sorting_asc:before, table.dataTable > thead .sorting_desc:after {
-    color: #c9a200 !important;
+    color: #556ee6 !important;
 }
 
 .select_all_checkbox:after, .select_all_checkbox:before {
@@ -159,33 +159,33 @@ body[data-layout=horizontal] .page-content {
 }
 
 .theme_color {
-    color: #c9a200;
+    color: #556ee6;
 }
 
 .theme_color_bg {
-    background-color: #c9a200;
-    border: #c9a200;
+    background-color: #556ee6;
+    border: #556ee6;
 }
 
 .page-item.active .page-link {
-    background-color: #c9a200 !important;
-    border-color: #c9a200 !important;
+    background-color: #556ee6 !important;
+    border-color: #556ee6 !important;
 }
 
 .btn-primary {
     color: #fff;
-    background-color: #c9a200;
-    border-color: #c9a200;
+    background-color: #556ee6;
+    border-color: #556ee6;
 }
 
 .selected_btn {
-    background-color: #c9a200;
+    background-color: #556ee6;
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #9b8003;
-    border-color: #9b8003;
+    background-color: #0a1b94;
+    border-color: #0a1b94;
 }
 
 .page-content {
@@ -205,8 +205,8 @@ body[data-layout=horizontal] .page-content {
 
 .top_nav_btns:hover {
     color: #fff;
-    background-color: #c9a200;
-    border-color: #c9a200;
+    background-color: #556ee6;
+    border-color: #556ee6;
 }
 
 .page-title-box {
@@ -224,20 +224,20 @@ tr {
 .initials_circle {
     width: 100px;
     height: 100px;
-    border: 1px solid #c9a200;
+    border: 1px solid #556ee6;
     border-radius: 55px;
     text-align: center;
     line-height: 100px;
     font-size: 40px;
-    color: #c9a200;
+    color: #556ee6;
 }
 
 .nav-tabs-custom .nav-item .nav-link.active {
-    color: #9b8003;
+    color: #0a1b94;
 }
 
 .nav-tabs-custom .nav-item .nav-link:after {
-    background: #9b8003;
+    background: #0a1b94;
 }
 
 .fw-300 {
@@ -247,7 +247,7 @@ tr {
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     border-left: 4px solid;
     background-color: #f7f2db;
-    color: #c9a200;
+    color: #556ee6;
 }
 
 .card-title-small {
@@ -259,8 +259,8 @@ tr {
 }
 .form-check-input:checked
 {
-    background-color: #c9a200;
-    border-color: #c9a200;
+    background-color: #556ee6;
+    border-color: #556ee6;
 }
 .select2-container
 {

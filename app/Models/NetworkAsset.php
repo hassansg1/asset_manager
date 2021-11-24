@@ -95,8 +95,8 @@ class NetworkAsset extends Model
         if (isset($request->security_zone)) $item->security_zone = $request->security_zone;
         if (isset($request->asset_firmware)) $item->asset_firmware = $request->asset_firmware;
         if (isset($request->redundant_pair_id)) $item->redundant_pair_id = $request->redundant_pair_id;
-        if (isset($request->comments)) $item->comments = $request->comments;
-        if (isset($request->column1)) $item->column1 = $request->column1;
+        if (isset($request->comment)) $item->comment = $request->comment;
+        if (isset($request->asset_contact_person)) $item->asset_contact_person = $request->asset_contact_person;
 
         $item->save();
         $this->updateParent($request, $item);

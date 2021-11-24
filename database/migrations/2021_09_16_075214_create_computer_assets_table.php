@@ -28,6 +28,7 @@ class CreateComputerAssetsTable extends Migration
             $table->integer('operating_system')->nullable();
             $table->string('connected_scada_server')->nullable();
             $table->string('contact')->nullable();
+            $table->string('comment')->nullable();
             $table->timestamps();
         });
     }

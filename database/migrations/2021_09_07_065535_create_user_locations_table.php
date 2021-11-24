@@ -17,7 +17,7 @@ class CreateUserLocationsTable extends Migration
             $table->id();
             $table->string('locationable_type',255)->nullable();
             $table->integer('locationable_id')->nullable();
-            $table->integer('user_id');
+            $table->integer('role_id');
             $table->timestamps();
         });
     }

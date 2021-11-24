@@ -39,7 +39,6 @@ class Unit extends Model
         if (isset($request->long_name)) $item->long_name = $request->long_name;
         if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
         if (isset($request->contact_person)) $item->contact_person = $request->contact_person;
-        if (isset($request->ot_apn)) $item->ot_apn = $request->ot_apn;
 
         $item->save();
         $this->updateParent($request,$item);

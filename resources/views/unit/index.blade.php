@@ -9,7 +9,6 @@
     <th>Short Name</th>
     <th>Long Name</th>
     <th>Contact Person</th>
-    <th>OT APN</th>
     <th>Actions</th>
 @endsection
 @section('table_rows')

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Traits\HasRoles;
@@ -37,7 +38,7 @@ class Role extends Authenticatable
      */
     function updateLocations($request, $item)
     {
-        UserLocation::where(['user_id' => $item->id])->delete();
+        UserLocation::where(['role_id' => $item->id])->delete();
         if (isset($request->location)) {
             foreach ($request->location as $location) {
                 $prt = explode('??', $location);
@@ -64,6 +65,19 @@ class Role extends Authenticatable
     }
 
 
+    public function locations(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(UserLocation::class, 'role_id');
+    }
+
+    public static function locationsArray()
+    {
+        $roles = Auth::user()->roles->pluck('id')->toArray();
+        if ($roles) {
+            return UserLocation::whereIn('role_id', $roles)->get()->pluck('combine_name')->toArray();
+        }
+    }
+
     /**
      * @param $item
      * @param $request
@@ -75,10 +89,14 @@ class Role extends Authenticatable
         $item->guard_name = 'web';
         $item->save();
         $role = \Spatie\Permission\Models\Role::findByName($item->name);
-        if (isset($request->permissions)) $role->syncPermissions($request->permissions);
+//        foreach ($request->permissions as $permission)
+//        {
+//            Permission::findOrCreate($permission);
+//        }
+//        if (isset($request->permissions)) $role->syncPermissions($request->permissions);
 
         $this->updateLocations($request, $item);
-        $this->updateAssetPermissions($request, $item);
+        $this->updateAssetPermissions($request, $role);
         return $item;
     }
 }

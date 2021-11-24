@@ -105,7 +105,7 @@ trait ParentTrait
     {
         $par = self::parentModel($this);
         if ($par)
-            return $this->getTable() . get_class($par) . $par->id;
+            return get_class($par) . $par->id;
         return '';
     }
 

@@ -12,13 +12,14 @@
                     </span>
                 </a>
 
-                <a href="index" class="logo logo-light">
-                    <span class="logo-sm">
-                        <img src="{{ URL::asset ('/assets/images/logo-light.svg') }}" alt="" height="22">
-                    </span>
-                    <span class="logo-lg">
-                        <img src="{{ URL::asset ('/assets/images/logo-light.png') }}" alt="" height="19">
-                    </span>
+                <a href="{{ url('') }}" class="logo logo-light">
+                    <h3 style="    margin-top: 20px;color: white;font-size: 25px;">OTCM</h3>
+                    {{--                    <span class="logo-sm">--}}
+                    {{--                        <img src="{{ URL::asset ('/assets/images/logo.png') }}" alt="" height="22">--}}
+                    {{--                    </span>--}}
+                    {{--                    <span class="logo-lg">--}}
+                    {{--                        <img src="{{ URL::asset ('/assets/images/logo.png') }}" alt="" height="19">--}}
+                    {{--                    </span>--}}
                 </a>
             </div>
 
@@ -26,14 +27,6 @@
             <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
                 <i class="fa fa-fw fa-bars"></i>
             </button>
-
-            <!-- App Search-->
-            {{--<form class="app-search d-none d-lg-block">--}}
-            {{--<div class="position-relative">--}}
-            {{--<input type="text" class="form-control" placeholder="@lang('translation.Search')">--}}
-            {{--<span class="bx bx-search-alt"></span>--}}
-            {{--</div>--}}
-            {{--</form>--}}
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
@@ -124,6 +117,10 @@
                     <a href="{{ route('import.index') }}" class="dropdown-item notify-item language" data-lang="eng">
                         <span class="align-middle">Import</span>
                     </a>
+                    <a href="{{ route('export_templates') }}" class="dropdown-item notify-item language"
+                       data-lang="eng">
+                        <span class="align-middle">Export Data Templates</span>
+                    </a>
                 </div>
             </div>
             <div class="dropdown d-inline-block">
@@ -135,20 +132,14 @@
                     <a href="{{ route('standard.index') }}" class="dropdown-item notify-item language" data-lang="eng">
                         <span class="align-middle">Standards List</span>
                     </a>
-                    <a href="{{ route('applicable_standard.index') }}" class="dropdown-item notify-item language" data-lang="eng">
+                    <a href="{{ route('applicable_standard.index') }}" class="dropdown-item notify-item language"
+                       data-lang="eng">
                         <span class="align-middle">Applicable Standards</span>
                     </a>
                     <a href="{{ route('version.index') }}" class="dropdown-item notify-item language" data-lang="eng">
                         <span class="align-middle">Compliance Version</span>
                     </a>
                 </div>
-            </div>
-            <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item waves-effect"
-                        onclick="location.href='{{ route('compliance.applicable') }}'" data-bs-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                    <span class="align-middle">Applicable Compliances</span>
-                </button>
             </div>
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
@@ -298,9 +289,6 @@
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{--<img class="rounded-circle header-profile-user"--}}
-                    {{--src="{{ isset(Auth::user()->avatar) ? asset(Auth::user()->avatar) : asset('/assets/images/users/avatar-1.jpg') }}"--}}
-                    {{--alt="Header Avatar">--}}
                     <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ucfirst(Auth::user()->name)}}</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>

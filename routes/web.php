@@ -96,7 +96,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('log/approve/{id}', [\App\Http\Controllers\LogController::class, 'approve']);
     Route::get('log/reject/{id}', [\App\Http\Controllers\LogController::class, 'reject']);
     Route::get('log/remove/{id}', [\App\Http\Controllers\LogController::class, 'remove']);
-    Route::get('test', [\App\Http\Controllers\AjaxController::class, 'test']);
+    Route::get('export_templates', [\App\Http\Controllers\AjaxController::class, 'exportDataTemplates'])->name('export_templates');
 
     Route::get('dashboard', [\App\Http\Controllers\DashBoardController::class, 'index']);
     Route::get('task', [\App\Http\Controllers\TaskController::class, 'index'])->name('task');
@@ -109,5 +109,5 @@ Route::group(['middleware' => ['auth']], function () {
     });
     Route::post('changeApplicableStatus', [\App\Http\Controllers\ApplicableStandardController::class, 'changeApplicableStatus'])->name('standard.changeApplicableStatus');
     Route::get('getLocationsOfCompliance', [\App\Http\Controllers\ApplicableClauseController::class, 'getLocationsOfCompliance']);
-    Route::get('test', [\App\Http\Controllers\TestController::class, 'test']);
+    Route::get('testCron', [\App\Http\Controllers\TestController::class, 'test']);
 });

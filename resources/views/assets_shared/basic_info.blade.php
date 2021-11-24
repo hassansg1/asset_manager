@@ -99,15 +99,18 @@
     </div>
     <div class="col-lg-4">
         <div class="mb-3">
-            <label for="{{ isset($item) ? $item->id:'' }}serial_number" class="form-label">Serial
-                Number</label>
-            <input type="text"
-                   value="{{ isset($item) ? $item->serial_number:old('serial_number') ?? ''  }}"
-                   class="form-control" id="{{ isset($item) ? $item->id:'' }}serial_number"
-                   name="serial_number">
+            <label for="{{ isset($item) ? $item->id:'' }}function" class="form-label">Function</label>
+            <select class="form-select form-select-input" name="function"
+                    id="{{ isset($item) ? $item->id:'' }}function">
+                @foreach(\App\Models\AssetFunction::all() as $function)
+                    <option value=""></option>
+                    <option
+                        {{ $function->id == (isset($item) ? $item->function:old('last_name') ?? '') ? 'selected' : ''  }}
+                        value="{{ $function->id }}">{{ $function->name }}</option>
+                @endforeach
+            </select>
         </div>
     </div>
-
     <div class="col-lg-4">
         <div class="mb-3">
             <label for="{{ isset($item) ? $item->id:'' }}make" class="form-label">Make</label>
@@ -143,16 +146,12 @@
     </div>
     <div class="col-lg-4">
         <div class="mb-3">
-            <label for="{{ isset($item) ? $item->id:'' }}function" class="form-label">Function</label>
-            <select class="form-select form-select-input" name="function"
-                    id="{{ isset($item) ? $item->id:'' }}function">
-                @foreach(\App\Models\AssetFunction::all() as $function)
-                    <option value=""></option>
-                    <option
-                            {{ $function->id == (isset($item) ? $item->function:old('last_name') ?? '') ? 'selected' : ''  }}
-                            value="{{ $function->id }}">{{ $function->name }}</option>
-                @endforeach
-            </select>
+            <label for="{{ isset($item) ? $item->id:'' }}serial_number" class="form-label">Serial
+                Number</label>
+            <input type="text"
+                   value="{{ isset($item) ? $item->serial_number:old('serial_number') ?? ''  }}"
+                   class="form-control" id="{{ isset($item) ? $item->id:'' }}serial_number"
+                   name="serial_number">
         </div>
     </div>
 </div>
@@ -170,6 +169,15 @@
                             value="{{ $security_zone->id }}">{{ $security_zone->name }}</option>
                 @endforeach
             </select>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="mb-3">
+            <label for="{{ isset($item) ? $item->id:'' }}comment" class="form-label">Comments</label>
+            <input type="text"
+                   value="{{ isset($item) ? $item->comment:old('comment') ?? ''  }}"
+                   class="form-control" id="{{ isset($item) ? $item->id:'' }}comment"
+                   name="comment">
         </div>
     </div>
 </div>

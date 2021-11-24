@@ -40,7 +40,7 @@
                                    name="short_name">
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
@@ -59,13 +59,6 @@
                                    value="{{ isset($item) ? $item->contact_person:old('contact_person') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}contact_person"
                                    name="contact_person">
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}ot_apn" class="form-label">OT APN</label>
-                            <input type="text" value="{{ isset($item) ? $item->ot_apn:old('ot_apn') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}ot_apn" name="ot_apn">
                         </div>
                     </div>
                 </div>

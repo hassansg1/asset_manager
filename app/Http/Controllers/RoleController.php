@@ -28,7 +28,7 @@ class RoleController extends BaseController
      */
     public function index()
     {
-        $data = $this->fetchData($this->model);
+        $data = $this->fetchData($this->model, null, [], false);
 
         return view($this->route . "/index")
             ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading]);
@@ -40,7 +40,7 @@ class RoleController extends BaseController
      */
     public function filter(Request $request)
     {
-        $data = $this->fetchData($this->model, $request);
+        $data = $this->fetchData($this->model, $request, [], 0);
 
         return response()->json([
             'status' => true,

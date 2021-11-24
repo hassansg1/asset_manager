@@ -40,6 +40,9 @@
                     'route': '{{ \Illuminate\Support\Facades\Route::currentRouteAction() }}',
                 },
                 success: function (result) {
+                    if (result.status) {
+                        doSuccessToast();
+                    }
                 },
             });
         });
