@@ -109,5 +109,6 @@ Route::group(['middleware' => ['auth']], function () {
     });
     Route::post('changeApplicableStatus', [\App\Http\Controllers\ApplicableStandardController::class, 'changeApplicableStatus'])->name('standard.changeApplicableStatus');
     Route::get('getLocationsOfCompliance', [\App\Http\Controllers\ApplicableClauseController::class, 'getLocationsOfCompliance']);
+    Route::post('updateComplianceVersionItems', [\App\Http\Controllers\ApplicableClauseController::class, 'updateComplianceVersionItems']);
     Route::get('test', [\App\Http\Controllers\TestController::class, 'test']);
 });

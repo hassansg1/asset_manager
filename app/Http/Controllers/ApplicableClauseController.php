@@ -7,6 +7,7 @@ use App\Models\Company;
 use App\Models\Compliance;
 use App\Models\ComplianceData;
 use App\Models\ComplianceDataFiles;
+use App\Models\ComplianceVersionItem;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory;
@@ -38,7 +39,7 @@ class ApplicableClauseController extends BaseController
         $items = Compliance::orderBy('id', 'desc')->get();
 
         return view($this->route . "/index")
-            ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
+        ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**
@@ -52,7 +53,7 @@ class ApplicableClauseController extends BaseController
         return response()->json([
             'status' => true,
             'html' => view($this->route . "/form_rows")
-                ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading])->render(),
+            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading])->render(),
             'data' => $data
         ]);
     }
@@ -63,7 +64,7 @@ class ApplicableClauseController extends BaseController
     public function create()
     {
         return view($this->route . "/create")
-            ->with(['route' => $this->route, 'heading' => $this->heading]);
+        ->with(['route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**
@@ -112,7 +113,7 @@ class ApplicableClauseController extends BaseController
                 'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item, 'clone' => $request->clone ?? null])->render()
             ]);
         } else
-            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
+        return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
     }
 
     /**
@@ -170,14 +171,14 @@ class ApplicableClauseController extends BaseController
 
         $items = ComplianceData::where('applicable', '=', 1)->orderBy('id', 'desc')->get();
         return view($this->route . "/applicable")
-            ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
+        ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     public function complianceApplicableViewDetail($id)
     {
         $items = ComplianceData::find($id);
         return view($this->route . "/view_detail")
-            ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
+        ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     public function storeComplianceDataLocations(Request $request)
@@ -197,8 +198,22 @@ class ApplicableClauseController extends BaseController
         $locations = $locationModel::get();
 
         return response()->json([
-            'html' => \view('version_compliance.location_table')->with('locations', $locations)->render(),
+            'html' => \view('version_compliance.location_table')->with(['locations' => $locations, 'item_id'=>$request->trId])->render(),
             'status' => true
         ]);
     }
+    public function updateComplianceVersionItems(Request $request)
+    {
+        $complianceVersionItems=ComplianceVersionItem::where('location_id',$request->location_id)->first();
+        if($complianceVersionItems==null){
+          $complianceVersionItems=new ComplianceVersionItem;
+          $complianceVersionItems->compliance_version_id=$request->compliance_version_id;
+          $complianceVersionItems->compliance_data_id=$request->compliance_data_id;
+          $complianceVersionItems->location_id=$request->location_id;
+      }
+      $complianceVersionItems->compliant=$request->compliant_id;
+      $complianceVersionItems->comment=$request->comment;
+      $complianceVersionItems->attachment_id=$request->attachment_id;
+      $complianceVersionItems->save();
+  }
 }
