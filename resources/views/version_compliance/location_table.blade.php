@@ -19,7 +19,7 @@
                 </td>
                 <td>
                     <select class="form-control" name="compliant" id="compliant" 
-                     onchange="updateCompliant()">
+                     onchange="updateCompliant('{{ $location->id }}', this)">
                     <option value="{{ App\Models\ComplianceData::COMPLIANT_ALL }}">Select Compliant</option>
                     <option value="{{ App\Models\ComplianceData::COMPLIANT_YES }}">Yes</option>
                     <option value="{{ App\Models\ComplianceData::COMPLIANT_NO }}">No</option>
@@ -27,10 +27,11 @@
                 </select>
             </td>
             <td>
-                <input type="text" name="comment" id="comment" class="form-control" onfocusout="updateCompliant()">
+                <input type="text" name="comment" id="comment" class="form-control" onfocusout="updateComment('{{ $location->id }}', this)">
             </td>
             <td>
-                    <select class="form-control attachment" name="attachment" id="attachment" onchange="updateCompliant()">
+                    <select class="form-control attachment" name="attachment" id="attachment" onchange="updateAttachment('{{ $location->id }}', this)">
+                         <option value="0">Select Attachment</option>
                         @foreach (attachments() as $attachment)
                         <option value="{{ $attachment->id }}">
                             {{ $attachment->title }}

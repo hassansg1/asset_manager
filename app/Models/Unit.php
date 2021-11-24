@@ -28,6 +28,12 @@ class Unit extends Model
         return $this->long_name;
     }
 
+
+    public function complianceItems(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(ComplianceVersionItem::class, 'location_id');
+    }
+
     /**
      * @param $item
      * @param $request

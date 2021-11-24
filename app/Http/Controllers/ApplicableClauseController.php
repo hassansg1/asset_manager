@@ -197,6 +197,8 @@ class ApplicableClauseController extends BaseController
         $locationModel = 'App\Models\\' . $complianceD->location;
         $locations = $locationModel::get();
 
+        // <!-- value="{{$location->complianceItems != null ? $location->complianceItems->comment : ''}}" -->
+
         return response()->json([
             'html' => \view('version_compliance.location_table')->with(['locations' => $locations, 'item_id'=>$request->trId])->render(),
             'status' => true
@@ -211,9 +213,15 @@ class ApplicableClauseController extends BaseController
           $complianceVersionItems->compliance_data_id=$request->compliance_data_id;
           $complianceVersionItems->location_id=$request->location_id;
       }
-      $complianceVersionItems->compliant=$request->compliant_id;
-      $complianceVersionItems->comment=$request->comment;
-      $complianceVersionItems->attachment_id=$request->attachment_id;
+      if ($request->compliant_id) {
+        $complianceVersionItems->compliant=$request->compliant_id;
+      }
+      if ($request->comment) {
+          $complianceVersionItems->comment=$request->comment;
+      }
+      if ($request->attachment_id) {
+           $complianceVersionItems->attachment_id=$request->attachment_id;
+      }
       $complianceVersionItems->save();
   }
 }

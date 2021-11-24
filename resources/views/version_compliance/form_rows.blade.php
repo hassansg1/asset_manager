@@ -96,22 +96,22 @@
     }
 
 
-    function updateCompliant(){
-        // var row = $(this).closest('tr');
+
+
+    function updateCompliant($location_id, e){
+        // var row = $(this).closest('tr.parent_row');
         // alert($(row).find('.location_id').val());
-        var compliant_id = $( "#compliant option:selected" ).val();
+        var compliant_id =  $(e).val();
         var compliance_data_id = $('#item').val();
-        var location_id = $( "#location_id" ).val();
+        var location_id = $location_id;
         var compliance_version_id = {{ $version_id }};
-        var comment = $('#comment').val();
-        var attachment_id = $( "#attachment option:selected" ).val();
         $.ajax({
             url: '/updateComplianceVersionItems/',
             headers: {
                 'X-CSRF-TOKEN': "{{ csrf_token() }}"
             },
             type: 'POST',
-            data: {compliant_id: compliant_id, compliance_data_id: compliance_data_id, location_id: location_id, compliance_version_id: compliance_version_id, comment:comment, attachment_id:attachment_id},
+            data: {compliant_id: compliant_id, compliance_data_id: compliance_data_id, location_id: location_id, compliance_version_id: compliance_version_id},
             success: function (data) {
 
             }
@@ -119,44 +119,41 @@
 
     }
 
-    // function updateComment(){
-    //     var tr = $(this).closest('tr');
-    //     var comment = $('#comment').val();
-    //     var compliant_id = $( "#compliant option:selected" ).val();
-    //     var compliance_version_id = {{ $version_id }};
-    //     $.ajax({
-    //         url: '/updateComplianceVersionItems/',
-    //         headers: {
-    //             'X-CSRF-TOKEN': "{{ csrf_token() }}"
-    //         },
-    //         type: 'POST',
-    //         data: {comment: comment, compliance_version_id: compliance_version_id, compliant_id:compliant_id},
-    //         success: function (data) {
+    function updateComment($location_id, e){
+        var tr = $(this).closest('tr');
+        var comment = $(e).val();
+        var location_id = $location_id;
+        $.ajax({
+            url: '/updateComplianceVersionItems/',
+            headers: {
+                'X-CSRF-TOKEN': "{{ csrf_token() }}"
+            },
+            type: 'POST',
+            data: {comment: comment, location_id:location_id},
+            success: function (data) {
 
-    //         }
-    //     });
+            }
+        });
 
-    // }
+    }
 
-    // function updateAttachment(){
-    //     var tr = $(this).closest('tr');
-    //     var attachment_id = $( "#attachment option:selected" ).val();
-    //     var comment = $('#comment').val();
-    //     var compliant_id = $( "#compliant option:selected" ).val();
-    //     var compliance_version_id = {{ $version_id }};
-    //     $.ajax({
-    //         url: '/updateComplianceVersionItems/',
-    //         headers: {
-    //             'X-CSRF-TOKEN': "{{ csrf_token() }}"
-    //         },
-    //         type: 'POST',
-    //         data: {attachment_id: attachment_id, compliance_version_id: compliance_version_id, comment:comment, compliant_id:compliant_id},
-    //         success: function (data) {
+    function updateAttachment($location_id, e){
+        var tr = $(this).closest('tr');
+        var attachment_id = $(e).val();
+        var location_id = $location_id;
+        $.ajax({
+            url: '/updateComplianceVersionItems/',
+            headers: {
+                'X-CSRF-TOKEN': "{{ csrf_token() }}"
+            },
+            type: 'POST',
+            data: {attachment_id: attachment_id, location_id: location_id},
+            success: function (data) {
 
-    //         }
-    //     });
+            }
+        });
 
-    // }
+    }
 
     
 
