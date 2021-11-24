@@ -37,9 +37,8 @@ class VersionComplianceController extends BaseController
     {
         $version = ComplianceVersion::with('standard')->where('id', $complianceVersionId)->first();
         $items = ComplianceData::where(['standard_id' => $version->standard_id, 'applicable' => 1])->get();
-
         return view($this->route . "/index")
-            ->with(['items' => $items, 'route' => $this->route, 'onlyView' => $onlyView, 'heading' => "Compliance for ".  $version->standard->name." - Version : ".$version->name]);
+            ->with(['items' => $items, 'route' => $this->route, 'onlyView' => $onlyView, 'heading' => "Compliance for ".  $version->standard->name." - Version : ".$version->name, 'version_id'=>$version->id]);
     }
 
     /**

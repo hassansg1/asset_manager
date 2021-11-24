@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use App\Models\Attachment;
 
 if (!function_exists('getLang')) {
     function getLang($key)
@@ -427,6 +428,13 @@ if (!function_exists('tableNamesMapping')) {
             return $mappingArray[$table];
         if ($method == "import")
             return array_search($table, $mappingArray);
+    }
+}
+if (!function_exists('attachments')) {
+    function attachments()
+    {
+        $attachments = Attachment::get();
+        return $attachments;
     }
 }
 

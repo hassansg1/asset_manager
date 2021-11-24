@@ -36,7 +36,6 @@ class ComplianceUpdateController extends BaseController
     public function index()
     {
         $items = ComplianceVersion::all();
-
         return view($this->route . "/index")
             ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
     }
