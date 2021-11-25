@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Building;
+use App\Models\Clause;
 use App\Models\Company;
 use App\Models\Compliance;
-use App\Models\ComplianceData;
 use App\Models\ComplianceDataFiles;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
@@ -22,7 +22,7 @@ class ClauseController extends BaseController
 
     public function __construct()
     {
-        $this->model = new Compliance();
+        $this->model = new Clause();
         $this->route = 'clause';
         $this->heading = 'Clause';
         \Illuminate\Support\Facades\View::share('top_heading', 'Clauses');
@@ -33,8 +33,7 @@ class ClauseController extends BaseController
      */
     public function index()
     {
-//        $data = $this->fetchData($this->model);
-        $items = Compliance::orderBy('id', 'desc')->get();
+        $items = Clause::orderBy('id', 'desc')->get();
 
         return view($this->route . "/index")
             ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
@@ -71,7 +70,8 @@ class ClauseController extends BaseController
      */
     public function store(Request $request)
     {
-        $request->validate($this->model->rules);
+        if ($this->model->rules)
+            $request->validate($this->model->rules);
         $this->model->saveFormData($this->model, $request);
 
         flashSuccess(getLang($this->heading . " Successfully Created."));
@@ -145,7 +145,7 @@ class ClauseController extends BaseController
 
     public function storeComplaiceData(Request $request)
     {
-        $data = ComplianceData::saveFormData($request);
+        $data = Clause::saveFormData($request);
 
         return response()->json([
             'status' => true,
@@ -167,14 +167,14 @@ class ClauseController extends BaseController
     public function complianceApplicable()
     {
 
-        $items = ComplianceData::where('applicable', '=', 1)->orderBy('id', 'desc')->get();
+        $items = ClauseData::where('applicable', '=', 1)->orderBy('id', 'desc')->get();
         return view($this->route . "/applicable")
             ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     public function complianceApplicableViewDetail($id)
     {
-        $items = ComplianceData::find($id);
+        $items = ClauseData::find($id);
         return view($this->route . "/view_detail")
             ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
     }
@@ -186,6 +186,6 @@ class ClauseController extends BaseController
                 'html' => \view('ajax.compliance_drop_down')->with('locations', Company::all())->render()
             ]);
         }
-        ComplianceData::saveLocations($request);
+        ClauseData::saveLocations($request);
     }
 }

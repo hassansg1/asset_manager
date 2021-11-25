@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Building;
+use App\Models\Clause;
+use App\Models\ClauseData;
 use App\Models\Company;
-use App\Models\Compliance;
-use App\Models\ComplianceData;
-use App\Models\ComplianceDataFiles;
+use App\Models\ClauseDataFiles;
 use App\Models\ComplianceVersionItem;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
@@ -23,7 +23,7 @@ class ApplicableClauseController extends BaseController
 
     public function __construct()
     {
-        $this->model = new Compliance();
+        $this->model = new Clause();
         $this->route = 'applicable_clause';
         $this->heading = 'Applicable Clause';
         \Illuminate\Support\Facades\View::share('top_heading', 'Applicable Clauses');
@@ -145,9 +145,9 @@ class ApplicableClauseController extends BaseController
         return redirect(route($this->route . ".index"));
     }
 
-    public function storeComplaiceData(Request $request)
+    public function storeClauseData(Request $request)
     {
-        $data = ComplianceData::saveFormData($request);
+        $data = ClauseData::saveFormData($request);
 
         return response()->json([
             'status' => true,
@@ -162,38 +162,38 @@ class ApplicableClauseController extends BaseController
         $name = time() . $file->getClientOriginalName();
         $destinationPath = public_path('images/compliance');
         $file->move($destinationPath, $name);
-        $data = ComplianceDataFiles::create(['compliance_data_id' => $id, 'file_name' => $name]);
+        $data = ClauseDataFiles::create(['compliance_data_id' => $id, 'file_name' => $name]);
         return true;
     }
 
     public function complianceApplicable()
     {
 
-        $items = ComplianceData::where('applicable', '=', 1)->orderBy('id', 'desc')->get();
+        $items = ClauseData::where('applicable', '=', 1)->orderBy('id', 'desc')->get();
         return view($this->route . "/applicable")
         ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     public function complianceApplicableViewDetail($id)
     {
-        $items = ComplianceData::find($id);
+        $items = ClauseData::find($id);
         return view($this->route . "/view_detail")
         ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
-    public function storeComplianceDataLocations(Request $request)
+    public function storeClauseDataLocations(Request $request)
     {
         if ($request->value == 1) {
             return response()->json([
                 'html' => \view('ajax.compliance_drop_down')->with('locations', Company::all())->render()
             ]);
         }
-        ComplianceData::saveLocations($request);
+        ClauseData::saveLocations($request);
     }
 
     public function getLocationsOfCompliance(Request $request)
     {
-        $complianceD = ComplianceData::find($request->trId);
+        $complianceD = ClauseData::find($request->trId);
         $locationModel = 'App\Models\\' . $complianceD->location;
         $locations = $locationModel::get();
 

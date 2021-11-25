@@ -115,7 +115,10 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end" style="">
                     <a href="{{ route('import.index') }}" class="dropdown-item notify-item language" data-lang="eng">
-                        <span class="align-middle">Import</span>
+                        <span class="align-middle">Import Data</span>
+                    </a>
+                    <a href="{{ route('clause_import.index') }}" class="dropdown-item notify-item language" data-lang="eng">
+                        <span class="align-middle">Import Clauses</span>
                     </a>
                     <a href="{{ route('export_templates') }}" class="dropdown-item notify-item language"
                        data-lang="eng">

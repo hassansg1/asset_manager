@@ -18,12 +18,12 @@
                     {{ $location->show_name }}
                 </td>
                 <td>
-                    <select class="form-control" name="compliant" id="compliant" 
+                    <select class="form-control" name="compliant" id="compliant"
                      onchange="updateCompliant('{{ $location->id }}', this)">
-                    <option value="{{ App\Models\ComplianceData::COMPLIANT_ALL }}">Select Compliant</option>
-                    <option value="{{ App\Models\ComplianceData::COMPLIANT_YES }}">Yes</option>
-                    <option value="{{ App\Models\ComplianceData::COMPLIANT_NO }}">No</option>
-                    <option value="{{ App\Models\ComplianceData::COMPLIANT_UNDER_PROCESS }}">Under Process</option>
+                    <option value="{{ App\Models\ClauseData::COMPLIANT_ALL }}">Select Compliant</option>
+                    <option value="{{ App\Models\ClauseData::COMPLIANT_YES }}">Yes</option>
+                    <option value="{{ App\Models\ClauseData::COMPLIANT_NO }}">No</option>
+                    <option value="{{ App\Models\ClauseData::COMPLIANT_UNDER_PROCESS }}">Under Process</option>
                 </select>
             </td>
             <td>

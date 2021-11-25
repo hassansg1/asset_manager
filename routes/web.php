@@ -40,43 +40,36 @@ Route::group(['middleware' => ['auth']], function () {
         'unit' => \App\Http\Controllers\UnitController::class,
         'asset' => \App\Http\Controllers\AssetController::class,
         'import' => \App\Http\Controllers\ImportController::class,
+        'clause_import' => \App\Http\Controllers\ClauseImportController::class,
+        'clause' => \App\Http\Controllers\ClauseController::class,
+        'lone' => \App\Http\Controllers\LoneAssetController::class,
         'subsite' => \App\Http\Controllers\SubSiteController::class,
         'company' => \App\Http\Controllers\CompanyController::class,
         'cabinet' => \App\Http\Controllers\CabinetController::class,
         'networks' => \App\Http\Controllers\NetworkController::class,
-        'lone' => \App\Http\Controllers\LoneAssetController::class,
-        'standard' => \App\Http\Controllers\StandardController::class,
-        'applicable_standard' => \App\Http\Controllers\ApplicableStandardController::class,
-        'version' => \App\Http\Controllers\ComplianceUpdateController::class,
         'building' => \App\Http\Controllers\BuildingController::class,
         'software' => \App\Http\Controllers\SoftwareController::class,
+        'standard' => \App\Http\Controllers\StandardController::class,
         'approval' => \App\Http\Controllers\ApprovalController::class,
-        'applicable_clause' => \App\Http\Controllers\ApplicableClauseController::class,
-        'clause' => \App\Http\Controllers\ClauseController::class,
         'permission' => \App\Http\Controllers\PermissionController::class,
+        'attachment' => \App\Http\Controllers\AttachmentController::class,
+        'version' => \App\Http\Controllers\ComplianceUpdateController::class,
         'compliance_list' => \App\Http\Controllers\ComplianceListController::class,
-        'compliance_import' => \App\Http\Controllers\ComplianceImportController::class,
         'standards.clause' => \App\Http\Controllers\StandardClauseController::class,
-        'standards.applicable_clause' => \App\Http\Controllers\StandardApplicableClauseController::class,
+        'applicable_clause' => \App\Http\Controllers\ApplicableClauseController::class,
+        'compliance_import' => \App\Http\Controllers\ComplianceImportController::class,
         'version.compliance' => \App\Http\Controllers\VersionComplianceController::class,
         'version_compliance' => \App\Http\Controllers\VersionComplianceController::class,
-        'files' => \App\Http\Controllers\FilesUploadController::class,
-        'attachment' => \App\Http\Controllers\AttachmentController::class,
+        'applicable_standard' => \App\Http\Controllers\ApplicableStandardController::class,
+        'standards.applicable_clause' => \App\Http\Controllers\StandardApplicableClauseController::class,
     ]);
     Route::get('standards/view/{standard}/clause', [\App\Http\Controllers\StandardClauseController::class, 'viewStandards']);
     //................. ComplainceData...........
-    Route::post('complianceData/store', [App\Http\Controllers\ApplicableClauseController::class, 'storeComplaiceData'])->name('compliance.storeComplaiceData');
+    Route::post('applicableClause/store', [App\Http\Controllers\ApplicableClauseController::class, 'storeClauseData'])->name('applicableClause.storeClauseData');
     Route::post('store/file/compliance/{id}', [App\Http\Controllers\ApplicableClauseController::class, 'complianceFileStore']);
     Route::get('applicable/compliance', [App\Http\Controllers\ApplicableClauseController::class, 'complianceApplicable'])->name('compliance.applicable');
     Route::get('applicable/compliance/viewDetail/{id}', [App\Http\Controllers\ApplicableClauseController::class, 'complianceApplicableViewDetail'])->name('compliance.applicable_viewDetail');
-    Route::post('applicable/complianceData/storeLocation', [App\Http\Controllers\ApplicableClauseController::class, 'storeComplianceDataLocations'])->name('compliance.storeComplianceDataLocations');
-    Route::post('files/images',[App\Http\Controllers\FilesUploadController::class,'filesStore']);
-
-    Route::post('complianceData/store',[App\Http\Controllers\ComplianceController::class,'storeComplaiceData'])->name('compliance.storeComplaiceData');
-    Route::post('store/file/compliance/{id}',[App\Http\Controllers\ComplianceController::class,'complianceFileStore']);
-    Route::get('applicable/compliance',[App\Http\Controllers\ComplianceController::class,'complianceApplicable'])->name('compliance.applicable');
-    Route::get('applicable/compliance/viewDetail/{id}',[App\Http\Controllers\ComplianceController::class,'complianceApplicableViewDetail'])->name('compliance.applicable_viewDetail');
-    Route::post('applicable/complianceData/storeLocation',[App\Http\Controllers\ComplianceController::class,'storeComplianceDataLocations'])->name('compliance.storeComplianceDataLocations');
+    Route::post('applicable/ClauseData/storeLocation', [App\Http\Controllers\ApplicableClauseController::class, 'storeComplianceDataLocations'])->name('compliance.storeComplianceDataLocations');
 
     Route::group(['prefix' => 'assets'], function () {
         Route::resource('network', \App\Http\Controllers\NetworkAssetController::class);

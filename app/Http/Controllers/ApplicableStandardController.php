@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Building;
 use App\Models\Company;
-use App\Models\Compliance;
-use App\Models\ComplianceData;
 use App\Models\ComplianceDataFiles;
 use App\Models\Standard;
 use Illuminate\Http\Request;

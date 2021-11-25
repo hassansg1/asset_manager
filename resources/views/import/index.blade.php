@@ -9,7 +9,8 @@
                 <h2>CSV Import</h2>
                 <br>
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('import.store') }}"
+                    <form class="form-horizontal" method="POST"
+                          action="{{ isset($action) ? route($action) : route('import.store') }}"
                           enctype="multipart/form-data">
                         {{ csrf_field() }}
 
@@ -17,8 +18,9 @@
 
                             <h4>Select CSV file to import</h4>
                             <div class="col-md-6">
-                                <input accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
-                                       id="csv_file" type="file" class="form-control" name="csv_file" required>
+                                <input
+                                    accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+                                    id="csv_file" type="file" class="form-control" name="csv_file" required>
 
                                 @if ($errors->has('csv_file'))
                                     <span class="help-block">

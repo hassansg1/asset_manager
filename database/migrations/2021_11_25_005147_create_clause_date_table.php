@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateComplianceVersionsTable extends Migration
+class CreateClauseDateTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateComplianceVersionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('compliance_versions', function (Blueprint $table) {
+        Schema::create('clause_data', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
+            $table->integer('clause_id');
             $table->integer('standard_id');
-            $table->integer('user_id');
+            $table->string('applicable', 255)->nullable();
+            $table->string('criteria', 255)->nullable();
+            $table->string('location', 255)->nullable();
+            $table->string('reason', 255)->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ class CreateComplianceVersionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('compliance_versions');
+        Schema::dropIfExists('clause_date');
     }
 }

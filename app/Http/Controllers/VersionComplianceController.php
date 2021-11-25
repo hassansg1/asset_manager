@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Building;
+use App\Models\Clause;
 use App\Models\Company;
 use App\Models\Compliance;
-use App\Models\ComplianceData;
+use App\Models\ClauseData;
 use App\Models\ComplianceDataFiles;
 use App\Models\ComplianceVersion;
 use App\Models\Standard;
@@ -24,7 +25,7 @@ class VersionComplianceController extends BaseController
 
     public function __construct()
     {
-        $this->model = new Compliance();
+        $this->model = new Clause();
         $this->route = 'version_compliance';
         $this->heading = 'Compliance';
         \Illuminate\Support\Facades\View::share('top_heading', 'Compliances');
@@ -36,7 +37,7 @@ class VersionComplianceController extends BaseController
     public function index($complianceVersionId, $onlyView = false)
     {
         $version = ComplianceVersion::with('standard')->where('id', $complianceVersionId)->first();
-        $items = ComplianceData::where(['standard_id' => $version->standard_id, 'applicable' => 1])->get();
+        $items = ClauseData::where(['standard_id' => $version->standard_id, 'applicable' => 1])->get();
         return view($this->route . "/index")
             ->with(['items' => $items, 'route' => $this->route, 'onlyView' => $onlyView, 'heading' => "Compliance for ".  $version->standard->name." - Version : ".$version->name, 'version_id'=>$version->id]);
     }

@@ -102,8 +102,7 @@ class Computer extends Model
         if (isset($request->operating_system)) $item->operating_system = $request->operating_system;
         if (isset($request->connected_scada_server)) $item->connected_scada_server = $request->connected_scada_server;
         if (isset($request->contact)) $item->contact = $request->contact;
-        if (isset($request->source_file)) $item->source_file = $request->source_file;
-        if (isset($request->comment)) $item->source_file = $request->comment;
+        if (isset($request->comment)) $item->comment = $request->comment;
 
         $item->save();
         $this->updateParent($request, $item);

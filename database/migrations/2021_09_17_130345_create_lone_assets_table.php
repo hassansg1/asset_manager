@@ -18,12 +18,12 @@ class CreateLoneAssetsTable extends Migration
             $table->string('rec_id',255)->nullable();
             $table->string('name',255)->nullable();
             $table->string('description',255)->nullable();
-            $table->integer('function')->nullable();
-            $table->integer('make')->nullable();
+            $table->string('function')->nullable();
+            $table->string('make')->nullable();
             $table->string('model')->nullable();
             $table->string('part_number')->nullable();
             $table->string('serial_number')->nullable();
-            $table->integer('security_zone')->nullable();
+            $table->string('security_zone')->nullable();
             $table->string('asset_firmware')->nullable();
             $table->string('redundant_pair_id')->nullable();
             $table->string('connected_scada_server')->nullable();

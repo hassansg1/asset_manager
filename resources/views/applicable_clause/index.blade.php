@@ -1,7 +1,7 @@
 @extends('components.datatable')
 @section('table_header')
-    <th>Clause</th>
-    <th>Section</th>
+    <th>Number</th>
+    <th>Title</th>
     <th>Applicable</th>
     <th>Criteria</th>
     <th>Applicability</th>

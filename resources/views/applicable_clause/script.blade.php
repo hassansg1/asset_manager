@@ -1,16 +1,12 @@
 <script>
 
-    function complianceStatusChange(compliance_id, column_name, value) {
-
-        // console.log('compliance_id' + compliance_id +
-        //             'column_name' + column_name +
-        //             'value' + value);
+    function applicableClauseStatusChange(clause_id, column_name, value) {
         $.ajax({
             type: "POST",
-            url: '{{ route('compliance.storeComplaiceData') }}',
+            url: '{{ route('applicableClause.storeClauseData') }}',
             data: {
                 '_token': '{{ csrf_token() }}',
-                'compliance_id': compliance_id,
+                'clause_id': clause_id,
                 'column_name': column_name,
                 'value': value,
 
@@ -19,27 +15,6 @@
                 doSuccessToast('Success ...!!!');
             },
         });
-    }
-
-    function complianceAddLocation(compliance_data_id) {
-
-        var selected = $('.complianceDatalocation').select2("val");
-        $.ajax({
-            type: "POST",
-            url: '{{ route('compliance.storeComplianceDataLocations') }}',
-            data: {
-                '_token': '{{ csrf_token() }}',
-                'compliance_data_id': compliance_data_id,
-                'value': selected,
-
-            },
-            success: function (result) {
-                $('#lll_' + compliance_data_id).html(result.html);
-                $('.complianceDatalocationss').select2();
-                console.log(result);
-            },
-        });
-
     }
 </script>
 

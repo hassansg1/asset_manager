@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Building;
+use App\Models\Clause;
+use App\Models\Standard;
 use App\View\Components\breadcrumb;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -10,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Validator;
 
-class ImportController extends Controller
+class ClauseImportController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +21,7 @@ class ImportController extends Controller
      */
     public function index()
     {
-        return view('import.index');
+        return view('import.index')->with(['action' => 'clause_import.store']);
     }
 
     /**
@@ -43,26 +45,22 @@ class ImportController extends Controller
         $file = $request->file('csv_file');
         $fileName = $file->getClientOriginalName();
         $name = rand(1000000, 10000000) . $fileName;
-        try {
-            $file->move(public_path('assets/files'), $name);
+        $file->move(public_path('files'), $name);
 
-            $file = public_path('assets/files/' . $name);
-        } catch (\Exception $exception) {
-            dd($exception->getMessage());
-        }
+        $file = public_path('files/' . $name);
+
         $csvContent = csvToArray($file);
         $header = $csvContent['header'];
         $data = $csvContent['data'];
-        $tableName = explode('.', $fileName)[0];
-        $modelClass = config('models.' . $tableName);
-        $tableNameRaw = tableNamesMapping($tableName, 'import');
+        $tableName = 'clauses';
+        $modelClass = Clause::class;
+        $tableNameRaw = 'clauses';
         $logs = [];
         $success = true;
 
         if ($modelClass) {
             $logs[] = 'File Validated successfully';
             $logs[] = '<br>';
-            $columns = Schema::getColumnListing($tableName);
 
             $count = 0;
             DB::beginTransaction();
@@ -79,30 +77,22 @@ class ImportController extends Controller
                         }
                     }
 
-                    $parentType = $obj['Parent Type'];
-                    $parentId = $obj['Parent ID'];
+                    $standardName = $obj['Standard Name'];
 
-                    if (!in_array($parentType, ['Company', 'Unit', 'Site', 'SubSite', 'Unit', 'Building', 'Room', 'Cabinet'])) {
-                        $logs[] = 'Error : Invalid Parent Type : ' . $parentType;
-                        $success = false;
-                        break;
-                    }
-                    if ($parentId == '' || !$parentType) {
-                        $logs[] = 'Error : Parent Id cannot be empty';
+                    if ($standardName == '' || !$standardName) {
+                        $logs[] = 'Error : Standard Cannot be Empty';
                         $success = false;
                         break;
                     }
 
-                    $parentModel = App::make('App\Models\\' . $parentType);
-
-                    $parent = $parentModel->where('rec_id', $parentId)->first();
-                    if (!$parent) {
-                        $logs[] = 'Error : Parent not found : ' . $parentId;
+                    $standard = Standard::where('name', $standardName)->first();
+                    if (!$standard) {
+                        $logs[] = 'Error : Standard not found : ' . $standardName;
                         $success = false;
                         break;
                     }
 
-                    $arr['parent'] = get_class($parent) . '??' . $parent->id;
+                    $arr['standard_id'] = $standard->id;
                     $request = new Request();
                     $request->replace($arr);
                     $validator = Validator::make($request->all(), $model->rules);
@@ -118,7 +108,6 @@ class ImportController extends Controller
                         try {
                             $model->saveFormData($model, $request);
                         } catch (\Exception $exception) {
-                            dd($exception->getMessage());
                             $logs[] = 'Internal Error. Message  : ' . $exception->getMessage() . ' . Please contact the administer.';
                             $success = false;
                             break;
@@ -145,7 +134,6 @@ class ImportController extends Controller
             $logs[] = 'Invalid file name';
         }
 
-        dd($logs);
         return view('import.index')->with(['status' => $success, 'logs' => $logs]);
     }
 

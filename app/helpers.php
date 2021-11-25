@@ -257,12 +257,11 @@ if (!function_exists('formatFieldsForFrontEnd')) {
     }
 }
 
-if (!function_exists('checkIdComplianceIsApplicable')) {
-    function checkIdComplianceIsApplicable($id)
+if (!function_exists('getClauseData')) {
+    function getClauseData($id)
     {
-        $complianceData = \App\Models\ComplianceData::where('compliance_id', $id)->first();
+        return \App\Models\ClauseData::where('clause_id', $id)->first();
 
-        return $complianceData && $complianceData->applicable == 1;
     }
 }
 
@@ -302,7 +301,7 @@ if (!function_exists('tableColumnsMapping')) {
             ],
             'sites' => [
                 'parent_type' => 'Parent Type',
-                'parent_name' => 'Parent Name',
+                'parent_id' => 'Parent ID',
                 'rec_id' => 'Site ID',
                 'name' => 'Site Name',
                 'arabic_name' => 'Site Name(Arabic)',
@@ -315,7 +314,7 @@ if (!function_exists('tableColumnsMapping')) {
             ],
             'sub_sites' => [
                 'parent_type' => 'Parent Type',
-                'parent_name' => 'Parent Name',
+                'parent_id' => 'Parent ID',
                 'rec_id' => 'SubSite ID',
                 'name' => 'SubSite Name',
                 'arabic_name' => 'SubSite Name(Arabic)',
@@ -328,25 +327,25 @@ if (!function_exists('tableColumnsMapping')) {
             ],
             'buildings' => [
                 'parent_type' => 'Parent Type',
-                'parent_name' => 'Parent Name',
+                'parent_id' => 'Parent ID',
                 'rec_id' => 'Building ID',
                 'name' => 'Building Name',
             ],
             'rooms' => [
                 'parent_type' => 'Parent Type',
-                'parent_name' => 'Parent Name',
+                'parent_id' => 'Parent ID',
                 'rec_id' => 'Room ID',
                 'name' => 'Room Name',
             ],
             'cabinets' => [
                 'parent_type' => 'Parent Type',
-                'parent_name' => 'Parent Name',
+                'parent_id' => 'Parent ID',
                 'rec_id' => 'Cabinet ID',
                 'name' => 'Cabinet Name',
             ],
             'computer_assets' => [
                 'parent_type' => 'Parent Type',
-                'parent_name' => 'Parent Name',
+                'parent_id' => 'Parent ID',
                 'rec_id' => 'Asset ID',
                 'name' => 'Asset Name',
                 'description' => 'Asset Description',
@@ -364,7 +363,7 @@ if (!function_exists('tableColumnsMapping')) {
             ],
             'network_assets' => [
                 'parent_type' => 'Parent Type',
-                'parent_name' => 'Parent Name',
+                'parent_id' => 'Parent ID',
                 'rec_id' => 'Asset ID',
                 'name' => 'Asset Name',
                 'description' => 'Asset Description',
@@ -381,7 +380,7 @@ if (!function_exists('tableColumnsMapping')) {
             ],
             'lone_assets' => [
                 'parent_type' => 'Parent Type',
-                'parent_name' => 'Parent Name',
+                'parent_id' => 'Parent ID',
                 'rec_id' => 'Asset ID',
                 'name' => 'Asset Name',
                 'description' => 'Asset Description',
@@ -398,6 +397,11 @@ if (!function_exists('tableColumnsMapping')) {
                 'asset_parent_code' => 'Asset Parent ID',
                 'comment' => 'Comments',
             ],
+            'clauses' => [
+                'number' => 'Clause Number',
+                'title' => 'Clause Title',
+                'description' => 'Clause Description',
+            ]
         ];
 
         $tableMap = $mappingArray[$table];
@@ -419,8 +423,8 @@ if (!function_exists('tableNamesMapping')) {
             'buildings' => 'Building',
             'rooms' => 'Room',
             'cabinets' => 'Cabinet',
-            'network_assets' => 'Asset Computer',
-            'computer_assets' => 'Asset Network',
+            'computer_assets' => 'Asset Computer',
+            'network_assets' => 'Asset Network',
             'lone_assets' => 'Asset L01',
         ];
 

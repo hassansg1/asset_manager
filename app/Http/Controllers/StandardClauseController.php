@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Building;
+use App\Models\Clause;
 use App\Models\Company;
 use App\Models\Compliance;
-use App\Models\ComplianceData;
+use App\Models\ClauseData;
 use App\Models\ComplianceDataFiles;
 use App\Models\Standard;
 use Illuminate\Http\Request;
@@ -23,7 +24,7 @@ class StandardClauseController extends BaseController
 
     public function __construct()
     {
-        $this->model = new Compliance();
+        $this->model = new Clause();
         $this->route = 'clause';
         $this->heading = 'Clause';
         \Illuminate\Support\Facades\View::share('top_heading', 'Clauses List');
@@ -34,7 +35,7 @@ class StandardClauseController extends BaseController
      */
     public function index($standardId, $onlyView = false)
     {
-        $items = Compliance::where('standard_id', $standardId)->where('parent_id', null)->orderBy('id', 'asc')->get();
+        $items = Clause::where('standard_id', $standardId)->where('parent_id', null)->orderBy('id', 'asc')->get();
         $standard = Standard::find($standardId);
 
         return view($this->route . "/index")

@@ -1,8 +1,8 @@
 <script>
 
-    function complianceStatusChange(compliance_id, column_name, value) {
+    function complianceStatusChange(clause_id, column_name, value) {
 
-        // console.log('compliance_id' + compliance_id +
+        // console.log('clause_id' + clause_id +
         //             'column_name' + column_name +
         //             'value' + value);
         $.ajax({
@@ -10,7 +10,7 @@
             url: '{{ route('compliance.storeComplaiceData') }}',
             data: {
                 '_token': '{{ csrf_token() }}',
-                'compliance_id': compliance_id,
+                'clause_id': clause_id,
                 'column_name': column_name,
                 'value': value,
 
