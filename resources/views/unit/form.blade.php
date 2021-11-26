@@ -17,7 +17,7 @@
                                     @foreach(getCompanies() as $row)
                                         <option
                                             {{ isset($item) && $item->parentable_type == \App\Models\Company::class && $item->parentable_id == $row->id ? 'selected' : '' }}
-                                            value="{{\App\Models\Company::class}}??{{ $row->id }}">{{ $row->long_name }}</option>
+                                            value="{{\App\Models\Company::class}}??{{ $row->id }}">{{ $row->show_name }}</option>
                                     @endforeach
                                 </optgroup>
                             </select>

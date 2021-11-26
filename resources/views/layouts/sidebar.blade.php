@@ -21,7 +21,7 @@
                         <span key="t-dashboards">Asset Navigation</span>
                     </a>
                 </li>
-                @include('components.tree',['file' => 'tree_node'])
+{{--                @include('components.tree',['file' => 'tree_node'])--}}
                 <li>
                     <a href="{{ route('networks.index') }}" class="waves-effect">
                         <i class="far fa-dot-circle"></i>

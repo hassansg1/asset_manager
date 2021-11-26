@@ -53,6 +53,17 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
+                            <label for="{{ isset($item) ? $item->id:'' }}username"
+                                   class="form-label required">Username</label>
+                            <input type="text"
+                                   value="{{ isset($item) ? $item->username:old('username') ?? ''  }}"
+                                   class="form-control"
+                                   id="{{ isset($item) ? $item->id:'' }}username" name="username"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}roles"
                                    class="form-label">Role</label>
                             <select multiple class="form-control" name="roles[]"
@@ -75,6 +86,8 @@
                                    name="password">
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}password_confirmation"
@@ -87,7 +100,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

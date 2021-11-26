@@ -35,14 +35,14 @@
                                                                 @csrf
                                                                 <div class="mb-3">
                                                                     <label for="username"
-                                                                           class="form-label">Email</label>
-                                                                    <input name="email" type="email"
-                                                                           class="form-control @error('email') is-invalid @enderror"
-                                                                           value="{{ old('email', '') }}"
+                                                                           class="form-label">Username</label>
+                                                                    <input name="username" type="username"
+                                                                           class="form-control @error('username') is-invalid @enderror"
+                                                                           value="{{ old('username', '') }}"
                                                                            id="username"
-                                                                           placeholder="Enter Email"
-                                                                           autocomplete="email" autofocus>
-                                                                    @error('email')
+                                                                           placeholder="Enter Username"
+                                                                           autocomplete="username" autofocus>
+                                                                    @error('username')
                                                                     <span class="invalid-feedback" role="alert">
                                                                             <strong>{{ $message }}</strong>
                                                                         </span>

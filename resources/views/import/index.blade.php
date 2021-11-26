@@ -19,7 +19,7 @@
                             <h4>Select CSV file to import</h4>
                             <div class="col-md-6">
                                 <input
-                                    accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+                                    accept=".csv"
                                     id="csv_file" type="file" class="form-control" name="csv_file" required>
 
                                 @if ($errors->has('csv_file'))

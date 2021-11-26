@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Clause;
 use App\Models\Compliance;
 use Illuminate\Console\Command;
 
@@ -38,16 +39,16 @@ class SyncComplianceParent extends Command
      */
     public function handle()
     {
-        $compliances = Compliance::all();
+        $compliances = Clause::all();
         foreach ($compliances as $compliance)
         {
-            $clause = $compliance->clause;
+            $clause = $compliance->number;
             $ex = explode('-',$clause);
             array_pop($ex);
             if(count($ex) > 0)
             {
                 $imp = implode('-',$ex);
-                $parent = Compliance::where('clause',$imp)->first();
+                $parent = Clause::where('number',$imp)->first();
                 if($parent)
                 {
                     $compliance->parent_id = $parent->id;
@@ -55,7 +56,6 @@ class SyncComplianceParent extends Command
                 }
             }
         }
-        dd($compliances);
         return 0;
     }
 }

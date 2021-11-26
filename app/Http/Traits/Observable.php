@@ -53,7 +53,7 @@ trait Observable
             'action' => $action,
             'reason' => Session::get('reason') ?? '',
             'message' => self::logSubject($model),
-            'approval_request' => 1,
+            'approval_request' => checkIfSuperAdmin() ? 0 : 1,
             'models' => json_encode([
                 'new' => $action !== 'DELETED' ? $model->getAttributes() : null,
                 'old' => $action !== 'CREATED' ? $model->getOriginal() : null,

@@ -117,7 +117,8 @@
                     <a href="{{ route('import.index') }}" class="dropdown-item notify-item language" data-lang="eng">
                         <span class="align-middle">Import Data</span>
                     </a>
-                    <a href="{{ route('clause_import.index') }}" class="dropdown-item notify-item language" data-lang="eng">
+                    <a href="{{ route('clause_import.index') }}" class="dropdown-item notify-item language"
+                       data-lang="eng">
                         <span class="align-middle">Import Clauses</span>
                     </a>
                     <a href="{{ route('export_templates') }}" class="dropdown-item notify-item language"
@@ -164,6 +165,10 @@
                     {{--                    </a>--}}
                     <a href="{{ route('task') }}" class="dropdown-item notify-item language" data-lang="eng">
                         <span class="align-middle">Task</span>
+                    </a>
+                    <a href="{{ route('attachment.index') }}" class="dropdown-item notify-item language"
+                       data-lang="eng">
+                        <span class="align-middle">Document Library</span>
                     </a>
                 </div>
             </div>

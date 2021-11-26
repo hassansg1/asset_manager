@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('mobile_no')->nullable();
             $table->string('alt_mobile_no')->nullable();
             $table->string('email')->unique();
+            $table->string('username')->unique();
             $table->integer('usertype_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('address_line_1',255)->nullable();

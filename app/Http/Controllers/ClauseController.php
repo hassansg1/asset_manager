@@ -70,8 +70,8 @@ class ClauseController extends BaseController
      */
     public function store(Request $request)
     {
-        if ($this->model->rules)
-            $request->validate($this->model->rules);
+        if ($this->model->rules())
+            $request->validate($this->model->rules($request->standard_id));
         $this->model->saveFormData($this->model, $request);
 
         flashSuccess(getLang($this->heading . " Successfully Created."));

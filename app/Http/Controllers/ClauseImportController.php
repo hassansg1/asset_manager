@@ -45,14 +45,13 @@ class ClauseImportController extends Controller
         $file = $request->file('csv_file');
         $fileName = $file->getClientOriginalName();
         $name = rand(1000000, 10000000) . $fileName;
-        $file->move(public_path('files'), $name);
+        $file->move(public_path('assets/files'), $name);
 
-        $file = public_path('files/' . $name);
+        $file = public_path('assets/files/' . $name);
 
         $csvContent = csvToArray($file);
         $header = $csvContent['header'];
         $data = $csvContent['data'];
-        $tableName = 'clauses';
         $modelClass = Clause::class;
         $tableNameRaw = 'clauses';
         $logs = [];
@@ -77,7 +76,7 @@ class ClauseImportController extends Controller
                         }
                     }
 
-                    $standardName = $obj['Standard Name'];
+                    $standardName = reset($obj);
 
                     if ($standardName == '' || !$standardName) {
                         $logs[] = 'Error : Standard Cannot be Empty';
@@ -95,10 +94,11 @@ class ClauseImportController extends Controller
                     $arr['standard_id'] = $standard->id;
                     $request = new Request();
                     $request->replace($arr);
-                    $validator = Validator::make($request->all(), $model->rules);
+                    $validator = Validator::make($request->all(), $model->rules($arr['standard_id']));
                     if ($validator->fails()) {
                         foreach ($validator->errors()->all() as $error) {
                             $logs[] = 'Error : ' . rec_id_replacer($error);
+                            $logs[] = json_encode($arr);
                             $success = false;
                         }
                         $logs[] = 'Rolling back the changes.';
@@ -134,7 +134,7 @@ class ClauseImportController extends Controller
             $logs[] = 'Invalid file name';
         }
 
-        return view('import.index')->with(['status' => $success, 'logs' => $logs]);
+        return view('import.index')->with(['status' => $success, 'logs' => $logs,'action' => 'clause_import.store']);
     }
 
     /**

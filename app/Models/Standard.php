@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Traits\Observable;
 use App\Http\Traits\ParentTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 class Standard extends Model
 {
     use HasFactory;
+    use Observable;
 
     protected $guarded = [];
 

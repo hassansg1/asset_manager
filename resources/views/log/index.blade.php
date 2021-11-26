@@ -19,8 +19,8 @@
                                     <th>Id</th>
                                     <th>Action</th>
                                     <th>Changes</th>
-                                    <th>Approved by</th>
-                                    <th>Approved At</th>
+                                    <th>Changed by</th>
+                                    <th>Changed At</th>
                                 </tr>
                                 </thead>
                                 <tbody id="">

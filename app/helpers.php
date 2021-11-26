@@ -204,13 +204,17 @@ if (!function_exists('csvToArray')) {
         $data = array();
         if (($handle = fopen($filename, 'r')) !== false) {
             while (($row = fgetcsv($handle, 1000, $delimiter)) !== false) {
-                if (!$header)
-                    $header = $row;
-                else {
-                    if ($includeHeader)
-                        $data[] = $row;
-                    else
-                        $data[] = array_combine($header, $row);
+                $rowString = implode("",$row);
+                if(trim($rowString) != "")
+                {
+                    if (!$header)
+                        $header = $row;
+                    else {
+                        if ($includeHeader)
+                            $data[] = $row;
+                        else
+                            $data[] = array_combine($header, $row);
+                    }
                 }
             }
             fclose($handle);

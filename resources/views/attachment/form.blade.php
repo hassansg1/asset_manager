@@ -79,7 +79,7 @@
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}files"
-                                   class="form-label">Description</label>
+                                   class="form-label">File</label>
                             <input type="file"
                                    class="form-control" multiple id="{{ isset($item) ? $item->id:'' }}files"
                                    name="files[]">

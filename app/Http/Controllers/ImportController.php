@@ -118,7 +118,6 @@ class ImportController extends Controller
                         try {
                             $model->saveFormData($model, $request);
                         } catch (\Exception $exception) {
-                            dd($exception->getMessage());
                             $logs[] = 'Internal Error. Message  : ' . $exception->getMessage() . ' . Please contact the administer.';
                             $success = false;
                             break;
@@ -145,7 +144,6 @@ class ImportController extends Controller
             $logs[] = 'Invalid file name';
         }
 
-        dd($logs);
         return view('import.index')->with(['status' => $success, 'logs' => $logs]);
     }
 

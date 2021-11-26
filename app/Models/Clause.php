@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Traits\Observable;
 use App\Http\Traits\ParentTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,11 +10,19 @@ use Illuminate\Database\Eloquent\Model;
 class Clause extends Model
 {
     use HasFactory;
+    use Observable;
 
-    public $rules =
-        [
-            'number' => 'required | unique:clauses,number',
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+    }
+
+    public function rules($standardId = null)
+    {
+        return [
+            'number' => 'required|unique:clauses,number,NULL,id,standard_id,' . $standardId
         ];
+    }
 
     protected $guarded = [];
 
