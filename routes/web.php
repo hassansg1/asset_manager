@@ -91,6 +91,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('log/reject/{id}', [\App\Http\Controllers\LogController::class, 'reject']);
     Route::get('log/remove/{id}', [\App\Http\Controllers\LogController::class, 'remove']);
     Route::get('export_templates', [\App\Http\Controllers\AjaxController::class, 'exportDataTemplates'])->name('export_templates');
+    Route::get('export_compliance_date_template', [\App\Http\Controllers\AjaxController::class, 'exportComplianceDataTemplates'])->name('export_compliance_date_template');
 
     Route::get('dashboard', [\App\Http\Controllers\DashBoardController::class, 'index']);
     Route::get('task', [\App\Http\Controllers\TaskController::class, 'index'])->name('task');

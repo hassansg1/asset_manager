@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ClauseData;
+use App\Models\ComplianceVersion;
 use App\Models\NetworkAsset;
 use App\Models\Parentable;
 use App\Models\Port;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 
 class AjaxController extends Controller
@@ -42,7 +45,7 @@ class AjaxController extends Controller
 
     public function exportDataTemplates()
     {
-        $tables = ['units', 'sites', 'sub_sites', 'buildings', 'rooms', 'cabinets', 'network_assets', 'computer_assets', 'lone_assets','attachments'];
+        $tables = ['units', 'sites', 'sub_sites', 'buildings', 'rooms', 'cabinets', 'network_assets', 'computer_assets', 'lone_assets', 'attachments'];
 
         foreach ($tables as $table) {
             $columns = tableColumnsMapping($table, 'export');
@@ -87,5 +90,47 @@ class AjaxController extends Controller
         return response()->json([
             'status' => false
         ]);
+    }
+
+    function exportComplianceDataTemplates()
+    {
+        $columns = [
+            'Version',
+            'Clause Number',
+            'Location Type',
+            'Location Name',
+            'Compliant',
+            'Comment',
+            'Url',
+        ];
+
+        $complianceVersion = ComplianceVersion::all();
+        foreach ($complianceVersion as $version) {
+            $path = public_path('csv/' . $version->name . '.csv');
+
+            $file = fopen($path, 'w');
+            fputcsv($file, $columns);
+
+            $data = ClauseData::where('applicable', 1)->where('standard_id', $version->standard_id)->get();
+
+            foreach ($data as $item) {
+                $locations = App::make('App\Models\\' . $item->location)->get();
+                foreach ($locations as $location) {
+                    $row = [
+                        $version->name,
+                        '\''.$item->clause->number,
+                        $item->location,
+                        $location->show_name,
+                        '',
+                        '',
+                    ];
+                    fputcsv($file, $row);
+                }
+            }
+            fclose($file);
+        }
+
+
+        dd("Success");
     }
 }
