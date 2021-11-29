@@ -106,7 +106,7 @@
         var location_id = $location_id;
         var compliance_version_id = {{ $version_id }};
         $.ajax({
-            url: '/updateComplianceVersionItems/',
+            url: '/updateComplianceVersionItems',
             headers: {
                 'X-CSRF-TOKEN': "{{ csrf_token() }}"
             },
@@ -124,7 +124,7 @@
         var comment = $(e).val();
         var location_id = $location_id;
         $.ajax({
-            url: '/updateComplianceVersionItems/',
+            url: '/updateComplianceVersionItems',
             headers: {
                 'X-CSRF-TOKEN': "{{ csrf_token() }}"
             },
@@ -141,7 +141,7 @@
         var link = $(e).val();
         var location_id = $location_id;
         $.ajax({
-            url: '/updateComplianceVersionItems/',
+            url: '/updateComplianceVersionItems',
             headers: {
                 'X-CSRF-TOKEN': "{{ csrf_token() }}"
             },
@@ -159,7 +159,7 @@
         var attachment_id = $(e).val();
         var location_id = $location_id;
         $.ajax({
-            url: '/updateComplianceVersionItems/',
+            url: '/updateComplianceVersionItems',
             headers: {
                 'X-CSRF-TOKEN': "{{ csrf_token() }}"
             },
