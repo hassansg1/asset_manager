@@ -13,7 +13,12 @@
             </a>
         @endif
     </td>
+
 </tr>
+
+
+
+
 
 <div class="modal fade image-upload-modal-{{ $item->id }}" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
