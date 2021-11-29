@@ -97,6 +97,8 @@ class AjaxController extends Controller
         $columns = [
             'Version',
             'Clause Number',
+            'Clause Title',
+            'Clause Description',
             'Location Type',
             'Location Name',
             'Compliant',
@@ -119,6 +121,8 @@ class AjaxController extends Controller
                     $row = [
                         $version->name,
                         '\''.$item->clause->number,
+                        $item->clause->title,
+                        $item->clause->description,
                         $item->location,
                         $location->show_name,
                         '',
