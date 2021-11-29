@@ -404,7 +404,17 @@ if (!function_exists('tableColumnsMapping')) {
                 'number' => 'Clause Number',
                 'title' => 'Clause Title',
                 'description' => 'Clause Description',
-            ]
+            ],
+            'attachments' => [
+                'documentNumber' => 'Document Number',
+                'version' => 'Document Version',
+                'date' => 'Document Date',
+                'title' => 'Document Title',
+                'description' => 'Document Description',
+                'category' => 'Document Category',
+                'subCategory' => 'Document Subcategory',
+            ],
+
         ];
 
         $tableMap = $mappingArray[$table];
@@ -429,6 +439,7 @@ if (!function_exists('tableNamesMapping')) {
             'computer_assets' => 'Asset Computer',
             'network_assets' => 'Asset Network',
             'lone_assets' => 'Asset L01',
+            'attachments' => 'Attachment',
         ];
 
         if ($method == "export")

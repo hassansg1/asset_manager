@@ -42,7 +42,7 @@ class AjaxController extends Controller
 
     public function exportDataTemplates()
     {
-        $tables = ['units', 'sites', 'sub_sites', 'buildings', 'rooms', 'cabinets', 'network_assets', 'computer_assets', 'lone_assets'];
+        $tables = ['units', 'sites', 'sub_sites', 'buildings', 'rooms', 'cabinets', 'network_assets', 'computer_assets', 'lone_assets','attachments'];
 
         foreach ($tables as $table) {
             $columns = tableColumnsMapping($table, 'export');

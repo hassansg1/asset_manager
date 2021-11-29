@@ -5,6 +5,14 @@
         {{ $item->clause->number ?? '' }}
     </td>
     <td>{{ $item->clause->title ?? '' }}</td>
+    <td>
+        {{ substr($item->clause->description,0,50) }}
+        @if(strlen($item->clause->description) > 50)
+            <a href="javascript:void(0)" title="{{ $item->clause->description }}">
+                <i class="fas fa-eye"></i>
+            </a>
+        @endif
+    </td>
 </tr>
 
 <div class="modal fade image-upload-modal-{{ $item->id }}" tabindex="-1" role="dialog" aria-hidden="true">

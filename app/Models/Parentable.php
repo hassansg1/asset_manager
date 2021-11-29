@@ -32,7 +32,7 @@ class Parentable extends Model
         return self::create($arr);
     }
 
-    protected $appends = ['combine_name', 'combine_name_short','combine_parent_name_short'];
+    protected $appends = ['combine_name', 'combine_name_short', 'parent'];
 
 
     public function getCombineNameAttribute()
@@ -46,9 +46,10 @@ class Parentable extends Model
         return str_replace('\\', '', $this->childable_type) . "_" . $this->childable_id;
     }
 
-    public function getCombineParentNameShortAttribute()
+    public function getParentAttribute()
     {
-        return str_replace('\\', '', $this->parentable_type)  . $this->parentable_id;
+        $parentName = str_replace('\\', '', $this->parentable_type) . $this->parentable_id;
+        return $parentName != "" ? $parentName : 0;
     }
 
     public function allParentsofChild()
@@ -107,23 +108,34 @@ class Parentable extends Model
 
     public static function getTree()
     {
-//        $parents = Parentable::all()->toArray();
-//        $children = [];
-//        foreach ($parents as $key => $page) {
-//            $parent = $page['combine_parent_name_short'];
-//            if (!isset($children[$parent]))
-//                $children[$parent] = array();
-//            $children[$parent][$key] = array('name' => $page['combine_parent_name_short']);
-//        }
+//
+        $pr = Parentable::find(1);
+        $bb = self::recursive($pr);
 
-//        dd($children);
-//        $new_pages = self::recursive_append_children($children[0], $children);
-//        dd($new_pages);
+
+        print_r('<pre>');
+        print_r($bb);
+        print_r('<pre>');
+        exit();
     }
 
-    public static function recursive_append_children($arr, $children){
-        foreach($arr as $key => $page)
-            if(isset($children[$key]))
+    static function recursive($r)
+    {
+        $breads = [strval($r->combine_name_short)];
+
+        if (count($r->getAllParents()) > 0) {
+            foreach ($r->getAllParents() as $aaa)
+                $breads = array_merge(self::recursive($aaa), $breads);
+        }
+
+        return $breads;
+    }
+
+
+    public static function recursive_append_children($arr, $children)
+    {
+        foreach ($arr as $key => $page)
+            if (isset($children[$key]))
                 $arr[$key]['children'] = self::recursive_append_children($children[$key], $children);
         return $arr;
     }

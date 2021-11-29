@@ -41,6 +41,7 @@ Route::group(['middleware' => ['auth']], function () {
         'asset' => \App\Http\Controllers\AssetController::class,
         'import' => \App\Http\Controllers\ImportController::class,
         'clause_import' => \App\Http\Controllers\ClauseImportController::class,
+        'library_import' => \App\Http\Controllers\LibraryImportController::class,
         'clause' => \App\Http\Controllers\ClauseController::class,
         'lone' => \App\Http\Controllers\LoneAssetController::class,
         'subsite' => \App\Http\Controllers\SubSiteController::class,

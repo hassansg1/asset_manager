@@ -5,6 +5,14 @@
     <td style="padding-left: {{ $padding }}px">{{ $item->number }}</td>
     <td>{{ $item->title }}</td>
     <td>
+        {{ substr($item->description,0,50) }}
+        @if(strlen($item->description) > 50)
+            <a href="javascript:void(0)" title="{{ $item->description }}">
+                <i class="fas fa-eye"></i>
+            </a>
+        @endif
+    </td>
+    <td>
         <input type="checkbox" id="switch{{ $item->id }}" switch="bool" name="applicable{{ $item->id }}"
                {{ isset($clauseData) && $clauseData && $clauseData->applicable == 1 ? 'checked' : '' }}
                onclick="applicableClauseStatusChange({{ $item->id }},'applicable',$(this).is(':checked') == false ? 0 : 1);"
@@ -12,21 +20,21 @@
         <label for="switch{{ $item->id }}" data-on-label="Yes"
                data-off-label="No"></label>
     </td>
-    <td>
-        <select class="form-control" name="criteria"
-                onchange="applicableClauseStatusChange({{ $item->id }},'criteria',this.value);">
-            <option value="">Select Criteria</option>
-            <option
-                {{ isset($clauseData) && $clauseData && $clauseData->criteria == App\Models\ClauseData::AUTOMATIC ? 'selected' : '' }}
-                value="{{ App\Models\ClauseData::AUTOMATIC }}">AUTOMATIC
-            </option>
-            <option
-                {{ isset($clauseData) && $clauseData && $clauseData->criteria == App\Models\ClauseData::MANUAL ? 'selected' : '' }}
-                value="{{ App\Models\ClauseData::MANUAL }}">MANUAL
-            </option>
+{{--    <td>--}}
+{{--        <select class="form-control" name="criteria"--}}
+{{--                onchange="applicableClauseStatusChange({{ $item->id }},'criteria',this.value);">--}}
+{{--            <option value="">Select Criteria</option>--}}
+{{--            <option--}}
+{{--                {{ isset($clauseData) && $clauseData && $clauseData->criteria == App\Models\ClauseData::AUTOMATIC ? 'selected' : '' }}--}}
+{{--                value="{{ App\Models\ClauseData::AUTOMATIC }}">AUTOMATIC--}}
+{{--            </option>--}}
+{{--            <option--}}
+{{--                {{ isset($clauseData) && $clauseData && $clauseData->criteria == App\Models\ClauseData::MANUAL ? 'selected' : '' }}--}}
+{{--                value="{{ App\Models\ClauseData::MANUAL }}">MANUAL--}}
+{{--            </option>--}}
 
-        </select>
-    </td>
+{{--        </select>--}}
+{{--    </td>--}}
     <td>
         <select class="form-control" name="location"
                 onchange="applicableClauseStatusChange({{ $item->id }},'location',$(this).val());">
@@ -83,11 +91,11 @@
             </option>
         </select>
     </td>
-    <td>
-        <input type="text" class="form-control" name="reason"
-               value="{{ $clauseData->reason ?? '' }}"
-               onblur="applicableClauseStatusChange({{ $item->id }},'reason',this.value);">
-    </td>
+{{--    <td>--}}
+{{--        <input type="text" class="form-control" name="reason"--}}
+{{--               value="{{ $clauseData->reason ?? '' }}"--}}
+{{--               onblur="applicableClauseStatusChange({{ $item->id }},'reason',this.value);">--}}
+{{--    </td>--}}
 </tr>
 @php($childs = $item->childs)
 @if(count($childs) > 0)

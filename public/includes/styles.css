@@ -314,3 +314,7 @@ input[type="checkbox"][readonly] {
     display: inline !important;
     padding: 2px !important;
 }
+.navbar-brand-box
+{
+    min-width: 250px !important;
+}

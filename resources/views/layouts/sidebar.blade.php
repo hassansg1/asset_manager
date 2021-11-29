@@ -21,10 +21,10 @@
                         <span key="t-dashboards">Asset Navigation</span>
                     </a>
                 </li>
-{{--                <li class="loc_tree">--}}
-{{--                    <input type="input" class="form-control" id="tree-input-search" placeholder="Type to search..." value="">--}}
-{{--                    <div id="default-tree"></div>--}}
-{{--                </li>--}}
+                <li class="loc_tree">
+                    <input type="input" class="form-control" id="tree-input-search" placeholder="Type to search..." value="">
+                    <div id="default-tree"></div>
+                </li>
                 <li>
                     <a href="{{ route('networks.index') }}" class="waves-effect">
                         <i class="far fa-dot-circle"></i>

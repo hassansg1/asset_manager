@@ -1,7 +1,8 @@
 <script>
 
         function copyToClipboard(el){
-            var copyText = $(el).parents('tr').find('#attachment_view').attr('view_url')
+            var copyText = $(el).closest('tr').attr('data-url');
             navigator.clipboard.writeText(copyText);
+            doSuccessToast("Link is copied to clipboard.");
         }
 </script>

@@ -1,5 +1,5 @@
 @foreach($items as $key => $item)
-    <tr id="{{ $item->id }}">
+    <tr data-url="{{ route($route.".show",$item->id) }}" id="{{ $item->id }}">
         <td>{{ ++$key }}</td>
         <td>{{ $item->documentNumber }}</td>
         <td>{{ $item->version }}</td>

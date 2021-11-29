@@ -6,12 +6,13 @@ Contact: themesbrand@gmail.com
 File: Datatables Js File
 */
 
-$(document).ready(function() {
+$(document).ready(function () {
     $('#datatable').DataTable();
 
     //Buttons examples
     var table = $('#datatable-buttons').DataTable({
-        lengthChange: false,
+        "scrollY": "200px",
+        "scrollCollapse": true,
         buttons: ['copy', 'excel', 'pdf', 'colvis']
     });
 

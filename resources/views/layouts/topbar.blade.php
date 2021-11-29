@@ -121,6 +121,10 @@
                        data-lang="eng">
                         <span class="align-middle">Import Clauses</span>
                     </a>
+                    <a href="{{ route('library_import.index') }}" class="dropdown-item notify-item language"
+                       data-lang="eng">
+                        <span class="align-middle">Import Document Library</span>
+                    </a>
                     <a href="{{ route('export_templates') }}" class="dropdown-item notify-item language"
                        data-lang="eng">
                         <span class="align-middle">Export Data Templates</span>
