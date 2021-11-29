@@ -15,5 +15,5 @@
     @include($route.'.form_rows')
 @endsection
 @section('script')
-
+    @include($route.'.script')
 @endsection

@@ -39,7 +39,7 @@ class ApplicableClauseController extends BaseController
         $items = Compliance::orderBy('id', 'desc')->get();
 
         return view($this->route . "/index")
-        ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
+            ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**
@@ -53,7 +53,7 @@ class ApplicableClauseController extends BaseController
         return response()->json([
             'status' => true,
             'html' => view($this->route . "/form_rows")
-            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading])->render(),
+                ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading])->render(),
             'data' => $data
         ]);
     }
@@ -64,7 +64,7 @@ class ApplicableClauseController extends BaseController
     public function create()
     {
         return view($this->route . "/create")
-        ->with(['route' => $this->route, 'heading' => $this->heading]);
+            ->with(['route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**
@@ -113,7 +113,7 @@ class ApplicableClauseController extends BaseController
                 'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item, 'clone' => $request->clone ?? null])->render()
             ]);
         } else
-        return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
+            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
     }
 
     /**
@@ -171,14 +171,14 @@ class ApplicableClauseController extends BaseController
 
         $items = ClauseData::where('applicable', '=', 1)->orderBy('id', 'desc')->get();
         return view($this->route . "/applicable")
-        ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
+            ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     public function complianceApplicableViewDetail($id)
     {
         $items = ClauseData::find($id);
         return view($this->route . "/view_detail")
-        ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
+            ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     public function storeClauseDataLocations(Request $request)
@@ -200,28 +200,32 @@ class ApplicableClauseController extends BaseController
         // <!-- value="{{$location->complianceItems != null ? $location->complianceItems->comment : ''}}" -->
 
         return response()->json([
-            'html' => \view('version_compliance.location_table')->with(['locations' => $locations, 'item_id'=>$request->trId])->render(),
+            'html' => \view('version_compliance.location_table')->with(['locations' => $locations, 'versionId' => $request->version, 'item_id' => $request->trId])->render(),
             'status' => true
         ]);
     }
+
     public function updateComplianceVersionItems(Request $request)
     {
-        $complianceVersionItems=ComplianceVersionItem::where('location_id',$request->location_id)->first();
-        if($complianceVersionItems==null){
-          $complianceVersionItems=new ComplianceVersionItem;
-          $complianceVersionItems->compliance_version_id=$request->compliance_version_id;
-          $complianceVersionItems->compliance_data_id=$request->compliance_data_id;
-          $complianceVersionItems->location_id=$request->location_id;
-      }
-      if ($request->compliant_id) {
-        $complianceVersionItems->compliant=$request->compliant_id;
-      }
-      if ($request->comment) {
-          $complianceVersionItems->comment=$request->comment;
-      }
-      if ($request->attachment_id) {
-           $complianceVersionItems->attachment_id=$request->attachment_id;
-      }
-      $complianceVersionItems->save();
-  }
+        $complianceVersionItems = ComplianceVersionItem::where('location_id', $request->location_id)->first();
+        if ($complianceVersionItems == null) {
+            $complianceVersionItems = new ComplianceVersionItem;
+            $complianceVersionItems->compliance_version_id = $request->compliance_version_id;
+            $complianceVersionItems->compliance_data_id = $request->compliance_data_id;
+            $complianceVersionItems->location_id = $request->location_id;
+        }
+        if ($request->compliant_id) {
+            $complianceVersionItems->compliant = $request->compliant_id;
+        }
+        if ($request->comment) {
+            $complianceVersionItems->comment = $request->comment;
+        }
+        if ($request->link) {
+            $complianceVersionItems->link = $request->link;
+        }
+        if ($request->attachment_id) {
+            $complianceVersionItems->attachment_id = $request->attachment_id;
+        }
+        $complianceVersionItems->save();
+    }
 }

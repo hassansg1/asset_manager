@@ -2,7 +2,7 @@
 <li id="li_{{ $parent->combine_name_short }}" class="li_{{ $rand }}" data-tata="{{ $parent->combine_name_short }}">
     <a data-classstring="{{ $classString }}" id="{{ $parent->combine_name_short }}" href="javascript:void(0)"
        class="waves-effect tree_ul_a"
-       aria-expanded="true">
+       aria-expanded="false">
         <span onclick="location.href='{{ url( 'filterAssets/'.($parent->getSelfModel() ? str_replace('\\','-',str_replace('??','_',$parent->getSelfModel()->combine)) : '') ) }}'"
               key="t-multi-level">{{$parent->getSelfName()}}</span>
         @if (count($parent->childs()) > 0)

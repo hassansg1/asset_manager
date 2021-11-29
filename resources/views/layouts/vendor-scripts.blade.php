@@ -22,12 +22,117 @@
 <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
 <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
+<script src="{{ URL::asset('/assets/js/bootstrap-treeview.js') }}"></script>
 <script>
+    var myTree = [
+        {
+            text: "Item 1",
+            nodes: [
+                {
+                    text: "Item 1-1",
+                    nodes: [
+                        {
+                            text: "Item 1-1-1"
+                        },
+                        {
+                            text: "Item 1-1-2"
+                        }
+                    ]
+                },
+                {
+                    text: "Item 1-2"
+                }
+            ]
+        },
+        {
+            text: "Item 2"
+        },
+        {
+            text: "Item 3"
+        },
+    ];
     $(document).ready(function () {
         let editor1 = CKEDITOR.replace('help_text', {
             width: '100%',
             height: 900,
         });
+
+        var $searchableTree = $('#default-tree').treeview({
+
+            // expanded to 2 levels
+            data: myTree,
+            levels: 1,
+
+            // custom icons
+            expandIcon: 'fas fa-plus',
+            collapseIcon: 'fas fa-minus',
+            emptyIcon: 'fas',
+            nodeIcon: '',
+            selectedIcon: '',
+            checkedIcon: 'fas fa-flag-checkered',
+            uncheckedIcon: 'fas fa-microscope',
+
+            // colors
+            color: undefined, // '#000000',
+            backColor: undefined, // '#FFFFFF',
+            borderColor: undefined, // '#dddddd',
+            onhoverColor: '#33394e',
+            selectedColor: 'transparent',
+            selectedBackColor: '#428bca',
+            searchResultColor: '#D9534F',
+            searchResultBackColor: undefined, //'#FFFFFF',
+
+            // enables links
+            enableLinks: true,
+
+            // highlights selected items
+            highlightSelected: true,
+
+            // highlights search results
+            highlightSearchResults: true,
+
+            // shows borders
+            showBorder: true,
+
+            // shows icons
+            showIcon: true,
+
+            // shows checkboxes
+            showCheckbox: false,
+
+            // shows tags
+            showTags: false,
+
+            // enables multi select
+            multiSelect: false
+
+        });
+
+        var search = function(e) {
+            var pattern = $('#tree-input-search').val();
+            var options = {
+                ignoreCase: true,
+                exactMatch: false,
+                revealResults: true
+            };
+            var results = $searchableTree.treeview('search', [ pattern, options ]);
+
+            var output = '<p>' + results.length + ' matches found</p>';
+            $.each(results, function (index, result) {
+                output += '<p>- ' + result.text + '</p>';
+            });
+            $('#search-output').html(output);
+        }
+        $('#btn-clear-search').on('click', function (e) {
+            $searchableTree.treeview('clearSearch');
+            $('#input-search').val('');
+            $('#search-output').html('');
+        });
+
+        $('#tree-input-search').on('keyup', search);
+
+
+        sidebar_tree();
 
         editor1.on('change', function () {
             console.log(CKEDITOR.instances.help_text.getData());
@@ -47,6 +152,22 @@
             });
         });
     });
+
+    function sidebar_tree()
+    {
+        $.ajax({
+            type: "POST",
+            url: '{{ url('sidebar_tree') }}',
+            data: {
+                '_token': '{{ csrf_token() }}',
+            },
+            success: function (result) {
+                if (result.status) {
+                    // $('.loc_tree').replaceWith(result.html);
+                }
+            },
+        });
+    }
 
     $('#change-password').on('submit', function (event) {
         event.preventDefault();

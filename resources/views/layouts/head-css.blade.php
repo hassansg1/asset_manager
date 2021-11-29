@@ -18,3 +18,4 @@
 <link rel="stylesheet" href="{{ URL::asset('/assets/libs/datepicker/datepicker.min.css') }}">
 <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ URL::asset('/assets/libs/magnific-popup/magnific-popup.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ URL::asset('/assets/css/bootstrap-treeview.css') }}" rel="stylesheet" type="text/css" />

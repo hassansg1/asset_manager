@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Parentable;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory;
@@ -28,6 +29,8 @@ class CompanyController extends BaseController
      */
     public function index()
     {
+//        $tree = Parentable::getTree();
+//        dd($tree);
         $data = $this->fetchData($this->model);
 
 

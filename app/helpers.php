@@ -204,9 +204,8 @@ if (!function_exists('csvToArray')) {
         $data = array();
         if (($handle = fopen($filename, 'r')) !== false) {
             while (($row = fgetcsv($handle, 1000, $delimiter)) !== false) {
-                $rowString = implode("",$row);
-                if(trim($rowString) != "")
-                {
+                $rowString = implode("", $row);
+                if (trim($rowString) != "") {
                     if (!$header)
                         $header = $row;
                     else {
@@ -445,4 +444,20 @@ if (!function_exists('attachments')) {
         return $attachments;
     }
 }
+
+
+if (!function_exists('getComplianceStatus')) {
+    function getComplianceStatus($version, $id, $location)
+    {
+
+        $data = \App\Models\ComplianceVersionItem::where([
+            'compliance_version_id' => $version,
+            'compliance_data_id' => $id,
+            'location_id' => $location,
+        ])->first();
+
+        return $data;
+    }
+}
+
 

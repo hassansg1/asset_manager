@@ -2,9 +2,9 @@
 <tr data-id="{{ $item->id }}" id="{{ $item->id }}">
     <td data-id="{{ $item->id }}" class="details-control">
         <span style="cursor: pointer;color: #337ab7" class="fas fa-plus-circle icon_{{ $item->id }}"></span>
-        {{ $item->compliance->clause ?? '' }}
+        {{ $item->clause->number ?? '' }}
     </td>
-    <td>{{ $item->compliance->section ?? '' }}</td>
+    <td>{{ $item->clause->title ?? '' }}</td>
 </tr>
 
 <div class="modal fade image-upload-modal-{{ $item->id }}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -87,7 +87,7 @@
         $.ajax({
             url: '/getLocationsOfCompliance/',
             type: 'GET',
-            data: {trId: trId},
+            data: {trId: trId, version : '{{ $version }}'},
             success: function (data) {
                 row.child(data.html).show();
                 tr.addClass('shown');
@@ -136,6 +136,23 @@
         });
 
     }
+    function updateLink($location_id, e){
+        var tr = $(this).closest('tr');
+        var link = $(e).val();
+        var location_id = $location_id;
+        $.ajax({
+            url: '/updateComplianceVersionItems/',
+            headers: {
+                'X-CSRF-TOKEN': "{{ csrf_token() }}"
+            },
+            type: 'POST',
+            data: {link: link, location_id:location_id},
+            success: function (data) {
+
+            }
+        });
+
+    }
 
     function updateAttachment($location_id, e){
         var tr = $(this).closest('tr');
@@ -155,7 +172,7 @@
 
     }
 
-    
+
 
 </script>
 @endsection

@@ -1,7 +1,7 @@
 @extends('components.datatable',['id' => 'dtb'])
 @section('table_header')
-    <th>Clause</th>
-    <th>Section</th>
+    <th>Number</th>
+    <th>Title</th>
 @endsection
 @section('table_rows')
     @include($route.'.form_rows')

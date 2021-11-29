@@ -10,6 +10,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
+
                         @include('filters.common')
                         <div class="mt-2">
                         </div>

@@ -15,11 +15,11 @@ class CreateComplianceVersionItemsTable extends Migration
     {
         Schema::create('compliance_version_items', function (Blueprint $table) {
             $table->id();
-            $table->integer('compliance_version_id');
-            $table->integer('compliance_data_id');
-            $table->integer('location_id');
-            $table->integer('compliant');
-            $table->integer('comment');
+            $table->integer('compliance_version_id')->nullable();
+            $table->integer('compliance_data_id')->nullable();
+            $table->integer('location_id')->nullable();
+            $table->integer('compliant')->nullable();
+            $table->text('comment')->nullable();
             $table->timestamps();
         });
     }

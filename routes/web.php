@@ -103,5 +103,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('changeApplicableStatus', [\App\Http\Controllers\ApplicableStandardController::class, 'changeApplicableStatus'])->name('standard.changeApplicableStatus');
     Route::get('getLocationsOfCompliance', [\App\Http\Controllers\ApplicableClauseController::class, 'getLocationsOfCompliance']);
     Route::post('updateComplianceVersionItems', [\App\Http\Controllers\ApplicableClauseController::class, 'updateComplianceVersionItems']);
+    Route::post('sidebar_tree',[\App\Http\Controllers\LocTreeController::class,'sidebar_tree'])->name('sidebar_tree');
     Route::get('testCron', [\App\Http\Controllers\TestController::class, 'test']);
 });

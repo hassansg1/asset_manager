@@ -42,6 +42,7 @@ class ClauseData extends Model
     public static function saveFormData($request)
     {
         $found = ClauseData::where('clause_id', '=', $request->clause_id)->first();
+        $clause = Clause::find($request->clause_id);
 
         if ($found != null) {
             if (isset($request->clause_id)) $found->clause_id = $request->clause_id;
@@ -51,6 +52,7 @@ class ClauseData extends Model
             $obj = new ClauseData();
             if (isset($request->clause_id)) $obj->clause_id = $request->clause_id;
             if ($request->has('column_name') && isset($request->column_name)) $obj[$request->column_name] = $request->value;
+            $obj->standard_id = $clause->standard_id;
             $obj->save();
             $found = $obj;
         }
@@ -68,6 +70,7 @@ class ClauseData extends Model
                     $nextObj = new ClauseData();
                     $nextObj->applicable = $request->value;
                     $nextObj->clause_id = $clause->parent->id;
+                    $nextObj->standard_id = $clause->standard_id;
                     $nextObj->save();
                 }
                 $clause = $clause->parent;

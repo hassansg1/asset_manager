@@ -127,18 +127,18 @@ body[data-layout=horizontal] .page-content {
     /*background-color: transparent !important;*/
 }
 
-.select2-container .select2-selection--single
-{
+.select2-container .select2-selection--single {
     height: 35px !important;
 }
-.select2-container--default .select2-selection--single .select2-selection__arrow
-{
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
     top: 5px !important;
 }
-.select2-container--default .select2-selection--single
-{
+
+.select2-container--default .select2-selection--single {
     border: 1px solid #ced4da !important;
 }
+
 .required:after {
     content: " *";
     color: red;
@@ -253,22 +253,24 @@ tr {
 .card-title-small {
     font-size: 15px !important;
 }
-.left-line
-{
+
+.left-line {
     border-left: 1px solid;
 }
-.form-check-input:checked
-{
+
+.form-check-input:checked {
     background-color: #556ee6;
     border-color: #556ee6;
 }
-.select2-container
-{
+
+.select2-container {
     width: 100% !important;
 }
-.search-bar{
+
+.search-bar {
     padding-left: 30px
 }
+
 .has-search .form-control-feedback {
     position: absolute;
     z-index: 2;
@@ -280,24 +282,35 @@ tr {
     pointer-events: none;
     color: #aaa;
 }
-.tree_ul
-{
+
+.tree_ul {
     padding-left: 0px !important;
 }
-.tree_ul_a
-{
+
+.tree_ul_a {
     padding-left: 15px !important;
 }
 
-.tree_ul_b
-{
+.tree_ul_b {
     padding-left: 50px !important;
 }
-.form_check_location
-{
+
+.form_check_location {
     padding-left: 0px !important;
 }
+
 input[type="checkbox"][readonly] {
     cursor: not-allowed;
     opacity: 0.5;
+}
+
+.treeview ul > .list-group-item {
+    border: none !important;
+    color: inherit;
+    background-color: transparent;
+}
+
+#sidebar-menu .treeview ul li a {
+    display: inline !important;
+    padding: 2px !important;
 }
