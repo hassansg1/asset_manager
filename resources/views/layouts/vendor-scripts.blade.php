@@ -24,6 +24,7 @@
 <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
 <script src="{{ URL::asset('/assets/js/bootstrap-treeview.js') }}"></script>
 <script>
+
     var myTree = [
         {
             text: "Item 1",
@@ -108,14 +109,14 @@
 
         });
 
-        var search = function(e) {
+        var search = function (e) {
             var pattern = $('#tree-input-search').val();
             var options = {
                 ignoreCase: true,
                 exactMatch: false,
                 revealResults: true
             };
-            var results = $searchableTree.treeview('search', [ pattern, options ]);
+            var results = $searchableTree.treeview('search', [pattern, options]);
 
             var output = '<p>' + results.length + ' matches found</p>';
             $.each(results, function (index, result) {
@@ -153,8 +154,7 @@
         });
     });
 
-    function sidebar_tree()
-    {
+    function sidebar_tree() {
         $.ajax({
             type: "POST",
             url: '{{ url('sidebar_tree') }}',
@@ -163,7 +163,17 @@
             },
             success: function (result) {
                 if (result.status) {
-                    // $('.loc_tree').replaceWith(result.html);
+                    $('.loc_tree').replaceWith(result.html);
+                    $("#sidebar-menu a").each(function () {
+                        var pageUrl = window.location.href.split(/[?#]/)[0];
+                        $(this).addClass("active");
+                        $(this).parent().addClass("mm-active"); // add active to li of the current link
+                        $(this).parent().parent().addClass("mm-show");
+                        $(this).parent().parent().prev().addClass("mm-active"); // add active class to an anchor
+                        $(this).parent().parent().parent().addClass("mm-active");
+                        $(this).parent().parent().parent().parent().addClass("mm-show"); // add active to li of the current link
+                        $(this).parent().parent().parent().parent().parent().addClass("mm-active");
+                    });
                 }
             },
         });
