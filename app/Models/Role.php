@@ -78,6 +78,11 @@ class Role extends Authenticatable
         }
     }
 
+    public static function permissionsArray()
+    {
+        return Auth::user()->getAllPermissions()->pluck('name')->toArray();
+    }
+
     /**
      * @param $item
      * @param $request

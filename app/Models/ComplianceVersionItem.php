@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ComplianceVersionItem extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
 }

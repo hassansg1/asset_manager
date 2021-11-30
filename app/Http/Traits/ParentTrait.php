@@ -2,6 +2,9 @@
 
 namespace App\Http\Traits;
 
+use App\Models\Computer;
+use App\Models\LoneAsset;
+use App\Models\NetworkAsset;
 use App\Models\Parentable;
 use ReflectionClass;
 
@@ -106,6 +109,24 @@ trait ParentTrait
         $par = self::parentModel($this);
         if ($par)
             return get_class($par) . $par->id;
+        return '';
+    }
+
+    /**
+     * @return string
+     */
+    public function getFullPermissionStringAttribute()
+    {
+        $par = self::parentModel($this);
+        $class = '';
+        if (get_class($this) == NetworkAsset::class)
+            $class = "viewnetworkassets";
+        if (get_class($this) == LoneAsset::class)
+            $class = "viewl01assets";
+        if (get_class($this) == Computer::class)
+            $class = "viewassets";
+        if ($par)
+            return $class . get_class($par) . $par->id;
         return '';
     }
 

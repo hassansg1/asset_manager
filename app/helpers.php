@@ -292,6 +292,14 @@ if (!function_exists('hierarchyCondition')) {
     }
 }
 
+if (!function_exists('assetCondition')) {
+    function assetCondition($model)
+    {
+        $modelClass = get_class($model);
+        return $modelClass == "App\Models\Computer" || $modelClass == "App\Models\NetworkAsset" || $modelClass == "App\Models\LoneAsset";
+    }
+}
+
 if (!function_exists('tableColumnsMapping')) {
     function tableColumnsMapping($table, $method, $column = null)
     {

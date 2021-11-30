@@ -59,6 +59,7 @@ Route::group(['middleware' => ['auth']], function () {
         'standards.clause' => \App\Http\Controllers\StandardClauseController::class,
         'applicable_clause' => \App\Http\Controllers\ApplicableClauseController::class,
         'compliance_import' => \App\Http\Controllers\ComplianceImportController::class,
+        'compliance_data_import' => \App\Http\Controllers\ComplianceDataImportController::class,
         'version.compliance' => \App\Http\Controllers\VersionComplianceController::class,
         'version_compliance' => \App\Http\Controllers\VersionComplianceController::class,
         'applicable_standard' => \App\Http\Controllers\ApplicableStandardController::class,

@@ -1,7 +1,5 @@
 @php($rand = rand(10000,100000))
-<tr @if($level > 2)
-    style="display: none"
-    @endif
+<tr
     data-hierarchy="{{ $class }}">
     <td>
         @for($var = 0;$var<=$level*2;$var++)
@@ -43,7 +41,7 @@
         </td>
     @endforeach
 </tr>
-@if (count($parent->noAssetChilds()) > 0)
+@if (count($parent->noAssetChilds()) > 0 && $level < 2)
     @foreach($parent->noAssetChilds() as $parent)
         @include('tree_files.tree_table', ['parent' => $parent,'level' => $level+1,'class' => $class.' level_'.$parent->combine_name])
     @endforeach

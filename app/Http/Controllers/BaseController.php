@@ -66,6 +66,8 @@ class BaseController extends Controller
         if (!checkIfSuperAdmin()) {
             if (hierarchyCondition($model)) {
                 $items = $items->whereIn('combine', Role::locationsArray());
+            } elseif (assetCondition($model)) {
+                $items = $items->whereIn('full_permission_string', Role::permissionsArray());
             } else {
                 $items = $items->whereIn('parent_combine', Role::locationsArray());
             }
