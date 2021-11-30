@@ -513,37 +513,6 @@ var options = {
 var chart = new ApexCharts(document.querySelector("#radial_chart"), options);
 chart.render(); // pie chart
 
-var options = {
-  chart: {
-    height: 320,
-    type: 'pie'
-  },
-  series: [44, 55, 41, 17, 15],
-  labels: ["Series 1", "Series 2", "Series 3", "Series 4", "Series 5"],
-  colors: ["#34c38f", "#556ee6", "#f46a6a", "#50a5f1", "#f1b44c"],
-  legend: {
-    show: true,
-    position: 'bottom',
-    horizontalAlign: 'center',
-    verticalAlign: 'middle',
-    floating: false,
-    fontSize: '14px',
-    offsetX: 0
-  },
-  responsive: [{
-    breakpoint: 600,
-    options: {
-      chart: {
-        height: 240
-      },
-      legend: {
-        show: false
-      }
-    }
-  }]
-};
-var chart = new ApexCharts(document.querySelector("#pie_chart"), options);
-chart.render(); // Donut chart
 
 var options = {
   chart: {
@@ -648,7 +617,7 @@ __webpack_require__.r(__webpack_exports__);
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -661,17 +630,17 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = __webpack_modules__;
-/******/ 	
+/******/
 /******/ 	// the startup function
 /******/ 	// It's empty as some runtime module handles the default behavior
 /******/ 	__webpack_require__.x = function() {}
@@ -680,7 +649,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	!function() {
 /******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
 /******/ 	}();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
@@ -691,18 +660,18 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	}();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	!function() {
 /******/ 		// no baseURI
-/******/ 		
+/******/
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// Promise = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/assets/js/pages/apexcharts.init": 0
 /******/ 		};
-/******/ 		
+/******/
 /******/ 		var deferredModules = [
 /******/ 			["./resources/js/pages/apexcharts.init.js"],
 /******/ 			["./resources/scss/bootstrap.scss"],
@@ -712,17 +681,17 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			["./resources/scss/app-dark.scss"]
 /******/ 		];
 /******/ 		// no chunk on demand loading
-/******/ 		
+/******/
 /******/ 		// no prefetching
-/******/ 		
+/******/
 /******/ 		// no preloaded
-/******/ 		
+/******/
 /******/ 		// no HMR
-/******/ 		
+/******/
 /******/ 		// no HMR manifest
-/******/ 		
+/******/
 /******/ 		var checkDeferredModules = function() {};
-/******/ 		
+/******/
 /******/ 		// install a JSONP callback for chunk loading
 /******/ 		var webpackJsonpCallback = function(parentChunkLoadingFunction, data) {
 /******/ 			var chunkIds = data[0];
@@ -749,18 +718,18 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			while(resolves.length) {
 /******/ 				resolves.shift()();
 /******/ 			}
-/******/ 		
+/******/
 /******/ 			// add entry modules from loaded chunk to deferred list
 /******/ 			if(executeModules) deferredModules.push.apply(deferredModules, executeModules);
-/******/ 		
+/******/
 /******/ 			// run deferred modules when all chunks ready
 /******/ 			return checkDeferredModules();
 /******/ 		}
-/******/ 		
+/******/
 /******/ 		var chunkLoadingGlobal = self["webpackChunkskote"] = self["webpackChunkskote"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 		
+/******/
 /******/ 		function checkDeferredModulesImpl() {
 /******/ 			var result;
 /******/ 			for(var i = 0; i < deferredModules.length; i++) {
@@ -788,7 +757,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			return (checkDeferredModules = checkDeferredModulesImpl)();
 /******/ 		};
 /******/ 	}();
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	// run startup
 /******/ 	__webpack_require__.x();

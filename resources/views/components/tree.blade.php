@@ -1,4 +1,4 @@
-@foreach(\App\Models\Parentable::getAllParents() as $parent)
+@foreach(getAllParents() as $parent)
     @php
         $classString = '';
     @endphp

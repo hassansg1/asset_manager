@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title') {{ $heading }}s @endsection
+@section('title') Dashboard @endsection
 
 @section('content')
     @yield('top_content')
@@ -10,52 +10,17 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <div class="custom_table_div">
-                            <table id="datatable-logs"
-                                   class="table table-borderless dt-responsive nowrap w-100 dataTable no-footer dtr-inline">
-                                <thead class="table-light custom_table_head">
-                                <tr>
-                                    <th>Sr#</th>
-                                    <th>Name</th>
-                                    <th>Applicable</th>
-                                    <th>Reason</th>
-                                    <th>Status</th>
-                                    <th>View Details</th>
-                                </tr>
-                                </thead>
-                                <tbody id="">
-                                @foreach($items as $key => $item)
-                                    <tr>
-                                        <td>{{ $key +1 }}</td>
-                                        <td>{{ isset($item->compliance)?$item->compliance->clause .' '. $item->compliance->section  :'' }}</td>
-                                        <td>@if($item->applicable == 1) Yes @else No @endif</td>
-                                        <td>{{$item->reason }}</td>
-                                        <td>@if($item->applicable == 1)
-                                            @if($item->compliant == 1)
-                                                    <i class="fas fa-check-circle" style="color: green"></i>
-                                                @elseif($item->compliant == 2)
-                                                No
-                                                @else
-                                                    <i class="fas fa-spinner"  style="color: deepskyblue"></i>
-                                                @endif
-                                        @endif
-                                        </td>
-
-
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+                        <div id="pie_chart" class="apex-charts" dir="ltr"></div>
                     </div>
                 </div>
             </div>
         </div> <!-- end col -->
     </div> <!-- end row -->
 @endsection
-
 @section('script')
-    <script>
-        $('#datatable-logs').DataTable({'order': []});
-    </script>
+    <!-- apexcharts -->
+    <script src="{{ URL::asset('/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
+
+    <!-- dashboard init -->
+    @include('dashboard.script')
 @endsection

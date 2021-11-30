@@ -480,3 +480,11 @@ if (!function_exists('getComplianceStatus')) {
 }
 
 
+if (!function_exists('getAllParents')) {
+    function getAllParents()
+    {
+        return \App\Models\Parentable::getAllParents();
+    }
+}
+
+

@@ -21,7 +21,9 @@
                         <span key="t-dashboards">Asset Navigation</span>
                     </a>
                 </li>
-{{--                <li class="loc_tree">--}}
+                @include('components.tree',['file' => 'tree_node'])
+
+                {{--                <li class="loc_tree">--}}
 {{--                    <input type="input" class="form-control" id="tree-input-search" placeholder="Type to search..." value="">--}}
 {{--                    <div id="default-tree"></div>--}}
 {{--                </li>--}}

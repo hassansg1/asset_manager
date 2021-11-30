@@ -18,7 +18,7 @@
     @if (count($parent->noAssetChilds()) > 0)
         <ul class="tree_ul_a {{ $parent->combine_name_short }}">
             @foreach($parent->noAssetChilds() as $parent)
-                @include('tree_files.tree_node', $parent)
+                @include('tree_files.tree_node', ['parent' => $parent,'level' => $level + 1,'class' => $class,'classString' => $classString ])
             @endforeach
         </ul>
     @endif
