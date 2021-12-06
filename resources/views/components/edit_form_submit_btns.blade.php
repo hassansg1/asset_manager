@@ -19,11 +19,11 @@
         });
 
         $(document).ready(function () {
-            let canEdit = $('#can_edit').val();
-            if (canEdit != 1)
-            {
-                $("form :input").prop("disabled", true);
-            }
+            // let canEdit = $('#can_edit').val();
+            // if (canEdit != 1)
+            // {
+            //     $("form :input").prop("disabled", true);
+            // }
         });
     </script>
 @endsection
