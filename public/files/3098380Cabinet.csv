@@ -1,0 +1,10 @@
+Parent Type,Parent ID,Cabinet ID,Cabinet Name
+Room,Admin Building - 3rd Floor Network Room,RD_MNF-WTP_ADB_NR_MNR,Main Network Rack
+Room,Admin Building - 3rd Floor Control Room,RD_MNF-WTP_ADB_CR_SR,Server Rack
+Room,Admin Building - 3rd Floor Control Room,RD_MNF-WTP_ADB_CR_BMPP,Booster Main PLC Panel
+Room,Admin Building - 3rd Floor Control Room,RD_MNF-WTP_ADB_CR_M1CTP,M1 Cooling Tower Main PLC Panel
+Room,Admin Building - 3rd Floor Control Room,RD_MNF-WTP_ADB_CR_M2CTP,M2 Cooling Tower Main PLC Panel
+Room,Admin Building - 3rd Floor M2 Sand Filters Room,RD_MNF-WTP_ADB_M2SFR_OMPP,M2 Sand Filters Old Main PLC Panel
+Room,MCC Room,RD_MLZ-WTP_MCC_SRVR,Server Panel
+Room,MCC Room,RD_SHM-WTP_MCC_SRVR,Server Panel
+Room,MCC Room,RD_BWB-WTP_MCC_SRVR,Server Panel

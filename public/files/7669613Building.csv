@@ -1,0 +1,20 @@
+Parent Type,Parent ID,Building ID,Building Name
+SubSite,Manfouha 1 WTP,RD_MNF-WTP_ADB,Manfuha Admin Building
+SubSite,Manfouha 2 WTP,RD_MNF-WTP_EPB,Electrical Power Building
+SubSite,Manfouha 2 WTP,RD_MNF-WTP_AB,Acid Building
+SubSite,Manfouha 1 WTP,RD_MNF-WTP_M1ROB,M1 RO Building
+SubSite,Manfouha 1 WTP,RD_MNF-WTP_CHB,M1 Chemical Building
+SubSite,Manfouha 2 WTP,RD_MNF-WTP_M2ROB,M2 RO Building
+SubSite,Manfouha 1 WTP,RD_MNF-WTP_CLRB,Chlorination Building
+Site,Malaz WTP,RD_MLZ-WTP_ADB,Malaz WTP Admin Building
+Site,Malaz WTP,RD_MLZ-WTP_ROB,Malaz RO Building
+Site,Shomacy WTP,RD_SHM-WTP_ROB,Shomacy RO Building
+Site,Shomacy WTP,RD_SHM-WTP_ADB,Shomacy WTP Admin Building
+Site,Bowaib WTP,RD_BWB_WTP_CRB,Bowaib 2 Control Building 
+Site,Manfouha WWTP,RD_MNF-STP_DCB,Manfouha Data center Building
+Site,Manfouha WWTP,RD_MNF-STP_NADB,Manfouha New admin Building
+Site,Manfouha WWTP,RD_MNF-STP_ECRB,Manfouha  East Control Building
+Site,Manfouha WWTP,RD_MNF-STP_ACB,Air Compressor Building
+Site,TGW,RD_TGW_CRB,TGW Control Room Building
+Site,TGW,RD_TGW_MCCB,TGW MCC Building
+Site,Exit-10,RD_EX-10_ADM-BLD,EXIT 10 Admin Building 

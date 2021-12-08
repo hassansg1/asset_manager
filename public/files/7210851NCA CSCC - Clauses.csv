@@ -1,0 +1,130 @@
+﻿Standard Name,Clause Number,Clause Title,Clause Description
+CSCC-1:2019,1,Cybersecurity Governance,
+CSCC-1:2019,1-1,Cybersecurity Strategy,"To ensure that cybersecurity plans, goals, initiatives and projects are contributing to compliance with related laws and regulations"
+CSCC-1:2019,1-1-1,Cybersecurity Strategy,"In addition to the controls in ECC subdomain 1-1, the organization's cybersecurity strategy must prioritize the support of protecting its critical systems."
+CSCC-1:2019,1-2,Cybersecurity Risk Management,To ensure managing cybersecurity risks in a methodological approach in order to protect the organization's information technology assets as per the organization policies and procedures and related laws and regulations.
+CSCC-1:2019,1-2-1,Cybersecurity Risk Management,"In addition to the controls in ECC subdomain 1-5, cybersecurity risk management methodology must include at least the following:"
+CSCC-1:2019,1-2-1-1,Cybersecurity Risk Management,Conducting a cybersecurity risk assessment on critical systems at least once annually.
+CSCC-1:2019,1-2-1-2,Cybersecurity Risk Management,"Creating a cybersecurity risk register for critical systems, and reviewing it at least once every month."
+CSCC-1:2019,1-3,Cybersecurity in Information Technology Project Management,"To ensure that cybersecurity requirements are included in project management methodology and procedures in order to protect the confidentiality, integrity and availability of information technology assets as per organization policies, and procedures, and related laws and regulations."
+CSCC-1:2019,1-3-1,Cybersecurity in Information Technology Project Management,"In addition to the subcontrols in ECC control 1-6-2, cybersecurity requirements of project management and asset (information technology) change management of the organization's critical systems must include at least the following:"
+CSCC-1:2019,1-3-1-1,Cybersecurity in Information Technology Project Management,Conducting a stress test to ensure the capacity of various components
+CSCC-1:2019,1-3-1-2,Cybersecurity in Information Technology Project Management,Ensuring the implementation of business continuity requirements.
+CSCC-1:2019,1-3-2,Cybersecurity in Information Technology Project Management,"In addition to the subcontrols in ECC 1-6-3, cybersecurity requirements related to software and application development projects of the organization's critical systems must include at least the following:"
+CSCC-1:2019,1-3-2-1,Cybersecurity in Information Technology Project Management,Conducting a security source code review before the critical system release.
+CSCC-1:2019,1-3-2-2,Cybersecurity in Information Technology Project Management,"Securing the access, storage, documentation and releases of source code."
+CSCC-1:2019,1-3-2-3,Cybersecurity in Information Technology Project Management,Securing the authenticated Application Programming Interface (API).
+CSCC-1:2019,1-3-2-4,Cybersecurity in Information Technology Project Management,"Secure and trust migration of applications from testing environments to production environments, along with deletion of any data, IDs or passwords related to the testing environment before the migration."
+CSCC-1:2019,1-4,Periodical Cybersecurity Review and Audit,"To ensure that cybersecurity controls are implemented and in compliance with organizational policies and procedures, as well as related national and international laws, regulations and agreements."
+CSCC-1:2019,1-4-1,Periodical Cybersecurity Review and Audit,"With reference to the ECC control 1-8-1, the organization's cybersecurity function must review the implementation of CSCC at least once annually."
+CSCC-1:2019,1-4-2,Periodical Cybersecurity Review and Audit,"With reference to the ECC control 1-8-2, the implementation of CSCC must be reviewed by independent parties with in the organization, outside the cybersecurity function at least once every three years."
+CSCC-1:2019,1-5,Cybersecurity in Human Resources,"To ensure that cybersecurity risks and requirements related to personnel (employees and contractors) are managed efficiently prior to employment, during employment and after termination/separation as per organizational policies and procedures, and related laws and regulations."
+CSCC-1:2019,1-5-1,Cybersecurity in Human Resources,"In addition to the subcontrol in ECC control 1-9-3, personnel cybersecurity requirements prior to employment must include at least the following:"
+CSCC-1:2019,1-5-1-1,Cybersecurity in Human Resources,Screening or vetting candidates for working on critical systems.
+CSCC-1:2019,1-5-1-2,Cybersecurity in Human Resources,"The technical support and development positions for critical systems, must be filled with experienced Saudi professionals."
+CSCC-1:2019,2-1,Asset Management,"To ensure that organization has an accurate and detailed inventory of information technology assets in order to support the organization's cybersecurity and operational requirements to maintain the confidentiality, integrity and availability of information technical assets."
+CSCC-1:2019,2-1-1,Asset Management,"In additions to the controls of ECC subdomain 2-1, cybersecurity requirements for managing information technology assets must include at least the following:"
+CSCC-1:2019,2-1-1-1,Asset Management,Maintaining an annually-updated inventory of critical systems' assets.
+CSCC-1:2019,2-1-1-2,Asset Management,Identifying asset owners and involving them in the asset management lifecycle for critical systems.
+CSCC-1:2019,2-2,Identity and Access Management,To ensure the secure and restricted logical access to information technology assets in order to prevent unauthorized access and allow only authorized access for users which are necessary to accomplish assigned tasks.
+CSCC-1:2019,2-2-1,Identity and Access Management,"In addition to the subcontrols in ECC control 2-2-3, cybersecurity requiremetns for identity and access management of critical systems must include at least the following:"
+CSCC-1:2019,2-2-1-1,Identity and Access Management,Prohibiting remote access from outside Kingdom of Saudi Arabia
+CSCC-1:2019,2-2-1-2,Identity and Access Management,"Restricting remote access from inside Kingdom of Saudi Arabia and verifying each access attempt by the organization's security operations center, and continuously monitoring activities related to remote access."
+CSCC-1:2019,2-2-1-3,Identity and Access Management,Using multi-factor authentication for all users.
+CSCC-1:2019,2-2-1-4,Identity and Access Management,"Using multi-factor authentication for privileged users, and on systems utilized for managing critical systems stated in control 2-3-1-4."
+CSCC-1:2019,2-2-1-5,Identity and Access Management,Developing and implementing a high-standard and secure password policy.
+CSCC-1:2019,2-2-1-6,Identity and Access Management,"Utilizing secure methods and algorithms for storing and processing passwords, such as: Hashing functions."
+CSCC-1:2019,2-2-1-7,Identity and Access Management,"Securely managing service accounts for applications and systems, and disabling interactive login from these accounts."
+CSCC-1:2019,2-2-1-8,Identity and Access Management,"Prohibiting direct access and interaction with database for all users except for database administrators. Users' access and interaction with databases must be through application only, with consideration given to applying security solutions that limits or prohibit visibility of classified data to database administrators."
+CSCC-1:2019,2-2-2,Identity and Access Management,"With reference to ECC subcontrol 2-2-3-5, user identities and access rights to critical systems must be reviewed at least once every three months."
+CSCC-1:2019,2-3,Information System and Information Processing Facilities Protection,"To ensure the protection of information systems and information processing facilities, (including workstations and infrastructures) against cyber risks."
+CSCC-1:2019,2-3-1,Information System and Information Processing Facilities Protection,"In addition to the subcontrols in ECC control 2-3-3, cybersecurity requirements for protecting critical systems and information processing facilities must include at leasts the following:"
+CSCC-1:2019,2-3-1-1,Information System and Information Processing Facilities Protection,Whitelisting of application and software operation files that are allowed to execute on servers hosting critical systems.
+CSCC-1:2019,2-3-1-2,Information System and Information Processing Facilities Protection,Protecting servers hosting critical systems using end-point protection solutions that are approved by the organization.
+CSCC-1:2019,2-3-1-3,Information System and Information Processing Facilities Protection,"Applying security patches and updates at least once every month for external and internet-connected critical systems and at least once every three months for internal critical systems, in line with the organization's approved change management mechanisms."
+CSCC-1:2019,2-3-1-4,Information System and Information Processing Facilities Protection,"Allocating specific workstations in an isolated network (Management Networks), that is isolated from other networks or services (e.g. email service or internet), to be used by highly privileged accounts."
+CSCC-1:2019,2-3-1-5,Information System and Information Processing Facilities Protection,Encrypting the network traffic of non-console administrative access for all technical components of critical systems using secure encryption algorithms and protocols.
+CSCC-1:2019,2-3-1-6,Information System and Information Processing Facilities Protection,Reviewing critical systems' configurations and hardening at least once every six months.
+CSCC-1:2019,2-3-1-7,Information System and Information Processing Facilities Protection,"Reviewing and changing default configurations, and ensuring the removal of hard-coded, backdoor and/or default passwords, where applicable."
+CSCC-1:2019,2-3-1-8,Information System and Information Processing Facilities Protection,"Protecting systems' logs and critical files from unauthorized access, tampering, illegitimate modification and/or deletion."
+CSCC-1:2019,2-4,Network Security Management,To ensure the protection of the organization's network from cyber risks.
+CSCC-1:2019,2-4-1,Network Security Management,"In addition to the subcontrols in ECC control 2-5-3, cybersecurity requirements of critical systems' network management must include at least the following:"
+CSCC-1:2019,2-4-1-1,Network Security Management,Logically and/or physically segregating and isolating critical systems' networks.
+CSCC-1:2019,2-4-1-2,Network Security Management,"Reviewing firewall rules and access lists, at least once every six months."
+CSCC-1:2019,2-4-1-3,Network Security Management,"Prohibiting direct connection between local network devices and critical systems, unless those devices are scanned to ensure they have security controls that meet the acceptable security levels for critical systems."
+CSCC-1:2019,2-4-1-4,Network Security Management,Prohibiting critical systems from connecting to a wireless network.
+CSCC-1:2019,2-4-1-5,Network Security Management,Protecting against Advance Persistent Threats (APT) at the network layer.
+CSCC-1:2019,2-4-1-6,Network Security Management,Prohibiting connection to the internet for critical systems that provide internal services to the organization and have no strong need to be accessed from outside the organization.
+CSCC-1:2019,2-4-1-7,Network Security Management,"Critical systems that provide services to a limited number of organizations (not individuals), shall use networks isolated from the Internet."
+CSCC-1:2019,2-4-1-8,Network Security Management,Protecting against Distributed Denial of Service (DDoS) attacks to limit risks arising from these attacks.
+CSCC-1:2019,2-4-1-9,Network Security Management,Allowing only whitelisting for critical systems' firewall access lists.
+CSCC-1:2019,2-5,Mobile Device Security,"To ensure the protection of mobile devices (including laptops, smartphones, tablets) from cyber risks and to ensure the secure handling of the organization's information (including sensitive information) while utilizing Bring Your Own Device (B YOD) policy."
+CSCC-1:2019,2-5-1,Mobile Device Security,"In addition to the subcontrols in ECC control 2-6-3, cybersecurity requirements for mobile devices security and BYOD in the organization must include at least the following:"
+CSCC-1:2019,2-5-1-1,Mobile Device Security,"Prohibiting access to critical systems from mobile devices except for a temporary period only, after assessing the risks and obtaining the necessary approvals from the cybersecurity function in the organization."
+CSCC-1:2019,2-5-1-2,Mobile Device Security,Implementing full disk encryption for mobile devices with access to critical systems.
+CSCC-1:2019,2-6,Data and Information Protection,"To ensure the confidentiality, integrity and availability of the organization's data and information as per organizational policies and procedures, and related laws and regulations."
+CSCC-1:2019,2-6-1,Data and Information Protection,"In additional to the subcontrols in ECC control 2-7-3, cybersecurity requirements for protecting and handling data and information must include at least the following:"
+CSCC-1:2019,2-6-1-1,Data and Information Protection,"Prohibiting the use of critical system's data in any environment other than production environment, except after applying strict controls for protecting that data, such as: data masking or data scrambling techniques."
+CSCC-1:2019,2-6-1-2,Data and Information Protection,Classifying all data within critical systems.
+CSCC-1:2019,2-6-1-3,Data and Information Protection,Protecting classified data of critical systems using data leakage prevention techniques.
+CSCC-1:2019,2-6-1-4,Data and Information Protection,"Identifying retention period for critical systems-associated data, in accordance with relevant legislations. Only required data must be retained in critical systems' production environments."
+CSCC-1:2019,2-6-1-5,Data and Information Protection,Prohibiting the transfer of any critical systems' data from production environment to any other environment.
+CSCC-1:2019,2-7,Cryptography,"To ensure the proper and efficient use of cryptograpy to protect information assets as per organizational policies and procedures, and related laws and regulations."
+CSCC-1:2019,2-7-1,Cryptography,"In additional to the subcontrols in ECC control 2-8-3, cybersecurity requirements for cryptography must include at least the following:"
+CSCC-1:2019,2-7-1-1,Cryptography,Encrypting all critical systems' data-in-transit.
+CSCC-1:2019,2-7-1-2,Cryptography,"Encrypting all critical systems' data-at-rest at the level fo files, database or certain columns within database."
+CSCC-1:2019,2-7-1-3,Cryptography,"Using secure and up-to-date methods, algorithms, keys and devices in accordance with what NCA issues in this regard."
+CSCC-1:2019,2-8,Backup and Recovery Management,"To ensure the protection of the organization's data and information, including information systems' and software configuration from cyber risks as per organizational policies and procedures, and related laws and regulations."
+CSCC-1:2019,2-8-1,Backup and Recovery Management,"In addition to the subcontrols in ECC control 2-9-3, cybersecurity requirements for backup and recovery management must include at least the following:"
+CSCC-1:2019,2-8-1-1,Backup and Recovery Management,Scope and coverage of online and offline backups shall cover all critical systems.
+CSCC-1:2019,2-8-1-2,Backup and Recovery Management,"Performing backup within planned intervals, according to the organization's risk assessment. NCA recommends performing bacup for critical systems on a daily basis."
+CSCC-1:2019,2-8-1-3,Backup and Recovery Management,"Securing access, storage and transfer of critical systems' backups and storage media, and protecting it from destruction, unauthorized access or modification."
+CSCC-1:2019,2-8-2,Backup and Recovery Management,"With reference to ECC subcontrol 2-9-3-3, a periodical test must be conducted at least once every three months in order to determine the efficiency of recovering critical systems backups."
+CSCC-1:2019,2-9,Vulnerabilities Management,To ensure timely detection and effective remediation of technical vulnerabilities to prevent or minimize the probability of exploiting these vulnerabilities to launch cyber attacks against the organization.
+CSCC-1:2019,2-9-1,Vulnerabilities Management,"In addition to the the subcontrols in ECC control 2-10-3, cybersecurity requirements for technical vulnerabilities management of critical systems must include at least the following:"
+CSCC-1:2019,2-9-1-1,Vulnerabilities Management,Utilizing trusted methods and tools for vulnerabilities assessments.
+CSCC-1:2019,2-9-1-2,Vulnerabilities Management,"Assessing and remediating vulnerabilities (by installing security policies and patches) on technical components of critical systems at least once every month for external and internet-connected critical systems, and at least once every three months for internal critical systems."
+CSCC-1:2019,2-9-1-3,Vulnerabilities Management,"Immediately remediating for critical vulnerabilities, in line with change management processes approved by the organization."
+CSCC-1:2019,2-9-2,Vulnerabilities Management,"With reference to ECC subcontrol 2-10-3-1, vulnerabilities assessments must be conducted on critical systems' technical components at least once every month."
+CSCC-1:2019,2-10,Penetration Testing,To assess and evaluate the efficiency of the organization's cybersecurity defense capabilities through simulated cyber attacks to discover unknown weakness within the technical infrastructure that may lead to a cyber breach.
+CSCC-1:2019,2-10-1,Penetration Testing,"In addition to the subcontrols in ECC control 2-11-3, cybersecurity requirements for penetration testing on critical systems must include at least the following:"
+CSCC-1:2019,2-10-1-1,Penetration Testing,Scope of penetration tests must cover all of the critical systems' technical components and all its internal and external services.
+CSCC-1:2019,2-10-1-2,Penetration Testing,Conducting penetration tests by a qualified team.
+CSCC-1:2019,2-10-2,Penetration Testing,"With reference to ECC subcontrol 2-11-3-2, penetration tests must be conducted on critical systems at least once every six months."
+CSCC-1:2019,2-11,Cybersecurity Event Logs and Monitoring Management,"To ensure timely collection, analysis and monitoring of cybersecurity events for early  detection of potential cyber-attacks in order to prevent or minimize the negative impacts on the organization's operations."
+CSCC-1:2019,2-11-1,Cybersecurity Event Logs and Monitoring Management,"In addition to the subcontrols in ECC control 2-12-3, cybersecurity requirements for event logs and monitoring management for critical systems must include at least the following:"
+CSCC-1:2019,2-11-1-1,Cybersecurity Event Logs and Monitoring Management,Activating cybersecurity event logs on all technical components of critical systems.
+CSCC-1:2019,2-11-1-2,Cybersecurity Event Logs and Monitoring Management,Activating and monitoring of alerts and event logs related to file integrity management.
+CSCC-1:2019,2-11-1-3,Cybersecurity Event Logs and Monitoring Management,Monitoring and analyzing user behavior.
+CSCC-1:2019,2-11-1-4,Cybersecurity Event Logs and Monitoring Management,Monitoring critical systems security events around the clock.
+CSCC-1:2019,2-11-1-5,Cybersecurity Event Logs and Monitoring Management,"Maintaining and protecting critical systems security events logs. The log shall include all details (e.g. time, date, ID and affected systems)."
+CSCC-1:2019,2-11-2,Cybersecurity Event Logs and Monitoring Management,"With reference to ECC subcontrol 2-12-3-5, retention period of cybersecurity's critical systems event logs must be 19 months minimum, in accordance with relevant legislative and regulatory requirements."
+CSCC-1:2019,2-12,Web Application Security,To ensure the protection of Internet-Facing web applications against cyber risk
+CSCC-1:2019,2-12-1,Web Application Security,"In addition to the subcontrols in ECC control 2-15-3, cybersecurity requirements for external web applications for the organization's critical systems must include at least the following:"
+CSCC-1:2019,2-12-1-1,Web Application Security,"Secure session management, including session authenticity, session lockout and session timeout."
+CSCC-1:2019,2-12-1-2,Web Application Security,Applying the minimum standards of Open Web Application Security Project (OWASP) Top Ten.
+CSCC-1:2019,2-12-2,Web Application Security,"With reference to ECC subcontrol 2-15-3-2, multi-tier architecture principle, with minimum 3 tiers, must be used."
+CSCC-1:2019,2-13,Application Security,To ensure the protection of the critical systems' internal applications against cyber risks
+CSCC-1:2019,2-13-1,Application Security,"Cybersecurity requirements for critical systems' internal applications must be defined, documented, and approved."
+CSCC-1:2019,2-13-2,Application Security,The cybersecurity requirements for critical systems' internal applications must be implmented.
+CSCC-1:2019,2-13-3,Application Security,The cybersecurity requirements for critical systems' internal applications must include at least following:
+CSCC-1:2019,2-13-3-1,Application Security,"Adopting multi-tier architecture principle, provided that number of tiers is not less than three."
+CSCC-1:2019,2-13-3-2,Application Security,Using secure protocols (e.g. HTTPS).
+CSCC-1:2019,2-13-3-3,Application Security,Outlining the acceptable use policy for users.
+CSCC-1:2019,2-13-3-4,Application Security,"Secure session management, including session authenticity, session lockout and session timeout."
+CSCC-1:2019,2-13-4,Data and Information Protection,The cybersecurity requirements for critical systems' internal applications must be reviewed periodically.
+CSCC-1:2019,3,Cybersecurity Resilience,
+CSCC-1:2019,3-1,Cybersecurity Resilience Aspects of Business Continuity Management (BCM),"To ensure the inclusion of the cybersecurity resiliency requirements within the organization's business continuity management and to remediate and minimize the impacts on systems, information processing facilities and critical e-services from disasters caused by cybersecurity incidents."
+CSCC-1:2019,3-1-1,Cybersecurity Resilience Aspects of Business Continuity Management (BCM),"In addition to the subcontrol in ECC control 3-1-3, cybersecurity requirements for business continuity management must be included at least the following:"
+CSCC-1:2019,3-1-1-1,Cybersecurity Resilience Aspects of Business Continuity Management (BCM),Establishing a disaster reocvery center for critical systems.
+CSCC-1:2019,3-1-1-2,Cybersecurity Resilience Aspects of Business Continuity Management (BCM),Incorporating critical systems within disaster recovery plans.
+CSCC-1:2019,3-1-1-3,Cybersecurity Resilience Aspects of Business Continuity Management (BCM),"Conducting periodical tests to ensure the efficiency of disaster recovery plans for critical systems, at least once annually."
+CSCC-1:2019,3-1-1-4,Cybersecurity Resilience Aspects of Business Continuity Management (BCM),NCA recommends conducting periodical live Disaster Recovery (DR) test for critical systems.
+CSCC-1:2019,4,Third Party and Cloud Computing Cybersecurity,
+CSCC-1:2019,4-1,Third Party and Cloud Computing Cybersecurity,"To ensure the protection of assets against cybersecurity risks related to third parties, including outsourcing and managed services as per organizational policies and procedures, related laws and regulations."
+CSCC-1:2019,4-1-1,Third-Party Cybersecurity,"In addition to the controls in ECC subdomain 4-1, cybersecurity requriements for contracts and agreements with third-parties must include at least the following:"
+CSCC-1:2019,4-1-1-1,Third-Party Cybersecurity,Screening or vetting of outsourcing and managed services companies and personnel who work on critical systems.
+CSCC-1:2019,4-1-1-2,Third-Party Cybersecurity,"Outsourcing and managed services of critical systems must rely on Saudi companies and organizations, in accordance with the relevant legislative and regulatory requirements."
+CSCC-1:2019,4-2,Cloud Computing and Hosting Cybersecurity,"To ensure the proper and efficient remediation of cyber risks and the implementation of cybersecurity requirements related to hosting and cloud computing as per organizational prolicies and procedures, and related laws and regulations. It is also to ensure the protection of the organization's information technology assets hosted on the cloud or processed/managed by third parties."
+CSCC-1:2019,4-2-1,Cloud Computing and Hosting Cybersecurity,"In addition to the subcontrols in ECC control 4-2-3, cybersecurity requirements related to the use of the hosting and cloud computing services must include must include at least the following:"
+CSCC-1:2019,4-2-1-1,Cloud Computing and Hosting Cybersecurity,"Hosting of critical systems and any part of their technical components must be inside the organization or within cloud computing services provided by government organizations or Saudi companies that are in compliance with NCA's Cloud Cybersecurity Controls (CCC), taking into account the classification of the hosted data."

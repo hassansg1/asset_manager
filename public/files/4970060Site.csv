@@ -1,0 +1,23 @@
+Parent Type,Parent Name,Site ID,Site Name,Site Name(Arabic),Site Description,Site Location(Descriptive),Site Location(Coordinates - Dec),Site Location(Coordinates - Deg),Site Location(Google Link),Main Process / Equipment
+Unit,RD,MNF-WTP,Manfouha WTP,,Water Treatment Plant with APN connection to remote wells.,,"24.590128°, 46.732491°","24° 35' 24.4602""N 46° 43' 56.9676""E",https://goo.gl/maps/9ig7mzKWBVezU78r9,"Filteration, RO, Acid treatment, Cooling Tower, Chlorination"
+Unit,RD,MLZ-WTP,Malaz WTP,,,,"24.676270, 46.723132","24° 40' 34.5714""N 46° 43' 23.2746""E",https://goo.gl/maps/La66jghuSAvjKc3C8,"Filteration, RO, Acid treatment, Cooling Tower, Chlorination"
+Unit,RD,SHM-WTP,Shomacy WTP,,,,"24.635810, 46.687083","24° 38' 8.9154""N 46° 41' 13.4988""E",https://goo.gl/maps/5277KyqJmANGXs7H9,"Filteration, RO, Acid treatment, Cooling Tower, Chlorination"
+Unit,RD,HYR-WTP,Hayer WTP,,,,"24.395969, 46.830672","24°23'45.49""N  46°49'50.42""E",https://goo.gl/maps/F2rEw5JrqzL8DDbd7,"Filteration, RO, Acid treatment, Cooling Tower, Chlorination"
+Unit,RD,WAS-WTP,Wasi WTP,,,,"25.098256, 47.540478","25° 5'53.72""N 47°32'25.72""E",https://goo.gl/maps/dh4CTCdw3Snjx9qc9,"Filteration, RO, Acid treatment, Cooling Tower, Chlorination"
+Unit,RD,SLB-WTP,Salbukh WTP,,,,"25.055533, 46.479917","25° 3' 19.9188""N 46° 28' 47.7012""E",https://goo.gl/maps/h298BH2fGaGFHMgE8,"Filteration, RO, Acid treatment, Cooling Tower, Chlorination"
+Unit,RD,BWB-WTP,Bowaib WTP,,,,"25.131700, 46.843067","25° 7' 54.1194""N 46° 50' 35.0406""E",https://goo.gl/maps/pw65wsGVsaCMZ1KH9,"Filteration, RO, Acid treatment, Cooling Tower, Chlorination"
+Unit,RD,MNF-STP,Manfouha WWTP,,,,,,,"Aeration, Decanter, Acid Treatment etc."
+Unit,RD,HET-STP,HEET WWTP,,,,"24.503767, 46.948400","24° 30' 13.5606""N 46° 56' 54.2394""E",https://goo.gl/maps/SCtbPPPbGhJzXaNdA,"Aeration, Decanter, Acid Treatment etc."
+Unit,RD,HYR-STP,HAYER WWTP,,,,"24.395969, 46.830672","24°23'45.49""N 46°49'50.42""E",https://goo.gl/maps/mUvFarFnPKCPQGr16,"Aeration, Decanter, Acid Treatment etc."
+Unit,RD,TGW,TGW,,,,"24.639781, 46.5801","24°38'23.21""N 46°34'48.36""E",https://goo.gl/maps/eXcFbeXwXQC5BL4MA,Storage Tanks
+Unit,RD,TGNW,TGNW,,,,,"24°49'55.38""N 46°31'25.93""E",,Storage Tanks
+Unit,RD,TGE,TGE,,,,,"24°51'55.43""N 46°52'2.37""E",,Storage Tanks
+Unit,RD,TGC,TGC,,,,"24.716620, 46.7541310",,,Pumping Station
+Unit,RD,EX-17,Exit-17,,,,"24.653007, 46.794893","24° 39' 10.8246""N 46° 47' 41.6148""E",https://goo.gl/maps/7gwHaguap5em4ihw7,None
+Unit,RD,EX-10,Exit-10,,,,"24.749336, 46.713519","24°44'57.61""N 46°42'48.67""E ",https://goo.gl/maps/Gh1RoC3VKM5SvJ8Z7,None
+Unit,RD,HUN-WTP,Huni WTP,,,,"25.219383, 48.632383","25°13'9.78""N 48°37'56.58""E",,"Filteration, RO, Acid treatment, Cooling Tower, Chlorination"
+Unit,RD,TGN,TGN,,,,"24.783494, 46.70355","24°47'0.58""N 46°42'12.78""E",https://goo.gl/maps/hFofpqnAuEZU73qh7,Pumping Station
+Unit,RD,SR57,SR57,,,,,,,Storage Reservoirs
+Unit,RD,HPT,HPT,,,,,,,
+Unit,RD,SR02,SR02,,,,,,,
+Unit,RD,SR16,SR16,,,,,,,

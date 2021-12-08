@@ -1,0 +1,29 @@
+Parent Type,Parent ID,Room ID,Room Name
+Building,Manfuha Admin Building,RD_MNF-WTP_ADB_NR,Admin Building - 3rd Floor Network Room
+Building,Manfuha Admin Building,RD_MNF-WTP_ADB_CR,Admin Building - 3rd Floor Control Room
+Building,Manfuha Admin Building,RD_MNF-WTP_ADB_M2SFR,Admin Building - 3rd Floor M2 Sand Filters Room
+Building,Manfuha Admin Building,RD_MNF-WTP_ADB_M1CT,Admin Building Grand Floor M1 Cooling Tower & Booster MCC Room
+Building,Manfuha Admin Building,RD_MNF-WTP_ADB_M2CT,Admin Building Grand Floor M2 Cooling Tower & Booster MCC Room
+Building,Manfuha Admin Building,RD_MNF-WTP_ADB_M1SFR,Admin Building - 3rd Floor M1 Sand Filters Room
+Building,Manfuha Admin Building,RD_MNF-WTP_ADB_GND,Admin Building Ground Floor
+Building,M1 RO Building,RD_MNF-WTP_M1ROB_CR,M1 RO Building Control Room
+Building,M1 RO Building,RD_MNF-WTP_M1ROB_M1PR,M1 RO Building HPP Pumps Room
+Building,M1 RO Building,RD_MNF-WTP_M1ROB_MCC,M1 RO Building MCC Room
+Building,M2 RO Building,RD_MNF-WTP_M2ROB_NR,M2 RO Building Network Room
+Building,M2 RO Building,RD_MNF-WTP_M2ROB_MCC,M2 RO Building MCC Room
+Building,Malaz WTP Admin Building,RD_MLZ-WTP_ADB_CR,Control Room
+Building,Malaz WTP Admin Building,RD_MLZ-WTP_ROB_NR,Admin Building Network Room
+Building,Malaz RO Building,RD_MLZ-WTP_ROB_CR,Control Room
+Building,Malaz RO Building,RD_MLZ-WTP_ROB_MCC,MCC Room
+Building,Malaz RO Building,RD_MLZ-WTP_ROB_PR,Pumps Room
+Building,Shomacy RO Building,RD_SHM-WTP_ROB_CR,Control Room
+Building,Shomacy RO Building,RD_SHM-WTP_ROB_MCC,MCC Room
+Building,Shomacy WTP Admin Building,RD_SHM-WTP_ADB_CR,Control Room
+Building,Shomacy WTP Admin Building,RD_SHM-WTP_ADB_NR,Admin Building Network Room
+Building,Bowaib 2 Control Building ,RD_BWB_WTP_CRB_ROR,RO Room
+Building,Manfouha Data center Building,RD_MNF-STP_DCB_DCR,Data Center
+Building,Manfouha New admin Building,RD_MNF-STP_NADB_NR,Network Room
+Building,Manfouha  East Control Building,RD_MNF-STP_ECRB_NR,Network Room
+Site,Bowaib WTP,RD_BWB-WTP_MCC,MCC Room
+Site,Malaz WTP,RD_MLZ-WTP_MCC,MCC Room
+Site,Shomacy WTP,RD_SHM-WTP_MCC,MCC Room
