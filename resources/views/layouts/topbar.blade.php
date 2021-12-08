@@ -178,6 +178,9 @@
                        data-lang="eng">
                         <span class="align-middle">Document Library</span>
                     </a>
+                    <a href="{{ route('approver.index') }}" class="dropdown-item notify-item language" data-lang="eng">
+                        <span class="align-middle">Approvers</span>
+                    </a>
                 </div>
             </div>
 

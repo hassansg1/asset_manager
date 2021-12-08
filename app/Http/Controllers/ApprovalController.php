@@ -113,4 +113,47 @@ class ApprovalController extends Controller
 
         return redirect()->back();
     }
+
+    public function approveStatusUpdate(Request $request){
+        $ids = $request->ids;
+        $idsArray = explode(",",$ids);
+        if ($request->button_id == "approve_all") {
+            // Log::whereIn('id',$idsArray)->where('approved', 0)->update(['approved' => 1]);
+            foreach ($idsArray as $key => $value) { 
+                $this->approveUpdateStatus($value);
+            }
+        }
+        if ($request->button_id == "reject_all") {
+            Log::whereIn('id',$idsArray)->where('approved', 0)->update(['reason'=>$request->reason]);
+            foreach ($idsArray as $key => $value) {
+               $this->rejectUpdateFunction($value);
+            }
+        }
+        if ($request->button_id == "delete_all") {
+            Log::whereIn('id',$idsArray)->delete();
+        }
+        return response()->json(['success'=>"Succefully Updated !!."]);
+
+    }
+
+    public function approveUpdateStatus($id){
+      $log = Log::find($id);
+      $arr = array_diff_key((array)$log->new(), ['id' => $id]);
+      if ($log->action == 'CREATED') {
+        DB::table($log->table_name)->insert((array)$log->new());
+    } elseif ($log->action == 'UPDATED') {
+        DB::table($log->table_name)->where('id', $log->new()->id)->update($arr);
+    }elseif ($log->action == 'DELETED') {
+        DB::table($log->table_name)->where('id', $log->old()->id)->delete();
+    }
+    $log->approved = 1;
+    $log->save();
+}
+public function rejectUpdateFunction($id){
+    $log = Log::find($id);
+    $log->approved = 2;
+    $log->save();
+
+}
+
 }
