@@ -10,7 +10,7 @@ class Location extends Model
 {
     use HasFactory;
 
-    use NodeTrait;
+//    use NodeTrait;
 
     protected $guarded = [];
 
