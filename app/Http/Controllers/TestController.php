@@ -11,8 +11,8 @@ class TestController extends Controller
     //
     public function test()
     {
-//        Artisan::call('migrate:data');
-//        Artisan::call('sync:parents');
-        Location::fixTree();
+        Artisan::call('migrate:data');
+////        Artisan::call('sync:parents');
+//        Location::fixTree();
     }
 }
