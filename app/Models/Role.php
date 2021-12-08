@@ -70,11 +70,11 @@ class Role extends Authenticatable
     public static function locationsArray()
     {
         $roles = Auth::user()->roles->pluck('id')->toArray();
+        return  [1];
         if ($roles) {
             return UserLocation::whereIn('role_id', $roles)->get()->pluck('locationable_id')->toArray();
         }
 
-        return  [1];
     }
 
     public static function permissionsArray()
