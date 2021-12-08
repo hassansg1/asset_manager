@@ -41,10 +41,7 @@ class Role extends Authenticatable
         UserLocation::where(['role_id' => $item->id])->delete();
         if (isset($request->location)) {
             foreach ($request->location as $location) {
-                $prt = explode('??', $location);
-                $item->parentable_type = $prt[0] ?? '';
-                $item->parentable_id = $prt[1] ?? '';
-                UserLocation::addNew($prt[0] ?? null, $prt[1] ?? null, $item->id);
+                UserLocation::addNew(Location::class, $location, $item->id);
             }
         }
     }
@@ -74,7 +71,7 @@ class Role extends Authenticatable
     {
         $roles = Auth::user()->roles->pluck('id')->toArray();
         if ($roles) {
-            return UserLocation::whereIn('role_id', $roles)->get()->pluck('combine_name')->toArray();
+            return UserLocation::whereIn('role_id', $roles)->get()->pluck('locationable_id')->toArray();
         }
     }
 

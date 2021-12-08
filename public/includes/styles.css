@@ -314,7 +314,30 @@ input[type="checkbox"][readonly] {
     display: inline !important;
     padding: 2px !important;
 }
-.navbar-brand-box
-{
+
+.navbar-brand-box {
     min-width: 250px !important;
+}
+
+.asset_search {
+    background: transparent;
+    color: white;
+    width: 85%;
+    margin-left: 15px
+}
+#datatable-buttons_paginate
+{
+    display: none;
+}
+#datatable-buttons_info
+{
+    display: none;
+}
+svg
+{
+    width: 25px !important;
+}
+#default-tree
+{
+    color: white;
 }

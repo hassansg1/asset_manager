@@ -58,57 +58,6 @@
             height: 900,
         });
 
-        var $searchableTree = $('#default-tree').treeview({
-
-            // expanded to 2 levels
-            data: myTree,
-            levels: 1,
-
-            // custom icons
-            expandIcon: 'fas fa-plus',
-            collapseIcon: 'fas fa-minus',
-            emptyIcon: 'fas',
-            nodeIcon: '',
-            selectedIcon: '',
-            checkedIcon: 'fas fa-flag-checkered',
-            uncheckedIcon: 'fas fa-microscope',
-
-            // colors
-            color: undefined, // '#000000',
-            backColor: undefined, // '#FFFFFF',
-            borderColor: undefined, // '#dddddd',
-            onhoverColor: '#33394e',
-            selectedColor: 'transparent',
-            selectedBackColor: '#428bca',
-            searchResultColor: '#D9534F',
-            searchResultBackColor: undefined, //'#FFFFFF',
-
-            // enables links
-            enableLinks: true,
-
-            // highlights selected items
-            highlightSelected: true,
-
-            // highlights search results
-            highlightSearchResults: true,
-
-            // shows borders
-            showBorder: true,
-
-            // shows icons
-            showIcon: true,
-
-            // shows checkboxes
-            showCheckbox: false,
-
-            // shows tags
-            showTags: false,
-
-            // enables multi select
-            multiSelect: false
-
-        });
-
         var search = function (e) {
             var pattern = $('#tree-input-search').val();
             var options = {
@@ -132,9 +81,6 @@
 
         $('#tree-input-search').on('keyup', search);
 
-
-        sidebar_tree();
-
         editor1.on('change', function () {
             console.log(CKEDITOR.instances.help_text.getData());
             $.ajax({
@@ -153,7 +99,8 @@
             });
         });
     });
-
+    var $searchableTree;
+    sidebar_tree();
     function sidebar_tree() {
         $.ajax({
             type: "POST",
@@ -163,16 +110,53 @@
             },
             success: function (result) {
                 if (result.status) {
-                    $('.loc_tree').replaceWith(result.html);
-                    $("#sidebar-menu a").each(function () {
-                        var pageUrl = window.location.href.split(/[?#]/)[0];
-                        $(this).addClass("active");
-                        $(this).parent().addClass("mm-active"); // add active to li of the current link
-                        $(this).parent().parent().addClass("mm-show");
-                        $(this).parent().parent().prev().addClass("mm-active"); // add active class to an anchor
-                        $(this).parent().parent().parent().addClass("mm-active");
-                        $(this).parent().parent().parent().parent().addClass("mm-show"); // add active to li of the current link
-                        $(this).parent().parent().parent().parent().parent().addClass("mm-active");
+                    $searchableTree = $('#default-tree').treeview({
+
+                        // expanded to 2 levels
+                        data: result.tree,
+                        levels: 1,
+
+                        // custom icons
+                        expandIcon: 'fas fa-plus',
+                        collapseIcon: 'fas fa-minus',
+                        emptyIcon: 'fas',
+                        nodeIcon: '',
+                        selectedIcon: '',
+                        checkedIcon: 'fas fa-flag-checkered',
+                        uncheckedIcon: 'fas fa-microscope',
+
+                        // colors
+                        color: '#fff', // '#000000',
+                        backColor: '#FFFFFF', // '#FFFFFF',
+                        borderColor: undefined, // '#dddddd',
+                        onhoverColor: '#33394e',
+                        searchResultColor: '#D9534F',
+                        searchResultBackColor: undefined, //'#FFFFFF',
+
+                        // enables links
+                        enableLinks: true,
+
+                        // highlights selected items
+                        highlightSelected: true,
+
+                        // highlights search results
+                        highlightSearchResults: true,
+
+                        // shows borders
+                        showBorder: true,
+
+                        // shows icons
+                        showIcon: true,
+
+                        // shows checkboxes
+                        showCheckbox: false,
+
+                        // shows tags
+                        showTags: false,
+
+                        // enables multi select
+                        multiSelect: false
+
                     });
                 }
             },

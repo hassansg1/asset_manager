@@ -4,24 +4,29 @@ namespace App\Models;
 
 use App\Http\Traits\Observable;
 use App\Http\Traits\ParentTrait;
+use App\Scopes\LocationScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Kalnoy\Nestedset\NodeTrait;
 
 class Unit extends Model
 {
     use HasFactory;
-    use ParentTrait;
     use Observable;
+    use NodeTrait;
+
+    protected $table = 'locations';
+
+    public static $type = 'units';
 
     protected $guarded = [];
 
-    public $rules =
-        [
-            'parent' => 'required',
-            'rec_id' => 'required | unique:units,rec_id',
-        ];
+    protected static function boot()
+    {
+        parent::boot();
 
-    protected $appends = ['show_name', 'parentable_type', 'parentable_id'];
+        return static::addGlobalScope(new LocationScope(self::$type));
+    }
 
     public function getShowNameAttribute()
     {

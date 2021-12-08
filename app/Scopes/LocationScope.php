@@ -14,14 +14,15 @@ class LocationScope implements Scope
      * @param Model $model
      */
 
-    public $userType;
+    public $locationType;
 
-    public function __construct($userType = null)
+    public function __construct($locationType = null)
     {
-        $this->userType = $userType;
+        $this->locationType = $locationType;
     }
 
     public function apply(Builder $builder, Model $model)
     {
+        $builder->where('type', 'sub_sites');
     }
 }

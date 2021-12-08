@@ -16,20 +16,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="mb-3">
-                            <label for="" class="form-label">Applicable</label>
-                            <br>
-                            <input type="checkbox" id="switch3" switch="bool" name="applicable"
-                                {{ isset($item) && $item->applicable == 1 ? 'checked':''  }}
-                            />
-                            <label for="switch3" data-on-label="Yes"
-                                   data-off-label="No"></label>
-
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

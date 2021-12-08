@@ -144,25 +144,9 @@ if (!function_exists('checkIfSuperAdmin')) {
 }
 
 if (!function_exists('getAllPossibleChildTablesOfParent')) {
-    function getAllPossibleChildTablesOfParent($parent)
+    function getAllPossibleChildTablesOfParent()
     {
         return ['hierarcy', 'assets', 'l01 assets', 'network assets'];
-        switch ($parent) {
-            case 'App\Models\Company':
-                return ['hierarcy', 'assets', 'sub_sites', 'assets'];
-                break;
-            case 'App\Models\Unit':
-                return ['sites', 'sub_sites', 'assets'];
-                break;
-            case 'App\Models\Site':
-                return ['sub_sites', 'assets'];
-                break;
-            case 'App\Models\SubSite':
-                return ['assets'];
-                break;
-            default:
-                return [];
-        }
     }
 }
 
@@ -487,4 +471,19 @@ if (!function_exists('getAllParents')) {
     }
 }
 
+function buildTree(array $elements, $parentId = 0)
+{
+    $branch = array();
 
+    foreach ($elements as $element) {
+        if ($element['parent_id'] == $parentId) {
+            $children = buildTree($elements, $element['id']);
+            if ($children) {
+                $element['nodes'] = $children;
+            }
+            $branch[] = (object)$element;
+        }
+    }
+
+    return $branch;
+}

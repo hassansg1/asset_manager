@@ -2,21 +2,31 @@
 
 namespace App\Models;
 
+use App\Http\Traits\Observable;
 use App\Http\Traits\ParentTrait;
+use App\Scopes\LocationScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Kalnoy\Nestedset\NodeTrait;
 
 class LoneAsset extends Model
 {
     use HasFactory;
-    use ParentTrait;
+    use Observable;
+    use NodeTrait;
+
+    protected $table = 'locations';
+
+    public static $type = 'lone_assets';
 
     protected $guarded = [];
 
-    public $rules =
-        [
-            'rec_id' => 'required | unique:lone_assets,rec_id',
-        ];
+    protected static function boot()
+    {
+        parent::boot();
+
+        return static::addGlobalScope(new LocationScope(self::$type));
+    }
 
     protected $appends = ['show_name'];
 

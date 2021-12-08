@@ -1,9 +1,9 @@
-@can('Edit '.$route)
+{{--@can('Edit '.$route)--}}
     <input type="hidden" name="can_edit" value="1" id="can_edit">
     <div style="text-align: right">
         <button type="submit" class="btn btn-primary w-md submit_form">Save</button>
     </div>
-@endcan
+{{--@endcan--}}
 @section('script')
     <script>
         function addNewAfterSave() {

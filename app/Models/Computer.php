@@ -4,18 +4,29 @@ namespace App\Models;
 
 use App\Http\Traits\Observable;
 use App\Http\Traits\ParentTrait;
+use App\Scopes\LocationScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Kalnoy\Nestedset\NodeTrait;
 
 class Computer extends Model
 {
     use HasFactory;
-    use ParentTrait;
     use Observable;
+    use NodeTrait;
 
-    protected $table = 'computer_assets';
+    protected $table = 'locations';
+
+    public static $type = 'computer_assets';
 
     protected $guarded = [];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        return static::addGlobalScope(new LocationScope(self::$type));
+    }
 
     public $rules =
         [

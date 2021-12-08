@@ -2,15 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Location;
 use App\Models\Role;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\App;
+use App\Models\SubSite;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\Session;
 
 class BaseController extends Controller
 {
@@ -37,20 +32,21 @@ class BaseController extends Controller
             }
 
         }
-        $items = $model->get();
+        $items = Location::whereDescendantOf(1)->where('type',$model::$type)->paginate(10);
+
         $totalItems = $total->count('*');
         $data['totalItems'] = $totalItems;
         $data['currentTotalItems'] = count($items);
         $data['start'] = ((int)($currentPage - 1) * $perPage) + 1;
         $data['end'] = $data['start'] + count($items) - 1;
         $data['paginateText'] = $data['start'] . '-' . $data['end'] . ' of' . $data['totalItems'];
-        if (isset($filter) && count($filter) > 0) {
-            $items = $items->whereIn('parent_combine', $filter);
-        }
+//        if (isset($filter) && count($filter) > 0) {
+//            $items = $items->whereIn('parent_combine', $filter);
+//        }
 
-        if ($hasPermissions) {
-            $items = $this->applyPermissions($items, $model);
-        }
+//        if ($hasPermissions) {
+//            $items = $this->applyPermissions($items, $model);
+//        }
 
 //        $items = $items->filter(function ($value, $key) {
 //            dd($value->permission_string);

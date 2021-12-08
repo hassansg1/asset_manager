@@ -27,7 +27,7 @@ class Standard extends Model
     {
         if (isset($request->name)) $item->name = $request->name;
         $applicable = isset($request->applicable) && $request->applicable == 'on' ? 1 : 0;
-        $item->applicable = $applicable;
+        $item->applicable = 1;
 
         $item->save();
         return $item;

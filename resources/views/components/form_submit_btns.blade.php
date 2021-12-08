@@ -8,7 +8,6 @@
     </button>
 </div>
 
-@section('script')
     <script>
         // $(".item_form").submit(function (e) {
         //     if ($('#change_justification_reason').val() == undefined) {
@@ -22,4 +21,3 @@
             $('.submit_form').click();
         }
     </script>
-@endsection

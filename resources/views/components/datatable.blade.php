@@ -26,7 +26,7 @@
                                 @yield('table_rows')
                                 </tbody>
                             </table>
-
+                            {!! $items->links('vendor.pagination.bootstrap-4') !!}
                         </div>
                     </div>
                 </div>
