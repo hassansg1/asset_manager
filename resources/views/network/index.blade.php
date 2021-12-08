@@ -1,20 +1,6 @@
 @extends('components.datatable')
 @section('top_content')
-    <button class="btn btn-primary mr-10">
-        <a style="color: white"
-           href="{{ url( 'filterAssets/'.str_replace('\\','-',str_replace('??','_',$filter)).'/'.str_replace('\\','-',\App\Http\Controllers\ComputerAssetController::class)) }}">
-            Computer
-            Assets</a>
-    </button>
-    <button class="btn btn-primary mr-10">
-        <a style="color: white"
-           href="{{ url( 'filterAssets/'.str_replace('\\','-',str_replace('??','_',$filter)).'/'.str_replace('\\','-',\App\Http\Controllers\NetworkAssetController::class)) }}">Network
-            Assets</a>
-    </button>
-    <button class="btn btn-primary mr-10">
-        <a style="color: white"
-           href="{{ url( 'filterAssets/'.str_replace('\\','-',str_replace('??','_',$filter)).'/'.str_replace('\\','-',\App\Http\Controllers\LoneAssetController::class)) }}">L01 Assets</a>
-    </button>
+    @include('components.assets_btns')
 @endsection
 @section('table_header')
     <th class="select_all_checkbox" style="width: 10px"><input

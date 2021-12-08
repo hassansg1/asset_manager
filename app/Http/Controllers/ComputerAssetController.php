@@ -8,6 +8,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class ComputerAssetController extends BaseController
 {
@@ -29,7 +30,7 @@ class ComputerAssetController extends BaseController
      */
     public function index($filter = [])
     {
-        $data = $this->fetchData($this->model, null, $filter);
+        $data = $this->fetchData($this->model, null, null);
 
         return view($this->route . "/index")
             ->with(['items' => $data['items'], 'data' => $data, 'filter' => $filter[0] ?? null, 'route' => $this->route, 'heading' => $this->heading]);

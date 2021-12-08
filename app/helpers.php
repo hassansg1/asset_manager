@@ -268,11 +268,11 @@ if (!function_exists('sanitizeInput')) {
     }
 }
 
-if (!function_exists('hierarchyCondition')) {
-    function hierarchyCondition($model)
+if (!function_exists('assetCondition')) {
+    function assetCondition($model)
     {
         $modelClass = get_class($model);
-        return $modelClass == "App\Models\Company" || $modelClass == "App\Models\Unit" || $modelClass == "App\Models\Site";
+        return $modelClass == "App\Models\Computer" || $modelClass == "App\Models\NetworkAsset" || $modelClass == "App\Models\LoneAsset";
     }
 }
 
@@ -471,6 +471,13 @@ if (!function_exists('getAllParents')) {
     }
 }
 
+if (!function_exists('getAncestorsForLocation')) {
+    function getAncestorsForLocation($locationId)
+    {
+        return \App\Models\Location::ancestorsAndSelf($locationId);
+    }
+}
+
 function buildTree(array $elements, $parentId = 0)
 {
     $branch = array();
@@ -481,6 +488,7 @@ function buildTree(array $elements, $parentId = 0)
             if ($children) {
                 $element['nodes'] = $children;
             }
+            $element['href'] = route('view/assets', $element['id']);
             $branch[] = (object)$element;
         }
     }

@@ -19,6 +19,7 @@ class LocTreeController extends Controller
 
             $subTree =  buildTree($nodes, $location);
             $parentNode = $nodes[0];
+            $parentNode['href'] = route('view/assets',$nodes[0]['id']);
             $parentNode['nodes'] = $subTree;
             $nodeTree[0] = (object) $parentNode;
             $tree = array_merge($tree,$nodeTree );

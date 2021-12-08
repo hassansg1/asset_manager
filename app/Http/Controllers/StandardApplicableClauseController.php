@@ -35,11 +35,11 @@ class StandardApplicableClauseController extends BaseController
      */
     public function index($standardId, $onlyView = false)
     {
-        $items = Clause::where('standard_id', $standardId)->where('parent_id', null)->orderBy('id', 'asc')->get();
+        $data['items'] = Clause::where('standard_id', $standardId)->where('parent_id', null)->orderBy('id', 'asc')->paginate(10);
         $standard = Standard::find($standardId);
 
         return view($this->route . "/index")
-            ->with(['items' => $items, 'route' => $this->route, 'onlyView' => $onlyView, 'heading' => "Applicable Clauses for " . $standard->name]);
+            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'onlyView' => $onlyView, 'heading' => "Applicable Clauses for " . $standard->name]);
     }
 
     /**
