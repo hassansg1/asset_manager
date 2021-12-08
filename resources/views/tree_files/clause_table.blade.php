@@ -5,7 +5,7 @@
     </td>
     <td style="padding-left: {{ $padding }}px">{{ $item->number }}</td>
     <td>{{ $item->title }}</td>
-    <td>{{ $item->description }}</td>
+    <td>{{ substr($item->description,0,20) }}</td>
     <td>
         @include('components.edit_delete_button')
     </td>

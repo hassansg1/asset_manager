@@ -16,7 +16,7 @@
   </span>
      <button id="paginate_text" type="button" class="btn btn-light btn-filter dropdown-toggle" data-bs-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-         {{ $data['start'] }} - {{$data['end'] }} of {{ $data['totalItems'] }}
+         {{ $data['start'] ?? 0 }} - {{$data['end'] ?? 0 }} of {{ $data['totalItems'] ?? 0 }}
       </button>
 <button title="Previous"  type="button" class="btn btn-light btn-filter dropdown-toggle" data-bs-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">

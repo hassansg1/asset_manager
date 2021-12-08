@@ -32,10 +32,10 @@ class ApplicableStandardController extends BaseController
      */
     public function index()
     {
-        $items = Standard::all();
+        $data = $this->fetchData($this->model);
 
         return view($this->route . "/index")
-            ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
+            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**
