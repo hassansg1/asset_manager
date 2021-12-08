@@ -32,7 +32,11 @@ class BaseController extends Controller
             }
 
         }
-        $items = Location::whereDescendantOf(1)->where('type',$model::$type)->paginate(10);
+        if (isset($model::$type))
+            $items = Location::whereDescendantOf(1)->where('type',)->paginate(10);
+        else
+            $items = $model->paginate(10);
+
 
         $totalItems = $total->count('*');
         $data['totalItems'] = $totalItems;
