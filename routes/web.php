@@ -40,6 +40,7 @@ Route::group(['middleware' => ['auth']], function () {
         'role' => \App\Http\Controllers\RoleController::class,
         'user' => \App\Http\Controllers\UserController::class,
         'unit' => \App\Http\Controllers\UnitController::class,
+        'approver' => \App\Http\Controllers\ApproverController::class,
         'asset' => \App\Http\Controllers\AssetController::class,
         'import' => \App\Http\Controllers\ImportController::class,
         'clause_import' => \App\Http\Controllers\ClauseImportController::class,

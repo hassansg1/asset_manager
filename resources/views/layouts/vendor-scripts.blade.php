@@ -155,7 +155,9 @@
                         showTags: false,
 
                         // enables multi select
-                        multiSelect: false
+                        multiSelect: false,
+                        onNodeChecked: true,
+
 
                     });
                 }

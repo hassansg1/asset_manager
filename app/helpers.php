@@ -477,6 +477,13 @@ if (!function_exists('getAncestorsForLocation')) {
         return \App\Models\Location::ancestorsAndSelf($locationId);
     }
 }
+if (!function_exists('getAncestors')) {
+    function getAncestors($locationId)
+    {
+        return \App\Models\Location::ancestorsOf($locationId);
+
+    }
+}
 
 function buildTree(array $elements, $parentId = 0)
 {

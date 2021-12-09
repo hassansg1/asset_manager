@@ -16,7 +16,6 @@ class LocTreeController extends Controller
         $tree = [];
         foreach ($locations as $location) {
             $nodes = Location::descendantsAndSelf($location)->toFlatTree()->toArray();
-
             $subTree =  buildTree($nodes, $location);
             $parentNode = $nodes[0];
             $parentNode['href'] = route('view/assets',$nodes[0]['id']);

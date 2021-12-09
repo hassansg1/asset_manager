@@ -28,10 +28,9 @@ class Location extends Model
 
     public function getParentNameAttribute()
     {
-        $parent = $this->parent;
-        if ($parent)
-            return $parent->long_name != "" ? $parent->long_name : $parent->name;
-
-        return "";
+        $parent = $this->id;
+        $ancestors = getAncestors($parent);
+        $html = view('components.ancestors', compact('ancestors'));
+        return $html;
     }
 }
