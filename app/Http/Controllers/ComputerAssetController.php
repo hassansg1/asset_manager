@@ -33,7 +33,7 @@ class ComputerAssetController extends BaseController
         $data = $this->fetchData($this->model, null, null);
 
         return view($this->route . "/index")
-            ->with(['items' => $data['items'], 'data' => $data, 'filter' => $filter[0] ?? null, 'route' => $this->route, 'heading' => $this->heading]);
+            ->with(['items' => $data['items'], 'data' => $data,'filter' => $filter[0] ?? null, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**

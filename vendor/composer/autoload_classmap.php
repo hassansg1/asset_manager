@@ -110,6 +110,7 @@ return array(
     'App\\Models\\Port' => $baseDir . '/app/Models/Port.php',
     'App\\Models\\Role' => $baseDir . '/app/Models/Role.php',
     'App\\Models\\Room' => $baseDir . '/app/Models/Room.php',
+    'App\\Models\\Settings' => $baseDir . '/app/Models/Settings.php',
     'App\\Models\\Site' => $baseDir . '/app/Models/Site.php',
     'App\\Models\\Software' => $baseDir . '/app/Models/Software.php',
     'App\\Models\\Standard' => $baseDir . '/app/Models/Standard.php',

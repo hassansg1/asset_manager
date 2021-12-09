@@ -1,4 +1,4 @@
-@extends('components.datatable')
+@extends('components.datatable_secondry')
 @section('table_header')
     <th class="select_all_checkbox" style="width: 10px"><input
             onclick="toggleSelectAll()"

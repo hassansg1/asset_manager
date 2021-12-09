@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master_secondry')
 
 @section('title') {{ $heading }} @endsection
 @section('content')
