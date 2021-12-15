@@ -4,82 +4,111 @@ namespace App\Http\Controllers;
 
 use App\Models\Settings;
 use Illuminate\Http\Request;
+Use Image;
+use Illuminate\Contracts\View\View;
 
-class SettingsController extends Controller
+class SettingsController extends BaseController
 {
+    protected $model;
+    protected $route;
+    protected $heading;
+    protected $topHeading;
+
+    public function __construct()
+    {
+        $this->model = new Settings();
+        $this->route = 'settings';
+        $this->heading = 'settings';
+        \Illuminate\Support\Facades\View::share('top_heading', 'Settings');
+    }
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function index()
     {
-        //
+        $data = Settings::first();
+        return view($this->route . "/index")
+        ->with(['data'=>$data, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
+
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function create()
     {
-        //
+
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
-        //
+        $request->validate($this->model->rules);
+        // $this->model->saveFormData($this->model, $request);
+        if ($logo = $request->file('logo')) {
+            $this->storeImage($logo);
+            $logo =$logo->getClientOriginalName();
+        }
+        if ($logo_icon = $request->file('logo_icon')) {
+            $this->storeImage($logo_icon);
+            $logo_icon =$logo_icon->getClientOriginalName();
+        }
+        $new = Settings::updateOrCreate([
+            'title' => $request->title,
+        ],[
+            'title' => $request->title,
+            'item_per_page' =>$request->item_per_page,
+            'logo' =>$logo,
+            'logo_icon' =>$logo_icon,
+        ]);
+
+        flashSuccess(getLang($this->heading . " Successfully Created."));
+
+        return redirect(route($this->route . ".index"));
+    }
+
+    public function storeImage($files){
+        $name = $files->getClientOriginalName();
+        $destinationPath = public_path('images\logo');
+        $files->move($destinationPath, $name);
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Settings  $settings
-     * @return \Illuminate\Http\Response
+     * @param $item
      */
-    public function show(Settings $settings)
+    public function show($item)
     {
-        //
+
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Settings  $settings
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param $item
+     * @return Application|Factory|View|\Illuminate\Http\JsonResponse
      */
-    public function edit(Settings $settings)
+    public function edit(Request $request, $item)
     {
-        //
+
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Settings  $settings
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param $item
      */
-    public function update(Request $request, Settings $settings)
+    public function update(Request $request, $item)
     {
-        //
+
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Settings  $settings
-     * @return \Illuminate\Http\Response
+     * @param $item
      */
-    public function destroy(Settings $settings)
+    public function destroy($item)
     {
-        //
+
     }
 }

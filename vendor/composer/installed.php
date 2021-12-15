@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'c1a1e2057a91b6da07f7b1aa40af215a62ec5fdd',
+        'reference' => '643312ecbf9fe4fb912c534fe9133b7d329f58d5',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -388,6 +388,15 @@
                 0 => 'v8.75.0',
             ),
         ),
+        'intervention/image' => array(
+            'pretty_version' => '2.7.0',
+            'version' => '2.7.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../intervention/image',
+            'aliases' => array(),
+            'reference' => '9a8cc99d30415ec0b3f7649e1647d03a55698545',
+            'dev_requirement' => false,
+        ),
         'kalnoy/nestedset' => array(
             'pretty_version' => 'v6.0.0',
             'version' => '6.0.0.0',
@@ -418,7 +427,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'c1a1e2057a91b6da07f7b1aa40af215a62ec5fdd',
+            'reference' => '643312ecbf9fe4fb912c534fe9133b7d329f58d5',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(

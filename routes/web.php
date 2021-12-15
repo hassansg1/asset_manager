@@ -39,7 +39,11 @@ Route::group(['middleware' => ['auth']], function () {
         'room' => \App\Http\Controllers\RoomController::class,
         'role' => \App\Http\Controllers\RoleController::class,
         'user' => \App\Http\Controllers\UserController::class,
+        'employee' => \App\Http\Controllers\EmployeeController::class,
         'unit' => \App\Http\Controllers\UnitController::class,
+        'system' => \App\Http\Controllers\SystemController::class,
+        'asset_group' => \App\Http\Controllers\AssetGroupController::class,
+        'settings' => \App\Http\Controllers\SettingsController::class,
         'approver' => \App\Http\Controllers\ApproverController::class,
         'asset' => \App\Http\Controllers\AssetController::class,
         'import' => \App\Http\Controllers\ImportController::class,
@@ -112,8 +116,4 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('sidebar_tree', [\App\Http\Controllers\LocTreeController::class, 'sidebar_tree'])->name('sidebar_tree');
     Route::get('testCron', [\App\Http\Controllers\TestController::class, 'test']);
     Route::get('view/assets/{id}',[\App\Http\Controllers\SeeAssetController::class,'view'])->name('view/assets');
-
-    Route::get('/settings', function () {
-        return view('settings.view');
-    });
 });

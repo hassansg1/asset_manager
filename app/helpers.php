@@ -64,6 +64,30 @@ if (!function_exists('getUnit')) {
         return \App\Models\Unit::all();
     }
 }
+if (!function_exists('getStatus')) {
+    /**
+     * return status array
+     */
+    function getStatus()
+    {
+      return [
+        '1' => 'Active',
+        '0' => 'InActive',
+      ];
+    }
+}
+if (!function_exists('getDepartments')) {
+    function getDepartments()
+    {
+        return \App\Models\Department::all();
+    }
+}
+if (!function_exists('getDesignations')) {
+    function getDesignations()
+    {
+        return \App\Models\Designation::all();
+    }
+}
 if (!function_exists('getCompanies')) {
     function getCompanies()
     {

@@ -23,8 +23,8 @@
                 </li>
                 <li class="loc_tree"></li>
                 <input type="input" class="form-control asset_search"
-                       id="tree-input-search" placeholder="Type to search location..."
-                       value="">
+                id="tree-input-search" placeholder="Type to search location..."
+                value="">
                 <div id="default-tree"></div>
                 <li>
                     <a href="{{ route('networks.index') }}" class="waves-effect">
@@ -40,140 +40,151 @@
                         <span key="t-dashboards">Softwares</span>
                     </a>
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-store"></i>
+                        <span key="t-ecommerce">User Database</span>
+                    </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="false">
+                        <li><a href="{{route('employee.index')}}" key="t-products">Users</a></li>
+                        <li><a href="{{route('system.index')}}" key="t-product-detail">System</a></li>
+                        <li><a href="{{route('asset_group.index')}}" key="t-orders">Assets Group</a></li>
+                    </ul>
+                </li> 
 
                 {{--@can('See company')--}}
                 {{--<li>--}}
-                {{--<a href="{{ route('company.index') }}" class="waves-effect">--}}
-                {{--<i class="far fa-dot-circle"></i>--}}
-                {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
-                {{--<span key="t-dashboards">Companies</span>--}}
-                {{--</a>--}}
+                    {{--<a href="{{ route('company.index') }}" class="waves-effect">--}}
+                        {{--<i class="far fa-dot-circle"></i>--}}
+                        {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
+                        {{--<span key="t-dashboards">Companies</span>--}}
+                    {{--</a>--}}
                 {{--</li>--}}
                 {{--@endcan--}}
                 {{--@can('See unit')--}}
                 {{--<li>--}}
-                {{--<a href="{{ route('unit.index') }}" class="waves-effect">--}}
-                {{--<i class="far fa-dot-circle"></i>--}}
-                {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
-                {{--<span key="t-dashboards">Units</span>--}}
-                {{--</a>--}}
+                    {{--<a href="{{ route('unit.index') }}" class="waves-effect">--}}
+                        {{--<i class="far fa-dot-circle"></i>--}}
+                        {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
+                        {{--<span key="t-dashboards">Units</span>--}}
+                    {{--</a>--}}
                 {{--</li>--}}
                 {{--@endcan--}}
                 {{--@can('See site')--}}
                 {{--<li>--}}
-                {{--<a href="{{ route('site.index') }}" class="waves-effect">--}}
-                {{--<i class="far fa-dot-circle"></i>--}}
-                {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
-                {{--<span key="t-dashboards">Sites</span>--}}
-                {{--</a>--}}
+                    {{--<a href="{{ route('site.index') }}" class="waves-effect">--}}
+                        {{--<i class="far fa-dot-circle"></i>--}}
+                        {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
+                        {{--<span key="t-dashboards">Sites</span>--}}
+                    {{--</a>--}}
                 {{--</li>--}}
                 {{--@endcan--}}
                 {{--@can('See subsite')--}}
                 {{--<li>--}}
-                {{--<a href="{{ route('subsite.index') }}" class="waves-effect">--}}
-                {{--<i class="far fa-dot-circle"></i>--}}
-                {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
-                {{--<span key="t-dashboards">SubSites</span>--}}
-                {{--</a>--}}
+                    {{--<a href="{{ route('subsite.index') }}" class="waves-effect">--}}
+                        {{--<i class="far fa-dot-circle"></i>--}}
+                        {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
+                        {{--<span key="t-dashboards">SubSites</span>--}}
+                    {{--</a>--}}
                 {{--</li>--}}
                 {{--@endcan--}}
                 {{--@can('See building')--}}
                 {{--<li>--}}
-                {{--<a href="{{ route('building.index') }}" class="waves-effect">--}}
-                {{--<i class="far fa-dot-circle"></i>--}}
-                {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
-                {{--<span key="t-dashboards">Buildings</span>--}}
-                {{--</a>--}}
+                    {{--<a href="{{ route('building.index') }}" class="waves-effect">--}}
+                        {{--<i class="far fa-dot-circle"></i>--}}
+                        {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
+                        {{--<span key="t-dashboards">Buildings</span>--}}
+                    {{--</a>--}}
                 {{--</li>--}}
                 {{--@endcan--}}
                 {{--@can('See room')--}}
                 {{--<li>--}}
-                {{--<a href="{{ route('room.index') }}" class="waves-effect">--}}
-                {{--<i class="far fa-dot-circle"></i>--}}
-                {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
-                {{--<span key="t-dashboards">Rooms</span>--}}
-                {{--</a>--}}
+                    {{--<a href="{{ route('room.index') }}" class="waves-effect">--}}
+                        {{--<i class="far fa-dot-circle"></i>--}}
+                        {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
+                        {{--<span key="t-dashboards">Rooms</span>--}}
+                    {{--</a>--}}
                 {{--</li>--}}
                 {{--@endcan--}}
                 {{--@can('See cabinet')--}}
                 {{--<li>--}}
-                {{--<a href="{{ route('cabinet.index') }}" class="waves-effect">--}}
-                {{--<i class="far fa-dot-circle"></i>--}}
-                {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
-                {{--<span key="t-dashboards">Cabinets</span>--}}
-                {{--</a>--}}
+                    {{--<a href="{{ route('cabinet.index') }}" class="waves-effect">--}}
+                        {{--<i class="far fa-dot-circle"></i>--}}
+                        {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
+                        {{--<span key="t-dashboards">Cabinets</span>--}}
+                    {{--</a>--}}
                 {{--</li>--}}
                 {{--@endcan--}}
                 {{--@can('See asset')--}}
                 {{--<li>--}}
-                {{--<a href="{{ route('asset.index') }}" class="waves-effect">--}}
-                {{--<i class="far fa-dot-circle"></i>--}}
-                {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
-                {{--<span key="t-dashboards">Assets</span>--}}
-                {{--</a>--}}
+                    {{--<a href="{{ route('asset.index') }}" class="waves-effect">--}}
+                        {{--<i class="far fa-dot-circle"></i>--}}
+                        {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
+                        {{--<span key="t-dashboards">Assets</span>--}}
+                    {{--</a>--}}
                 {{--</li>--}}
                 {{--@endcan--}}
                 {{--@can('See computer asset')--}}
                 {{--<li>--}}
-                {{--<a href="{{ route('computer.index') }}" class="waves-effect">--}}
-                {{--<i class="far fa-dot-circle"></i>--}}
-                {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
-                {{--<span key="t-dashboards">Computer Assets</span>--}}
-                {{--</a>--}}
+                    {{--<a href="{{ route('computer.index') }}" class="waves-effect">--}}
+                        {{--<i class="far fa-dot-circle"></i>--}}
+                        {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
+                        {{--<span key="t-dashboards">Computer Assets</span>--}}
+                    {{--</a>--}}
                 {{--</li>--}}
                 {{--@endcan--}}
                 {{--@can('See network asset')--}}
                 {{--<li>--}}
-                {{--<a href="{{ route('network.index') }}" class="waves-effect">--}}
-                {{--<i class="far fa-dot-circle"></i>--}}
-                {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
-                {{--<span key="t-dashboards">Network Assets</span>--}}
-                {{--</a>--}}
+                    {{--<a href="{{ route('network.index') }}" class="waves-effect">--}}
+                        {{--<i class="far fa-dot-circle"></i>--}}
+                        {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
+                        {{--<span key="t-dashboards">Network Assets</span>--}}
+                    {{--</a>--}}
                 {{--</li>--}}
                 {{--@endcan--}}
                 {{--@can('See L01 asset')--}}
                 {{--<li>--}}
-                {{--<a href="{{ route('l_one.index') }}" class="waves-effect">--}}
-                {{--<i class="far fa-dot-circle"></i>--}}
-                {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
-                {{--<span key="t-dashboards">L01 Assets</span>--}}
-                {{--</a>--}}
+                    {{--<a href="{{ route('l_one.index') }}" class="waves-effect">--}}
+                        {{--<i class="far fa-dot-circle"></i>--}}
+                        {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
+                        {{--<span key="t-dashboards">L01 Assets</span>--}}
+                    {{--</a>--}}
                 {{--</li>--}}
                 {{--@endcan--}}
                 {{--@can('See network asset')--}}
                 {{--<li>--}}
-                {{--<a href="{{ route('software.index') }}" class="waves-effect">--}}
-                {{--<i class="far fa-dot-circle"></i>--}}
-                {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
-                {{--<span key="t-dashboards">Softwares</span>--}}
-                {{--</a>--}}
+                    {{--<a href="{{ route('software.index') }}" class="waves-effect">--}}
+                        {{--<i class="far fa-dot-circle"></i>--}}
+                        {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
+                        {{--<span key="t-dashboards">Softwares</span>--}}
+                    {{--</a>--}}
                 {{--</li>--}}
                 {{--@endcan--}}
                 {{--@can('See user')--}}
                 {{--<li>--}}
-                {{--<a href="{{ route('user.index') }}" class="waves-effect">--}}
-                {{--<i class="far fa-dot-circle"></i>--}}
-                {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
-                {{--<span key="t-dashboards">Users</span>--}}
-                {{--</a>--}}
+                    {{--<a href="{{ route('user.index') }}" class="waves-effect">--}}
+                        {{--<i class="far fa-dot-circle"></i>--}}
+                        {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
+                        {{--<span key="t-dashboards">Users</span>--}}
+                    {{--</a>--}}
                 {{--</li>--}}
                 {{--@endcan--}}
                 {{--@can('See role')--}}
                 {{--<li>--}}
-                {{--<a href="{{ route('role.index') }}" class="waves-effect">--}}
-                {{--<i class="far fa-dot-circle"></i>--}}
-                {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
-                {{--<span key="t-dashboards">Roles</span>--}}
-                {{--</a>--}}
+                    {{--<a href="{{ route('role.index') }}" class="waves-effect">--}}
+                        {{--<i class="far fa-dot-circle"></i>--}}
+                        {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
+                        {{--<span key="t-dashboards">Roles</span>--}}
+                    {{--</a>--}}
                 {{--</li>--}}
                 {{--@endcan--}}
                 {{--@can('See permission')--}}
                 {{--<li>--}}
-                {{--<a href="{{ route('permission.index') }}" class="waves-effect">--}}
-                {{--<i class="far fa-dot-circle"></i>--}}
-                {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
-                {{--<span key="t-dashboards">Permissions</span>--}}
-                {{--</a>--}}
+                    {{--<a href="{{ route('permission.index') }}" class="waves-effect">--}}
+                        {{--<i class="far fa-dot-circle"></i>--}}
+                        {{--<span class="badge rounded-pill bg-info float-end"></span>--}}
+                        {{--<span key="t-dashboards">Permissions</span>--}}
+                    {{--</a>--}}
                 {{--</li>--}}
                 {{--@endcan--}}
             </ul>
