@@ -82,6 +82,19 @@ if (!function_exists('getDepartments')) {
         return \App\Models\Department::all();
     }
 }
+if (!function_exists('getComputerAssets')) {
+    function getComputerAssets()
+    {
+        return \App\Models\Computer::all();
+    }
+}
+if (!function_exists('getSystems')) {
+    function getSystems()
+    {
+        return \App\Models\System::all();
+    }
+}
+
 if (!function_exists('getDesignations')) {
     function getDesignations()
     {

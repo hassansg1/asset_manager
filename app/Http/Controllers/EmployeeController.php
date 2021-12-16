@@ -6,7 +6,8 @@ use App\Models\Employee;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
-{protected $model;
+{
+    protected $model;
     protected $route;
     protected $heading;
     protected $topHeading;
@@ -16,7 +17,7 @@ class EmployeeController extends Controller
         $this->model = new Employee();
         $this->route = 'employee';
         $this->heading = 'Employee';
-        \Illuminate\Support\Facades\View::share('top_heading', 'Users');
+        \Illuminate\Support\Facades\View::share('top_heading', 'Employee');
     }
 
     /**

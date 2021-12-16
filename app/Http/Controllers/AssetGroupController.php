@@ -16,8 +16,8 @@ class AssetGroupController extends Controller
     {
         $this->model = new AssetGroup();
         $this->route = 'asset_group';
-        $this->heading = 'AssetGroup';
-        \Illuminate\Support\Facades\View::share('top_heading', 'AssetGroup');
+        $this->heading = 'Asset Group';
+        \Illuminate\Support\Facades\View::share('top_heading', 'Asset Group');
     }
 
     /**

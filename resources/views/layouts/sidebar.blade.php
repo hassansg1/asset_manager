@@ -43,12 +43,15 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-store"></i>
-                        <span key="t-ecommerce">User Database</span>
+                        <span key="t-ecommerce">Employees Database</span>
                     </a>
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
-                        <li><a href="{{route('employee.index')}}" key="t-products">Users</a></li>
+                        <li><a href="{{route('employee.index')}}" key="t-products">Employees</a></li>
                         <li><a href="{{route('system.index')}}" key="t-product-detail">System</a></li>
-                        <li><a href="{{route('asset_group.index')}}" key="t-orders">Assets Group</a></li>
+                        <li><a href="{{route('asset_group.index')}}" key="t-orders">Asset Access Group</a></li>
+                        <li><a href="{{route('asset_user.index')}}" key="t-orders">Asset User Id</a></li>
+                        <li><a href="{{route('system_user.index')}}" key="t-orders">System User Id</a></li>
+
                     </ul>
                 </li> 
 

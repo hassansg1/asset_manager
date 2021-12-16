@@ -23,7 +23,10 @@
 <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
 <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
 <script src="{{ URL::asset('/assets/js/bootstrap-treeview.js') }}"></script>
+<script src="{{ URL::asset('/assets/js/multipleselect/src/jquery.multiselect.js') }}"></script>
 <script>
+
+
 
     var myTree = [
     {
