@@ -14,7 +14,6 @@ class UserId extends Model
 		'user_id' => 'required',
 		'right_id' => 'required',
 	];
-
 	public function saveFormData($item, $request)
 	{
 		if (isset($request->user_id)) $item->user_id = $request->user_id;
