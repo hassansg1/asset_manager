@@ -4,7 +4,8 @@
             onclick="toggleSelectAll()"
             type="checkbox" name=""
             id="select_all"></th>
-    <th>ID</th>
+    <th>User ID</th>
+{{--    <th>Rights</th>--}}
     <th>Actions</th>
 @endsection
 @section('table_rows')

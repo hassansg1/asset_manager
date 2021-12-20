@@ -1,4 +1,4 @@
-@php 
+@php
 
 $departments = getDepartments();
 $designations = getDesignations();
@@ -21,17 +21,17 @@ $status = getStatus();
         <input type="hidden" name="id"
         value="{{ isset($clone) && $clone ? '' : (isset($item) ? $item->id : '') }}">
         <div class="row">
-          <div class="col-lg-4">
-            <div class="mb-3">
-              <label for="{{ isset($item) ? $item->id:'' }}rec_id"
-               class="form-label required">Rec Id</label>
-               <input type="text"
-               value="{{ isset($item) ? $item->rec_id:old('rec_id') ?? ''  }}"
-               class="form-control"
-               id="{{ isset($item) ? $item->id:'' }}rec_id"
-               name="rec_id" required>
-             </div>
-           </div>
+{{--          <div class="col-lg-4">--}}
+{{--            <div class="mb-3">--}}
+{{--              <label for="{{ isset($item) ? $item->id:'' }}rec_id"--}}
+{{--               class="form-label required">Rec Id</label>--}}
+{{--               <input type="text"--}}
+{{--               value="{{ isset($item) ? $item->rec_id:old('rec_id') ?? ''  }}"--}}
+{{--               class="form-control"--}}
+{{--               id="{{ isset($item) ? $item->id:'' }}rec_id"--}}
+{{--               name="rec_id" required>--}}
+{{--             </div>--}}
+{{--           </div>--}}
            <div class="col-lg-4">
             <div class="mb-3">
               <label for="{{ isset($item) ? $item->id:'' }}first_name"
@@ -57,30 +57,28 @@ $status = getStatus();
            name="last_name" required>
          </div>
        </div>
+            <div class="col-lg-4">
+                <div class="mb-3">
+                    <label for="{{ isset($item) ? $item->id:'' }}email"
+                           class="form-label required">Email</label>
+                    <input type="email"
+                           value="{{ isset($item) ? $item->email:old('email') ?? ''  }}"
+                           class="form-control"
+                           id="{{ isset($item) ? $item->id:'' }}email" name="email"
+                           required>
+                </div>
      </div>
-     <div class="row">
-      <div class="col-lg-6">
-        <div class="mb-3">
-          <label for="{{ isset($item) ? $item->id:'' }}email"
-           class="form-label required">Email</label>
-           <input type="email"
-           value="{{ isset($item) ? $item->email:old('email') ?? ''  }}"
-           class="form-control"
-           id="{{ isset($item) ? $item->id:'' }}email" name="email"
-           required>
-         </div>
-       </div>
-       <div class="col-lg-6">
-        <div class="mb-3">
-          <label for="{{ isset($item) ? $item->id:'' }}username"
-           class="form-label required">Username</label>
-           <input type="text"
-           value="{{ isset($item) ? $item->username:old('username') ?? ''  }}"
-           class="form-control"
-           id="{{ isset($item) ? $item->id:'' }}username" name="username"
-           required>
-         </div>
-       </div>
+{{--       <div class="col-lg-6">--}}
+{{--        <div class="mb-3">--}}
+{{--          <label for="{{ isset($item) ? $item->id:'' }}username"--}}
+{{--           class="form-label required">Username</label>--}}
+{{--           <input type="text"--}}
+{{--           value="{{ isset($item) ? $item->username:old('username') ?? ''  }}"--}}
+{{--           class="form-control"--}}
+{{--           id="{{ isset($item) ? $item->id:'' }}username" name="username"--}}
+{{--           required>--}}
+{{--         </div>--}}
+{{--       </div>--}}
      </div>
      <div class="row">
       <div class="col-lg-12">

@@ -25,7 +25,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $data = Employee::paginate();
+        $data = Employee::where('user_type', 'OTCM-USERS')->paginate();
         return view($this->route . "/index")
         ->with(['items' => $data, 'route' => $this->route, 'heading' => $this->heading]);
     }

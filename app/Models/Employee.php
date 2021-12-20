@@ -21,7 +21,6 @@ class Employee extends Model
      public $rules =
      [
      	'first_name' => 'required | max:255',
-          'rec_id' => 'required | max:255',
           'email' => 'required | email',
      ];
 
@@ -35,6 +34,7 @@ class Employee extends Model
        if (isset($request->designation_id)) $item->designation_id = $request->designation_id;
        if (isset($request->department_id)) $item->department_id = $request->department_id;
        if (isset($request->status)) $item->status = $request->status;
+       $item->user_type = "OTCM-USERS";
        $item->save();
 
        $accounts= $request->account_id;

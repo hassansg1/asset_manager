@@ -16,8 +16,8 @@ class UserIdController extends Controller
     {
         $this->model = new UserId();
         $this->route = 'user_id';
-        $this->heading = 'Employees Id';
-        \Illuminate\Support\Facades\View::share('top_heading', 'Employees Id');
+        $this->heading = 'User Id';
+        \Illuminate\Support\Facades\View::share('top_heading', 'User Id');
     }
 
     /**

@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="new changes">
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/vendor-scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/vendor-scripts.blade.php" afterDir="false" />
+    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="OTCM-75/firewall-managemnt&#10;crud file create">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserIdController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserIdController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Employee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employee/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_id/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_id/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_id/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_id/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +20,24 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="OTCM-75/firewall-managment" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -189,6 +212,14 @@
       <workItem from="1639993570488" duration="851000" />
       <workItem from="1639994730221" duration="1340000" />
     </task>
+    <task id="LOCAL-00001" summary="OTCM-75/firewall-managemnt&#10;crud file create">
+      <created>1639999144829</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1639999144829</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,5 +235,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="OTCM-75/firewall-managemnt&#10;crud file create" />
+    <option name="LAST_COMMIT_MESSAGE" value="OTCM-75/firewall-managemnt&#10;crud file create" />
   </component>
 </project>

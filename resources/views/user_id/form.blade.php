@@ -1,6 +1,6 @@
 @include('components.form_errors')
 {{ csrf_field() }}
-@php 
+@php
 $assets = getComputerAssets();
 $system = getSystems();
 $rights = getRights();
@@ -44,7 +44,7 @@ $rights = getRights();
             <div class="col-lg-4">
               <div class="mb-3">
                 <label for="{{ isset($item) ? $item->id:'' }}user_type"
-                 class="form-label required">Type</label>
+                 class="form-label required">User Id Type</label>
                  <select class="form-control" name="user_type" id="user_type">
                    <option value="">-Select Type-</option>
                    <option value="asset">Asset</option>
@@ -70,7 +70,7 @@ $rights = getRights();
               <div class="col-lg-4">
                 <div class="mb-3">
                   <label for="{{ isset($item) ? $item->id:'' }}system_id"
-                   class="form-label">System</label>
+                   class="form-label">System Name</label>
                    <select class="form-control select2" id="system_id" name="system_id">
                     @foreach($system as $value)
                     <option value="{{$value->id}}">{{$value->name}}</option>
