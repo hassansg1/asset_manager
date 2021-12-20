@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Models\Attachment;
+use Illuminate\Support\Facades\DB;
 
 if (!function_exists('getLang')) {
     function getLang($key)
@@ -82,10 +83,22 @@ if (!function_exists('getDepartments')) {
         return \App\Models\Department::all();
     }
 }
+if (!function_exists('getRights')) {
+    function getRights()
+    {
+        return \App\Models\Right::all();
+    }
+}
 if (!function_exists('getComputerAssets')) {
     function getComputerAssets()
     {
-        return \App\Models\Computer::all();
+        return DB::table('locations')->get();
+    }
+}
+if (!function_exists('getAssociatIds')) {
+    function getAssociatIds()
+    {
+        return \App\Models\UserId::all();
     }
 }
 if (!function_exists('getSystems')) {

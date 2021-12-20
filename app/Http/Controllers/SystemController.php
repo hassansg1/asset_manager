@@ -78,7 +78,6 @@ class SystemController extends Controller
         }
         $item = $this->model->find($item);
 
-
         if ($request->ajax) {
             return response()->json([
                 'status' => true,

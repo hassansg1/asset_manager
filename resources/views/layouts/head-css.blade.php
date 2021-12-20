@@ -20,4 +20,4 @@
 <link href="{{ URL::asset('/assets/libs/magnific-popup/magnific-popup.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ URL::asset('/assets/css/bootstrap-treeview.css') }}" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" href="{{ URL::asset('/assets/js/multipleselect/css/jquery.multiselect.css">
+

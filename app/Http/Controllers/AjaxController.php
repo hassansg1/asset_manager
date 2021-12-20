@@ -7,6 +7,7 @@ use App\Models\ComplianceVersion;
 use App\Models\NetworkAsset;
 use App\Models\Parentable;
 use App\Models\Port;
+use App\Models\SystemUserId;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
@@ -90,6 +91,11 @@ class AjaxController extends Controller
         return response()->json([
             'status' => false
         ]);
+    }
+
+    public function system_user_accounts($id){
+        $system_user_id = SystemUserId::where('system_id', $id)->pluck("system_id","user_id");
+        return response()->json($system_user_id);
     }
 
     function exportComplianceDataTemplates()
