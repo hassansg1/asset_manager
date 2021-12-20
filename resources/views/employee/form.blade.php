@@ -2,9 +2,10 @@
 
 $departments = getDepartments();
 $designations = getDesignations();
+$associate = getAssociatIds();
 $status = getStatus();
 
- @endphp
+@endphp
 @include('components.form_errors')
 {{ csrf_field() }}
 <input type="hidden" name="id" value="{{ isset($clone) && $clone ? '' : (isset($item) ? $item->id : '') }}">
@@ -23,7 +24,7 @@ $status = getStatus();
           <div class="col-lg-4">
             <div class="mb-3">
               <label for="{{ isset($item) ? $item->id:'' }}rec_id"
-               class="form-label required">rec_id</label>
+               class="form-label required">Rec Id</label>
                <input type="text"
                value="{{ isset($item) ? $item->rec_id:old('rec_id') ?? ''  }}"
                class="form-control"
@@ -82,36 +83,48 @@ $status = getStatus();
        </div>
      </div>
      <div class="row">
+      <div class="col-lg-12">
+        <div class="mb-3">
+          <label for="{{ isset($item) ? $item->id:'' }}account_id" class="form-label">Associated ID's</label>
+          <select class="form-control select2" id="account_id" name="account_id[]" multiple="multiple">
+            @foreach($associate as $value)
+            <option value="{{$value->id}}" {{ isset($item) && $item->account_id == $value->id  ? 'selected' : ''}}>{{$value->user_id}}</option>
+            @endforeach
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
      <div class="col-lg-4">
-        <label for="" class="form-label">Department</label>
-         <select class="form-control" name="department_id" id="department_id">
-           <option>-Select Department-</option>
-           @foreach($departments as $value)
-           <option value="{{$value->id}}" {{ isset($item) && $item->department_id == $value->id  ? 'selected' : ''}}>{{$value->title}}</option>
-           @endforeach
-         </select>
-     </div>
-       <div class="col-lg-4">
-        <label for="" class="form-label">Designations</label>
-         <select class="form-control" name="designation_id" id="designation_id">
-           <option>-Select Designation-</option>
-           @foreach($designations as $value)
-           <option value="{{$value->id}}" {{ isset($item) && $item->designation_id == $value->id  ? 'selected' : ''}}>{{$value->title}}</option>
-           @endforeach
-         </select>
-     </div>
-     <div class="col-lg-4">
-        <label for="" class="form-label">Status</label>
-         <select class="form-control" name="status" id="status">
-           @foreach($status as $key => $value)
-           <option value="{{$key}}" {{ isset($item) && $item->status == $key  ? 'selected' : ''}}>{{$value}}</option>
-           @endforeach
-         </select>
-     </div>
-     </div>
-
+      <label for="" class="form-label">Department</label>
+      <select class="form-control" name="department_id" id="department_id">
+       <option>-Select Department-</option>
+       @foreach($departments as $value)
+       <option value="{{$value->id}}" {{ isset($item) && $item->department_id == $value->id  ? 'selected' : ''}}>{{$value->title}}</option>
+       @endforeach
+     </select>
    </div>
+   <div class="col-lg-4">
+    <label for="" class="form-label">Designations</label>
+    <select class="form-control" name="designation_id" id="designation_id">
+     <option>-Select Designation-</option>
+     @foreach($designations as $value)
+     <option value="{{$value->id}}" {{ isset($item) && $item->designation_id == $value->id  ? 'selected' : ''}}>{{$value->title}}</option>
+     @endforeach
+   </select>
  </div>
+ <div class="col-lg-4">
+  <label for="" class="form-label">Status</label>
+  <select class="form-control" name="status" id="status">
+   @foreach($status as $key => $value)
+   <option value="{{$key}}" {{ isset($item) && $item->status == $key  ? 'selected' : ''}}>{{$value}}</option>
+   @endforeach
+ </select>
+</div>
+</div>
+
+</div>
+</div>
 </div>
 </div>
 @include('user.navs.script')
