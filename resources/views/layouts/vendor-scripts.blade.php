@@ -103,7 +103,7 @@
         });
     });
     var $searchableTree;
-    sidebar_tree();
+    // sidebar_tree();
     function sidebar_tree() {
         $.ajax({
             type: "POST",
