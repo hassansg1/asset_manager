@@ -36,6 +36,16 @@ class Employee extends Model
        if (isset($request->department_id)) $item->department_id = $request->department_id;
        if (isset($request->status)) $item->status = $request->status;
        $item->save();
+
+       $accounts= $request->account_id;
+      if($item && $accounts){
+        foreach ($accounts as $key=>$value) {
+          $account = new UserAccount();
+          $account->account_id = $value;
+          $account->user_id = $item->id;
+          $account->save();
+        }
+      }
    return $item;
 }
 
