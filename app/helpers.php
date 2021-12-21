@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Models\Attachment;
+use App\Models\NetworkAsset;
 use Illuminate\Support\Facades\DB;
 
 if (!function_exists('getLang')) {
@@ -89,10 +90,29 @@ if (!function_exists('getRights')) {
         return \App\Models\Right::all();
     }
 }
+
+if (!function_exists('firewallAddressGroup')) {
+    function firewallAddressGroup()
+    {
+        return \App\Models\FirewallAddressGroup::all();
+    }
+}
+if (!function_exists('firewallIpAddress')) {
+    function firewallIpAddress()
+    {
+        return \App\Models\FirewallIpAddress::all();
+    }
+}
 if (!function_exists('getComputerAssets')) {
     function getComputerAssets()
     {
         return DB::table('locations')->get();
+    }
+}
+if (!function_exists('getFirewallAssets')) {
+    function getFirewallAssets()
+    {
+        return DB::table('network_assets')->where('function', 21)->get();
     }
 }
 if (!function_exists('getAssociatIds')) {

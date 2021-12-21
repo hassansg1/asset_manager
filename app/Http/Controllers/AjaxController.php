@@ -107,6 +107,14 @@ class AjaxController extends Controller
         $user_accounts = UserId::whereIn('id', $assets)->pluck('user_id', 'id');
         return response()->json($user_accounts);
     }
+    public  function asset_wise_ip_address($asset_type){
+        $assets = Location::where('type', $asset_type)->pluck('rec_id', 'id');
+        return response()->json($assets);
+    }
+    public  function connected_asset_wise_ip_address($asset_type){
+        $assets = Location::where('type', $asset_type)->pluck('rec_id', 'id');
+        return response()->json($assets);
+    }
 
     public function system_wise_user_accounts($system_id){
         $systems = SystemUserId::select('user_id')->where('system_id', $system_id)->get();

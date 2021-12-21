@@ -55,9 +55,22 @@
                        <!--  <li><a href="{{route('system_user.index')}}" key="t-orders">System User Id</a></li> -->
 
                    </ul>
-               </li> 
+               </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-store"></i>
+                        <span key="t-ecommerce">Firewall Management</span>
+                    </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="false">
+                        <li><a href="{{route('ip_address.index')}}" key="t-orders">IP Address</a></li>
+                        <li><a href="{{route('firewall_zone.index')}}" key="t-products">Firewall Zone</a></li>
+                        <li><a href="{{route('firewall_address_group.index')}}" key="t-products">Firewall Address Group</a></li>
+                        <li><a href="{{route('firewall_address_group_memeber.index')}}" key="t-product-detail">Firewall Address Group Members</a></li>
 
-               {{--@can('See company')--}}
+                    </ul>
+                </li>
+
+                {{--@can('See company')--}}
                {{--<li>--}}
                 {{--<a href="{{ route('company.index') }}" class="waves-effect">--}}
                     {{--<i class="far fa-dot-circle"></i>--}}
