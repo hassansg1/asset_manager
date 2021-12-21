@@ -60,7 +60,7 @@ $rights = getRights();
                  class="form-label required">Asset</label>
                  <select class="form-control select2" id="asset_id" name="asset_id">
                   @foreach($assets as $value)
-                  <option value="{{$value->id}}">{{$value->name}}</option>
+                  <option value="{{$value->id}}">{{$value->rec_id}}</option>
                   @endforeach
                 </select>
               </div>

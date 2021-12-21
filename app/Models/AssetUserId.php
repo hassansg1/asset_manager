@@ -12,4 +12,8 @@ class AssetUserId extends Model
 	public function asset(){
 		return $this->belongsTo(Computer::class, 'asset_id', 'id');
 	}
+
+    public function user_account(){
+        return $this->belongsTo(UserId::class, 'user_id', 'id');
+    }
 }

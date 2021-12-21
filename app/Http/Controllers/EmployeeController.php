@@ -16,8 +16,8 @@ class EmployeeController extends Controller
     {
         $this->model = new Employee();
         $this->route = 'employee';
-        $this->heading = 'Employee';
-        \Illuminate\Support\Facades\View::share('top_heading', 'Employee');
+        $this->heading = 'OTCM-USERS';
+        \Illuminate\Support\Facades\View::share('top_heading', 'OTCM-USERS');
     }
 
     /**

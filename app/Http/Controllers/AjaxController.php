@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\ClauseData;
 use App\Models\ComplianceVersion;
+use App\Models\LoneAsset;
 use App\Models\NetworkAsset;
+use App\Models\Location;
+use App\Models\AssetUserId;
+use App\Models\UserId;
 use App\Models\Parentable;
 use App\Models\Port;
 use App\Models\SystemUserId;
@@ -96,6 +100,18 @@ class AjaxController extends Controller
     public function system_user_accounts($id){
         $system_user_id = SystemUserId::where('system_id', $id)->pluck("system_id","user_id");
         return response()->json($system_user_id);
+    }
+
+    public function type_wise_assets($asset_id){
+        $assets = AssetUserId::select('user_id')->where('asset_id', $asset_id)->get();
+        $user_accounts = UserId::whereIn('id', $assets)->pluck('user_id', 'id');
+        return response()->json($user_accounts);
+    }
+
+    public function system_wise_user_accounts($system_id){
+        $systems = SystemUserId::select('user_id')->where('system_id', $system_id)->get();
+        $user_accounts = UserId::whereIn('id', $systems)->pluck('user_id', 'id');
+        return response()->json($user_accounts);
     }
 
     function exportComplianceDataTemplates()

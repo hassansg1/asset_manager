@@ -4,6 +4,8 @@ $departments = getDepartments();
 $designations = getDesignations();
 $associate = getAssociatIds();
 $status = getStatus();
+$system = getSystems();
+$assets = getComputerAssets();
 
 @endphp
 @include('components.form_errors')
@@ -21,17 +23,6 @@ $status = getStatus();
         <input type="hidden" name="id"
         value="{{ isset($clone) && $clone ? '' : (isset($item) ? $item->id : '') }}">
         <div class="row">
-{{--          <div class="col-lg-4">--}}
-{{--            <div class="mb-3">--}}
-{{--              <label for="{{ isset($item) ? $item->id:'' }}rec_id"--}}
-{{--               class="form-label required">Rec Id</label>--}}
-{{--               <input type="text"--}}
-{{--               value="{{ isset($item) ? $item->rec_id:old('rec_id') ?? ''  }}"--}}
-{{--               class="form-control"--}}
-{{--               id="{{ isset($item) ? $item->id:'' }}rec_id"--}}
-{{--               name="rec_id" required>--}}
-{{--             </div>--}}
-{{--           </div>--}}
            <div class="col-lg-4">
             <div class="mb-3">
               <label for="{{ isset($item) ? $item->id:'' }}first_name"
@@ -68,26 +59,49 @@ $status = getStatus();
                            required>
                 </div>
      </div>
-{{--       <div class="col-lg-6">--}}
-{{--        <div class="mb-3">--}}
-{{--          <label for="{{ isset($item) ? $item->id:'' }}username"--}}
-{{--           class="form-label required">Username</label>--}}
-{{--           <input type="text"--}}
-{{--           value="{{ isset($item) ? $item->username:old('username') ?? ''  }}"--}}
-{{--           class="form-control"--}}
-{{--           id="{{ isset($item) ? $item->id:'' }}username" name="username"--}}
-{{--           required>--}}
-{{--         </div>--}}
-{{--       </div>--}}
      </div>
+          <div class="row">
+              <div class="col-lg-6">
+                  <div class="mb-3">
+                      <label for="{{ isset($item) ? $item->id:'' }}user_type"
+                             class="form-label required">User Id Type</label>
+                      <select class="form-control" name="user_type" id="user_type">
+                          <option value="">-Select Type-</option>
+                          <option value="asset">Asset</option>
+                          <option value="system">System</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="col-md-6 asset" style="display: none">
+                  <div class="mb-3">
+                      <label for="{{ isset($item) ? $item->id:'' }}asset_id"
+                             class="form-label required">Assets</label>
+                      <select class="form-control select2" id="asset_id" name="asset_id">
+                          @foreach($assets as $value)
+                              <option value="{{$value->id}}">{{$value->rec_id}}</option>
+                          @endforeach
+                      </select>
+                  </div>
+              </div>
+              <div class="col-md-6 system" style="display: none">
+                  <div class="mb-3">
+                      <label for="{{ isset($item) ? $item->id:'' }}system"
+                             class="form-label required">Systems</label>
+                      <select class="form-control select2" id="system" name="system">
+                          <option value="">-Select System-</option>
+                      @foreach($system as $value)
+                          <option value="{{$value->id}}">{{$value->name}}</option>
+                      @endforeach
+                      </select>
+                  </div>
+              </div>
+          </div>
      <div class="row">
       <div class="col-lg-12">
         <div class="mb-3">
           <label for="{{ isset($item) ? $item->id:'' }}account_id" class="form-label">Associated ID's</label>
           <select class="form-control select2" id="account_id" name="account_id[]" multiple="multiple">
-            @foreach($associate as $value)
-            <option value="{{$value->id}}" {{ isset($item) && $item->account_id == $value->id  ? 'selected' : ''}}>{{$value->user_id}}</option>
-            @endforeach
+
           </select>
         </div>
       </div>
@@ -125,4 +139,55 @@ $status = getStatus();
 </div>
 </div>
 </div>
-@include('user.navs.script')
+@section('script')
+    <script type="text/javascript">
+        $('#user_type').on('change', function(){
+            var type= this.value;
+            if(type == "asset"){
+                $('.asset').show();
+                $('.system').hide();
+            }else if(type == "system"){
+                $('.asset').hide();
+                $('.system').show();
+            }
+        });
+        $('#asset_id').on('change', function(){
+            var asset_id= this.value;
+            if(asset_id){
+                $.ajax({
+                    type:"get",
+                    url:"{{url('asset/type')}}/"+asset_id,
+                    success:function(res)
+                    {
+                        if(res)
+                        {
+                            $.each(res,function(key,value){
+                                $("#account_id").append('<option value="'+key+'">'+value+'</option>');
+                            });
+                        }
+                    }
+
+                });
+            }
+        });
+        $('#system').on('change', function(){
+            var system_id= this.value;
+            if(asset_id){
+                $.ajax({
+                    type:"get",
+                    url:"{{url('system/type')}}/"+system_id,
+                    success:function(res)
+                    {
+                        if(res)
+                        {
+                            $.each(res,function(key,value){
+                                $("#account_id").append('<option value="'+key+'">'+value+'</option>');
+                            });
+                        }
+                    }
+
+                });
+            }
+        });
+    </script>
+@endsection
