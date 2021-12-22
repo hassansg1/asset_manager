@@ -12,11 +12,11 @@
                     <div class="col-lg-6">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}asset_type"
-                                   class="form-label required">Assets Type</label>
-                            <select class="form-control" name="asset_type" id="asset_type">
-                                <option value="">-Select Type-</option>
+                                   class="form-label required">Asset Type</label>
+                            <select class="form-control select2" name="asset_type" id="asset_type">
+                                <option value="">-Select Asset Type-</option>
                                 <option value="computer_assets">Computer Asset</option>
-                                <option value="netwrok_assets">Netwrok Asset</option>
+                                <option value="network_assets">Network Asset</option>
                                 <option value="lone_assets">Lone Asset</option>
                             </select>
                         </div>
@@ -24,8 +24,9 @@
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}asset_id"
-                                   class="form-label required">Assets</label>
+                                   class="form-label required">Asset ID</label>
                             <select class="form-control select2" id="asset_id" name="asset_id">
+                                <option value="">-Select Asset ID-</option>
 
                             </select>
                         </div>
@@ -35,7 +36,7 @@
                     <div class="col-lg-6">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}asset_nic"
-                                   class="form-label required">Asset NIC</label>
+                                   class="form-label">Asset NIC</label>
                             <input type="text"
                                    value="{{ isset($item) ? $item->asset_nic:old('asset_nic') ?? ''  }}"
                                    class="form-control"
@@ -58,17 +59,6 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}default_gateway"
-                                   class="form-label required">Default GateWay</label>
-                            <input type="text"
-                                   value="{{ isset($item) ? $item->default_gateway:old('default_gateway') ?? ''  }}"
-                                   class="form-control"
-                                   id="{{ isset($item) ? $item->id:'' }}default_gateway" name="default_gateway"
-                                   required>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}ip_address"
                                    class="form-label required">IP Address</label>
                             <input type="text"
@@ -81,7 +71,7 @@
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}subnet_mask"
-                                   class="form-label required">Subnet Mask</label>
+                                   class="form-label">Subnet Mask</label>
                             <input type="text"
                                    value="{{ isset($item) ? $item->subnet_mask:old('subnet_mask') ?? ''  }}"
                                    class="form-control"
@@ -89,17 +79,53 @@
                                    required>
                         </div>
                     </div>
+                    <div class="col-lg-4">
+                        <div class="mb-3">
+                            <label for="{{ isset($item) ? $item->id:'' }}default_gateway"
+                                   class="form-label">Default Gateway</label>
+                            <input type="text"
+                                   value="{{ isset($item) ? $item->default_gateway:old('default_gateway') ?? ''  }}"
+                                   class="form-control"
+                                   id="{{ isset($item) ? $item->id:'' }}default_gateway" name="default_gateway"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="mb-3">
+                                <label for="{{ isset($item) ? $item->id:'' }}vlan_id"
+                                       class="form-label">VLAN ID</label>
+                                <input type="text"
+                                       value="{{ isset($item) ? $item->vlan_id:old('vlan_id') ?? ''  }}"
+                                       class="form-control"
+                                       id="{{ isset($item) ? $item->id:'' }}vlan_id" name="vlan_id"
+                                       required>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="mb-3">
+                                <label for="{{ isset($item) ? $item->id:'' }}teaming_pair_id"
+                                       class="form-label">Teaming Pair ID</label>
+                                <input type="text"
+                                       value="{{ isset($item) ? $item->teaming_pair_id:old('teaming_pair_id') ?? ''  }}"
+                                       class="form-control"
+                                       id="{{ isset($item) ? $item->id:'' }}teaming_pair_id" name="teaming_pair_id"
+                                       required>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <hr class="solid">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}connected_asset_type"
-                                   class="form-label required">Connected Assets Type</label>
-                            <select class="form-control" name="connected_asset_type" id="connected_asset_type">
-                                <option value="">-Select Type-</option>
+                                   class="form-label" >Connected Asset Type</label>
+                            <select class="form-control select2" name="connected_asset_type" id="connected_asset_type">
+                                <option value="">-Select Asset Type-</option>
                                 <option value="computer_assets">Computer Asset</option>
-                                <option value="netwrok_assets">Netwrok Asset</option>
+                                <option value="network_assets">Network Asset</option>
                                 <option value="lone_assets">Lone Asset</option>
                             </select>
                         </div>
@@ -107,8 +133,9 @@
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}connected_asset_id"
-                                   class="form-label required">Connected Assets</label>
+                                   class="form-label">Connected Asset</label>
                             <select class="form-control select2" id="connected_asset_id" name="connected_asset_id">
+                                <option value="">-Select Asset ID-</option>
 
                             </select>
                         </div>
@@ -118,7 +145,7 @@
                     <div class="col-lg-6">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}connected_asset_nic"
-                                   class="form-label required">Connected Asset NIC</label>
+                                   class="form-label">Connected Asset NIC</label>
                             <input type="text"
                                    value="{{ isset($item) ? $item->connected_asset_nic:old('connected_asset_nic') ?? ''  }}"
                                    class="form-control"
@@ -129,7 +156,7 @@
                     <div class="col-lg-6">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}connected_asset_port"
-                                   class="form-label required">Connected Asset Port</label>
+                                   class="form-label ">Connected Asset Port</label>
                             <input type="text"
                                    value="{{ isset($item) ? $item->connected_asset_port:old('connected_asset_port') ?? ''  }}"
                                    class="form-control"
@@ -138,30 +165,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}vlan_id"
-                                   class="form-label required">Vlan Id</label>
-                            <input type="text"
-                                   value="{{ isset($item) ? $item->vlan_id:old('vlan_id') ?? ''  }}"
-                                   class="form-control"
-                                   id="{{ isset($item) ? $item->id:'' }}vlan_id" name="vlan_id"
-                                   required>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}teaming_pair_id"
-                                   class="form-label required">Teaming Pair Id</label>
-                            <input type="text"
-                                   value="{{ isset($item) ? $item->teaming_pair_id:old('teaming_pair_id') ?? ''  }}"
-                                   class="form-control"
-                                   id="{{ isset($item) ? $item->id:'' }}teaming_pair_id" name="teaming_pair_id"
-                                   required>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -177,10 +181,10 @@
                         url:"{{url('asset/location/')}}/"+asset_type,
                         success:function(res)
                         {
+                            $("#asset_id").empty();
                             if(res)
                             {
                                 $.each(res,function(key,value){
-                                    $("#asset_id").empty();
                                     $("#asset_id").append('<option value="'+key+'">'+value+'</option>');
                                 });
                             }

@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="OTCM-75/firewall-managemnt&#10;crud file create">
+    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="firewall-managment/12-21-2021">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FirewallIpAddressController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FirewallIpAddressController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/FirewallIpAddress.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/FirewallIpAddress.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_12_21_095954_create_firewall_ip_addresses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_12_21_095954_create_firewall_ip_addresses_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/firewall_address_group/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/firewall_address_group/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/firewall_address_group_memeber/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/firewall_address_group_memeber/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/firewall_zone/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/firewall_zone/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/ip_address/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ip_address/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
@@ -212,6 +218,7 @@
       <workItem from="1639653894310" duration="597000" />
       <workItem from="1639993570488" duration="851000" />
       <workItem from="1639994730221" duration="1340000" />
+      <workItem from="1640158781624" duration="9510000" />
     </task>
     <task id="LOCAL-00001" summary="OTCM-75/firewall-managemnt&#10;crud file create">
       <created>1639999144829</created>
@@ -234,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640078604280</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="firewall-managment/12-21-2021">
+      <created>1640092197906</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1640092197906</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +267,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="OTCM-75/firewall-managemnt&#10;crud file create" />
-    <option name="LAST_COMMIT_MESSAGE" value="OTCM-75/firewall-managemnt&#10;crud file create" />
+    <MESSAGE value="firewall-managment/12-21-2021" />
+    <option name="LAST_COMMIT_MESSAGE" value="firewall-managment/12-21-2021" />
   </component>
 </project>

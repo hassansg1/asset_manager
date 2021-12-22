@@ -11,7 +11,8 @@ class FirewallIpAddress extends Model
     public $rules =
         [
             'asset_type' => 'required',
-            'connected_asset_type' => 'required',
+            'asset_id' => 'required',
+            'asset_port' => 'required',
         ];
 
     public function saveFormData($item, $request)

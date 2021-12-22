@@ -17,8 +17,8 @@ class FirewallIpAddressController extends Controller
     {
         $this->model = new FirewallIpAddress();
         $this->route = 'ip_address';
-        $this->heading = 'Ip Address';
-        \Illuminate\Support\Facades\View::share('top_heading', 'Ip Address');
+        $this->heading = 'IP Address';
+        \Illuminate\Support\Facades\View::share('top_heading', 'IP Address');
     }
     /**
      * Display a listing of the resource.

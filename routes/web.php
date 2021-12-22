@@ -80,6 +80,9 @@ Route::group(['middleware' => ['auth']], function () {
         'ip_address' => \App\Http\Controllers\FirewallIpAddressController::class,
         'firewall_address_group' => \App\Http\Controllers\FirewallAddressGroupController::class,
         'firewall_address_group_memeber' => \App\Http\Controllers\FirewallAddressGroupMembersController::class,
+        'protocol' => \App\Http\Controllers\ProtocolController::class,
+        'application' => \App\Http\Controllers\ApplicationController::class,
+        'policy' => \App\Http\Controllers\PolicyController::class,
 
     ]);
     Route::get('standards/view/{standard}/clause', [\App\Http\Controllers\StandardClauseController::class, 'viewStandards']);

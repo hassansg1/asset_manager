@@ -106,7 +106,13 @@ if (!function_exists('firewallIpAddress')) {
 if (!function_exists('getComputerAssets')) {
     function getComputerAssets()
     {
-        return DB::table('locations')->get();
+        return DB::table('locations')->whereIn('type', ['computer_aseets', 'lone_assets', 'network_assets'])->get();
+    }
+}
+if (!function_exists('getPolicy')) {
+    function getPolicy()
+    {
+        return \App\Models\Policy::all();
     }
 }
 if (!function_exists('getFirewallAssets')) {

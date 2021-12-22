@@ -17,18 +17,18 @@ class CreateFirewallIpAddressesTable extends Migration
             $table->id();
             $table->string('asset_type');
             $table->integer('asset_id');
-            $table->string('asset_nic');
+            $table->string('asset_nic')->nullable()->change();
             $table->string('asset_port');
-            $table->string('default_gateway');
-            $table->string('ip_address');
-            $table->string('subnet_mask');
+            $table->string('default_gateway')->nullable()->change();
+            $table->string('ip_address')->nullable()->change();
+            $table->string('subnet_mask')->nullable()->change();
 
             $table->string('connected_asset_type');
             $table->integer('connected_asset_id');
-            $table->string('connected_asset_nic');
-            $table->string('connected_asset_port');
-            $table->string('vlan_id');
-            $table->string('teaming_pair_id');
+            $table->string('connected_asset_nic')->nullable()->change();
+            $table->string('connected_asset_port')->nullable()->change();
+            $table->string('vlan_id')->nullable()->change();
+            $table->string('teaming_pair_id')->nullable()->change();
 
             $table->timestamps();
         });
