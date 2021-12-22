@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="OTCM-75/firewall-managemnt&#10;crud file create">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_12_20_122202_add_type_to_users.php" afterDir="false" />
+    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="new changes">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/AssetUserId.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/AssetUserId.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/employee/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_id/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_id/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/vendor-scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/vendor-scripts.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +31,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="OTCM-75/firewall-managment" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -213,19 +208,19 @@
       <workItem from="1639993570488" duration="851000" />
       <workItem from="1639994730221" duration="1340000" />
     </task>
-    <task id="LOCAL-00001" summary="OTCM-75/firewall-managemnt&#10;crud file create">
-      <created>1639999144829</created>
+    <task id="LOCAL-00001" summary="new changes">
+      <created>1639999411103</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1639999144829</updated>
+      <updated>1639999411103</updated>
     </task>
-    <task id="LOCAL-00002" summary="OTCM-75/firewall-managemnt&#10;crud file create">
-      <created>1640004915889</created>
+    <task id="LOCAL-00002" summary="new changes">
+      <created>1639999648263</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1640004915889</updated>
+      <updated>1639999648264</updated>
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />

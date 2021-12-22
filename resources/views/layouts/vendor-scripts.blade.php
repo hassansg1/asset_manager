@@ -105,6 +105,7 @@
     var $searchableTree;
     // sidebar_tree();
     function sidebar_tree() {
+
         $.ajax({
             type: "POST",
             url: '{{ url('sidebar_tree') }}',
