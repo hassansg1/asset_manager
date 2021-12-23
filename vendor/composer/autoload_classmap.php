@@ -139,6 +139,7 @@ return array(
     'App\\Models\\Policy' => $baseDir . '/app/Models/Policy.php',
     'App\\Models\\Port' => $baseDir . '/app/Models/Port.php',
     'App\\Models\\Protocol' => $baseDir . '/app/Models/Protocol.php',
+    'App\\Models\\Reports' => $baseDir . '/app/Models/Reports.php',
     'App\\Models\\Right' => $baseDir . '/app/Models/Right.php',
     'App\\Models\\Role' => $baseDir . '/app/Models/Role.php',
     'App\\Models\\Room' => $baseDir . '/app/Models/Room.php',

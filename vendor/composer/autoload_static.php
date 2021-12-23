@@ -720,6 +720,7 @@ class ComposerStaticInit87345aae27ff06f7b2f4d17209053f09
         'App\\Models\\Policy' => __DIR__ . '/../..' . '/app/Models/Policy.php',
         'App\\Models\\Port' => __DIR__ . '/../..' . '/app/Models/Port.php',
         'App\\Models\\Protocol' => __DIR__ . '/../..' . '/app/Models/Protocol.php',
+        'App\\Models\\Reports' => __DIR__ . '/../..' . '/app/Models/Reports.php',
         'App\\Models\\Right' => __DIR__ . '/../..' . '/app/Models/Right.php',
         'App\\Models\\Role' => __DIR__ . '/../..' . '/app/Models/Role.php',
         'App\\Models\\Room' => __DIR__ . '/../..' . '/app/Models/Room.php',

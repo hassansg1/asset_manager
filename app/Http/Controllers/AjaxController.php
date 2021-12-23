@@ -103,6 +103,7 @@ class AjaxController extends Controller
     }
 
     public function type_wise_assets($asset_id){
+
         $assets = AssetUserId::select('user_id')->where('asset_id', $asset_id)->get();
         $user_accounts = UserId::whereIn('id', $assets)->pluck('user_id', 'id');
         return response()->json($user_accounts);

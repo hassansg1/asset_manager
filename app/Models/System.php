@@ -28,10 +28,12 @@ class System extends Model
 		$item->save();
 		$assests= $request->asset_id;
 		if($item && $assests){
-				$system_assets =  new SystemAssets();
-				$system_assets->system_id = $item->id;
-				$system_assets->asset_id = $request->asset_id;
-				$system_assets->save();
+                foreach($assests as $value) {
+                    $system_assets = new SystemAssets();
+                    $system_assets->system_id = $item->id;
+                    $system_assets->asset_id = $value;
+                    $system_assets->save();
+                }
 		}
 		return $item;
 	}

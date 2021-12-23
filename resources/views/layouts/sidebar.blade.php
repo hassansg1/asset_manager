@@ -71,8 +71,15 @@
                         <li><a href="{{route('policy.index')}}" key="t-product-detail">Policies</a></li>
                         <li><a href="{{route('protocol.index')}}" key="t-product-detail">Protocol</a></li>
                         <li><a href="{{route('application.index')}}" key="t-product-detail">Application</a></li>
-
-
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-store"></i>
+                        <span key="t-ecommerce">Reports</span>
+                    </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="false">
+                        <li><a href="{{route('user_asset_report.index')}}" key="t-orders">User Asset Report</a></li>
                     </ul>
                 </li>
 

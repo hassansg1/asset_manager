@@ -83,6 +83,7 @@ Route::group(['middleware' => ['auth']], function () {
         'protocol' => \App\Http\Controllers\ProtocolController::class,
         'application' => \App\Http\Controllers\ApplicationController::class,
         'policy' => \App\Http\Controllers\PolicyController::class,
+        'user_asset_report' => \App\Http\Controllers\ReportsController::class,
 
     ]);
     Route::get('standards/view/{standard}/clause', [\App\Http\Controllers\StandardClauseController::class, 'viewStandards']);

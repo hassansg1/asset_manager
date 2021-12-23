@@ -28,7 +28,7 @@
                     <div class="col-lg-12">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}asset_id" class="form-label">Asset ID</label>
-                            <select class="form-control select2" id="asset_id" name="asset_id">
+                            <select class="form-control select2" id="asset_id" name="asset_id[]" multiple>
                                 @foreach($assets as $value)
                                 <option value="{{$value->id}}" {{ isset($item) && $item->asset_id == $value->id  ? 'selected' : ''}}>{{$value->name}}</option>
                                 @endforeach

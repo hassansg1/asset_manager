@@ -95,6 +95,15 @@ $assets = getComputerAssets();
    @endforeach
  </select>
 </div>
+    </div>
+          <div class="row">
+              <div class="col-lg-4">
+                  <div class="mb-3">
+                      <label for="{{ isset($item) ? $item->id:'' }}email"
+                             class="form-label">Associated IDs</label>
+                  </div>
+              </div>
+          </div>
        <br> <hr class="solid"><br>
         <div class="row">
             <div class="col-lg-6">
@@ -113,6 +122,7 @@ $assets = getComputerAssets();
                     <label for="{{ isset($item) ? $item->id:'' }}asset_id"
                            class="form-label">Assets</label>
                     <select class="form-control select2" id="asset_id" name="asset_id">
+                        <option value="">-Select Asset-</option>
                         @foreach($assets as $value)
                             <option value="{{$value->id}}">{{$value->rec_id}}</option>
                         @endforeach
@@ -142,7 +152,6 @@ $assets = getComputerAssets();
                 </div>
             </div>
         </div>
-</div>
 
 </div>
 </div>
