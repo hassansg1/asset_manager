@@ -17,6 +17,7 @@ class Right extends Model
 	public function saveFormData($item, $request)
 	{
 		if (isset($request->name)) $item->name = $request->name;
+		if (isset($request->description)) $item->description = $request->description;
 		$item->save();
 		return $item;
 	}

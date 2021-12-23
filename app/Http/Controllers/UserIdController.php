@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\UserId;
+use App\Models\Right;
+use App\Models\UserRight;
 use Illuminate\Http\Request;
 
 class UserIdController extends Controller
@@ -16,8 +18,8 @@ class UserIdController extends Controller
     {
         $this->model = new UserId();
         $this->route = 'user_id';
-        $this->heading = 'User Id';
-        \Illuminate\Support\Facades\View::share('top_heading', 'User Id');
+        $this->heading = 'User ID';
+        \Illuminate\Support\Facades\View::share('top_heading', 'User ID');
     }
 
     /**

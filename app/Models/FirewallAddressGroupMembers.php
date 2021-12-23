@@ -18,6 +18,9 @@ class FirewallAddressGroupMembers extends Model
     public function firewall_group(){
         return $this->belongsTo(FirewallAddressGroup::class, 'firewall_address_group_id', 'id');
     }
+    public function ip_address(){
+        return $this->belongsTo(FirewallIpAddress::class, 'firewall_ip_address_id');
+    }
 
     public function saveFormData($item, $request)
     {

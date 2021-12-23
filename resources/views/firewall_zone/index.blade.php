@@ -4,7 +4,7 @@
             onclick="toggleSelectAll()"
             type="checkbox" name=""
             id="select_all"></th>
-    <th>Firewall Asset</th>
+    <th>Firewall Asset ID</th>
     <th>Name</th>
     <th>Description</th>
     <th>Actions</th>

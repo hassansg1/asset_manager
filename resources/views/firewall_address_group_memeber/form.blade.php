@@ -30,7 +30,7 @@
                             <label for="{{ isset($item) ? $item->id:'' }}asset_id" class="form-label">Select Memebers(IP Address)</label>
                             <select class="form-control select2" id="firewall_ip_address_id" name="firewall_ip_address_id[]" multiple>
                                 @foreach($ip_address as $value)
-                                    <option value="{{$value->id}}" {{ isset($item) && $item->firewall_ip_address_id == $value->id  ? 'selected' : ''}}>{{$value->ip_address}}</option>
+                                    <option value="{{$value->id}}" {{ isset($item) && $item->firewall_ip_address_id == $value->id  ? 'selected' : ''}}>{{$value->ip_address_name}}</option>
                                 @endforeach
                             </select>
                         </div>

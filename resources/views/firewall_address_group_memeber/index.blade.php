@@ -5,7 +5,7 @@
             type="checkbox" name=""
             id="select_all"></th>
     <th>Firewall Group Name</th>
-    <th>IP Address</th>
+    <th>IP Address Name</th>
     <th>Actions</th>
 @endsection
 @section('table_rows')

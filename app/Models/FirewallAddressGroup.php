@@ -14,6 +14,9 @@ class FirewallAddressGroup extends Model
             'name' => 'required',
             'firewall_asset_id' => 'required',
         ];
+    public function asset(){
+        return $this->belongsTo(Location::class,'firewall_asset_id');
+    }
 
     public function saveFormData($item, $request)
     {

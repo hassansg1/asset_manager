@@ -14,6 +14,9 @@ class UserId extends Model
 		'user_id' => 'required',
 		'right_id' => 'required',
 	];
+    public function user_rights_id(){
+        return $this->hasMany(UserRight::class, 'user_id');
+    }
 	public function saveFormData($item, $request)
 	{
 		if (isset($request->user_id)) $item->user_id = $request->user_id;

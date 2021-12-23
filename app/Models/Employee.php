@@ -24,6 +24,14 @@ class Employee extends Model
           'email' => 'required | email',
      ];
 
+    public function designation(){
+        return $this->belongsTo(Designation::class, 'designation_id');
+    }
+
+    public function department(){
+        return $this->belongsTo(Department::class, 'department_id');
+    }
+
      public function saveFormData($item, $request)
      {
        if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
@@ -34,6 +42,7 @@ class Employee extends Model
        if (isset($request->designation_id)) $item->designation_id = $request->designation_id;
        if (isset($request->department_id)) $item->department_id = $request->department_id;
        if (isset($request->status)) $item->status = $request->status;
+       if (isset($request->mobile_no)) $item->mobile_no = $request->mobile_no;
        $item->user_type = "OTCM-USERS";
        $item->save();
 

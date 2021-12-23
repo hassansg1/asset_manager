@@ -16,6 +16,10 @@ class FirewallZoon extends Model
             'firewall_asset_id' => 'required',
         ];
 
+    public function asset(){
+        return $this->belongsTo(Location::class,'firewall_asset_id');
+    }
+
     public function saveFormData($item, $request)
     {
         if (isset($request->name)) $item->name = $request->name;

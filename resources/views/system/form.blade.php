@@ -11,14 +11,14 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}system_type" class="form-label">System  Type</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}system_type" class="form-label required">System  Type</label>
                             <input type="text" value="{{ isset($item) ? $item->system_type:old('system_type') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}system_type" name="system_type">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}title" class="form-label">Title</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}title" class="form-label required">System Name</label>
                             <input type="text" value="{{ isset($item) ? $item->name:old('name') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}name" name="name">
                         </div>
@@ -27,7 +27,7 @@
                  <div class="row">
                     <div class="col-lg-12">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}asset_id" class="form-label">Asset</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}asset_id" class="form-label">Asset ID</label>
                             <select class="form-control select2" id="asset_id" name="asset_id">
                                 @foreach($assets as $value)
                                 <option value="{{$value->id}}" {{ isset($item) && $item->asset_id == $value->id  ? 'selected' : ''}}>{{$value->name}}</option>

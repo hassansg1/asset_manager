@@ -59,6 +59,17 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
+                            <label for="{{ isset($item) ? $item->id:'' }}ip_address_name"
+                                   class="form-label">IP Address Name</label>
+                            <input type="text"
+                                   value="{{ isset($item) ? $item->ip_address_name:old('ip_address_name') ?? ''  }}"
+                                   class="form-control"
+                                   id="{{ isset($item) ? $item->id:'' }}ip_address_name" name="ip_address_name"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}ip_address"
                                    class="form-label required">IP Address</label>
                             <input type="text"
@@ -79,18 +90,18 @@
                                    required>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}default_gateway"
-                                   class="form-label">Default Gateway</label>
-                            <input type="text"
-                                   value="{{ isset($item) ? $item->default_gateway:old('default_gateway') ?? ''  }}"
-                                   class="form-control"
-                                   id="{{ isset($item) ? $item->id:'' }}default_gateway" name="default_gateway"
-                                   required>
-                        </div>
-                    </div>
                     <div class="row">
+                        <div class="col-lg-4">
+                            <div class="mb-3">
+                                <label for="{{ isset($item) ? $item->id:'' }}default_gateway"
+                                       class="form-label">Default Gateway</label>
+                                <input type="text"
+                                       value="{{ isset($item) ? $item->default_gateway:old('default_gateway') ?? ''  }}"
+                                       class="form-control"
+                                       id="{{ isset($item) ? $item->id:'' }}default_gateway" name="default_gateway"
+                                       required>
+                            </div>
+                        </div>
                         <div class="col-lg-4">
                             <div class="mb-3">
                                 <label for="{{ isset($item) ? $item->id:'' }}vlan_id"
@@ -201,10 +212,11 @@
                         url:"{{url('connected_asset/location')}}/"+connected_asset_type,
                         success:function(res)
                         {
+                            $("#connected_asset_id").empty();
                             if(res)
                             {
                                 $.each(res,function(key,value){
-                                    $("#connected_asset_id").empty();
+
                                     $("#connected_asset_id").append('<option value="'+key+'">'+value+'</option>');
                                 });
                             }
