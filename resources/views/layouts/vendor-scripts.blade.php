@@ -23,7 +23,10 @@
 <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
 <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
 <script src="{{ URL::asset('/assets/js/bootstrap-treeview.js') }}"></script>
+
 <script>
+
+
 
     var myTree = [
     {
@@ -100,8 +103,9 @@
         });
     });
     var $searchableTree;
-    sidebar_tree();
+    // sidebar_tree();
     function sidebar_tree() {
+
         $.ajax({
             type: "POST",
             url: '{{ url('sidebar_tree') }}',

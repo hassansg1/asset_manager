@@ -111,7 +111,11 @@ final class HtmlElement implements \Stringable
      */
     public function setContents($contents): self
     {
+<<<<<<< HEAD
         $this->contents = $contents ?? '';
+=======
+        $this->contents = $contents ?? ''; // @phpstan-ignore-line
+>>>>>>> a87ae57077b7139b6995c4c9ca2338f0c6b91d35
 
         return $this;
     }

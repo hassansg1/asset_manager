@@ -25,6 +25,13 @@ final class Reflection
 		'never' => 1,
 	];
 
+<<<<<<< HEAD
+=======
+	private const CLASS_KEYWORDS = [
+		'self' => 1, 'parent' => 1, 'static' => 1,
+	];
+
+>>>>>>> a87ae57077b7139b6995c4c9ca2338f0c6b91d35
 
 	/**
 	 * Determines if type is PHP built-in type. Otherwise, it is the class name.
@@ -36,6 +43,18 @@ final class Reflection
 
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Determines if type is special class name self/parent/static.
+	 */
+	public static function isClassKeyword(string $name): bool
+	{
+		return isset(self::CLASS_KEYWORDS[strtolower($name)]);
+	}
+
+
+	/**
+>>>>>>> a87ae57077b7139b6995c4c9ca2338f0c6b91d35
 	 * Returns the type of return value of given function or method and normalizes `self`, `static`, and `parent` to actual class names.
 	 * If the function does not have a return type, it returns null.
 	 * If the function has union or intersection type, it throws Nette\InvalidStateException.
@@ -249,6 +268,14 @@ final class Reflection
 		} elseif ($lower === 'self' || $lower === 'static') {
 			return $context->name;
 
+<<<<<<< HEAD
+=======
+		} elseif ($lower === 'parent') {
+			return $context->getParentClass()
+				? $context->getParentClass()->name
+				: 'parent';
+
+>>>>>>> a87ae57077b7139b6995c4c9ca2338f0c6b91d35
 		} elseif ($name[0] === '\\') { // fully qualified name
 			return ltrim($name, '\\');
 		}

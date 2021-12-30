@@ -20,7 +20,14 @@ final class ObjectHelpers
 {
 	use Nette\StaticClass;
 
+<<<<<<< HEAD
 	/** @throws MemberAccessException */
+=======
+	/**
+	 * @return never
+	 * @throws MemberAccessException
+	 */
+>>>>>>> a87ae57077b7139b6995c4c9ca2338f0c6b91d35
 	public static function strictGet(string $class, string $name): void
 	{
 		$rc = new \ReflectionClass($class);
@@ -32,7 +39,14 @@ final class ObjectHelpers
 	}
 
 
+<<<<<<< HEAD
 	/** @throws MemberAccessException */
+=======
+	/**
+	 * @return never
+	 * @throws MemberAccessException
+	 */
+>>>>>>> a87ae57077b7139b6995c4c9ca2338f0c6b91d35
 	public static function strictSet(string $class, string $name): void
 	{
 		$rc = new \ReflectionClass($class);
@@ -44,7 +58,14 @@ final class ObjectHelpers
 	}
 
 
+<<<<<<< HEAD
 	/** @throws MemberAccessException */
+=======
+	/**
+	 * @return never
+	 * @throws MemberAccessException
+	 */
+>>>>>>> a87ae57077b7139b6995c4c9ca2338f0c6b91d35
 	public static function strictCall(string $class, string $method, array $additionalMethods = []): void
 	{
 		$trace = debug_backtrace(0, 3); // suppose this method is called from __call()
@@ -74,7 +95,14 @@ final class ObjectHelpers
 	}
 
 
+<<<<<<< HEAD
 	/** @throws MemberAccessException */
+=======
+	/**
+	 * @return never
+	 * @throws MemberAccessException
+	 */
+>>>>>>> a87ae57077b7139b6995c4c9ca2338f0c6b91d35
 	public static function strictStaticCall(string $class, string $method): void
 	{
 		$trace = debug_backtrace(0, 3); // suppose this method is called from __callStatic()

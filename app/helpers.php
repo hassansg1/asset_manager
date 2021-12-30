@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Models\Attachment;
+use Illuminate\Support\Facades\DB;
 
 if (!function_exists('getLang')) {
     function getLang($key)
@@ -62,6 +63,55 @@ if (!function_exists('getUnit')) {
     function getUnit()
     {
         return \App\Models\Unit::all();
+    }
+}
+if (!function_exists('getStatus')) {
+    /**
+     * return status array
+     */
+    function getStatus()
+    {
+      return [
+        '1' => 'Active',
+        '0' => 'InActive',
+      ];
+    }
+}
+if (!function_exists('getDepartments')) {
+    function getDepartments()
+    {
+        return \App\Models\Department::all();
+    }
+}
+if (!function_exists('getRights')) {
+    function getRights()
+    {
+        return \App\Models\Right::all();
+    }
+}
+if (!function_exists('getComputerAssets')) {
+    function getComputerAssets()
+    {
+        return DB::table('locations')->get();
+    }
+}
+if (!function_exists('getAssociatIds')) {
+    function getAssociatIds()
+    {
+        return \App\Models\UserId::all();
+    }
+}
+if (!function_exists('getSystems')) {
+    function getSystems()
+    {
+        return \App\Models\System::all();
+    }
+}
+
+if (!function_exists('getDesignations')) {
+    function getDesignations()
+    {
+        return \App\Models\Designation::all();
     }
 }
 if (!function_exists('getCompanies')) {

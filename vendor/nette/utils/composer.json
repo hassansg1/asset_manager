@@ -20,7 +20,11 @@
 	"require-dev": {
 		"nette/tester": "~2.0",
 		"tracy/tracy": "^2.3",
+<<<<<<< HEAD
 		"phpstan/phpstan": "^0.12"
+=======
+		"phpstan/phpstan": "^1.0"
+>>>>>>> a87ae57077b7139b6995c4c9ca2338f0c6b91d35
 	},
 	"conflict": {
 		"nette/di": "<3.0.6"

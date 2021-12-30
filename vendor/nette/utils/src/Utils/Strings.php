@@ -456,6 +456,11 @@ class Strings
 			$len = strlen($haystack);
 			if ($needle === '') {
 				return $len;
+<<<<<<< HEAD
+=======
+			} elseif ($len === 0) {
+				return null;
+>>>>>>> a87ae57077b7139b6995c4c9ca2338f0c6b91d35
 			}
 			$pos = $len - 1;
 			while (($pos = strrpos($haystack, $needle, $pos - $len)) !== false && ++$nth) {
@@ -467,8 +472,13 @@ class Strings
 
 
 	/**
+<<<<<<< HEAD
 	 * Splits a string into array by the regular expression.
 	 * Argument $flag takes same arguments as preg_split(), but PREG_SPLIT_DELIM_CAPTURE is set by default.
+=======
+	 * Splits a string into array by the regular expression. Parenthesized expression in the delimiter are captured.
+	 * Parameter $flags can be any combination of PREG_SPLIT_NO_EMPTY and PREG_OFFSET_CAPTURE flags.
+>>>>>>> a87ae57077b7139b6995c4c9ca2338f0c6b91d35
 	 */
 	public static function split(string $subject, string $pattern, int $flags = 0): array
 	{
@@ -478,7 +488,11 @@ class Strings
 
 	/**
 	 * Checks if given string matches a regular expression pattern and returns an array with first found match and each subpattern.
+<<<<<<< HEAD
 	 * Argument $flag takes same arguments as function preg_match().
+=======
+	 * Parameter $flags can be any combination of PREG_OFFSET_CAPTURE and PREG_UNMATCHED_AS_NULL flags.
+>>>>>>> a87ae57077b7139b6995c4c9ca2338f0c6b91d35
 	 */
 	public static function match(string $subject, string $pattern, int $flags = 0, int $offset = 0): ?array
 	{
@@ -492,8 +506,13 @@ class Strings
 
 
 	/**
+<<<<<<< HEAD
 	 * Finds all occurrences matching regular expression pattern and returns a two-dimensional array.
 	 * Argument $flag takes same arguments as function preg_match_all(), but PREG_SET_ORDER is set by default.
+=======
+	 * Finds all occurrences matching regular expression pattern and returns a two-dimensional array. Result is array of matches (ie uses by default PREG_SET_ORDER).
+	 * Parameter $flags can be any combination of PREG_OFFSET_CAPTURE, PREG_UNMATCHED_AS_NULL and PREG_PATTERN_ORDER flags.
+>>>>>>> a87ae57077b7139b6995c4c9ca2338f0c6b91d35
 	 */
 	public static function matchAll(string $subject, string $pattern, int $flags = 0, int $offset = 0): array
 	{

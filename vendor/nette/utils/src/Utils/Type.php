@@ -203,6 +203,18 @@ final class Type
 
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Determines if type is special class name self/parent/static.
+	 */
+	public function isClassKeyword(): bool
+	{
+		return $this->single && Reflection::isClassKeyword($this->types[0]);
+	}
+
+
+	/**
+>>>>>>> a87ae57077b7139b6995c4c9ca2338f0c6b91d35
 	 * Verifies type compatibility. For example, it checks if a value of a certain type could be passed as a parameter.
 	 */
 	public function allows(string $type): bool

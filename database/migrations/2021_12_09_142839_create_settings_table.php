@@ -15,6 +15,10 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->integer('item_per_page');
+            $table->string('logo');
+            $table->string('logo_icon');
             $table->timestamps();
         });
     }

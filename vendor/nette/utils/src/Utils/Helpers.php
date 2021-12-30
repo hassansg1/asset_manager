@@ -53,6 +53,25 @@ class Helpers
 
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Returns value clamped to the inclusive range of min and max.
+	 * @param  int|float  $value
+	 * @param  int|float  $min
+	 * @param  int|float  $max
+	 * @return int|float
+	 */
+	public static function clamp($value, $min, $max)
+	{
+		if ($min > $max) {
+			throw new \InvalidArgumentException("Minimum ($min) is not less than maximum ($max).");
+		}
+		return min(max($value, $min), $max);
+	}
+
+
+	/**
+>>>>>>> a87ae57077b7139b6995c4c9ca2338f0c6b91d35
 	 * Looks for a string from possibilities that is most similar to value, but not the same (for 8-bit encoding).
 	 * @param  string[]  $possibilities
 	 */

@@ -38,10 +38,19 @@ Route::group(['middleware' => ['auth']], function () {
         'site' => \App\Http\Controllers\SiteController::class,
         'room' => \App\Http\Controllers\RoomController::class,
         'role' => \App\Http\Controllers\RoleController::class,
+        'right' => \App\Http\Controllers\RightController::class,
         'user' => \App\Http\Controllers\UserController::class,
+        'user_id' => \App\Http\Controllers\UserIdController::class,
+        'employee' => \App\Http\Controllers\EmployeeController::class,
         'unit' => \App\Http\Controllers\UnitController::class,
+        'system' => \App\Http\Controllers\SystemController::class,
+        'system_user' => \App\Http\Controllers\SystemUserIdController::class,
+        'system_user_right' => \App\Http\Controllers\SystemUserRightController::class,
+        'settings' => \App\Http\Controllers\SettingsController::class,
         'approver' => \App\Http\Controllers\ApproverController::class,
         'asset' => \App\Http\Controllers\AssetController::class,
+        'asset_user' => \App\Http\Controllers\AssetUserIdController::class,
+        'asset_group' => \App\Http\Controllers\AssetGroupController::class,
         'import' => \App\Http\Controllers\ImportController::class,
         'clause_import' => \App\Http\Controllers\ClauseImportController::class,
         'library_import' => \App\Http\Controllers\LibraryImportController::class,
@@ -95,6 +104,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('log/reject/{id}', [\App\Http\Controllers\LogController::class, 'reject']);
     Route::get('log/remove/{id}', [\App\Http\Controllers\LogController::class, 'remove']);
     Route::get('export_templates', [\App\Http\Controllers\AjaxController::class, 'exportDataTemplates'])->name('export_templates');
+    Route::get('system/user_accounts/{id}', [\App\Http\Controllers\AjaxController::class, 'system_user_accounts']);
+    Route::get('asset/type/{type}', [\App\Http\Controllers\AjaxController::class, 'type_wise_assets']);
+    Route::get('system/type/{type}', [\App\Http\Controllers\AjaxController::class, 'system_wise_user_accounts']);
+
     Route::get('export_compliance_date_template', [\App\Http\Controllers\AjaxController::class, 'exportComplianceDataTemplates'])->name('export_compliance_date_template');
 
     Route::get('dashboard', [\App\Http\Controllers\DashBoardController::class, 'index']);
@@ -112,8 +125,4 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('sidebar_tree', [\App\Http\Controllers\LocTreeController::class, 'sidebar_tree'])->name('sidebar_tree');
     Route::get('testCron', [\App\Http\Controllers\TestController::class, 'test']);
     Route::get('view/assets/{id}',[\App\Http\Controllers\SeeAssetController::class,'view'])->name('view/assets');
-
-    Route::get('/settings', function () {
-        return view('settings.view');
-    });
 });

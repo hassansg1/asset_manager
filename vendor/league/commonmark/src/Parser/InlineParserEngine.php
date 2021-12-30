@@ -154,11 +154,17 @@ final class InlineParserEngine implements InlineParserEngineInterface
                     // PREG_OFFSET_CAPTURE always returns the byte offset, not the char offset, which is annoying
                     $offset = \mb_strlen(\substr($contents, 0, $match[0][1]), 'UTF-8');
                 } else {
+<<<<<<< HEAD
                     $offset = $match[0][1];
                 }
 
                 \assert(\is_int($offset));
 
+=======
+                    $offset = \intval($match[0][1]);
+                }
+
+>>>>>>> a87ae57077b7139b6995c4c9ca2338f0c6b91d35
                 // Remove the offsets, keeping only the matched text
                 $m = \array_column($match, 0);
 
