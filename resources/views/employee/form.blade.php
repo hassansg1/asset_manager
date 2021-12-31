@@ -97,14 +97,14 @@ $assets = getComputerAssets();
  </select>
 </div>
     </div>
-          <div class="row">
-              <div class="col-lg-4">
-                  <div class="mb-3">
-                      <label for="{{ isset($item) ? $item->id:'' }}email"
-                             class="form-label">Associated IDs</label>
-                  </div>
-              </div>
-          </div>
+{{--          <div class="row">--}}
+{{--              <div class="col-lg-4">--}}
+{{--                  <div class="mb-3">--}}
+{{--                      <label for="{{ isset($item) ? $item->id:'' }}email"--}}
+{{--                             class="form-label">Associated IDs</label>--}}
+{{--                  </div>--}}
+{{--              </div>--}}
+{{--          </div>--}}
        <br> <hr class="solid"><br>
         <div class="row">
             <div class="col-lg-6">

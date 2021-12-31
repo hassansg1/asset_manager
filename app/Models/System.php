@@ -16,9 +16,9 @@ class System extends Model
 		'asset_id' => 'required',
 	];
 
-	public function system_assets(){
-		return $this->hasMany(SystemAssets::class, 'system_id');
-	}
+    public function system_assets(){
+        return $this->belongsTo(SystemAssets::class, 'id', 'system_id');
+    }
 
 	public function saveFormData($item, $request)
 	{
@@ -26,6 +26,7 @@ class System extends Model
 		if (isset($request->name)) $item->name = $request->name;
 		if (isset($request->description)) $item->description = $request->description;
 		$item->save();
+        $result= SystemAssets::where('system_id',$item->id)->delete();
 		$assests= $request->asset_id;
 		if($item && $assests){
                 foreach($assests as $value) {

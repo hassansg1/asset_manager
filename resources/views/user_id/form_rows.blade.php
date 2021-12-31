@@ -4,9 +4,6 @@
 {{--                               id="select_check_{{ $item->id }}" class="select_row"></td>--}}
         <td>{{ $item->user_id }}</td>
         <td>
-
-        </td>
-        <td>
             @include('components.edit_delete_button')
         </td>
     </tr>

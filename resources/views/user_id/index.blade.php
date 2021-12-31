@@ -5,7 +5,6 @@
 {{--            type="checkbox" name=""--}}
 {{--            id="select_all"></th>--}}
     <th>User ID</th>
-    <th>User ID Rights</th>
     <th>Actions</th>
 @endsection
 @section('table_rows')

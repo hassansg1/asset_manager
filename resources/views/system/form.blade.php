@@ -29,8 +29,9 @@
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}asset_id" class="form-label">Asset ID</label>
                             <select class="form-control select2" id="asset_id" name="asset_id[]" multiple>
+                                <option value="">-Select Asset ID-</option>
                                 @foreach($assets as $value)
-                                <option value="{{$value->id}}" {{ isset($item) && $item->asset_id == $value->id  ? 'selected' : ''}}>{{$value->name}}</option>
+                                <option value="{{$value->id}}" {{ isset($item, $item->system_assets->asset_id) && in_array($value->id, $selectedAssets)  ? 'selected' : ''}}>{{$value->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -48,8 +49,3 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('.select2').select2();
-  });
-</script>
