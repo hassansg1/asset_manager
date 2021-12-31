@@ -14,6 +14,7 @@
                             <div class="mb-3">
                                 <label for="{{ isset($item) ? $item->id:'' }}asset_id" class="form-label required">Firewall ID</label>
                                 <select class="form-control select2" id="firewall_asset_id" name="firewall_asset_id">
+                                    <option value="">-Select Firewall Asset ID-</option>
                                     @foreach($firewallAssets as $value)
                                         <option value="{{$value->id}}" {{ isset($item) && $item->firewall_asset_id == $value->id  ? 'selected' : ''}}>{{$value->rec_id}}</option>
                                     @endforeach

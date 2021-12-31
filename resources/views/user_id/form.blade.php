@@ -34,7 +34,8 @@ $rights = getRights();
             <div class="mb-3">
               <label for="{{ isset($item) ? $item->id:'' }}right"
                 class="form- required">User ID Rights</label>
-                <select class="form-control select2" id="right_id" name="right_id[]" multiple="multiple">
+                <select class="form-control select2" id="right_id" name="right_id">
+                    <option value="">-Select Right-</option>
                   @foreach($rights as $value)
                   <option value="{{$value->id}}">{{$value->name}}</option>
                   @endforeach
@@ -42,25 +43,12 @@ $rights = getRights();
               </div>
             </div>
            </div>
-           <div class="row asset" style="display: none">
-            <div class="col-lg-4">
-              <div class="mb-3">
-                <label for="{{ isset($item) ? $item->id:'' }}asset_id"
-                 class="form-label required">Asset ID</label>
-                 <select class="form-control select2" id="asset_id" name="asset_id">
-                  @foreach($assets as $value)
-                  <option value="{{$value->id}}">{{$value->rec_id}}</option>
-                  @endforeach
-                </select>
-              </div>
-            </div>
-            </div>
             <div class="row ">
                 <div class="col-lg-4">
                     <div class="mb-3">
                         <label for="{{ isset($item) ? $item->id:'' }}user_type"
                                class="form-label required">User ID Type</label>
-                        <select class="form-control" name="user_type" id="user_type">
+                        <select class="form-control select2" name="user_type" id="user_type">
                             <option value="">-Select User ID Type-</option>
                             <option value="asset">Asset User ID</option>
                             <option value="system">System User ID</option>
@@ -72,12 +60,25 @@ $rights = getRights();
                   <label for="{{ isset($item) ? $item->id:'' }}system_id"
                    class="form-label required">System Name</label>
                    <select class="form-control select2" id="system_id" name="system_id">
+                       <option value="">-Select System-</option>
                     @foreach($system as $value)
                     <option value="{{$value->id}}">{{$value->name}}</option>
                     @endforeach
                   </select>
                 </div>
               </div>
+                    <div class="col-lg-4 asset" style="display: none">
+                        <div class="mb-3">
+                            <label for="{{ isset($item) ? $item->id:'' }}asset_id"
+                                   class="form-label required">Asset ID</label>
+                            <select class="form-control select2" id="asset_id" name="asset_id">
+                                <option value="">-Select Asset ID-</option>
+                                @foreach($assets as $value)
+                                    <option value="{{$value->id}}">{{$value->rec_id}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
               </div>
               <div class="row">
                 <div class="col-lg-12">

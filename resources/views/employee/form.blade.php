@@ -63,7 +63,7 @@ $assets = getComputerAssets();
     <div class="row">
      <div class="col-lg-3">
       <label for="" class="form-label">Department</label>
-      <select class="form-control" name="department_id" id="department_id">
+      <select class="form-control select2" name="department_id" id="department_id">
        <option>-Select Department-</option>
        @foreach($departments as $value)
        <option value="{{$value->id}}" {{ isset($item) && $item->department_id == $value->id  ? 'selected' : ''}}>{{$value->title}}</option>
@@ -72,7 +72,7 @@ $assets = getComputerAssets();
    </div>
    <div class="col-lg-3">
     <label for="" class="form-label">Designations</label>
-    <select class="form-control" name="designation_id" id="designation_id">
+    <select class="form-control select2" name="designation_id" id="designation_id">
      <option>-Select Designation-</option>
      @foreach($designations as $value)
      <option value="{{$value->id}}" {{ isset($item) && $item->designation_id == $value->id  ? 'selected' : ''}}>{{$value->title}}</option>
@@ -89,7 +89,8 @@ $assets = getComputerAssets();
  </div>
  <div class="col-lg-3">
   <label for="" class="form-label">Status</label>
-  <select class="form-control" name="status" id="status">
+  <select class="form-control select2" name="status" id="status">
+      <option value="">-Select Status-</option>
    @foreach($status as $key => $value)
    <option value="{{$key}}" {{ isset($item) && $item->status == $key  ? 'selected' : ''}}>{{$value}}</option>
    @endforeach
@@ -110,7 +111,7 @@ $assets = getComputerAssets();
                 <div class="mb-3">
                     <label for="{{ isset($item) ? $item->id:'' }}user_type"
                            class="form-label">User ID Type</label>
-                    <select class="form-control" name="user_type" id="user_type">
+                    <select class="form-control select2" name="user_type" id="user_type">
                         <option value="">-Select Type-</option>
                         <option value="asset">Asset</option>
                         <option value="system">System</option>

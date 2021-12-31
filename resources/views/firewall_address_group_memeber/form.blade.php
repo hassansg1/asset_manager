@@ -16,7 +16,7 @@
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}asset_id" class="form-label required">Firewall Address Group</label>
                             <select class="form-control select2" id="firwall_group_id" name="firwall_group_id">
-                                <option value="">-- Select Firewall Address Group --</option>
+                                <option value="">-Select Firewall Address Group-</option>
                                 @foreach($firewallgroups as $value)
                                 <option value="{{$value->id}}" {{ isset($item) && $item->firwall_group_id == $value->id  ? 'selected' : ''}}>{{$value->name}}</option>
                                 @endforeach
@@ -29,6 +29,7 @@
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}asset_id" class="form-label">Select Memebers(IP Address)</label>
                             <select class="form-control select2" id="firewall_ip_address_id" name="firewall_ip_address_id[]" multiple>
+                                <option value="">-Select Members-</option>
                                 @foreach($ip_address as $value)
                                     <option value="{{$value->id}}" {{ isset($item) && $item->firewall_ip_address_id == $value->id  ? 'selected' : ''}}>{{$value->ip_address_name}}</option>
                                 @endforeach

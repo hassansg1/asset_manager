@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\AssetUserId;
+use App\Models\UserAccount;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Models\Attachment;
@@ -21,6 +23,18 @@ if (!function_exists('universalDateFormatter')) {
     function universalDateFormatter($date)
     {
         return $date ? $date->format('Y/m/d h:i:s') : '';
+    }
+}
+
+if (!function_exists('getUserName')) {
+    function getUserName($userId)
+    {
+
+        $user_ids = \App\Models\UserAccount::where('account_id',$userId)->get();
+        foreach ($user_ids as $user) {
+            $user = \App\Models\User::where('id',$user->user_id)->first();
+        }
+        return $user;
     }
 }
 
@@ -558,6 +572,24 @@ if (!function_exists('getAncestors')) {
     {
         return \App\Models\Location::ancestorsOf($locationId);
 
+    }
+}
+
+if (!function_exists('getUserAsset')) {
+    function getUserAsset($userId){
+            $userAccountId = UserAccount::where('account_id', $userId)->get();
+            $userAssets = AssetUserId::select('asset_id')->whereIn('user_id', $userAccountId->account_id)->get();
+            $userAssetName = \App\Models\Location::where('id', $userAssets->asset_id)->first();
+            return $userAssetName;
+
+    }
+}
+
+if (!function_exists('assetRights')) {
+    function assetRights($rightId)
+    {
+            $rights = \App\Models\Right::where('id', $rightId)->first();
+            return $rights;
     }
 }
 

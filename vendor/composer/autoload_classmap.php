@@ -63,6 +63,7 @@ return array(
     'App\\Http\\Controllers\\PermissionController' => $baseDir . '/app/Http/Controllers/PermissionController.php',
     'App\\Http\\Controllers\\PolicyController' => $baseDir . '/app/Http/Controllers/PolicyController.php',
     'App\\Http\\Controllers\\ProtocolController' => $baseDir . '/app/Http/Controllers/ProtocolController.php',
+    'App\\Http\\Controllers\\ReportsController' => $baseDir . '/app/Http/Controllers/ReportsController.php',
     'App\\Http\\Controllers\\RightController' => $baseDir . '/app/Http/Controllers/RightController.php',
     'App\\Http\\Controllers\\RoleController' => $baseDir . '/app/Http/Controllers/RoleController.php',
     'App\\Http\\Controllers\\RoomController' => $baseDir . '/app/Http/Controllers/RoomController.php',

@@ -644,6 +644,7 @@ class ComposerStaticInit87345aae27ff06f7b2f4d17209053f09
         'App\\Http\\Controllers\\PermissionController' => __DIR__ . '/../..' . '/app/Http/Controllers/PermissionController.php',
         'App\\Http\\Controllers\\PolicyController' => __DIR__ . '/../..' . '/app/Http/Controllers/PolicyController.php',
         'App\\Http\\Controllers\\ProtocolController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProtocolController.php',
+        'App\\Http\\Controllers\\ReportsController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReportsController.php',
         'App\\Http\\Controllers\\RightController' => __DIR__ . '/../..' . '/app/Http/Controllers/RightController.php',
         'App\\Http\\Controllers\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/RoleController.php',
         'App\\Http\\Controllers\\RoomController' => __DIR__ . '/../..' . '/app/Http/Controllers/RoomController.php',
