@@ -5,12 +5,12 @@
 @section('content')
 @yield('top_content')
 @include('layouts.top_heading',['heading' => $heading])
+@yield('top_content_secondary')
 @include('components.datatable_components')
 @endsection
-@section('script')
 <script>
     function toggleSelectAll() {
-        $('.select_row').prop('checked', $('#select_all').is(":checked"));
+        $('.select_row').not(':disabled').prop('checked', $('#select_all').is(":checked"));
     }
 
     function deleteItem(item, id) {
@@ -31,4 +31,3 @@
     }
 </script>
 @include('scripts.script_datatable')
-@endsection

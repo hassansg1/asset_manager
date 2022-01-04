@@ -24,9 +24,13 @@ class Software extends Model
 
     public function getShowNameAttribute()
     {
-        return $this->name;
+        return $this->name ." ". $this->version;
     }
 
+    public function vendor()
+    {
+        return $this->belongsTo(Vendor::class, 'vendor_id');
+    }
 
     /**
      * @param $value
@@ -80,12 +84,12 @@ class Software extends Model
     public function saveFormData($item, $request)
     {
 
-        if (isset($request->oem)) $item->oem = $request->oem;
-        if (isset($request->vendor)) $item->vendor = $request->vendor;
+        if (isset($request->vendor_id)) $item->vendor_id = $request->vendor_id;
         if (isset($request->name)) $item->name = $request->name;
         if (isset($request->version)) $item->version = $request->version;
         if (isset($request->description)) $item->description = $request->description;
         if (isset($request->function)) $item->function = $request->function;
+        if (isset($request->approval_required)) $item->approval_required = $request->approval_required == "on" ? 1 : 0;
 
         $item->save();
         $this->updateParent($request, $item);

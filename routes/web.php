@@ -44,6 +44,7 @@ Route::group(['middleware' => ['auth']], function () {
         'employee' => \App\Http\Controllers\EmployeeController::class,
         'unit' => \App\Http\Controllers\UnitController::class,
         'system' => \App\Http\Controllers\SystemController::class,
+        'vendor' => \App\Http\Controllers\VendorController::class,
         'system_user' => \App\Http\Controllers\SystemUserIdController::class,
         'system_user_right' => \App\Http\Controllers\SystemUserRightController::class,
         'settings' => \App\Http\Controllers\SettingsController::class,
@@ -62,6 +63,12 @@ Route::group(['middleware' => ['auth']], function () {
         'networks' => \App\Http\Controllers\NetworkController::class,
         'building' => \App\Http\Controllers\BuildingController::class,
         'software' => \App\Http\Controllers\SoftwareController::class,
+        'installed_software' => \App\Http\Controllers\InstalledSoftwareController::class,
+        'installed_patch' => \App\Http\Controllers\InstalledPatchesController::class,
+        'patch_policy' => \App\Http\Controllers\PatchPolicyController::class,
+        'patch_report' => \App\Http\Controllers\PatchReportController::class,
+        'patch' => \App\Http\Controllers\PatchController::class,
+        'zone_policy' => \App\Http\Controllers\ZonePolicyController::class,
         'standard' => \App\Http\Controllers\StandardController::class,
         'approval' => \App\Http\Controllers\ApprovalController::class,
         'permission' => \App\Http\Controllers\PermissionController::class,
@@ -84,6 +91,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('applicable/compliance', [App\Http\Controllers\ApplicableClauseController::class, 'complianceApplicable'])->name('compliance.applicable');
     Route::get('applicable/compliance/viewDetail/{id}', [App\Http\Controllers\ApplicableClauseController::class, 'complianceApplicableViewDetail'])->name('compliance.applicable_viewDetail');
     Route::post('applicable/ClauseData/storeLocation', [App\Http\Controllers\ApplicableClauseController::class, 'storeComplianceDataLocations'])->name('compliance.storeComplianceDataLocations');
+    Route::post('applyPatch', [App\Http\Controllers\InstalledPatchesController::class, 'ajaxStore'])->name('patch.ajaxStore');
 
     Route::group(['prefix' => 'assets'], function () {
         Route::resource('network', \App\Http\Controllers\NetworkAssetController::class);
@@ -124,5 +132,16 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('updateComplianceVersionItems', [\App\Http\Controllers\ApplicableClauseController::class, 'updateComplianceVersionItems']);
     Route::post('sidebar_tree', [\App\Http\Controllers\LocTreeController::class, 'sidebar_tree'])->name('sidebar_tree');
     Route::get('testCron', [\App\Http\Controllers\TestController::class, 'test']);
-    Route::get('view/assets/{id}',[\App\Http\Controllers\SeeAssetController::class,'view'])->name('view/assets');
+    Route::get('view/assets/{id}', [\App\Http\Controllers\SeeAssetController::class, 'view'])->name('view/assets');
+
+//    Patch Approval
+    Route::post('patch/approve/', [\App\Http\Controllers\PatchApprovalController::class, 'bulkApprove'])->name('patch.bulkApprove');
+    Route::post('patch/approve/save', [\App\Http\Controllers\PatchApprovalController::class, 'bulkApproveSave'])->name('patch.bulkApprove.save');
+
+    Route::post('software/approve/', [\App\Http\Controllers\PatchApprovalController::class, 'bulkApproveSoftware'])->name('software.bulkApprove');
+    Route::post('software/approve/save', [\App\Http\Controllers\PatchApprovalController::class, 'bulkApproveSoftwareSave'])->name('software.bulkApprove.save');
+
+//    Apply Patches
+    Route::post('patch/apply', [\App\Http\Controllers\PatchApplyController::class, 'bulkApplyPatches'])->name('patch.applyBulkPatches');
+
 });

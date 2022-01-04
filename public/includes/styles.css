@@ -325,19 +325,25 @@ input[type="checkbox"][readonly] {
     width: 85%;
     margin-left: 15px
 }
-#datatable-buttons_paginate
-{
+
+#datatable-buttons_paginate {
     display: none;
 }
-#datatable-buttons_info
-{
+
+#datatable-buttons_info {
     display: none;
 }
-svg
-{
+
+svg {
     width: 25px !important;
 }
-#default-tree
-{
+
+#default-tree {
     color: white;
+}
+
+@media (min-width: 992px) {
+    .modal-lg, .modal-xl {
+        max-width: 1100px !important;
+    }
 }

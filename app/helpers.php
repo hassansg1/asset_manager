@@ -71,10 +71,10 @@ if (!function_exists('getStatus')) {
      */
     function getStatus()
     {
-      return [
-        '1' => 'Active',
-        '0' => 'InActive',
-      ];
+        return [
+            '1' => 'Active',
+            '0' => 'InActive',
+        ];
     }
 }
 if (!function_exists('getDepartments')) {
@@ -490,11 +490,20 @@ if (!function_exists('tableNamesMapping')) {
             return array_search($table, $mappingArray);
     }
 }
+
 if (!function_exists('attachments')) {
     function attachments()
     {
         $attachments = Attachment::get();
         return $attachments;
+    }
+}
+
+if (!function_exists('checkIfPatchApproved')) {
+    function checkIfPatchApproved($patchId, $softwareId)
+    {
+        $approved = \App\Models\PatchPolicy::where('software_id', $softwareId)->where('patch_id', $patchId)->where('approved', 1)->first();
+        return $approved;
     }
 }
 
@@ -551,4 +560,47 @@ function buildTree(array $elements, $parentId = 0)
     }
 
     return $branch;
+}
+
+function getPatchAssets($patch)
+{
+    $software = $patch->software_id;
+    $insSoft = \App\Models\InstalledSoftware::with('asset')->where('software_id', $software)->get();
+    $asset = [];
+    foreach ($insSoft as $soft) {
+        $asset[] = $soft->asset;
+    }
+
+    return collect($asset);
+}
+
+function checkIfPatchInstalled($asset, $patch)
+{
+    return \App\Models\InstalledPatch::where('asset_id', $asset->id)->where('patch_id', $patch->id)->first();
+}
+
+function getApprovedStatus($asset, $patch)
+{
+    $assetSoftwares = $asset->softwares;
+    $status = [];
+    foreach ($assetSoftwares as $software) {
+        if ($software->software->id != $patch->software->id) {
+            if ($software->software->approval_required == 1) {
+                $patchApproved = \App\Models\PatchPolicy::where('software_id', $software->software->id)->where('patch_id', $patch->id)->first();
+                if ($patchApproved)
+                    $status[$patchApproved->approved][] = $software->software;
+                else
+                    $status[0][] = $software->software;
+            } else {
+                $status[1][] = $software->software;
+            }
+        }
+
+    }
+
+    return [
+        'status' => !isset($status[0]) || count($status[0]) == 0 ? 'Yes' : 'No',
+        'approved' => $status[1] ?? [],
+        'pending' => $status[0] ?? [],
+    ];
 }

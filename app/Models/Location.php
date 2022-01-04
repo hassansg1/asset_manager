@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
+use function Symfony\Component\Translation\t;
 
 class Location extends Model
 {
@@ -24,6 +25,11 @@ class Location extends Model
     public function getTextAttribute()
     {
         return $this->short_name != "" ? $this->short_name : $this->name;
+    }
+
+    public function softwares()
+    {
+        return $this->hasMany(InstalledSoftware::class, 'asset_id');
     }
 
     public function getParentNameAttribute()
