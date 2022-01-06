@@ -11,27 +11,28 @@ class System extends Model
 
 	public $rules =
 	[
-		'name' => 'required',
-		'system_type' => 'required',
+		'name' => 'required|unique:systems',
 		'asset_id' => 'required',
 	];
 
-	public function system_assets(){
-		return $this->hasMany(SystemAssets::class, 'system_id');
-	}
+    public function system_assets(){
+        return $this->belongsTo(SystemAssets::class, 'id', 'system_id');
+    }
 
 	public function saveFormData($item, $request)
 	{
-		if (isset($request->system_type)) $item->system_type = $request->system_type;
 		if (isset($request->name)) $item->name = $request->name;
 		if (isset($request->description)) $item->description = $request->description;
 		$item->save();
+        $result= SystemAssets::where('system_id',$item->id)->delete();
 		$assests= $request->asset_id;
 		if($item && $assests){
-				$system_assets =  new SystemAssets();
-				$system_assets->system_id = $item->id;
-				$system_assets->asset_id = $request->asset_id;
-				$system_assets->save();
+                foreach($assests as $value) {
+                    $system_assets = new SystemAssets();
+                    $system_assets->system_id = $item->id;
+                    $system_assets->asset_id = $value;
+                    $system_assets->save();
+                }
 		}
 		return $item;
 	}

@@ -39,12 +39,12 @@
                         <span key="t-ecommerce">User Management</span>
                     </a>
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
-                        <li><a href="{{route('right.index')}}" key="t-orders">User Rights</a></li>
+                        <li><a href="{{route('system.index')}}" key="t-product-detail">System</a></li>
+                        <li><a href="{{route('right.index')}}" key="t-orders">User ID Rights</a></li>
                         <li><a href="{{route('user_id.index')}}" key="t-products">User ID</a></li>
                         <li><a href="{{route('employee.index')}}" key="t-products">Users</a></li>
-                        <li><a href="{{route('system.index')}}" key="t-product-detail">System</a></li>
                     <!-- <li><a href="{{route('system_user_right.index')}}" key="t-orders">System User Rights</a></li> -->
-                        <li><a href="{{route('asset_group.index')}}" key="t-orders">Asset Access Group</a></li>
+ {{--                       <li><a href="{{route('asset_group.index')}}" key="t-orders">Asset Access Group</a></li>--}}
                     <!--  <li><a href="{{route('system_user.index')}}" key="t-orders">System User Id</a></li> -->
 
                     </ul>
@@ -75,6 +75,39 @@
                         <li><a href="{{route('patch_report.index')}}" key="t-orders">Patch Report</a>
                         <li><a href="{{route('zone_policy.index')}}" key="t-orders">Zone Policy</a>
                         </li>
+                    </ul>
+                </li>
+                   </ul>
+               </li>
+                                <li>
+                                    <a href="{{route('firewall_managment.index')}}" class="">
+                                        <i class="bx bx-store"></i>
+                                        <span key="t-ecommerce">Firewall Management</span>
+                                    </a>
+                                </li>
+                                <li>
+{{--                <li>--}}
+{{--                    <a href="javascript: void(0);" class="has-arrow waves-effect">--}}
+{{--                        <i class="bx bx-store"></i>--}}
+{{--                        <span key="t-ecommerce">Firewall Management</span>--}}
+{{--                    </a>--}}
+{{--                    <ul class="sub-menu mm-collapse" aria-expanded="false">--}}
+{{--                        <li><a href="{{route('ip_address.index')}}" key="t-orders">IP Address</a></li>--}}
+{{--                        <li><a href="{{route('firewall_zone.index')}}" key="t-products">Firewall Zone</a></li>--}}
+{{--                        <li><a href="{{route('firewall_address_group.index')}}" key="t-products">Firewall Address Group</a></li>--}}
+{{--                        <li><a href="{{route('firewall_address_group_memeber.index')}}" key="t-product-detail">Firewall Address Group Members</a></li>--}}
+{{--                        <li><a href="{{route('policy.index')}}" key="t-product-detail">Policies</a></li>--}}
+{{--                        <li><a href="{{route('protocol.index')}}" key="t-product-detail">Protocol</a></li>--}}
+{{--                        <li><a href="{{route('application.index')}}" key="t-product-detail">Application</a></li>--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-store"></i>
+                        <span key="t-ecommerce">Reports</span>
+                    </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="false">
+                        <li><a href="{{route('user_asset_report.index')}}" key="t-orders">User Asset Report</a></li>
                     </ul>
                 </li>
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserRightsTable extends Migration
+class CreateFirewallZoonsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateUserRightsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_rights', function (Blueprint $table) {
+        Schema::create('firewall_zoons', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('right_id');
+            $table->integer('firewall_asset_id');
+            $table->string('name');
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateUserRightsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_rights');
+        Schema::dropIfExists('firewall_zoons');
     }
 }

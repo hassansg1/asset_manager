@@ -31,6 +31,14 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function account(){
+        return $this->belongsTo(UserAccount::class, 'id', 'user_id');
+    }
+
+    public function account_id(){
+        return $this->belongsTo(UserId::class, 'user_id', 'id');
+    }
+
     /**
      * The attributes that should be cast to native types.
      *

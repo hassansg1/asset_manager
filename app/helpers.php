@@ -1,8 +1,11 @@
 <?php
 
+use App\Models\AssetUserId;
+use App\Models\UserAccount;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Models\Attachment;
+use App\Models\NetworkAsset;
 use Illuminate\Support\Facades\DB;
 
 if (!function_exists('getLang')) {
@@ -20,6 +23,18 @@ if (!function_exists('universalDateFormatter')) {
     function universalDateFormatter($date)
     {
         return $date ? $date->format('Y/m/d h:i:s') : '';
+    }
+}
+
+if (!function_exists('getUserName')) {
+    function getUserName($userId)
+    {
+        $user=null;
+        $user_ids = \App\Models\UserAccount::where('account_id',$userId)->get();
+        foreach ($user_ids as $user) {
+            $user = \App\Models\User::where('id',$user->user_id)->first();
+        }
+        return $user;
     }
 }
 
@@ -71,10 +86,11 @@ if (!function_exists('getStatus')) {
      */
     function getStatus()
     {
-        return [
-            '1' => 'Active',
-            '0' => 'InActive',
-        ];
+      return [
+        '1' => 'Active',
+        '0' => 'InActive',
+        '2' => 'Suspended',
+      ];
     }
 }
 if (!function_exists('getDepartments')) {
@@ -89,10 +105,35 @@ if (!function_exists('getRights')) {
         return \App\Models\Right::all();
     }
 }
+
+if (!function_exists('firewallAddressGroup')) {
+    function firewallAddressGroup()
+    {
+        return \App\Models\FirewallAddressGroup::all();
+    }
+}
+if (!function_exists('firewallIpAddress')) {
+    function firewallIpAddress()
+    {
+        return \App\Models\FirewallIpAddress::all();
+    }
+}
 if (!function_exists('getComputerAssets')) {
     function getComputerAssets()
     {
-        return DB::table('locations')->get();
+        return DB::table('locations')->where('type', ['computer_assets', 'lone_assets', 'network_assets'])->get();
+    }
+}
+if (!function_exists('getPolicy')) {
+    function getPolicy()
+    {
+        return \App\Models\Policy::all();
+    }
+}
+if (!function_exists('getFirewallAssets')) {
+    function getFirewallAssets()
+    {
+        return DB::table('network_assets')->where('function', 21)->get();
     }
 }
 if (!function_exists('getAssociatIds')) {
@@ -547,6 +588,24 @@ if (!function_exists('getAncestors')) {
     {
         return \App\Models\Location::ancestorsOf($locationId);
 
+    }
+}
+
+if (!function_exists('getUserAsset')) {
+    function getUserAsset($userId){
+            $userAccountId = UserAccount::where('account_id', $userId)->get();
+            $userAssets = AssetUserId::select('asset_id')->whereIn('user_id', $userAccountId->account_id)->get();
+            $userAssetName = \App\Models\Location::where('id', $userAssets->asset_id)->first();
+            return $userAssetName;
+
+    }
+}
+
+if (!function_exists('assetRights')) {
+    function assetRights($rightId)
+    {
+            $rights = \App\Models\Right::where('id', $rightId)->first();
+            return $rights;
     }
 }
 

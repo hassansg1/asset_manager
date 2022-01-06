@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\UserId;
+use App\Models\Right;
+use App\Models\UserRight;
 use Illuminate\Http\Request;
 
 class UserIdController extends Controller
@@ -16,8 +18,8 @@ class UserIdController extends Controller
     {
         $this->model = new UserId();
         $this->route = 'user_id';
-        $this->heading = 'User Id';
-        \Illuminate\Support\Facades\View::share('top_heading', 'User Id');
+        $this->heading = 'User ID';
+        \Illuminate\Support\Facades\View::share('top_heading', 'User ID');
     }
 
     /**
@@ -62,7 +64,11 @@ class UserIdController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate($this->model->rules);
+            if($request->user_type == "asset"){
+                $request->validate($this->model->rules($request->asset_id));
+            }if($request->user_type == "system"){
+                $request->validate($this->model->rules($request->system_id));
+            }
         $this->model->saveFormData($this->model, $request);
 
         flashSuccess(getLang($this->heading . " Successfully Created."));

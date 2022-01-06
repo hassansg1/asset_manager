@@ -87,6 +87,16 @@ Route::group(['middleware' => ['auth']], function () {
         'applicable_standard' => \App\Http\Controllers\ApplicableStandardController::class,
         'standards.applicable_clause' => \App\Http\Controllers\StandardApplicableClauseController::class,
         'patch_approval' => \App\Http\Controllers\PatchApprovalController::class,
+        'firewall_zone' => \App\Http\Controllers\FirewallZoonController::class,
+        'firewall_managment' => \App\Http\Controllers\FirewallManagmentController::class,
+        'ip_address' => \App\Http\Controllers\FirewallIpAddressController::class,
+        'firewall_address_group' => \App\Http\Controllers\FirewallAddressGroupController::class,
+        'firewall_address_group_memeber' => \App\Http\Controllers\FirewallAddressGroupMembersController::class,
+        'protocol' => \App\Http\Controllers\ProtocolController::class,
+        'application' => \App\Http\Controllers\ApplicationController::class,
+        'policy' => \App\Http\Controllers\PolicyController::class,
+        'user_asset_report' => \App\Http\Controllers\ReportsController::class,
+
     ]);
     Route::post('PatchPage/LoadData', [\App\Http\Controllers\PatchApprovalAjaxController::class, 'loadData'])->name('PatchPage.loadData');
     Route::get('standards/view/{standard}/clause', [\App\Http\Controllers\StandardClauseController::class, 'viewStandards']);
@@ -120,6 +130,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('system/user_accounts/{id}', [\App\Http\Controllers\AjaxController::class, 'system_user_accounts']);
     Route::get('asset/type/{type}', [\App\Http\Controllers\AjaxController::class, 'type_wise_assets']);
     Route::get('system/type/{type}', [\App\Http\Controllers\AjaxController::class, 'system_wise_user_accounts']);
+    Route::get('asset/location/{type}', [\App\Http\Controllers\AjaxController::class, 'asset_wise_ip_address']);
+    Route::get('connected_asset/location/{type}', [\App\Http\Controllers\AjaxController::class, 'connected_asset_wise_ip_address']);
 
     Route::get('export_compliance_date_template', [\App\Http\Controllers\AjaxController::class, 'exportComplianceDataTemplates'])->name('export_compliance_date_template');
 
