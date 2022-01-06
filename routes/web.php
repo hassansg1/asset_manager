@@ -77,6 +77,7 @@ Route::group(['middleware' => ['auth']], function () {
         'applicable_standard' => \App\Http\Controllers\ApplicableStandardController::class,
         'standards.applicable_clause' => \App\Http\Controllers\StandardApplicableClauseController::class,
         'firewall_zone' => \App\Http\Controllers\FirewallZoonController::class,
+        'firewall_managment' => \App\Http\Controllers\FirewallManagmentController::class,
         'ip_address' => \App\Http\Controllers\FirewallIpAddressController::class,
         'firewall_address_group' => \App\Http\Controllers\FirewallAddressGroupController::class,
         'firewall_address_group_memeber' => \App\Http\Controllers\FirewallAddressGroupMembersController::class,

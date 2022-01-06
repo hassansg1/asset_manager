@@ -5,8 +5,6 @@
         <td>{{ $item->name }}</td>
         <td>{{ $item->designation->title }}</td>
         <td>{{ $item->department->title }}</td>
-        <td>{{ $item->email }}</td>
-        <td>{{ $item->mobile_no }}</td>
         <td>
             @include('components.edit_delete_button')
         </td>

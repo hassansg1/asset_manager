@@ -64,7 +64,11 @@ class UserIdController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate($this->model->rules);
+            if($request->user_type == "asset"){
+                $request->validate($this->model->rules($request->asset_id));
+            }if($request->user_type == "system"){
+                $request->validate($this->model->rules($request->system_id));
+            }
         $this->model->saveFormData($this->model, $request);
 
         flashSuccess(getLang($this->heading . " Successfully Created."));

@@ -11,7 +11,7 @@ class Right extends Model
 
 	public $rules =
 	[
-		'name' => 'required | max:255',
+		'name' => 'required |unique:rights',
 	];
 
 	public function saveFormData($item, $request)

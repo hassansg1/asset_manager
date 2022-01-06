@@ -191,7 +191,7 @@ $assets = getComputerAssets();
         });
         $('#system').on('change', function(){
             var system_id= this.value;
-            if(asset_id){
+            if(system_id){
                 $.ajax({
                     type:"get",
                     url:"{{url('system/type')}}/"+system_id,

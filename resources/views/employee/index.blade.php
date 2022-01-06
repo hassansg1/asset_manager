@@ -7,8 +7,6 @@
     <th>User Name</th>
     <th>Designation</th>
     <th>Department</th>
-    <th>Email</th>
-    <th>Contact No.</th>
     <th>Actions</th>
 @endsection
 @section('table_rows')

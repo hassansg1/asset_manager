@@ -2,21 +2,13 @@
 {{ csrf_field() }}
 @php $assets = getComputerAssets(); @endphp
 <input type="hidden" name="id" value="{{ isset($clone) && $clone ? '' : (isset($item) ? $item->id : '') }}">
-
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title mb-4">{{ $heading }} Information</h4>
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}system_type" class="form-label required">System  Type</label>
-                            <input type="text" value="{{ isset($item) ? $item->system_type:old('system_type') ?? ''  }}"
-                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}system_type" name="system_type">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}title" class="form-label required">System Name</label>
                             <input type="text" value="{{ isset($item) ? $item->name:old('name') ?? ''  }}"

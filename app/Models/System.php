@@ -11,8 +11,7 @@ class System extends Model
 
 	public $rules =
 	[
-		'name' => 'required',
-		'system_type' => 'required',
+		'name' => 'required|unique:systems',
 		'asset_id' => 'required',
 	];
 
@@ -22,7 +21,6 @@ class System extends Model
 
 	public function saveFormData($item, $request)
 	{
-		if (isset($request->system_type)) $item->system_type = $request->system_type;
 		if (isset($request->name)) $item->name = $request->name;
 		if (isset($request->description)) $item->description = $request->description;
 		$item->save();

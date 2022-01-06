@@ -3,14 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="firewall-managment/12-21-2021">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SystemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SystemController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserIdController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserIdController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Right.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Right.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/System.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/System.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/SystemAssets.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/SystemAssets.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/UserId.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserId.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/UserRight.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserRight.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_12_16_115431_add_system_type_to_systems.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/employee/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employee/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employee/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/system/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/system/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/system/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/system/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/system/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/system/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_id/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_id/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user_id/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_id/form_rows.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user_id/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_id/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,6 +207,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../installment" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="ide.date.format" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -214,7 +228,7 @@
       <workItem from="1639653894310" duration="597000" />
       <workItem from="1639993570488" duration="851000" />
       <workItem from="1639994730221" duration="1340000" />
-      <workItem from="1640158781624" duration="89444000" />
+      <workItem from="1640158781624" duration="121202000" />
     </task>
     <task id="LOCAL-00001" summary="OTCM-75/firewall-managemnt&#10;crud file create">
       <created>1639999144829</created>
@@ -272,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640927856796</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="firewall-managment/12-21-2021">
+      <created>1640944793662</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1640944793662</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

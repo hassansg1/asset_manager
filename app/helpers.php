@@ -29,7 +29,7 @@ if (!function_exists('universalDateFormatter')) {
 if (!function_exists('getUserName')) {
     function getUserName($userId)
     {
-
+        $user=null;
         $user_ids = \App\Models\UserAccount::where('account_id',$userId)->get();
         foreach ($user_ids as $user) {
             $user = \App\Models\User::where('id',$user->user_id)->first();
@@ -89,6 +89,7 @@ if (!function_exists('getStatus')) {
       return [
         '1' => 'Active',
         '0' => 'InActive',
+        '2' => 'Suspended',
       ];
     }
 }
@@ -120,7 +121,7 @@ if (!function_exists('firewallIpAddress')) {
 if (!function_exists('getComputerAssets')) {
     function getComputerAssets()
     {
-        return DB::table('locations')->whereIn('type', ['computer_aseets', 'lone_assets', 'network_assets'])->get();
+        return DB::table('locations')->where('type', ['computer_assets', 'lone_assets', 'network_assets'])->get();
     }
 }
 if (!function_exists('getPolicy')) {
