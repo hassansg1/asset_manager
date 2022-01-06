@@ -17,7 +17,7 @@ class LibraryImportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         return view('import.index')->with(['action' => 'library_import.store']);
     }

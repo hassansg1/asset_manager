@@ -14,7 +14,7 @@ class ApprovalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $logs = Log::where('approval_request', 1)->orderBy('id', 'desc')->get();
 
@@ -119,7 +119,7 @@ class ApprovalController extends Controller
         $idsArray = explode(",",$ids);
         if ($request->button_id == "approve_all") {
             // Log::whereIn('id',$idsArray)->where('approved', 0)->update(['approved' => 1]);
-            foreach ($idsArray as $key => $value) { 
+            foreach ($idsArray as $key => $value) {
                 $this->approveUpdateStatus($value);
             }
         }

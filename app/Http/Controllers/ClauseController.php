@@ -31,7 +31,7 @@ class ClauseController extends BaseController
     /**
      * @return Application|Factory|View
      */
-    public function index()
+    public function index(Request $request)
     {
         $items = Clause::orderBy('id', 'desc')->get();
 

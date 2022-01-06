@@ -2,91 +2,84 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Patch;
-use App\Models\PatchPolicy;
-use App\Models\Software;
 use Illuminate\Http\Request;
 
 class PatchApprovalController extends Controller
 {
-    //
-
-    public function bulkApprove(Request $request)
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
     {
-        $softwares = Software::all();
-        $patchesId = $request->elements;
-        $patches = Patch::whereIn('id', $patchesId)->get();
-
-        return response()->json(
-            [
-                'status' => true,
-                'html' => view('patch_approved.patch_software_approved')->with([
-                    'items' => $patches,
-                    'softwares' => $softwares
-                ])->render(),
-            ]
-        );
+        //
+        return response()->view('patch_approval.index');
     }
 
-    public function bulkApproveSave(Request $request)
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        $patchesId = $request->patch_id;
-        foreach ($patchesId as $key => $patchId) {
-            PatchPolicy::where('patch_id', $patchId)->delete();
-            $softwares = $request->software[$patchId] ?? [];
-            foreach ($softwares as $software) {
-                PatchPolicy::create([
-                    'patch_id' => $patchId,
-                    'software_id' => $software,
-                    'approved' => 1
-                ]);
-            }
-        }
-
-        return response()->json(
-            [
-                'status' => true
-            ]
-        );
+        //
     }
 
-    public function bulkApproveSoftware(Request $request)
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
-        $patches = Patch::all();
-        $softwaresId = $request->elements;
-        $softwares = Software::whereIn('id', $softwaresId)->get();
-
-        return response()->json(
-            [
-                'status' => true,
-                'html' => view('patch_approved.software_patch_approved')->with([
-                    'items' => $softwares,
-                    'patches' => $patches
-                ])->render(),
-            ]
-        );
+        //
     }
 
-    public function bulkApproveSoftwareSave(Request $request)
+    /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
     {
-        $softwares = $request->software;
-        foreach ($softwares as $key => $software) {
-            PatchPolicy::where('software_id', $software)->delete();
-            $patches = $request->patch_id[$software] ?? [];
-            foreach ($patches as $patch) {
-                PatchPolicy::create([
-                    'patch_id' => $patch,
-                    'software_id' => $software,
-                    'approved' => 1
-                ]);
-            }
-        }
-
-        return response()->json(
-            [
-                'status' => true
-            ]
-        );
+        //
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 }

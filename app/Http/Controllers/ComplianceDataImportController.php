@@ -20,7 +20,7 @@ class ComplianceDataImportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         return view('import.index')->with(['action' => 'compliance_data_import.store']);
     }

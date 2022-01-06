@@ -26,9 +26,9 @@ class BuildingController extends BaseController
     /**
      * @return Application|Factory|View
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = $this->fetchData($this->model);
+        $data = $this->fetchData($this->model, $request);
 
         return view($this->route . "/index")
             ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading]);

@@ -27,11 +27,11 @@ class CompanyController extends BaseController
     /**
      * @return Application|Factory|View
      */
-    public function index()
+    public function index(Request $request)
     {
 //        $tree = Parentable::getTree();
 //        dd($tree);
-        $data = $this->fetchData($this->model);
+        $data = $this->fetchData($this->model, $request);
 
 
         return view($this->route . "/index")

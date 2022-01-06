@@ -33,6 +33,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('saveRejectionReason', [App\Http\Controllers\HomeController::class, 'saveRejectionReason']);
 
 
+
     Route::resources([
         'log' => \App\Http\Controllers\LogController::class,
         'site' => \App\Http\Controllers\SiteController::class,
@@ -55,6 +56,7 @@ Route::group(['middleware' => ['auth']], function () {
         'import' => \App\Http\Controllers\ImportController::class,
         'clause_import' => \App\Http\Controllers\ClauseImportController::class,
         'library_import' => \App\Http\Controllers\LibraryImportController::class,
+        'software_import' => \App\Http\Controllers\SoftwareImportController::class,
         'clause' => \App\Http\Controllers\ClauseController::class,
         'lone' => \App\Http\Controllers\LoneAssetController::class,
         'subsite' => \App\Http\Controllers\SubSiteController::class,
@@ -63,6 +65,7 @@ Route::group(['middleware' => ['auth']], function () {
         'networks' => \App\Http\Controllers\NetworkController::class,
         'building' => \App\Http\Controllers\BuildingController::class,
         'software' => \App\Http\Controllers\SoftwareController::class,
+        'software_component' => \App\Http\Controllers\SoftwareComponentController::class,
         'installed_software' => \App\Http\Controllers\InstalledSoftwareController::class,
         'installed_patch' => \App\Http\Controllers\InstalledPatchesController::class,
         'patch_policy' => \App\Http\Controllers\PatchPolicyController::class,
@@ -83,7 +86,9 @@ Route::group(['middleware' => ['auth']], function () {
         'version_compliance' => \App\Http\Controllers\VersionComplianceController::class,
         'applicable_standard' => \App\Http\Controllers\ApplicableStandardController::class,
         'standards.applicable_clause' => \App\Http\Controllers\StandardApplicableClauseController::class,
+        'patch_approval' => \App\Http\Controllers\PatchApprovalController::class,
     ]);
+    Route::post('PatchPage/LoadData', [\App\Http\Controllers\PatchApprovalAjaxController::class, 'loadData'])->name('PatchPage.loadData');
     Route::get('standards/view/{standard}/clause', [\App\Http\Controllers\StandardClauseController::class, 'viewStandards']);
     //................. ComplainceData...........
     Route::post('applicableClause/store', [App\Http\Controllers\ApplicableClauseController::class, 'storeClauseData'])->name('applicableClause.storeClauseData');
@@ -135,11 +140,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('view/assets/{id}', [\App\Http\Controllers\SeeAssetController::class, 'view'])->name('view/assets');
 
 //    Patch Approval
-    Route::post('patch/approve/', [\App\Http\Controllers\PatchApprovalController::class, 'bulkApprove'])->name('patch.bulkApprove');
-    Route::post('patch/approve/save', [\App\Http\Controllers\PatchApprovalController::class, 'bulkApproveSave'])->name('patch.bulkApprove.save');
+    Route::post('patch/approve/', [\App\Http\Controllers\PatchApprovalSecondaryController::class, 'bulkApprove'])->name('patch.bulkApprove');
+    Route::post('patch/approve/save', [\App\Http\Controllers\PatchApprovalSecondaryController::class, 'bulkApproveSave'])->name('patch.bulkApprove.save');
 
-    Route::post('software/approve/', [\App\Http\Controllers\PatchApprovalController::class, 'bulkApproveSoftware'])->name('software.bulkApprove');
-    Route::post('software/approve/save', [\App\Http\Controllers\PatchApprovalController::class, 'bulkApproveSoftwareSave'])->name('software.bulkApprove.save');
+    Route::post('software/approve/', [\App\Http\Controllers\PatchApprovalSecondaryController::class, 'bulkApproveSoftware'])->name('software.bulkApprove');
+    Route::post('software/approve/save', [\App\Http\Controllers\PatchApprovalSecondaryController::class, 'bulkApproveSoftwareSave'])->name('software.bulkApprove.save');
 
 //    Apply Patches
     Route::post('patch/apply', [\App\Http\Controllers\PatchApplyController::class, 'bulkApplyPatches'])->name('patch.applyBulkPatches');

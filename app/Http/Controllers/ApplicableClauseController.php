@@ -32,10 +32,10 @@ class ApplicableClauseController extends BaseController
     /**
      * @return Application|Factory|View
      */
-    public function index()
+    public function index(Request $request)
     {
         dd("as");
-//        $data = $this->fetchData($this->model);
+//        $data = $this->fetchData($this->model, $request);
         $items = Compliance::orderBy('id', 'desc')->get();
 
         return view($this->route . "/index")

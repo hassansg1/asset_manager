@@ -33,7 +33,7 @@ class ComplianceUpdateController extends BaseController
     /**
      * @return Application|Factory|View
      */
-    public function index()
+    public function index(Request $request)
     {
         $items = ComplianceVersion::paginate(10);
         return view($this->route . "/index")

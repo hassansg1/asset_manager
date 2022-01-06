@@ -26,7 +26,7 @@ class RoleController extends BaseController
     /**
      * @return Application|Factory|View
      */
-    public function index()
+    public function index(Request $request)
     {
         $data = $this->fetchData($this->model, null, [], false);
 

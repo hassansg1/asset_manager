@@ -27,33 +27,32 @@
 <script>
 
 
-
     var myTree = [
-    {
-        text: "Item 1",
-        nodes: [
         {
-            text: "Item 1-1",
+            text: "Item 1",
             nodes: [
-            {
-                text: "Item 1-1-1"
-            },
-            {
-                text: "Item 1-1-2"
-            }
+                {
+                    text: "Item 1-1",
+                    nodes: [
+                        {
+                            text: "Item 1-1-1"
+                        },
+                        {
+                            text: "Item 1-1-2"
+                        }
+                    ]
+                },
+                {
+                    text: "Item 1-2"
+                }
             ]
         },
         {
-            text: "Item 1-2"
-        }
-        ]
-    },
-    {
-        text: "Item 2"
-    },
-    {
-        text: "Item 3"
-    },
+            text: "Item 2"
+        },
+        {
+            text: "Item 3"
+        },
     ];
     $(document).ready(function () {
         let editor1 = CKEDITOR.replace('help_text', {
@@ -104,6 +103,7 @@
     });
     var $searchableTree;
     sidebar_tree();
+
     function sidebar_tree() {
 
         $.ajax({
@@ -166,10 +166,10 @@
                     });
                     // var nodes = [0, 1, 2,];
                     // $('#default-tree').treeview('expandNode', [ nodes, { silent:true, ignoreChildren:false } ]);
-                   // enables a given node
-               }
-           },
-       });
+                    // enables a given node
+                }
+            },
+        });
     }
 
     $('#change-password').on('submit', function (event) {
@@ -209,6 +209,19 @@
             }
         });
     });
+    $(document).ready(function () {
+
+        $(document).bind("ajaxSend", function (event, jqxhr, settings) {
+            toggleLoader('block');
+        }).bind("ajaxComplete", function (event, jqxhr, settings) {
+            toggleLoader('none');
+        });
+
+    });
+
+    function toggleLoader(status) {
+        $('.ajax-loader').css('display', status);
+    }
 </script>
 
 @yield('script')

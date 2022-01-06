@@ -81,6 +81,10 @@
                        data-lang="eng">
                         <span class="align-middle">Export Data Templates</span>
                     </a>
+                    <a href="{{ route('software_import.index') }}" class="dropdown-item notify-item language"
+                       data-lang="eng">
+                        <span class="align-middle">Import Software Data</span>
+                    </a>
                 </div>
             </div>
             <div class="dropdown d-inline-block">

@@ -23,7 +23,7 @@ class SystemController extends Controller
     /**
      * @return Application|Factory|View
      */
-    public function index()
+    public function index(Request $request)
     {
         $data = System::paginate();
 

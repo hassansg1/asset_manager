@@ -23,7 +23,7 @@ class SystemUserIdController extends Controller
     /**
      * @return Application|Factory|View
      */
-    public function index()
+    public function index(Request $request)
     {
         $data = SystemUserId::paginate();
         return view($this->route . "/index")

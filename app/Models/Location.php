@@ -15,7 +15,7 @@ class Location extends Model
 
     protected $guarded = [];
 
-    protected $appends = ['text', 'parent_name'];
+    protected $appends = ['text'];
 
     public function parent()
     {

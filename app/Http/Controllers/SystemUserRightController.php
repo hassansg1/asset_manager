@@ -24,7 +24,7 @@ class SystemUserRightController extends Controller
     /**
      * @return Application|Factory|View
      */
-    public function index()
+    public function index(Request $request)
     {
         $data = SystemUserRight::paginate();
         return view($this->route . "/index")

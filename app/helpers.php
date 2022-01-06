@@ -338,6 +338,12 @@ if (!function_exists('tableColumnsMapping')) {
     function tableColumnsMapping($table, $method, $column = null)
     {
         $mappingArray = [
+            'software' => [
+                'vendor_name' => 'Vendor Name',
+                'generalized_name' => 'Generalized Software Name',
+                'long_name' => 'Unit Long Name',
+                'contact_person' => 'Contact Person',
+            ],
             'units' => [
                 'rec_id' => 'Unit ID',
                 'short_name' => 'Unit Name',

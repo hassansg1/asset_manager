@@ -28,7 +28,7 @@ class OperatingSystemController extends BaseController
     /**
      * @return Application|Factory|View
      */
-    public function index()
+    public function index(Request $request)
     {
         $data = OperatingSystem::all();
 

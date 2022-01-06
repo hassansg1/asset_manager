@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class DashBoardController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
 //       $items =  ClauseData::with('compliance')->where('user_id',Auth::id())->orderBy('id','desc')->get();
         Location::fixTree();
         $compliant = [];

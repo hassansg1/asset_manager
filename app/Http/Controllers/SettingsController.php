@@ -25,7 +25,7 @@ class SettingsController extends BaseController
     /**
      * @return Application|Factory|View
      */
-    public function index()
+    public function index(Request $request)
     {
         $data = Settings::first();
         return view($this->route . "/index")

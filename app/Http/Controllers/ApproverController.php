@@ -26,7 +26,7 @@ class ApproverController extends Controller
     /**
      * @return Application|Factory|View
      */
-    public function index()
+    public function index(Request $request)
     {
         $data = Approver::all();
 

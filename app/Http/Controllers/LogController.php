@@ -15,7 +15,7 @@ class LogController extends Controller
     /**
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
         $logs = Log::orderBy('id', 'desc')->where('approval_request', 0)->get();
 

@@ -108,8 +108,7 @@
         }
     }
 
-    function openRejectionModal(url)
-    {
+    function openRejectionModal(url) {
         $('#rejection_url').val(url);
         showModal(rejectionModal, $('#rejection_modal_content').html());
     }
@@ -177,3 +176,4 @@
 
 </script>
 
+@include('scripts.script_common')
