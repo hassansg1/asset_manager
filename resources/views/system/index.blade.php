@@ -4,8 +4,9 @@
 {{--            onclick="toggleSelectAll()"--}}
 {{--            type="checkbox" name=""--}}
 {{--            id="select_all"></th>--}}
-    <th>System Name</th>
-    <th>Actions</th>
+    <th style="width: 200px">System Name</th>
+    <th>Description</th>
+    <th style="width: 100px">Actions</th>
 @endsection
 @section('table_rows')
     @include($route.'.form_rows')

@@ -63,21 +63,17 @@ $assets = getComputerAssets();
     <div class="row">
      <div class="col-lg-3">
       <label for="" class="form-label">Department</label>
-      <select class="form-control select2" name="department_id" id="department_id">
-       <option>-Select Department-</option>
-       @foreach($departments as $value)
-       <option value="{{$value->id}}" {{ isset($item) && $item->department_id == $value->id  ? 'selected' : ''}}>{{$value->title}}</option>
-       @endforeach
-     </select>
+         <input type="text"
+                value="{{ isset($item) ? $item->department_id:old('department_id') ?? ''  }}"
+                class="form-control"
+                id="{{ isset($item) ? $item->id:'' }}department_id" name="department_id">
    </div>
    <div class="col-lg-3">
     <label for="" class="form-label">Designations</label>
-    <select class="form-control select2" name="designation_id" id="designation_id">
-     <option>-Select Designation-</option>
-     @foreach($designations as $value)
-     <option value="{{$value->id}}" {{ isset($item) && $item->designation_id == $value->id  ? 'selected' : ''}}>{{$value->title}}</option>
-     @endforeach
-   </select>
+        <input type="text"
+               value="{{ isset($item) ? $item->designation_id:old('designation_id') ?? ''  }}"
+               class="form-control"
+               id="{{ isset($item) ? $item->id:'' }}designation_id" name="designation_id">
  </div>
         <div class="col-lg-3">
     <label for="" class="form-label">Contact No</label>
