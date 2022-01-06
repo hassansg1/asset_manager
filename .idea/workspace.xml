@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="firewall-managment/12-21-2021">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/employee/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/employee/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/system/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/system/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/system/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/system/index.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="new changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -173,6 +167,12 @@
       <path value="$PROJECT_DIR$/vendor/dflydev/dot-access-data" />
       <path value="$PROJECT_DIR$/vendor/nette/schema" />
       <path value="$PROJECT_DIR$/vendor/nette/utils" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
     </include_path>
   </component>
   <component name="ProjectId" id="22MUv6V1sTfrUYC4nkSUHdia4io" />
@@ -184,14 +184,25 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../installment" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="ide.date.format" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\asset_manager\resources\views" />
+      <recent name="C:\xampp\htdocs\asset_manager\app\Http\Controllers" />
+      <recent name="C:\xampp\htdocs\asset_manager\resources\views\patch_approved" />
+      <recent name="C:\xampp\htdocs\asset_manager\app\Models" />
+      <recent name="C:\xampp\htdocs\asset_manager\resources\views\patch" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\asset_manager\resources\views\patch_report" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -211,79 +222,31 @@
       <workItem from="1639653894310" duration="597000" />
       <workItem from="1639993570488" duration="851000" />
       <workItem from="1639994730221" duration="1340000" />
-      <workItem from="1640158781624" duration="126268000" />
+      <workItem from="1641278202312" duration="709000" />
+      <workItem from="1641279000010" duration="27596000" />
     </task>
-    <task id="LOCAL-00001" summary="OTCM-75/firewall-managemnt&#10;crud file create">
-      <created>1639999144829</created>
+    <task id="LOCAL-00001" summary="new changes">
+      <created>1639999411103</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1639999144829</updated>
+      <updated>1639999411103</updated>
     </task>
-    <task id="LOCAL-00002" summary="OTCM-75/firewall-managemnt&#10;crud file create">
-      <created>1640004915889</created>
+    <task id="LOCAL-00002" summary="new changes">
+      <created>1639999648263</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1640004915889</updated>
+      <updated>1639999648264</updated>
     </task>
-    <task id="LOCAL-00003" summary="OTCM-75/firewall-managemnt&#10;crud file create">
-      <created>1640078604280</created>
+    <task id="LOCAL-00003" summary="new changes">
+      <created>1641291948047</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1640078604280</updated>
+      <updated>1641291948048</updated>
     </task>
-    <task id="LOCAL-00004" summary="firewall-managment/12-21-2021">
-      <created>1640092197906</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1640092197906</updated>
-    </task>
-    <task id="LOCAL-00005" summary="firewall-managment/12-21-2021">
-      <created>1640173732296</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1640173732296</updated>
-    </task>
-    <task id="LOCAL-00006" summary="firewall-managment/12-21-2021">
-      <created>1640255004659</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1640255004659</updated>
-    </task>
-    <task id="LOCAL-00007" summary="firewall-managment/12-21-2021">
-      <created>1640263150715</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1640263150715</updated>
-    </task>
-    <task id="LOCAL-00008" summary="firewall-managment/12-21-2021">
-      <created>1640927856796</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1640927856796</updated>
-    </task>
-    <task id="LOCAL-00009" summary="firewall-managment/12-21-2021">
-      <created>1640944793662</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1640944793662</updated>
-    </task>
-    <task id="LOCAL-00010" summary="firewall-managment/12-21-2021">
-      <created>1641464042514</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1641464042515</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +265,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="OTCM-75/firewall-managemnt&#10;crud file create" />
-    <MESSAGE value="firewall-managment/12-21-2021" />
-    <option name="LAST_COMMIT_MESSAGE" value="firewall-managment/12-21-2021" />
+    <MESSAGE value="new changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="new changes" />
   </component>
 </project>
