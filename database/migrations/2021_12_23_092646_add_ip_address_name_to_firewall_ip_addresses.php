@@ -14,7 +14,7 @@ class AddIpAddressNameToFirewallIpAddresses extends Migration
     public function up()
     {
         Schema::table('firewall_ip_addresses', function (Blueprint $table) {
-            $table->string('ip_address_name')->nullable()->after('default_gateway');
+            $table->string('ip_address_name')->nullable()->after('id');
         });
     }
 
