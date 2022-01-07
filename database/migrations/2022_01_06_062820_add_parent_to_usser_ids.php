@@ -14,8 +14,8 @@ class AddParentToUsserIds extends Migration
     public function up()
     {
         Schema::table('user_ids', function (Blueprint $table) {
-            $table->string('parent')->after('user_id');
-            $table->integer('parent_id')->after('parent');
+            $table->string('parent')->after('id');
+            $table->integer('parent_id')->after('id');
         });
     }
 

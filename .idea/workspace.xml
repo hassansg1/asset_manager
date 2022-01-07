@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="new changes">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PatchImportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="firewall-managment/12-21-2021">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SoftwareImportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SoftwareImportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_01_06_062820_add_parent_to_usser_ids.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_01_06_062820_add_parent_to_usser_ids.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software_component/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software_component/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software_component/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software_component/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,15 +189,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\asset_manager\app\Http\Controllers" />
       <recent name="C:\xampp\htdocs\asset_manager\resources\views" />
+      <recent name="C:\xampp\htdocs\asset_manager\app\Http\Controllers" />
       <recent name="C:\xampp\htdocs\asset_manager\resources\views\patch_approved" />
       <recent name="C:\xampp\htdocs\asset_manager\app\Models" />
       <recent name="C:\xampp\htdocs\asset_manager\resources\views\patch" />
@@ -258,14 +248,21 @@
       <option name="project" value="LOCAL" />
       <updated>1641291948048</updated>
     </task>
-    <task id="LOCAL-00004" summary="new changes">
-      <created>1641472460551</created>
+    <task id="LOCAL-00004" summary="firewall-managment/12-21-2021">
+      <created>1641470879364</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1641472460551</updated>
+      <updated>1641470879364</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="firewall-managment/12-21-2021">
+      <created>1641470914737</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1641470914737</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,6 +282,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="OTCM-75/firewall-managemnt&#10;crud file create" />
     <MESSAGE value="new changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="new changes" />
+    <MESSAGE value="firewall-managment/12-21-2021" />
+    <option name="LAST_COMMIT_MESSAGE" value="firewall-managment/12-21-2021" />
   </component>
 </project>
