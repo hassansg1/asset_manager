@@ -33,7 +33,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('saveRejectionReason', [App\Http\Controllers\HomeController::class, 'saveRejectionReason']);
 
 
-
     Route::resources([
         'log' => \App\Http\Controllers\LogController::class,
         'site' => \App\Http\Controllers\SiteController::class,
@@ -57,6 +56,7 @@ Route::group(['middleware' => ['auth']], function () {
         'clause_import' => \App\Http\Controllers\ClauseImportController::class,
         'library_import' => \App\Http\Controllers\LibraryImportController::class,
         'software_import' => \App\Http\Controllers\SoftwareImportController::class,
+        'patch_import' => \App\Http\Controllers\PatchImportController::class,
         'clause' => \App\Http\Controllers\ClauseController::class,
         'lone' => \App\Http\Controllers\LoneAssetController::class,
         'subsite' => \App\Http\Controllers\SubSiteController::class,

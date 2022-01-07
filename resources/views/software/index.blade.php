@@ -7,8 +7,8 @@
             onclick="toggleSelectAll()"
             type="checkbox" name=""
             id="select_all"></th>
-    <th>Vendor</th>
-    <th>Name</th>
+    <th>Software Name</th>
+    <th>Vendor Name</th>
     <th>Version</th>
     <th>Description</th>
     <th>Actions</th>

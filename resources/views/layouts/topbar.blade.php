@@ -85,6 +85,10 @@
                        data-lang="eng">
                         <span class="align-middle">Import Software Data</span>
                     </a>
+                    <a href="{{ route('patch_import.index') }}" class="dropdown-item notify-item language"
+                       data-lang="eng">
+                        <span class="align-middle">Import Patch Data</span>
+                    </a>
                 </div>
             </div>
             <div class="dropdown d-inline-block">
@@ -282,7 +286,8 @@
             </div>
 
             <div class="dropdown d-inline-block">
-                <button type="button" onclick="location.href='{{ url('/settings') }}'" class="btn header-item noti-icon right-bar-toggle waves-effect">
+                <button type="button" onclick="location.href='{{ url('/settings') }}'"
+                        class="btn header-item noti-icon right-bar-toggle waves-effect">
                     <i class="bx bx-cog bx-spin"></i>
                 </button>
             </div>

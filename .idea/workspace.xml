@@ -2,20 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="new changes">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PatchImportController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_12_15_100801_add_rec_id_update_to_users.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_12_16_182106_create_asset_user_ids_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_12_23_092646_add_ip_address_name_to_firewall_ip_addresses.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_12_23_092646_add_ip_address_name_to_firewall_ip_addresses.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_12_28_095551_add_user_id_to_asset_user_ids_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_12_28_095955_add_user_ids_to_asset_user_ids_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_12_28_100128_add_user_id_to_system_user_ids_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_12_28_100156_add_user_ids_to_system_user_ids_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_12_28_102051_add_user_idd_to_asset_user_ids_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_12_28_102133_add_user_idds_to_asset_user_ids_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_12_28_102225_add_user_idd_to_system_user_ids_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_12_28_102245_add_user_idds_to_system_user_ids_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SoftwareImportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SoftwareImportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_01_06_062820_add_parent_to_usser_ids.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_01_06_062820_add_parent_to_usser_ids.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/software/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/software/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/software_component/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software_component/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/software_component/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software_component/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,15 +199,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\asset_manager\resources\views" />
       <recent name="C:\xampp\htdocs\asset_manager\app\Http\Controllers" />
+      <recent name="C:\xampp\htdocs\asset_manager\resources\views" />
       <recent name="C:\xampp\htdocs\asset_manager\resources\views\patch_approved" />
       <recent name="C:\xampp\htdocs\asset_manager\app\Models" />
       <recent name="C:\xampp\htdocs\asset_manager\resources\views\patch" />
@@ -261,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641291948048</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="new changes">
+      <created>1641472460551</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1641472460551</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
