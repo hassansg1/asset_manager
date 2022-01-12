@@ -15,7 +15,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" onclick="javascript:void(0)" class="waves-effect">
+                    <a href="{{route('asset_lending_page.index')}}" onclick="javascript:void(0)" class="waves-effect">
                         <i class="far fa-dot-circle"></i>
                         <span class="badge rounded-pill bg-info float-end"></span>
                         <span key="t-dashboards">Asset Navigation</span>

@@ -32,8 +32,6 @@ class CompanyController extends BaseController
 //        $tree = Parentable::getTree();
 //        dd($tree);
         $data = $this->fetchData($this->model, $request);
-
-
         return view($this->route . "/index")
             ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading]);
     }

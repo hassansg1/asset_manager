@@ -1,38 +1,38 @@
 @extends('layouts.master')
 @section('content')
     <div class="row">
-        <div class="col-md-4">
-            <button class="btn btn-primary mr-10">
-                <a style="color: white"
-                   href="{{ url('assets/l_one') }}">
-                    L01
-                    Assets</a>
-            </button>
-            <table class="table table-bordered table-responsive">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($lone_assets as $value)
+            <div class="col-md-4 table-responsive">
+                <button class="btn btn-primary mr-10">
+                    <a style="color: white"
+                       href="{{ url('assets/l_one') }}">
+                        L01
+                        Assets</a>
+                </button>
+                <table class="table table-bordered">
+                    <thead>
                     <tr>
-                        <td>{{$value->rec_id}}</td>
-                        <td>{{$value->name}}</td>
+                        <th>ID</th>
+                        <th>Name</th>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    @foreach($lone_assets as $value)
+                        <tr style="padding: 0px">
+                            <td>{{$value->rec_id}}</td>
+                            <td>{{$value->name}}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 table-responsive">
             <button class="btn btn-primary mr-10">
                 <a style="color: white"
                    href="{{ url('assets/computer') }}">
                     Computer
                     Assets</a>
             </button>
-            <table class="table table-bordered table-responsive">
+            <table class="table table-bordered">
                 <thead>
                 <tr>
                     <th>ID</th>
@@ -49,7 +49,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 table-responsive">
             <button class="btn btn-primary mr-10">
                 <a style="color: white"
                    href="{{ url('assets/network') }}">
