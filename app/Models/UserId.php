@@ -15,7 +15,7 @@ class UserId extends Model
         'description',
     ];
 
-    public function rules($parentId = null)
+    public function rules($parentId = null, $otcmUser = null)
     {
         return [
             'right_id'=>'required',
@@ -26,7 +26,7 @@ class UserId extends Model
         return $this->belongsTo(UserRight::class, 'id', 'parent_id');
     }
     public function user_accounts(){
-        return $this->hasOne(UserAccount::class, 'id', 'account_id');
+        return $this->belongsTo(UserAccount::class, 'id', 'account_id');
     }
     public function user_id_assets(){
         return $this->belongsTo(Location::class, 'parent_id', 'id');
@@ -79,6 +79,21 @@ class UserId extends Model
             }
         }
 	}
+
+        if($request->otcm_user_id){
+            $otcm_user_id= $request->otcm_user_id;
+            if($item && $otcm_user_id){
+                $assets_rights = UserAccount::updateOrCreate(
+                    [
+                        'account_id'   => $item->id,
+                    ],
+                    [
+                        'user_id'     => $request->otcm_user_id,
+                    ]
+                );
+            }
+        }
+
 	return $item;
 }
 }

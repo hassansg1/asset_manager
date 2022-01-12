@@ -4,6 +4,7 @@
 {{--            onclick="toggleSelectAll()"--}}
 {{--            type="checkbox" name=""--}}
 {{--            id="select_all"></th>--}}
+    <th>Right Type</th>
     <th>Right</th>
     <th>Description</th>
     <th>Actions</th>

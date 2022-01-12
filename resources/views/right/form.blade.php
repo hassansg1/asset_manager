@@ -1,4 +1,7 @@
 @include('components.form_errors')
+@php
+    $asset_functions = getAssetFunctions();
+@endphp
 {{ csrf_field() }}
 <input type="hidden" name="id" value="{{ isset($clone) && $clone ? '' : (isset($item) ? $item->id : '') }}">
 
@@ -12,7 +15,19 @@
                 <input type="hidden" name="id"
                        value="{{ isset($clone) && $clone ? '' : (isset($item) ? $item->id : '') }}">
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="{{ isset($item) ? $item->id:'' }}unit_id"
+                                   class="form-label required">Asset Type</label>
+                            <select class="form-control select2" id="asset_function" name="asset_function" required>
+                                <option value="">-Select Asset Type-</option>
+                                @foreach($asset_functions as $value)
+                                    <option value="{{$value->id}}" {{ isset($item) && $item->asset_function == $value->id  ? 'selected' : ''}}>{{$value->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}name"
                                    class="form-label required">User ID Right</label>

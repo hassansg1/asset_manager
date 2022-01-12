@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddLineManagerToUsers extends Migration
+class AddUnitsToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,9 @@ class AddLineManagerToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('line_manager')->after('status');
+            $table->integer('unit_id')->nullable();
+            $table->integer('site_id')->nullable();
+            $table->integer('sub_site_id')->nullable();
         });
     }
 

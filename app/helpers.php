@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\AssetUserId;
+use App\Models\User;
 use App\Models\UserAccount;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -80,6 +81,27 @@ if (!function_exists('getUnit')) {
         return \App\Models\Unit::all();
     }
 }
+
+if (!function_exists('getUnits')) {
+    function getUnits()
+    {
+        return \App\Models\Location::where('type', 'units')->get();
+    }
+}
+
+if (!function_exists('getSites')) {
+    function getSites()
+    {
+        return \App\Models\Location::where('type', 'sites')->get();
+    }
+}
+
+if (!function_exists('getSubSites')) {
+    function getSubSites()
+    {
+        return \App\Models\Location::where('type', 'sub_site')->get();
+    }
+}
 if (!function_exists('getStatus')) {
     /**
      * return status array
@@ -146,6 +168,12 @@ if (!function_exists('getSystems')) {
     function getSystems()
     {
         return \App\Models\System::all();
+    }
+}
+if (!function_exists('getSystemAssets')) {
+    function getSystemAssets($system_id)
+    {
+        return \App\Models\SystemAssets::where('system_id', $system_id)->get();
     }
 }
 
@@ -503,6 +531,22 @@ if (!function_exists('tableColumnsMapping')) {
                 'category' => 'Document Category',
                 'subCategory' => 'Document Subcategory',
             ],
+            'firewall_managments' => [
+                'source_zone' => 'SourceZone',
+                'source_location' => 'SourceLocation',
+                'source_asset' => 'SourceAssets',
+                'destination_zone' => 'DestinationZone',
+                'destination_location' => 'DestinationLocation',
+                'destination_asset' => 'DestinationAssets',
+                'applicatin_port' => 'Application/Port',
+                'port' => 'Port',
+                'description' => 'Justification',
+                'condition' => 'Temp/Permanent',
+                'approvel_expirey_date' => 'Approval Expiry',
+                'approved_by' => 'Approved by',
+                'status' => 'Approval Status',
+                'approvel_date' => 'Approval date',
+            ],
 
         ];
 
@@ -529,6 +573,7 @@ if (!function_exists('tableNamesMapping')) {
             'network_assets' => 'Asset Network',
             'lone_assets' => 'Asset L01',
             'attachments' => 'Attachment',
+            'firewall_managments' => 'Firewall Managment',
         ];
 
         if ($method == "export")
@@ -577,6 +622,13 @@ if (!function_exists('getAllParents')) {
     }
 }
 
+if (!function_exists('getAssetFunctions')) {
+    function getAssetFunctions()
+    {
+        return \App\Models\AssetFunction::all();
+    }
+}
+
 if (!function_exists('getAncestorsForLocation')) {
     function getAncestorsForLocation($locationId)
     {
@@ -597,6 +649,14 @@ if (!function_exists('getUserAsset')) {
             $userAssets = AssetUserId::select('asset_id')->whereIn('user_id', $userAccountId->account_id)->get();
             $userAssetName = \App\Models\Location::where('id', $userAssets->asset_id)->first();
             return $userAssetName;
+
+    }
+}
+
+if (!function_exists('getOTCMUser')) {
+    function getOTCMUser(){
+        $users  = User::where('user_type', 'OTCM-USERS')->get();
+        return $users;
 
     }
 }

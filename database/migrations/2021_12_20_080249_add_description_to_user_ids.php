@@ -14,7 +14,7 @@ class AddDescriptionToUserIds extends Migration
     public function up()
     {
         Schema::table('user_ids', function (Blueprint $table) {
-            $table->string('description')->after('user_id');
+            $table->longText('description')->after('user_id')->nullable();
         });
     }
 

@@ -18,7 +18,7 @@ class LocTreeController extends Controller
             $nodes = Location::descendantsAndSelf($location)->toFlatTree()->toArray();
             $subTree =  buildTree($nodes, $location);
             $parentNode = $nodes[0];
-            $parentNode['href'] = route('view/assets',$nodes[0]['id']);
+            $parentNode['href'] = route('asset_lending_page.index');
             $parentNode['nodes'] = $subTree;
             $nodeTree[0] = (object) $parentNode;
             $tree = array_merge($tree,$nodeTree );

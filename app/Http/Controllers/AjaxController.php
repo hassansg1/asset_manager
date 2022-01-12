@@ -119,6 +119,14 @@ class AjaxController extends Controller
         $user_accounts = UserId::where('parent_id', $system_id)->pluck('user_id', 'id');
         return response()->json($user_accounts);
     }
+    public function unit_wise_sites($unit_id){
+        $sites = Location::where('parent_id', $unit_id)->pluck('rec_id', 'id');
+        return response()->json($sites);
+    }
+    public function site_wise_sub_sites($site_id){
+        $sub_sites = Location::where('parent_id', $site_id)->pluck('rec_id', 'id');
+        return response()->json($sub_sites);
+    }
 
     function exportComplianceDataTemplates()
     {

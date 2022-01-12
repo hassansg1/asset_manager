@@ -40,9 +40,9 @@
                     </a>
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
                         <li><a href="{{route('system.index')}}" key="t-product-detail">System</a></li>
-                        <li><a href="{{route('right.index')}}" key="t-orders">User ID Rights</a></li>
-                        <li><a href="{{route('user_id.index')}}" key="t-products">User ID</a></li>
+                        <li><a href="{{route('right.index')}}" key="t-orders">User ID Permissions</a></li>
                         <li><a href="{{route('employee.index')}}" key="t-products">Users</a></li>
+                        <li><a href="{{route('user_id.index')}}" key="t-products">User ID</a></li>
                     <!-- <li><a href="{{route('system_user_right.index')}}" key="t-orders">System User Rights</a></li> -->
                     {{--                       <li><a href="{{route('asset_group.index')}}" key="t-orders">Asset Access Group</a></li>--}}
                     <!--  <li><a href="{{route('system_user.index')}}" key="t-orders">System User Id</a></li> -->

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\UserId;
 use App\Models\Right;
 use App\Models\UserRight;

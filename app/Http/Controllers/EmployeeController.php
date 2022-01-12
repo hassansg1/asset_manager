@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\SystemAssets;
+use App\Models\UserAccount;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -92,16 +94,21 @@ class EmployeeController extends Controller
             if (is_array($request->item))
                 $item = $this->model->find('id', $request->item);
         }
+        $SelectedAccount = UserAccount::select('account_id')->where('user_id', $item)->get();
+        $child_arr = [];
+        foreach($SelectedAccount as $subchild) {
+            $child_arr[] = $subchild->account_id;
+        }
         $item = $this->model->find($item);
 
 
         if ($request->ajax) {
             return response()->json([
                 'status' => true,
-                'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item, 'clone' => $request->clone ?? null])->render()
+                'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item,'child_arr' => $child_arr, 'clone' => $request->clone ?? null])->render()
             ]);
         } else
-        return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
+        return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'child_arr' => $child_arr, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
     }
 
     /**

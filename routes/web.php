@@ -57,6 +57,7 @@ Route::group(['middleware' => ['auth']], function () {
         'clause_import' => \App\Http\Controllers\ClauseImportController::class,
         'library_import' => \App\Http\Controllers\LibraryImportController::class,
         'software_import' => \App\Http\Controllers\SoftwareImportController::class,
+        'firewall_import' => \App\Http\Controllers\FirewallImportController::class,
         'clause' => \App\Http\Controllers\ClauseController::class,
         'lone' => \App\Http\Controllers\LoneAssetController::class,
         'subsite' => \App\Http\Controllers\SubSiteController::class,
@@ -96,6 +97,7 @@ Route::group(['middleware' => ['auth']], function () {
         'application' => \App\Http\Controllers\ApplicationController::class,
         'policy' => \App\Http\Controllers\PolicyController::class,
         'user_asset_report' => \App\Http\Controllers\ReportsController::class,
+        'asset_lending_page' => \App\Http\Controllers\AssetLandingPageController::class,
 
     ]);
     Route::post('PatchPage/LoadData', [\App\Http\Controllers\PatchApprovalAjaxController::class, 'loadData'])->name('PatchPage.loadData');
@@ -130,6 +132,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('system/user_accounts/{id}', [\App\Http\Controllers\AjaxController::class, 'system_user_accounts']);
     Route::get('asset/type/{type}', [\App\Http\Controllers\AjaxController::class, 'type_wise_assets']);
     Route::get('system/type/{type}', [\App\Http\Controllers\AjaxController::class, 'system_wise_user_accounts']);
+    Route::get('unit/type/{type}', [\App\Http\Controllers\AjaxController::class, 'unit_wise_sites']);
+    Route::get('site/type/{type}', [\App\Http\Controllers\AjaxController::class, 'site_wise_sub_sites']);
     Route::get('asset/location/{type}', [\App\Http\Controllers\AjaxController::class, 'asset_wise_ip_address']);
     Route::get('connected_asset/location/{type}', [\App\Http\Controllers\AjaxController::class, 'connected_asset_wise_ip_address']);
 
