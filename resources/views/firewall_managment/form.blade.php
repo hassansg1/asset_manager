@@ -99,14 +99,14 @@
                         <label for="{{ isset($item) ? $item->id:'' }}condition" class="form-label required">Select Policy Validity</label>
                         <select class="form-control select2" id="condition" name="condition">
                             <option value="">-Select Policy Validity-</option>
-                            <option value="temporary">Temporary</option>
-                            <option value="permanent">Permanent</option>
+                            <option value="temporary" {{ isset($item) && $item->condition == 'temporary'  ? 'selected' : ''}}>Temporary</option>
+                            <option value="permanent" {{ isset($item)  && $item->condition == 'permanent'  ? 'selected' : ''}}>Permanent</option>
                         </select>
                     </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}approvel_expirey_date" class="form-label required">Policy Validity Date</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}approvel_expirey_date" class="form-label">Policy Validity Date</label>
                             <input type="date" value="{{ isset($item) ? $item->approvel_expirey_date:old('approvel_expirey_date') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}approvel_expirey_date" name="approvel_expirey_date">
                         </div>

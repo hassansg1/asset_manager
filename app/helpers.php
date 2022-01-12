@@ -121,6 +121,15 @@ if (!function_exists('getDepartments')) {
         return \App\Models\Department::all();
     }
 }
+
+if (!function_exists('getSystemType')) {
+    function getSystemType()
+    {
+        return \App\Models\AssetFunction::where('type', 'SYS')->get();
+    }
+}
+
+
 if (!function_exists('getRights')) {
     function getRights()
     {

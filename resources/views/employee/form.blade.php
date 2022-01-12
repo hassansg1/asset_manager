@@ -26,6 +26,48 @@
                 <input type="hidden" name="id"
                        value="{{ isset($clone) && $clone ? '' : (isset($item) ? $item->id : '') }}">
                 <div class="row">
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="{{ isset($item) ? $item->id:'' }}unit_id"
+                                   class="form-label required">Unit</label>
+                            <select class="form-control select2" id="unit_id" name="unit_id" required>
+                                <option value="">-Select Unit-</option>
+                                @foreach($units as $value)
+                                    <option value="{{$value->id}}" {{ isset($item) && $item->unit_id == $value->id  ? 'selected' : ''}}>{{$value->rec_id}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="{{ isset($item) ? $item->id:'' }}site_id"
+                                   class="form-label">Site</label>
+                            <select class="form-control select2" id="site_id" name="site_id">
+                                <option value="">-Select Site-</option>
+                                @if(isset($item))
+                                    @foreach($sites as $value)
+                                        <option value="{{$value->id}}" {{ isset($item) && $item->site_id == $value->id  ? 'selected' : ''}}>{{$value->rec_id}}</option>
+                                    @endforeach
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="{{ isset($item) ? $item->id:'' }}sub_site_id"
+                                   class="form-label">Sub Site</label>
+                            <select class="form-control select2" id="sub_site_id" name="sub_site_id">
+                                <option value="">-Select Unit-</option>
+                                @if(isset($item))
+                                    @foreach($sub_sites as $value)
+                                        <option value="{{$value->id}}" {{ isset($item) && $item->sub_site_id == $value->id  ? 'selected' : ''}}>{{$value->rec_id}}</option>
+                                    @endforeach
+                                @endif
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}first_name"
@@ -83,8 +125,7 @@
                         <input type="number"
                                value="{{ isset($item) ? $item->mobile_no:old('mobile_no') ?? ''  }}"
                                class="form-control"
-                               id="{{ isset($item) ? $item->id:'' }}mobile_no" name="mobile_no"
-                               required>
+                               id="{{ isset($item) ? $item->id:'' }}mobile_no" name="mobile_no">
                     </div>
                     <div class="col-lg-3">
                         <label for="" class="form-label">Status</label>
@@ -95,49 +136,6 @@
                                     value="{{$key}}" {{ isset($item) && $item->status == $key  ? 'selected' : ''}}>{{$value}}</option>
                             @endforeach
                         </select>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}unit_id"
-                                   class="form-label">Unit</label>
-                            <select class="form-control select2" id="unit_id" name="unit_id">
-                                <option value="">-Select Unit-</option>
-                                @foreach($units as $value)
-                                    <option value="{{$value->id}}" {{ isset($item) && $item->unit_id == $value->id  ? 'selected' : ''}}>{{$value->rec_id}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}site_id"
-                                   class="form-label">Site</label>
-                            <select class="form-control select2" id="site_id" name="site_id">
-                                <option value="">-Select Site-</option>
-                                @if(isset($item))
-                                    @foreach($sites as $value)
-                                        <option value="{{$value->id}}" {{ isset($item) && $item->site_id == $value->id  ? 'selected' : ''}}>{{$value->rec_id}}</option>
-                                    @endforeach
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}sub_site_id"
-                                   class="form-label">Sub Site</label>
-                            <select class="form-control select2" id="sub_site_id" name="sub_site_id">
-                                <option value="">-Select Unit-</option>
-                                @if(isset($item))
-                                    @foreach($sub_sites as $value)
-                                        <option value="{{$value->id}}" {{ isset($item) && $item->sub_site_id == $value->id  ? 'selected' : ''}}>{{$value->rec_id}}</option>
-                                    @endforeach
-                                @endif
-                            </select>
-                        </div>
                     </div>
                 </div>
                 <br>
@@ -225,7 +223,7 @@
                     success: function (res) {
                         if (res) {
                             $.each(res, function (key, value) {
-                                $("#account_id").append('<option value="' + key + '">' + value + '(Asset)</option>');
+                                $("#account_id").append('<option value="' + key + '">' + value + ' (Asset)</option>');
                             });
                         }
                     }
@@ -242,7 +240,7 @@
                     success: function (res) {
                         if (res) {
                             $.each(res, function (key, value) {
-                                $("#account_id").append('<option value="' + key + '">' + value + '(System)</option>');
+                                $("#account_id").append('<option value="' + key + '">' + value + ' (System)</option>');
                             });
                         }
                     }

@@ -3,10 +3,29 @@
   <component name="ChangeListManager">
     <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="firewall-managment/12-21-2021">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BaseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FirewallImportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FirewallImportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoneAssetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoneAssetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RightController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RightController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SystemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SystemController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Employee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/LoneAsset.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/LoneAsset.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/System.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/System.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_01_05_063810_create_firewall_managments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_01_05_063810_create_firewall_managments_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/asset_landing_page/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/asset_landing_page/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employee/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/firewall_managment/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/firewall_managment/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/right/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/right/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/right/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/right/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/right/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/right/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/system/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/system/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/system/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/system/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/system/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/system/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_id/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_id/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/package-versions-deprecated/src/PackageVersions/Versions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/package-versions-deprecated/src/PackageVersions/Versions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

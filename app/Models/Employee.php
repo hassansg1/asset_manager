@@ -22,6 +22,7 @@ class Employee extends Model
      [
      	'first_name' => 'required | max:255',
          'email' => 'required | email',
+         'unit_id' => 'required',
      ];
 
     public function designation(){

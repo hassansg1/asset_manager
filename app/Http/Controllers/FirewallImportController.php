@@ -6,6 +6,7 @@ use App\Models\Clause;
 use App\Models\FirewallImport;
 use App\Http\Controllers\Controller;
 use App\Models\FirewallManagment;
+use App\Models\Location;
 use App\Models\Standard;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -78,7 +79,19 @@ class FirewallImportController extends Controller
                         }
                     }
                     $request = new Request();
+                    $sourceAssets = trim($obj['SourceAssets']) != "" ? $obj['SourceAssets'] : $obj['SourceAssets'];
+                    $destinationAssets = trim($obj['DestinationAssets']) != "" ? $obj['DestinationAssets'] : $obj['DestinationAssets'];
+                    $sourceAssetId = Location::select('id')->where('rec_id', $sourceAssets)->first();
+                    $destinationAssetId = Location::select('id')->where('rec_id', $destinationAssets)->first();
+                    $arr = [
+                        'source_zone'=>$obj['SourceZone'],'source_location'=>$obj['SourceLocation'],'source_asset' => $sourceAssetId,
+                        'destination_zone'=>$obj['DestinationZone'],'destination_location'=>$obj['DestinationLocation'],'destination_asset' => $destinationAssetId,
+                        'applicatin_port'=>$obj['Application/Port'],'port'=>$obj['Port'],'description' => $obj['Justification'],
+                        'condition'=>$obj['Temp/Permanent'],'approvel_expirey_date'=>$obj['Approval Expiry'],'approved_by' => $obj['Approved by'],
+                        'status'=>$obj['Approval Status'],'approvel_date'=>$obj['Approval date']
+                    ];
                     $request->replace($arr);
+                    dd($request->all());
                     $validator = Validator::make($request->all(), $model->rules);
                     if ($validator->fails()) {
                         $logs[] = 'Rolling back the changes.';
