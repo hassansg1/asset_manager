@@ -90,18 +90,17 @@
                                    value="{{ isset($item) ? $item->last_name:old('last_name') ?? ''  }}"
                                    class="form-control"
                                    id="{{ isset($item) ? $item->id:'' }}last_name"
-                                   name="last_name" required>
+                                   name="last_name">
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}email"
-                                   class="form-label required">Email</label>
+                                   class="form-label">Email</label>
                             <input type="email"
                                    value="{{ isset($item) ? $item->email:old('email') ?? ''  }}"
                                    class="form-control"
-                                   id="{{ isset($item) ? $item->id:'' }}email" name="email"
-                                   required>
+                                   id="{{ isset($item) ? $item->id:'' }}email" name="email">
                         </div>
                     </div>
                 </div>
@@ -139,10 +138,44 @@
                     </div>
                 </div>
                 <br>
+                @if(isset($item) && $userIds)
+                    <hr class="solid">
+                    <h3>Assigned User ID's</h3>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>User Id</th>
+                                    <th>System/Asset</th>
+                                    <th>Right</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($userIds as $value)
+                                    <tr id="{{ $value->id }}">
+                                        {{--        <td colspan="1"><input type="checkbox" name="select_row" value="{{ $value->id }}"--}}
+                                        {{--                               id="select_check_{{ $value->id }}" class="select_row"></td>--}}
+                                        <td>{{ $value->user_id }}</td>
+                                        <td>
+                                            @if($value->parent == "asset")
+                                                <i>AST:</i> {{ $value->user_id_assets->rec_id }}
+                                            @elseif($value->parent == "system")
+                                                <i>SYS:</i> {{ $value->user_id_systems->name }}
+                                            @endif
+                                        </td>
+                                        <td>{{ $value->user_rights_id->rights_name->name }}</td>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                @endif
                 <hr class="solid">
                 <br>
+                <h3>Assign New User ID(temporary section)</h3>
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-4">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}user_type"
                                    class="form-label">User ID Type</label>
@@ -153,7 +186,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-6 asset" style="display: none">
+                    <div class="col-md-4 asset" style="display: none">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}asset_id"
                                    class="form-label">Assets</label>
@@ -165,24 +198,22 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-6 system" style="display: none">
+                    <div class="col-md-4 system" style="display: none">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}system"
                                    class="form-label">Systems</label>
                             <select class="form-control select2" id="system" name="system">
                                 <option value="">-Select System-</option>
                                 @foreach($system as $value)
-                                    <option value="{{$value->id}}">{{$value->name}}</option>
+                                    <option value="{{$value->id}}">{{$value->name}} ({{$value->system_type->name}})</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}account_id" class="form-label">Associated
-                                ID's</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}account_id" class="form-label">Select
+                                ID</label>
                             <select class="form-control select2" id="account_id" name="account_id[]"
                                     multiple="multiple">
                                 @if(isset($item))

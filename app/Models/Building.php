@@ -40,6 +40,14 @@ class Building extends Model
         return $this->name;
     }
 
+    public function getParentableTypeAttribute()
+    {
+        return $this->name;
+    }
+    public function getParentableIdAttribute()
+    {
+        return '';
+    }
 
     /**
      * @param $item
@@ -51,9 +59,10 @@ class Building extends Model
 
         if (isset($request->name)) $item->name = $request->name;
         if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
+        $item->type = "buildings";
 
         $item->save();
-        $this->updateParent($request, $item);
+        Parentable::addNew(null, null, self::class, $item->id);
         return $item;
     }
 }

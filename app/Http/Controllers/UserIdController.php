@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\UserAccount;
 use App\Models\UserId;
 use App\Models\Right;
 use App\Models\UserRight;
@@ -66,9 +67,9 @@ class UserIdController extends Controller
     public function store(Request $request)
     {
             if($request->user_type == "asset"){
-                $request->validate($this->model->rules($request->asset_id));
+                $request->validate($this->model->rules($request->asset_id, $request->otcm_user_id));
             }if($request->user_type == "system"){
-                $request->validate($this->model->rules($request->system_id));
+                $request->validate($this->model->rules($request->system_id, $request->otcm_user_id));
             }
         $this->model->saveFormData($this->model, $request);
 
@@ -100,16 +101,16 @@ class UserIdController extends Controller
             if (is_array($request->item))
                 $item = $this->model->find('id', $request->item);
         }
+        $assign_users = UserAccount::select('user_id')->where('account_id', $item)->get();
+        $users = User::whereIn('id', $assign_users)->get();
         $item = $this->model->find($item);
-
-
         if ($request->ajax) {
             return response()->json([
                 'status' => true,
-                'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item, 'clone' => $request->clone ?? null])->render()
+                'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item,'users' => $users, 'clone' => $request->clone ?? null])->render()
             ]);
         } else
-            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
+            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'users' => $users,'heading' => $this->heading, 'clone' => $request->clone ?? null]);
     }
 
     /**
@@ -118,8 +119,6 @@ class UserIdController extends Controller
      */
     public function update(Request $request, $item)
     {
-
-
         $item = $this->model->find($item);
         $this->model->saveFormData($item, $request);
 

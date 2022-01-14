@@ -21,7 +21,7 @@ class System extends Model
     }
 
     public function system_type(){
-        return $this->hasOne(SystemType::class, 'id', 'system_type_id');
+        return $this->hasOne(AssetFunction::class, 'id', 'system_type_id');
     }
 
 	public function saveFormData($item, $request)

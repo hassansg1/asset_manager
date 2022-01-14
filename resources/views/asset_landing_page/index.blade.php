@@ -24,7 +24,7 @@
                     @endforeach
                     </tbody>
                 </table>
-                {!! $lone_assets->links('vendor.pagination.bootstrap-4') !!}
+{{--                {!! $lone_assets->links('vendor.pagination.bootstrap-4') !!}--}}
         </div>
         <div class="col-md-4 table-responsive">
             <button class="btn btn-primary mr-10">
@@ -49,7 +49,7 @@
                 @endforeach
                 </tbody>
             </table>
-            {!! $computer_assets->links('vendor.pagination.bootstrap-4') !!}
+{{--            {!! $computer_assets->links('vendor.pagination.bootstrap-4') !!}--}}
         </div>
         <div class="col-md-4 table-responsive">
             <button class="btn btn-primary mr-10">

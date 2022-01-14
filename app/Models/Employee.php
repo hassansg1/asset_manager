@@ -17,13 +17,14 @@ class Employee extends Model
      {
      	return $this->first_name . " " . $this->last_name;
      }
-
-     public $rules =
-     [
-     	'first_name' => 'required | max:255',
-         'email' => 'required | email',
-         'unit_id' => 'required',
-     ];
+    public function rules($parentId = null)
+    {
+        return [
+            'first_name' => 'required | max:255',
+            'unit_id' => 'required',
+            'account_id' => 'required|unique:user_accounts,account_id,NULL,id,user_id,' . $parentId
+        ];
+    }
 
     public function designation(){
         return $this->belongsTo(Designation::class, 'designation_id');
@@ -31,10 +32,6 @@ class Employee extends Model
 
     public function department(){
         return $this->belongsTo(Department::class, 'department_id');
-    }
-
-    public function userAccount(){
-        return $this->belongsTo(UserAccount::class, 'id', 'user_id');
     }
 
      public function saveFormData($item, $request)
@@ -53,16 +50,13 @@ class Employee extends Model
        $item->user_type = "OTCM-USERS";
        $item->save();
 
-       UserAccount::where('user_id', $item->id)->delete();
        $accounts= $request->account_id;
       if($item && $accounts){
         foreach ($accounts as $key=>$value)  {
-            $assets_rights = UserAccount::updateOrCreate(
-                [
-                    'user_id'   => $item->id,
-                    'account_id'   => $value,
-                ],
-            );
+            $assets_rights = new UserAccount();
+            $assets_rights->account_id = $value;
+            $assets_rights->user_id   = $item->id;
+            $assets_rights->save();
         }
       }
    return $item;

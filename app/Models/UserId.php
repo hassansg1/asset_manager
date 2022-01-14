@@ -19,7 +19,8 @@ class UserId extends Model
     {
         return [
             'right_id'=>'required',
-            'user_id' => 'required|unique:user_ids,user_id,NULL,id,parent_id,' . $parentId
+            'user_id' => 'required|unique:user_ids,user_id,NULL,id,parent_id,' . $parentId,
+            'id' => 'required|unique:user_accounts,account_id,NULL,id,user_id,' . $otcmUser,
         ];
     }
     public function user_rights_id(){
@@ -83,14 +84,12 @@ class UserId extends Model
         if($request->otcm_user_id){
             $otcm_user_id= $request->otcm_user_id;
             if($item && $otcm_user_id){
-                $assets_rights = UserAccount::updateOrCreate(
-                    [
-                        'account_id'   => $item->id,
-                    ],
-                    [
-                        'user_id'     => $request->otcm_user_id,
-                    ]
-                );
+//                foreach ($otcm_user_id as $key=>$value)  {
+                    $assets_rights = new UserAccount();
+                    $assets_rights->account_id = $item->id;
+                    $assets_rights->user_id   = $otcm_user_id;
+                    $assets_rights->save();
+//                }
             }
         }
 
