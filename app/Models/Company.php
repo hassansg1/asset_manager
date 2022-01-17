@@ -49,7 +49,6 @@ class Company extends Model
         if (isset($request->short_name)) $item->short_name = $request->short_name;
         if (isset($request->long_name)) $item->long_name = $request->long_name;
         if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
-         $item->type = "compnay";
 
         $item->save();
         Parentable::addNew(null, null, self::class, $item->id);

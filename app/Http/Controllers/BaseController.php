@@ -19,7 +19,7 @@ class BaseController extends Controller
             if (assetCondition($model)) {
                 $location = Session::get('asset_location_id');
             }
-            $items = Location::where('type', $model::$type)->paginate(10);
+            $items = Location::whereDescendantOf($location)->where('type', $model::$type)->paginate(10);
         } else
             $items = $model->paginate(10);
 

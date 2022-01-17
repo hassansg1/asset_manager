@@ -16,8 +16,8 @@ class RightController extends Controller
    {
     $this->model = new Right();
     $this->route = 'right';
-    $this->heading = 'Roles';
-    \Illuminate\Support\Facades\View::share('top_heading', 'ROLES');
+    $this->heading = 'Rights';
+    \Illuminate\Support\Facades\View::share('top_heading', 'RIGHTS');
 }
 
     /**

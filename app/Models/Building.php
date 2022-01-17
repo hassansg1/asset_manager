@@ -59,7 +59,6 @@ class Building extends Model
 
         if (isset($request->name)) $item->name = $request->name;
         if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
-        $item->type = "buildings";
 
         $item->save();
         Parentable::addNew(null, null, self::class, $item->id);
