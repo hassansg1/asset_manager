@@ -7,7 +7,9 @@ use App\Models\ComplianceVersion;
 use App\Models\LoneAsset;
 use App\Models\NetworkAsset;
 use App\Models\Location;
+use App\Models\User;
 use App\Models\AssetUserId;
+use App\Models\UserAccount;
 use App\Models\UserId;
 use App\Models\Parentable;
 use App\Models\Port;
@@ -103,7 +105,8 @@ class AjaxController extends Controller
     }
 
     public function type_wise_assets($asset_id){
-        $user_accounts = UserId::where('parent_id', $asset_id)->pluck('user_id', 'id');
+        $assigned_user_accounts = UserAccount::pluck('account_id');
+        $user_accounts = UserId::whereNotIn('id', $assigned_user_accounts)->where('parent_id', $asset_id)->pluck('user_id', 'id');
         return response()->json($user_accounts);
     }
     public  function asset_wise_ip_address($asset_type){
@@ -116,7 +119,8 @@ class AjaxController extends Controller
     }
 
     public function system_wise_user_accounts($system_id){
-        $user_accounts = UserId::where('parent_id', $system_id)->pluck('user_id', 'id');
+        $assigned_user_accounts = UserAccount::pluck('account_id');
+        $user_accounts = UserId::whereNotIn('id', $assigned_user_accounts)->where('parent_id', $system_id)->pluck('user_id', 'id');
         return response()->json($user_accounts);
     }
     public function unit_wise_sites($unit_id){
@@ -126,6 +130,38 @@ class AjaxController extends Controller
     public function site_wise_sub_sites($site_id){
         $sub_sites = Location::where('parent_id', $site_id)->pluck('rec_id', 'id');
         return response()->json($sub_sites);
+    }
+    public function sub_site_wise_user(Request $request, $sub_site_id){
+        $users = User::where('sub_site_id',$sub_site_id)->pluck('first_name', 'id');
+        return response()->json($users);
+    }
+
+    public function delete_assigned_user_id(Request $request, $user_id){
+        $user_account = UserAccount::where(['user_id'=>$user_id, 'account_id'=>$request->account_id])->delete();
+        return true;
+    }
+    public function assigned_user_id(Request $request, $user_id){
+        $user_account = UserAccount::where(['account_id'=>$request->account_id])->first();
+        if ($user_account){
+            return 'ID Already Assigned';
+        }else{
+            $user_account = new UserAccount;
+            $user_account->account_id =$request->account_id;
+            $user_account->user_id =$user_id;
+            $user_account->save();
+            return 'ID Assigned';;
+        }
+    }
+    public function assigned_id_to_user(Request $request,$account_id){
+            $user_account = new UserAccount;
+            $user_account->account_id =$account_id;
+            $user_account->user_id =$request->user_id;
+            $user_account->save();
+            return 'ID Assigned';
+    }
+    public function delete_assigned_id(Request $request, $account_id){
+        $user_account = UserAccount::where(['user_id'=>$request->user_id, 'account_id'=>$account_id])->delete();
+        return true;
     }
 
     function exportComplianceDataTemplates()

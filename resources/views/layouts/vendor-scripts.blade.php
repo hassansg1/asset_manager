@@ -224,6 +224,189 @@
     }
 </script>
 
+
+{{--This script is for assign and delete user from user id--}}
+<script type="text/javascript">
+    $('.delete_user_id').on('click', function () {
+        var user_id = this.id;
+        var account_id = $('#current_obj_id').val();
+        if (user_id) {
+            $.ajax({
+                type: "get",
+                url: "{{url('delete_asseigned_id')}}/" + user_id,
+                data: { account_id: account_id },
+                success: function (res) {
+                    if (res) {
+                        location.reload();
+                    }
+                }
+
+            });
+        }
+    });
+    $('#assign_user').on('click', function () {
+        var user_id = $('#user_id').val();
+        var account_id = $('#current_obj_id').val();
+        if (user_id) {
+            $('#exampleModal').hide();
+            $.ajax({
+                type: "get",
+                url: "{{url('asseigned_id')}}/" + user_id,
+                data: { account_id: account_id },
+                success: function (res) {
+                    if (res) {
+                        alert(res);
+                        location.reload();
+                    }
+                }
+
+            });
+        }
+    });
+    $('#unit_id').on('change', function () {
+        var unit_id = this.value;
+        if (unit_id) {
+            $.ajax({
+                type: "get",
+                url: "{{url('unit/type')}}/" + unit_id,
+                success: function (res) {
+                    if (res) {
+                        $("#site_id").empty();
+                        $.each(res, function (key, value) {
+                            $("#site_id").append('<option value="' + key + '">' + value + '</option>');
+                        });
+                    }
+                }
+
+            });
+        }
+    });
+    $('#site_id').on('change', function () {
+        var site_id = this.value;
+        if (site_id) {
+            $.ajax({
+                type: "get",
+                url: "{{url('site/type')}}/" + site_id,
+                success: function (res) {
+                    if (res) {
+                        $("#sub_site_id").empty();
+                        $.each(res, function (key, value) {
+                            $("#sub_site_id").append('<option value="' + key + '">' + value + '</option>');
+                        });
+                    }
+                }
+
+            });
+        }
+    });
+    $('#sub_site_id').on('change', function () {
+        var unit_id = $('#unit_id').val();
+        var site_id = $('#site_id').val();
+        var sub_site_id = $('#sub_site_id').val();
+        if (sub_site_id) {
+            $.ajax({
+                type: "get",
+                url: "{{url('sub_site/type')}}/" + sub_site_id,
+                data: { unit: unit_id, site_id:site_id, sub_site_id:sub_site_id },
+                success: function (res) {
+                    if (res) {
+                        $("#user_id").empty();
+                        $.each(res, function (key, value) {
+                            $("#user_id").append('<option value="' + key + '">' + value + '</option>');
+                        });
+                    }
+                }
+
+            });
+        }
+    });
+</script>
+{{--this script is for edit form of user to assign ID--}}
+<script type="text/javascript">
+    $('#user_type').on('change', function () {
+        var type = this.value;
+        if (type == "asset") {
+            $('.asset').show();
+            $('.system').hide();
+        } else if (type == "system") {
+            $('.asset').hide();
+            $('.system').show();
+        }
+    });
+    $('#asset_id').on('change', function () {
+        var asset_id = this.value;
+        if (asset_id) {
+            $.ajax({
+                type: "get",
+                url: "{{url('asset/type')}}/" + asset_id,
+                success: function (res) {
+                    if (res) {
+                        $("#account_id").empty();
+                        $.each(res, function (key, value) {
+                            $("#account_id").append('<option value="' + key + '">' + value + ' (Asset)</option>');
+                        });
+                    }
+                }
+
+            });
+        }
+    });
+    $('#system').on('change', function () {
+        var system_id = this.value;
+        if (system_id) {
+            $.ajax({
+                type: "get",
+                url: "{{url('system/type')}}/" + system_id,
+                success: function (res) {
+                    if (res) {
+                        $("#account_id").empty();
+                        $.each(res, function (key, value) {
+                            $("#account_id").append('<option value="' + key + '">' + value + ' (System)</option>');
+                        });
+                    }
+                }
+
+            });
+        }
+    });
+    $('#assign_id').on('click', function () {
+        var account_id = $('#account_id').val();
+        var user_id = $('#current_obj_id').val();
+        if (account_id) {
+            $('#exampleModal').hide();
+            $.ajax({
+                type: "get",
+                url: "{{url('asseigned_id_to_user')}}/" + account_id,
+                data: { user_id: user_id },
+                success: function (res) {
+                    if (res) {
+                        alert(res);
+                        location.reload();
+                    }
+                }
+
+            });
+        }
+    });
+    $('.delete_id').on('click', function () {
+        var account_id = this.id;
+        var user_id = $('#current_obj_id').val();
+        if (account_id) {
+            $.ajax({
+                type: "get",
+                url: "{{url('delete_assigned_id')}}/" + account_id,
+                data: { user_id: user_id },
+                success: function (res) {
+                    if (res) {
+                        location.reload();
+                    }
+                }
+
+            });
+        }
+    });
+</script>
+
 @yield('script')
 
 <!-- App js -->

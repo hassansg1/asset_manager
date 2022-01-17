@@ -97,19 +97,6 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
-                                            <div class="mb-3">
-                                                <label for="{{ isset($item) ? $item->id:'' }}right">User</label>
-                                                <select class="form-control select2" id="otcm_user_id"
-                                                        name="otcm_user_id">
-                                                    <option value="">-Select User-</option>
-                                                    @foreach($otcm_users as $value)
-                                                        <option
-                                                            value="{{$value->id}}" {{ isset($item) && $item->otcm_user_id == $value->id  ? 'selected' : ''}}>{{$value->name}}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12">
@@ -122,35 +109,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                @if(isset($item) && $users)
-                                    <hr class="solid">
-                                    <h3>Associated Users</h3>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <table class="table table-bordered">
-                                                <thead>
-                                                <tr>
-                                                    <th>Unit</th>
-                                                    <th>Site</th>
-                                                    <th>Sub site</th>
-                                                    <th>User</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                @foreach($users as $value)
-                                                    <tr id="{{ $value->id }}">
-                                                        {{--        <td colspan="1"><input type="checkbox" name="select_row" value="{{ $value->id }}"--}}
-                                                        {{--                               id="select_check_{{ $value->id }}" class="select_row"></td>--}}
-                                                        <td>{{ $value->user_unit->rec_id }}</td>
-                                                        <td>{{ $value->user_site->rec_id }}</td>
-                                                        <td>{{ $value->user__sub_site->rec_id }}</td>
-                                                        <td>{{ $value->name }}</td>
-                                                @endforeach
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                @endif
                         </div>
                 </div>
             </div>
