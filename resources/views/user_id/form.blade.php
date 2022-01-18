@@ -72,7 +72,7 @@
                                             </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label for="{{ isset($item) ? $item->id:'' }}user_id"
                                                        class="form-label required">User ID</label>
@@ -83,7 +83,7 @@
                                                        name="user_id" required>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label for="{{ isset($item) ? $item->id:'' }}right"
                                                        class="form- required">User ID Rights</label>

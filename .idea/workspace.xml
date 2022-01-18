@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="firewall-managment/12-21-2021">
+    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="OTCM-FIREWALL-IMPORT">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Employee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/UserId.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserId.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/employee/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/employee/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/firewall_managment/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/firewall_managment/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/vendor-scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/vendor-scripts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_id/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_id/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_asset_report/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_asset_report/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_asset_report/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_asset_report/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user_id/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_id/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user_id/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_id/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,6 +238,8 @@
       <workItem from="1639994730221" duration="1340000" />
       <workItem from="1641278202312" duration="709000" />
       <workItem from="1641279000010" duration="27596000" />
+      <workItem from="1642489895052" duration="8000" />
+      <workItem from="1642490868263" duration="7364000" />
     </task>
     <task id="LOCAL-00001" summary="new changes">
       <created>1639999411103</created>
@@ -291,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642416486548</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="OTCM-FIREWALL-IMPORT">
+      <created>1642436030112</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1642436030112</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,7 +325,8 @@
     <MESSAGE value="OTCM-75/firewall-managemnt&#10;crud file create" />
     <MESSAGE value="new changes" />
     <MESSAGE value="firewall-managment/12-21-2021" />
-    <option name="LAST_COMMIT_MESSAGE" value="firewall-managment/12-21-2021" />
+    <MESSAGE value="OTCM-FIREWALL-IMPORT" />
+    <option name="LAST_COMMIT_MESSAGE" value="OTCM-FIREWALL-IMPORT" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

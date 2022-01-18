@@ -20,7 +20,6 @@ class UserId extends Model
         return [
             'right_id'=>'required',
             'user_id' => 'required|unique:user_ids,user_id,NULL,id,parent_id,' . $parentId,
-            'id' => 'required|unique:user_accounts,account_id,NULL,id,user_id,' . $otcmUser,
         ];
     }
     public function user_rights_id(){

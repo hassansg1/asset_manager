@@ -152,11 +152,14 @@ class AjaxController extends Controller
             return 'ID Assigned';;
         }
     }
-    public function assigned_id_to_user(Request $request,$account_id){
+    public function assigned_id_to_user(Request $request,$user_id){
+        $account_id = $request->account_id;
+        foreach($account_id as $key=>$value){
             $user_account = new UserAccount;
-            $user_account->account_id =$account_id;
-            $user_account->user_id =$request->user_id;
+            $user_account->account_id =$value;
+            $user_account->user_id =$user_id;
             $user_account->save();
+        }
             return 'ID Assigned';
     }
     public function delete_assigned_id(Request $request, $account_id){

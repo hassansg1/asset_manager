@@ -2,11 +2,11 @@
     <tr id="{{ $item->id }}">
         <td>{{ $item->user_accounts->user->name }}</td>
         <td>{{ $item->user_id }}</td>
-        <td >
-            @if($item->parent == "system")
-            {{ $item->user_id_systems->name }}
-            @endif
-        </td>
+{{--        <td >--}}
+{{--            @if($item->parent == "system")--}}
+{{--            {{ $item->user_id_systems->name }}--}}
+{{--            @endif--}}
+{{--        </td>--}}
         <td>
             @if($item->parent == "asset")
                 <span class="badge bg-primary" style="padding: 1px">{{ $item->user_id_assets->rec_id }}</span>

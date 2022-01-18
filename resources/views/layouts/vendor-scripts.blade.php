@@ -341,7 +341,6 @@
                 url: "{{url('asset/type')}}/" + asset_id,
                 success: function (res) {
                     if (res) {
-                        $("#account_id").empty();
                         $.each(res, function (key, value) {
                             $("#account_id").append('<option value="' + key + '">' + value + ' (Asset)</option>');
                         });
@@ -359,7 +358,6 @@
                 url: "{{url('system/type')}}/" + system_id,
                 success: function (res) {
                     if (res) {
-                        $("#account_id").empty();
                         $.each(res, function (key, value) {
                             $("#account_id").append('<option value="' + key + '">' + value + ' (System)</option>');
                         });
@@ -376,8 +374,8 @@
             $('#exampleModal').hide();
             $.ajax({
                 type: "get",
-                url: "{{url('asseigned_id_to_user')}}/" + account_id,
-                data: { user_id: user_id },
+                url: "{{url('asseigned_id_to_user')}}/" + user_id,
+                data: { account_id: account_id },
                 success: function (res) {
                     if (res) {
                         alert(res);

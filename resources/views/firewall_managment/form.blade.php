@@ -9,14 +9,14 @@
                 <h4 class="card-title mb-4">{{ $heading }} Information</h4>
                 <div class="row">
                     <div class="row">
-                        <div class="col-lg-4">
+                        <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="{{ isset($item) ? $item->id:'' }}source_zone" class="form-label required">Source Zone</label>
                                 <input type="text" value="{{ isset($item) ? $item->source_zone:old('source_zone') ?? ''  }}"
                                        class="form-control" id="{{ isset($item) ? $item->id:'' }}source_zone" name="source_zone">
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="{{ isset($item) ? $item->id:'' }}source_location" class="form-label required">Source Location</label>
                                 <input type="text" value="{{ isset($item) ? $item->source_location:old('source_location') ?? ''  }}"
@@ -40,14 +40,14 @@
                 </div>
                 <div class="row">
                     <div class="row">
-                        <div class="col-lg-4">
+                        <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="{{ isset($item) ? $item->id:'' }}destination_zone" class="form-label required">Destination Zone</label>
                                 <input type="text" value="{{ isset($item) ? $item->destination_zone:old('destination_zone') ?? ''  }}"
                                        class="form-control" id="{{ isset($item) ? $item->id:'' }}destination_zone" name="destination_zone">
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="{{ isset($item) ? $item->id:'' }}destination_location" class="form-label required">Destination Location</label>
                                 <input type="text" value="{{ isset($item) ? $item->destination_location:old('destination_location') ?? ''  }}"

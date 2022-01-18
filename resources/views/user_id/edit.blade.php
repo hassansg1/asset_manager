@@ -19,9 +19,11 @@
                 <h3>Associated Users</h3>
             </div>
             <div class="col-md-4">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Assign User
-                </button>
+                <div style="text-align: right">
+                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Assign User
+                    </button>
+                </div>
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -92,6 +94,7 @@
                             <th>Site</th>
                             <th>Sub site</th>
                             <th>User</th>
+                            <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -100,10 +103,18 @@
                                 {{--        <td colspan="1"><input type="checkbox" name="select_row" value="{{ $value->id }}"--}}
                                 {{--                               id="select_check_{{ $value->id }}" class="select_row"></td>--}}
                                 <td>{{ $value->user_unit->rec_id }}</td>
-                                <td>{{ $value->user_site->rec_id }}</td>
-                                <td>{{ $value->user__sub_site->rec_id }}</td>
+                                @if($value->user_site)
+                                    <td>{{ $value->user_site->rec_id }}</td>
+                                @else
+                                    <td></td>
+                                @endif
+                                @if($value->user_sub_site)
+                                    <td>{{ $value->user_sub_site->rec_id }}</td>
+                                @else
+                                    <td></td>
+                                @endif
                                 <td>{{ $value->name }}</td>
-                                <td><button type="button" class="btn btn-danger delete_user_id" id="{{ $value->id }}" onclick="return confirm('Are you sure unassign ID?')"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                                <td><button type="button" class="btn btn-default btn-sm delete_user_id" id="{{ $value->id }}" onclick="return confirm('Are you sure unassign ID?')"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
                             </tr>
                         @endforeach
                         </tbody>

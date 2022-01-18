@@ -44,11 +44,6 @@
                                    class="form-label">Site</label>
                             <select class="form-control select2" id="site_id" name="site_id">
                                 <option value="">-Select Site-</option>
-                                @if(isset($item))
-                                    @foreach($sites as $value)
-                                        <option value="{{$value->id}}" {{ isset($item) && $item->site_id == $value->id  ? 'selected' : ''}}>{{$value->rec_id}}</option>
-                                    @endforeach
-                                @endif
                             </select>
                         </div>
                     </div>

@@ -22,7 +22,6 @@ class Employee extends Model
         return [
             'first_name' => 'required | max:255',
             'unit_id' => 'required',
-            'account_id' => 'required|unique:user_accounts,account_id,NULL,id,user_id,' . $parentId
         ];
     }
 
