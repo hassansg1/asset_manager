@@ -104,6 +104,8 @@ Route::group(['middleware' => ['auth']], function () {
         'policy' => \App\Http\Controllers\PolicyController::class,
         'user_asset_report' => \App\Http\Controllers\ReportsController::class,
         'asset_lending_page' => \App\Http\Controllers\AssetLandingPageController::class,
+        'risk_assesment' => \App\Http\Controllers\RiskAssessmentController::class,
+        'risk' => \App\Http\Controllers\RiskController::class,
 
     ]);
     Route::post('PatchPage/LoadData', [\App\Http\Controllers\PatchApprovalAjaxController::class, 'loadData'])->name('PatchPage.loadData');

@@ -85,6 +85,17 @@
                     </a>
                 </li>
                 <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-store"></i>
+                        <span key="t-ecommerce">Risk Management</span>
+                    </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="false">
+                        <li><a href="{{route('risk_assesment.index')}}" key="t-orders">Risk Assesment</a></li>
+                        <li><a href="{{route('risk.index')}}" key="t-orders">Risk</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
                     {{--                <li>--}}
                     {{--                    <a href="javascript: void(0);" class="has-arrow waves-effect">--}}
                     {{--                        <i class="bx bx-store"></i>--}}
