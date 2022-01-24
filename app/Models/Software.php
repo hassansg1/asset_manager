@@ -9,9 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 class Software extends Model
 {
     use HasFactory;
-    use ParentTrait;
 
     protected $table = 'softwares';
+
+    public static $repo = 'SoftwareRepo';
 
     protected $guarded = [];
 
@@ -20,11 +21,21 @@ class Software extends Model
             'name' => 'required | max:255',
         ];
 
-    protected $appends = ['show_name'];
+    protected $appends = ['show_name', 'full_name'];
+
+    public function getFullNameAttribute()
+    {
+        return  $this->name . " " . $this->version."(".$this->vendor->name.")";
+    }
 
     public function getShowNameAttribute()
     {
-        return $this->name ." ". $this->version;
+        return $this->name . " " . $this->version;
+    }
+
+    public function patches()
+    {
+        return $this->hasMany(Patch::class, 'software_id');
     }
 
     public function vendor()
@@ -83,16 +94,14 @@ class Software extends Model
      */
     public function saveFormData($item, $request)
     {
-
         if (isset($request->vendor_id)) $item->vendor_id = $request->vendor_id;
         if (isset($request->name)) $item->name = $request->name;
         if (isset($request->version)) $item->version = $request->version;
         if (isset($request->description)) $item->description = $request->description;
         if (isset($request->function)) $item->function = $request->function;
-        if (isset($request->approval_required)) $item->approval_required = $request->approval_required == "on" ? 1 : 0;
+        if (isset($request->approval_required) && $request->approval_required == "on") $item->approval_required = 1; else $item->approval_required = 0;
 
         $item->save();
-        $this->updateParent($request, $item);
         return $item;
     }
 }

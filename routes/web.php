@@ -70,6 +70,12 @@ Route::group(['middleware' => ['auth']], function () {
         'installed_patch' => \App\Http\Controllers\InstalledPatchesController::class,
         'patch_policy' => \App\Http\Controllers\PatchPolicyController::class,
         'patch_report' => \App\Http\Controllers\PatchReportController::class,
+        'patch_report_view' => \App\Http\Controllers\PatchReportViewController::class,
+        'asset_patch_report' => \App\Http\Controllers\AssetPatchReportController::class,
+        'asset_patch_report_view' => \App\Http\Controllers\AssetPatchReportViewController::class,
+        'software_patches_view' => \App\Http\Controllers\SoftwarePatchesViewController::class,
+        'software_patches_edit' => \App\Http\Controllers\SoftwarePatchesEditController::class,
+        'software_patch_approval' => \App\Http\Controllers\SoftwarePatchApprovalController::class,
         'patch' => \App\Http\Controllers\PatchController::class,
         'zone_policy' => \App\Http\Controllers\ZonePolicyController::class,
         'standard' => \App\Http\Controllers\StandardController::class,
@@ -160,5 +166,13 @@ Route::group(['middleware' => ['auth']], function () {
 
 //    Apply Patches
     Route::post('patch/apply', [\App\Http\Controllers\PatchApplyController::class, 'bulkApplyPatches'])->name('patch.applyBulkPatches');
+
+    //Patch Approval New Code
+    Route::get('patchApproval/software', [\App\Http\Controllers\PatchSoftwareApprovalController::class, 'softwarePatchApproval'])->name('software.softwarePatchApproval');
+    Route::post('patchApproval/software/save', [\App\Http\Controllers\PatchSoftwareApprovalController::class, 'softwarePatchApprovalSave'])->name('software.softwarePatchApprovalSave');
+    Route::post('patchApproval/software/delete', [\App\Http\Controllers\PatchSoftwareApprovalController::class, 'softwarePatchApprovalDelete'])->name('software.softwarePatchApprovalDelete');
+    Route::post('softwareApproval/patch/save', [\App\Http\Controllers\PatchSoftwareApprovalController::class, 'patchSoftwareApprovalSave'])->name('patch.patchSoftwareApprovalSave');
+    Route::post('patchInstall/asset/save', [\App\Http\Controllers\PatchSoftwareApprovalController::class, 'patchAssetInstallSave'])->name('patch.patchAssetInstallSave');
+    Route::post('assetInstall/patch/save', [\App\Http\Controllers\PatchSoftwareApprovalController::class, 'assetPatchInstallSave'])->name('asset.assetPatchInstallSave');
 
 });

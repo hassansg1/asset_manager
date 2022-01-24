@@ -12,6 +12,8 @@ class PatchPolicy extends Model
 
     protected $table = 'patch_policy';
 
+    public static $repo = 'PatchPolicyRepo';
+
     protected $guarded = [];
 
     public $rules =

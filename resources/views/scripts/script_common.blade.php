@@ -7,18 +7,59 @@
         pageNumber = query[1].split('=')[1];
         let type = query[0].split('/');
         type = type[type.length - 1];
-        loadTableData(url,type);
+        loadTableData(url, type);
     });
 
-    function loadTableData(url, type) {
-        let queryString = '?';
-        queryString += "page=" + pageNumber;
+    function loadDataTableDynamically(type, div) {
+        loadTableData(window.location.origin + '/' + type, div);
+    }
+
+    function loadTableData(url, div) {
+        let not_in_software_id = $('#not_in_software_id').val();
+        let not_in_software_id_condition = '';
+        if (not_in_software_id && not_in_software_id != "") {
+            not_in_software_id_condition = 1;
+        }
+        let software_id = $('#software_id_filter').val();
+        let patch_id = $('#patch_id_filter').val();
+        let asset_id_filter = $('#asset_id_filter').val();
+        let patch_ids = $("input[name='checked_patch[]']")
+            .map(function () {
+                return $(this).val();
+            }).get();
+        let software_ids = $("input[name='checked_software[]']")
+            .map(function () {
+                return $(this).val();
+            }).get();
+
         $.ajax({
             type: "GET",
             url: url,
+            data: {
+                not_in_software_id_condition: not_in_software_id_condition,
+                not_in_software_id: not_in_software_id,
+                software_id: software_id,
+                patch_id: patch_id,
+                asset_id_filter: asset_id_filter,
+                patch_ids: patch_ids,
+                software_ids: software_ids,
+
+            },
             success: function (result) {
-                $('#' + type).html($(result).find('#' + type).html());
+                $('#' + div).html($(result).find('#' + div).html());
             },
         });
     }
+
+    $(document).on('change', '.select_row', function () {
+        let type = $(this).attr('data-type');
+
+        if (this.checked) {
+            let id = $(this).val();
+            $('#selected_' + type).append('<input type="hidden" value="' + id + '" name="checked_' + type + '[]" id="' + type + id + '">');
+        } else {
+            let id = $(this).val();
+            $('#' + type + id).remove();
+        }
+    });
 </script>

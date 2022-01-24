@@ -344,10 +344,10 @@ svg {
 
 @media (min-width: 992px) {
     .modal-lg, .modal-xl {
-        max-width: 1100px !important;
+        max-width: 90% !important;
     }
 }
-.hide
-{
+
+.hide {
     display: none;
 }

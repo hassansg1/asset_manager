@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Http\Traits\ParentTrait;
+use App\Repos\PatchRepo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +12,8 @@ class Patch extends Model
     use HasFactory;
 
     protected $table = 'patches';
+
+    public static $repo = 'PatchRepo';
 
     protected $guarded = [];
 
@@ -23,6 +26,11 @@ class Patch extends Model
     public function getShowNameAttribute()
     {
         return $this->name . " (" . $this->software->show_name . ")";
+    }
+
+    public function patchPolicy()
+    {
+        return $this->hasMany(PatchPolicy::class, 'patch_id');
     }
 
     public function software()

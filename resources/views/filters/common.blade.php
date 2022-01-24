@@ -6,4 +6,8 @@
     @include('filters.refresh')
     @include('filters.pagination')
     @include('filters.export')
+    @yield('filters')
+</div>
+<div class="mt-2">
+    @yield('below_filters')
 </div>

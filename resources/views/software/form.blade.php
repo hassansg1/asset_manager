@@ -58,7 +58,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="" class="form-label">Approval Required</label>
+                            <label for="" class="form-label">Patch/AV Approval Required</label>
                             <br>
                             <input type="checkbox" id="switch3" switch="bool" name="approval_required"
                                 {{ isset($item) && $item->approval_required == 1 ? 'checked':''  }}

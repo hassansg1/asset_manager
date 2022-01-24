@@ -7,10 +7,10 @@
             onclick="toggleSelectAll()"
             type="checkbox" name=""
             id="select_all"></th>
+    <th>Software</th>
     <th>Patch</th>
     <th>Asset</th>
     <th>Approved</th>
-    <th>Action</th>
 @endsection
 @section('table_rows')
     @include('patch_report.form_rows')

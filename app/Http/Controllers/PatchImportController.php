@@ -84,7 +84,7 @@ class PatchImportController extends Controller
                         'article' => $obj['Article'],
                         'build_number' => $obj['Build Number'],
                         'details' => $obj['Details'],
-                        'release_date' => $obj['Patch Release Date'],
+                        'release_date' => date('Y-m-d',strtotime($obj['Patch Release Date'])),
                     ];
                     $request->replace($arr);
                     $validator = Validator::make($request->all(), $model->rules);
@@ -105,7 +105,7 @@ class PatchImportController extends Controller
                             $success = false;
                             break;
                         }
-                        $logs[] = 'Software Component Data saved.';
+                        $logs[] = 'Patch Data saved.';
                     }
                 }
             } else

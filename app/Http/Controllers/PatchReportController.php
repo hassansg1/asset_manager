@@ -17,15 +17,23 @@ class PatchReportController extends BaseController
     protected $heading;
     protected $topHeading;
 
+    public function __construct()
+    {
+        $this->model = new Patch();
+        $this->route = 'patch';
+        $this->heading = 'Patch';
+        \Illuminate\Support\Facades\View::share('top_heading', 'Patches');
+    }
+
     /**
      * @return Application|Factory|View
      */
     public function index(Request $request)
     {
-        $patches = Patch::paginate(100);
+        $data = $this->fetchData($this->model, $request, 'PatchReportRepo');
 
         return view("patch_report/index")
-            ->with(['items' => $patches, 'heading' => 'Patch Report', 'route' => 'patch_report']);
+            ->with(['items' => $data['items'], 'heading' => 'Patch Report', 'route' => 'patch_report']);
     }
 
     /**

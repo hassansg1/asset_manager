@@ -15,11 +15,8 @@ class FilterController extends Controller
      * @param Request $request
      * @return Application|Factory|View
      */
-    public function filter(Request $request)
+    public function filter($model, Request $request)
     {
-        $data = $this->fetchData($request->model);
 
-        return view($request->route . "/index")
-            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading]);
     }
 }

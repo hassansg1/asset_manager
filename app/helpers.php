@@ -29,10 +29,10 @@ if (!function_exists('universalDateFormatter')) {
 if (!function_exists('getUserName')) {
     function getUserName($userId)
     {
-        $user=null;
-        $user_ids = \App\Models\UserAccount::where('account_id',$userId)->get();
+        $user = null;
+        $user_ids = \App\Models\UserAccount::where('account_id', $userId)->get();
         foreach ($user_ids as $user) {
-            $user = \App\Models\User::where('id',$user->user_id)->first();
+            $user = \App\Models\User::where('id', $user->user_id)->first();
         }
         return $user;
     }
@@ -86,11 +86,11 @@ if (!function_exists('getStatus')) {
      */
     function getStatus()
     {
-      return [
-        '1' => 'Active',
-        '0' => 'InActive',
-        '2' => 'Suspended',
-      ];
+        return [
+            '1' => 'Active',
+            '0' => 'InActive',
+            '2' => 'Suspended',
+        ];
     }
 }
 if (!function_exists('getDepartments')) {
@@ -592,11 +592,12 @@ if (!function_exists('getAncestors')) {
 }
 
 if (!function_exists('getUserAsset')) {
-    function getUserAsset($userId){
-            $userAccountId = UserAccount::where('account_id', $userId)->get();
-            $userAssets = AssetUserId::select('asset_id')->whereIn('user_id', $userAccountId->account_id)->get();
-            $userAssetName = \App\Models\Location::where('id', $userAssets->asset_id)->first();
-            return $userAssetName;
+    function getUserAsset($userId)
+    {
+        $userAccountId = UserAccount::where('account_id', $userId)->get();
+        $userAssets = AssetUserId::select('asset_id')->whereIn('user_id', $userAccountId->account_id)->get();
+        $userAssetName = \App\Models\Location::where('id', $userAssets->asset_id)->first();
+        return $userAssetName;
 
     }
 }
@@ -604,8 +605,24 @@ if (!function_exists('getUserAsset')) {
 if (!function_exists('assetRights')) {
     function assetRights($rightId)
     {
-            $rights = \App\Models\Right::where('id', $rightId)->first();
-            return $rights;
+        $rights = \App\Models\Right::where('id', $rightId)->first();
+        return $rights;
+    }
+}
+
+if (!function_exists('checkIfPatchPolicyCanBeDeleted')) {
+    function checkIfPatchPolicyCanBeDeleted($softwareId, $patchId)
+    {
+        $baseSoftware = \App\Models\Software::with('patches')->where('id', $softwareId)->first();
+        $patches = $baseSoftware->patches->pluck('id')->toArray();
+        $patchesInstalled = \App\Models\InstalledPatch::where([
+            'patch_id' => $patchId
+        ])->pluck('asset_id')->toArray();
+        $basePatchesInstalled = \App\Models\InstalledPatch::whereIn(
+            'patch_id', $patches
+        )->pluck('asset_id')->toArray();
+
+        return count(array_intersect($patchesInstalled, $basePatchesInstalled)) > 0;
     }
 }
 
@@ -637,6 +654,19 @@ function getPatchAssets($patch)
     }
 
     return collect($asset);
+}
+
+function getAssetPatches($assetId)
+{
+    $insSoft = \App\Models\InstalledSoftware::with('software.patches')->where('asset_id', $assetId)->get();
+    $patches = [];
+    foreach ($insSoft as $soft) {
+        foreach ($soft->software->patches as $patch) {
+            $patches[] = $patch;
+        }
+    }
+
+    return collect($patches);
 }
 
 function checkIfPatchInstalled($asset, $patch)

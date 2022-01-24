@@ -3,11 +3,14 @@
         @if(!checkIfPatchInstalled($asset,$item))
             <tr id="{{ $item->id }}">
                 @php($app = getApprovedStatus($asset,$item))
-                <td colspan="1"><input data-asset="{{ $item->id }}_{{ $asset->id }}"
-                                       {{ count($app['pending']) > 0 ? 'disabled' : '' }} type="checkbox"
-                                       name="select_row" value="{{ $item->id }}"
-                                       id="select_check_{{ $item->id }}" class="select_row select_patch"></td>
-                <td>{{ $item->software->name ?? '' }} {{ $item->name ?? '' }}</td>
+                <td colspan="1"><input
+                        data-type="{{ $route ?? '' }}"
+                        data-asset="{{ $item->id }}_{{ $asset->id }}"
+                        {{ count($app['pending']) > 0 ? 'disabled' : '' }} type="checkbox"
+                        name="select_row" value="{{ $asset->id }}"
+                        id="select_check_{{ $item->id }}" class="select_row select_patch"></td>
+                <td>{{ $item->software->name ?? '' }}</td>
+                <td>{{ $item->name ?? '' }}</td>
                 <td>{{ $asset->name  ?? '' }}</td>
                 <td style="color: {{ $app['status'] == "Yes" ? 'green' : 'red' }}">{{ $app['status'] }}
                     <br>
@@ -31,12 +34,6 @@
                             @endif
                         @endforeach
                   </span>
-                </td>
-                <td>
-                    <button
-                        {{ count($app['pending']) > 0 ? 'disabled' : '' }} onclick="applyPatch('{{ $item->id }}','{{ $asset->id }}')"
-                        class="btn btn-primary">Apply Patch
-                    </button>
                 </td>
             </tr>
         @endif

@@ -23,6 +23,6 @@ class LocationScope implements Scope
 
     public function apply(Builder $builder, Model $model)
     {
-        $builder->where('type', 'sub_sites');
+        $builder->where('type', $this->locationType);
     }
 }

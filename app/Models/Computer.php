@@ -19,6 +19,8 @@ class Computer extends Model
 
     public static $type = 'computer_assets';
 
+    public static $repo = 'ComputerRepo';
+
     protected $guarded = [];
 
     protected static function boot()
