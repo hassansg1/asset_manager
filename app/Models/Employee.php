@@ -44,8 +44,6 @@ class Employee extends Model
        if (isset($request->status)) $item->status = $request->status;
        if (isset($request->mobile_no)) $item->mobile_no = $request->mobile_no;
        if (isset($request->unit_id)) $item->unit_id = $request->unit_id;
-       if (isset($request->site_id)) $item->site_id = $request->site_id;
-       if (isset($request->sub_site_id)) $item->sub_site_id = $request->sub_site_id;
        $item->user_type = "OTCM-USERS";
        $item->save();
 

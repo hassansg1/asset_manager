@@ -38,29 +38,6 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}site_id"
-                                   class="form-label">Site</label>
-                            <select class="form-control select2" id="site_id" name="site_id">
-                                <option value="">-Select Site-</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}sub_site_id"
-                                   class="form-label">Sub Site</label>
-                            <select class="form-control select2" id="sub_site_id" name="sub_site_id">
-                                <option value="">-Select Unit-</option>
-                                @if(isset($item))
-                                    @foreach($sub_sites as $value)
-                                        <option value="{{$value->id}}" {{ isset($item) && $item->sub_site_id == $value->id  ? 'selected' : ''}}>{{$value->rec_id}}</option>
-                                    @endforeach
-                                @endif
-                            </select>
-                        </div>
-                    </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
@@ -136,41 +113,41 @@
         </div>
     </div>
 </div>
-@section('script')
-    <script type="text/javascript">
-        $('#unit_id').on('change', function () {
-            var unit_id = this.value;
-            if (unit_id) {
-                $.ajax({
-                    type: "get",
-                    url: "{{url('unit/type')}}/" + unit_id,
-                    success: function (res) {
-                        if (res) {
-                            $.each(res, function (key, value) {
-                                $("#site_id").append('<option value="' + key + '">' + value + '</option>');
-                            });
-                        }
-                    }
+{{--@section('script')--}}
+{{--    <script type="text/javascript">--}}
+{{--        $('#unit_id').on('change', function () {--}}
+{{--            var unit_id = this.value;--}}
+{{--            if (unit_id) {--}}
+{{--                $.ajax({--}}
+{{--                    type: "get",--}}
+{{--                    url: "{{url('unit/type')}}/" + unit_id,--}}
+{{--                    success: function (res) {--}}
+{{--                        if (res) {--}}
+{{--                            $.each(res, function (key, value) {--}}
+{{--                                $("#site_id").append('<option value="' + key + '">' + value + '</option>');--}}
+{{--                            });--}}
+{{--                        }--}}
+{{--                    }--}}
 
-                });
-            }
-        });
-        $('#site_id').on('change', function () {
-            var site_id = this.value;
-            if (site_id) {
-                $.ajax({
-                    type: "get",
-                    url: "{{url('site/type')}}/" + site_id,
-                    success: function (res) {
-                        if (res) {
-                            $.each(res, function (key, value) {
-                                $("#sub_site_id").append('<option value="' + key + '">' + value + '</option>');
-                            });
-                        }
-                    }
+{{--                });--}}
+{{--            }--}}
+{{--        });--}}
+{{--        $('#site_id').on('change', function () {--}}
+{{--            var site_id = this.value;--}}
+{{--            if (site_id) {--}}
+{{--                $.ajax({--}}
+{{--                    type: "get",--}}
+{{--                    url: "{{url('site/type')}}/" + site_id,--}}
+{{--                    success: function (res) {--}}
+{{--                        if (res) {--}}
+{{--                            $.each(res, function (key, value) {--}}
+{{--                                $("#sub_site_id").append('<option value="' + key + '">' + value + '</option>');--}}
+{{--                            });--}}
+{{--                        }--}}
+{{--                    }--}}
 
-                });
-            }
-        });
-    </script>
-@endsection
+{{--                });--}}
+{{--            }--}}
+{{--        });--}}
+{{--    </script>--}}
+{{--@endsection--}}

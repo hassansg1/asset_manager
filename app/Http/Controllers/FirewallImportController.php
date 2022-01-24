@@ -91,7 +91,6 @@ class FirewallImportController extends Controller
                         'status'=>$obj['Approval Status'],'approvel_date'=>$obj['Approval date']
                     ];
                     $request->replace($arr);
-                    dd($request->all());
                     $validator = Validator::make($request->all(), $model->rules);
                     if ($validator->fails()) {
                         $logs[] = 'Rolling back the changes.';

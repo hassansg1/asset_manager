@@ -15,8 +15,6 @@ class AddUnitsToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->integer('unit_id')->nullable();
-            $table->integer('site_id')->nullable();
-            $table->integer('sub_site_id')->nullable();
         });
     }
 

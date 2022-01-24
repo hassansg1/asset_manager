@@ -16,7 +16,7 @@
             <hr class="solid">
         <div class="row">
             <div class="col-md-8">
-                <h3>Associated Users</h3>
+                <h3>Assigned User</h3>
             </div>
             <div class="col-md-4">
                 <div style="text-align: right">
@@ -33,7 +33,7 @@
                             </div>
                             <div class="modal-body">
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="{{ isset($item) ? $item->id:'' }}unit_id"
                                                    class="form-label required">Unit</label>
@@ -42,24 +42,6 @@
                                                 @foreach($units as $value)
                                                     <option value="{{$value->id}}" {{ isset($item) && $item->unit_id == $value->id  ? 'selected' : ''}}>{{$value->rec_id}}</option>
                                                 @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="mb-3">
-                                            <label for="{{ isset($item) ? $item->id:'' }}site_id"
-                                                   class="form-label">Site</label>
-                                            <select class="form-control select2" id="site_id" name="site_id">
-                                                <option value="">-Select Site-</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="mb-3">
-                                            <label for="{{ isset($item) ? $item->id:'' }}sub_site_id"
-                                                   class="form-label">Sub Site</label>
-                                            <select class="form-control select2" id="sub_site_id" name="sub_site_id">
-                                                <option value="">-Select Sub Site-</option>
                                             </select>
                                         </div>
                                     </div>
@@ -91,8 +73,6 @@
                         <thead>
                         <tr>
                             <th>Unit</th>
-                            <th>Site</th>
-                            <th>Sub site</th>
                             <th>User</th>
                             <th>Actions</th>
                         </tr>
@@ -102,14 +82,8 @@
                             <tr id="{{ $value->id }}">
                                 {{--        <td colspan="1"><input type="checkbox" name="select_row" value="{{ $value->id }}"--}}
                                 {{--                               id="select_check_{{ $value->id }}" class="select_row"></td>--}}
-                                <td>{{ $value->user_unit->rec_id }}</td>
-                                @if($value->user_site)
-                                    <td>{{ $value->user_site->rec_id }}</td>
-                                @else
-                                    <td></td>
-                                @endif
-                                @if($value->user_sub_site)
-                                    <td>{{ $value->user_sub_site->rec_id }}</td>
+                                @if($value->user_unit)
+                                    <td>{{ $value->user_unit->rec_id }}</td>
                                 @else
                                     <td></td>
                                 @endif

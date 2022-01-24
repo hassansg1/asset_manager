@@ -123,19 +123,10 @@ class AjaxController extends Controller
         $user_accounts = UserId::whereNotIn('id', $assigned_user_accounts)->where('parent_id', $system_id)->pluck('user_id', 'id');
         return response()->json($user_accounts);
     }
-    public function unit_wise_sites($unit_id){
-        $sites = Location::where('parent_id', $unit_id)->pluck('rec_id', 'id');
-        return response()->json($sites);
-    }
-    public function site_wise_sub_sites($site_id){
-        $sub_sites = Location::where('parent_id', $site_id)->pluck('rec_id', 'id');
-        return response()->json($sub_sites);
-    }
-    public function sub_site_wise_user(Request $request, $sub_site_id){
-        $users = User::where('sub_site_id',$sub_site_id)->pluck('first_name', 'id');
+    public function unit_wise_users($unit_id){
+        $users = User::where('unit_id',$unit_id)->pluck('first_name', 'id');
         return response()->json($users);
     }
-
     public function delete_assigned_user_id(Request $request, $user_id){
         $user_account = UserAccount::where(['user_id'=>$user_id, 'account_id'=>$request->account_id])->delete();
         return true;

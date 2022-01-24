@@ -4,17 +4,14 @@
     <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="OTCM-FIREWALL-IMPORT">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FirewallImportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FirewallImportController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Employee.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/UserId.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserId.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/employee/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_01_11_064616_add_units_to_users.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_01_11_064616_add_units_to_users.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/employee/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/firewall_managment/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/firewall_managment/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/vendor-scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/vendor-scripts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_asset_report/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_asset_report/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_asset_report/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_asset_report/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user_id/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_id/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_id/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_id/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +236,7 @@
       <workItem from="1641278202312" duration="709000" />
       <workItem from="1641279000010" duration="27596000" />
       <workItem from="1642489895052" duration="8000" />
-      <workItem from="1642490868263" duration="7364000" />
+      <workItem from="1642490868263" duration="13090000" />
     </task>
     <task id="LOCAL-00001" summary="new changes">
       <created>1639999411103</created>
@@ -304,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642436030112</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="OTCM-FIREWALL-IMPORT">
+      <created>1642507890367</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1642507890368</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,6 +338,11 @@
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/asset_landing_page/index.blade.php</url>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/employee/form.blade.php</url>
+          <line>115</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

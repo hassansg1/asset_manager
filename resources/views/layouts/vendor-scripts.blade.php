@@ -271,45 +271,6 @@
                 url: "{{url('unit/type')}}/" + unit_id,
                 success: function (res) {
                     if (res) {
-                        $("#site_id").empty();
-                        $.each(res, function (key, value) {
-                            $("#site_id").append('<option value="' + key + '">' + value + '</option>');
-                        });
-                    }
-                }
-
-            });
-        }
-    });
-    $('#site_id').on('change', function () {
-        var site_id = this.value;
-        if (site_id) {
-            $.ajax({
-                type: "get",
-                url: "{{url('site/type')}}/" + site_id,
-                success: function (res) {
-                    if (res) {
-                        $("#sub_site_id").empty();
-                        $.each(res, function (key, value) {
-                            $("#sub_site_id").append('<option value="' + key + '">' + value + '</option>');
-                        });
-                    }
-                }
-
-            });
-        }
-    });
-    $('#sub_site_id').on('change', function () {
-        var unit_id = $('#unit_id').val();
-        var site_id = $('#site_id').val();
-        var sub_site_id = $('#sub_site_id').val();
-        if (sub_site_id) {
-            $.ajax({
-                type: "get",
-                url: "{{url('sub_site/type')}}/" + sub_site_id,
-                data: { unit: unit_id, site_id:site_id, sub_site_id:sub_site_id },
-                success: function (res) {
-                    if (res) {
                         $("#user_id").empty();
                         $.each(res, function (key, value) {
                             $("#user_id").append('<option value="' + key + '">' + value + '</option>');
