@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAssetGroupsTable extends Migration
+class AddAssetFunctionToRights extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateAssetGroupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('asset_groups', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->longText('description')->nullable();
-            $table->timestamps();
+        Schema::table('rights', function (Blueprint $table) {
+            $table->integer('asset_function')->after('id');
         });
     }
 
@@ -28,6 +25,8 @@ class CreateAssetGroupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asset_groups');
+        Schema::table('rights', function (Blueprint $table) {
+            //
+        });
     }
 }

@@ -57,6 +57,7 @@ Route::group(['middleware' => ['auth']], function () {
         'library_import' => \App\Http\Controllers\LibraryImportController::class,
         'software_import' => \App\Http\Controllers\SoftwareImportController::class,
         'patch_import' => \App\Http\Controllers\PatchImportController::class,
+        'firewall_import' => \App\Http\Controllers\FirewallImportController::class,
         'clause' => \App\Http\Controllers\ClauseController::class,
         'lone' => \App\Http\Controllers\LoneAssetController::class,
         'subsite' => \App\Http\Controllers\SubSiteController::class,
@@ -102,6 +103,7 @@ Route::group(['middleware' => ['auth']], function () {
         'application' => \App\Http\Controllers\ApplicationController::class,
         'policy' => \App\Http\Controllers\PolicyController::class,
         'user_asset_report' => \App\Http\Controllers\ReportsController::class,
+        'asset_lending_page' => \App\Http\Controllers\AssetLandingPageController::class,
 
     ]);
     Route::post('PatchPage/LoadData', [\App\Http\Controllers\PatchApprovalAjaxController::class, 'loadData'])->name('PatchPage.loadData');
@@ -136,8 +138,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('system/user_accounts/{id}', [\App\Http\Controllers\AjaxController::class, 'system_user_accounts']);
     Route::get('asset/type/{type}', [\App\Http\Controllers\AjaxController::class, 'type_wise_assets']);
     Route::get('system/type/{type}', [\App\Http\Controllers\AjaxController::class, 'system_wise_user_accounts']);
+    Route::get('unit/type/{type}', [\App\Http\Controllers\AjaxController::class, 'unit_wise_users']);
     Route::get('asset/location/{type}', [\App\Http\Controllers\AjaxController::class, 'asset_wise_ip_address']);
     Route::get('connected_asset/location/{type}', [\App\Http\Controllers\AjaxController::class, 'connected_asset_wise_ip_address']);
+    Route::get('delete_asseigned_id/{type}', [\App\Http\Controllers\AjaxController::class, 'delete_assigned_user_id']);
+    Route::get('delete_assigned_id/{type}', [\App\Http\Controllers\AjaxController::class, 'delete_assigned_id']);
+    Route::get('asseigned_id/{type}', [\App\Http\Controllers\AjaxController::class, 'assigned_user_id']);
+    Route::get('asseigned_id_to_user/{type}', [\App\Http\Controllers\AjaxController::class, 'assigned_id_to_user']);
 
     Route::get('export_compliance_date_template', [\App\Http\Controllers\AjaxController::class, 'exportComplianceDataTemplates'])->name('export_compliance_date_template');
 

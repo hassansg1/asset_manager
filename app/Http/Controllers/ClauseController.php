@@ -33,7 +33,7 @@ class ClauseController extends BaseController
      */
     public function index(Request $request)
     {
-        $items = Clause::orderBy('id', 'desc')->get();
+        $items = Clause::orderBy('id', 'desc')->paginate();
 
         return view($this->route . "/index")
             ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);

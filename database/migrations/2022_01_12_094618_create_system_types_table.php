@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAssetGroupsTable extends Migration
+class CreateSystemTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateAssetGroupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('asset_groups', function (Blueprint $table) {
+        Schema::create('system_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateAssetGroupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asset_groups');
+        Schema::dropIfExists('system_types');
     }
 }

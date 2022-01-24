@@ -28,7 +28,7 @@ class ApproverController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Approver::all();
+        $data = Approver::paginate();
 
         return view($this->route . "/index")
         ->with(['items' => $data, 'route' => $this->route, 'heading' => $this->heading]);

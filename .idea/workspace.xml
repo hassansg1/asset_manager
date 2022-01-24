@@ -118,7 +118,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Firewall-managment/12-21-2021" />
+        <entry key="$PROJECT_DIR$" value="OTCM-79/ADD-NEW-COMPANY-ISSUE" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -278,7 +278,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../urbansky/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backup" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -371,6 +371,42 @@
       <updated>1641553422792</updated>
     </task>
     <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00006" summary="firewall-managment/12-21-2021">
+      <created>1641473067590</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1641473067590</updated>
+    </task>
+    <task id="LOCAL-00007" summary="firewall-managment/12-21-2021">
+      <created>1641990856535</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1641990856535</updated>
+    </task>
+    <task id="LOCAL-00008" summary="firewall-managment/12-21-2021">
+      <created>1642416486548</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1642416486548</updated>
+    </task>
+    <task id="LOCAL-00009" summary="OTCM-FIREWALL-IMPORT">
+      <created>1642436030112</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1642436030112</updated>
+    </task>
+    <task id="LOCAL-00010" summary="OTCM-FIREWALL-IMPORT">
+      <created>1642507890367</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1642507890368</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,6 +427,23 @@
     <MESSAGE value="OTCM-75/firewall-managemnt&#10;crud file create" />
     <MESSAGE value="firewall-managment/12-21-2021" />
     <MESSAGE value="new changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="new changes" />
+    <MESSAGE value="firewall-managment/12-21-2021" />
+    <MESSAGE value="OTCM-FIREWALL-IMPORT" />
+    <option name="LAST_COMMIT_MESSAGE" value="OTCM-FIREWALL-IMPORT" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/asset_landing_page/index.blade.php</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/employee/form.blade.php</url>
+          <line>115</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

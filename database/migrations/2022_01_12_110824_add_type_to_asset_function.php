@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddLineManagerToUsers extends Migration
+class AddTypeToAssetFunction extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddLineManagerToUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('line_manager')->after('status');
+        Schema::table('asset_function', function (Blueprint $table) {
+            $table->string('type')->after('name')->nullable();
         });
     }
 
@@ -25,7 +25,7 @@ class AddLineManagerToUsers extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('asset_function', function (Blueprint $table) {
             //
         });
     }

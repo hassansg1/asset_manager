@@ -34,6 +34,20 @@ class User extends Authenticatable
     public function account(){
         return $this->belongsTo(UserAccount::class, 'id', 'user_id');
     }
+    public function userAccount(){
+        return $this->belongsTo(UserAccount::class, 'id', 'user_id');
+    }
+
+    public function user_unit(){
+        return $this->belongsTo(Location::class, 'unit_id', 'id');
+    }
+    public function user_site(){
+        return $this->belongsTo(Location::class, 'site_id', 'id');
+    }
+
+    public function user__sub_site(){
+        return $this->belongsTo(Location::class, 'sub_site_id', 'id');
+    }
 
     public function account_id(){
         return $this->belongsTo(UserId::class, 'user_id', 'id');

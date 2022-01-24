@@ -9,19 +9,25 @@ class System extends Model
 {
 	use HasFactory;
 
-	public $rules =
-	[
-		'name' => 'required|unique:systems',
-		'asset_id' => 'required',
-	];
+    public function rules($system_type_id = null)
+    {
+        return [
+            'name' => 'required|unique:systems,name,NULL,id,system_type_id,' . $system_type_id
+        ];
+    }
 
     public function system_assets(){
         return $this->belongsTo(SystemAssets::class, 'id', 'system_id');
     }
 
+    public function system_type(){
+        return $this->hasOne(AssetFunction::class, 'id', 'system_type_id');
+    }
+
 	public function saveFormData($item, $request)
 	{
 		if (isset($request->name)) $item->name = $request->name;
+		if (isset($request->system_type_id)) $item->system_type_id = $request->system_type_id;
 		if (isset($request->description)) $item->description = $request->description;
 		$item->save();
         $result= SystemAssets::where('system_id',$item->id)->delete();

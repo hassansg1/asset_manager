@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class UserAccount extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'account_id',
+        'user_id',
+    ];
     public function user_account(){
         return $this->belongsTo(UserId::class, 'account_id', 'id');
     }

@@ -16,8 +16,8 @@ class RightController extends Controller
    {
     $this->model = new Right();
     $this->route = 'right';
-    $this->heading = 'User ID Right';
-    \Illuminate\Support\Facades\View::share('top_heading', 'User ID Rights');
+    $this->heading = 'Rights';
+    \Illuminate\Support\Facades\View::share('top_heading', 'RIGHTS');
 }
 
     /**

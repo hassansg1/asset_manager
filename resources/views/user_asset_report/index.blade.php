@@ -1,7 +1,8 @@
 @extends('components.datatable')
 @section('table_header')
-    <th>User</th>
-    <th>User ID</th>
+    <th style="width: 200px">User</th>
+    <th >User ID</th>
+{{--    <th >System</th>--}}
     <th>Assets</th>
     <th>Rights</th>
 @endsection

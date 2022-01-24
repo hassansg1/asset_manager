@@ -17,10 +17,10 @@ class CreateFirewallManagmentsTable extends Migration
             $table->id();
             $table->string('source_zone');
             $table->string('source_location');
-            $table->integer('source_asset');
+            $table->string('source_asset');
             $table->string('destination_zone');
             $table->string('destination_location');
-            $table->integer('destination_asset');
+            $table->string('destination_asset');
             $table->string('applicatin_port');
             $table->longText('description')->nullable();
             $table->string('condition');
