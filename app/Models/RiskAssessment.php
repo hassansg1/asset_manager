@@ -11,6 +11,7 @@ class RiskAssessment extends Model
 
     public $rules =
         [
+            'risk_assesment_id' => 'required | max:255',
             'title' => 'required | max:255',
         ];
 

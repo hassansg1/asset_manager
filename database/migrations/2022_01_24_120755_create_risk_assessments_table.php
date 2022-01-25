@@ -18,8 +18,8 @@ class CreateRiskAssessmentsTable extends Migration
             $table->string('risk_assesment_id');
             $table->string('title');
             $table->longText('description')->nullable();
-            $table->string('participant');
-            $table->string('date_of_assesment');
+            $table->string('participant')->nullable();
+            $table->string('date_of_assesment')->nullable();
             $table->longText('reason_of_assesment')->nullable();
             $table->timestamps();
         });

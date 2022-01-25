@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="Firewall-Managment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Risk.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Risk.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/RiskAssessment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/RiskAssessment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/risk/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/risk_assesment/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk_assesment/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/risk_assesment/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk_assesment/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/risk_assesment/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk_assesment/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +35,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="OTCM-IMPORT-FIREWALL/1-7-2020" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -190,7 +195,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blank_ui" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../assets" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />

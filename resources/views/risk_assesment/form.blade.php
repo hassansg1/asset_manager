@@ -8,16 +8,16 @@
             <div class="card-body">
                 <h4 class="card-title mb-4">{{ $heading }} Information</h4>
                 <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <div class="mb-3">
                                 <label for="{{ isset($item) ? $item->id:'' }}risk_assesment_id" class="form-label required">Risk Assesment ID</label>
                                 <input type="text" value="{{ isset($item) ? $item->risk_assesment_id:old('risk_assesment_id') ?? ''  }}"
                                        class="form-control" id="{{ isset($item) ? $item->id:'' }}risk_assesment_id" name="risk_assesment_id">
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-8">
                             <div class="mb-3">
-                                <label for="{{ isset($item) ? $item->id:'' }}title" class="form-label required">Title</label>
+                                <label for="{{ isset($item) ? $item->id:'' }}title" class="form-label required">Risk Assesment Title</label>
                                 <input type="text" value="{{ isset($item) ? $item->title:old('title') ?? ''  }}"
                                        class="form-control" id="{{ isset($item) ? $item->id:'' }}title" name="title">
                             </div>
@@ -27,28 +27,26 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}description" class="form-label">Description</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}description" class="form-label">Risk Assesment Description</label>
                             <textarea class="form-control" name="description" id="description">{{ isset($item) ? $item->description:old('description') ?? ''  }}</textarea>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="row">
-                        <div class="col-lg-6">
+                    <div class="col-lg-4">
+                        <div class="mb-3">
+                            <label for="{{ isset($item) ? $item->id:'' }}date_of_assesment" class="form-label">Date for Assesment</label>
+                            <input type="date" value="{{ isset($item) ? $item->date_of_assesment:old('date_of_assesment') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}date_of_assesment" name="date_of_assesment">
+                        </div>
+                    </div>
+                        <div class="col-lg-8">
                             <div class="mb-3">
-                                <label for="{{ isset($item) ? $item->id:'' }}participant" class="form-label required">Participant</label>
+                                <label for="{{ isset($item) ? $item->id:'' }}participant" class="form-label ">Participant</label>
                                 <input type="text" value="{{ isset($item) ? $item->participant:old('participant') ?? ''  }}"
                                        class="form-control" id="{{ isset($item) ? $item->id:'' }}participant" name="participant">
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="mb-3">
-                                <label for="{{ isset($item) ? $item->id:'' }}date_of_assesment" class="form-label">Date of Assesment</label>
-                                <input type="date" value="{{ isset($item) ? $item->date_of_assesment:old('date_of_assesment') ?? ''  }}"
-                                       class="form-control" id="{{ isset($item) ? $item->id:'' }}date_of_assesment" name="date_of_assesment">
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
