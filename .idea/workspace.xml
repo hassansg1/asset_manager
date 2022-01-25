@@ -1,82 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="new changes">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PatchesSoftwareEditController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/SoftwareForPatchApprovalController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/patches_software_edit/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/patches_software_edit/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/patches_software_edit/edit_form.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/patches_software_edit/edit_modal.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/patches_software_edit/form.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/patches_software_edit/form_rows.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/patches_software_edit/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/patches_software_edit/view.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/software_for_patch_approval/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/software_for_patch_approval/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/software_for_patch_approval/edit_form.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/software_for_patch_approval/edit_modal.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/software_for_patch_approval/form.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/software_for_patch_approval/form_rows.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/software_for_patch_approval/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/software_for_patch_approval/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AssetLandingPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AssetLandingPageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ComputerAssetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ComputerAssetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LocTreeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LocTreeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PatchPolicyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PatchPolicyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PatchSoftwareApprovalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PatchSoftwareApprovalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SeeAssetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SeeAssetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SoftwarePatchesViewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SoftwarePatchesViewController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Traits/Observable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Traits/Observable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Building.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Building.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Cabinet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Cabinet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Computer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Computer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/LoneAsset.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/LoneAsset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/NetworkAsset.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/NetworkAsset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Room.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Room.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Site.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Site.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Software.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Software.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/SubSite.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/SubSite.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Unit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Unit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repos/PatchPolicyRepo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repos/PatchPolicyRepo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repos/PatchRepo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repos/PatchRepo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/asset/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/asset/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/asset_landing_page/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/asset_landing_page/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/assets_shared/basic_info.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/assets_shared/basic_info.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/building/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/building/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/datatable_components.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/datatable_components.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/modals.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/modals.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/computer/partials/modals.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/computer/partials/modals.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/computer/partials/tabs/ip_address.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/computer/partials/tabs/ip_address.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/computer/partials/tabs/modal_row.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/computer/partials/tabs/modal_row.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/network/partials/tabs/ip_address.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/network/partials/tabs/ip_address.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/patch/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/patch/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/patch/partials/modals.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/patch/partials/modals.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/patch/partials/top_btns.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/patch/partials/top_btns.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/patch/script.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/patch/script.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/patch_report/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/patch_report/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/patch_report/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/patch_report/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/patch_report_view/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/patch_report_view/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/patch_report_view/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/patch_report_view/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/room/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/room/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/scripts/script_common.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/scripts/script_common.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software/partials/modals.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software/partials/modals.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software/script.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software/script.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software_patches_edit/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software_patches_edit/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software_patches_edit/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software_patches_edit/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software_patches_view/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software_patches_view/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software_patches_view/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software_patches_view/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/subsite/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subsite/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/unit/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/unit/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="new changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -305,7 +230,7 @@
       <workItem from="1642760992911" duration="3842000" />
       <workItem from="1643015539387" duration="615000" />
       <workItem from="1643037031174" duration="1913000" />
-      <workItem from="1643063195452" duration="7042000" />
+      <workItem from="1643063195452" duration="7779000" />
     </task>
     <task id="LOCAL-00001" summary="new changes">
       <created>1639999411103</created>
@@ -377,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642507890368</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="new changes">
+      <created>1643070692933</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1643070692933</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,10 +329,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="OTCM-75/firewall-managemnt&#10;crud file create" />
     <MESSAGE value="firewall-managment/12-21-2021" />
-    <MESSAGE value="new changes" />
     <MESSAGE value="firewall-managment/12-21-2021" />
     <MESSAGE value="OTCM-FIREWALL-IMPORT" />
-    <option name="LAST_COMMIT_MESSAGE" value="OTCM-FIREWALL-IMPORT" />
+    <MESSAGE value="new changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="new changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

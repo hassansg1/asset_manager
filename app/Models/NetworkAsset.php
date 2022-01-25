@@ -112,9 +112,9 @@ class NetworkAsset extends Model
         $newItem = Location::find($item->id);
         $parent->appendNode($newItem);
 
-        if (isset($request->ports)) {
-            Port::updatePorts($item, $request->ports);
-        }
+//        if (isset($request->ports)) {
+//            Port::updatePorts($item, $request->ports);
+//        }
         return $item;
     }
 }
