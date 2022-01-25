@@ -71,10 +71,10 @@
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
                         <li><a href="{{route('patch.index')}}" key="t-orders">Master Patch List</a></li>
                         <li><a href="{{route('installed_patch.index')}}" key="t-orders">Installed Patch List</a>
-                        <li><a href="{{route('patch_approval.index')}}" key="t-orders">Patch Approval</a>
-                        <li><a href="{{route('patch_policy.index')}}" key="t-orders">Patch Policy</a>
-                        <li><a href="{{route('patch_report.index')}}" key="t-orders">Patch Report</a>
-                        <li><a href="{{route('zone_policy.index')}}" key="t-orders">Zone Policy</a>
+                            {{--                        <li><a href="{{route('patch_approval.index')}}" key="t-orders">Patch Approval</a>--}}
+                            {{--                        <li><a href="{{route('patch_policy.index')}}" key="t-orders">Patch Policy</a>--}}
+                            {{--                        <li><a href="{{route('patch_report.index')}}" key="t-orders">Patch Report</a>--}}
+                            {{--                        <li><a href="{{route('zone_policy.index')}}" key="t-orders">Zone Policy</a>--}}
                         </li>
                     </ul>
                 </li>

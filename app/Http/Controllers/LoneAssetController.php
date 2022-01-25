@@ -23,6 +23,7 @@ class LoneAssetController extends BaseController
         $this->heading = 'L01 Asset';
         \Illuminate\Support\Facades\View::share('top_heading', 'L01 Asset');
     }
+
     /**
      * @return Application|Factory|View
      */
@@ -65,7 +66,7 @@ class LoneAssetController extends BaseController
      */
     public function store(Request $request)
     {
-        $request->validate($this->model->rules);
+//        $request->validate($this->model->rules);
         $this->model->saveFormData($this->model, $request);
 
         flashSuccess(getLang($this->heading . " Successfully Created."));
@@ -114,8 +115,6 @@ class LoneAssetController extends BaseController
      */
     public function update(Request $request, $item)
     {
-
-
         $item = $this->model->find($item);
         $this->model->saveFormData($item, $request);
 
