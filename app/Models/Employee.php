@@ -22,6 +22,7 @@ class Employee extends Model
         return [
             'first_name' => 'required | max:255',
             'unit_id' => 'required',
+            'email' => 'required',
         ];
     }
 
@@ -44,6 +45,7 @@ class Employee extends Model
        if (isset($request->status)) $item->status = $request->status;
        if (isset($request->mobile_no)) $item->mobile_no = $request->mobile_no;
        if (isset($request->unit_id)) $item->unit_id = $request->unit_id;
+       $item->username = $request->first_name;
        $item->user_type = "OTCM-USERS";
        $item->save();
 
