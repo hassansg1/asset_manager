@@ -105,8 +105,11 @@ class LoneAsset extends Model
         if (isset($request->asset_parent_code)) $item->asset_parent_code = $request->asset_parent_code;
         if (isset($request->owner_contact)) $item->owner_contact = $request->owner_contact;
 
+        $item->type = self::$type;
+        $parent = Location::find($request->parent_id);
         $item->save();
-        $this->updateParent($request, $item);
+        $newItem = Location::find($item->id);
+        $parent->appendNode($newItem);
         return $item;
     }
 }

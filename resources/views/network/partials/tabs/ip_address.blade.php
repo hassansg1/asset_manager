@@ -13,7 +13,7 @@
                 </tr>
                 </thead>
                 <tbody id="ports_table_row">
-                @if(isset($item))
+                @if(isset($item->ports))
                     @foreach($item->ports as $port)
                         @include('network.partials.tabs.port_row',['port' => $port,'network' => 'true'])
                     @endforeach

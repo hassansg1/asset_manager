@@ -66,6 +66,7 @@ Route::group(['middleware' => ['auth']], function () {
         'networks' => \App\Http\Controllers\NetworkController::class,
         'building' => \App\Http\Controllers\BuildingController::class,
         'software' => \App\Http\Controllers\SoftwareController::class,
+        'software_for_patch_approval' => \App\Http\Controllers\SoftwareForPatchApprovalController::class,
         'software_component' => \App\Http\Controllers\SoftwareComponentController::class,
         'installed_software' => \App\Http\Controllers\InstalledSoftwareController::class,
         'installed_patch' => \App\Http\Controllers\InstalledPatchesController::class,
@@ -75,6 +76,7 @@ Route::group(['middleware' => ['auth']], function () {
         'asset_patch_report' => \App\Http\Controllers\AssetPatchReportController::class,
         'asset_patch_report_view' => \App\Http\Controllers\AssetPatchReportViewController::class,
         'software_patches_view' => \App\Http\Controllers\SoftwarePatchesViewController::class,
+        'patches_software_edit' => \App\Http\Controllers\PatchesSoftwareEditController::class,
         'software_patches_edit' => \App\Http\Controllers\SoftwarePatchesEditController::class,
         'software_patch_approval' => \App\Http\Controllers\SoftwarePatchApprovalController::class,
         'patch' => \App\Http\Controllers\PatchController::class,
@@ -182,4 +184,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('patchInstall/asset/save', [\App\Http\Controllers\PatchSoftwareApprovalController::class, 'patchAssetInstallSave'])->name('patch.patchAssetInstallSave');
     Route::post('assetInstall/patch/save', [\App\Http\Controllers\PatchSoftwareApprovalController::class, 'assetPatchInstallSave'])->name('asset.assetPatchInstallSave');
 
+    //Patch Policy delete
+    Route::post('patchApprovalPolicy/delete',[\App\Http\Controllers\PatchSoftwareApprovalController::class,'patchPolicyDelete'])->name('patchPolicyDelete');
 });

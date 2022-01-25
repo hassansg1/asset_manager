@@ -3,14 +3,9 @@
     <button onclick="applyBulkPatch()" class="btn btn-primary mb-1">Apply Bulk Patch</button>
 @endsection
 @section('table_header')
-    <th class="select_all_checkbox" style="width: 10px"><input
-            onclick="toggleSelectAll()"
-            type="checkbox" name=""
-            id="select_all"></th>
-    <th>Software</th>
-    <th>Patch</th>
-    <th>Asset</th>
-    <th>Approved</th>
+    <th>Software Name</th>
+    <th>Patch Name</th>
+    <th>Asset Name / Approval Status</th>
 @endsection
 @section('table_rows')
     @include('patch_report.form_rows')

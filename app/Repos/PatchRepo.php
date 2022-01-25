@@ -2,6 +2,7 @@
 
 namespace App\Repos;
 
+use App\Models\Software;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -32,10 +33,14 @@ class PatchRepo
     {
         if (isset($request->not_in_software_id_condition) && $request->not_in_software_id_condition == 1) {
             $softwareId = $request->not_in_software_id;
+            $vendor = Software::find($softwareId)->vendor_id;
             $this->query = $this->query->where('software_id', '!=', $request->not_in_software_id);
             $this->query = $this->query->where('is_critical', '=', 1);
             $this->query = $this->query->whereDoesntHave('patchPolicy', function (Builder $query) use ($softwareId) {
                 $query->where('software_id', $softwareId);
+            });
+            $this->query = $this->query->whereDoesntHave('software.vendor', function (Builder $query) use ($softwareId, $vendor) {
+                $query->where('id', $vendor);
             });
         }
 

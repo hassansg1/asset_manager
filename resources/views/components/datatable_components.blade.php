@@ -25,5 +25,6 @@
                 </div>
             </div> <!-- end col -->
         </div> <!-- end row -->
+        @yield('table_bottom')
     </div>
 </div>

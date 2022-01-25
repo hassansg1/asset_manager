@@ -31,7 +31,7 @@
                 <div id="asset_patch_report_view"></div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-danger pull-right" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-danger pull-right" data-bs-dismiss="modal">Cancel</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

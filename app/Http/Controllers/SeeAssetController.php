@@ -12,6 +12,6 @@ class SeeAssetController extends Controller
     public function view($locationId)
     {
         Session::put('asset_location_id', $locationId);
-        return redirect()->to(url('assets/computer'));
+        return redirect()->to(url('asset_lending_page'));
     }
 }

@@ -15,7 +15,7 @@
                 </tr>
                 </thead>
                 <tbody id="ports_table_row">
-                @if(isset($item))
+                @if(isset($item->ports))
                     @foreach($item->ports as $port)
                         @include('computer.partials.tabs.port_row',['port' => $port])
                     @endforeach

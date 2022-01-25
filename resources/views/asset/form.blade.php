@@ -12,57 +12,57 @@
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}short_name"
                                    class="form-label required">Parent</label>
-                            <select class="form-control select2" name="parent"
+                            <select class="form-control select2" name="parent_id"
                                     id="{{ isset($item) ? $item->id:'' }}short_name">
                                 <option>Search by Name</option>
                                 @if(checkIfSuperAdmin())
                                     <optgroup label="Company">
                                         @foreach(getCompanies() as $row)
                                             <option
-                                                {{ isset($item) && $item->parentable_type == \App\Models\Company::class && $item->parentable_id == $row->id ? 'selected' : '' }}
-                                                value="{{\App\Models\Company::class}}??{{ $row->id }}">{{ $row->show_name }}</option>
+                                                {{ isset($item) && $item->parent_id == $row->id ? 'selected' : '' }}
+                                                value="{{ $row->id }}">{{ $row->show_name }}</option>
                                         @endforeach
                                     </optgroup>
                                     <optgroup label="Unit">
                                         @foreach(\App\Models\Unit::all() as $row)
                                             <option
-                                                {{ isset($item) && $item->parentable_type == \App\Models\Unit::class && $item->parentable_id == $row->id ? 'selected' : '' }}
-                                                value="{{\App\Models\Unit::class}}??{{ $row->id }}">{{ $row->show_name }}</option>
+                                                {{ isset($item) && $item->parent_id == $row->id ? 'selected' : '' }}
+                                                value="{{ $row->id }}">{{ $row->show_name }}</option>
                                         @endforeach
                                     </optgroup>
                                     <optgroup label="Site">
                                         @foreach(\App\Models\Site::all() as $row)
                                             <option
-                                                {{ isset($item) && $item->parentable_type == \App\Models\Site::class && $item->parentable_id == $row->id ? 'selected' : '' }}
-                                                value="{{\App\Models\Site::class}}??{{ $row->id }}">{{ $row->show_name }}</option>
+                                                {{ isset($item) && $item->parent_id == $row->id ? 'selected' : '' }}
+                                                value="{{ $row->id }}">{{ $row->show_name }}</option>
                                         @endforeach
                                     </optgroup>
                                     <optgroup label="SubSite">
                                         @foreach(\App\Models\SubSite::all() as $row)
                                             <option
-                                                {{ isset($item) && $item->parentable_type == \App\Models\SubSite::class && $item->parentable_id == $row->id ? 'selected' : '' }}
-                                                value="{{\App\Models\SubSite::class}}??{{ $row->id }}">{{ $row->show_name }}</option>
+                                                {{ isset($item) && $item->parent_id == $row->id ? 'selected' : '' }}
+                                                value="{{ $row->id }}">{{ $row->show_name }}</option>
                                         @endforeach
                                     </optgroup>
                                     <optgroup label="Building">
                                         @foreach(\App\Models\Building::all() as $row)
                                             <option
-                                                {{ isset($item) && $item->parentable_type == \App\Models\Building::class && $item->parentable_id == $row->id ? 'selected' : '' }}
-                                                value="{{\App\Models\Building::class}}??{{ $row->id }}">{{ $row->show_name }}</option>
+                                                {{ isset($item) && $item->parent_id == $row->id ? 'selected' : '' }}
+                                                value="{{ $row->id }}">{{ $row->show_name }}</option>
                                         @endforeach
                                     </optgroup>
                                     <optgroup label="Room">
                                         @foreach(\App\Models\Room::all() as $row)
                                             <option
-                                                {{ isset($item) && $item->parentable_type == \App\Models\Room::class && $item->parentable_id == $row->id ? 'selected' : '' }}
-                                                value="{{\App\Models\Room::class}}??{{ $row->id }}">{{ $row->show_name }}</option>
+                                                {{ isset($item) && $item->parent_id == $row->id ? 'selected' : '' }}
+                                                value="{{ $row->id }}">{{ $row->show_name }}</option>
                                         @endforeach
                                     </optgroup>
                                     <optgroup label="Cabinet">
                                         @foreach(\App\Models\Cabinet::all() as $row)
                                             <option
-                                                {{ isset($item) && $item->parentable_type == \App\Models\Cabinet::class && $item->parentable_id == $row->id ? 'selected' : '' }}
-                                                value="{{\App\Models\Cabinet::class}}??{{ $row->id }}">{{ $row->show_name }}</option>
+                                                {{ isset($item) && $item->parent_id == $row->id ? 'selected' : '' }}
+                                                value="{{ $row->id }}">{{ $row->show_name }}</option>
                                         @endforeach
                                     </optgroup>
                                 @else

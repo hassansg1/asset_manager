@@ -100,7 +100,6 @@ class Computer extends Model
      */
     public function saveFormData($item, $request)
     {
-
         if (isset($request->name)) $item->name = $request->name;
         if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
         if (isset($request->description)) $item->description = $request->description;
@@ -117,8 +116,11 @@ class Computer extends Model
         if (isset($request->contact)) $item->contact = $request->contact;
         if (isset($request->comment)) $item->comment = $request->comment;
 
+        $item->type = self::$type;
+        $parent = Location::find($request->parent_id);
         $item->save();
-        $this->updateParent($request, $item);
+        $newItem = Location::find($item->id);
+        $parent->appendNode($newItem);
 
         if (isset($request->ports)) {
             Port::updatePorts($item, $request->ports);

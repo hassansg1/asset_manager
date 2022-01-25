@@ -25,12 +25,12 @@ class Software extends Model
 
     public function getFullNameAttribute()
     {
-        return  $this->name . " " . $this->version."(".$this->vendor->name.")";
+        return $this->name . " " . $this->version . "(" . $this->vendor->name . ")";
     }
 
     public function getShowNameAttribute()
     {
-        return $this->name . " " . $this->version;
+        return rtrim($this->name . " " . $this->version, ' ');
     }
 
     public function patches()

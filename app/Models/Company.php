@@ -51,7 +51,6 @@ class Company extends Model
         if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
 
         $item->save();
-        Parentable::addNew(null, null, self::class, $item->id);
         return $item;
     }
 }

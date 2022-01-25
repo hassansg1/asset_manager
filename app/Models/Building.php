@@ -60,8 +60,11 @@ class Building extends Model
         if (isset($request->name)) $item->name = $request->name;
         if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
 
+        $item->type = self::$type;
+        $parent = Location::find($request->parent_id);
         $item->save();
-        Parentable::addNew(null, null, self::class, $item->id);
+        $newItem = Location::find($item->id);
+        $parent->appendNode($newItem);
         return $item;
     }
 }

@@ -40,7 +40,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary waves-effect"
-                        data-bs-dismiss="modal">Close</button>
+                        data-bs-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-primary waves-effect waves-light">Save
                     changes</button>
             </div>
@@ -258,7 +258,7 @@
                     metus auctor fringilla.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div><!-- /.modal-content -->
@@ -277,7 +277,7 @@
                 <p>I will not close if you click outside me. Don't even try to press escape key.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-primary">Understood</button>
             </div>
         </div>

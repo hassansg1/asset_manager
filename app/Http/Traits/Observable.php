@@ -16,21 +16,21 @@ trait Observable
     // bootObservable() will be called on model instantiation automatically
     public static function bootObservable()
     {
-        static::saved(function (Model $model) {
-            // create or update?
-            if ($model->wasRecentlyCreated) {
-                static::logChange($model, 'CREATED');
-            } else {
-                if (!$model->getChanges()) {
-                    return;
-                }
-                static::logChange($model, 'UPDATED');
-            }
-        });
-
-        static::deleted(function (Model $model) {
-            static::logChange($model, 'DELETED');
-        });
+//        static::saved(function (Model $model) {
+//            // create or update?
+//            if ($model->wasRecentlyCreated) {
+//                static::logChange($model, 'CREATED');
+//            } else {
+//                if (!$model->getChanges()) {
+//                    return;
+//                }
+//                static::logChange($model, 'UPDATED');
+//            }
+//        });
+//
+//        static::deleted(function (Model $model) {
+//            static::logChange($model, 'DELETED');
+//        });
     }
 
     public static function logChange(Model $model, string $action)

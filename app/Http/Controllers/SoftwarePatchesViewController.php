@@ -29,10 +29,11 @@ class SoftwarePatchesViewController extends BaseController
      */
     public function index(Request $request)
     {
+        $request->request->add(['group_by' => 'softwares']);
         $data = $this->fetchData($this->model, $request);
 
         return view($this->route . "/index")
-            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading]);
+            ->with(['items' => $data['items'], 'request' => $request, 'data' => $data, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**

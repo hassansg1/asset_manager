@@ -4,7 +4,6 @@
             onclick="toggleSelectAll()"
             type="checkbox" name=""
             id="select_all"></th>
-    <th>Software</th>
     <th>Patch</th>
 @endsection
 @section('table_rows')

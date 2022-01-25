@@ -21,10 +21,11 @@ class AssetLandingPageController extends BaseController
         $this->heading = 'Asset Landing Page';
         \Illuminate\Support\Facades\View::share('top_heading', 'Asset Landing Page');
     }
+
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index($filter = [])
     {
@@ -32,7 +33,7 @@ class AssetLandingPageController extends BaseController
         $computerAssets = $this->fetchData(new Computer(), null, $filter);
         $netwrokAssets = $this->fetchData(new NetworkAsset(), null, $filter);
         return view('asset_landing_page/index')
-            ->with(['lone_assets' => $lonAssets['items'], 'computer_assets' => $computerAssets['items'], 'network_assets' =>$netwrokAssets['items'], 'route' => $this->route, 'heading' => $this->heading]);
+            ->with(['lone_assets' => $lonAssets['items'], 'computer_assets' => $computerAssets['items'], 'network_assets' => $netwrokAssets['items'], 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**
@@ -48,7 +49,7 @@ class AssetLandingPageController extends BaseController
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -59,7 +60,7 @@ class AssetLandingPageController extends BaseController
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -70,7 +71,7 @@ class AssetLandingPageController extends BaseController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -81,8 +82,8 @@ class AssetLandingPageController extends BaseController
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -93,7 +94,7 @@ class AssetLandingPageController extends BaseController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

@@ -33,7 +33,7 @@ class Cabinet extends Model
             'rec_id' => 'required | unique:cabinets,rec_id',
         ];
 
-    protected $appends = ['show_name','parentable_type','parentable_id'];
+    protected $appends = ['show_name', 'parentable_type', 'parentable_id'];
 
     public function getShowNameAttribute()
     {
@@ -51,8 +51,12 @@ class Cabinet extends Model
 
         if (isset($request->name)) $item->name = $request->name;
         if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
+
+        $item->type = self::$type;
+        $parent = Location::find($request->parent_id);
         $item->save();
-        $this->updateParent($request,$item);
+        $newItem = Location::find($item->id);
+        $parent->appendNode($newItem);
         return $item;
     }
 }

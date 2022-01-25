@@ -106,8 +106,11 @@ class NetworkAsset extends Model
         if (isset($request->comment)) $item->comment = $request->comment;
         if (isset($request->asset_contact_person)) $item->asset_contact_person = $request->asset_contact_person;
 
+        $item->type = self::$type;
+        $parent = Location::find($request->parent_id);
         $item->save();
-        $this->updateParent($request, $item);
+        $newItem = Location::find($item->id);
+        $parent->appendNode($newItem);
 
         if (isset($request->ports)) {
             Port::updatePorts($item, $request->ports);

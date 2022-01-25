@@ -32,6 +32,7 @@
                 return $(this).val();
             }).get();
 
+
         $.ajax({
             type: "GET",
             url: url,
@@ -56,6 +57,9 @@
 
         if (this.checked) {
             let id = $(this).val();
+            if ($('#selected_' + type).length == 0) {
+                $('body').append('<div id=' + 'selected_' + type + '></div>');
+            }
             $('#selected_' + type).append('<input type="hidden" value="' + id + '" name="checked_' + type + '[]" id="' + type + id + '">');
         } else {
             let id = $(this).val();

@@ -48,8 +48,11 @@ class SubSite extends Model
         if (isset($request->location_google_link)) $item->location_google_link = $request->location_google_link;
         if (isset($request->main_process_equipment)) $item->main_process_equipment = $request->main_process_equipment;
 
+        $item->type = self::$type;
+        $parent = Location::find($request->parent_id);
         $item->save();
-        $this->updateParent($request, $item);
+        $newItem = Location::find($item->id);
+        $parent->appendNode($newItem);
         return $item;
     }
 }

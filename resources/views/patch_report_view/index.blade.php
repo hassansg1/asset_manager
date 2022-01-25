@@ -1,8 +1,8 @@
 @extends('components.datatable')
 @section('table_header')
-    <th>Software</th>
-    <th>Patch</th>
-    <th>Asset</th>
+    <th>Software Name</th>
+    <th>Patch Name</th>
+    <th>Assets on which the patch is installed</th>
 @endsection
 @section('table_rows')
     @include('patch_report_view.form_rows')

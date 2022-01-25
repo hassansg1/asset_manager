@@ -5,7 +5,7 @@
               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           View Patch Approval
       </button>
-      <button onclick="location.href='{{ route($route.".create") }}'" title="Add New"
+      <button onclick="editPatchSoftwareApprovals(true)" title="Add New"
               type="button" class="btn btn-primary btn-filter dropdown-toggle"
               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Edit Patch Approval
@@ -24,15 +24,15 @@
               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           View Patch Installs
       </button>
-      <button onclick="location.href='{{ route($route.".create") }}'" title="Add New"
-              type="button" class="btn btn-primary btn-filter dropdown-toggle"
-              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Edit Assets
-      </button>
+{{--      <button onclick="location.href='{{ route($route.".create") }}'" title="Add New"--}}
+{{--              type="button" class="btn btn-primary btn-filter dropdown-toggle"--}}
+{{--              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--          Edit Assets--}}
+{{--      </button>--}}
       <button onclick="patchAssetInstalls()" title="Add New"
               type="button" class="btn btn-primary btn-filter dropdown-toggle"
               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Add Assets
+          Install Patches
       </button>
   </span>
 </span>

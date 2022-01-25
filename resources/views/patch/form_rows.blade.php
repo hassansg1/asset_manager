@@ -4,8 +4,9 @@
                 {{ !$item->is_critical ? 'disabled' : '' }}
                 data-type="{{ $route ?? '' }}"
                 data-software="{{ $item->software->id ?? null }}"
+                data-show_name="{{ $item->show_name ?? null }}"
                 type="checkbox" name="select_row" value="{{ $item->id }}"
-                id="select_check_{{ $item->id }}" class="select_row"></td>
+                id="select_check_{{ $item->id }}" class="select_row select_patch_cb"></td>
         <td>{{ $item->software->vendor->name ?? '' }}</td>
         <td>{{ $item->software->name ?? '' }}</td>
         <td>{{ $item->software->version ?? '' }}</td>

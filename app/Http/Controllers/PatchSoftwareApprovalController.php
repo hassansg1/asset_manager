@@ -93,11 +93,13 @@ class PatchSoftwareApprovalController extends Controller
         foreach ($softwares as $software) {
             if ($software != "undefined") {
                 foreach ($patchIds as $patchId) {
-                    PatchPolicy::create([
-                        'software_id' => $software,
-                        'patch_id' => $patchId,
-                        'approved' => 1
-                    ]);
+                    PatchPolicy::updateOrCreate(
+                        [
+                            'software_id' => $software,
+                            'patch_id' => $patchId,
+                        ],
+                        ['approved' => 1]
+                    );
                 }
             }
 
@@ -167,5 +169,26 @@ class PatchSoftwareApprovalController extends Controller
             'message' => 'Data Saved Successfully...!!!'
         ]);
 
+    }
+
+    public function patchPolicyDelete(Request $request)
+    {
+        $items = $request->patchPolicyId;
+        if (count($items) < 1)
+            return response()->json([
+                'status' => false,
+                'message' => 'Error.No Items Selected...!!!'
+            ]);
+
+        foreach ($items as $item) {
+            $pol = PatchPolicy::find($item);
+            if ($pol)
+                $pol->delete();
+        }
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Data Deleted Successfully...!!!'
+        ]);
     }
 }

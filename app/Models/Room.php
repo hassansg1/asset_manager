@@ -52,8 +52,11 @@ class Room extends Model
         if (isset($request->name)) $item->name = $request->name;
         if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
 
+        $item->type = self::$type;
+        $parent = Location::find($request->parent_id);
         $item->save();
-        $this->updateParent($request,$item);
+        $newItem = Location::find($item->id);
+        $parent->appendNode($newItem);
         return $item;
     }
 }
