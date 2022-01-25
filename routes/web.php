@@ -106,6 +106,8 @@ Route::group(['middleware' => ['auth']], function () {
         'policy' => \App\Http\Controllers\PolicyController::class,
         'user_asset_report' => \App\Http\Controllers\ReportsController::class,
         'asset_lending_page' => \App\Http\Controllers\AssetLandingPageController::class,
+        'risk_assesment' => \App\Http\Controllers\RiskAssessmentController::class,
+        'risk' => \App\Http\Controllers\RiskController::class,
 
     ]);
     Route::post('PatchPage/LoadData', [\App\Http\Controllers\PatchApprovalAjaxController::class, 'loadData'])->name('PatchPage.loadData');
@@ -164,6 +166,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('updateComplianceVersionItems', [\App\Http\Controllers\ApplicableClauseController::class, 'updateComplianceVersionItems']);
     Route::post('sidebar_tree', [\App\Http\Controllers\LocTreeController::class, 'sidebar_tree'])->name('sidebar_tree');
     Route::get('testCron', [\App\Http\Controllers\TestController::class, 'test']);
+
+
     Route::get('view/assets/{id}', [\App\Http\Controllers\SeeAssetController::class, 'view'])->name('view/assets');
 
 //    Patch Approval

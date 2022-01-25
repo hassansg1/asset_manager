@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="new changes">
+    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="Firewall-Managment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoneAssetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoneAssetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/network/partials/tabs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/network/partials/tabs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +30,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="OTCM-79/ADD-NEW-COMPANY-ISSUE" />
+        <entry key="$PROJECT_DIR$" value="OTCM-IMPORT-FIREWALL/1-7-2020" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -192,7 +190,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blank_ui" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -233,9 +231,7 @@
       <workItem from="1642509153463" duration="1800000" />
       <workItem from="1642581684054" duration="8718000" />
       <workItem from="1642760992911" duration="3842000" />
-      <workItem from="1643015539387" duration="615000" />
-      <workItem from="1643037031174" duration="1913000" />
-      <workItem from="1643063195452" duration="8194000" />
+      <workItem from="1643015539387" duration="299000" />
     </task>
     <task id="LOCAL-00001" summary="new changes">
       <created>1639999411103</created>
@@ -307,21 +303,7 @@
       <option name="project" value="LOCAL" />
       <updated>1642507890368</updated>
     </task>
-    <task id="LOCAL-00011" summary="new changes">
-      <created>1643070692933</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1643070692933</updated>
-    </task>
-    <task id="LOCAL-00012" summary="new changes">
-      <created>1643103763833</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1643103763833</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,17 +323,21 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="OTCM-75/firewall-managemnt&#10;crud file create" />
     <MESSAGE value="firewall-managment/12-21-2021" />
+    <MESSAGE value="new changes" />
     <MESSAGE value="firewall-managment/12-21-2021" />
     <MESSAGE value="OTCM-FIREWALL-IMPORT" />
-    <MESSAGE value="new changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="new changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="OTCM-FIREWALL-IMPORT" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/asset_landing_page/index.blade.php</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/employee/form.blade.php</url>
-          <line>40</line>
+          <line>115</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

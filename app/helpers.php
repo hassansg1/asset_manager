@@ -149,6 +149,13 @@ if (!function_exists('firewallIpAddress')) {
         return \App\Models\FirewallIpAddress::all();
     }
 }
+
+if (!function_exists('riskAssesments')) {
+    function riskAssesments()
+    {
+        return \App\Models\RiskAssessment::all();
+    }
+}
 if (!function_exists('getComputerAssets')) {
     function getComputerAssets()
     {
