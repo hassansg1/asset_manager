@@ -23,7 +23,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}name" class="form-label required">Name</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}name" class="form-label required">Patch Name</label>
                             <input type="text" value="{{ isset($item) ? $item->name:old('name') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}name" name="name" required>
                         </div>
@@ -31,7 +31,7 @@
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}description"
-                                   class="form-label required">Description</label>
+                                   class="form-label required">Patch Description</label>
                             <input type="text" value="{{ isset($item) ? $item->description:old('description') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}description"
                                    name="description" required>
@@ -42,7 +42,7 @@
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}release_date"
-                                   class="form-label required">Release Date</label>
+                                   class="form-label required">Patch Release Date</label>
                             <input type="date"
                                    value="{{ isset($item) ? $item->release_date:old('release_date') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}release_date"

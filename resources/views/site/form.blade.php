@@ -14,7 +14,7 @@
                                    class="form-label required">Parent</label>
                             <select class="form-control select2" name="parent"
                                     id="{{ isset($item) ? $item->id:'' }}parent" required>
-                                <option value="">Search by Name</option>
+                                <option value="">Search by Company Name</option>
                                 <optgroup label="Company">
                                     @foreach(getCompanies() as $row)
                                         <option
@@ -35,7 +35,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}rec_id" class="form-label required">ID</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}rec_id" class="form-label required">Site ID</label>
                             <input type="text" value="{{ isset($item) ? $item->rec_id:old('rec_id') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}rec_id" name="rec_id"
                                    required>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}name" class="form-label">Name</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}name" class="form-label">Site Name</label>
                             <input type="text" value="{{ isset($item) ? $item->name:old('name') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}name"
                                    name="name">

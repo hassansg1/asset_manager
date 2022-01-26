@@ -5,9 +5,9 @@
             type="checkbox" name=""
             id="select_all"></th>
     <th>Parent</th>
-    <th>ID</th>
-    <th>Short Name</th>
-    <th>Long Name</th>
+    <th>Unit ID</th>
+    <th>Unit Short Name</th>
+    <th>Unit Long Name</th>
     <th>Contact Person</th>
     <th>Actions</th>
 @endsection

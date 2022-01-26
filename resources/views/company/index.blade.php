@@ -4,9 +4,9 @@
             onclick="toggleSelectAll()"
             type="checkbox" name=""
             id="select_all"></th>
-    <th>ID</th>
-    <th>Short Name</th>
-    <th>Long Name</th>
+    <th>Company ID</th>
+    <th>Company Short Name</th>
+    <th>Company Long Name</th>
     <th>Actions</th>
 @endsection
 @section('table_rows')
