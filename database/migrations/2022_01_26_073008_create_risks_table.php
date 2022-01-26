@@ -20,7 +20,7 @@ class CreateRisksTable extends Migration
             $table->longText('risk_statement');
             $table->string('risk_zone')->nullable();
             $table->string('threat_source')->nullable();
-            $table->string('threat_action')->nullable();
+            $table->longText('threat_action')->nullable();
             $table->longText('vulnerability')->nullable();
             $table->longText('consequence')->nullable();
             $table->string('impact')->nullable();
