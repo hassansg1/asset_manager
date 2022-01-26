@@ -66,19 +66,19 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8">
+                    <div class="col-lg-10">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}consequence" class="form-label">Consequence</label>
                             <textarea class="form-control" name="consequence" id="consequence" rows="10">{{ isset($item) ? $item->consequence:old('consequence') ?? ''  }}</textarea>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="row">
 
                                 <div class="mb-3">
                                     <label for="{{ isset($item) ? $item->id:'' }}impact" class="form-label">Impact</label>
                                     <input type="text" value="{{ isset($item) ? $item->impact:old('impact') ?? ''  }}"
-                                           class="form-control" id="{{ isset($item) ? $item->id:'' }}impact" name="impact">
+                                           class="form-control impact" id="{{ isset($item) ? $item->id:'' }}impact" name="impact">
                                 </div>
 
                         </div>
@@ -87,62 +87,62 @@
                                 <div class="mb-3">
                                     <label for="{{ isset($item) ? $item->id:'' }}utl" class="form-label">UTL</label>
                                     <input type="text" value="{{ isset($item) ? $item->utl:old('utl') ?? ''  }}"
-                                           class="form-control" id="{{ isset($item) ? $item->id:'' }}utl" name="utl">
+                                           class="form-control utl" id="{{ isset($item) ? $item->id:'' }}utl" name="utl">
                                 </div>
                             </div>
                         <div class="row">
                                 <div class="mb-3">
                                     <label for="{{ isset($item) ? $item->id:'' }}unmitigated_risk" class="form-label">Unmitigated Risk</label>
                                     <input type="text" value="{{ isset($item) ? $item->unmitigated_risk:old('unmitigated_risk') ?? ''  }}"
-                                           class="form-control" id="{{ isset($item) ? $item->id:'' }}unmitigated_risk" name="unmitigated_risk">
+                                           class="form-control unmitigated_risk" id="{{ isset($item) ? $item->id:'' }}unmitigated_risk" name="unmitigated_risk" readonly>
                                 </div>
                         </div>
                     </div>
                     </div>
                 <div class="row">
-                    <div class="col-lg-8">
+                    <div class="col-lg-10">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}existing_countermeasures" class="form-label">Existing Countermeasures</label>
                             <textarea class="form-control" name="existing_countermeasures" id="existing_countermeasures" rows="6">{{ isset($item) ? $item->existing_countermeasures:old('existing_countermeasures') ?? ''  }}</textarea>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="row">
                                 <div class="mb-3">
                                     <label for="{{ isset($item) ? $item->id:'' }}mtl" class="form-label">MTL</label>
                                     <input type="text" value="{{ isset($item) ? $item->mtl:old('mtl') ?? ''  }}"
-                                           class="form-control" id="{{ isset($item) ? $item->id:'' }}mtl" name="mtl">
+                                           class="form-control mtl" id="{{ isset($item) ? $item->id:'' }}mtl" name="mtl">
                                 </div>
                         </div>
                         <div class="row">
                                 <div class="mb-3">
                                     <label for="{{ isset($item) ? $item->id:'' }}mitigated_risk" class="form-label">Mitigated Risk</label>
                                     <input type="text" value="{{ isset($item) ? $item->mitigated_risk:old('mitigated_risk') ?? ''  }}"
-                                           class="form-control" id="{{ isset($item) ? $item->id:'' }}mitigated_risk" name="mitigated_risk">
+                                           class="form-control mitigated_risk" id="{{ isset($item) ? $item->id:'' }}mitigated_risk" name="mitigated_risk" readonly>
                                 </div>
                         </div>
                         </div>
                     </div>
                 <div class="row">
-                    <div class="col-lg-8">
+                    <div class="col-lg-10">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}recommendations" class="form-label">Recommendations</label>
                             <textarea class="form-control" name="recommendations" id="recommendations" rows="6">{{ isset($item) ? $item->recommendations:old('recommendations') ?? ''  }}</textarea>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="row">
                                 <div class="mb-3">
                                     <label for="{{ isset($item) ? $item->id:'' }}atl" class="form-label">ATL</label>
                                     <input type="text" value="{{ isset($item) ? $item->atl:old('atl') ?? ''  }}"
-                                           class="form-control" id="{{ isset($item) ? $item->id:'' }}atl" name="atl">
+                                           class="form-control atl" id="{{ isset($item) ? $item->id:'' }}atl" name="atl">
                                 </div>
                         </div>
                         <div class="row">
                                 <div class="mb-3">
                                     <label for="{{ isset($item) ? $item->id:'' }}residual_risk" class="form-label">Residual Risk</label>
                                     <input type="text" value="{{ isset($item) ? $item->residual_risk:old('residual_risk') ?? ''  }}"
-                                           class="form-control" id="{{ isset($item) ? $item->id:'' }}residual_risk" name="residual_risk">
+                                           class="form-control residual_risk" id="{{ isset($item) ? $item->id:'' }}residual_risk" name="residual_risk" readonly>
                                 </div>
                         </div>
                     </div>

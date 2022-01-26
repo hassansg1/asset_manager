@@ -365,6 +365,19 @@
         }
     });
 </script>
+<script type="text/javascript">
+    $(".utl").focusout(function(){
+        $('.unmitigated_risk').val($(this).val() * $('.impact').val());
+    });
+
+    $(".mtl").focusout(function(){
+        $('.mitigated_risk').val($(this).val() * $('.impact').val());
+    });
+
+    $(".atl").focusout(function(){
+        $('.residual_risk').val($(this).val() * $('.impact').val());
+    });
+</script>
 
 @yield('script')
 
