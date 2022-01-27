@@ -12,6 +12,8 @@ class Risk extends Model
     public $rules =
         [
             'risk_number' => 'required | max:255',
+            'risk_assesment_id' => 'required | max:255',
+            'risk_statement' => 'required | max:255',
         ];
 
     public function saveFormData($item, $request)
