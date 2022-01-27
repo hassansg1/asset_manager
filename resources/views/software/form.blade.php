@@ -23,7 +23,7 @@
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}name"
-                                   class="form-label">Name</label>
+                                   class="form-label">Software Name</label>
                             <input type="text" value="{{ isset($item) ? $item->name:old('name') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}name"
                                    name="name">
@@ -32,7 +32,7 @@
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}version"
-                                   class="form-label">Version</label>
+                                   class="form-label">Software Version</label>
                             <input type="text" value="{{ isset($item) ? $item->version:old('version') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}version"
                                    name="version">
@@ -43,7 +43,7 @@
                     <div class=" col-lg-4">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}description"
-                                   class="form-label">Descrption</label>
+                                   class="form-label">Software Descrption</label>
                             <input type="text" value="{{ isset($item) ? $item->description:old('description') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}description"
                                    name="description">
@@ -51,7 +51,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}function" class="form-label">Function</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}function" class="form-label">Software Family</label>
                             <input type="text" value="{{ isset($item) ? $item->function:old('function') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}function" name="function">
                         </div>

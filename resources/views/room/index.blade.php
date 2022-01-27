@@ -5,8 +5,8 @@
             type="checkbox" name=""
             id="select_all"></th>
     <th>Parent</th>
-    <th>ID</th>
-    <th>Name</th>
+    <th>Room ID</th>
+    <th>Room Name</th>
     <th>Actions</th>
 @endsection
 @section('table_rows')

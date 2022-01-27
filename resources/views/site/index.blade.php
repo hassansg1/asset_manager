@@ -5,8 +5,8 @@
             type="checkbox" name=""
             id="select_all"></th>
     <th>Parent</th>
-    <th>ID</th>
-    <th>Name</th>
+    <th>Site ID</th>
+    <th>Site Name</th>
     <th>Location</th>
     <th>Actions</th>
 @endsection

@@ -14,10 +14,10 @@
             onclick="toggleSelectAll()"
             type="checkbox" name=""
             id="select_all"></th>
-    <th>Vendor Name</th>
+    <th>Patch Name</th>
     <th>Software Name</th>
     <th>Software Version</th>
-    <th>Patch Name</th>
+    <th>Vendor Name</th>
     <th>Release Date</th>
     <th>CVE</th>
     <th>Action</th>

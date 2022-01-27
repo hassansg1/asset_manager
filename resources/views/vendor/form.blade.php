@@ -11,7 +11,7 @@
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}name"
-                                   class="form-label">Name</label>
+                                   class="form-label">Vendor Name</label>
                             <input type="text" value="{{ isset($item) ? $item->name:old('name') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}name"
                                    name="name">

@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}parent" class="form-label required">Parent</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}parent" class="form-label required">Unit Parent</label>
                             <select class="form-control select2" name="parent_id" id="{{ isset($item) ? $item->id:'' }}parent" required>
                                 <option value="">Search by Name</option>
                                 <optgroup label="Company">
@@ -26,14 +26,14 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}rec_id" class="form-label required">ID</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}rec_id" class="form-label required">Unit ID</label>
                             <input type="text" value="{{ isset($item) ? $item->rec_id:old('rec_id') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}rec_id" name="rec_id" required>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}short_name" class="form-label">Short
+                            <label for="{{ isset($item) ? $item->id:'' }}short_name" class="form-label">Unit Short
                                 Name</label>
                             <input type="text" value="{{ isset($item) ? $item->short_name:old('short_name') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}short_name"
@@ -45,7 +45,7 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}long_name" class="form-label">Long
+                            <label for="{{ isset($item) ? $item->id:'' }}long_name" class="form-label">Unit Long
                                 Name</label>
                             <input type="text" value="{{ isset($item) ? $item->long_name:old('long_name') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}long_name" name="long_name">
