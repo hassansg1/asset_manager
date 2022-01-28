@@ -149,6 +149,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('delete_assigned_id/{type}', [\App\Http\Controllers\AjaxController::class, 'delete_assigned_id']);
     Route::get('asseigned_id/{type}', [\App\Http\Controllers\AjaxController::class, 'assigned_user_id']);
     Route::get('asseigned_id_to_user/{type}', [\App\Http\Controllers\AjaxController::class, 'assigned_id_to_user']);
+    Route::get('system/detail/{id}', [\App\Http\Controllers\SystemController::class, 'show']);
+    Route::get('right/detail/{id}', [\App\Http\Controllers\RightController::class, 'show']);
+    Route::get('employee/detail/{id}', [\App\Http\Controllers\EmployeeController::class, 'show']);
+    Route::get('user_id/detail/{id}', [\App\Http\Controllers\UserIdController::class, 'show']);
+    Route::get('firewall/detail/{id}', [\App\Http\Controllers\FirewallManagmentController::class, 'show']);
+    Route::get('risk_assessment/detail/{id}', [\App\Http\Controllers\RiskAssessmentController::class, 'show']);
+    Route::get('risk/detail/{id}', [\App\Http\Controllers\RiskController::class, 'show']);
 
     Route::get('export_compliance_date_template', [\App\Http\Controllers\AjaxController::class, 'exportComplianceDataTemplates'])->name('export_compliance_date_template');
 

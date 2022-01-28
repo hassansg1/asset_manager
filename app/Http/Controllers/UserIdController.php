@@ -85,9 +85,11 @@ class UserIdController extends Controller
      */
     public function show($item)
     {
+        $assign_users = UserAccount::select('user_id')->where('account_id', $item)->get();
+        $users = User::whereIn('id', $assign_users)->get();
         $item = $this->model->find($item);
 
-        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
+        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'users' => $users,'heading' => $this->heading, 'clone' => $request->clone ?? null]);
     }
 
     /**

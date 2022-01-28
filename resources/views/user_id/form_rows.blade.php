@@ -12,7 +12,38 @@
 </td>
 <td>{{ $item->user_rights_id->rights_name->name }}</td>
 <td>
-    @include('components.edit_delete_button')
+    @include('components.edit_delete_button_updated')
 </td>
 </tr>
 @endforeach
+<div class="row">
+    <div class="col-md-12">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" id="pageAdd">
+
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+@section('script')
+    <script type="text/javascript">
+        $('.view_detail').on('click', function () {
+            var view_id = this.id;
+            if (view_id) {
+                $.ajax({
+                    type: "get",
+                    url: "{{url('user_id/detail')}}/" + view_id,
+                    success: function (res) {
+                        if (res) {
+                            $('#exampleModal').modal("show");
+                            $('#pageAdd').html(res);
+                        }
+                    }
+
+                });
+            }
+        });
+    </script>
+@endsection

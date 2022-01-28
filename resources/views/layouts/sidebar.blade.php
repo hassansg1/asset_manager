@@ -90,7 +90,7 @@
                         <span key="t-ecommerce">Risk Management</span>
                     </a>
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
-                        <li><a href="{{route('risk_assesment.index')}}" key="t-orders">Risk Assesment</a></li>
+                        <li><a href="{{route('risk_assesment.index')}}" key="t-orders">Risk Assessment</a></li>
                         <li><a href="{{route('risk.index')}}" key="t-orders">Risk</a>
                         </li>
                     </ul>

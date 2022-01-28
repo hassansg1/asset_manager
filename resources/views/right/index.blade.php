@@ -6,7 +6,6 @@
 {{--            id="select_all"></th>--}}
     <th>System/Asset Type</th>
     <th>Right</th>
-    <th>Description</th>
     <th>Actions</th>
 @endsection
 @section('table_rows')

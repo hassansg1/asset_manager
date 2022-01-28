@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="Risk-Managment">
+    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="Firewall-Managment">
+      <change afterPath="$PROJECT_DIR$/resources/views/components/btns/view_updated.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/edit_delete_button_updated.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/building/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/building/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/building/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/building/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/company/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/company/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/company/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/company/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/room/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/room/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/room/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/room/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/subsite/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subsite/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/subsite/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subsite/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/unit/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/unit/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/unit/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/unit/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FirewallManagmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FirewallManagmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RightController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RightController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RiskAssessmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RiskAssessmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SystemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SystemController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserIdController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserIdController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Employee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/btns/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/btns/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employee/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employee/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employee/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/firewall_managment/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/firewall_managment/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/firewall_managment/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/firewall_managment/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/right/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/right/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/right/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/right/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/right/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/right/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/risk/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/risk/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/risk/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/risk_assesment/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk_assesment/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/risk_assesment/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk_assesment/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/risk_assesment/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk_assesment/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/risk_assesment/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk_assesment/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/system/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/system/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/system/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/system/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/system/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/system/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_asset_report/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_asset_report/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_id/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_id/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_id/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_id/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +62,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="RISK-MANAGMENT/1-24-2022" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -371,10 +385,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/asset_landing_page/index.blade.php</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/employee/form.blade.php</url>
           <line>115</line>

@@ -17,8 +17,8 @@ class RiskAssessmentController extends Controller
     {
         $this->model = new RiskAssessment();
         $this->route = 'risk_assesment';
-        $this->heading = 'Risk Assesment';
-        \Illuminate\Support\Facades\View::share('top_heading', 'Risk ASSESMENT');
+        $this->heading = 'Risk Assessment';
+        \Illuminate\Support\Facades\View::share('top_heading', 'Risk ASSESSMENT');
     }
     /**
      * Display a listing of the resource.

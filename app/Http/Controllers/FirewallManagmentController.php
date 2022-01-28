@@ -68,6 +68,8 @@ class FirewallManagmentController extends Controller
     public function show($item)
     {
         $item = $this->model->find($item);
+        $item->source_asset = json_decode($item->source_asset);
+        $item->destination_asset = json_decode($item->destination_asset);
 
         return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
     }
