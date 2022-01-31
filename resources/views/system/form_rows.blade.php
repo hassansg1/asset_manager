@@ -12,13 +12,6 @@
         </td>
     </tr>
 @endforeach
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content" id="pageAdd">
-
-        </div>
-    </div>
-</div>
 @section('script')
     <script type="text/javascript">
         $('.view_detail').on('click', function () {
@@ -29,7 +22,7 @@
                     url: "{{url('system/detail')}}/" + view_id,
                     success: function (res) {
                         if (res) {
-                            $('#exampleModal').modal("show");
+                            $('#viewDetailPopUpModal').modal("show");
                             $('#pageAdd').html(res);
                         }
                     }

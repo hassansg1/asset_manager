@@ -15,6 +15,3 @@
         <p>{{$item->reason_of_assesment}}</p>
     </div>
 </div>
-<div class="modal-footer">
-    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-</div>

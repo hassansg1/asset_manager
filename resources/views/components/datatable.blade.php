@@ -8,6 +8,18 @@
 @yield('top_content_secondary')
 @include('components.datatable_components')
 @endsection
+<div class="modal fade" id="viewDetailPopUpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div id="pageAdd">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     function toggleSelectAll() {
         $('.select_row').not(':disabled').prop('checked', $('#select_all').is(":checked"));

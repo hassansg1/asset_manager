@@ -13,6 +13,3 @@
             <span class="badge bg-success" style="margin-left: 5px">{{$system_asset->system_assets->rec_id}}</span>
         @endforeach
 </div>
-<div class="modal-footer">
-    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-</div>

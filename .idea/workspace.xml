@@ -1,41 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="Firewall-Managment">
-      <change afterPath="$PROJECT_DIR$/resources/views/components/btns/view_updated.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/edit_delete_button_updated.blade.php" afterDir="false" />
+    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="View Detail Button Working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FirewallManagmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FirewallManagmentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RightController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RightController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RiskAssessmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RiskAssessmentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SystemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SystemController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserIdController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserIdController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Employee.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/btns/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/btns/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/employee/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/datatable.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/datatable.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/employee/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/form_rows.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/employee/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/view.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/firewall_managment/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/firewall_managment/form_rows.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/firewall_managment/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/firewall_managment/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/right/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/right/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/right/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/right/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/right/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/right/view.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/risk/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/risk/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/risk/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/risk_assesment/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk_assesment/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/risk_assesment/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk_assesment/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/risk_assesment/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk_assesment/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/risk_assesment/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk_assesment/view.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/system/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/system/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/system/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/system/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/system/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/system/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_asset_report/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_asset_report/form_rows.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user_id/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_id/form_rows.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user_id/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_id/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +204,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../axitqe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -264,6 +246,7 @@
       <workItem from="1642581684054" duration="8718000" />
       <workItem from="1642760992911" duration="3842000" />
       <workItem from="1643015539387" duration="299000" />
+      <workItem from="1643612234540" duration="2246000" />
     </task>
     <task id="LOCAL-00001" summary="new changes">
       <created>1639999411103</created>
@@ -356,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643190365751</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="View Detail Button Working">
+      <created>1643366608649</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1643366608650</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,7 +370,8 @@
     <MESSAGE value="firewall-managment/12-21-2021" />
     <MESSAGE value="OTCM-FIREWALL-IMPORT" />
     <MESSAGE value="Risk-Managment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Risk-Managment" />
+    <MESSAGE value="View Detail Button Working" />
+    <option name="LAST_COMMIT_MESSAGE" value="View Detail Button Working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
