@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AssetFunction;
 use App\Models\ClauseData;
 use App\Models\ComplianceVersionItem;
 use App\Models\Location;
@@ -26,8 +27,12 @@ class DashBoardController extends Controller
         $values[] = $compliant['Partial'];
         $values[] = $compliant['Not evaluated'];
 
+        $computer_assets =  Location::where('type','computer_assets')->count();
+        $lone_assets = Location::where('type','lone_assets')->count();
+        $network_assets = Location::where('type','network_assets')->count();
+        $asset_functions = AssetFunction::get();
 
-        return view('dashboard.index')->with(['values' => $values]);
+        return view('dashboard.index')->with(['values' => $values, 'computer_assets' => $computer_assets, 'lone_assets' => $lone_assets, 'network_assets' => $network_assets, 'asset_functions' =>$asset_functions]);
 
     }
 }
