@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="View Detail Button Working">
+    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="Dashboard Reports">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashBoardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashBoardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/script.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/script.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/head-css.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/head-css.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -327,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643190365751</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Dashboard Reports">
+      <created>1643866875381</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1643866875381</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +357,8 @@
     <MESSAGE value="firewall-managment/12-21-2021" />
     <MESSAGE value="OTCM-FIREWALL-IMPORT" />
     <MESSAGE value="Risk-Managment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Risk-Managment" />
+    <MESSAGE value="Dashboard Reports" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dashboard Reports" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
