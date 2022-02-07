@@ -30,7 +30,7 @@ class DashBoardController extends Controller
         $computer_assets =  Location::where('type','computer_assets')->count();
         $lone_assets = Location::where('type','lone_assets')->count();
         $network_assets = Location::where('type','network_assets')->count();
-        $asset_functions = AssetFunction::select('name')->get();
+        $asset_functions = AssetFunction::select('id','name')->get();
 //        dd($asset_functions);
 //        $asse_functions_name = [];
 //        foreach($asset_functions as $subchild) {

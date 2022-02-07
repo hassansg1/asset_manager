@@ -1,4 +1,3 @@
-@php $asst_function_name = getAssetFunctions(); @endphp
 <script>
     var chartDom = document.getElementById('pie-chart1');
     var myChart = echarts.init(chartDom);

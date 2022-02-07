@@ -644,6 +644,12 @@ if (!function_exists('getAssetFunctions')) {
         return \App\Models\AssetFunction::all();
     }
 }
+if (!function_exists('getFunctionsWiseAssetCount')) {
+    function getFunctionsWiseAssetCount($function_id)
+    {
+        return \App\Models\Location::where('functions', $function_id)->get()->count();
+    }
+}
 
 if (!function_exists('getAncestorsForLocation')) {
     function getAncestorsForLocation($locationId)
