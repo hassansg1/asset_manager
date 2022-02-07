@@ -18,9 +18,9 @@
     <th>Software Name</th>
     <th>Software Version</th>
     <th>Vendor Name</th>
-    <th>Release Date</th>
-    <th>CVE</th>
     <th>Action</th>
+    <th> Release Date </th>
+    <th>CVE</th>
 @endsection
 @section('table_rows')
     @include($route.'.form_rows')

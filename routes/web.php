@@ -157,6 +157,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('risk_assessment/detail/{id}', [\App\Http\Controllers\RiskAssessmentController::class, 'show']);
     Route::get('risk/detail/{id}', [\App\Http\Controllers\RiskController::class, 'show']);
 
+    Route::get('vendor/detail/{id}', [\App\Http\Controllers\VendorController::class, 'show']);
+    Route::get('software/detail/{id}', [\App\Http\Controllers\SoftwareController::class, 'show']);
+    Route::get('software_component/detail/{id}', [\App\Http\Controllers\SoftwareComponentController::class, 'show']);
+    Route::get('installed_software/detail/{id}', [\App\Http\Controllers\InstalledSoftwareController::class, 'show']);
+    Route::get('patch/detail/{id}', [\App\Http\Controllers\PatchController::class, 'show']);
+    Route::get('installed_patch/detail/{id}', [\App\Http\Controllers\InstalledPatchesController::class, 'show']);
+
     Route::get('export_compliance_date_template', [\App\Http\Controllers\AjaxController::class, 'exportComplianceDataTemplates'])->name('export_compliance_date_template');
 
     Route::get('dashboard', [\App\Http\Controllers\DashBoardController::class, 'index']);

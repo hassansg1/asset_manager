@@ -8,7 +8,7 @@
 @yield('top_content_secondary')
 @include('components.datatable_components')
 @endsection
-<div class="modal fade" id="viewDetailPopUpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="viewDetailPopUpModal" tabindex="-1" aria-labelledby="viewDetailPopUpModalModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div id="pageAdd">
