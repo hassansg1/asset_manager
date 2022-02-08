@@ -3,22 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="View Detail Button Working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/datatable.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/datatable.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/installed_patch/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/installed_patch/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/installed_patch/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/installed_patch/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/installed_software/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/installed_software/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/installed_software/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/installed_software/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/patch/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/patch/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/patch/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/patch/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/patch/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/patch/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/risk/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software_component/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software_component/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/software_component/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software_component/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/form_rows.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
