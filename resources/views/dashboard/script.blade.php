@@ -11,22 +11,17 @@
         },
         tooltip: {
             trigger: 'item',
-            formatter: '{a} <br/>{b} : {c} ({d}%)'
+            formatter: '{a} <br/>{b} : Total Assets ({c})'
         },
-        // legend: {
-        //     type: 'scroll',
-        //     orient: 'vertical',
-        //     right: 0,
-        //     top: 20,
-        //     bottom: 20,
-        //     data: data.legendData
-        // },
+        legend: {
+            type: 'scroll',
+            data: data.legendData
+        },
         series: [
             {
                 name: '',
                 type: 'pie',
-                radius: '55%',
-                center: ['40%', '50%'],
+                top:30,
                 data: data.seriesData,
                 emphasis: {
                     itemStyle: {
@@ -41,13 +36,6 @@
     option && myChart.setOption(option);
     function genData() {
         // prettier-ignore
-        {{--var  nameList;--}}
-        {{--    @php $asst_function_name = getAssetFunctions();--}}
-        {{--    foreach ($asst_function_name as $name){ @endphp--}}
-        {{--        nameList = ['{{$name->name}}'] ;--}}
-        {{--@php--}}
-        {{--}--}}
-        {{--@endphp--}}
         const nameList = [
             @php $asst_function_name = getAssetFunctions();
                 foreach ($asst_function_name as $name){ @endphp
@@ -58,29 +46,23 @@
         ];
         const legendData = [];
         const seriesData = [];
-        for (var i = 0; i < nameList.length; i++) {
-            var name =
-                Math.random() > 0.65
-                    ? makeWord(4, 1) + '·' + makeWord(3, 0)
-                    : makeWord(2, 1);
-            legendData.push(name);
-            seriesData.push({
-                name: name,
-                value: 0,
-            });
-        }
+        @php $asst_function_name = getAssetFunctions();
+                foreach ($asst_function_name as $name){
+                $asset_count = getFunctionsWiseAssetCount($name->id);
+        @endphp
+        legendData.push({
+            name: "{{$name->name}}",
+        });
+        seriesData.push({
+            name: "{{$name->name}}",
+            value:{{$asset_count}},
+        });
+            @php }
+            @endphp
         return {
             legendData: legendData,
             seriesData: seriesData
         };
-        function makeWord(max, min) {
-            const nameLen = Math.ceil(Math.random() * max + min);
-            const name = [];
-            for (var i = 0; i < nameLen; i++) {
-                name.push(nameList[Math.round(Math.random() * nameList.length - 1)]);
-            }
-            return name.join('');
-        }
     }
 </script>
 

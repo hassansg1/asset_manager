@@ -647,7 +647,7 @@ if (!function_exists('getAssetFunctions')) {
 if (!function_exists('getFunctionsWiseAssetCount')) {
     function getFunctionsWiseAssetCount($function_id)
     {
-        return \App\Models\Location::where('functions', $function_id)->get()->count();
+        return \App\Models\Location::where('function', $function_id)->get()->count();
     }
 }
 
