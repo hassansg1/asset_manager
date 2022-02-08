@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="View Detail Button Working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/libs/datatables/datatables.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/libs/datatables/datatables.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/includes/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/includes/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/datatable_components.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/datatable_components.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/edit_form_submit_btns.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/edit_form_submit_btns.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employee/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/form_rows.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

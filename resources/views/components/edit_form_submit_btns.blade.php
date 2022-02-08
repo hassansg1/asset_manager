@@ -2,6 +2,9 @@
     <input type="hidden" name="can_edit" value="1" id="can_edit">
     <div style="text-align: right">
         <button type="submit" class="btn btn-primary w-md submit_form">Save</button>
+        <a href="{{route($route.'.index')}}">
+            <button type="button" class="btn btn-primary w-md submit_form">Cancel</button>
+        </a>
     </div>
 {{--@endcan--}}
 @section('script')

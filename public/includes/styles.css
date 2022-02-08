@@ -213,9 +213,9 @@ body[data-layout=horizontal] .page-content {
     padding-bottom: 10px;
 }
 
-tr {
-    cursor: pointer !important;
-}
+/*tr {*/
+/*    cursor: pointer !important;*/
+/*}*/
 
 .profile-user-wid {
     margin-top: 5px !important;
