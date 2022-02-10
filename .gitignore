@@ -2,7 +2,8 @@
 /public/hot
 /public/storage
 /storage/*.key
-/.idea/*
+.idea
+.idea/workspace.xml
 .env
 .env.backup
 .phpunit.result.cache
@@ -11,4 +12,3 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-.idea/workspace.xml
