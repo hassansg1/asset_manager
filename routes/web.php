@@ -32,7 +32,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('saveJustificationReason', [App\Http\Controllers\HomeController::class, 'saveJustificationReason']);
     Route::post('saveRejectionReason', [App\Http\Controllers\HomeController::class, 'saveRejectionReason']);
 
-
     Route::resources([
         'log' => \App\Http\Controllers\LogController::class,
         'site' => \App\Http\Controllers\SiteController::class,
@@ -58,6 +57,7 @@ Route::group(['middleware' => ['auth']], function () {
         'software_import' => \App\Http\Controllers\SoftwareImportController::class,
         'patch_import' => \App\Http\Controllers\PatchImportController::class,
         'firewall_import' => \App\Http\Controllers\FirewallImportController::class,
+        'nozomi_import' => \App\Http\Controllers\NozomiImportController::class,
         'clause' => \App\Http\Controllers\ClauseController::class,
         'lone' => \App\Http\Controllers\LoneAssetController::class,
         'subsite' => \App\Http\Controllers\SubSiteController::class,
@@ -108,8 +108,15 @@ Route::group(['middleware' => ['auth']], function () {
         'asset_lending_page' => \App\Http\Controllers\AssetLandingPageController::class,
         'risk_assesment' => \App\Http\Controllers\RiskAssessmentController::class,
         'risk' => \App\Http\Controllers\RiskController::class,
-
     ]);
+
+    Route::post('nozomi_settings/save', [\App\Http\Controllers\NozomiSettingsController::class, 'saveSettings']);
+    Route::group(['prefix' => 'nozomi'], function () {
+        Route::resource('credentials', \App\Http\Controllers\NozomiSettingsController::class);
+        Route::resource('report', \App\Http\Controllers\NozomiReportController::class);
+        Route::get('/print/pdf', [\App\Http\Controllers\NozomiReportController::class, 'pdf']);
+    });
+
     Route::post('PatchPage/LoadData', [\App\Http\Controllers\PatchApprovalAjaxController::class, 'loadData'])->name('PatchPage.loadData');
     Route::get('standards/view/{standard}/clause', [\App\Http\Controllers\StandardClauseController::class, 'viewStandards']);
     //................. ComplainceData...........
@@ -189,5 +196,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('assetInstall/patch/save', [\App\Http\Controllers\PatchSoftwareApprovalController::class, 'assetPatchInstallSave'])->name('asset.assetPatchInstallSave');
 
     //Patch Policy delete
-    Route::post('patchApprovalPolicy/delete',[\App\Http\Controllers\PatchSoftwareApprovalController::class,'patchPolicyDelete'])->name('patchPolicyDelete');
+    Route::post('patchApprovalPolicy/delete', [\App\Http\Controllers\PatchSoftwareApprovalController::class, 'patchPolicyDelete'])->name('patchPolicyDelete');
 });

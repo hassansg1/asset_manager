@@ -1,13 +1,12 @@
 <?php
 
 use App\Models\AssetUserId;
+use App\Models\Attachment;
 use App\Models\User;
 use App\Models\UserAccount;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
-use App\Models\Attachment;
-use App\Models\NetworkAsset;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 if (!function_exists('getLang')) {
     function getLang($key)
@@ -563,6 +562,11 @@ if (!function_exists('tableColumnsMapping')) {
                 'status' => 'Approval Status',
                 'approvel_date' => 'Approval date',
             ],
+            'nozomi_data' => [
+                'ip' => 'ip_address',
+                'os' => 'operating_system',
+                'vendor' => 'make_vendor',
+            ],
 
         ];
 
@@ -671,8 +675,9 @@ if (!function_exists('getUserAsset')) {
 }
 
 if (!function_exists('getOTCMUser')) {
-    function getOTCMUser(){
-        $users  = User::where('user_type', 'OTCM-USERS')->get();
+    function getOTCMUser()
+    {
+        $users = User::where('user_type', 'OTCM-USERS')->get();
         return $users;
 
     }
