@@ -1,4 +1,11 @@
-<div class="modal-header">
-    <h5 class="modal-title" id="exampleModalLabel">Vendor Name : <b>{{$item->name}}</b></h5>
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-</div>
+@extends('layouts.master')
+
+@section('title') {{ $heading }} @endsection
+@section('content')
+    @include('layouts.top_heading',['heading' => 'Edit '. $heading,'goBack' => route($route.'.index')])
+    <div class="row">
+        <div class="col-xl-12">
+            @include($route.'.edit_form')
+        </div>
+    </div>
+@endsection
