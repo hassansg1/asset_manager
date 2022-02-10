@@ -56,8 +56,7 @@
         $(target + " :input").prop("disabled", true);
     }
 
-    $('.view_detail').on('click', function () {
-        let url = $(this).attr('data-url');
+    function showDetailPopup(url) {
         $.ajax({
             type: "get",
             url: url,
@@ -70,7 +69,7 @@
             }
 
         });
-    });
+    }
 
     $(document).on('change', '.select_row', function () {
         let type = $(this).attr('data-type');
