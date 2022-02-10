@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Controllers\RiskAssessmentController;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,6 +10,11 @@ class Risk extends Model
 {
     use HasFactory;
 
+
+
+    public function risk_assessment(){
+        return $this->belongsTo(RiskAssessment::class, 'risk_assesment_id', 'id');
+    }
     public $rules =
         [
             'risk_number' => 'required | max:255',

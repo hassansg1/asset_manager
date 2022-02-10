@@ -42,7 +42,7 @@ class Employee extends Model
        if (isset($request->email)) $item->email = $request->email;
        if (isset($request->designation_id)) $item->designation_id = $request->designation_id;
        if (isset($request->department_id)) $item->department_id = $request->department_id;
-       if (isset($request->status)) $item->status = $request->status;
+       if (isset($request->status)) $item->status = $request->status ?? 1;
        if (isset($request->mobile_no)) $item->mobile_no = $request->mobile_no;
        if (isset($request->unit_id)) $item->unit_id = $request->unit_id;
        $item->username = $request->first_name;

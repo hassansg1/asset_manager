@@ -1,6 +1,6 @@
 @extends('components.datatable')
 @section('table_header')
-    <th>Risk Assesment ID</th>
+    <th>Risk Assessment ID</th>
     <th>Title</th>
     <th>Date</th>
     <th>Actions</th>

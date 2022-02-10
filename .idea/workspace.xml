@@ -1,38 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="new changes">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/NozomiImportController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/NozomiReportController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/NozomiSettingsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/NozomiData.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/NozomiSettings.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Reports/NozomiReport.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_02_07_212324_create_nozomi_settings_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_02_07_230214_create_nozomi_data_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/nozomi_report/content.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/nozomi_report/fetch_data.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/nozomi_report/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/nozomi_report/no_data.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/nozomi_settings/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/asset_manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/asset_manager.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="View Detail Button Working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Port.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Port.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/edit_form_submit_btns.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/edit_form_submit_btns.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/topbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/package-versions-deprecated/src/PackageVersions/Versions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/package-versions-deprecated/src/PackageVersions/Versions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/asset/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/asset/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/computer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/computer/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/l_one/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/l_one/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/network/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/network/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +33,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="RISK-MANAGMENT/1-24-2022" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -205,11 +179,6 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
-      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
-      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
-      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
-      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf" />
-      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
     </include_path>
   </component>
   <component name="ProjectId" id="22MUv6V1sTfrUYC4nkSUHdia4io" />
@@ -218,25 +187,24 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/nozomi_data" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\asset_manager\resources\views\nozomi_data" />
       <recent name="C:\xampp\htdocs\asset_manager\resources\views" />
-      <recent name="C:\xampp\htdocs\asset_manager\app\Repos" />
       <recent name="C:\xampp\htdocs\asset_manager\app\Http\Controllers" />
+      <recent name="C:\xampp\htdocs\asset_manager\app\Repos" />
       <recent name="C:\xampp\htdocs\asset_manager\resources\views\computer" />
+      <recent name="C:\xampp\htdocs\asset_manager\resources\views\patch\partials" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\asset_manager\resources\views\patch_report" />
@@ -267,9 +235,7 @@
       <workItem from="1642581684054" duration="8718000" />
       <workItem from="1642760992911" duration="3842000" />
       <workItem from="1643015539387" duration="299000" />
-      <workItem from="1643353359422" duration="832000" />
-      <workItem from="1643369448036" duration="747000" />
-      <workItem from="1644267564176" duration="11634000" />
+      <workItem from="1643612234540" duration="2246000" />
     </task>
     <task id="LOCAL-00001" summary="new changes">
       <created>1639999411103</created>
@@ -362,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643190365751</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="View Detail Button Working">
+      <created>1643366608649</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1643366608650</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,15 +359,12 @@
     <MESSAGE value="firewall-managment/12-21-2021" />
     <MESSAGE value="OTCM-FIREWALL-IMPORT" />
     <MESSAGE value="Risk-Managment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Risk-Managment" />
+    <MESSAGE value="View Detail Button Working" />
+    <option name="LAST_COMMIT_MESSAGE" value="View Detail Button Working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/asset_landing_page/index.blade.php</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/employee/form.blade.php</url>
           <line>115</line>

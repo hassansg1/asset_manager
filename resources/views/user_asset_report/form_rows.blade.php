@@ -1,6 +1,10 @@
 @foreach($items as $item)
     <tr id="{{ $item->id }}">
-        <td>{{ $item->user_accounts->user->name }}</td>
+        @if($item->user_accounts)
+            <td>{{ $item->user_accounts->user->name }}</td>
+        @else
+            <td></td>
+        @endif
         <td>{{ $item->user_id }}</td>
 {{--        <td >--}}
 {{--            @if($item->parent == "system")--}}

@@ -80,8 +80,9 @@ class EmployeeController extends Controller
     public function show($item)
     {
         $item = $this->model->find($item);
-
-        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
+        $SelectedAccount = UserAccount::select('account_id')->where('user_id', $item->id)->get();
+        $userIds = UserId::whereIn('id', $SelectedAccount)->get();
+        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'userIds' => $userIds,'heading' => $this->heading, 'clone' => $request->clone ?? null]);
     }
 
     /**

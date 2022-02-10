@@ -68,7 +68,7 @@
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}email"
-                                   class="form-label">Email</label>
+                                   class="form-label required">Email</label>
                             <input type="email"
                                    value="{{ isset($item) ? $item->email:old('email') ?? ''  }}"
                                    class="form-control"
