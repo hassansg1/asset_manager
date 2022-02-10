@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="View Detail Button Working">
+    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="Dashboard Reports">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/asset/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/asset/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/computer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/computer/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/l_one/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/l_one/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/network/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/network/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashBoardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashBoardController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +30,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="VIEW-DETAIL-BUTTON-WORKING/1-28-2022" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -193,7 +190,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../axitqe" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -235,7 +232,8 @@
       <workItem from="1642581684054" duration="8718000" />
       <workItem from="1642760992911" duration="3842000" />
       <workItem from="1643015539387" duration="299000" />
-      <workItem from="1643612234540" duration="2246000" />
+      <workItem from="1644314224180" duration="4624000" />
+      <workItem from="1644384137281" duration="964000" />
     </task>
     <task id="LOCAL-00001" summary="new changes">
       <created>1639999411103</created>
@@ -328,14 +326,21 @@
       <option name="project" value="LOCAL" />
       <updated>1643190365751</updated>
     </task>
-    <task id="LOCAL-00014" summary="View Detail Button Working">
-      <created>1643366608649</created>
+    <task id="LOCAL-00014" summary="Dashboard Reports">
+      <created>1643866875381</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1643366608650</updated>
+      <updated>1643866875381</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Dashboard Reports">
+      <created>1644237484999</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1644237484999</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,12 +364,16 @@
     <MESSAGE value="firewall-managment/12-21-2021" />
     <MESSAGE value="OTCM-FIREWALL-IMPORT" />
     <MESSAGE value="Risk-Managment" />
-    <MESSAGE value="View Detail Button Working" />
-    <option name="LAST_COMMIT_MESSAGE" value="View Detail Button Working" />
+    <MESSAGE value="Dashboard Reports" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dashboard Reports" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/asset_landing_page/index.blade.php</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/employee/form.blade.php</url>
           <line>115</line>
