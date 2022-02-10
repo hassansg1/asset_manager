@@ -1,9 +1,0 @@
-@can('viewhierarcy'.$item->permission_string)
-    @include('components.btns.view_updated')
-@endcan
-@can('edithierarcy'.$item->permission_string)
-    @include('components.btns.edit')
-@endcan
-@can('deletehierarcy'.$item->permission_string)
-    @include('components.btns.delete')
-@endcan

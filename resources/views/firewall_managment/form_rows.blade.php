@@ -6,7 +6,7 @@
         <td>{{ $item->destination_location }}</td>
         <td>{{ $item->destination_zone }}</td>
         <td>
-            @include('components.edit_delete_button_updated')
+            @include('components.edit_delete_button')
         </td>
     </tr>
 @endforeach

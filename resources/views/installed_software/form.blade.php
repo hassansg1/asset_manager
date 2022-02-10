@@ -21,7 +21,8 @@
                         </select>
                     </div>
                     <div class="col-lg-4">
-                        <label for="{{ isset($item) ? $item->id:'' }}software_id" class="form-label">Select Software</label>
+                        <label for="{{ isset($item) ? $item->id:'' }}software_id" class="form-label">Select
+                            Software</label>
                         <select class="form-select form-select-input" name="software_id"
                                 id="{{ isset($item) ? $item->id:'' }}software_id">
                             @foreach(\App\Models\Software::all() as $var)
@@ -36,3 +37,4 @@
             </div>
         </div>
     </div>
+</div>

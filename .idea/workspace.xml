@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="Dashboard Reports">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="6da485ed-99a2-4acd-95ae-1a1fd376dcad" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/btns/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/btns/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/edit_delete_button_updated.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employee/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/firewall_managment/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/firewall_managment/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/installed_patch/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/installed_patch/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/installed_software/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/installed_software/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/installed_software/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/installed_software/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/installed_software/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/installed_software/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/patch/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/patch/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/right/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/right/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/risk/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/risk_assesment/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/risk_assesment/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/scripts/script_common.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/scripts/script_common.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/software/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/software_component/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/software_component/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/system/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/system/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_id/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_id/form_rows.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/form_rows.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/form_rows.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -347,7 +364,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644487103773</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Dashboard Reports">
+      <created>1644487254763</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1644487254763</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,6 +389,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="OTCM-75/firewall-managemnt&#10;crud file create" />
     <MESSAGE value="firewall-managment/12-21-2021" />
     <MESSAGE value="new changes" />
@@ -385,6 +411,11 @@
           <url>file://$PROJECT_DIR$/resources/views/employee/form.blade.php</url>
           <line>115</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/InstalledSoftwareController.php</url>
+          <line>95</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

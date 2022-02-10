@@ -12,7 +12,7 @@
         <td>{{ $item->software->version ?? '' }}</td>
         <td>{{ $item->software->vendor->name ?? '' }}</td>
         <td>
-            @include('components.edit_delete_button_updated')
+            @include('components.edit_delete_button')
         </td>
         <td>
             {{ $item->release_date ?? '' }}

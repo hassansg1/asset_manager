@@ -4,7 +4,7 @@
                                id="select_check_{{ $item->id }}" class="select_row"></td>
         <td>{{ $item->name }}</td>
         <td>
-            @include('components.edit_delete_button_updated')
+            @include('components.edit_delete_button')
         </td>
     </tr>
 @endforeach

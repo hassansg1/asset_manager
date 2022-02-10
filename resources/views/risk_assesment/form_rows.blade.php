@@ -5,7 +5,7 @@
         <td>{{ $item->title }}</td>
         <td>{{ $item->date_of_assesment }}</td>
         <td>
-            @include('components.edit_delete_button_updated')
+            @include('components.edit_delete_button')
         </td>
     </tr>
 @endforeach

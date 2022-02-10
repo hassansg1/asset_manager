@@ -4,7 +4,7 @@
         <td>{{ $item->designation_id }}</td>
         <td>{{ $item->department_id }}</td>
         <td>
-            @include('components.edit_delete_button_updated')
+            @include('components.edit_delete_button')
         </td>
     </tr>
 @endforeach

@@ -6,7 +6,7 @@
         <td>{{ $item->risk_zone }}</td>
         <td>{{ $item->threat_source }}</td>
         <td>
-            @include('components.edit_delete_button_updated')
+            @include('components.edit_delete_button')
         </td>
     </tr>
 @endforeach

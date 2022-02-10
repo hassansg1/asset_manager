@@ -7,7 +7,7 @@
         <td>{{ $item->version }}</td>
         <td>{{ $item->description }}</td>
         <td>
-            @include('components.edit_delete_button_updated')
+            @include('components.edit_delete_button')
         </td>
     </tr>
 @endforeach

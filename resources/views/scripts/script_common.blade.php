@@ -52,6 +52,26 @@
         });
     }
 
+    function disableForm(target) {
+        $(target + " :input").prop("disabled", true);
+    }
+
+    $('.view_detail').on('click', function () {
+        let url = $(this).attr('data-url');
+        $.ajax({
+            type: "get",
+            url: url,
+            success: function (result) {
+                if (result) {
+                    $('#pageAdd').html($(result).find('.item_form').find('.row').html());
+                    disableForm('#pageAdd');
+                    $('#viewDetailPopUpModal').modal("show");
+                }
+            }
+
+        });
+    });
+
     $(document).on('change', '.select_row', function () {
         let type = $(this).attr('data-type');
 

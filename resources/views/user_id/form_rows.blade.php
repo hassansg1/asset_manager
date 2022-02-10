@@ -12,7 +12,7 @@
 </td>
 <td>{{ $item->user_rights_id->rights_name->name }}</td>
 <td>
-    @include('components.edit_delete_button_updated')
+    @include('components.edit_delete_button')
 </td>
 </tr>
 @endforeach
