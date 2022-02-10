@@ -6,6 +6,7 @@
     @include('filters.refresh')
     @include('filters.pagination')
     @include('filters.export')
+    @include('filters.search')
     @yield('filters')
 </div>
 <div class="mt-2">
