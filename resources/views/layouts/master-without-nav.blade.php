@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title> @yield('title') | Skote - Responsive Bootstrap 4 Admin Dashboard</title>
+        <title> @yield('title')OTCM</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -15,7 +15,7 @@
   </head>
 
     @yield('body')
-    
+
     @yield('content')
 
     @include('layouts.vendor-scripts')
