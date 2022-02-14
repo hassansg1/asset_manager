@@ -61,8 +61,13 @@ class SystemController extends Controller
      */
     public function show($item)
     {
+        $SelectedAssets = SystemAssets::select('asset_id')->where('system_id', $item)->get();
+        $child_arr = [];
+        foreach($SelectedAssets as $subchild) {
+            $child_arr[] = $subchild->asset_id;
+        }
         $item = $this->model->find($item);
-        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
+        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'selectedAssets'=>$child_arr,'clone' => $request->clone ?? null]);
     }
 
     /**
@@ -85,7 +90,7 @@ class SystemController extends Controller
         if ($request->ajax) {
             return response()->json([
                 'status' => true,
-                'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item, 'clone' => $request->clone ?? null])->render()
+                'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'selectedAssets'=>$child_arr,'item' => $item, 'clone' => $request->clone ?? null])->render()
             ]);
         } else
         return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'selectedAssets'=>$child_arr,'heading' => $this->heading, 'clone' => $request->clone ?? null]);
