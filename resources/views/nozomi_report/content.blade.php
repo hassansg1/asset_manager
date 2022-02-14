@@ -87,7 +87,7 @@
                                 <table class="table table-borderless">
                                     <tr>
                                         <th>
-                                            Property
+                                            Attribute
                                         </th>
                                         <th>
                                             Nozomi Value

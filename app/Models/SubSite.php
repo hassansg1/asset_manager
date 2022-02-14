@@ -26,9 +26,10 @@ class SubSite extends Model
 
         return static::addGlobalScope(new LocationScope(self::$type));
     }
+
     public $rules =
         [
-            'rec_id' => 'required | unique:sub_sites,rec_id',
+            'rec_id' => 'required | unique:locations,rec_id',
         ];
 
     /**
@@ -38,6 +39,9 @@ class SubSite extends Model
      */
     public function saveFormData($item, $request)
     {
+        if (isset($item->id)) $item = Location::find($item->id);
+        else $item = new Location();
+
         if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
         if (isset($request->name)) $item->name = $request->name;
         if (isset($request->arabic_name)) $item->arabic_name = $request->arabic_name;
@@ -47,12 +51,16 @@ class SubSite extends Model
         if (isset($request->location_deg_coordinate)) $item->location_deg_coordinate = $request->location_deg_coordinate;
         if (isset($request->location_google_link)) $item->location_google_link = $request->location_google_link;
         if (isset($request->main_process_equipment)) $item->main_process_equipment = $request->main_process_equipment;
+        if (isset($request->parent_id)) $item->parent_id = $request->parent_id;
 
         $item->type = self::$type;
+
         $parent = Location::find($request->parent_id);
         $item->save();
-        $newItem = Location::find($item->id);
-        $parent->appendNode($newItem);
+        if (!isset($item->id)) {
+            $newItem = Location::find($item->id);
+            $parent->appendNode($newItem);
+        }
         return $item;
     }
 }

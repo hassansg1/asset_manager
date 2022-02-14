@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Http\Traits\ParentTrait;
 use App\Scopes\LocationScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -49,8 +48,11 @@ class Company extends Model
         if (isset($request->short_name)) $item->short_name = $request->short_name;
         if (isset($request->long_name)) $item->long_name = $request->long_name;
         if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
+        $item->type = self::$type;
 
         $item->save();
+        $location = Location::find($item->id);
+        $location->saveAsRoot();
         return $item;
     }
 }

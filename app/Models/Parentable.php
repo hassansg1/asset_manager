@@ -111,12 +111,6 @@ class Parentable extends Model
 //
         $pr = Parentable::find(1);
         $bb = self::recursive($pr);
-
-
-        print_r('<pre>');
-        print_r($bb);
-        print_r('<pre>');
-        exit();
     }
 
     static function recursive($r)
@@ -142,7 +136,6 @@ class Parentable extends Model
 
     public static function getTreeElements($element, $position)
     {
-        dump("current array value:" . json_encode($children[$position]));
         $elementName = $element->getSelfName();
 
         $array[$elementName] = [

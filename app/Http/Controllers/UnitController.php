@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Location;
 use App\Models\Unit;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
@@ -55,6 +56,7 @@ class UnitController extends BaseController
      */
     public function create()
     {
+        Location::fixTree();
         return view($this->route . "/create")
             ->with(['route' => $this->route, 'heading' => $this->heading]);
     }

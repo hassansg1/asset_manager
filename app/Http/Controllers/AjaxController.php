@@ -44,7 +44,7 @@ class AjaxController extends Controller
 
     public function getPortsOfNetwork(Request $request)
     {
-        $ports = Port::where('portable_type', NetworkAsset::class)->where('portable_id', $request->network_id)->get();
+        $ports = Port::where('portable_id', $request->network_id)->get();
         return response()->json([
             'html' => view('ajax.ports_drop_down')->with(['ports' => $ports])->render()
         ]);

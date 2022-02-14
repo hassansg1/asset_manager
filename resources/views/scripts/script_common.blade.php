@@ -10,6 +10,14 @@
         loadTableData(url, type);
     });
 
+    function refreshDataTable() {
+        let url = $(this).attr('href');
+        let query = url.split('?');
+        let type = query[0].split('/');
+        type = type[type.length - 1];
+        loadTableData(url, type);
+    }
+
     function loadDataTableDynamically(type, div) {
         loadTableData(window.location.origin + '/' + type, div);
     }
@@ -23,6 +31,7 @@
         let software_id = $('#software_id_filter').val();
         let patch_id = $('#patch_id_filter').val();
         let asset_id_filter = $('#asset_id_filter').val();
+        let search_keyword = $('#search_keyword').val();
         let patch_ids = $("input[name='checked_patch[]']")
             .map(function () {
                 return $(this).val();
@@ -42,6 +51,7 @@
                 software_id: software_id,
                 patch_id: patch_id,
                 asset_id_filter: asset_id_filter,
+                search_keyword: search_keyword,
                 patch_ids: patch_ids,
                 software_ids: software_ids,
 

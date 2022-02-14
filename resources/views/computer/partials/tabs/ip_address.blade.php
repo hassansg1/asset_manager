@@ -38,7 +38,7 @@
               class="btn btn-primary btn-filter dropdown-toggle"
               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-plus-circle">
-Add Bulck Rows
+Add Bulk Rows
           </i>
       </button>
   </span>

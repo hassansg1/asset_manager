@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Building;
-use App\View\Components\breadcrumb;
+use App\Models\Location;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
@@ -95,14 +94,15 @@ class ImportController extends Controller
 
                     $parentModel = App::make('App\Models\\' . $parentType);
 
-                    $parent = $parentModel->where('rec_id', $parentId)->first();
+                    $parent = Location::where('rec_id', $parentId)->first();
                     if (!$parent) {
+                        dd($parentId);
                         $logs[] = 'Error : Parent not found : ' . $parentId;
                         $success = false;
                         break;
                     }
 
-                    $arr['parent'] = get_class($parent) . '??' . $parent->id;
+                    $arr['parent_id'] = $parent->id;
                     $request = new Request();
                     $request->replace($arr);
                     $validator = Validator::make($request->all(), $model->rules);

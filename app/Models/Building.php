@@ -30,7 +30,7 @@ class Building extends Model
 
     public $rules =
         [
-            'rec_id' => 'required | unique:buildings,rec_id',
+            'rec_id' => 'required | unique:locations,rec_id',
         ];
 
     protected $appends = ['show_name', 'parentable_type', 'parentable_id'];
@@ -56,15 +56,21 @@ class Building extends Model
      */
     public function saveFormData($item, $request)
     {
+        if (isset($item->id)) $item = Location::find($item->id);
+        else $item = new Location();
 
         if (isset($request->name)) $item->name = $request->name;
         if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
+        if (isset($request->parent_id)) $item->parent_id = $request->parent_id;
 
         $item->type = self::$type;
+
         $parent = Location::find($request->parent_id);
         $item->save();
-        $newItem = Location::find($item->id);
-        $parent->appendNode($newItem);
+        if (!isset($item->id)) {
+            $newItem = Location::find($item->id);
+            $parent->appendNode($newItem);
+        }
         return $item;
     }
 }
