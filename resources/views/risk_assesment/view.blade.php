@@ -6,6 +6,7 @@
     <div class="row">
         <div class="col-xl-12">
             @include($route.'.edit_form')
+
         </div>
     </div>
 @endsection
