@@ -16,7 +16,6 @@
                                         @else {{ucwords(str_replace('_',' ',Request::segment($i)))}}
                                         @endif
                                     @endfor
-
                                 </ol>
                             </div>
 
@@ -43,8 +42,7 @@
                     @if(isset($parents) && count($parents) > 0)
                         @foreach(array_reverse($parents) as $parent)
                             @php $model =  new ReflectionClass($parent)@endphp
-                            <li class="breadcrumb-item">&nbsp;<a target="_blank"
-                                                                 href="{{ route(strtolower($model->getShortName()).'.show',$parent->id) }}">{{ $parent->show_name }}</a>
+                            <li class="breadcrumb-item">&nbsp;<a target="_blank" href="{{ route(strtolower($model->getShortName()).'.show',$parent->id) }}">{{ $parent->show_name }}</a>
                             </li>
                         @endforeach
                     @endif
@@ -53,7 +51,6 @@
                 </ol>
             </div>
         @endisset
-
     <?php
         }catch (Exception $exception){} ?>
     </div>
