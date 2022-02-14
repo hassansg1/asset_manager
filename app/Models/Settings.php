@@ -21,4 +21,5 @@ class Settings extends Model
 		'title' => 'required',
 		'item_per_page' => 'required',
 	];
+    
 }

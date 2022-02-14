@@ -58,11 +58,11 @@ class SettingsController extends BaseController
             $logo_icon =$logo_icon->getClientOriginalName();
         }
         $new = Settings::updateOrCreate([
-            'title' => $request->title,
+            'id' => $request->id,
         ],[
             'title' => $request->title,
             'item_per_page' =>$request->item_per_page,
-            'logo' =>$logo,
+            'logo' =>$logo ,
             'logo_icon' =>$logo_icon,
         ]);
 

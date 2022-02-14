@@ -164,13 +164,23 @@
 
 
                     });
-                    // var nodes = [0, 1, 2,];
-                    // $('#default-tree').treeview('expandNode', [ nodes, { silent:true, ignoreChildren:false } ]);
-                    // enables a given node
                 }
             },
         });
     }
+    // $('#default-tree').treeview({
+    //     // The naming convention for callback's is to prepend with `on`
+    //     // and capitalize the first letter of the event name
+    //     // e.g. nodeSelected -> onNodeSelected
+    //     onNodeSelected: function(event, data) {
+    //         alert('selecetd');
+    //     }
+    // });
+
+    $(document).on('nodeSelected',"#default-tree", function(e, node){
+        var NodeID=node.nodeId;
+        $('#default-tree').treeview('expandNode', [ NodeID, { levels: 2, silent: true } ]);
+    });
 
     $('#change-password').on('submit', function (event) {
         event.preventDefault();
