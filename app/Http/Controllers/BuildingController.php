@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Building;
+use App\Models\Location;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory;
@@ -65,7 +66,7 @@ class BuildingController extends BaseController
     public function store(Request $request)
     {
         $request->validate($this->model->rules);
-        $this->model->saveFormData($this->model, $request);
+        $this->model->saveFormData(new Location(), $request);
 
         flashSuccess(getLang($this->heading . " Successfully Created."));
 
@@ -113,9 +114,7 @@ class BuildingController extends BaseController
      */
     public function update(Request $request, $item)
     {
-
-
-        $item = $this->model->find($item);
+        $item = Location::find($item);
         $this->model->saveFormData($item, $request);
 
         flashSuccess(getLang($this->heading . " Successfully Updated."));

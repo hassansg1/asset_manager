@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Location;
 use App\Models\Unit;
-use Illuminate\Http\Request;
-use Illuminate\Contracts\View\View;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 class UnitController extends BaseController
 {
@@ -56,7 +56,6 @@ class UnitController extends BaseController
      */
     public function create()
     {
-        Location::fixTree();
         return view($this->route . "/create")
             ->with(['route' => $this->route, 'heading' => $this->heading]);
     }
@@ -68,7 +67,7 @@ class UnitController extends BaseController
     public function store(Request $request)
     {
         $request->validate($this->model->rules);
-        $this->model->saveFormData($this->model, $request);
+        $this->model->saveFormData(new Location(), $request);
 
         flashSuccess(getLang($this->heading . " Successfully Created."));
 
@@ -116,7 +115,7 @@ class UnitController extends BaseController
      */
     public function update(Request $request, $item)
     {
-        $item = $this->model->find($item);
+        $item = Location::find($item);
         $this->model->saveFormData($item, $request);
 
         flashSuccess(getLang($this->heading . " Successfully Updated."));

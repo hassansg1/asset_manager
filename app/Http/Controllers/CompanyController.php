@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Location;
 use App\Models\Parentable;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
@@ -29,8 +30,6 @@ class CompanyController extends BaseController
      */
     public function index(Request $request)
     {
-//        $tree = Parentable::getTree();
-//        dd($tree);
         $data = $this->fetchData($this->model, $request);
         return view($this->route . "/index")
             ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading]);
@@ -68,7 +67,7 @@ class CompanyController extends BaseController
     public function store(Request $request)
     {
         $request->validate($this->model->rules);
-        $this->model->saveFormData($this->model, $request);
+        $this->model->saveFormData(new Location(), $request);
 
         flashSuccess(getLang($this->heading . " Successfully Created."));
 
@@ -116,9 +115,7 @@ class CompanyController extends BaseController
      */
     public function update(Request $request, $item)
     {
-
-
-        $item = $this->model->find($item);
+        $item = Location::find($item);
         $this->model->saveFormData($item, $request);
 
         flashSuccess(getLang($this->heading . " Successfully Updated."));

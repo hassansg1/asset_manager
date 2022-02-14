@@ -51,8 +51,7 @@ class Company extends Model
         $item->type = self::$type;
 
         $item->save();
-        $location = Location::find($item->id);
-        $location->saveAsRoot();
+        $item->saveAsRoot();
         return $item;
     }
 }

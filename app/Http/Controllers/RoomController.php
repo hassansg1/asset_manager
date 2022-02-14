@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Location;
 use App\Models\Room;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
@@ -66,7 +67,7 @@ class RoomController extends BaseController
     public function store(Request $request)
     {
         $request->validate($this->model->rules);
-        $this->model->saveFormData($this->model, $request);
+        $this->model->saveFormData(new Location(), $request);
 
         flashSuccess(getLang($this->heading . " Successfully Created."));
 
@@ -114,9 +115,7 @@ class RoomController extends BaseController
      */
     public function update(Request $request, $item)
     {
-
-
-        $item = $this->model->find($item);
+        $item = Location::find($item);
         $this->model->saveFormData($item, $request);
 
         flashSuccess(getLang($this->heading . " Successfully Updated."));
