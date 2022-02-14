@@ -8,8 +8,8 @@
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="{{url('/')}}">Dashboard ></a></li>
-                                    <?php $link = "" ?>
-                                    @for($i = 1; $i <= count(Request::segments()); $i++)
+                                    <?php $link = ""; $i = 1 ?>
+                                    @for($i; $i <= count(Request::segments()); $i++)
                                         @if($i < count(Request::segments()) & $i > 0)
                                             <?php $link .= "/" . Request::segment($i); ?>
                                             <a href="<?= $link ?>">{{ ucwords(str_replace('_',' ',Request::segment($i)))}}</a> >

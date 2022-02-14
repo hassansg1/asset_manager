@@ -19,6 +19,10 @@
 							class="form-control"
 							id="title"
 							name="title" value="{{$data ? $data->title : ''}}">
+                            <input type="hidden"
+                                   class="form-control"
+                                   id="id"
+                                   name="id" value="{{$data ? $data->id : ''}}">
 						</div>
 					</div>
 				</div>

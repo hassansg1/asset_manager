@@ -19,6 +19,7 @@ if (!function_exists('getLang')) {
     }
 }
 
+
 if (!function_exists('universalDateFormatter')) {
     function universalDateFormatter($date)
     {
@@ -78,6 +79,12 @@ if (!function_exists('getUnit')) {
     function getUnit()
     {
         return \App\Models\Unit::all();
+    }
+}
+if (!function_exists('getSetting')) {
+    function getSetting()
+    {
+        return \App\Models\Settings::first();
     }
 }
 

@@ -13,7 +13,7 @@
                 </a>
 
                 <a href="{{ url('') }}" class="logo logo-light">
-                    <h3 style="    margin-top: 20px;color: white;font-size: 25px;">OTCM</h3>
+                    <h3 style="    margin-top: 20px;color: white;font-size: 25px;">@if(getSetting()) {{getSetting()->title}} @else OTCM @endif</h3>
                     {{--                    <span class="logo-sm">--}}
                     {{--                        <img src="{{ URL::asset ('/assets/images/logo.png') }}" alt="" height="22">--}}
                     {{--                    </span>--}}
