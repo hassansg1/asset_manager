@@ -96,7 +96,6 @@ class ImportController extends Controller
 
                     $parent = Location::where('rec_id', $parentId)->first();
                     if (!$parent) {
-                        dd($parentId);
                         $logs[] = 'Error : Parent not found : ' . $parentId;
                         $success = false;
                         break;
@@ -109,6 +108,7 @@ class ImportController extends Controller
                     if ($validator->fails()) {
                         foreach ($validator->errors()->all() as $error) {
                             $logs[] = 'Error : ' . rec_id_replacer($error);
+                            $logs[] = 'Data : ' . print_r($request->all(),);
                             $success = false;
                         }
                         $logs[] = 'Rolling back the changes.';
