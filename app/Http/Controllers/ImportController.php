@@ -108,7 +108,7 @@ class ImportController extends Controller
                     if ($validator->fails()) {
                         foreach ($validator->errors()->all() as $error) {
                             $logs[] = 'Error : ' . rec_id_replacer($error);
-                            $logs[] = 'Data : ' . print_r($request->all(),);
+                            $logs[] = 'Data : ' . print_r($request->all(),true);
                             $success = false;
                         }
                         $logs[] = 'Rolling back the changes.';
