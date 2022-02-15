@@ -13,6 +13,7 @@ $(document).ready(function () {
     var table = $('#datatable-buttons').DataTable({
         "scrollY": "200px",
         "scrollCollapse": true,
+        "searching": false,
         buttons: ['copy', 'excel', 'pdf', 'colvis']
     });
 
