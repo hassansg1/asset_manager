@@ -72,9 +72,8 @@
             url: url,
             success: function (result) {
                 if (result) {
-                    $('#pageAdd').html($(result).find('.item_form').find('.row').html());
+                    showModal(defaultModal, $(result).find('.item_form').find('.row').html())
                     disableForm('#pageAdd');
-                    $('#viewDetailPopUpModal').modal("show");
                 }
             }
 
