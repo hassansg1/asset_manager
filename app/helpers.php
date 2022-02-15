@@ -730,7 +730,7 @@ function buildTree(array $elements, $parentId = 0)
             if ($children) {
                 $element['nodes'] = $children;
             }
-            $element['href'] = route('view/assets', $element['id']);
+            $element['href'] = url('view/assets/'.$element['id'].'/0');
             $branch[] = (object)$element;
         }
     }
