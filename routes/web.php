@@ -189,8 +189,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('testCron', [\App\Http\Controllers\TestController::class, 'test']);
 
 
-    Route::get('view/assets/{id}', [\App\Http\Controllers\SeeAssetController::class, 'view'])->name('view/assets');
-
+    Route::get('view/assets/{id}/{nodeid?}', [\App\Http\Controllers\SeeAssetController::class, 'view'])->name('view/assets');
 //    Patch Approval
     Route::post('patch/approve/', [\App\Http\Controllers\PatchApprovalSecondaryController::class, 'bulkApprove'])->name('patch.bulkApprove');
     Route::post('patch/approve/save', [\App\Http\Controllers\PatchApprovalSecondaryController::class, 'bulkApproveSave'])->name('patch.bulkApprove.save');

@@ -162,25 +162,25 @@
                         multiSelect: false,
                         onNodeChecked: true,
 
-
                     });
                 }
+                nodeSelected({{ Session::get('node_id')}});
+                $('#default-tree').on('click','li a',function(event, data) {
+                    event.preventDefault();
+                    var li = $(this).parent();
+                    var nodeId = li.attr('data-nodeid');
+                    const url = $(this).attr('href');
+                    const newUrl = url.slice(0, url.lastIndexOf('/'));
+                    const newurlLatest = newUrl+'/'+nodeId;
+                    location.href = newurlLatest;
+                });
             },
         });
     }
-    // $('#default-tree').treeview({
-    //     // The naming convention for callback's is to prepend with `on`
-    //     // and capitalize the first letter of the event name
-    //     // e.g. nodeSelected -> onNodeSelected
-    //     onNodeSelected: function(event, data) {
-    //         alert('selecetd');
-    //     }
-    // });
-
-    $(document).on('nodeSelected',"#default-tree", function(e, node){
-        var NodeID=node.nodeId;
-        $('#default-tree').treeview('expandNode', [ NodeID, { levels: 2, silent: true } ]);
-    });
+    function nodeSelected(id) {
+        $('#default-tree').treeview('revealNode', [id, {silent: true, ignoreChildren: false}]);
+        $('#default-tree').treeview('selectNode', [id, {silent: true, ignoreChildren: false}]);
+    }
 
     $('#change-password').on('submit', function (event) {
         event.preventDefault();
