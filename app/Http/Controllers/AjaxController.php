@@ -7,6 +7,7 @@ use App\Models\ComplianceVersion;
 use App\Models\LoneAsset;
 use App\Models\NetworkAsset;
 use App\Models\Location;
+use App\Models\Networks;
 use App\Models\User;
 use App\Models\AssetUserId;
 use App\Models\UserAccount;
@@ -48,6 +49,12 @@ class AjaxController extends Controller
         return response()->json([
             'html' => view('ajax.ports_drop_down')->with(['ports' => $ports])->render()
         ]);
+    }
+    public function getIPAddressOfNetwork(Request $request)
+    {
+        $ports = Port::where('id', $request->network_id)->get();
+        $networkIpAddress = Networks::whereIn('id', $ports)->get();
+        return response()->json(['html' => view('ajax.ip_address_drop_down')->with(['data' => $networkIpAddress])->render()]);
     }
 
     public function exportDataTemplates()

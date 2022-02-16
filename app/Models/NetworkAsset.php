@@ -39,6 +39,10 @@ class NetworkAsset extends Model
     {
         return $this->name;
     }
+    public function ports()
+    {
+        return $this->morphMany(Port::class, 'portable');
+    }
 
 
     /**
@@ -112,9 +116,9 @@ class NetworkAsset extends Model
         $newItem = Location::find($item->id);
         $parent->appendNode($newItem);
 
-//        if (isset($request->ports)) {
-//            Port::updatePorts($item, $request->ports);
-//        }
+        if (isset($request->ports)) {
+            Port::updatePorts($item, $request->ports);
+        }
         return $item;
     }
 }

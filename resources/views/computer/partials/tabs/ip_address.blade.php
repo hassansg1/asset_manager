@@ -7,10 +7,10 @@
                     <th>Network Interface Card</th>
                     <th>Port Number</th>
                     <th>MAC Address</th>
-                    <th>IP Address</th>
+                    <th>Select Connected Devices</th>
+                    <th style="width: 200px">IP Address Range</th>
                     <th>SubNetMask</th>
                     <th>Default Gateway</th>
-                    <th>Connected To</th>
                     <th></th>
                 </tr>
                 </thead>

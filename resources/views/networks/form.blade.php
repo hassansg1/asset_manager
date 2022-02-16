@@ -16,6 +16,22 @@
                                    name="name" required>
                         </div>
                     </div>
+                    <div class="col-lg-4">
+                        <div class="mb-3">
+                            <label for="{{ isset($item) ? $item->id:'' }}start_ip" class="form-label required">Start IP Address</label>
+                            <input type="text" value="{{ isset($item) ? $item->start_ip:old('start_ip') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}start_ip"
+                                   name="start_ip" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="mb-3">
+                            <label for="{{ isset($item) ? $item->id:'' }}end_ip" class="form-label required">End IP Address</label>
+                            <input type="text" value="{{ isset($item) ? $item->end_ip:old('end_ip') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}end_ip"
+                                   name="end_ip" required>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

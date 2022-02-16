@@ -37,7 +37,6 @@ class Port extends Model
             ]);
         }
     }
-
     public function network()
     {
         return $this->belongsTo(Networks::class);

@@ -37,7 +37,8 @@ class Networks extends Model
     public function saveFormData($item, $request)
     {
         if (isset($request->name)) $item->name = $request->name;
-
+        if (isset($request->start_ip)) $item->start_ip = $request->start_ip;
+        if (isset($request->end_ip)) $item->end_ip = $request->end_ip;
         $item->save();
         Parentable::addNew(null, null, self::class, $item->id);
         return $item;
