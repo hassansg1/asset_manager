@@ -5,9 +5,9 @@
                 {{$heading}}
             </h5>
             @if(isset($goBack))
-                <button onclick="location.href='{{ $goBack }}'" type="button" class="mt-4 btn waves-effect">
-                    <i style="font-size: 15px" class="fas fa-backspace"> Go Back</i>
-                </button>
+{{--                <button onclick="location.href='{{ $goBack }}'" type="button" class="mt-4 btn waves-effect">--}}
+{{--                    <i style="font-size: 15px" class="fas fa-backspace"> Go Back</i>--}}
+{{--                </button>--}}
             @endif
         </div>
         <?php try {

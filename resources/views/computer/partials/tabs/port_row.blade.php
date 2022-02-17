@@ -29,7 +29,7 @@
         </select>
     </td>
     <td>
-        <select name="ip_address" id="ip_address" class="form-control mt-3 {{ $rand }}">
+        <select name="ports[ip_address][]" id="ip_address" class="form-control mt-3">
             <option value="">-- Select IP Address --</option>
         </select>
     </td>
