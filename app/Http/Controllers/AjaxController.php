@@ -55,13 +55,12 @@ class AjaxController extends Controller
         $ports = Port::where('id', $request->network_id)->get();
         $networkIpAddress = Networks::whereIn('id', $ports)->first();
         $from_digit = explode('.', $networkIpAddress->start_ip);
+        $startingAddress  = $from_digit[0]. "." .$from_digit[1].".".$from_digit[2];
         $from_digit = array_pop($from_digit);
         $to_digit = explode('.', $networkIpAddress->end_ip);
         $to_digit = array_pop($to_digit);
 
-        $difference = $to_digit - $from_digit;
-
-        return response()->json(['html' => view('ajax.ip_address_drop_down')->with(['data' => $networkIpAddress, 'difference' => $difference])->render()]);
+        return response()->json(['html' => view('ajax.ip_address_drop_down')->with(['data' => $networkIpAddress, 'start_ip'=>$from_digit, 'end_ip'=>$to_digit, 'startingAddress'=>$startingAddress])->render()]);
     }
 
     public function exportDataTemplates()
