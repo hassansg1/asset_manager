@@ -88,8 +88,8 @@ class UserIdController extends Controller
         $assign_users = UserAccount::select('user_id')->where('account_id', $item)->get();
         $users = User::whereIn('id', $assign_users)->get();
         $item = $this->model->find($item);
-
-        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'users' => $users,'heading' => $this->heading, 'clone' => $request->clone ?? null]);
+        $heading = $this->heading.' ('.$item->user_id.')';
+        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'users' => $users,'heading' => $heading, 'clone' => $request->clone ?? null]);
     }
 
     /**
@@ -106,13 +106,14 @@ class UserIdController extends Controller
         $assign_users = UserAccount::select('user_id')->where('account_id', $item)->get();
         $users = User::whereIn('id', $assign_users)->get();
         $item = $this->model->find($item);
+        $heading = $this->heading.' ('.$item->user_id.')';
         if ($request->ajax) {
             return response()->json([
                 'status' => true,
                 'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item,'users' => $users, 'clone' => $request->clone ?? null])->render()
             ]);
         } else
-            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'users' => $users,'heading' => $this->heading, 'clone' => $request->clone ?? null]);
+            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'users' => $users,'heading' => $heading, 'clone' => $request->clone ?? null]);
     }
 
     /**

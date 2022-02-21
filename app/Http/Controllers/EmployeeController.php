@@ -80,9 +80,10 @@ class EmployeeController extends Controller
     public function show($item)
     {
         $item = $this->model->find($item);
+        $heading = $this->heading.' ('.$item->username.')';
         $SelectedAccount = UserAccount::select('account_id')->where('user_id', $item->id)->get();
         $userIds = UserId::whereIn('id', $SelectedAccount)->get();
-        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'userIds' => $userIds,'heading' => $this->heading, 'clone' => $request->clone ?? null]);
+        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'userIds' => $userIds,'heading' => $heading, 'clone' => $request->clone ?? null]);
     }
 
     /**
@@ -103,15 +104,14 @@ class EmployeeController extends Controller
             $child_arr[] = $subchild->account_id;
         }
         $item = $this->model->find($item);
-
-
+        $heading = $this->heading.' ('.$item->username.')';
         if ($request->ajax) {
             return response()->json([
                 'status' => true,
                 'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item,'child_arr' => $child_arr, 'userIds' => $userIds,'clone' => $request->clone ?? null])->render()
             ]);
         } else
-        return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'child_arr' => $child_arr, 'userIds' => $userIds,'heading' => $this->heading, 'clone' => $request->clone ?? null]);
+        return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'child_arr' => $child_arr, 'userIds' => $userIds,'heading' => $heading, 'clone' => $request->clone ?? null]);
     }
 
     /**

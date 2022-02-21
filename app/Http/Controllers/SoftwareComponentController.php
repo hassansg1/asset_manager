@@ -83,8 +83,8 @@ class SoftwareComponentController extends BaseController
     public function show($item)
     {
         $item = $this->model->find($item);
-
-        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
+        $heading = $this->heading.' ('.$item->name.')';
+        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'heading' => $heading, 'clone' => $request->clone ?? null]);
     }
 
     /**
@@ -99,15 +99,14 @@ class SoftwareComponentController extends BaseController
                 $item = $this->model->find('id', $request->item);
         }
         $item = $this->model->find($item);
-
-
+        $heading = $this->heading.' ('.$item->name.')';
         if ($request->ajax) {
             return response()->json([
                 'status' => true,
                 'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item, 'clone' => $request->clone ?? null])->render()
             ]);
         } else
-            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
+            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'heading' => $heading, 'clone' => $request->clone ?? null]);
     }
 
     /**

@@ -82,8 +82,8 @@ class LoneAssetController extends BaseController
     public function show($item)
     {
         $item = $this->model->find($item);
-
-        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
+        $heading = $this->heading.' ('.$item->rec_id.')';
+        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'heading' => $heading, 'clone' => $request->clone ?? null]);
     }
 
     /**
@@ -98,15 +98,14 @@ class LoneAssetController extends BaseController
                 $item = $this->model->find('id', $request->item);
         }
         $item = $this->model->find($item);
-
-
+        $heading = $this->heading.' ('.$item->rec_id.')';
         if ($request->ajax) {
             return response()->json([
                 'status' => true,
                 'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item, 'clone' => $request->clone ?? null])->render()
             ]);
         } else
-            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
+            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'heading' => $heading, 'clone' => $request->clone ?? null]);
     }
 
     /**
