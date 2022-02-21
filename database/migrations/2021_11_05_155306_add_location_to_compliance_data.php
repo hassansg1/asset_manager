@@ -13,9 +13,9 @@ class AddLocationToComplianceData extends Migration
      */
     public function up()
     {
-        Schema::table('compliance_data', function (Blueprint $table) {
-            $table->string('location',255)->nullable()->after('applicable');
-        });
+//        Schema::table('compliance_data', function (Blueprint $table) {
+//            $table->string('location',255)->nullable()->after('applicable');
+//        });
     }
 
     /**

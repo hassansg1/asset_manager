@@ -11,6 +11,9 @@
                             Ip Address
                         </th>
                         <th>
+                            Network
+                        </th>
+                        <th>
                             MAC Address
                         </th>
                         <th>
@@ -22,6 +25,9 @@
                         <tr>
                             <td>
                                 {{ $device->ip_address ?? '' }}
+                            </td>
+                            <td>
+                                <strong>{{ checkNetworkOfIpAddress($device->ip_address) }}</strong>
                             </td>
                             <td>
                                 {{ $device->properties->mac_address ?? '' }}
@@ -44,6 +50,9 @@
                             Ip Address
                         </th>
                         <th>
+                            <strong>Network</strong>
+                        </th>
+                        <th>
                             MAC Address
                         </th>
                         <th>
@@ -54,6 +63,9 @@
                         <tr>
                             <td>
                                 {{ $device->ip_address ?? '' }}
+                            </td>
+                            <td>
+                                <strong>{{ $device->network->name }}</strong>
                             </td>
                             <td>
                                 {{ $device->mac_address ?? '' }}

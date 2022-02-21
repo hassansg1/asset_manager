@@ -33,7 +33,6 @@ class Computer extends Model
     public $rules =
         [
             'rec_id' => 'required | unique:computer_assets,rec_id',
-            'function'=>'required',
         ];
 
     protected $appends = ['show_name'];
@@ -46,7 +45,7 @@ class Computer extends Model
 
     public function ports()
     {
-        return $this->morphMany(Port::class, 'portable');
+        return $this->hasMany(Port::class, 'location_id');
     }
 
 

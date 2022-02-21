@@ -8,7 +8,7 @@
                     <th>Port Number</th>
                     <th>MAC Address</th>
                     <th>Select Connected Devices</th>
-                    <th style="width: 200px">IP Address Range</th>
+                    <th style="width: 200px">Select IP Address</th>
                     <th>SubNetMask</th>
                     <th>Default Gateway</th>
                     <th></th>

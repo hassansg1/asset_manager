@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCriteriaToComplianceData extends Migration
+class AddLocationIdColumnToPortsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class AddCriteriaToComplianceData extends Migration
      */
     public function up()
     {
-//        `Schema::table('compliance_d`ata', function (Blueprint $table) {
-//            $table->string('criteria',255)->nullable()->after('applicable');
-//        });
+        Schema::table('ports', function (Blueprint $table) {
+            //
+            $table->integer('location_id')->nullable()->after('id');
+        });
     }
 
     /**
@@ -25,7 +26,7 @@ class AddCriteriaToComplianceData extends Migration
      */
     public function down()
     {
-        Schema::table('compliance_data', function (Blueprint $table) {
+        Schema::table('ports', function (Blueprint $table) {
             //
         });
     }

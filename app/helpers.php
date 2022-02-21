@@ -704,6 +704,23 @@ if (!function_exists('assetRights')) {
     }
 }
 
+if (!function_exists('checkNetworkOfIpAddress')) {
+    function checkNetworkOfIpAddress($ipAddress)
+    {
+        $networks = \App\Models\Networks::all();
+
+        foreach ($networks as $network) {
+            $high_ip = ip2long($network->end_ip);
+            $low_ip = ip2long($network->start_ip);
+            $ip = ip2long(trim($ipAddress));
+            if ($ip <= $high_ip && $low_ip <= $ip) {
+                return $network->name ?? '';
+            }
+        }
+        return "No network found for ip address";
+    }
+}
+
 if (!function_exists('checkIfPatchPolicyCanBeDeleted')) {
     function checkIfPatchPolicyCanBeDeleted($softwareId, $patchId)
     {
@@ -730,7 +747,7 @@ function buildTree(array $elements, $parentId = 0)
             if ($children) {
                 $element['nodes'] = $children;
             }
-            $element['href'] = url('view/assets/'.$element['id'].'/0');
+            $element['href'] = url('view/assets/' . $element['id'] . '/0');
             $branch[] = (object)$element;
         }
     }

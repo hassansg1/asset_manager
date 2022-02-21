@@ -12,3 +12,6 @@
         </div>
     </div>
 @endsection
+@section('script-bottom')
+    @include('computer.script-bottom')
+@endsection

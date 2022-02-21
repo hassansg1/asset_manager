@@ -9,3 +9,6 @@
         </div>
     </div>
 @endsection
+@section('script-bottom')
+    @include('computer.script')
+@endsection

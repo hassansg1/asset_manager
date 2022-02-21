@@ -31,7 +31,6 @@ class NetworkAsset extends Model
     public $rules =
         [
             'rec_id' => 'required | unique:network_assets,rec_id',
-            'function'=>'required',
         ];
 
     protected $appends = ['show_name'];
@@ -42,7 +41,7 @@ class NetworkAsset extends Model
     }
     public function ports()
     {
-        return $this->morphMany(Port::class, 'portable');
+        return $this->hasMany(Port::class, 'location_id');
     }
 
 

@@ -13,9 +13,9 @@ class AddDescriptionToComplianceData extends Migration
      */
     public function up()
     {
-        Schema::table('compliance_data', function (Blueprint $table) {
-            $table->string('description',350)->nullable()->after('compliant');
-        });
+//        Schema::table('compliance_data', function (Blueprint $table) {
+//            $table->string('description',350)->nullable()->after('compliant');
+//        });
     }
 
     /**

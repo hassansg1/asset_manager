@@ -4,17 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\ClauseData;
 use App\Models\ComplianceVersion;
-use App\Models\LoneAsset;
-use App\Models\NetworkAsset;
 use App\Models\Location;
 use App\Models\Networks;
-use App\Models\User;
-use App\Models\AssetUserId;
-use App\Models\UserAccount;
-use App\Models\UserId;
 use App\Models\Parentable;
 use App\Models\Port;
 use App\Models\SystemUserId;
+use App\Models\User;
+use App\Models\UserAccount;
+use App\Models\UserId;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
@@ -44,22 +41,41 @@ class AjaxController extends Controller
 
     public function getPortsOfNetwork(Request $request)
     {
-        $ports = Port::where('portable_id', $request->network_id)->get();
+        $ports = Port::where('location_id', $request->network_id)->get();
         return response()->json([
-            'html' => view('ajax.ports_drop_down')->with(['ports' => $ports])->render()
+            'html' => view('ajax.ports_drop_down')->with(['ports' => $ports])->render(),
         ]);
     }
+
     public function getIPAddressOfNetwork(Request $request)
     {
-        $ports = Port::where('id', $request->network_id)->get();
-        $networkIpAddress = Networks::whereIn('id', $ports)->first();
+        $port = Port::find($request->network_id);
+        $networkIpAddress = Networks::find($port->network_id);
+        if (!$networkIpAddress) {
+            return response()->json([
+                'status' => false,
+                'Message' => "No Network connected to the selected port"
+            ]);
+        }
         $from_digit = explode('.', $networkIpAddress->start_ip);
-        $startingAddress  = $from_digit[0]. "." .$from_digit[1].".".$from_digit[2];
+        $startingAddress = ($from_digit[0] ?? '') . "." . ($from_digit[1] ?? '') . "." . ($from_digit[2] ?? '');
         $from_digit = array_pop($from_digit);
         $to_digit = explode('.', $networkIpAddress->end_ip);
         $to_digit = array_pop($to_digit);
 
-        return response()->json(['html' => view('ajax.ip_address_drop_down')->with(['data' => $networkIpAddress, 'start_ip'=>$from_digit, 'end_ip'=>$to_digit, 'startingAddress'=>$startingAddress])->render()]);
+        return response()->json(
+            [
+                'html' => view('ajax.ip_address_drop_down')->with(
+                    [
+                        'data' => $networkIpAddress,
+                        'start_ip' => $from_digit,
+                        'end_ip' => $to_digit,
+                        'startingAddress' => $startingAddress,
+                        'ipAddress' => $request->ipAddress
+                    ]
+                )->render()
+            ]
+        );
     }
 
     public function exportDataTemplates()
@@ -79,7 +95,7 @@ class AjaxController extends Controller
         foreach ($tables as $table) {
             $columns = ['parent_type', 'parent_name'];
             $columns = array_merge($columns, DB::getSchemaBuilder()->getColumnListing($table));
-            $columns = array_diff($columns, ['created_at', 'updated_at', 'portable_type', 'portable_id', 'id']);
+            $columns = array_diff($columns, ['created_at', 'updated_at']);
 
             $path = public_path('csv/' . $table . '.csv');
 
@@ -111,62 +127,79 @@ class AjaxController extends Controller
         ]);
     }
 
-    public function system_user_accounts($id){
-        $system_user_id = SystemUserId::where('system_id', $id)->pluck("system_id","user_id");
+    public function system_user_accounts($id)
+    {
+        $system_user_id = SystemUserId::where('system_id', $id)->pluck("system_id", "user_id");
         return response()->json($system_user_id);
     }
 
-    public function type_wise_assets($asset_id){
+    public function type_wise_assets($asset_id)
+    {
         $assigned_user_accounts = UserAccount::pluck('account_id');
         $user_accounts = UserId::whereNotIn('id', $assigned_user_accounts)->where('parent_id', $asset_id)->pluck('user_id', 'id');
         return response()->json($user_accounts);
     }
-    public  function asset_wise_ip_address($asset_type){
-        $assets = Location::where('type', $asset_type)->pluck('rec_id', 'id');
-        return response()->json($assets);
-    }
-    public  function connected_asset_wise_ip_address($asset_type){
+
+    public function asset_wise_ip_address($asset_type)
+    {
         $assets = Location::where('type', $asset_type)->pluck('rec_id', 'id');
         return response()->json($assets);
     }
 
-    public function system_wise_user_accounts($system_id){
+    public function connected_asset_wise_ip_address($asset_type)
+    {
+        $assets = Location::where('type', $asset_type)->pluck('rec_id', 'id');
+        return response()->json($assets);
+    }
+
+    public function system_wise_user_accounts($system_id)
+    {
         $assigned_user_accounts = UserAccount::pluck('account_id');
         $user_accounts = UserId::whereNotIn('id', $assigned_user_accounts)->where('parent_id', $system_id)->pluck('user_id', 'id');
         return response()->json($user_accounts);
     }
-    public function unit_wise_users($unit_id){
-        $users = User::where('unit_id',$unit_id)->pluck('first_name', 'id');
+
+    public function unit_wise_users($unit_id)
+    {
+        $users = User::where('unit_id', $unit_id)->pluck('first_name', 'id');
         return response()->json($users);
     }
-    public function delete_assigned_user_id(Request $request, $user_id){
-        $user_account = UserAccount::where(['user_id'=>$user_id, 'account_id'=>$request->account_id])->delete();
+
+    public function delete_assigned_user_id(Request $request, $user_id)
+    {
+        $user_account = UserAccount::where(['user_id' => $user_id, 'account_id' => $request->account_id])->delete();
         return true;
     }
-    public function assigned_user_id(Request $request, $user_id){
-        $user_account = UserAccount::where(['account_id'=>$request->account_id])->first();
-        if ($user_account){
+
+    public function assigned_user_id(Request $request, $user_id)
+    {
+        $user_account = UserAccount::where(['account_id' => $request->account_id])->first();
+        if ($user_account) {
             return 'ID Already Assigned';
-        }else{
+        } else {
             $user_account = new UserAccount;
-            $user_account->account_id =$request->account_id;
-            $user_account->user_id =$user_id;
+            $user_account->account_id = $request->account_id;
+            $user_account->user_id = $user_id;
             $user_account->save();
             return 'ID Assigned';;
         }
     }
-    public function assigned_id_to_user(Request $request,$user_id){
+
+    public function assigned_id_to_user(Request $request, $user_id)
+    {
         $account_id = $request->account_id;
-        foreach($account_id as $key=>$value){
+        foreach ($account_id as $key => $value) {
             $user_account = new UserAccount;
-            $user_account->account_id =$value;
-            $user_account->user_id =$user_id;
+            $user_account->account_id = $value;
+            $user_account->user_id = $user_id;
             $user_account->save();
         }
-            return 'ID Assigned';
+        return 'ID Assigned';
     }
-    public function delete_assigned_id(Request $request, $account_id){
-        $user_account = UserAccount::where(['user_id'=>$request->user_id, 'account_id'=>$account_id])->delete();
+
+    public function delete_assigned_id(Request $request, $account_id)
+    {
+        $user_account = UserAccount::where(['user_id' => $request->user_id, 'account_id' => $account_id])->delete();
         return true;
     }
 
@@ -198,7 +231,7 @@ class AjaxController extends Controller
                 foreach ($locations as $location) {
                     $row = [
                         $version->name,
-                        '\''.$item->clause->number,
+                        '\'' . $item->clause->number,
                         $item->clause->title,
                         $item->clause->description,
                         $item->location,

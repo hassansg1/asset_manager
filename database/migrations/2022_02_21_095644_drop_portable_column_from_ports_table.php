@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateIpAddressTable extends Migration
+class DropPortableColumnFromPortsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateIpAddressTable extends Migration
      */
     public function up()
     {
-        Schema::create('ip_address', function (Blueprint $table) {
-            $table->id();
-            $table->integer('port_id');
-            $table->integer('network_id');
-            $table->string('ip_address');
-            $table->timestamps();
+        Schema::table('ports', function (Blueprint $table) {
+            $table->dropColumn('portable_type');
+            $table->dropColumn('portable_id');
         });
     }
 
@@ -29,6 +26,8 @@ class CreateIpAddressTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ip_address');
+        Schema::table('ports', function (Blueprint $table) {
+            //
+        });
     }
 }

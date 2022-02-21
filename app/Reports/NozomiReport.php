@@ -14,7 +14,7 @@ class NozomiReport
         if (count($nozomiData) == 0)
             return view('nozomi_report.no_data');
 
-        $otcmPorts = Port::all();
+        $otcmPorts = Port::with('network')->where('ip_address', '!=', '')->get();
 
         $nozomiDevices = $nozomiData->pluck('ip_address')->toArray();
         $otcmDevices = $otcmPorts->pluck('ip_address')->toArray();

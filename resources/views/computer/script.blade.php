@@ -1,4 +1,35 @@
 <script>
+    $(document).ready(function () {
+        $('.port_auto_drop_down').each(function (i, obj) {
+            let value = $(obj).val();
+            $(obj)
+                .val(value)
+                .trigger('change');
+        });
+    });
+
+    function loadIpAddress(sel, rand, ipAddress) {
+        $.ajax({
+            type: "GET",
+            url: '{{ url('getIPAddressOfNetwork') }}',
+            data: {network_id: sel.value, ipAddress: ipAddress},
+            success: function (result) {
+                $('.' + rand).html(result.html);
+            }
+        });
+    }
+
+    function loadPorts(sel, rand) {
+        $.ajax({
+            type: "GET",
+            url: '{{ url('getPortsOfNetwork') }}',
+            data: {network_id: $(sel).val()},
+            success: function (result) {
+                $('.' + rand).html(result.html);
+            }
+        });
+    }
+
     function patchSoftwareApprovals(softwareId, patchId) {
         $('#patch_id_filter').val(patchId);
         $('#not_in_software_id').val(softwareId);
