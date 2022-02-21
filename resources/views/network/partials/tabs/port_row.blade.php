@@ -1,3 +1,5 @@
+@php($rows = isset($port->rows)?$port->rows:'1')
+@for($i = 0; $i < $rows ; $i ++)
 @php($rand = rand(10000,100000))
 <tr data-id="1" id="{{ $rand }}">
     <td><input value="{{ isset($port) ? $port->name : '' }}" type="text" name="ports[name][]"
@@ -47,3 +49,4 @@
         </a>
     </td>
 </tr>
+@endfor

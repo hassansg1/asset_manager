@@ -53,6 +53,16 @@
             }
         });
     }
+    function loadIpAddress(sel, rand) {
+        $.ajax({
+            type: "GET",
+            url: '<?php echo e(url('getIPAddressOfNetwork')); ?>',
+            data: {network_id: sel.value},
+            success: function (result) {
+                $('.' + rand).html(result.html);
+            }
+        });
+    }
 
     function getNewRow(network) {
         $.ajax({

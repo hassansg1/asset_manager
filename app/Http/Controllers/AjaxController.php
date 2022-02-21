@@ -34,7 +34,6 @@ class AjaxController extends Controller
 
     public function getNewAjaxForm(Request $request)
     {
-
         $modal = isset($request->modal) ? $request->modal : '';
         return response()->json(
             [
