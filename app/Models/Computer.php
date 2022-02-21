@@ -33,6 +33,7 @@ class Computer extends Model
     public $rules =
         [
             'rec_id' => 'required | unique:computer_assets,rec_id',
+            'function'=>'required',
         ];
 
     protected $appends = ['show_name'];
