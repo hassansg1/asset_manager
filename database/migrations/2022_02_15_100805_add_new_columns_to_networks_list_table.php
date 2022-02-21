@@ -14,8 +14,8 @@ class AddNewColumnsToNetworksListTable extends Migration
     public function up()
     {
         Schema::table('networks_list', function (Blueprint $table) {
+            $table->string('end_ip')->after('name')->nullable();
             $table->string('start_ip')->after('name')->nullable();
-            $table->string('end_ip')->after('start_ip')->nullable();
         });
     }
 

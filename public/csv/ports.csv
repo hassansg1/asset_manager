@@ -1,1 +1,1 @@
-parent_type,parent_name,name,number,speed,type,status,ip_address,mac_address,nic,default_gateway,network_id,connected_port_id,sub_net_mask,dhcp_server
+parent_type,parent_id,name,number,speed,type,status,ip_address,mac_address,nic,default_gateway,network_id,connected_port_id,sub_net_mask,dhcp_server
