@@ -99,7 +99,7 @@
     </div>
     <div class="col-lg-4">
         <div class="mb-3">
-            <label for="{{ isset($item) ? $item->id:'' }}function" class="form-label">Function</label>
+            <label for="{{ isset($item) ? $item->id:'' }}function" class="form-label required">Function</label>
             <select class="form-select form-select-input" name="function"
                     id="{{ isset($item) ? $item->id:'' }}function">
                 @foreach(\App\Models\AssetFunction::all() as $function)

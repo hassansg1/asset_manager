@@ -27,6 +27,10 @@ class LoneAsset extends Model
 
         return static::addGlobalScope(new LocationScope(self::$type));
     }
+    public $rules =
+        [
+            'function'=>'required',
+        ];
 
     protected $appends = ['show_name'];
 
