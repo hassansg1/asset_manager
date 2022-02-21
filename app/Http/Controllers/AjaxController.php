@@ -53,8 +53,15 @@ class AjaxController extends Controller
     public function getIPAddressOfNetwork(Request $request)
     {
         $ports = Port::where('id', $request->network_id)->get();
-        $networkIpAddress = Networks::whereIn('id', $ports)->get();
-        return response()->json(['html' => view('ajax.ip_address_drop_down')->with(['data' => $networkIpAddress])->render()]);
+        $networkIpAddress = Networks::whereIn('id', $ports)->first();
+        $from_digit = explode('.', $networkIpAddress->start_ip);
+        $from_digit = array_pop($from_digit);
+        $to_digit = explode('.', $networkIpAddress->end_ip);
+        $to_digit = array_pop($to_digit);
+
+        $difference = $to_digit - $from_digit;
+
+        return response()->json(['html' => view('ajax.ip_address_drop_down')->with(['data' => $networkIpAddress, 'difference' => $difference])->render()]);
     }
 
     public function exportDataTemplates()

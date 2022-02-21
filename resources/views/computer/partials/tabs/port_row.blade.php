@@ -17,19 +17,20 @@
                     value="{{ $entity->id }}">{{$entity->name}}</option>
             @endforeach
         </select>
-        <select onchange="loadIpAddress(this,'{{ $rand }}')" name="ports[connected_port_id][]" id="" class="form-control mt-3 {{ $rand }}">
+        @php($rand1 = rand(100000,1000000))
+        <select onchange="loadIpAddress(this,'{{ $rand1 }}')" name="ports[connected_port_id][]" id="" class="form-control mt-3 {{ $rand }}">
             <option value="">Select Port</option>
             @if(isset($port) && $port->connected_port_id && \App\Models\Port::find($port->connected_port_id)->portable_id)
                 @foreach(\App\Models\Port::where('portable_id',\App\Models\Port::find($port->connected_port_id)->portable_id)->get() as $entity)
                     <option
                         {{ isset($port) && $port->connected_port_id == $entity->id ? 'selected' : '' }}
-                        value="{{ $entity->id }}">{{$entity->name}}</option>
+                        value="{{ $entity->network_id }}">{{$entity->name}}</option>
                 @endforeach
             @endif
         </select>
     </td>
     <td>
-        <select name="ports[ip_address][]" id="ip_address" class="form-control mt-3">
+        <select name="ports[ip_address][]" id="ip_address" class="form-control mt-3 {{ $rand1 }}">
             <option value="">-- Select IP Address --</option>
         </select>
     </td>

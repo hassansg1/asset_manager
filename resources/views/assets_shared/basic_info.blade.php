@@ -2,7 +2,7 @@
     <div class="col-lg-4">
         <div class="mb-3">
             <label for="{{ isset($item) ? $item->id:'' }}short_name"
-                   class="form-label required">Parent</label>
+                   class="form-label required">Associated With</label>
             <select class="form-control select2" name="parent_id"
                     id="{{ isset($item) ? $item->id:'' }}short_name" required>
                 <option value="">Search by Name</option>
@@ -71,7 +71,7 @@
     </div>
     <div class="col-lg-4">
         <div class="mb-3">
-            <label for="{{ isset($item) ? $item->id:'' }}rec_id" class="form-label required">ID</label>
+            <label for="{{ isset($item) ? $item->id:'' }}rec_id" class="form-label required">Asset ID</label>
             <input type="text" value="{{ isset($item) ? $item->rec_id:old('rec_id') ?? ''  }}"
                    class="form-control" id="{{ isset($item) ? $item->id:'' }}rec_id"
                    name="rec_id" required>
@@ -79,7 +79,7 @@
     </div>
     <div class="col-lg-4">
         <div class="mb-3">
-            <label for="{{ isset($item) ? $item->id:'' }}name" class="form-label">Name</label>
+            <label for="{{ isset($item) ? $item->id:'' }}name" class="form-label">Asset Name</label>
             <input type="text" value="{{ isset($item) ? $item->name:old('name') ?? ''  }}"
                    class="form-control" id="{{ isset($item) ? $item->id:'' }}name"
                    name="name">
@@ -99,7 +99,7 @@
     </div>
     <div class="col-lg-4">
         <div class="mb-3">
-            <label for="{{ isset($item) ? $item->id:'' }}function" class="form-label required">Function</label>
+            <label for="{{ isset($item) ? $item->id:'' }}function" class="form-label required">Asset Function</label>
             <select class="form-select form-select-input" name="function"
                     id="{{ isset($item) ? $item->id:'' }}function">
                 @foreach(\App\Models\AssetFunction::all() as $function)
