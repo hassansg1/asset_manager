@@ -114,6 +114,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::group(['prefix' => 'nozomi'], function () {
         Route::resource('credentials', \App\Http\Controllers\NozomiSettingsController::class);
         Route::resource('report', \App\Http\Controllers\NozomiReportController::class);
+        Route::get('/otcm/devices/report', [\App\Http\Controllers\NozomiReportController::class, 'otcm_devices']);
         Route::get('/print/pdf', [\App\Http\Controllers\NozomiReportController::class, 'pdf']);
     });
 

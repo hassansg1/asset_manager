@@ -15,6 +15,10 @@ class Port extends Model
     {
         return $this->belongsTo(Port::class, 'connected_port_id');
     }
+    public function location()
+    {
+        return $this->belongsTo(Location::class, 'location_id');
+    }
 
     public static function updatePorts($model, $ports)
     {

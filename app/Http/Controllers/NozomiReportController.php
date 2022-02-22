@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Reports\NozomiReport;
+use App\Reports\OtcmDevicesReport;
 use Illuminate\Http\Request;
 
 class NozomiReportController extends Controller
@@ -15,7 +16,10 @@ class NozomiReportController extends Controller
     public function index()
     {
         $report = app(NozomiReport::class)->generate();
-
+        return $report;
+    }
+    public  function otcm_devices(){
+        $report = app(OtcmDevicesReport::class)->generate();
         return $report;
     }
 

@@ -24,7 +24,7 @@
                         <li><a href="#" key="t-product-detail">Support</a></li>
                         <li><a href="#" key="t-orders">Cyber Security Standards Master List</a></li>
                     </ul>
-                </li> 
+                </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-store"></i>
@@ -35,7 +35,7 @@
                         <li><a href="#" key="t-product-detail">Policies</a></li>
                         <li><a href="#" key="t-orders">Zones</a></li>
                     </ul>
-                </li> 
+                </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-store"></i>
@@ -46,6 +46,13 @@
                         <li><a href="{{ route('role.index') }}" key="t-product-detail">Roles</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="{{url('nozomi/credentials')}}" class="waves-effect">
+                        <i class="bx bx-store"></i>
+                        <span key="t-ecommerce">Nozomi Credentials</span>
+                    </a>
+                </li>
+{{--                <li><a href="{{url('nozomi/credentials')}}" key="t-orders">Nozomi Credentials</a></li>--}}
             </ul>
         </div>
         <!-- Sidebar -->

@@ -29,6 +29,10 @@ class Networks extends Model
         return $this->long_name;
     }
 
+    public function port(){
+        return $this->belongsTo(Port::class, 'id', 'network_id');
+    }
+
     /**
      * @param $item
      * @param $request

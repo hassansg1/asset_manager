@@ -703,7 +703,6 @@ if (!function_exists('assetRights')) {
         return $rights;
     }
 }
-
 if (!function_exists('checkNetworkOfIpAddress')) {
     function checkNetworkOfIpAddress($ipAddress)
     {
@@ -715,6 +714,24 @@ if (!function_exists('checkNetworkOfIpAddress')) {
             $ip = ip2long(trim($ipAddress));
             if ($ip <= $high_ip && $low_ip <= $ip) {
                 return $network->name ?? '';
+            }
+        }
+        return "No network found for ip address";
+    }
+}
+if (!function_exists('checkNetworkOfIpAddressHtml')) {
+    function checkNetworkOfIpAddressHtml($ipAddress)
+    {
+        $networks = \App\Models\Networks::all();
+
+        foreach ($networks as $network) {
+            $high_ip = ip2long($network->end_ip);
+            $low_ip = ip2long($network->start_ip);
+            $ip = ip2long(trim($ipAddress));
+            if ($ip <= $high_ip && $low_ip <= $ip) {
+//                return $network->name ?? '';
+                $data = $network;
+                return view("nozomi_report.tooltip_data", compact("data"));
             }
         }
         return "No network found for ip address";
