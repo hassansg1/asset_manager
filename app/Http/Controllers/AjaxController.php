@@ -49,6 +49,7 @@ class AjaxController extends Controller
 
     public function getIPAddressOfNetwork(Request $request)
     {
+        $usedIpAddress = Port::whereNotNull('ip_address')->select('ip_address')->get();
         $port = Port::find($request->network_id);
         $networkIpAddress = Networks::find($port->network_id);
         if (!$networkIpAddress) {
@@ -71,7 +72,8 @@ class AjaxController extends Controller
                         'start_ip' => $from_digit,
                         'end_ip' => $to_digit,
                         'startingAddress' => $startingAddress,
-                        'ipAddress' => $request->ipAddress
+                        'ipAddress' => $request->ipAddress,
+                        'usedIpAddress' => $usedIpAddress,
                     ]
                 )->render()
             ]
