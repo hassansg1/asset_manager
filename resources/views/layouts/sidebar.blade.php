@@ -89,8 +89,8 @@
                         <span key="t-ecommerce">Reports</span>
                     </a>
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
-                        <li><a href="{{url('nozomi/report')}}" key="t-orders">Devices in Nozomi Report</a></li>
-                        <li><a href="{{url('nozomi/otcm/devices/report')}}" key="t-orders">Devices in OTCM Report</a></li>
+                        <li><a href="{{url('nozomi/report')}}" key="t-orders">Devices in Nozomi</a></li>
+                        <li><a href="{{url('nozomi/otcm/devices/report')}}" key="t-orders">Devices in OTCM</a></li>
                         <li><a href="{{route('user_asset_report.index')}}" key="t-orders">User Asset Report</a></li>
                     </ul>
                 </li>
