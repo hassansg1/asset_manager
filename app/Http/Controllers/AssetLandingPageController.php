@@ -27,7 +27,7 @@ class AssetLandingPageController extends BaseController
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index($filter = [])
+    public function index(Request $request)
     {
         $lonAssets = $this->fetchData(new LoneAsset(), null, $filter);
         $computerAssets = $this->fetchData(new Computer(), null, $filter);

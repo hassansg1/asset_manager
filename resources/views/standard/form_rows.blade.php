@@ -6,7 +6,7 @@
             {{ $item->name }}
         </td>
         <td>
-            <button style="margin-left: 40px" class="btn btn-primary">
+            <button class="btn btn-primary">
                 <a style="color: white" href="{{ url('standards/view/'.$item->id.'/clause') }}">View Clauses</a>
             </button>
             <button style="margin-left: 5px" class="btn btn-primary">

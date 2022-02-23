@@ -28,9 +28,9 @@ class ComputerAssetController extends BaseController
     /**
      * @return Application|Factory|View
      */
-    public function index($filter = [])
+    public function index(Request $request)
     {
-        $data = $this->fetchData($this->model, null, null);
+        $data = $this->fetchData($this->model, $request);
 
         return view($this->route . "/index")
             ->with(['items' => $data['items'], 'data' => $data,'filter' => $filter[0] ?? null, 'route' => $this->route, 'heading' => $this->heading]);

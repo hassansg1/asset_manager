@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Location;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Session;
 
@@ -37,10 +38,14 @@ class BaseController extends Controller
             });
         }
 
-        if (isset($model::$repo)) {
-            $repo = "App\\Repos\\" . $model::$repo;
-            $repo = new $repo;
-            $query = $repo->filter($query, $request);
+        if (!isset($repository)) {
+            if (isset($model::$repo)) {
+                $repository = "App\\Repos\\" . $model::$repo;
+                $repository = new $repository;
+            }
+        }
+        if ($repository) {
+            $query = $repository->filter($query, $request);
         }
         if (getSetting()) {
             $items_per_page = getSetting()->item_per_page;
@@ -56,6 +61,7 @@ class BaseController extends Controller
 
         $data['items'] = $items;
         $data['request'] = $request;
+        $data['request']['url'] = Request::url();
         return $data;
     }
 }

@@ -9,6 +9,7 @@ use App\Models\Compliance;
 use App\Models\ClauseData;
 use App\Models\ComplianceDataFiles;
 use App\Models\Standard;
+use App\Repos\StandardClauseRepo;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory;
@@ -33,11 +34,13 @@ class StandardClauseController extends BaseController
     /**
      * @return Application|Factory|View
      */
-    public function index($standardId, $onlyView = false)
+    public function index(Request $request,$standardId)
     {
-        $data['items'] = Clause::where('standard_id', $standardId)->where('parent_id', null)->orderBy('id', 'asc')->paginate(10);
+        $request->request->add(['standard_id' => $standardId]);
+        $request->request->add(['parent_id' => null]);
+        $data = $this->fetchData($this->model,$request,new StandardClauseRepo());
         $standard = Standard::find($standardId);
-
+        $this->heading = "$standard->name > Clauses";
         return view($this->route . "/index")
             ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading]);
     }

@@ -10,29 +10,15 @@
         loadTableData(url, type);
     });
 
-    function refreshDataTable() {
-        let url = $(this).attr('href');
-        let query = url.split('?');
-        let type = query[0].split('/');
-        type = type[type.length - 1];
-        loadTableData(url, type);
-    }
-
-    $(document).on('keyup', '#search_keyword', function (e) {
-        if (e.keyCode == 13) {
-            $('#keyword_search_btn').trigger("click");
-        }
-    });
+    // $(document).on('keyup', '#search_keyword', function (e) {
+    //     if (e.keyCode == 13) {
+    //         $('#keyword_search_btn').trigger("click");
+    //     }
+    // });
 
     $(document).on('search', '#search_keyword', function (e) {
         $('#keyword_search_btn').trigger("click");
     });
-
-    // $(document).on('keydown', '#search_keyword', function (e) {
-    //     if ($('#search_keyword').val() == "") {
-    //         $('#keyword_search_btn').trigger("click");
-    //     }
-    // });
 
     function loadDataTableDynamically(type, div) {
         loadTableData(window.location.origin + '/' + type, div);
