@@ -801,7 +801,6 @@ class ComposerStaticInit87345aae27ff06f7b2f4d17209053f09
         'App\\Models\\HelpSection' => __DIR__ . '/../..' . '/app/Models/HelpSection.php',
         'App\\Models\\InstalledPatch' => __DIR__ . '/../..' . '/app/Models/InstalledPatch.php',
         'App\\Models\\InstalledSoftware' => __DIR__ . '/../..' . '/app/Models/InstalledSoftware.php',
-        'App\\Models\\IpAddress' => __DIR__ . '/../..' . '/app/Models/IpAddress.php',
         'App\\Models\\Location' => __DIR__ . '/../..' . '/app/Models/Location.php',
         'App\\Models\\Log' => __DIR__ . '/../..' . '/app/Models/Log.php',
         'App\\Models\\LoneAsset' => __DIR__ . '/../..' . '/app/Models/LoneAsset.php',

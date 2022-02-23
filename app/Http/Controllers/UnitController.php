@@ -29,8 +29,6 @@ class UnitController extends BaseController
      */
     public function index(Request $request)
     {
-        Location::fixTree();
-        dd("As");
         $data = $this->fetchData($this->model, $request);
 
         return view($this->route . "/index")

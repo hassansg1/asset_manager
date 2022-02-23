@@ -38,7 +38,7 @@ class OtcmDevicesReport
 
         if ($pdf) return Pdf::loadView('nozomi_report.content', compact('existInNozomi', 'existInOTCM', 'existInBoth'));
 
-        return view('nozomi_report.index')->with(compact('existInOTCM', 'existInBoth', 'heading'));
+        return view('nozomi_report.index')->with(compact('existInOTCM', 'heading'));
     }
 
     public function getDifferences($otcm, $nozomi)

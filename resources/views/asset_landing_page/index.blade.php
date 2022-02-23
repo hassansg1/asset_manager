@@ -1,9 +1,7 @@
 @extends('layouts.master')
 @section('content')
     <div class="card">
-        <div class="card-title">
-            Asset Navigation
-        </div>
+        @include('components.breadcrumb',['items' => getAncestorsForLocation(Session::get('asset_location_id')),'heading' => 'Asset Navigation'])
         <div class="card-body">
             <div class="row">
                 <div class="col-md-4 table-responsive">

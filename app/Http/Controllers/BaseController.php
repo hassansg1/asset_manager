@@ -42,15 +42,18 @@ class BaseController extends Controller
             $repo = new $repo;
             $query = $repo->filter($query, $request);
         }
-//        if ($repository) {
-//            $repository = "App\\Repos\\" . $repository;
-//            $repository = new $repository;
-//            $query = $repository->filter($query, $request);
-//        }
         if (getSetting()) {
             $items_per_page = getSetting()->item_per_page;
         }
-        $items = $query->paginate($items_per_page);
+        if (isset($request->items_per_page) && $request->items_per_page != "") {
+            $items_per_page = $request->items_per_page;
+        }
+        if ($items_per_page == "all") {
+            $items = $query->get();
+            $data['no_pagination'] = true;
+        } else
+            $items = $query->paginate($items_per_page);
+
         $data['items'] = $items;
         $data['request'] = $request;
         return $data;

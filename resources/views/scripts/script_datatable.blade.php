@@ -26,27 +26,27 @@
         editEntry(clone,[id]);
     }
 
-    function editEntry(clone = 0, selected = []) {
-        if(selected.length == 0)
-        {
-            selected = selectedCheckBoxes();
-        }
-        $.ajax({
-            type: "GET",
-            url: '{{ route($route.'.edit', 0) }}',
-            data: {'items': selected, ajax: true, clone : clone},
-            success: function (result) {
-                if(result.status)
-                {
-                   showModal(defaultModal,result.html);
-                }
-                else
-                {
-                    doSomethingWentWrongToast();
-                }
-            },
-        });
-    }
+    {{--function editEntry(clone = 0, selected = []) {--}}
+    {{--    if(selected.length == 0)--}}
+    {{--    {--}}
+    {{--        selected = selectedCheckBoxes();--}}
+    {{--    }--}}
+    {{--    $.ajax({--}}
+    {{--        type: "GET",--}}
+    {{--        url: '{{ route($route.'.edit', 0) }}',--}}
+    {{--        data: {'items': selected, ajax: true, clone : clone},--}}
+    {{--        success: function (result) {--}}
+    {{--            if(result.status)--}}
+    {{--            {--}}
+    {{--               showModal(defaultModal,result.html);--}}
+    {{--            }--}}
+    {{--            else--}}
+    {{--            {--}}
+    {{--                doSomethingWentWrongToast();--}}
+    {{--            }--}}
+    {{--        },--}}
+    {{--    });--}}
+    {{--}--}}
 
     function selectedCheckBoxes() {
         let yourArray = [];

@@ -6,7 +6,7 @@ use App\Models\NozomiData;
 use App\Models\Port;
 use Barryvdh\DomPDF\Facade\Pdf;
 
-class NozomiReport
+class BothDevicesReport
 {
     public function generate($pdf = false)
     {
@@ -15,7 +15,7 @@ class NozomiReport
             return view('nozomi_report.no_data');
 
         $otcmPorts = Port::with('network')->where('ip_address', '!=', '')->get();
-        $heading = "NOZOMI DEVICES";
+        $heading = "OTCM DEVICES";
         $nozomiDevices = $nozomiData->pluck('ip_address')->toArray();
         $otcmDevices = $otcmPorts->pluck('ip_address')->toArray();
 
@@ -35,10 +35,10 @@ class NozomiReport
             if ($difference)
                 $existInBoth[$commonDevice] = $difference;
         }
-        $route = '';
+
         if ($pdf) return Pdf::loadView('nozomi_report.content', compact('existInNozomi', 'existInOTCM', 'existInBoth'));
 
-        return view('nozomi_report.index')->with(compact('existInNozomi', 'heading'));
+        return view('nozomi_report.index')->with(compact('existInBoth', 'heading'));
     }
 
     public function getDifferences($otcm, $nozomi)

@@ -19,7 +19,9 @@
                                 @yield('table_rows')
                                 </tbody>
                             </table>
-                            {!! $items->links('vendor.pagination.bootstrap-4') !!}
+                            @if(!isset($data['no_pagination']))
+                                {!! $items->links('vendor.pagination.bootstrap-4') !!}
+                            @endif
                         </div>
                     </div>
                 </div>

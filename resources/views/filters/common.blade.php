@@ -1,10 +1,13 @@
 <div class="filters">
-    @include('filters.add')
-    @include('filters.add_remove_columns')
-    @include('filters.advanced_filters')
-    @include('filters.delete')
-    @include('filters.refresh')
-    @include('filters.pagination')
+    @if(isset($data['no_header']))
+    @else
+        @include('filters.add')
+        @include('filters.pagination')
+    @endif
+    {{--    @include('filters.add_remove_columns')--}}
+    {{--    @include('filters.advanced_filters')--}}
+    {{--    @include('filters.delete')--}}
+    {{--    @include('filters.refresh')--}}
     @include('filters.export')
     @include('filters.search')
     @yield('filters')

@@ -89,9 +89,19 @@
                         <span key="t-ecommerce">Reports</span>
                     </a>
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
-                        <li><a href="{{url('nozomi/report')}}" key="t-orders">Devices in Nozomi</a></li>
-                        <li><a href="{{url('nozomi/otcm/devices/report')}}" key="t-orders">Devices in OTCM</a></li>
                         <li><a href="{{route('user_asset_report.index')}}" key="t-orders">User Asset Report</a></li>
+                        <li><a href="{{url('reports/ports')}}" key="t-orders">Ports Report</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-store"></i>
+                        <span key="t-ecommerce">Nozomi Reports</span>
+                    </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="false">
+                        <li><a href="{{url('nozomi/devices/report')}}" key="t-orders">Devices found in nozomi but missing in OTCM </a></li>
+                        <li><a href="{{url('nozomi/otcm/devices/report')}}" key="t-orders">Devices found in OTCM but missing in Nozomi</a></li>
+                        <li><a href="{{url('nozomi/otcm/nozomi/devices/report')}}" key="t-orders">Devices found in both but data is different</a></li>
                     </ul>
                 </li>
 {{--                <li>--}}

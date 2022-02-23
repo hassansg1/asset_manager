@@ -18,14 +18,14 @@
               aria-haspopup="true" aria-expanded="false">
          {{ $data['start'] ?? 0 }} - {{$data['end'] ?? 0 }} of {{ $data['totalItems'] ?? 0 }}
       </button>
-<button title="Previous"  type="button" class="btn btn-light btn-filter dropdown-toggle" data-bs-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-         <i class="fas fa-angle-left"></i>
-</button>
-<button title="Next" style="margin-left: -3px"  type="button" class="btn btn-light btn-filter dropdown-toggle" data-bs-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-         <i class="fas fa-angle-right"></i>
-</button>
+{{--<button title="Previous"  type="button" class="btn btn-light btn-filter dropdown-toggle" data-bs-toggle="dropdown"--}}
+{{--        aria-haspopup="true" aria-expanded="false">--}}
+{{--         <i class="fas fa-angle-left"></i>--}}
+{{--</button>--}}
+{{--<button title="Next" style="margin-left: -3px"  type="button" class="btn btn-light btn-filter dropdown-toggle" data-bs-toggle="dropdown"--}}
+{{--        aria-haspopup="true" aria-expanded="false">--}}
+{{--         <i class="fas fa-angle-right"></i>--}}
+{{--</button>--}}
 </span>
 @endif
 <script>

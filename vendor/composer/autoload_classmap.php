@@ -165,7 +165,6 @@ return array(
     'App\\Models\\HelpSection' => $baseDir . '/app/Models/HelpSection.php',
     'App\\Models\\InstalledPatch' => $baseDir . '/app/Models/InstalledPatch.php',
     'App\\Models\\InstalledSoftware' => $baseDir . '/app/Models/InstalledSoftware.php',
-    'App\\Models\\IpAddress' => $baseDir . '/app/Models/IpAddress.php',
     'App\\Models\\Location' => $baseDir . '/app/Models/Location.php',
     'App\\Models\\Log' => $baseDir . '/app/Models/Log.php',
     'App\\Models\\LoneAsset' => $baseDir . '/app/Models/LoneAsset.php',
