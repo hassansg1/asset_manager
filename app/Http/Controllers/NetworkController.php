@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Networks;
+use App\Models\Port;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory;
@@ -128,6 +129,11 @@ class NetworkController extends BaseController
      */
     public function destroy($item)
     {
+        $networkExist = Port::where('network_id', $item)->get();
+        if (!$networkExist->isEmpty()){
+            flashSuccess(getLang($this->heading . " Netwrok is in use."));
+            return redirect(route($this->route . ".index"));
+        }
         $item = $this->model->find($item);
         $item->delete();
 

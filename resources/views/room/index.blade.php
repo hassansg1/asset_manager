@@ -4,7 +4,7 @@
             onclick="toggleSelectAll()"
             type="checkbox" name=""
             id="select_all"></th>
-    <th>Parent</th>
+    <th>Associated With</th>
     <th>Room ID</th>
     <th>Room Name</th>
     <th>Actions</th>
