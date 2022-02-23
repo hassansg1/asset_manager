@@ -58,7 +58,7 @@
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}nwc_applicable" class="form-label required">NWC Applicable</label>
                             <input type="text" value="{{ isset($item) ? $item->nwc_applicable:old('nwc_applicable') ?? ''  }}"
-                                   class="form-nwc_applicable" id="{{ isset($item) ? $item->id:'' }}nwc_applicable" name="nwc_applicable" required>
+                                   class="form-nwc_applicable form-control" id="{{ isset($item) ? $item->id:'' }}nwc_applicable" name="nwc_applicable" required>
                         </div>
                     </div>
                     <div class="col-lg-4">

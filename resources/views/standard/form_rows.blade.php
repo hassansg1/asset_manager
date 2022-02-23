@@ -4,6 +4,8 @@
                                id="select_check_{{ $item->id }}" class="select_row"></td>
         <td>
             {{ $item->name }}
+        </td>
+        <td>
             <button style="margin-left: 40px" class="btn btn-primary">
                 <a style="color: white" href="{{ url('standards/view/'.$item->id.'/clause') }}">View Clauses</a>
             </button>

@@ -74,7 +74,7 @@ class VersionComplianceController extends BaseController
      */
     public function store(Request $request)
     {
-        $request->validate($this->model->rules);
+        $request->validate($this->model->rules());
         $this->model->saveFormData($this->model, $request);
 
         flashSuccess(getLang($this->heading . " Successfully Created."));

@@ -5,7 +5,7 @@
             type="checkbox" name=""
             id="select_all"></th>
     <th>Name</th>
-{{--    <th>Applicable</th>--}}
+    <th>Clauses</th>
     <th>Actions</th>
 @endsection
 @section('table_rows')
