@@ -20,7 +20,7 @@ class Clause extends Model
     public function rules($standardId = null)
     {
         return [
-            'number' => 'required|unique:clauses,number,NULL,id,standard_id,' . $standardId
+            'number' => 'required|unique:clauses,number,NULL,id,standard_id,' . $standardId,
         ];
     }
 

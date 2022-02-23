@@ -183,7 +183,7 @@ class AjaxController extends Controller
             $user_account->account_id = $request->account_id;
             $user_account->user_id = $user_id;
             $user_account->save();
-            return 'ID Assigned';;
+            return 'ID Assigned';
         }
     }
 
