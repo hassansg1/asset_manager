@@ -3,7 +3,7 @@
                            value="{{ $item->id }}"
                            id="select_check_{{ $item->id }}" class="select_row">
     </td>
-    <td style="padding-left: {{ $padding }}px">{{ $item->number }}</td>
+    <td style="width:50px;padding-left: {{ $padding }}px">{{ $item->number }}</td>
     <td>{{ $item->title }}</td>
     <td>{{ substr($item->description,0,20) }}</td>
     <td>

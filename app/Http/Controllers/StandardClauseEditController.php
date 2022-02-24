@@ -39,6 +39,7 @@ class StandardClauseEditController extends BaseController
         $standard = Standard::find($standardId);
         $this->heading = "$standard->name > Clauses";
         Session::put('standard_id', $standardId);
+        Session::put('standard', $standard);
         return view($this->route . "/index")
             ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading, 'standard' => $standard, 'customHeading' => true]);
     }
