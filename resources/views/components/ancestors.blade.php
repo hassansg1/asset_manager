@@ -1,1 +1,1 @@
-{{ implode("/", $ancestors->pluck('text')->toArray()) }}
+{{ implode("/", $ancestors->pluck('rec_id')->toArray()) }}
