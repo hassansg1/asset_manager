@@ -38,7 +38,7 @@ class VersionComplianceController extends BaseController
         $data = $this->fetchData($this->model, $request);
 
         return view($this->route . "/index")
-            ->with(['data' => $data, 'items' => $data['items'], 'version' => $complianceVersionId, 'route' => $this->route, 'heading' => "Compliance for " . $version->standard->name . " - Version : " . $version->name, 'version_id' => $version->id]);
+            ->with(['data' => $data, 'items' => $data['items'], 'version' => $complianceVersionId, 'route' => $this->route, 'heading' => "Compliance for " .( $version->standard->name ?? '') . " - Version : " . $version->name ?? '', 'version_id' => $version->id]);
     }
 
     /**
