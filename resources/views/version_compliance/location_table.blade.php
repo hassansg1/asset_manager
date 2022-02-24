@@ -27,7 +27,8 @@
                             onchange="updateCompliant('{{ $location->id }}', this)">
                         <option
                             {{ isset($dt) && $dt->compliant == App\Models\ClauseData::COMPLIANT_ALL ? 'selected' : '' }} value="{{ App\Models\ClauseData::COMPLIANT_ALL }}">
-                            Select Compliant </option>
+                            Select Compliant
+                        </option>
                         <option
                             {{ isset($dt) && $dt->compliant == App\Models\ClauseData::COMPLIANT_YES ? 'selected' : '' }} value="{{ App\Models\ClauseData::COMPLIANT_YES }}">
                             Yes
@@ -43,8 +44,8 @@
                     </select>
                 </td>
                 <td>
-                    <input value="{{ $dt->comment ?? '' }}" type="text" name="comment" id="comment" class="form-control"
-                           onfocusout="updateComment('{{ $location->id }}', this)">
+                    <textarea onfocusout="updateComment('{{ $location->id }}', this)" class="form-control"
+                              name="comment" id="comment" cols="30" rows="10">{{ $dt->comment ?? '' }}</textarea>
                 </td>
                 <td>
                     <input value="{{ $dt->link ?? '' }}" type="text" name="link" id="comment" class="form-control"
