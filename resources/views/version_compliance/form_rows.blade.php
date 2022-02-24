@@ -93,7 +93,7 @@
 
         function showSubLocations(tr, row, trId) {
             $.ajax({
-                url: '{{url('/getLocationsOfCompliance/')}}',
+                url: '{{url('/getLocationsOfCompliance')}}',
                 type: 'GET',
                 data: {trId: trId, version: '{{ $version }}'},
                 success: function (data) {
