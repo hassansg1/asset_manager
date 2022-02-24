@@ -6,13 +6,7 @@
         </td>
         <td>{{ $item->clause->title ?? '' }}</td>
         <td>
-            {!!descriptionWrapText($item->description)!!}
-{{--            {{ substr($item->clause->description,0,50) }}--}}
-{{--            @if(strlen($item->clause->description) > 50)--}}
-{{--                <a href="javascript:void(0)" title="{{ $item->clause->description }}">--}}
-{{--                    <i class="fas fa-eye"></i>--}}
-{{--                </a>--}}
-{{--            @endif--}}
+            {!!descriptionWrapText($item->clause->description)!!}
         </td>
 
     </tr>
