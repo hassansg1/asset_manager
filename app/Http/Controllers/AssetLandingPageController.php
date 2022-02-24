@@ -29,9 +29,9 @@ class AssetLandingPageController extends BaseController
      */
     public function index(Request $request)
     {
-        $lonAssets = $this->fetchData(new LoneAsset(), null, $filter);
-        $computerAssets = $this->fetchData(new Computer(), null, $filter);
-        $netwrokAssets = $this->fetchData(new NetworkAsset(), null, $filter);
+        $lonAssets = $this->fetchData(new LoneAsset(), $request);
+        $computerAssets = $this->fetchData(new Computer(), $request);
+        $netwrokAssets = $this->fetchData(new NetworkAsset(), $request);
         return view('asset_landing_page/index')
             ->with(['lone_assets' => $lonAssets['items'], 'computer_assets' => $computerAssets['items'], 'network_assets' => $netwrokAssets['items'], 'route' => $this->route, 'heading' => $this->heading]);
     }

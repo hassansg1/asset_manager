@@ -22,12 +22,12 @@ class DashBoardController extends Controller
             if($data['compliant'] == "") $data['compliant'] = "No";
             $compliant[$data['compliant']] = $compliant[$data['compliant']] + 1;
         }
-        if (!empty($compliant)){
-            $values[] = $compliant['Yes'];
-            $values[] = $compliant['No'];
-            $values[] = $compliant['Partial'];
-            $values[] = $compliant['Not evaluated'];
-        }
+//        if (!empty($compliant)){
+//            $values[] = $compliant['Yes'];
+//            $values[] = $compliant['No'];
+//            $values[] = $compliant['Partial'];
+//            $values[] = $compliant['Not evaluated'];
+//        }
 
         $computer_assets =  Location::where('type','computer_assets')->count();
         $lone_assets = Location::where('type','lone_assets')->count();

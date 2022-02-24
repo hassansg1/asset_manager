@@ -43,7 +43,7 @@ class StandardApplicableClauseController extends BaseController
         $this->heading = "$standard->name > Clauses";
 
         return view($this->route . "/index")
-            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => "Applicable Clauses for " . $standard->name]);
+            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => "Applicable Clauses of " . $standard->name]);
     }
 
     /**
