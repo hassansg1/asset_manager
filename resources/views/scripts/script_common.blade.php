@@ -2,6 +2,7 @@
     let pageNumber = 1;
     $(document).on("click", ".page-link", function (e) {
         e.preventDefault();
+        $('#search_keyword').val();
         let url = $(this).attr('href');
         let query = url.split('?');
         pageNumber = query[1].split('=')[1];
