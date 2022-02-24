@@ -101,6 +101,12 @@ if (!function_exists('getDevicePorts')) {
         return \App\Models\Port::where('location_id', $location_id)->get();
     }
 }
+if (!function_exists('descriptionWrapText')) {
+    function descriptionWrapText($description)
+    {
+        return wordwrap($description,100,"<br>\n");
+    }
+}
 
 if (!function_exists('getSites')) {
     function getSites()

@@ -5,12 +5,13 @@
     <td style="padding-left: {{ $padding }}px">{{ $item->number }}</td>
     <td>{{ $item->title }}</td>
     <td>
-        {{ substr($item->description,0,50) }}
-        @if(strlen($item->description) > 50)
-            <a href="javascript:void(0)" title="{{ $item->description }}">
-                <i class="fas fa-eye"></i>
-            </a>
-        @endif
+        {!!descriptionWrapText($item->description)!!}
+{{--        {{ substr($item->description,0,50) }}--}}
+{{--        @if(strlen($item->description) > 50)--}}
+{{--            <a href="javascript:void(0)" title="{{ $item->description }}">--}}
+{{--                <i class="fas fa-eye"></i>--}}
+{{--            </a>--}}
+{{--        @endif--}}
     </td>
     <td>
         <input type="checkbox" id="switch{{ $item->id }}" switch="bool" name="applicable{{ $item->id }}"
