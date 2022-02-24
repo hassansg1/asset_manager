@@ -7,12 +7,6 @@
         <td>{{ $item->clause->title ?? '' }}</td>
         <td>
             {!!descriptionWrapText($item->description)!!}
-{{--            {{ substr($item->clause->description,0,50) }}--}}
-{{--            @if(strlen($item->clause->description) > 50)--}}
-{{--                <a href="javascript:void(0)" title="{{ $item->clause->description }}">--}}
-{{--                    <i class="fas fa-eye"></i>--}}
-{{--                </a>--}}
-{{--            @endif--}}
         </td>
 
     </tr>
@@ -64,7 +58,11 @@
         $(document).ready(function () {
             table = $('#dtb').DataTable({
                 lengthChange: false,
-                buttons: ['copy', 'excel', 'pdf', 'colvis']
+                buttons: ['copy', 'excel', 'pdf', 'colvis'],
+                "searching": false,
+                "ordering": false,
+                "bPaginate": false,
+                "bSortable": false,
             });
 
             $('#compliant').on('change', function () {

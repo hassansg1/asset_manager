@@ -11,10 +11,12 @@ $(document).ready(function () {
 
     //Buttons examples
     var table = $('#datatable-buttons').DataTable({
-        "scrollY": "200px",
-        "scrollCollapse": true,
+        lengthChange: false,
+        buttons: ['copy', 'excel', 'pdf', 'colvis'],
         "searching": false,
-        buttons: ['copy', 'excel', 'pdf', 'colvis']
+        "ordering": false,
+        "bPaginate": false,
+        "bSortable": false,
     });
 
     table.buttons().container()

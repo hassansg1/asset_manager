@@ -75,7 +75,7 @@
             success: function (result) {
                 if (result) {
                     showModal(defaultModal, $(result).find('.item_form').find('.row').html())
-                    disableForm('#pageAdd');
+                    // disableForm('#pageAdd');
                 }
             }
 

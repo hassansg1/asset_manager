@@ -80,6 +80,13 @@
 
 @section('script')
     <script>
-        $('#datatable-logs').DataTable({'order': []});
+        $('#datatable-logs').DataTable({
+            lengthChange: false,
+            buttons: ['copy', 'excel', 'pdf', 'colvis'],
+            "searching": false,
+            "ordering": false,
+            "bPaginate": false,
+            "bSortable": false,
+        });
     </script>
 @endsection

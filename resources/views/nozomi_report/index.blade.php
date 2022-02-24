@@ -13,6 +13,10 @@
             var table = $('#nozomi_table').DataTable({
                 lengthChange: false,
                 buttons: ['copy', 'excel', 'pdf', 'colvis'],
+                "searching": false,
+                "ordering": false,
+                "bPaginate": false,
+                "bSortable": false,
             });
             table.buttons().container().appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
         });
