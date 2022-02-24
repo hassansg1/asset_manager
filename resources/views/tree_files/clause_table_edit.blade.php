@@ -5,7 +5,7 @@
     </td>
     <td style="width:50px;padding-left: {{ $padding }}px">{{ $item->number }}</td>
     <td>{{ $item->title }}</td>
-    <td>{{ $item->description }}</td>
+    <td>{!!descriptionWrapText($item->description)!!}</td>
     <td>
         @include('components.edit_delete_button')
     </td>
