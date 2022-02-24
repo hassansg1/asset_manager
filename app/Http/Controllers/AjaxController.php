@@ -6,7 +6,6 @@ use App\Models\ClauseData;
 use App\Models\ComplianceVersion;
 use App\Models\Location;
 use App\Models\Networks;
-use App\Models\Parentable;
 use App\Models\Port;
 use App\Models\SystemUserId;
 use App\Models\User;
@@ -112,17 +111,17 @@ class AjaxController extends Controller
 
     public function checkDeleteCriteria(Request $request)
     {
-        $input = explode('??', $request->item);
-        $class = 'App\Models\\' . $input[0];
-        $id = $input[1];
-
-        $childs = Parentable::where(['parentable_type' => $class, 'parentable_id' => $id])->count();
-        if ($childs == 0) {
-            Parentable::where(['childable_type' => $class, 'childable_id' => $id])->delete();
-            return response()->json([
-                'status' => true
-            ]);
-        }
+//        $input = explode('??', $request->item);
+//        $class = 'App\Models\\' . $input[0];
+//        $id = $input[1];
+//
+//        $childs = Parentable::where(['parentable_type' => $class, 'parentable_id' => $id])->count();
+//        if ($childs == 0) {
+//            Parentable::where(['childable_type' => $class, 'childable_id' => $id])->delete();
+//            return response()->json([
+//                'status' => true
+//            ]);
+//        }
 
         return response()->json([
             'status' => false

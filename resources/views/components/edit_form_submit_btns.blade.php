@@ -1,6 +1,6 @@
 {{--@can('Edit '.$route)--}}
     <input type="hidden" name="can_edit" value="1" id="can_edit">
-    <div style="text-align: right">
+    <div style="text-align: center">
         <button type="submit" class="btn btn-primary w-md submit_form">Save</button>
         <a href="{{route($route.'.index')}}">
             <button type="button" class="btn btn-primary w-md submit_form">Cancel</button>

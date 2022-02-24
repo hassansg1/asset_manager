@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Http\Traits\Observable;
-use App\Http\Traits\ParentTrait;
 use App\Scopes\LocationScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
