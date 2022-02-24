@@ -112,7 +112,7 @@
             var location_id = $location_id;
             var compliance_version_id = {{ $version_id }};
             $.ajax({
-                url: '{{ '/updateComplianceVersionItems' }}',
+                url: '{{ url('/updateComplianceVersionItems') }}',
                 headers: {
                     'X-CSRF-TOKEN': "{{ csrf_token() }}"
                 },
