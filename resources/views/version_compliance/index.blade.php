@@ -12,4 +12,4 @@
 @section('script')
     @include('applicable_clause.script')
 @endsection
-@include()
+{{--@include()--}}
