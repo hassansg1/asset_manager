@@ -10,6 +10,7 @@ class Port extends Model
     use HasFactory;
 
     protected $guarded = [];
+    public static $repo = 'PortReportRepo';
 
     public function connectedPort()
     {

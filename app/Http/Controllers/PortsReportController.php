@@ -28,7 +28,7 @@ class PortsReportController extends BaseController
      */
     public function index(Request $request)
     {
-        $request->request->add(['items_per_page' => 'all']);
+        $request->request->add(['items_per_page' => 'all', 'groupBy'=>'location_id']);
         $data = $this->fetchData($this->model, $request);
         $data['no_header'] = true;
         return view($this->route . "/index")

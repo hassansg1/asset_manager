@@ -121,6 +121,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::group(['prefix' => 'reports'], function () {
         Route::resource('ports', \App\Http\Controllers\PortsReportController::class);
+        Route::resource('ip_address', \App\Http\Controllers\IPAddressReportController::class);
     });
 
     Route::post('PatchPage/LoadData', [\App\Http\Controllers\PatchApprovalAjaxController::class, 'loadData'])->name('PatchPage.loadData');

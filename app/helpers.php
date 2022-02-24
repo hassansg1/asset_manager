@@ -95,6 +95,13 @@ if (!function_exists('getUnits')) {
     }
 }
 
+if (!function_exists('getDevicePorts')) {
+    function getDevicePorts($location_id)
+    {
+        return \App\Models\Port::where('location_id', $location_id)->get();
+    }
+}
+
 if (!function_exists('getSites')) {
     function getSites()
     {
