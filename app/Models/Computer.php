@@ -17,7 +17,7 @@ class Computer extends Model
 
     protected $table = 'locations';
 
-    public static $type = 'computer_assets';
+    public static $type = 'computer';
 
     public static $repo = 'ComputerRepo';
 

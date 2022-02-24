@@ -17,7 +17,7 @@ class LoneAsset extends Model
 
     protected $table = 'locations';
 
-    public static $type = 'lone_assets';
+    public static $type = 'lone';
 
     protected $guarded = [];
 

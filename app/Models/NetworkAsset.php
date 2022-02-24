@@ -17,7 +17,7 @@ class NetworkAsset extends Model
 
     protected $table = 'locations';
 
-    public static $type = 'network_assets';
+    public static $type = 'network';
 
     protected $guarded = [];
 
