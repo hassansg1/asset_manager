@@ -107,13 +107,14 @@ class StandardClauseEditController extends BaseController
         $item = $this->model->find($item);
 
 
+        $cancelRoute = url('standards/edit/' . $item->standard_id . '/clause');
         if ($request->ajax) {
             return response()->json([
                 'status' => true,
                 'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item, 'clone' => $request->clone ?? null])->render()
             ]);
         } else
-            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
+            return view($this->route . '.edit')->with(['route' => $this->route, 'cancelRoute' => $cancelRoute, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
     }
 
     /**

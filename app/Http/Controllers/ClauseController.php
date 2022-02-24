@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Building;
 use App\Models\Clause;
 use App\Models\Company;
 use App\Models\Compliance;
 use App\Models\ComplianceDataFiles;
-use Illuminate\Http\Request;
-use Illuminate\Contracts\View\View;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 
@@ -61,8 +60,9 @@ class ClauseController extends BaseController
      */
     public function create()
     {
+        $cancelRoute = url('standards/edit/' . Session::get('standard_id') . '/clause');
         return view($this->route . "/create")
-            ->with(['route' => $this->route, 'heading' => $this->heading]);
+            ->with(['route' => $this->route, 'heading' => $this->heading, 'cancelRoute' => $cancelRoute]);
     }
 
     /**
@@ -79,7 +79,7 @@ class ClauseController extends BaseController
 
         if (isset($request->add_new)) return redirect(route($this->route . ".create"));
 
-        return redirect(url('standards/edit/'.Session::get('standard_id').'/clause'));
+        return redirect(url('standards/edit/' . Session::get('standard_id') . '/clause'));
     }
 
     /**
@@ -106,13 +106,14 @@ class ClauseController extends BaseController
         $item = $this->model->find($item);
 
 
+        $cancelRoute = url('standards/edit/' . $item->standard_id . '/clause');
         if ($request->ajax) {
             return response()->json([
                 'status' => true,
                 'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item, 'clone' => $request->clone ?? null])->render()
             ]);
         } else
-            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
+            return view($this->route . '.edit')->with(['cancelRoute' => $cancelRoute, 'route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
     }
 
     /**

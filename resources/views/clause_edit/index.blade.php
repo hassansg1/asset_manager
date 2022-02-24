@@ -10,7 +10,7 @@
     <th>Actions</th>
 @endsection
 @section('custom_heading')
-    <a href="{{ route('standard.edit',$standard->id) }}">{{ $standard->name }}</a> > Clauses
+    <a href="{{ route('standard.index') }}">Standards</a> > <a href="{{ route('standard.edit',$standard->id) }}">{{ $standard->name }}</a> > Clauses
 @endsection
 @section('table_rows')
     @include($route.'.form_rows')

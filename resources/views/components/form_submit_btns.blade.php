@@ -3,9 +3,7 @@
     <button type="button" onclick="addNewAfterSave()" style="display: {{ isset($edit) && $edit ? 'none' : 'inline'}} "
             class="btn btn-primary w-md">Save and Add New
     </button>
-    <a href="{{route($route.'.index')}}">
-        <button type="button" class="btn btn-primary w-md submit_form">Cancel</button>
-    </a>
+    @include('components.cancel_btn')
 </div>
 
 <script>

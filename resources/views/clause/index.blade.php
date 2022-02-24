@@ -8,6 +8,6 @@
     @include($route.'.form_rows')
 @endsection
 @section('custom_heading')
-    <a href="{{ route('standard.edit',$standard->id) }}">{{ $standard->name }}</a> > Clauses
+    <a href="{{ route('standard.index') }}">Standards</a> > <a href="{{ route('standard.edit',$standard->id) }}">{{ $standard->name }}</a> > Clauses
 @endsection
 @include('components.ui_formatter.hide_new_btn')
