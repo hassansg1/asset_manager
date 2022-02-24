@@ -5,13 +5,13 @@
 {{--        <td>{{ $item->number }}</td>--}}
         <td>
             @if($item->location_id)
-                <a href="{{ route($item->location->type.".show",$item->location->id ?? '') }}">{{$item->location->name ?? ''}}</a>
+                <a href="{{ route($item->location->type.".show",$item->location->id ?? '') }}" target="_blank">{{$item->location->name ?? ''}}</a>
             @endif
         </td>
 {{--        <td>{{ $item->name }}</td>--}}
 {{--        <td>{{ $item->ip_address }}</td>--}}
 {{--        <td>{{ $item->mac_address }}</td>--}}
-        <td><a href="{{ route("networks.show",$item->network->id) }}">{{$item->network->name}}</a></td>
+        <td><a href="{{ route("networks.show",$item->network->id) }}" target="_blank">{{$item->network->name}}</a></td>
 {{--        <td>{{ $item->connectedPort->name ?? '' }}</td>--}}
     </tr>
     @endif

@@ -33,12 +33,12 @@
                                         <td>{{$port->ip_address}}</td>
                                         <td>{{$port->mac_address}}</td>
                                         <td>
-                                            <a href="{{ route("networks.show",$port->network->id) }}">{{$port->network->name}}</a>
+                                            <a href="{{ route("networks.show",$port->network->id) }}" target="_blank">{{$port->network->name}}</a>
                                         </td>
                                         <td>{{$port->connectedPort->name ?? ''}}</td>
                                         <td>
                                             @if($port->connectedPort)
-                                                <a href="{{ route($port->connectedPort->location->type.".show",$port->connectedPort->location->id ?? '') }}">{{$port->connectedPort->location->name ?? ''}}</a>
+                                                <a href="{{ route($port->connectedPort->location->type.".show",$port->connectedPort->location->id ?? '') }}" target="_blank">{{$port->connectedPort->location->name ?? ''}}</a>
                                             @endif
                                         </td>
                                     </tr>
