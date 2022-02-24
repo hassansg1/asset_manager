@@ -6,7 +6,7 @@
         </td>
         <td>{{ $item->clause->title ?? '' }}</td>
         <td>
-            {!!descriptionWrapText($item->description)!!}
+            {!!descriptionWrapText($item->clause->description)!!}
         </td>
 
     </tr>
