@@ -2,16 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Building;
-use App\Models\Company;
 use App\Models\Compliance;
-use App\Models\ClauseData;
-use App\Models\ComplianceDataFiles;
 use App\Models\Standard;
-use Illuminate\Http\Request;
-use Illuminate\Contracts\View\View;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 
 class StandardController extends BaseController
@@ -25,8 +21,8 @@ class StandardController extends BaseController
     {
         $this->model = new Standard();
         $this->route = 'standard';
-        $this->heading = 'Standard';
-        \Illuminate\Support\Facades\View::share('top_heading', 'Standard');
+        $this->heading = 'Standards List';
+        \Illuminate\Support\Facades\View::share('top_heading', 'Standards List');
     }
 
     /**
@@ -37,7 +33,7 @@ class StandardController extends BaseController
         $data = $this->fetchData($this->model, $request);
 
         return view($this->route . "/index")
-            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading]);
+            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => "Standards List"]);
     }
 
     /**

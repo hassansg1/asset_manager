@@ -39,6 +39,8 @@ class ClauseData extends Model
         return $this->belongsTo(Clause::class, 'clause_id');
     }
 
+    public static $repo = 'ClauseDataRepo';
+
     public static function saveFormData($request)
     {
         $found = ClauseData::where('clause_id', '=', $request->clause_id)->first();

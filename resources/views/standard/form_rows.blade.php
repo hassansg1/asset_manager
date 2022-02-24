@@ -10,7 +10,7 @@
                 <a style="color: white" href="{{ url('standards/view/'.$item->id.'/clause') }}">View Clauses</a>
             </button>
             <button style="margin-left: 5px" class="btn btn-primary">
-                <a style="color: white" href="{{ route('standards.clause.index',$item->id) }}">Edit Clauses</a>
+                <a style="color: white" href="{{ url('standards/edit/'.$item->id.'/clause') }}">Edit Clauses</a>
             </button>
         </td>
         <td>

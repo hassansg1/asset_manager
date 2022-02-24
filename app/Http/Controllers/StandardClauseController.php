@@ -2,18 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Building;
 use App\Models\Clause;
-use App\Models\Company;
 use App\Models\Compliance;
-use App\Models\ClauseData;
-use App\Models\ComplianceDataFiles;
 use App\Models\Standard;
 use App\Repos\StandardClauseRepo;
-use Illuminate\Http\Request;
-use Illuminate\Contracts\View\View;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 
 class StandardClauseController extends BaseController
@@ -34,15 +30,15 @@ class StandardClauseController extends BaseController
     /**
      * @return Application|Factory|View
      */
-    public function index(Request $request,$standardId)
+    public function index(Request $request, $standardId)
     {
         $request->request->add(['standard_id' => $standardId]);
         $request->request->add(['parent_id' => null]);
-        $data = $this->fetchData($this->model,$request,new StandardClauseRepo());
+        $data = $this->fetchData($this->model, $request, new StandardClauseRepo());
         $standard = Standard::find($standardId);
         $this->heading = "$standard->name > Clauses";
         return view($this->route . "/index")
-            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading]);
+            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading, 'standard' => $standard, 'customHeading' => true]);
     }
 
     /**

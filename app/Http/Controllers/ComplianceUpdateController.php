@@ -2,17 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Building;
-use App\Models\Company;
 use App\Models\Compliance;
-use App\Models\ClauseData;
-use App\Models\ComplianceDataFiles;
 use App\Models\ComplianceVersion;
 use App\Models\Standard;
-use Illuminate\Http\Request;
-use Illuminate\Contracts\View\View;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 
 class ComplianceUpdateController extends BaseController
@@ -35,9 +31,10 @@ class ComplianceUpdateController extends BaseController
      */
     public function index(Request $request)
     {
-        $items = ComplianceVersion::paginate(10);
+        $data = $this->fetchData($this->model, $request);
+
         return view($this->route . "/index")
-            ->with(['items' => $items, 'route' => $this->route, 'heading' => $this->heading]);
+            ->with(['data' => $data, 'items' => $data['items'], 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**

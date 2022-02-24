@@ -12,14 +12,12 @@
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}standard_id"
                                    class="form-label">Standard</label>
-                            <input type="hidden" name="standard_id"
-                                   value="{{ \Illuminate\Support\Facades\Session::get('standard_id') ?? '' }}">
                             <select class="form-select form-select-input" name="standard_id"
                                     id="{{ isset($item) ? $item->id:'' }}standard_id">
                                 @foreach(\App\Models\Standard::all() as $value)
                                     <option value=""></option>
                                     <option
-                                        {{ $value->id == (isset($item) ? $item->standard_id:old('last_name') ?? (\Illuminate\Support\Facades\Session::get('standard_id') ?? '')) ? 'selected' : ''  }}
+                                        {{ $value->id == (isset($item) ? $item->standard_id:old('last_name') ?? '') ? 'selected' : ''  }}
                                         value="{{ $value->id }}">{{ $value->name }}</option>
                                 @endforeach
                             </select>
@@ -46,7 +44,7 @@
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}description"
                                    class="form-label">Description</label>
-                            <textarea class="form-control" name="description"
+                            <textarea class="form-control" name=description""
                                       id="{{ isset($item) ? $item->id:'' }}description" cols="30"
                                       rows="10">{{ isset($item) ? $item->description:old('description') ?? ''  }}</textarea>
                         </div>

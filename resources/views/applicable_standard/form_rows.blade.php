@@ -4,6 +4,8 @@
                                id="select_check_{{ $item->id }}" class="select_row"></td>
         <td>
             {{ $item->name }}
+        </td>
+        <td>
             <button style="margin-left: 5px;
                 display: {{ isset($item) && $item->applicable == 1 ? 'inline':'none'  }};
                 " class="btn btn-primary  app_action_btns{{ $item->id }}">

@@ -5,6 +5,7 @@
             type="checkbox" name=""
             id="select_all"></th>
     <th>Name</th>
+    <th>Applicable Clauses</th>
 @endsection
 @section('table_rows')
     @include($route.'.form_rows')

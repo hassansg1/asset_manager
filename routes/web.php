@@ -59,6 +59,7 @@ Route::group(['middleware' => ['auth']], function () {
         'firewall_import' => \App\Http\Controllers\FirewallImportController::class,
         'nozomi_import' => \App\Http\Controllers\NozomiImportController::class,
         'clause' => \App\Http\Controllers\ClauseController::class,
+        'clause_edit' => \App\Http\Controllers\StandardClauseEditController::class,
         'lone' => \App\Http\Controllers\LoneAssetController::class,
         'subsite' => \App\Http\Controllers\SubSiteController::class,
         'company' => \App\Http\Controllers\CompanyController::class,
@@ -88,6 +89,7 @@ Route::group(['middleware' => ['auth']], function () {
         'version' => \App\Http\Controllers\ComplianceUpdateController::class,
         'compliance_list' => \App\Http\Controllers\ComplianceListController::class,
         'standards.clause' => \App\Http\Controllers\StandardClauseController::class,
+        'standards.clause_edit' => \App\Http\Controllers\StandardClauseController::class,
         'applicable_clause' => \App\Http\Controllers\ApplicableClauseController::class,
         'compliance_import' => \App\Http\Controllers\ComplianceImportController::class,
         'compliance_data_import' => \App\Http\Controllers\ComplianceDataImportController::class,
@@ -125,6 +127,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('PatchPage/LoadData', [\App\Http\Controllers\PatchApprovalAjaxController::class, 'loadData'])->name('PatchPage.loadData');
     Route::get('standards/view/{standard}/clause', [\App\Http\Controllers\StandardClauseController::class, 'index']);
+    Route::get('standards/edit/{standard}/clause', [\App\Http\Controllers\StandardClauseEditController::class, 'index']);
     //................. ComplainceData...........
     Route::post('applicableClause/store', [App\Http\Controllers\ApplicableClauseController::class, 'storeClauseData'])->name('applicableClause.storeClauseData');
     Route::post('store/file/compliance/{id}', [App\Http\Controllers\ApplicableClauseController::class, 'complianceFileStore']);

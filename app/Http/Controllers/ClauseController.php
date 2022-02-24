@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\Facades\Session;
 
 
 class ClauseController extends BaseController
@@ -78,7 +79,7 @@ class ClauseController extends BaseController
 
         if (isset($request->add_new)) return redirect(route($this->route . ".create"));
 
-        return redirect(route($this->route . ".index"));
+        return redirect(url('standards/edit/'.Session::get('standard_id').'/clause'));
     }
 
     /**

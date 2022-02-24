@@ -2,21 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Building;
 use App\Models\Clause;
-use App\Models\Company;
 use App\Models\Compliance;
-use App\Models\ClauseData;
-use App\Models\ComplianceDataFiles;
 use App\Models\Standard;
 use App\Repos\StandardClauseRepo;
-use Illuminate\Http\Request;
-use Illuminate\Contracts\View\View;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 
-class StandardApplicableClauseController extends BaseController
+class StandardClauseEditController extends BaseController
 {
     protected $model;
     protected $route;
@@ -26,9 +23,9 @@ class StandardApplicableClauseController extends BaseController
     public function __construct()
     {
         $this->model = new Clause();
-        $this->route = 'applicable_clause';
-        $this->heading = 'Applicable Clause';
-        \Illuminate\Support\Facades\View::share('top_heading', 'Applicable Clauses');
+        $this->route = 'clause_edit';
+        $this->heading = 'Clause';
+        \Illuminate\Support\Facades\View::share('top_heading', 'Clauses List');
     }
 
     /**
@@ -41,9 +38,9 @@ class StandardApplicableClauseController extends BaseController
         $data = $this->fetchData($this->model, $request, new StandardClauseRepo());
         $standard = Standard::find($standardId);
         $this->heading = "$standard->name > Clauses";
-
+        Session::put('standard_id',$standardId);
         return view($this->route . "/index")
-            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => "Applicable Clauses for " . $standard->name]);
+            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading, 'standard' => $standard,'customHeading'=>true]);
     }
 
     /**
@@ -67,8 +64,7 @@ class StandardApplicableClauseController extends BaseController
      */
     public function create()
     {
-        return view($this->route . "/create")
-            ->with(['route' => $this->route, 'heading' => $this->heading]);
+        return redirect()->to(route('clause.create'));
     }
 
     /**

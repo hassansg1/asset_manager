@@ -2,18 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Building;
-use App\Models\Clause;
-use App\Models\Company;
-use App\Models\Compliance;
 use App\Models\ClauseData;
-use App\Models\ComplianceDataFiles;
+use App\Models\Compliance;
 use App\Models\ComplianceVersion;
-use App\Models\Standard;
-use Illuminate\Http\Request;
-use Illuminate\Contracts\View\View;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 
 class VersionComplianceController extends BaseController
@@ -25,7 +20,7 @@ class VersionComplianceController extends BaseController
 
     public function __construct()
     {
-        $this->model = new Clause();
+        $this->model = new ClauseData();
         $this->route = 'version_compliance';
         $this->heading = 'Compliance';
         \Illuminate\Support\Facades\View::share('top_heading', 'Compliances');
@@ -34,13 +29,16 @@ class VersionComplianceController extends BaseController
     /**
      * @return Application|Factory|View
      */
-    public function index($complianceVersionId, $onlyView = false)
+    public function index(Request $request, $complianceVersionId)
     {
         $version = ComplianceVersion::with('standard')->where('id', $complianceVersionId)->first();
-        $items = ClauseData::where(['standard_id' => $version->standard_id, 'applicable' => 1])->paginate(10);
+
+        $request->request->add(['standard_id' => $version->standard_id]);
+
+        $data = $this->fetchData($this->model, $request);
 
         return view($this->route . "/index")
-            ->with(['items' => $items, 'version' => $complianceVersionId, 'route' => $this->route, 'onlyView' => $onlyView, 'heading' => "Compliance for " . $version->standard->name . " - Version : " . $version->name, 'version_id' => $version->id]);
+            ->with(['data' => $data, 'items' => $data['items'], 'version' => $complianceVersionId, 'route' => $this->route, 'heading' => "Compliance for " . $version->standard->name . " - Version : " . $version->name, 'version_id' => $version->id]);
     }
 
     /**
