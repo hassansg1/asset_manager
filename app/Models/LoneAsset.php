@@ -19,6 +19,7 @@ class LoneAsset extends Model
 
     public static $type = 'lone';
 
+
     protected $guarded = [];
 
     protected static function boot()

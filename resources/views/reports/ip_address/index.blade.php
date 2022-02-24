@@ -12,3 +12,4 @@
 @section('table_rows')
     @include($route.'.form_rows')
 @endsection
+

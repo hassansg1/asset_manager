@@ -28,7 +28,6 @@ class IPAddressReportController extends BaseController
      */
     public function index(Request  $request)
     {
-
         $request->request->add(['items_per_page' => 'all']);
         $data = $this->fetchData($this->model, $request);
         $data['no_header'] = true;
@@ -90,6 +89,7 @@ class IPAddressReportController extends BaseController
     {
         //
     }
+
 
     /**
      * Remove the specified resource from storage.

@@ -23,6 +23,7 @@ class PortsReportController extends BaseController
         \Illuminate\Support\Facades\View::share('top_heading', 'Ports Report');
     }
 
+
     /**
      * @return Application|Factory|View
      */

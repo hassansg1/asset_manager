@@ -15,6 +15,7 @@ class Computer extends Model
     use Observable;
     use NodeTrait;
 
+
     protected $table = 'locations';
 
     public static $type = 'computer';

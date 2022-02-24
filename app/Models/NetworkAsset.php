@@ -19,6 +19,7 @@ class NetworkAsset extends Model
 
     public static $type = 'network';
 
+
     protected $guarded = [];
 
     protected static function boot()
