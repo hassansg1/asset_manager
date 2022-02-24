@@ -91,6 +91,7 @@
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
                         <li><a href="{{route('user_asset_report.index')}}" key="t-orders">User Asset Report</a></li>
                         <li><a href="{{url('reports/ports')}}" key="t-orders">Ports Report</a></li>
+                        <li><a href="{{url('reports/ip_address')}}" key="t-orders">IP Address Report</a></li>
                     </ul>
                 </li>
                 <li>
