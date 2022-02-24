@@ -38,9 +38,9 @@ class StandardClauseEditController extends BaseController
         $data = $this->fetchData($this->model, $request, new StandardClauseRepo());
         $standard = Standard::find($standardId);
         $this->heading = "$standard->name > Clauses";
-        Session::put('standard_id',$standardId);
+        Session::put('standard_id', $standardId);
         return view($this->route . "/index")
-            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading, 'standard' => $standard,'customHeading'=>true]);
+            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading, 'standard' => $standard, 'customHeading' => true]);
     }
 
     /**
@@ -122,14 +122,12 @@ class StandardClauseEditController extends BaseController
      */
     public function update(Request $request, $item)
     {
-
-
         $item = $this->model->find($item);
         $this->model->saveFormData($item, $request);
 
         flashSuccess(getLang($this->heading . " Successfully Updated."));
 
-        return redirect(route($this->route . ".index"));
+        return redirect(url('standards/edit/' . $request->standard_id . '/clause'));
     }
 
     /**

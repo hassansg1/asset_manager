@@ -44,7 +44,7 @@
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}description"
                                    class="form-label">Description</label>
-                            <textarea class="form-control" name=description""
+                            <textarea class="form-control" name="description"
                                       id="{{ isset($item) ? $item->id:'' }}description" cols="30"
                                       rows="10">{{ isset($item) ? $item->description:old('description') ?? ''  }}</textarea>
                         </div>

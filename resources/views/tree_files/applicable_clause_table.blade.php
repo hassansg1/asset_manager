@@ -20,24 +20,12 @@
         <label for="switch{{ $item->id }}" data-on-label="Yes"
                data-off-label="No"></label>
     </td>
-{{--    <td>--}}
-{{--        <select class="form-control" name="criteria"--}}
-{{--                onchange="applicableClauseStatusChange({{ $item->id }},'criteria',this.value);">--}}
-{{--            <option value="">Select Criteria</option>--}}
-{{--            <option--}}
-{{--                {{ isset($clauseData) && $clauseData && $clauseData->criteria == App\Models\ClauseData::AUTOMATIC ? 'selected' : '' }}--}}
-{{--                value="{{ App\Models\ClauseData::AUTOMATIC }}">AUTOMATIC--}}
-{{--            </option>--}}
-{{--            <option--}}
-{{--                {{ isset($clauseData) && $clauseData && $clauseData->criteria == App\Models\ClauseData::MANUAL ? 'selected' : '' }}--}}
-{{--                value="{{ App\Models\ClauseData::MANUAL }}">MANUAL--}}
-{{--            </option>--}}
-
-{{--        </select>--}}
-{{--    </td>--}}
     <td>
-        <select class="form-control" name="location"
-                onchange="applicableClauseStatusChange({{ $item->id }},'location',$(this).val());">
+        <select
+            id="select_location_{{$item->id}}"
+            {{ isset($clauseData) && $clauseData && $clauseData->applicable == 1 ? '' : 'disabled' }}
+            class="form-control" name="location"
+            onchange="applicableClauseStatusChange({{ $item->id }},'location',$(this).val());">
             <option value="">Select Locations</option>
             <option
                 {{ isset($clauseData) && $clauseData && $clauseData->location == shortClassName(App\Models\Company::class) ? 'selected' : '' }}
@@ -91,11 +79,11 @@
             </option>
         </select>
     </td>
-{{--    <td>--}}
-{{--        <input type="text" class="form-control" name="reason"--}}
-{{--               value="{{ $clauseData->reason ?? '' }}"--}}
-{{--               onblur="applicableClauseStatusChange({{ $item->id }},'reason',this.value);">--}}
-{{--    </td>--}}
+    {{--    <td>--}}
+    {{--        <input type="text" class="form-control" name="reason"--}}
+    {{--               value="{{ $clauseData->reason ?? '' }}"--}}
+    {{--               onblur="applicableClauseStatusChange({{ $item->id }},'reason',this.value);">--}}
+    {{--    </td>--}}
 </tr>
 @php($childs = $item->childs)
 @if(count($childs) > 0)
