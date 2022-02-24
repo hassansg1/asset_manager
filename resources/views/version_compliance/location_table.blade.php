@@ -41,6 +41,10 @@
                             {{ isset($dt) && $dt->compliant == App\Models\ClauseData::COMPLIANT_UNDER_PROCESS ? 'selected' : '' }} value="{{ App\Models\ClauseData::COMPLIANT_UNDER_PROCESS }}">
                             Under Process
                         </option>
+                        <option
+                            {{ isset($dt) && $dt->compliant == App\Models\ClauseData::COMPLIANT_NOT_EVALUATED ? 'selected' : '' }} value="{{ App\Models\ClauseData::COMPLIANT_NOT_EVALUATED }}">
+                            Not Evaluated
+                        </option>
                     </select>
                 </td>
                 <td>

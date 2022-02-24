@@ -18,6 +18,7 @@ class ClauseData extends Model
     const COMPLIANT_YES = 1;
     const COMPLIANT_NO = 2;
     const COMPLIANT_UNDER_PROCESS = 3;
+    const COMPLIANT_NOT_EVALUATED = 4;
 ///..... Locations
     const COMPANIES = 1;
     const UNITS = 2;
