@@ -13,7 +13,7 @@ class DashBoardController extends Controller
 {
     public function index(Request $request){
 //       $items =  ClauseData::with('compliance')->where('user_id',Auth::id())->orderBy('id','desc')->get();
-//        Location::fixTree();
+        Location::fixTree();
         $compliant = [];
         $complianceData = ComplianceVersionItem::get();
         foreach ($complianceData as $data)
