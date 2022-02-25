@@ -107,7 +107,6 @@ class StandardClauseEditController extends BaseController
         }
         $item = $this->model->find($item);
 
-
         $cancelRoute = url('standards/edit/' . $item->standard_id . '/clause');
         if ($request->ajax) {
             return response()->json([

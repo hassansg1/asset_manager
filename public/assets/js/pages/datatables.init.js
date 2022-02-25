@@ -11,7 +11,6 @@
     File: Datatables Js File
     */
     $(document).ready(function () {
-        $('#datatable').DataTable(); //Buttons examples
     });
     /******/
 })()

@@ -20,7 +20,7 @@
                                 </tbody>
                             </table>
                             @if(!isset($data['no_pagination']))
-                                {!! $items->links('vendor.pagination.bootstrap-4') !!}
+                                {!! $items->links('vendor.pagination.bootstrap-4',['route' => $route]) !!}
                             @endif
                         </div>
                     </div>

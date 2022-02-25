@@ -14,6 +14,6 @@
 @if(count($childs) > 0)
     @php($padding = $padding + 40)
     @foreach($childs as $child)
-        @include('tree_files.clause_table',['item' => $child,'padding' => $padding])
+        @include('tree_files.clause_table_edit',['item' => $child,'padding' => $padding])
     @endforeach
 @endif

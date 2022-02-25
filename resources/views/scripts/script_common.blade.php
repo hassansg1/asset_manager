@@ -5,8 +5,7 @@
         let url = $(this).attr('href');
         let query = url.split('?');
         pageNumber = query[1].split('=')[1];
-        let type = query[0].split('/');
-        type = type[type.length - 1];
+        let type = $(this).attr('data-div');
         loadTableData(url, type);
     });
 
