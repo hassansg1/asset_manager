@@ -1,0 +1,49 @@
+Parent Type,Parent ID,Site ID,Site Name,Site Name(Arabic),Site Description,Site Location(Descriptive),Site Location(Coordinates - Dec),Site Location(Coordinates - Deg),Site Location(Google Link),Main Process / Equipment
+Unit,HQ,HQ Site,HQ,,IT/OT Integration Location,,,,,
+Unit,JD,AK-3,Al Khomrah 3,,Waste Water Treatment Plant (Standalone),Waste Water Treatment Plant located in South Zone,"21.374638, 39.226898","21°22'28.7""N 39°13'36.8""E",https://maps.app.goo.gl/PNznxqT682YTSo456,
+Unit,JD,AK-4,Al Khomrah 4,,Waste Water Treatment Plant (Standalone),Waste Water Treatment Plant located in South Zone,"21.374638, 39.226898","21°22'28.7""N 39°13'36.8""E",https://maps.app.goo.gl/PNznxqT682YTSo456,
+Unit,JD,AK-5,Al Khomrah 5,,,,,,,
+Unit,JD,AK-6,Al Khomrah 6,,Sea Station (Standalone),Waste Water Treatment Plant located in South Zone,"21.374638, 39.226898","21°22'28.7""N 39°13'36.8""E",https://maps.app.goo.gl/PNznxqT682YTSo456,
+Unit,JD,AP1-LS,Airport 1 - Lifting Station,,,Lifiting Station located in North Zone,"21.652310, 39.208522","21°39'08.3""N 39°12'30.7""E",https://maps.app.goo.gl/3AC19tVjC8nGFtpn8,
+Unit,JD,AP1-WWTP,Airport 1 - Waste Water Treatment Plant,,Waste Water Treatment Plant & Lifting Station (Standalone),Waste Water Treatment Plant located in North Zone,"21.652310, 39.208522","21°39'08.3""N 39°12'30.7""E",https://maps.app.goo.gl/3AC19tVjC8nGFtpn8,
+Unit,JD,BM-PH1,Briman Phase 1,,Water Treatment Plant,Strategic Tanks,"21.627056, 39.298311","21°37'37.4""N 39°17'53.9""E",https://maps.app.goo.gl/T47K1MmrhHxL5Hu48,
+Unit,JD,BM-PH2,Briman Phase 2,,Water Treatment Plant,Strategic Tanks,"21.627056, 39.298311","21°37'37.4""N 39°17'53.9""E",https://maps.app.goo.gl/T47K1MmrhHxL5Hu48,
+Unit,JD,FAS,Faisaliyah Tank Farm,,Existing SCADA Building,Existing SCADA Building,"21.570747, 39.193296","21°34'14.7""N 39°11'35.9""E",https://maps.app.goo.gl/XUvjSaNJ6qWXyD7N9,"Existing SCADA Server Rack and SCADA Equipment Cabinet are installed in the Faisaliyah. Motorola Controllers, Sofrel RTU, FR1000s, T-Box are installed in SCADA Equipment Cabinet which are getting data from the remotre sites over the Radio / GPRS / GSM and transfering the data to SCADA servers for monitoring via the Cisco Ethernet Switch. Existing SCADA Servers, Cisco Ethernet Switches, Moxa Switches, KVM are installed in the SCADA Server Rack. "
+Unit,JD,PSB,Prince Sultan Building,,Miain / New SCADA Building,Miain / New SCADA Building,"21.656118, 39.124317","21°39'22.0""N 39°07'27.5""E",https://maps.app.goo.gl/e25DvzsT62kDS4fK7,"New Server Rack is installed in the Prince Sultan Building which consists of SCADA Servers, Management Servers, Firewalls, Network Switches, Nozomi Devices.
+Supervisory control and data acquisition will be done from this building in future."
+Unit,JD,SJLS,South Jeddah Lifting Station,,Lifiting Station (Standalone),Lifiting Station located in South Zone,"21.374638, 39.226898","21°22'28.7""N 39°13'36.8""E",https://maps.app.goo.gl/PNznxqT682YTSo456,
+Unit,JD,SJSS,Sea Station,,,Sea Station located in South Zone,"21.374638, 39.226898","21°22'28.7""N 39°13'36.8""E",https://maps.app.goo.gl/PNznxqT682YTSo456,
+Unit,JD,SZSS,SZSS,,,,,,,
+Unit,MA,ARA,Arana,,Waste Water Treatment Plant (Standalone),,"21.257886, 39.714646","21° 15' 28.389""N 39° 42' 52.7256""E",https://goo.gl/maps/GNMymQHRyJKfjDxq8,
+Unit,MA,AWA,AWALI,,Makkah BU Main Office,,"21.351212, 39.907717","21° 21' 4.3632""N 39° 54' 27.7806""E",https://goo.gl/maps/8EiqN92wHFZKKGRS9,None
+Unit,MA,HAD,Hada,,Waste Water Treatment Plant (Standalone),,"21.447324, 39.585524","21° 26' 50.3658""N 39° 35' 7.8858""E",https://goo.gl/maps/tSGuuntoUc7Nc5MW9,
+Unit,MA,MIN,MINA/MASHAIR,,Water Distribution in Mina/Mashaer with APN and Radio Connections to remote pressure points.,Mina/Mashaer Control Center,"21.405333, 39.903935","21° 24' 19.1982""N 39° 54' 14.1654""E",https://goo.gl/maps/sonjD2jLjroz2MgP8,"Pumps, Tanks"
+Unit,MA,MOA,MAPA/MOASSAM,,Strategic Tanks with OT WAN Connection,Strategic Reservoir AL-Muaisem (MAPA),"21.440113, 39.893721","21° 26' 24.4068""N 39° 53' 37.395""E",https://goo.gl/maps/Ys1xmb3JQoYb1E7B9,Storage Tanks
+Unit,MA,PS5,PS5,,"Pumping Station with OT WAN and APN Connection to Valve Chambers, Pumps, Tanks",PS-5 location,"21.384861, 39.878778","21° 23' 5.4996""N 39° 52' 43.6002""E",https://goo.gl/maps/xC5R69rvnkyTmVNp6,Makkah Pump Stations & Valve Stations
+Unit,MA,PS9,PS9,,"Pumping Station with OT WAN Connection to Valve Chambers, Pumps",,"21.312907, 40.003081","21°18'43.8""N 40°00'11.3""E",https://goo.gl/maps/k6DzZfwyvUY6BsGq9,Makkah Pump Stations & Valve Stations
+Unit,MA,SHU,Shuhada,,"Pumping Station with OT WAN Connection to Valve Chambers, Pumps",Shuhada Location,,,,Pumping Station & Storage Tanks
+Unit,RD,BWB-WTP,Bowaib WTP,,,,"25.131700, 46.843067","25° 7' 54.1194""N 46° 50' 35.0406""E",https://goo.gl/maps/pw65wsGVsaCMZ1KH9,"Filteration, RO, Acid treatment, Cooling Tower, Chlorination"
+Unit,RD,EX-10,Exit-10,,,,"24.749336, 46.713519","24°44'57.61""N 46°42'48.67""E ",https://goo.gl/maps/Gh1RoC3VKM5SvJ8Z7,None
+Unit,RD,EX-17,Exit-17,,,,"24.653007, 46.794893","24° 39' 10.8246""N 46° 47' 41.6148""E",https://goo.gl/maps/7gwHaguap5em4ihw7,None
+Unit,RD,HET-STP,HEET WWTP,,,,"24.503767, 46.948400","24° 30' 13.5606""N 46° 56' 54.2394""E",https://goo.gl/maps/SCtbPPPbGhJzXaNdA,"Aeration, Decanter, Acid Treatment etc."
+Unit,RD,HPT,HPT,,,,,,,
+Unit,RD,HYR-STP,HAYER WWTP,,,,"24.395969, 46.830672","24°23'45.49""N 46°49'50.42""E",https://goo.gl/maps/mUvFarFnPKCPQGr16,"Aeration, Decanter, Acid Treatment etc."
+Unit,RD,HYR-WTP,Hayer WTP,,,,"24.395969, 46.830672","24°23'45.49""N  46°49'50.42""E",https://goo.gl/maps/F2rEw5JrqzL8DDbd7,"Filteration, RO, Acid treatment, Cooling Tower, Chlorination"
+Unit,RD,MLZ-WTP,Malaz WTP,,,,"24.676270, 46.723132","24° 40' 34.5714""N 46° 43' 23.2746""E",https://goo.gl/maps/La66jghuSAvjKc3C8,"Filteration, RO, Acid treatment, Cooling Tower, Chlorination"
+Unit,RD,MNF-STP,Manfouha WWTP,,,,"24.587469, 46.732131","24°35'14.89""N 46°43'55.67""E",,"Aeration, Decanter, Acid Treatment etc."
+Unit,RD,MNF-WTP,Manfouha WTP,,Water Treatment Plant with APN connection to remote wells.,,"24.590128°, 46.732491°","24° 35' 24.4602""N 46° 43' 56.9676""E",https://goo.gl/maps/9ig7mzKWBVezU78r9,"Filteration, RO, Acid treatment, Cooling Tower, Chlorination"
+Unit,RD,BD-1,Badia-1,,,,,,,
+Unit,RD,BD-5,Badia-5,,,,,,,
+Unit,RD,SHM-WTP,Shomacy WTP,,,,"24.635810, 46.687083","24° 38' 8.9154""N 46° 41' 13.4988""E",https://goo.gl/maps/5277KyqJmANGXs7H9,"Filteration, RO, Acid treatment, Cooling Tower, Chlorination"
+Unit,RD,SLB-WTP,Salbukh WTP,,,,"25.055533, 46.479917","25° 3' 19.9188""N 46° 28' 47.7012""E",https://goo.gl/maps/h298BH2fGaGFHMgE8,"Filteration, RO, Acid treatment, Cooling Tower, Chlorination"
+Unit,RD,SR02,SR02,,,,,,,
+Unit,RD,TGC,TGC,,,,"24.716620, 46.7541310",,,Pumping Station
+Unit,RD,TGE,TGE,,,,,"24°51'55.43""N 46°52'2.37""E",,Storage Tanks
+Unit,RD,TGNW,TGNW,,,,,"24°49'55.38""N 46°31'25.93""E",,Storage Tanks
+Unit,RD,TGW,TGW,,,,"24.639781, 46.5801","24°38'23.21""N 46°34'48.36""E",https://goo.gl/maps/eXcFbeXwXQC5BL4MA,Storage Tanks
+Unit,RD,WAS-WTP,Wasi WTP,,,,"25.098256, 47.540478","25° 5'53.72""N 47°32'25.72""E",https://goo.gl/maps/dh4CTCdw3Snjx9qc9,"Filteration, RO, Acid treatment, Cooling Tower, Chlorination"
+Unit,TF,ARJ,Al Arj STP,,,Waste Water Treatment Plant,,,,
+Unit,TF,WAQ,Al Waqadeen-Lifting Station,,,Lifting Station,,,,
+Unit,TF,MAT,Al Mathna,,,Central SCADA,,,,
+Unit,TF,ST,Strategic Tanks,,,Tanks ,,,,
+Unit,MD,USB,Al Usbah,,Main BU Site,,,,,

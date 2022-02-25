@@ -1,0 +1,19 @@
+meeting:
+user nozomi managment:
+add button +screen pop to show data where it is from
+
+
+
+Network:
+ip ki range dal skty hain.
+agr nozomi ne detect kia ha to kahan use ho rha h yeh ip.
+. computer name on top in network
+. in port enable disable.
+. stating ip and ending ip address.
+. aik network pe ip adress repeats ho skty hain 
+. ip adress port k begiar b exist kr skta h or port ip adress k begair b exist kr skti h
+. select conenected deivce (start me aa jae)
+
+
+. sorting in data table
+. heirchy add krni h.

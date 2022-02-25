@@ -1,0 +1,89 @@
+Parent Type,Parent ID,Building ID,Building Name
+SubSite,RD_BWB-WTP_BWB1,RD_BWB-WTP_BWB1_ELS,Electrical Substation
+SubSite,RD_BWB-WTP_BWB2,RD_BWB-WTP_BWB2_CRB,Bowaib 2 Control Building 
+SubSite,RD_MNF-WTP_MNF1,RD_MNF-WTP_MNF1_ADB,Admin Building
+SubSite,RD_MNF-WTP_MNF1,RD_MNF-WTP_MNF1_CHB,Chemical Building
+SubSite,RD_MNF-WTP_MNF1,RD_MNF-WTP_MNF1_CLRB,Chlorination Building
+SubSite,RD_MNF-WTP_MNF1,RD_MNF-WTP_MNF1_M1ROB,RO Building
+SubSite,RD_MNF-WTP_MNF2,RD_MNF-WTP_MNF2_AB,Acid Building
+SubSite,RD_MNF-WTP_MNF2,RD_MNF-WTP_MNF2_ADB,Admin Building
+SubSite,RD_MNF-WTP_MNF2,RD_MNF-WTP_MNF2_EPB,Electrical Power Building
+SubSite,RD_MNF-WTP_MNF2,RD_MNF-WTP_MNF2_M2ROB,RO Building
+Site,HQ,HQ_MB,HQ Main Building
+Site,AK-3,JD_AK-3_ATB,Aeration Tank Building
+Site,AK-3,JD_AK-3_BB,Blower Building
+Site,AK-3,JD_AK-3_DFB,Disk Filter Building
+Site,AK-3,JD_AK-3_FST,Final Settling Tank ( 6 PLCs)
+Site,AK-3,JD_AK-3_K4B,KIOSK 4 Building
+Site,AK-3,JD_AK-3_K5B,KIOSK 5 Building
+Site,AK-3,JD_AK-3_MCC,Motor Control Center
+Site,AK-3,JD_AK-3_RPS,RAS Pumping Station
+Site,AK-3,JD_AK-3_SDB,Sludge Dewatering Building
+Site,AK-4,JD_AK-4_ABB,Aeration Blower Building
+Site,AK-4,JD_AK-4_AMB,Aeration Mixer Building
+Site,AK-4,JD_AK-4_FEB,Final Effluent Building
+Site,AK-4,JD_AK-4_IB,Inlet Building
+Site,AK-4,JD_AK-4_MSB,Main Switchgear Building
+Site,AK-4,JD_AK-4_SDB,Sludge Dewatering Building
+Site,AK-4,JD_AK-4_SFB,Sand Filter Building
+Site,AK-5,JD_AK-5_AB,Auxillary Building
+Site,AK-5,JD_AK-5_GB,Generator Building
+Site,AK-5,JD_AK-5_MB,MCC Building
+Site,AK-5,JD_AK-5_OCB,Odor Control Building
+Site,AK-5,JD_AK-5_PSB,Pumping Shaft Building
+Site,AK-5,JD_AK-5_SSB,Screen Shaft Building
+Site,AK-5,JD_AK-5_VB,Ventillation Building
+Site,AK-6,JD_AK-6_MECB,Main Electrical and Control Room Building 
+Site,AP1-WWTP,JD_AP1-WWTP_ATB,Aeration Tank Building
+Site,AP1-WWTP,JD_AP1-WWTP_BIO-P-TB,BIO-P-Tank Building
+Site,AP1-WWTP,JD_AP1-WWTP_CSB,Chlorination System Building
+Site,AP1-WWTP,JD_AP1-WWTP_FB,Filteration Building
+Site,AP1-WWTP,JD_AP1-WWTP_GEB,Generator and Electrical Building 
+Site,AP1-WWTP,JD_AP1-WWTP_NABB,New Air Blower Building
+Site,AP1-WWTP,JD_AP1-WWTP_NDB,New Decenter Building
+Site,AP1-WWTP,JD_AP1-WWTP_NIB,New Inlet Building
+Site,AP1-WWTP,JD_AP1-WWTP_NRASB,New RAS Buliding
+Site,AP1-WWTP,JD_AP1-WWTP_SCB,Secondary Clarifier Building
+Site,AP1-WWTP,JD_AP1-WWTP_UVPUB,UV Process Unit Building
+Site,BM-PH1,JD_BM-PH1_ADB,Administration Building
+Site,PSB,JD_PSB_PSB,Prince Sultan Building
+Site,ARA,MA_ARA_MCB,Arana Main Control Building
+Site,AWA,MA_AWA_AMB,Awali Main Building
+Site,HAD,MA_HAD_ADB,Hada Administration Building
+Site,HAD,MA_HAD_SUB2,Substation 2
+Site,MIN,MA_MIN_MCB,Mashair Communication Building
+Site,MIN,MA_MIN_OCC,Operator Control Center
+Site,MOA,MA_MOA_SCB,SCADA Control Building
+Site,PS5,MA_PS5_OCC,Operator Control Center
+Site,PS9,MA_PS9_OCC,Operator Control Center
+Site,PS9,MA_PS9_SCB,SCADA Control Building
+Site,SHU,MA_SHU_MCB,Shuhada Main Control Building
+Site,EX-10,RD_E10_ADB,EXIT 10 Admin Building 
+Site,Ex-17,RD_EX17_ADB,EXIT 17 Admin Building 
+Site,HYR-WTP,RD_HaWTP_ADB,Hayer WTP Admin Building
+Site,HET-STP,RD_HET-STP_ADB,HEET Admin Building
+Site,HPT,RD_HPT_ADB,Admin Building
+Site,HYR-STP,RD_HYR-STP_ADB,Hayer Admin Building
+Site,MLZ-WTP,RD_MLZ-WTP_ADB,Malaz WTP Admin Building
+Site,MLZ-WTP,RD_MLZ-WTP_ROB,Malaz RO Building
+Site,MNF-STP,RD_MNF-STP_ACB,Air Compressor Building
+Site,MNF-STP,RD_MNF-STP_DCB,Manfouha Data center Building
+Site,MNF-STP,RD_MNF-STP_ECRB,Manfouha  East Control Building
+Site,MNF-STP,RD_MNF-STP_NADB,Manfouha New admin Building
+Site,SHM-WTP,RD_SHM-WTP_ADB,Shomacy WTP Admin Building
+Site,SHM-WTP,RD_SHM-WTP_ROB,Shomacy RO Building
+Site,SLB-WTP,RD_SLB-WTP-SLB1_ADB,Salbouk 1 admin Building
+Site,SLB-WTP,RD_SLB-WTP-SLB1_CRB,Sablouk 1 Control Building
+Site,SLB-WTP,RD_SLB-WTP-SLB1_ROB,Salbouk 1 RO building
+Site,SLB-WTP,RD_SLB-WTP-SLB2_ROB,Salbouk 2 Admin building
+Site,SR02,RD_SR02_SEB,Security Building 
+Site,TGC,RD_TGC_ADB,TGC Admin Building 
+Site,TGNW,RD_TGNW_ADB,TGNW Administration Building 
+Site,TGW,RD_TGW_CRB,TGW Control Room Building
+Site,TGW,RD_TGW_MCCB,TGW MCC Building
+Site,WAS-WTP,RD_WAS-WTP-WAS1_ADB,Wasia 1 admin building
+Site,WAS-WTP,RD_WAS-WTP-WAS1_ROB,Wasia 1 RO Building
+Site,WAS-WTP,RD_WAS-WTP-WAS2_LOT5B,Wasia 2 LOT 5
+Site,USB,MD_USB_OMB,Operation and Maintenance Building
+Site,AP1-LS,JD_AP1-LS_MCC1,MCC1 Building
+Site,AP1-LS,JD_AP1-LS_MCC2,MCC1 Building

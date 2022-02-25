@@ -1,0 +1,67 @@
+Parent Type,Parent ID,Room ID,Room Name
+Building,HQ_MB,HQ_MB_DC,Data Center
+Building,JD_BM-PH1_ADB,JD_BM-PH1_ADB_CR,Control Room
+Building,JD_PSB_PSB,JD_PSB_PSB_CR,Crisis Room
+Building,JD_PSB_PSB,JD_PSB_PSB_DC,DataCenter
+Building,JD_PSB_PSB,JD_PSB_PSB_OCC,Operations Control Center
+Building,JD_PSB_PSB,JD_PSB_PSB_SO,Smart Opeartions
+Building,MA_AWA_AMB,MA_AWA_AMB_DC,Data Center
+Building,MA_HAD_ADB,MA_HAD_ADB_SCDR,SCADA Room
+Building,MA_MIN_MCB,MA_MIN_MCB_TRC,TR Communication Room
+Building,MA_MIN_OCC,MA_MIN_OCC_CR,Scada Control Room
+Building,MA_MOA_SCB,MA_MOA_SCB_CR,Scada Room
+Building,MA_PS5_OCC,MA_PS5_OCC_CR,Operator Control Room
+Building,MA_PS5_OCC,MA_PS5_OCC_DC,Data Center
+Building,MA_PS5_OCC,MA_PS5_OCC_MCC,MCC Room
+Building,MA_SHU_MCB,MA_SHU_MCB_PLC-CR,PLC Control Room
+Building,MA_SHU_MCB,MA_SHU_MCB_SCDR-CR,Scada Control Room
+Building,RD_BWB-WTP_BWB1_ELS,RD_BWB-WTP_BWB1_ELS_SCR,Switchgear Control Room
+Building,RD_MLZ-WTP_ADB,RD_MLZ-WTP_ADB_CR,Control Room
+Building,RD_MLZ-WTP_ROB,RD_MLZ-WTP_ROB_CR,Control Room
+Building,RD_MLZ-WTP_ROB,RD_MLZ-WTP_ROB_MCC,MCC Room
+Building,RD_MLZ-WTP_ADB,RD_MLZ-WTP_ROB_NR,Admin Building Network Room
+Building,RD_MLZ-WTP_ROB,RD_MLZ-WTP_ROB_PR,Pumps Room
+Building,RD_MNF-STP_ACB,RD_MNF-STP_ACB_ACR,Air Compressor Room
+Building,RD_MNF-STP_DCB,RD_MNF-STP_DCB_DCR,Data Center
+Building,RD_MNF-STP_ECRB,RD_MNF-STP_ECRB_NR,Network Room
+Building,RD_MNF-STP_NADB,RD_MNF-STP_NADB_NR,Network Room
+Building,RD_MNF-WTP_MNF1_ADB,RD_MNF-WTP_MNF1_ADB_M1CT,Admin Building Grand Floor M1 Cooling Tower & Booster MCC Room
+Building,RD_MNF-WTP_MNF1_ADB,RD_MNF-WTP_MNF1_ADB_M1SFR,Admin Building - 3rd Floor M1 Sand Filters Room
+Building,RD_MNF-WTP_MNF1_M1ROB,RD_MNF-WTP_MNF1_M1ROB_CR,M1 RO Building Control Room
+Building,RD_MNF-WTP_MNF1_M1ROB,RD_MNF-WTP_MNF1_M1ROB_M1PR,M1 RO Building HPP Pumps Room
+Building,RD_MNF-WTP_MNF1_M1ROB,RD_MNF-WTP_MNF1_M1ROB_MCC,M1 RO Building MCC Room
+Building,RD_MNF-WTP_MNF2_ADB,RD_MNF-WTP_MNF2_ADB_GND,Admin Building Ground Floor
+Building,RD_MNF-WTP_MNF2_ADB,RD_MNF-WTP_MNF2_ADB_M2CT,Admin Building Grand Floor M2 Cooling Tower & Booster MCC Room
+Building,RD_MNF-WTP_MNF2_ADB,RD_MNF-WTP_MNF2_ADB_M2SFR,Admin Building - 3rd Floor M2 Sand Filters Room
+Building,RD_MNF-WTP_MNF2_M2ROB,RD_MNF-WTP_MNF2_M2ROB_MCC,M2 RO Building MCC Room
+Building,RD_MNF-WTP_MNF2_M2ROB,RD_MNF-WTP_MNF2_M2ROB_NR,M2 RO Building Network Room
+Building,RD_SHM-WTP_ADB,RD_SHM-WTP_ADB_CR,Control Room
+Building,RD_SHM-WTP_ADB,RD_SHM-WTP_ADB_NR,Admin Building Network Room
+Building,RD_SHM-WTP_ROB,RD_SHM-WTP_ROB_CR,Control Room
+Building,RD_SHM-WTP_ROB,RD_SHM-WTP_ROB_MCC,MCC Room
+Building,MA_ARA_MCB,MA_ARA_MCB_MCR,Main Control Room
+Building,MA_ARA_MCB,MA_ARA_MCB_MR,Manager Room
+Building,MA_PS9_OCC,MA_PS9_OCC_MCR,Main Control Room
+Building,MD_USB_OMB,MD_USB_OMB_DC,Data Center
+Building,MD_USB_OMB,MD_USB_OMB_CCR,Central Control Room
+Building,MD_USB_OMB,MD_USB_OMB_MR,Manager Room
+Site,AK-3,JD_AK-3_MCRS,Main Control Room SCADA
+Site,AK-4,JD_AK-4_MCRS,Main Control Room SCADA
+Site,AK-5,JD_AK-5_MCRS,Main Control Room SCADA
+Site,AK-6,JD_AK-6_MCRS,Main Control Room SCADA
+Site,AP1-LS,JD_AP1-LS_MCC1_Room,Main SCADA Control Room MCC1
+Site,AP1-WWTP,JD_AP1-WWTP_MCRS,Main Control Room SCADA
+Site,FAS,JD_FAS_IT,IT Room
+Site,SZSS,JD_SZSS_MCRS,MAin Control Room SCADA
+Site,BWB-WTP,RD_BWB-WTP_MCC,MCC Room
+Site,MLZ-WTP,RD_MLZ-WTP_MCC,MCC Room
+Site,SHM-WTP,RD_SHM-WTP_MCC,MCC Room
+Site,MAT,TF_MAT_DC,Data Center
+Site,MAT,TF_MAT_OCC,OCC
+Site,MAT,TF_MAT_RM22,Room 22
+Site,AP1-LS,JD_AP1-LS_MCC2,SCADA Control Room MCC2
+Site,AP1-LS,JD_AP1-LS_ADM,Admin Control Room
+Site,ARJ,TF_ARJ_MCR,Main Control Room SCADA
+Site,WAQ,TF_WAQ_MCR,Main Control Room SCADA
+Site,ST,TF_ST_MCR,Main Control Room SCADA
+Site,AP1-LS,JD_AP1-LS_MCR,Main Control Room SCADA
