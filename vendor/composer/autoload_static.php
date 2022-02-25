@@ -791,6 +791,7 @@ class ComposerStaticInit87345aae27ff06f7b2f4d17209053f09
         'App\\Models\\ComplianceDataLocation' => __DIR__ . '/../..' . '/app/Models/ComplianceDataLocation.php',
         'App\\Models\\ComplianceVersion' => __DIR__ . '/../..' . '/app/Models/ComplianceVersion.php',
         'App\\Models\\ComplianceVersionItem' => __DIR__ . '/../..' . '/app/Models/ComplianceVersionItem.php',
+        'App\\Models\\ComplianceVersionItemAttachment' => __DIR__ . '/../..' . '/app/Models/ComplianceVersionItemAttachment.php',
         'App\\Models\\Computer' => __DIR__ . '/../..' . '/app/Models/Computer.php',
         'App\\Models\\Department' => __DIR__ . '/../..' . '/app/Models/Department.php',
         'App\\Models\\Designation' => __DIR__ . '/../..' . '/app/Models/Designation.php',

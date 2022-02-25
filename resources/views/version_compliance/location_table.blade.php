@@ -6,6 +6,7 @@
             <th>Location Name</th>
             <th>Compliant</th>
             <th>Comment</th>
+            <th>Attachment ID</th>
             <th>Attachment Url</th>
         </tr>
         </thead>
@@ -14,7 +15,6 @@
         @foreach($locations as $location)
             @php
                 $dt = getComplianceStatus($versionId,$item_id,$location->id)
-
             @endphp
             <tr class="parent_row">
                 <input type="hidden" name="location_id" id="location_id" class="form-control location_id"
@@ -50,6 +50,17 @@
                 <td>
                     <textarea onfocusout="updateComment('{{ $location->id }}', this)" class="form-control"
                               name="comment" id="comment" cols="30" rows="10">{{ $dt->comment ?? '' }}</textarea>
+                </td>
+                <td>
+                    <select class="form-control" name="attachment_id" id="attachment_id"
+                            onchange="updateComplianceVersionItemsAttachmentId('{{ $location->id }}', this)" multiple>
+                        <option value="">-Select Document-</option>
+                        @foreach($attachments as $attachment)
+                            <option value="{{$attachment->id}}">
+                                {{$attachment->title}}
+                            </option>
+                        @endforeach
+                    </select>
                 </td>
                 <td>
                     <input value="{{ $dt->link ?? '' }}" type="text" name="link" id="comment" class="form-control"

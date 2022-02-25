@@ -155,6 +155,7 @@ return array(
     'App\\Models\\ComplianceDataLocation' => $baseDir . '/app/Models/ComplianceDataLocation.php',
     'App\\Models\\ComplianceVersion' => $baseDir . '/app/Models/ComplianceVersion.php',
     'App\\Models\\ComplianceVersionItem' => $baseDir . '/app/Models/ComplianceVersionItem.php',
+    'App\\Models\\ComplianceVersionItemAttachment' => $baseDir . '/app/Models/ComplianceVersionItemAttachment.php',
     'App\\Models\\Computer' => $baseDir . '/app/Models/Computer.php',
     'App\\Models\\Department' => $baseDir . '/app/Models/Department.php',
     'App\\Models\\Designation' => $baseDir . '/app/Models/Designation.php',

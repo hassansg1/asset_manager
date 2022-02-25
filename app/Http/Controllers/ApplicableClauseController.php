@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attachment;
 use App\Models\Building;
 use App\Models\Clause;
 use App\Models\ClauseData;
 use App\Models\Company;
 use App\Models\ClauseDataFiles;
+use App\Models\ComplianceVersionItemAttachment;
 use App\Models\ComplianceVersionItem;
+use App\Models\Settings;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory;
@@ -196,11 +199,10 @@ class ApplicableClauseController extends BaseController
         $complianceD = ClauseData::find($request->trId);
         $locationModel = 'App\Models\\' . $complianceD->location;
         $locations = $locationModel::get();
-
+        $attachments = Attachment::get();
         // <!-- value="{{$location->complianceItems != null ? $location->complianceItems->comment : ''}}" -->
-
         return response()->json([
-            'html' => \view('version_compliance.location_table')->with(['locations' => $locations, 'versionId' => $request->version, 'item_id' => $request->trId])->render(),
+            'html' => \view('version_compliance.location_table')->with(['locations' => $locations, 'versionId' => $request->version, 'item_id' => $request->trId, 'attachments'=> $attachments])->render(),
             'status' => true
         ]);
     }
