@@ -43,6 +43,7 @@
                 return $(this).val();
             }).get();
 
+        let items_per_page = $('#per_page').val();
 
         $.ajax({
             type: "GET",
@@ -54,12 +55,14 @@
                 patch_id: patch_id,
                 asset_id_filter: asset_id_filter,
                 search_keyword: search_keyword,
+                items_per_page: items_per_page,
                 patch_ids: patch_ids,
                 software_ids: software_ids,
 
             },
             success: function (result) {
                 $('#' + div).html($(result).find('#' + div).html());
+                makeDatatable('datatable-buttons');
             },
         });
     }
@@ -74,8 +77,9 @@
             url: url,
             success: function (result) {
                 if (result) {
-                    showModal(defaultModal, $(result).find('.item_form').find('.row').html())
-                    // disableForm('#pageAdd');
+                    $('.default_modal_body').html($(result).find('.item_form').find('.row').html());
+                    $('#default_modal').modal('show');
+                    disableForm('#default_modal_content');
                 }
             }
 

@@ -7,7 +7,7 @@
 <label for="">
     <button
         id="keyword_search_btn"
-        title="Search" type="button" class="btn btn-light btn-filter dropdown-toggle" data-bs-toggle="dropdown"
+        title="Search" type="button" class="btn btn-light btn-filter dropdown-toggle btn_padding8" data-bs-toggle="dropdown"
         onclick="loadTableData('{{ $data['request']['url'] ?? '' }}','{{ $route }}')"
         aria-haspopup="true" aria-expanded="false">
         <i class="fas fa-search"></i>

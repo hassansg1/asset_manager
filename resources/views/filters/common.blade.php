@@ -15,3 +15,11 @@
 <div class="mt-2">
     @yield('below_filters')
 </div>
+<style>
+    .btn_padding8{
+        padding: 8px 15px !important;
+    }
+    .btn_padding5{
+        padding: 5px 15px !important;
+    }
+</style>

@@ -60,6 +60,7 @@ class BaseController extends Controller
             $items = $query->paginate($items_per_page);
 
         $data['items'] = $items;
+        $data['items_per_page'] = $items_per_page;
         $data['request'] = $request;
         $data['request']['url'] = Request::url();
         return $data;

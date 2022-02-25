@@ -54,7 +54,26 @@
             text: "Item 3"
         },
     ];
+
+    function makeDatatable(id) {
+        var table = $('#' + id).DataTable({
+            lengthChange: false,
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            "searching": false,
+            "ordering": false,
+            "bSortable": false,
+            "bPaginate": false,
+
+        });
+        table.buttons().container().appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
+        $(".dataTables_length select").addClass('form-select form-select-sm');
+    }
+
     $(document).ready(function () {
+        makeDatatable('datatable-buttons');
         let editor1 = CKEDITOR.replace('help_text', {
             width: '100%',
             height: 900,
@@ -165,18 +184,19 @@
                     });
                 }
                 nodeSelected({{ Session::get('node_id')}});
-                $('#default-tree').on('click','li a',function(event, data) {
+                $('#default-tree').on('click', 'li a', function (event, data) {
                     event.preventDefault();
                     var li = $(this).parent();
                     var nodeId = li.attr('data-nodeid');
                     const url = $(this).attr('href');
                     const newUrl = url.slice(0, url.lastIndexOf('/'));
-                    const newurlLatest = newUrl+'/'+nodeId;
+                    const newurlLatest = newUrl + '/' + nodeId;
                     location.href = newurlLatest;
                 });
             },
         });
     }
+
     function nodeSelected(id) {
         $('#default-tree').treeview('revealNode', [id, {silent: true, ignoreChildren: false}]);
         $('#default-tree').treeview('selectNode', [id, {silent: true, ignoreChildren: false}]);
@@ -244,7 +264,7 @@
             $.ajax({
                 type: "get",
                 url: "{{url('delete_asseigned_id')}}/" + user_id,
-                data: { account_id: account_id },
+                data: {account_id: account_id},
                 success: function (res) {
                     if (res) {
                         location.reload();
@@ -262,7 +282,7 @@
             $.ajax({
                 type: "get",
                 url: "{{url('asseigned_id')}}/" + user_id,
-                data: { account_id: account_id },
+                data: {account_id: account_id},
                 success: function (res) {
                     if (res) {
                         alert(res);
@@ -346,7 +366,7 @@
             $.ajax({
                 type: "get",
                 url: "{{url('asseigned_id_to_user')}}/" + user_id,
-                data: { account_id: account_id },
+                data: {account_id: account_id},
                 success: function (res) {
                     if (res) {
                         alert(res);
@@ -364,7 +384,7 @@
             $.ajax({
                 type: "get",
                 url: "{{url('delete_assigned_id')}}/" + account_id,
-                data: { user_id: user_id },
+                data: {user_id: user_id},
                 success: function (res) {
                     if (res) {
                         location.reload();
@@ -376,15 +396,15 @@
     });
 </script>
 <script type="text/javascript">
-    $(".utl").focusout(function(){
+    $(".utl").focusout(function () {
         $('.unmitigated_risk').val($(this).val() * $('.impact').val());
     });
 
-    $(".mtl").focusout(function(){
+    $(".mtl").focusout(function () {
         $('.mitigated_risk').val($(this).val() * $('.impact').val());
     });
 
-    $(".atl").focusout(function(){
+    $(".atl").focusout(function () {
         $('.residual_risk').val($(this).val() * $('.impact').val());
     });
 </script>
