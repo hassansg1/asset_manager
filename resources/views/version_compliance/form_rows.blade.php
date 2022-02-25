@@ -128,6 +128,24 @@
             });
 
         }
+        function updateComplianceVersionItemsAttachmentId($location_id,e) {
+            var attachment_id = $(e).val();
+            $.ajax({
+                url: '{{ url('/updateComplianceVersionItems') }}',
+                headers: {
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                },
+                type: 'POST',
+                data: {
+                    attachment_id: attachment_id,
+                    compliance_version_id: compliance_version_id
+                },
+                success: function (data) {
+
+                }
+            });
+
+        }
 
         function updateComment($location_id, e) {
             var tr = $(this).closest('tr');

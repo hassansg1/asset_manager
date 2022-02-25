@@ -50,4 +50,7 @@ class Attachment extends Model
     public function attachmentItems(){
         return $this->hasMany(AttachmentItem::class,'attachment_id');
     }
+    public function attachmentId(){
+        return $this->belongsTo(ComplianceVersionItemAttachment::class,'id', 'attachment_id');
+    }
 }
