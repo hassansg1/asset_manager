@@ -129,17 +129,21 @@
 
         }
         function updateComplianceVersionItemsAttachmentId($location_id,e) {
+            var tr = $(this).closest('tr');
             var attachment_id = $(e).val();
+            var compliance_data_id = $('#item').val();
+            var location_id = $location_id;
+            var compliance_version_id = {{ $version_id }};
             $.ajax({
                 url: '{{ url('/updateComplianceVersionItems') }}',
                 headers: {
                     'X-CSRF-TOKEN': "{{ csrf_token() }}"
                 },
                 type: 'POST',
-                data: {
-                    attachment_id: attachment_id,
-                    compliance_version_id: compliance_version_id
-                },
+                data: {attachment_id: attachment_id,
+                    compliance_data_id: compliance_data_id,
+                    location_id: location_id,
+                    compliance_version_id: compliance_version_id},
                 success: function (data) {
 
                 }
