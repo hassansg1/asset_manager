@@ -129,6 +129,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('PatchPage/LoadData', [\App\Http\Controllers\PatchApprovalAjaxController::class, 'loadData'])->name('PatchPage.loadData');
     Route::get('standards/view/{standard}/clause', [\App\Http\Controllers\StandardClauseController::class, 'index']);
     Route::get('standards/edit/{standard}/clause', [\App\Http\Controllers\StandardClauseEditController::class, 'index']);
+    Route::get('standards/sequence/{standard}', [\App\Http\Controllers\StandardClauseEditController::class, 'numberSequence']);
     //................. ComplainceData...........
     Route::post('applicableClause/store', [App\Http\Controllers\ApplicableClauseController::class, 'storeClauseData'])->name('applicableClause.storeClauseData');
     Route::post('store/file/compliance/{id}', [App\Http\Controllers\ApplicableClauseController::class, 'complianceFileStore']);

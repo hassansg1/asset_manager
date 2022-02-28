@@ -151,7 +151,6 @@ class ApplicableClauseController extends BaseController
     public function storeClauseData(Request $request)
     {
         $data = ClauseData::saveFormData($request);
-
         return response()->json([
             'status' => true,
             'parents' => $data['parents'] ?? ''

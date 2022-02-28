@@ -1,6 +1,6 @@
 @extends('components.datatable')
 @section('table_header')
-    <th>Number</th>
+    <th style="width: 50px">Number</th>
     <th style="max-width: 20px">Title</th>
     <th>Description</th>
     <th>Applicable</th>
