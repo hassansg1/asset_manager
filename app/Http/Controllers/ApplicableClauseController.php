@@ -225,10 +225,21 @@ class ApplicableClauseController extends BaseController
         if ($request->link) {
             $complianceVersionItems->link = $request->link;
         }
-        if ($request->attachment_id) {
-            $complianceVersionItems->attachment_id = $request->attachment_id;
-        }
         $complianceVersionItems->save();
+
+        if ($request->attachment_id) {
+            $attachemnts = $request->attachment_id;
+            $document_id  = ComplianceVersionItemAttachment::where('attachment_id', $attachemnts[0])->where('compliance_version_item_id', $complianceVersionItems->id)->first();
+            if ($document_id == null){
+                $document_id = new ComplianceVersionItemAttachment();
+                $document_id->attachment_id = $attachemnts[0];
+                $document_id->compliance_version_item_id = $complianceVersionItems->id;
+            }
+            $document_id->compliance_version_item_id = $complianceVersionItems->id;
+            $document_id->save();
+        }
+
+
 
         return response()->json([
             'status' => true

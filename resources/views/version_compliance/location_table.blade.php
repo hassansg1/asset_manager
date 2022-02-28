@@ -56,7 +56,7 @@
                             onchange="updateComplianceVersionItemsAttachmentId('{{ $location->id }}', this)" multiple>
                         <option value="">-Select Document-</option>
                         @foreach($attachments as $attachment)
-                            <option value="{{$attachment->id}}">
+                            <option {{ isset($dt) && $dt->id == $dt->complianceVersionAttachmentId->compliance_version_item_id ? 'selected' : '' }} value="{{$attachment->id}}">
                                 {{$attachment->title}}
                             </option>
                         @endforeach
