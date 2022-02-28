@@ -11,8 +11,8 @@ class ComplianceVersionItem extends Model
 
     protected $guarded = [];
 
-    public function complianceVersionAttachmentId(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function attachments()
     {
-        return $this->belongsTo(ComplianceVersionItemAttachment::class, 'id', 'compliance_version_item_id');
+        return $this->hasMany(ComplianceVersionItemAttachment::class,'compliance_version_item_id');
     }
 }

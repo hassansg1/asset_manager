@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attachment;
-use App\Models\Building;
 use App\Models\Clause;
 use App\Models\ClauseData;
 use App\Models\Company;
 use App\Models\ComplianceVersionItem;
-use App\Models\Settings;
-use Illuminate\Http\Request;
-use Illuminate\Contracts\View\View;
-use Illuminate\Contracts\View\Factory;
+use App\Models\ComplianceVersionItemAttachment;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 
 class ApplicableClauseController extends BaseController
@@ -199,7 +198,7 @@ class ApplicableClauseController extends BaseController
         $attachments = Attachment::get();
         // <!-- value="{{$location->complianceItems != null ? $location->complianceItems->comment : ''}}" -->
         return response()->json([
-            'html' => \view('version_compliance.location_table')->with(['locations' => $locations, 'versionId' => $request->version, 'item_id' => $request->trId, 'attachments'=> $attachments])->render(),
+            'html' => \view('version_compliance.location_table')->with(['locations' => $locations, 'versionId' => $request->version, 'item_id' => $request->trId, 'attachments' => $attachments])->render(),
             'status' => true
         ]);
     }
@@ -216,8 +215,8 @@ class ApplicableClauseController extends BaseController
             $complianceVersionItems->compliance_data_id = $request->compliance_data_id;
             $complianceVersionItems->location_id = $request->location_id;
         }
-        if ($request->compliant_id) {
-            $complianceVersionItems->compliant = $request->compliant_id;
+        if ($request->compliant) {
+            $complianceVersionItems->compliant = $request->compliant;
         }
         if ($request->comment) {
             $complianceVersionItems->comment = $request->comment;
@@ -229,16 +228,14 @@ class ApplicableClauseController extends BaseController
 
         if ($request->attachment_id) {
             $attachemnts = $request->attachment_id;
-            $document_id  = ComplianceVersionItemAttachment::where('attachment_id', $attachemnts[0])->where('compliance_version_item_id', $complianceVersionItems->id)->first();
-            if ($document_id == null){
-                $document_id = new ComplianceVersionItemAttachment();
-                $document_id->attachment_id = $attachemnts[0];
-                $document_id->compliance_version_item_id = $complianceVersionItems->id;
+            $complianceVersionItems->attachments()->delete();
+            foreach ($attachemnts as $attachemnt) {
+                ComplianceVersionItemAttachment::create([
+                    'compliance_version_item_id' => $complianceVersionItems->id,
+                    'attachment_id' => $attachemnt,
+                ]);
             }
-            $document_id->compliance_version_item_id = $complianceVersionItems->id;
-            $document_id->save();
         }
-
 
 
         return response()->json([

@@ -24,7 +24,7 @@
                 </td>
                 <td>
                     <select class="form-control" name="compliant" id="compliant"
-                            onchange="updateCompliant('{{ $location->id }}', this)">
+                            onchange="updateCompliant('{{ $location->id }}', this,'{{ $versionId }}','{{ $item_id }}')">
                         <option
                             {{ isset($dt) && $dt->compliant == App\Models\ClauseData::COMPLIANT_ALL ? 'selected' : '' }} value="{{ App\Models\ClauseData::COMPLIANT_ALL }}">
                             Select Compliant
@@ -48,15 +48,20 @@
                     </select>
                 </td>
                 <td>
-                    <textarea onfocusout="updateComment('{{ $location->id }}', this)" class="form-control"
-                              name="comment" id="comment" cols="30" rows="10">{{ $dt->comment ?? '' }}</textarea>
+                    <textarea
+                        onfocusout="updateComment('{{ $location->id }}', this,'{{ $versionId }}','{{ $item_id }}')"
+                        class="form-control"
+                        name="comment" id="comment" cols="30" rows="10">{{ $dt->comment ?? '' }}</textarea>
                 </td>
                 <td>
-                    <select class="form-control" name="attachment_id" id="attachment_id"
-                            onchange="updateComplianceVersionItemsAttachmentId('{{ $location->id }}', this)" multiple>
+                    <select class="form-control select2" name="attachment_id" id="attachment_id"
+                            onchange="updateComplianceVersionItemsAttachmentId('{{ $location->id }}', this,'{{ $versionId }}','{{ $item_id }}')"
+                            multiple>
                         <option value="">-Select Document-</option>
                         @foreach($attachments as $attachment)
-                            <option {{ isset($dt) && $dt->id == $dt->complianceVersionAttachmentId->compliance_version_item_id ? 'selected' : '' }} value="{{$attachment->id}}">
+                            <option
+                                {{ isset($dt->attachments) && in_array($attachment->id,$dt->attachments->pluck('attachment_id')->toArray()) ? 'selected' : '' }}
+                                value="{{$attachment->id}}">
                                 {{$attachment->title}}
                             </option>
                         @endforeach
@@ -64,7 +69,7 @@
                 </td>
                 <td>
                     <input value="{{ $dt->link ?? '' }}" type="text" name="link" id="comment" class="form-control"
-                           onfocusout="updateLink('{{ $location->id }}', this)">
+                           onfocusout="updateLink('{{ $location->id }}', this,'{{ $versionId }}','{{ $item_id }}')">
                 </td>
             </tr>
             <div class="modal fade image-upload-modal-{{ $location->id }}" tabindex="-1" role="dialog"

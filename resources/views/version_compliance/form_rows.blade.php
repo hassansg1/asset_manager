@@ -98,16 +98,14 @@
                 success: function (data) {
                     row.child(data.html).show();
                     tr.addClass('shown');
+                    $('.select2').select2();
                 }
             });
         }
 
 
-        function updateCompliant($location_id, e) {
+        function updateCompliant(location_id, e, compliance_version_id, compliance_data_id) {
             var compliant = $(e).val();
-            var compliance_data_id = $('#item').val();
-            var location_id = $location_id;
-            var compliance_version_id = {{ $version_id }};
             $.ajax({
                 url: '{{ url('/updateComplianceVersionItems') }}',
                 headers: {
@@ -121,49 +119,30 @@
                     compliance_version_id: compliance_version_id
                 },
                 success: function (data) {
-                    if(data.status){
+                    if (data.status) {
                         doSuccessToast();
                     }
                 }
             });
 
         }
-        function updateComplianceVersionItemsAttachmentId($location_id,e) {
-            var tr = $(this).closest('tr');
-            var attachment_id = $(e).val();
-            var compliance_data_id = $('#item').val();
-            var location_id = $location_id;
-            var compliance_version_id = {{ $version_id }};
+
+        function updateComplianceVersionItemsAttachmentId(location_id, e, compliance_version_id, compliance_data_id) {
+            let attachment_id = $(e).val();
             $.ajax({
                 url: '{{ url('/updateComplianceVersionItems') }}',
                 headers: {
                     'X-CSRF-TOKEN': "{{ csrf_token() }}"
                 },
                 type: 'POST',
-                data: {attachment_id: attachment_id,
+                data: {
+                    attachment_id: attachment_id,
                     compliance_data_id: compliance_data_id,
                     location_id: location_id,
-                    compliance_version_id: compliance_version_id},
-                success: function (data) {
-
-                }
-            });
-
-        }
-
-        function updateComment($location_id, e) {
-            var tr = $(this).closest('tr');
-            var comment = $(e).val();
-            var location_id = $location_id;
-            $.ajax({
-                url: '{{ url('/updateComplianceVersionItems') }}',
-                headers: {
-                    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                    compliance_version_id: compliance_version_id
                 },
-                type: 'POST',
-                data: {comment: comment, location_id: location_id},
                 success: function (data) {
-                    if(data.status){
+                    if (data.status) {
                         doSuccessToast();
                     }
                 }
@@ -171,19 +150,45 @@
 
         }
 
-        function updateLink($location_id, e) {
-            var tr = $(this).closest('tr');
-            var link = $(e).val();
-            var location_id = $location_id;
+        function updateComment(location_id, e, compliance_version_id, compliance_data_id) {
+            let comment = $(e).val();
             $.ajax({
                 url: '{{ url('/updateComplianceVersionItems') }}',
                 headers: {
                     'X-CSRF-TOKEN': "{{ csrf_token() }}"
                 },
                 type: 'POST',
-                data: {link: link, location_id: location_id},
+                data: {
+                    comment: comment,
+                    compliance_data_id: compliance_data_id,
+                    location_id: location_id,
+                    compliance_version_id: compliance_version_id
+                },
                 success: function (data) {
-                    if(data.status){
+                    if (data.status) {
+                        doSuccessToast();
+                    }
+                }
+            });
+
+        }
+
+        function updateLink(location_id, e, compliance_version_id, compliance_data_id) {
+            var link = $(e).val();
+            $.ajax({
+                url: '{{ url('/updateComplianceVersionItems') }}',
+                headers: {
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                },
+                type: 'POST',
+                data: {
+                    link: link,
+                    compliance_data_id: compliance_data_id,
+                    location_id: location_id,
+                    compliance_version_id: compliance_version_id
+                },
+                success: function (data) {
+                    if (data.status) {
                         doSuccessToast();
                     }
                 }
@@ -203,7 +208,7 @@
                 type: 'POST',
                 data: {attachment_id: attachment_id, location_id: location_id},
                 success: function (data) {
-                    if(data.status){
+                    if (data.status) {
                         doSuccessToast();
                     }
                 }
