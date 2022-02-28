@@ -104,9 +104,7 @@
 
 
         function updateCompliant($location_id, e) {
-            // var row = $(this).closest('tr.parent_row');
-            // alert($(row).find('.location_id').val());
-            var compliant_id = $(e).val();
+            var compliant = $(e).val();
             var compliance_data_id = $('#item').val();
             var location_id = $location_id;
             var compliance_version_id = {{ $version_id }};
@@ -117,7 +115,7 @@
                 },
                 type: 'POST',
                 data: {
-                    compliant_id: compliant_id,
+                    compliant: compliant,
                     compliance_data_id: compliance_data_id,
                     location_id: location_id,
                     compliance_version_id: compliance_version_id
