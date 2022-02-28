@@ -53,29 +53,17 @@
 @section('script')
 
     <script>
-        let table;
-
         $(document).ready(function () {
-            table = $('#dtb').DataTable({
-                lengthChange: false,
-                buttons: ['copy', 'excel', 'pdf', 'colvis'],
-                "searching": false,
-                "ordering": false,
-                "bPaginate": false,
-                "bSortable": false,
-            });
-
             $('#compliant').on('change', function () {
                 console.log('working');
 
             });
         });
-        $('#dtb tbody').on('click', 'td.details-control', function () {
+        $('body').on('click', '.details-control', function () {
             var tr = $(this).closest('tr');
-            var row = table.row(tr);
+            var row = complianceTable.row(tr);
             var trId = $(this).attr('data-id');
             let iconClass = $('.icon_' + trId);
-
             if (row.child.isShown()) {
                 // This row is already open - close it
                 row.child.hide();
