@@ -44,6 +44,28 @@ class StandardClauseEditController extends BaseController
             ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading, 'standard' => $standard, 'customHeading' => true]);
     }
 
+    public  function  numberSequence($standardId){
+        $compliances = Clause::where('standard_id', $standardId);
+        foreach ($compliances as $compliance)
+        {
+            $clause = $compliance->number;
+            $ex = explode('-',$clause);
+            array_pop($ex);
+            if(count($ex) > 0)
+            {
+                $imp = implode('-',$ex);
+                $parent = Clause::where('number',$imp)->first();
+                if($parent)
+                {
+                    $compliance->parent_id = $parent->id;
+                    $compliance->save();
+                }
+            }
+        }
+        flashSuccess(getLang($this->heading . " Successfully Updated."));
+        return redirect()->back();
+    }
+
     /**
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse

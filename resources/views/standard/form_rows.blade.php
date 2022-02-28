@@ -12,6 +12,9 @@
             <button style="margin-left: 5px" class="btn btn-primary">
                 <a style="color: white" href="{{ url('standards/edit/'.$item->id.'/clause') }}">Edit Clauses</a>
             </button>
+            <button style="margin-left: 5px" class="btn btn-primary">
+                <a style="color: white" href="{{ url('standards/sequence/'.$item->id) }}">Order Clause Number</a>
+            </button>
         </td>
         <td>
             @include('components.edit_delete_button')
