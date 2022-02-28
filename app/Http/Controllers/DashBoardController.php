@@ -14,14 +14,14 @@ class DashBoardController extends Controller
     public function index(Request $request){
 //       $items =  ClauseData::with('compliance')->where('user_id',Auth::id())->orderBy('id','desc')->get();
 //        Location::fixTree();
-        $compliant = [];
-        $complianceData = ComplianceVersionItem::get();
-        foreach ($complianceData as $data)
-        {
-            if( $data['compliant']!= "" &&  !isset($compliant[$data['compliant']])) $compliant[$data['compliant']] = 0;
-            if($data['compliant'] == "") $data['compliant'] = "No";
-            $compliant[$data['compliant']] = $compliant[$data['compliant']] + 1;
-        }
+//        $compliant = [];
+//        $complianceData = ComplianceVersionItem::get();
+//        foreach ($complianceData as $data)
+//        {
+//            if( $data['compliant']!= "" &&  !isset($compliant[$data['compliant']])) $compliant[$data['compliant']] = 0;
+//            if($data['compliant'] == "") $data['compliant'] = "No";
+//            $compliant[$data['compliant']] = $compliant[$data['compliant']] + 1;
+//        }
 //        if (!empty($compliant)){
 //            $values[] = $compliant['Yes'];
 //            $values[] = $compliant['No'];
