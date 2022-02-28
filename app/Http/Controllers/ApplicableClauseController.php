@@ -7,8 +7,6 @@ use App\Models\Building;
 use App\Models\Clause;
 use App\Models\ClauseData;
 use App\Models\Company;
-use App\Models\ClauseDataFiles;
-use App\Models\ComplianceVersionItemAttachment;
 use App\Models\ComplianceVersionItem;
 use App\Models\Settings;
 use Illuminate\Http\Request;
@@ -209,7 +207,10 @@ class ApplicableClauseController extends BaseController
 
     public function updateComplianceVersionItems(Request $request)
     {
-        $complianceVersionItems = ComplianceVersionItem::where('location_id', $request->location_id)->first();
+        $complianceVersionItems = ComplianceVersionItem::where('location_id', $request->location_id)
+            ->where('compliance_version_id', $request->compliance_version_id)
+            ->where('compliance_data_id', $request->compliance_data_id)
+            ->first();
         if ($complianceVersionItems == null) {
             $complianceVersionItems = new ComplianceVersionItem;
             $complianceVersionItems->compliance_version_id = $request->compliance_version_id;
@@ -229,5 +230,10 @@ class ApplicableClauseController extends BaseController
             $complianceVersionItems->attachment_id = $request->attachment_id;
         }
         $complianceVersionItems->save();
+
+        return response()->json([
+            'status' => true
+        ]);
+
     }
 }

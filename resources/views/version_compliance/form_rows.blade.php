@@ -123,7 +123,9 @@
                     compliance_version_id: compliance_version_id
                 },
                 success: function (data) {
-
+                    if(data.status){
+                        doSuccessToast();
+                    }
                 }
             });
 
@@ -159,7 +161,9 @@
                 type: 'POST',
                 data: {comment: comment, location_id: location_id},
                 success: function (data) {
-
+                    if(data.status){
+                        doSuccessToast();
+                    }
                 }
             });
 
@@ -177,7 +181,9 @@
                 type: 'POST',
                 data: {link: link, location_id: location_id},
                 success: function (data) {
-
+                    if(data.status){
+                        doSuccessToast();
+                    }
                 }
             });
 
@@ -195,7 +201,9 @@
                 type: 'POST',
                 data: {attachment_id: attachment_id, location_id: location_id},
                 success: function (data) {
-
+                    if(data.status){
+                        doSuccessToast();
+                    }
                 }
             });
 
