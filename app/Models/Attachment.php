@@ -40,7 +40,7 @@ class Attachment extends Model
             foreach ($images as $image) {
                 $imageName = $image->getClientOriginalName();
                 $name = time() . $imageName;
-                $path = Storage::disk('public')->putFileAs(
+                $path = Storage::disk('library_documents')->putFileAs(
                     'library_documents', $image, $name
                 );
                 $attachmentItem = new AttachmentItem();

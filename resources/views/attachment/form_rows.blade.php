@@ -10,7 +10,7 @@
         <td>{{ $item->subCategory }}</td>
         <td>
             @foreach($item->attachmentItems as $attachment)
-                <a target="_blank" href="{{ asset('images/attachment/'.$attachment->fileName) }}">{{ $attachment->fileName }}</a>
+                <a target="_blank" href="{{ $attachment->fileLink() }}">{{ $attachment->fileName }}</a>
                 <br>
             @endforeach
         </td>
