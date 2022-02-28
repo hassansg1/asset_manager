@@ -68,9 +68,6 @@ class LibraryImportController extends Controller
                     $arr = [];
                     for ($i = 0; $i < count($obj); $i++) {
                         $clm = tableColumnsMapping($tableNameRaw, 'import', $header[$i]);
-                        if($header[$i] == "Title")
-                            $clm = "title";
-                        dd(sanitizeInput($header[$i]) == "Title");
                         if ($clm) {
                             $arr[$clm] = sanitizeInput($obj[$header[$i]]);
                         }
@@ -78,7 +75,6 @@ class LibraryImportController extends Controller
 
                     $request = new Request();
                     $request->replace($arr);
-                    dd($request->all());
                     $validator = Validator::make($request->all(), $model->rules);
                     if ($validator->fails()) {
                         foreach ($validator->errors()->all() as $error) {

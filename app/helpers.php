@@ -418,6 +418,7 @@ if (!function_exists('shortClassName')) {
 if (!function_exists('sanitizeInput')) {
     function sanitizeInput($value)
     {
+        $value = preg_replace('/[^A-Za-z0-9\-]/', '', $value);
         return utf8_encode($value);
     }
 }
@@ -594,6 +595,7 @@ if (!function_exists('tableColumnsMapping')) {
         $tableMap = $mappingArray[$table];
         if ($method == "export")
             return array_values($tableMap);
+        $column = sanitizeInput($column);
         if ($method == "import")
             return array_search($column, $tableMap);
     }
