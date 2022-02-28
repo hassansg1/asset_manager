@@ -559,12 +559,13 @@ if (!function_exists('tableColumnsMapping')) {
             ],
             'attachments' => [
                 'documentNumber' => 'Document Number',
-                'version' => 'Document Version',
-                'date' => 'Document Date',
-                'title' => 'Document Title',
-                'description' => 'Document Description',
-                'category' => 'Document Category',
+                'version' => 'Version',
+                'date' => 'Date',
+                'title' => 'Title',
+                'description' => 'Description',
+                'category' => 'Category',
                 'subCategory' => 'Document Subcategory',
+                'file' => 'File',
             ],
             'firewall_managments' => [
                 'source_zone' => 'SourceZone',

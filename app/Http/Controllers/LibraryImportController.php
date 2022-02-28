@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attachment;
-use App\Models\Clause;
-use App\Models\Standard;
+use App\Models\AttachmentItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
@@ -88,7 +87,11 @@ class LibraryImportController extends Controller
                         break;
                     } else {
                         try {
-                            $model->saveFormData($model, $request);
+                            $result = $model->saveFormData($model, $request);
+                            $attachmentItem = new AttachmentItem();
+                            $attachmentItem->attachment_id = $result->id;
+                            $attachmentItem->fileName = $request->file;
+                            $attachmentItem->save();
                         } catch (\Exception $exception) {
                             $logs[] = 'Internal Error. Message  : ' . $exception->getMessage() . ' . Please contact the administer.';
                             $success = false;
@@ -116,7 +119,7 @@ class LibraryImportController extends Controller
             $logs[] = 'Invalid file name';
         }
 
-        return view('import.index')->with(['status' => $success, 'logs' => $logs,'action' => 'library_import.store']);
+        return view('import.index')->with(['status' => $success, 'logs' => $logs, 'action' => 'library_import.store']);
     }
 
     /**

@@ -5,6 +5,8 @@ namespace App\Models;
 use App\Http\Traits\ParentTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class Attachment extends Model
 {
@@ -32,13 +34,15 @@ class Attachment extends Model
         if (isset($request->category)) $item->category = $request->category;
         if (isset($request->subCategory)) $item->subCategory = $request->subCategory;
         $item->save();
-        $images= $request->file('files');
-        if($item && $images){
-            AttachmentItem::where('attachment_id',$item->id)->delete();
+        $images = $request->file('files');
+        if ($item && $images) {
+            AttachmentItem::where('attachment_id', $item->id)->delete();
             foreach ($images as $image) {
                 $imageName = $image->getClientOriginalName();
                 $name = time() . $imageName;
-                $image->move(public_path('images/attachment'), $name);
+                $path = Storage::disk('public')->putFileAs(
+                    'library_documents', $image, $name
+                );
                 $attachmentItem = new AttachmentItem();
                 $attachmentItem->attachment_id = $item->id;
                 $attachmentItem->fileName = $name;
@@ -47,10 +51,14 @@ class Attachment extends Model
         }
         return $item;
     }
-    public function attachmentItems(){
-        return $this->hasMany(AttachmentItem::class,'attachment_id');
+
+    public function attachmentItems()
+    {
+        return $this->hasMany(AttachmentItem::class, 'attachment_id');
     }
-    public function attachmentId(){
-        return $this->belongsTo(ComplianceVersionItemAttachment::class,'id', 'attachment_id');
+
+    public function attachmentId()
+    {
+        return $this->belongsTo(ComplianceVersionItemAttachment::class, 'id', 'attachment_id');
     }
 }
