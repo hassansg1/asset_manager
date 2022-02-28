@@ -1,0 +1,99 @@
+Title,Document Number,Version,Date,Description,Category,Sub Category,File
+NWC OT Cybersecurity Detailed-Level Design,A01001045-DLD,7,,,Detailed Design,,A01001045-DLD.07.pdf
+NWC OT Cybersecurity Active Directory Detailed Design,A01001045-DLD-AD,1,,,Detailed Design,,A01001045-DLD-AD.01.pdf
+NWC OT Cybersecurity Active Directory Detailed Design - Appendix 1,A01001045-DLD-AD-App1,1,,,Detailed Design,,A01001045-DLD-AD-App1.01.xlsx
+NWC OT Cybersecurity Backup management Detailed Design,A01001045-DLD-BM,1,,,Detailed Design,,A01001045-DLD-BM.01.pdf
+NWC OT Cybersecurity Backup management Detailed Design - Appendix 1,A01001045-DLD-BM-APP1,2,,,Detailed Design,,A01001045-DLD-BM-APP1.02.xlsx
+NWC OT Cybersecurity Endpoint Protection Management Detailed Design,A01001045-DLD-EP,0,,,Detailed Design,,A01001045-DLD-EP.00.pdf
+NWC OT Cybersecurity Endpoint Protection Management Detailed Design - Appendix 1,A01001045-DLD-EP-App1,0,,,Detailed Design,,A01001045-DLD-EP-App1.00.xlsx
+NWC OT Cybersecurity Firewalls Zones Design,A01001045-DLD-FWD,0,,,Detailed Design,,A01001045-DLD-FWD.00.xlsx
+NWC OT Cybersecurity IP Schema,A01001045-DLD-IPSCH,2,,,Detailed Design,,A01001045-DLD-IPSCH.02.xlsx
+NWC OT Cybersecurity Patch management Detailed Design,A01001045-DLD-PM,1,,,Detailed Design,,A01001045-DLD-PM.01.pdf
+NWC OT Cybersecurity Patch management Detailed Design - Appendix 1,A01001045-DLD-PM-App1,1,,,Detailed Design,,A01001045-DLD-PM-App1.01.xlsx
+NWC OT Cybersecurity Remote Access Management Detailed Design,A01001045-DLD-RA,0,,,Detailed Design,,A01001045-DLD-RA.00.pdf
+NWC OT Cybersecurity Secure File Transfer Detailed Design,A01001045-DLD-SFTP,0,,,Detailed Design,,A01001045-DLD-SFTP.00.pdf
+NWC OT Cybersecurity High-Level Design,A01001045-HLD,0,,,High Level Design,,A01001045-HLD.00.pdf
+NWC OT Cybersecurity HLD Reference Architecture,A01001045-HLD-Arch,0,,,Architecture,,A01001045-HLD-ARCH.00.pdf
+NWC OT Cybersecurity HQ Network Architecture,A01001045-HQ-DLD-NA,0,,,Detailed Design,,A01001045-HQ-DLD-NA.00.pdf
+NWC OT Cybersecurity SCADA Assets Inventory,A01001045-INV,0,,,Database,,A01001045-INV.00.xlsx
+NWC OT Cybersecurity JCBU AK3 WWTP Network Architecture,A01001045-JCBU-AK3-WWTP-NA,0,,,Architecture,,A01001045-JCBU-AK3-WWTP-NA.00.pdf
+NWC OT Cybersecurity JCBU AP1 Lifting Station Network Architecture,A01001045-JCBU-AP1-LS-NA,0,,,Architecture,,A01001045-JCBU-AP1-LS-NA.00.pdf
+NWC OT Cybersecurity JCBU Briman Phase 2 Network Architecture,A01001045-JCBU-BMN-PH2-NA,0,,,Architecture,,A01001045-JCBU-BMN-PH2-NA.00.pdf
+NWC OT Cybersecurity JCBU Existing Data Flow Drawing,A01001045-JCBU-DF,0,,,Architecture,,A01001045-JCBU-DF.00.pdf
+NWC OT Cybersecurity JCBU Faisaliyah Network Architecture,A01001045-JCBU-FAS-NA,2,,,Architecture,,A01001045-JCBU-FAS-NA.02.pdf
+NWC OT Cybersecurity JCBU Level-1 Devices Hardening Design,A01001045-JCBU-HDN-L1,0,,,Design,,A01001045-JCBU-HDN-L1.00.pdf
+NWC OT Cybersecurity JCBU Prince Sultan Building Network Architecture,A01001045-JCBU-PSB-NA,3,,,Architecture,,A01001045-JCBU-PSB-NA.03.pdf
+NWC OT Cybersecurity L0-1 Devices Minimum Baseline Security Standard,A01001045-MBSS-L1,0,,,MBSS,,A01001045-MBSS-L1.00.pdf
+NWC OT Cybersecurity L0-1 Devices Minimum Baseline Security Standard Appendix,A01001045-MBSS-L1-APP,0,,,MBSS,,A01001045-MBSS-L1-APP.00.pdf
+NWC OT Cybersecurity Network Devices Minimum Baseline Security Standard,A01001045-MBSS-ND,0,,,MBSS,,A01001045-MBSS-ND.00.pdf
+NWC OT Cybersecurity Network Devices Minimum Baseline Security Standard Appendix,A01001045-MBSS-ND-APP,0,,,MBSS,,A01001045-MBSS-ND-APP.00.pdf
+NWC OT Cybersecurity SCADA Application Minimum Baseline Security Standard,A01001045-MBSS-SCADA,0,,,MBSS,,A01001045-MBSS-SCADA.00.pdf
+NWC OT Cybersecurity SCADA Application Minimum Baseline Security Standard Appendix,A01001045-MBSS-SCADA-APP,0,,,MBSS,,A01001045-MBSS-SCADA-APP.00.pdf
+NWC OT Cybersecurity MCBU Network Architecture,A01001045-MCBU-DLD-NA,0,,,Detailed Design,,A01001045-MCBU-DLD-NA.00.pdf
+NWC OT Cybersecurity MCBU Level-1 Devices Hardening Design,A01001045-MCBU-HDN-L1,0,,,Design,,A01001045-MCBU-HDN-L1.00.pdf
+NWC OT Cybersecurity MDCBU Level-1 Devices Hardening Design,A01001045-MDCBU-HDN-L1,0,,,Design,,A01001045-MDCBU-HDN-L1.00.pdf
+NWC OT Cybersecurity MDCBU Madinah STP Network Architecture,A01001045-MDCBU-MD-STP-NA,0,,,Architecture,,A01001045-MDCBU-MD-STP-NA.00.pdf
+NWC OT Cybersecurity MDCBU Quba WTP Network Architecture,A01001045-MDCBU-QBA-WTP-NA,0,,,Architecture,,A01001045-MDCBU-QBA-WTP-NA.01.pdf
+NWC OT Cybersecurity Back and Restore Plan,A01001045-PLN-BM,0,,,Detailed Design,,A01001045-PLN-BM.00.pdf
+NWC OT Cybersecurity Back and Restore Plan Appendix A,A01001045-PLN-BM-APP1,0,,,Detailed Design,,A01001045-PLN-BM-APP1.00.xlsx
+NWC OT Cybersecurity Back and Restore Plan Appendix B,A01001045-PLN-BM-APP2,0,,,Detailed Design,,A01001045-PLN-BM-APP2.00.pdf
+NWC OT Cybersecurity Access Control Policy,A01001045-POL-AC,0,,,NWC OT Policy,,A01001045-POL-AC.00.docx
+NWC OT Cybersecurity Asset Management policy ,A01001045-POL-AM,0,,,NWC OT Policy,,A01001045-POL-AM.00.docx
+NWC OT Cybersecurity Acceptable Use Policy,A01001045-POL-AU,0,,,NWC OT Policy,,A01001045-POL-AU.00.docx
+NWC OT Cybersecurity Business Continuity Management Policy,A01001045-POL-BCM,0,,,NWC OT Policy,,A01001045-POL-BCM.00.docx
+NWC OT Cybersecurity Backup and Recovery Policy,A01001045-POL-BKREC,0,,,NWC OT Policy,,A01001045-POL-BKREC.00.docx
+NWC OT Cybersecurity Change Management Policy,A01001045-POL-CM,0,,,NWC OT Policy,,A01001045-POL-CM.00.docx
+NWC OT Cybersecurity Endpoint Security Management Policy,A01001045-POL-EP,0,,,NWC OT Policy,,A01001045-POL-EP.00.docx
+NWC OT Cybersecurity L0-1 Devices Policy,A01001045-POL-FDS,0,,,NWC OT Policy,,A01001045-POL-FDS.00.docx
+NWC OT Cybersecurity Human Resource Policy,A01001045-POL-HR,0,,,NWC OT Policy,,A01001045-POL-HR.00.docx
+NWC OT Cybersecurity Incident Response Policy,A01001045-POL-IR,0,,,NWC OT Policy,,A01001045-POL-IR.00.docx
+NWC OT Cybersecurity Network Security Policy,A01001045-POL-NS,0,,,NWC OT Policy,,A01001045-POL-NS.00.docx
+NWC OT Cybersecurity Audit and Compliance Policy,A01001045-POL-PAC,0,,,NWC OT Policy,,A01001045-POL-PAC.00.docx
+NWC OT Cybersecurity Patch Management Policy,A01001045-POL-PAM,0,,,NWC OT Policy,,A01001045-POL-PAM.00.docx
+NWC OT Cybersecurity Physical Security Policy,A01001045-POL-PHYSEC,0,,,NWC OT Policy,,A01001045-POL-PHYSEC.00.docx
+NWC OT Cybersecurity  Password Management Policy,A01001045-POL-PM,0,,,NWC OT Policy,,A01001045-POL-PM.00.docx
+NWC OT Cybersecurity Remote Access Policy,A01001045-POL-RA,0,,,NWC OT Policy,,A01001045-POL-RA.00.docx
+NWC OT Cybersecurity Removal Media Handling Policy,A01001045-POL-REM,0,,,NWC OT Policy,,A01001045-POL-REM.00.docx
+NWC OT Cybersecurity Risk Management Policy,A01001045-POL-RM,0,,,NWC OT Policy,,A01001045-POL-RM.00.docx
+NWC OT Cybersecurity Systems Security Policy,A01001045-POL-SS,0,,,NWC OT Policy,,A01001045-POL-SS.00.docx
+NWC OT Cybersecurity Access Control Management Procedure,A01001045-PRO-AC,0,,,NWC OT Procedure,,A01001045-PRO-AC.00.pdf
+NWC OT Cybersecurity Asset Management Procedure,A01001045-PRO-AM,0,,,NWC OT Procedure,,A01001045-PRO-AM.00.pdf
+NWC OT Cybersecurity Backup and Recovery Procedure,A01001045-PRO-BKREC,0,,,NWC OT Procedure,,A01001045-PRO-BKREC.00.pdf
+NWC OT Cybersecurity Change Management Procedure,A01001045-PRO-CM,1,,,NWC OT Procedure,,A01001045-PRO-CM.01.pdf
+NWC OT Cybersecurity Endpoint Protection Management Procedure,A01001045-PRO-EP,0,,,NWC OT Procedure,,A01001045-PRO-EP.00.pdf
+NWC OT Cybersecurity Human Resource Procedure,A01001045-PRO-HR,0,,,NWC OT Procedure,,A01001045-PRO-HR.00.pdf
+NWC OT Cybersecurity Incident Response Procedure,A01001045-PRO-IR,0,,,NWC OT Procedure,,A01001045-PRO-IR.00.pdf
+NWC OT Cybersecurity Patch Management Procedure,A01001045-PRO-PAM,1,,,NWC OT Procedure,,A01001045-PRO-PAM.01.pdf
+NWC OT Cybersecurity Physical Security Procedure,A01001045-PRO-PHYSEC,0,,,NWC OT Procedure,,A01001045-PRO-PHYSEC.00.pdf
+NWC OT Cybersecurity Password Management Procedure,A01001045-PRO-PM,1,,,NWC OT Procedure,,A01001045-PRO-PM.01.pdf
+NWC OT Cybersecurity Remote Access Procedure,A01001045-PRO-RA,0,,,NWC OT Procedure,,A01001045-PRO-RA.00.pdf
+NWC OT Cybersecurity Removeable Media Procedure,A01001045-PRO-REM,0,,,NWC OT Procedure,,A01001045-PRO-REM.00.pdf
+NWC OT Cybersecurity Risk Management Procedure,A01001045-PRO-RM,0,,,NWC OT Procedure,,A01001045-PRO-RM.00.pdf
+NWC OT Cybersecurity System and Network Security Procedure,A01001045-PRO-SNS,0,,,NWC OT Procedure,,A01001045-PRO-SNS.00.pdf
+NWC OT Cybersecurity RCBU Bowaib WTP Network Architecture,A01001045-RCBU-BWB-WTP-NA,0,,,Architecture,,A01001045-RCBU-BWB-WTP-NA.00.pdf
+NWC OT Cybersecurity RCBU Existing Data Flow Drawing,A01001045-RCBU-DF,0,,,Architecture,,A01001045-RCBU-DF.00.pdf
+NWC OT Cybersecurity RCBU Exit 10  Network Architecture,A01001045-RCBU-ET10-NA,0,,,Architecture,,A01001045-RCBU-ET10-NA.00.pdf
+NWC OT Cybersecurity RCBU Exit 17 Network Architecture,A01001045-RCBU-ET17-NA,0,,,Architecture,,A01001045-RCBU-ET17-NA.00.pdf
+NWC OT Cybersecurity RCBU Level-1 Devices Hardening Design,A01001045-RCBU-HDN-L1,1,,,Design,,A01001045-RCBU-HDN-L1.01.pdf
+NWC OT Cybersecurity RCBU Heet WWTP Network Architecture,A01001045-RCBU-HEET-WWTP-NA,0,,,Architecture,,A01001045-RCBU-HEET-WWTP-NA.00.pdf
+NWC OT Cybersecurity RCBU HPT Network Architecture,A01001045-RCBU-HPT-NA,0,,,Architecture,,A01001045-RCBU-HPT-NA.00.pdf
+NWC OT Cybersecurity RCBU HYR WTP Network Architecture,A01001045-RCBU-HYR-WTP-NA,0,,,Architecture,,A01001045-RCBU-HYR-WTP-NA.00.pdf
+NWC OT Cybersecurity RCBU HYR WWTP Network Architecture,A01001045-RCBU-HYR-WWTP-NA,0,,,Architecture,,A01001045-RCBU-HYR-WWTP-NA.00.pdf
+NWC OT Cybersecurity RCBU Malaz WTP Network Architecture,A01001045-RCBU-MLZ-WTP-NA,0,,,Architecture,,A01001045-RCBU-MLZ-WTP-NA.00.pdf
+NWC OT Cybersecurity RCBU Manfouha WTP Network Architecture,A01001045-RCBU-MNF-WTP-NA,0,,,Architecture,,A01001045-RCBU-MNF-WTP-NA.00.pdf
+NWC OT Cybersecurity RCBU Manfouha WWTP Network Architecture,A01001045-RCBU-MNF-WWTP-NA,0,,,Architecture,,A01001045-RCBU-MNF-WWTP-NA.00.pdf
+NWC OT Cybersecurity RCBU Shomaisy WTP Network Architecture,A01001045-RCBU-SHM-WTP-NA,0,,,Architecture,,A01001045-RCBU-SHM-WTP-NA.00.pdf
+NWC OT Cybersecurity RCBU Salboukh WTP Network Architecture,A01001045-RCBU-SLBK-WTP-NA,0,,,Architecture,,A01001045-RCBU-SLBK-WTP-NA.00.pdf
+NWC OT Cybersecurity RCBU SR02 Network Architecture,A01001045-RCBU-SR02-NA,0,,,Architecture,,A01001045-RCBU-SR02-NA.00.pdf
+NWC OT Cybersecurity RCBU TGC Network Architecture,A01001045-RCBU-TGC-NA,0,,,Architecture,,A01001045-RCBU-TGC-NA.00.pdf
+NWC OT Cybersecurity RCBU TGE Network Architecture,A01001045-RCBU-TGE-NA,0,,,Architecture,,A01001045-RCBU-TGE-NA.00.pdf
+NWC OT Cybersecurity RCBU TGN Network Architecture,A01001045-RCBU-TGN-NA,0,,,Architecture,,A01001045-RCBU-TGN-NA.00.pdf
+NWC OT Cybersecurity RCBU TGNW Network Architecture,A01001045-RCBU-TGNW-NA,0,,,Architecture,,A01001045-RCBU-TGNW-NA.00.pdf
+NWC OT Cybersecurity RCBU TGW Network Architecture,A01001045-RCBU-TGW-NA,0,,,Architecture,,A01001045-RCBU-TGW-NA.00.pdf
+NWC OT Cybersecurity RCBU Wasia WTP Network Architecture,A01001045-RCBU-WAS-WTP-NA,0,,,Architecture,,A01001045-RCBU-WAS-WTP-NA.00.pdf
+NWC OT Cybersecurity TCBU Al-Araj WWTP Network Architecture,A01001045-TCBU-ARJ-WWTP-NA,2,,,Architecture,,A01001045-TCBU-ARJ-WWTP-NA.02.pdf
+NWC OT Cybersecurity TCBU Existing Data Flow Drawing,A01001045-TCBU-DF,1,,,Architecture,,A01001045-TCBU-DF.01.pdf
+NWC OT Cybersecurity TCBU Level-1 Devices Hardening Design,A01001045-TCBU-HDN-L1,0,,,Design,,A01001045-TCBU-HDN-L1.00.pdf
+NWC OT Cybersecurity TCBU Al-Mathna Network Architecture,A01001045-TCBU-MAT-NA,3,,,Architecture,,A01001045-TCBU-MAT-NA.03.pdf
+NWC OT Cybersecurity TCBU Strategic Tanks Network Architecture,A01001045-TCBU-ST-NA,2,,,Architecture,,A01001045-TCBU-ST-NA.02.pdf
+NWC OT Cybersecurity TCBU Al-Waqadeen Lifting Station Network Architecture,A01001045-TCBU-WAQ-LS-NA,1,,,Architecture,,A01001045-TCBU-WAQ-LS-NA.01.pdf
