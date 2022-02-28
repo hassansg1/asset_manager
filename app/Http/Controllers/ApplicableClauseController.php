@@ -226,9 +226,10 @@ class ApplicableClauseController extends BaseController
         }
         $complianceVersionItems->save();
 
+        $complianceVersionItems->attachments()->delete();
+
         if ($request->attachment_id) {
             $attachemnts = $request->attachment_id;
-            $complianceVersionItems->attachments()->delete();
             foreach ($attachemnts as $attachemnt) {
                 ComplianceVersionItemAttachment::create([
                     'compliance_version_item_id' => $complianceVersionItems->id,
