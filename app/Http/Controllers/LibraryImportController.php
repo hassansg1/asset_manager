@@ -68,13 +68,10 @@ class LibraryImportController extends Controller
                     $arr = [];
                     for ($i = 0; $i < count($obj); $i++) {
                         $clm = tableColumnsMapping($tableNameRaw, 'import', $header[$i]);
-                        dump($obj[$header[$i]]);
                         if ($clm) {
                             $arr[$clm] = sanitizeInput($obj[$header[$i]]);
                         }
                     }
-
-                    dd($arr);
 
                     $request = new Request();
                     $request->replace($arr);
