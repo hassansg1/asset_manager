@@ -8,6 +8,23 @@
             <div class="card-body">
                 <h4 class="card-title mb-4">{{ $heading }} Information</h4>
                 <div class="row">
+                    <div class="col-lg-12">
+                        <div class="mb-3">
+                            <label for="{{ isset($item) ? $item->id:'' }}parent_id" class="form-label">Parent
+                                Clause</label>
+                            <select class="form-control select2" name="parent_id"
+                                    id="{{ isset($item) ? $item->id:'' }}parent_id">
+                                <option value="">Search by Name</option>
+                                @foreach(getClauses(Session::get('standard_id')) as $row)
+                                    <option
+                                        {{ isset($item) && $item->parent_id == $row->id ? 'selected' : '' }}
+                                        value="{{ $row->id }}">{{ $row->title }}  {{ $row->number }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-lg-6">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}title" class="form-label">Title</label>

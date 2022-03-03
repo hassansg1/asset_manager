@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Compliance;
 use App\Models\ComplianceVersion;
+use App\Models\ComplianceVersionItem;
+use App\Models\ComplianceVersionItemAttachment;
+use App\Models\Location;
 use App\Models\Standard;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -144,6 +147,46 @@ class ComplianceUpdateController extends BaseController
 
         return response()->json([
             'status' => true
+        ]);
+    }
+
+    public function submitCompliance(Request $request)
+    {
+        if (isset($request->id) && $request->id != "")
+            $item = ComplianceVersionItem::find($request->id);
+        else {
+            $item = new ComplianceVersionItem;
+            $item->compliance_version_id = $request->compliance_version_id;
+            $item->clause_id = $request->clause_id;
+            $item->location_id = $request->location_id;
+        }
+
+        $item->compliant = $request->compliant;
+        $item->comment = $request->comment;
+        $item->link = $request->link;
+        $item->save();
+        $item->attachments()->delete();
+
+        if ($request->attachments) {
+            $attachemnts = $request->attachments;
+            foreach ($attachemnts as $attachemnt) {
+                ComplianceVersionItemAttachment::create([
+                    'compliance_version_item_id' => $item->id,
+                    'attachment_id' => $attachemnt,
+                ]);
+            }
+        }
+
+        return response()->json([
+            'status' => true,
+            'html' => view('version_compliance.location_table_row')->with(
+                [
+                    'dt' => $item,
+                    'location' => Location::find($request->location_id),
+                    'item_id' => $item->clause_id,
+                    'location_id' => $request->location_id,
+                    'versionId' => $request->compliance_version_id
+                ])->render()
         ]);
     }
 }

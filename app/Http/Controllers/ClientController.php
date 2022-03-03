@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\StandardClause;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory;
@@ -17,7 +18,7 @@ class ClientController extends BaseController
 
     public function __construct()
     {
-        $this->model = new Client();
+        $this->model = new StandardClause();
         $this->route = 'client';
         $this->heading = 'Client';
         \Illuminate\Support\Facades\View::share('top_heading', 'Clients');

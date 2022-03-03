@@ -642,6 +642,7 @@ class ComposerStaticInit87345aae27ff06f7b2f4d17209053f09
     );
 
     public static $classMap = array (
+        'App\\Console\\Commands\\MigrateClauses' => __DIR__ . '/../..' . '/app/Console/Commands/MigrateClauses.php',
         'App\\Console\\Commands\\MigrateData' => __DIR__ . '/../..' . '/app/Console/Commands/MigrateData.php',
         'App\\Console\\Commands\\SyncComplianceParent' => __DIR__ . '/../..' . '/app/Console/Commands/SyncComplianceParent.php',
         'App\\Console\\Commands\\SyncParents' => __DIR__ . '/../..' . '/app/Console/Commands/SyncParents.php',
@@ -832,6 +833,7 @@ class ComposerStaticInit87345aae27ff06f7b2f4d17209053f09
         'App\\Models\\Software' => __DIR__ . '/../..' . '/app/Models/Software.php',
         'App\\Models\\SoftwareComponent' => __DIR__ . '/../..' . '/app/Models/SoftwareComponent.php',
         'App\\Models\\Standard' => __DIR__ . '/../..' . '/app/Models/Standard.php',
+        'App\\Models\\StandardClause' => __DIR__ . '/../..' . '/app/Models/StandardClause.php',
         'App\\Models\\SubSite' => __DIR__ . '/../..' . '/app/Models/SubSite.php',
         'App\\Models\\System' => __DIR__ . '/../..' . '/app/Models/System.php',
         'App\\Models\\SystemAssets' => __DIR__ . '/../..' . '/app/Models/SystemAssets.php',

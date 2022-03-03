@@ -12,4 +12,9 @@ class ComplianceVersionItemAttachment extends Model
     protected $table = "compliance_version_item_attachments";
 
     protected $guarded = [];
+
+    public function attachment()
+    {
+        return $this->belongsTo(Attachment::class,'attachment_id');
+    }
 }

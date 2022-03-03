@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClauseDateTable extends Migration
+class CreateStandardClausesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,16 @@ class CreateClauseDateTable extends Migration
      */
     public function up()
     {
-        Schema::create('clause_data', function (Blueprint $table) {
+        Schema::create('standard_clauses', function (Blueprint $table) {
             $table->id();
-            $table->integer('clause_id');
+            $table->nestedSet();
             $table->integer('standard_id');
-            $table->string('criteria', 255)->nullable();
+            $table->string('number',255)->nullable();
+            $table->string('short_number',20)->nullable();
+            $table->text('title')->nullable();
+            $table->text('description')->nullable();
             $table->string('applicable', 255)->nullable();
             $table->string('location', 255)->nullable();
-            $table->string('reason', 255)->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +34,6 @@ class CreateClauseDateTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clause_date');
+        Schema::dropIfExists('standard_clauses');
     }
 }

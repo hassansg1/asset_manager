@@ -1,17 +1,13 @@
 <tr id="{{ $item->id }}">
-{{--    <td colspan="1"><input type="checkbox" name="select_row"--}}
-{{--                           value="{{ $item->id }}"--}}
-{{--                           id="select_check_{{ $item->id }}" class="select_row">--}}
-{{--    </td>--}}
     <td style="width:50px;padding-left: {{ $padding }}px">{{ $item->number }}</td>
-    <td>{{ $item->title }}</td>
-    <td>{!!descriptionWrapText($item->description)!!}</td>
-{{--    <td></td>--}}
-{{--    <td>--}}
-{{--        @include('components.edit_delete_button')--}}
-{{--    </td>--}}
+    <td>
+        {!!descriptionWrapText($item->title,50)!!}
+    </td>
+    <td>
+        {!!descriptionWrapText($item->description,50)!!}
+    </td>
 </tr>
-@php($childs = $item->childs)
+@php($childs = $item->nodes ?? [])
 @if(count($childs) > 0)
     @php($padding = $padding + 40)
     @foreach($childs as $child)

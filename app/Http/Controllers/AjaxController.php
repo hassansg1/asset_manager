@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ClauseData;
 use App\Models\ComplianceVersion;
+use App\Models\ComplianceVersionItem;
 use App\Models\Location;
 use App\Models\Networks;
 use App\Models\Port;
@@ -248,5 +249,20 @@ class AjaxController extends Controller
 
 
         dd("Success");
+    }
+
+    public function showCompliancePopup(Request $request)
+    {
+        $compliance = ComplianceVersionItem::where([
+            'compliance_version_id' => $request->versionId,
+            'clause_id' => $request->clauseId,
+            'location_id' => $request->locationId,
+        ])->first();
+
+        $html = view('version_compliance.partials.popup')->with(compact('compliance','request'))->render();
+        return response()->json([
+            'status' => true,
+            'html' => $html
+        ]);
     }
 }

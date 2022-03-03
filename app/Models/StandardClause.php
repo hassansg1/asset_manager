@@ -5,11 +5,13 @@ namespace App\Models;
 use App\Http\Traits\Observable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Kalnoy\Nestedset\NodeTrait;
 
-class Clause extends Model
+class StandardClause extends Model
 {
     use HasFactory;
     use Observable;
+    use NodeTrait;
 
 
     public function __construct(array $attributes = [])
@@ -24,19 +26,9 @@ class Clause extends Model
         ];
     }
 
-    public function getShortNumberAttribute()
+    public function getEnfAttribute()
     {
-        $number = $this->number;
-        $number = str_replace('.', '-', $number);
-        $number = str_replace(',', '-', $number);
-        $number = str_replace('-', '-', $number);
-        $shortNumber = $number;
-        if (str_contains($number, '-')) {
-            $explode = explode('-', $number);
-            $shortNumber = $explode[count($explode) - 1];
-        }
-
-        return $shortNumber;
+        return "1";
     }
 
     protected $guarded = [];
@@ -44,16 +36,6 @@ class Clause extends Model
     public function standard()
     {
         return $this->belongsTo(Standard::class);
-    }
-
-    public function childs()
-    {
-        return $this->hasMany(Clause::class, 'parent_id');
-    }
-
-    public function parent()
-    {
-        return $this->belongsTo(Clause::class, 'parent_id');
     }
 
     /**
@@ -68,7 +50,15 @@ class Clause extends Model
         if (isset($request->description)) $item->description = $request->description;
         if (isset($request->standard_id)) $item->standard_id = $request->standard_id;
 
+
         $item->save();
+
+        if (isset($request->parent_id)) {
+            $parent = StandardClause::find($request->parent_id);
+            $parent->appendNode($item);
+        } else {
+            $item->saveAsRoot();
+        }
         return $item;
     }
 }

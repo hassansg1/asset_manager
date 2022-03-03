@@ -1,5 +1,6 @@
 @if(isset($data))
-    <span class="mr-5">
+    @if(!isset($data['no_pagination']))
+        <span class="mr-5">
   <span class="btn-group" role="group">
       <input type="hidden" value="{{ $data['items_per_page'] ?? 10 }}" name="per_page" id="per_page">
       <button id="paginate_count" type="button" class="btn btn-light btn-filter dropdown-toggle btn_padding5"
@@ -16,7 +17,8 @@
           <a onclick="changePerPage('all')" class="dropdown-item" href="javascript:void(0)">All</a>
       </span>
   </span>
-     <button id="paginate_text" type="button" class="btn btn-light btn-filter dropdown-toggle btn_padding5" data-bs-toggle="dropdown"
+     <button id="paginate_text" type="button" class="btn btn-light btn-filter dropdown-toggle btn_padding5"
+             data-bs-toggle="dropdown"
              aria-haspopup="true" aria-expanded="false">
          @if($data['items_per_page'] == "all")
              1 - {{ $items->count() ?? 0 }} of {{ $items->count() ?? 0 }}
@@ -25,14 +27,15 @@
          @endif
       </button>
 </span>
+    @endif
 @endif
 <script>
     function changePerPage(val) {
         $('#per_page').val(val);
-        if(val == "all")
+        if (val == "all")
             val = "All";
         $('#paginate_count').text(val);
         $('#paginate_count').append('<i class="mdi mdi-chevron-down"></i>');
-        loadTableData('{{ $data['request']['url'] ?? '' }}','{{ $route }}')
+        loadTableData('{{ $data['request']['url'] ?? '' }}', '{{ $route }}')
     }
 </script>

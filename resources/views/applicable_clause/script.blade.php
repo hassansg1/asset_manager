@@ -11,12 +11,15 @@
                 'value': value,
             },
             success: function (result) {
-                if(value == 1){
-                    $('#select_location_'+clause_id).removeAttr('disabled');
-                }else{
-                    $('#select_location_'+clause_id).prop('disabled', true);
-                }
-                doSuccessToast('Success ...!!!');
+                if (result.status) {
+                    if (value == 1) {
+                        $('#select_location_' + clause_id).removeAttr('disabled');
+                    } else if (value == 0 && column_name == "applicable") {
+                        $('#select_location_' + clause_id).prop('disabled', true);
+                    }
+                    doSuccessToast('Success ...!!!');
+                } else
+                    doErrorToast('Failure...!!!');
             },
         });
     }

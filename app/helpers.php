@@ -2,6 +2,7 @@
 
 use App\Models\AssetUserId;
 use App\Models\Attachment;
+use App\Models\StandardClause;
 use App\Models\User;
 use App\Models\UserAccount;
 use Illuminate\Support\Facades\Auth;
@@ -102,9 +103,9 @@ if (!function_exists('getDevicePorts')) {
     }
 }
 if (!function_exists('descriptionWrapText')) {
-    function descriptionWrapText($description)
+    function descriptionWrapText($description, $width = 100)
     {
-        return wordwrap($description,100,"<br>\n");
+        return wordwrap($description, $width, "<br>\n");
     }
 }
 
@@ -649,7 +650,7 @@ if (!function_exists('getComplianceStatus')) {
 
         $data = \App\Models\ComplianceVersionItem::where([
             'compliance_version_id' => $version,
-            'compliance_data_id' => $id,
+            'clause_id' => $id,
             'location_id' => $location,
         ])->first();
 
@@ -788,6 +789,43 @@ function buildTree(array $elements, $parentId = 0)
     return $branch;
 }
 
+function getClauses($standardId)
+{
+    return StandardClause::where('standard_id', $standardId)->get();
+}
+
+function getClauseTree($standardId)
+{
+    $tree = [];
+    $locations = StandardClause::where('standard_id', $standardId)->get()->toTree()->toArray();
+    foreach ($locations as $location) {
+        $nodes = StandardClause::descendantsAndSelf($location['id'])->toFlatTree()->toArray();
+        $subTree = buildClauseTree($nodes, $location['id']);
+        $parentNode = $nodes[0];
+        $parentNode['nodes'] = $subTree;
+        $nodeTree[0] = (object)$parentNode;
+        $tree = array_merge($tree, $nodeTree);
+    }
+    return $tree;
+}
+
+function buildClauseTree(array $elements, $parentId = 0)
+{
+    $branch = array();
+
+    foreach ($elements as $element) {
+        if ($element['parent_id'] == $parentId) {
+            $children = buildClauseTree($elements, $element['id']);
+            if ($children) {
+                $element['nodes'] = $children;
+            }
+            $branch[] = (object)$element;
+        }
+    }
+
+    return $branch;
+}
+
 function getPatchAssets($patch)
 {
     $software = $patch->software_id;
@@ -842,4 +880,9 @@ function getApprovedStatus($asset, $patch)
         'approved' => $status[1] ?? [],
         'pending' => $status[0] ?? [],
     ];
+}
+
+function getAttchments()
+{
+    return Attachment::all();
 }

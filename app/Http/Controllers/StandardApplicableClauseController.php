@@ -9,6 +9,7 @@ use App\Models\Compliance;
 use App\Models\ClauseData;
 use App\Models\ComplianceDataFiles;
 use App\Models\Standard;
+use App\Models\StandardClause;
 use App\Repos\StandardClauseRepo;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
@@ -25,7 +26,7 @@ class StandardApplicableClauseController extends BaseController
 
     public function __construct()
     {
-        $this->model = new Clause();
+        $this->model = new StandardClause();
         $this->route = 'applicable_clause';
         $this->heading = 'Applicable Clause';
         \Illuminate\Support\Facades\View::share('top_heading', 'Applicable Clauses');
@@ -36,14 +37,13 @@ class StandardApplicableClauseController extends BaseController
      */
     public function index(Request $request, $standardId)
     {
-        $request->request->add(['standard_id' => $standardId]);
-        $request->request->add(['parent_id' => null]);
-        $data = $this->fetchData($this->model, $request, new StandardClauseRepo());
+        $tree = getClauseTree($standardId);
+        $data['no_pagination'] = true;
         $standard = Standard::find($standardId);
         $this->heading = "$standard->name > Clauses";
 
         return view($this->route . "/index")
-            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => "Applicable Clauses of " . $standard->name]);
+            ->with(['items' => $tree, 'data' => $data, 'route' => $this->route, 'heading' => "Applicable Clauses of " . $standard->name]);
     }
 
     /**

@@ -8,6 +8,7 @@ use App\Models\ClauseData;
 use App\Models\Company;
 use App\Models\ComplianceVersionItem;
 use App\Models\ComplianceVersionItemAttachment;
+use App\Models\StandardClause;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -23,7 +24,7 @@ class ApplicableClauseController extends BaseController
 
     public function __construct()
     {
-        $this->model = new Clause();
+        $this->model = new StandardClause();
         $this->route = 'applicable_clause';
         $this->heading = 'Applicable Clause';
         \Illuminate\Support\Facades\View::share('top_heading', 'Applicable Clauses');
@@ -147,10 +148,13 @@ class ApplicableClauseController extends BaseController
 
     public function storeClauseData(Request $request)
     {
-        $data = ClauseData::saveFormData($request);
+//        $data = ClauseData::saveFormData($request);
+        $clause = StandardClause::find($request->clause_id);
+        $clause->{$request->column_name} = $request->value;
+        $clause->save();
+
         return response()->json([
             'status' => true,
-            'parents' => $data['parents'] ?? ''
         ]);
     }
 
@@ -192,11 +196,10 @@ class ApplicableClauseController extends BaseController
 
     public function getLocationsOfCompliance(Request $request)
     {
-        $complianceD = ClauseData::find($request->trId);
+        $complianceD = StandardClause::find($request->trId);
         $locationModel = 'App\Models\\' . $complianceD->location;
         $locations = $locationModel::get();
         $attachments = Attachment::get();
-        // <!-- value="{{$location->complianceItems != null ? $location->complianceItems->comment : ''}}" -->
         return response()->json([
             'html' => \view('version_compliance.location_table')->with(['locations' => $locations, 'versionId' => $request->version, 'item_id' => $request->trId, 'attachments' => $attachments])->render(),
             'status' => true

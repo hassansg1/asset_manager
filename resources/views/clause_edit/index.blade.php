@@ -1,9 +1,5 @@
 @extends('components.datatable')
 @section('table_header')
-    <th class="select_all_checkbox" style="width: 10px"><input
-            onclick="toggleSelectAll()"
-            type="checkbox" name=""
-            id="select_all"></th>
     <th>Number</th>
     <th>Title</th>
     <th>Description</th>

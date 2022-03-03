@@ -34,11 +34,12 @@ class VersionComplianceController extends BaseController
         $version = ComplianceVersion::with('standard')->where('id', $complianceVersionId)->first();
 
         $request->request->add(['standard_id' => $version->standard_id]);
+        $tree = getClauseTree($version->standard_id);
 
-        $data = $this->fetchData($this->model, $request);
+        $data['no_pagination'] = true;
 
         return view($this->route . "/index")
-            ->with(['data' => $data, 'items' => $data['items'], 'version' => $complianceVersionId, 'route' => $this->route, 'heading' => "Compliance for " .( $version->standard->name ?? '') . " - Version : " . $version->name ?? '', 'version_id' => $version->id]);
+            ->with(['data' => $data, 'items' => $tree, 'version' => $complianceVersionId, 'route' => $this->route, 'heading' => "Compliance for " . ($version->standard->name ?? '') . " - Version : " . $version->name ?? '', 'version_id' => $version->id]);
     }
 
     /**

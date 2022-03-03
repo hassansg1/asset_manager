@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Clause;
 use App\Models\Compliance;
 use App\Models\Standard;
-use App\Repos\StandardClauseRepo;
+use App\Models\StandardClause;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -21,7 +21,7 @@ class StandardClauseController extends BaseController
 
     public function __construct()
     {
-        $this->model = new Clause();
+        $this->model = new StandardClause();
         $this->route = 'clause';
         $this->heading = 'Clause';
         \Illuminate\Support\Facades\View::share('top_heading', 'Clauses List');
@@ -32,13 +32,12 @@ class StandardClauseController extends BaseController
      */
     public function index(Request $request, $standardId)
     {
-        $request->request->add(['standard_id' => $standardId]);
-        $request->request->add(['parent_id' => null]);
-        $data = $this->fetchData($this->model, $request, new StandardClauseRepo());
+        $tree = getClauseTree($standardId);
         $standard = Standard::find($standardId);
+        $data['no_pagination'] = true;
         $this->heading = "$standard->name > Clauses";
         return view($this->route . "/index")
-            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading, 'standard' => $standard, 'customHeading' => true]);
+            ->with(['items' => $tree, 'data' => $data, 'route' => $this->route, 'heading' => $this->heading, 'standard' => $standard, 'customHeading' => true]);
     }
 
     /**

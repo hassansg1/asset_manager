@@ -22,7 +22,7 @@
         doToast(flashMessage, 'success');
     }
 
-    function doErrorToast(flashMessage = "Success...!!!") {
+    function doErrorToast(flashMessage = "Error...!!!") {
         doToast(flashMessage, 'error');
     }
 

@@ -223,4 +223,6 @@ Route::group(['middleware' => ['auth']], function () {
 
     //Patch Policy delete
     Route::post('patchApprovalPolicy/delete', [\App\Http\Controllers\PatchSoftwareApprovalController::class, 'patchPolicyDelete'])->name('patchPolicyDelete');
+    Route::get('showCompliancePopup', [\App\Http\Controllers\AjaxController::class, 'showCompliancePopup']);
+    Route::post('submitCompliance', [\App\Http\Controllers\ComplianceUpdateController::class, 'submitCompliance']);
 });

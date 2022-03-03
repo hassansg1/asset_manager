@@ -1,10 +1,10 @@
-ā<?php
+<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddNewColumnsToNetworksListTable extends Migration
+class AddNestedColumnsToClausesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class AddNewColumnsToNetworksListTable extends Migration
      */
     public function up()
     {
-        Schema::table('networks_list', function (Blueprint $table) {
-            $table->string('end_ip')->after('name')->nullable();
-            $table->string('start_ip')->after('name')->nullable();
+        Schema::table('clauses', function (Blueprint $table) {
+            //
         });
     }
 
@@ -26,8 +25,8 @@ class AddNewColumnsToNetworksListTable extends Migration
      */
     public function down()
     {
-        Schema::table('networks_list', function (Blueprint $table) {
-            //
+        Schema::table('clauses', function (Blueprint $table) {
+            $table->nestedSet()->after('id');
         });
     }
 }

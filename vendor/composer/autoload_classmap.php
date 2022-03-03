@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Console\\Commands\\MigrateClauses' => $baseDir . '/app/Console/Commands/MigrateClauses.php',
     'App\\Console\\Commands\\MigrateData' => $baseDir . '/app/Console/Commands/MigrateData.php',
     'App\\Console\\Commands\\SyncComplianceParent' => $baseDir . '/app/Console/Commands/SyncComplianceParent.php',
     'App\\Console\\Commands\\SyncParents' => $baseDir . '/app/Console/Commands/SyncParents.php',
@@ -196,6 +197,7 @@ return array(
     'App\\Models\\Software' => $baseDir . '/app/Models/Software.php',
     'App\\Models\\SoftwareComponent' => $baseDir . '/app/Models/SoftwareComponent.php',
     'App\\Models\\Standard' => $baseDir . '/app/Models/Standard.php',
+    'App\\Models\\StandardClause' => $baseDir . '/app/Models/StandardClause.php',
     'App\\Models\\SubSite' => $baseDir . '/app/Models/SubSite.php',
     'App\\Models\\System' => $baseDir . '/app/Models/System.php',
     'App\\Models\\SystemAssets' => $baseDir . '/app/Models/SystemAssets.php',

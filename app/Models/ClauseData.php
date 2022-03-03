@@ -34,6 +34,27 @@ class ClauseData extends Model
     const MANUAL = 2;
 
 //..............
+    public static function getLabel($compliant)
+    {
+        switch ($compliant) {
+            case 0:
+                return "noting selected";
+                break;
+            case 1:
+                return "Yes";
+                break;
+            case 2:
+                return "No";
+                break;
+            case 3:
+                return "Under Process";
+                break;
+            case 4:
+                return "Not Evaluated";
+                break;
+        }
+        return "Unknown";
+    }
 
     public function clause()
     {

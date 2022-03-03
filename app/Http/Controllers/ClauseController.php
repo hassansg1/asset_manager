@@ -6,6 +6,7 @@ use App\Models\Clause;
 use App\Models\Company;
 use App\Models\Compliance;
 use App\Models\ComplianceDataFiles;
+use App\Models\StandardClause;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -22,7 +23,7 @@ class ClauseController extends BaseController
 
     public function __construct()
     {
-        $this->model = new Clause();
+        $this->model = new StandardClause();
         $this->route = 'clause';
         $this->heading = 'Clause';
         \Illuminate\Support\Facades\View::share('top_heading', 'Clauses');
