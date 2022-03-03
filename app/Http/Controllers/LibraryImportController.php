@@ -68,10 +68,13 @@ class LibraryImportController extends Controller
                     $arr = [];
                     for ($i = 0; $i < count($obj); $i++) {
                         $clm = tableColumnsMapping($tableNameRaw, 'import', $header[$i]);
+                        dump($obj[$header[$i]]);
                         if ($clm) {
                             $arr[$clm] = sanitizeInput($obj[$header[$i]]);
                         }
                     }
+
+                    dd($arr);
 
                     $request = new Request();
                     $request->replace($arr);
@@ -91,6 +94,7 @@ class LibraryImportController extends Controller
                             $attachmentItem = new AttachmentItem();
                             $attachmentItem->attachment_id = $result->id;
                             $attachmentItem->fileName = $request->file;
+                            dd($request->file);
                             $attachmentItem->save();
                         } catch (\Exception $exception) {
                             $logs[] = 'Internal Error. Message  : ' . $exception->getMessage() . ' . Please contact the administer.';
