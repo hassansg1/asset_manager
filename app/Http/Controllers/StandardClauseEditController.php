@@ -50,11 +50,11 @@ class StandardClauseEditController extends BaseController
         foreach ($compliances as $compliance)
         {
             $clause = $compliance->number;
-            $ex = explode('-',$clause);
+            $ex = explode('.',$clause);
             array_pop($ex);
             if(count($ex) > 0)
             {
-                $imp = implode('-',$ex);
+                $imp = implode('.',$ex);
                 $parent = Clause::where('number',$imp)->first();
                 if($parent)
                 {
