@@ -12,6 +12,16 @@ use Illuminate\Support\Facades\Auth;
 class DashBoardController extends Controller
 {
     public function index(Request $request){
+        $compliances = ComplianceVersionItem::all();
+        foreach ($compliances as $compliance)
+        {
+            $complianceData = ClauseData::find($compliance->clause_id);
+            if($complianceData)
+            {
+                $compliance->clause_id = $complianceData->clause_id;
+                $compliance->save();
+            }
+        }
 //       $items =  ClauseData::with('compliance')->where('user_id',Auth::id())->orderBy('id','desc')->get();
 //        Location::fixTree();
 //        $compliant = [];
