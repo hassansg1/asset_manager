@@ -81,7 +81,9 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="submit" class="btn btn-success">Save</button>
+            @if($request->view == "false")
+                <button type="submit" class="btn btn-success">Save</button>
+            @endif
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
                     aria-label="Close">Cancel
             </button>
@@ -99,7 +101,7 @@
                 if (data.status) {
                     let locationId = $('#location_id').val();
                     let clauseId = $('#clause_id').val();
-                    let el = $('#'+"compl_" + locationId + clauseId);
+                    let el = $('#' + "compl_" + locationId + clauseId);
                     el.replaceWith(data.html);
                     $('.modal').modal('hide');
                     doSuccessToast();

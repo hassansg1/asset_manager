@@ -1,6 +1,6 @@
 <script>
 
-    function showCompliancePopup(locationId, clauseId, versionId) {
+    function showCompliancePopup(locationId, clauseId, versionId, view = false) {
         $.ajax({
             url: '{{url('/showCompliancePopup')}}',
             type: 'GET',
@@ -8,11 +8,14 @@
                 locationId: locationId,
                 clauseId: clauseId,
                 versionId: versionId,
+                view: view,
             },
             success: function (data) {
                 if (data.status) {
                     showModal(defaultModal, data.html);
                     $('.select2').select2();
+                    if (view)
+                        disableForm('.default_modal_body');
                 } else
                     doErrorToast();
             }

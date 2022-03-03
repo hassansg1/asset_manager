@@ -29,6 +29,8 @@
                 class="btn btn-primary">
             Update
         </button>
-        <button class="btn btn-primary">View</button>
+        <button onclick="showCompliancePopup('{{$location->id}}','{{$item_id}}','{{ $versionId }}',true)"
+                class="btn btn-primary">View
+        </button>
     </td>
 </tr>

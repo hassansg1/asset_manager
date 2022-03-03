@@ -419,7 +419,7 @@ if (!function_exists('shortClassName')) {
 if (!function_exists('sanitizeInput')) {
     function sanitizeInput($value)
     {
-        $value = preg_replace('/[^A-Za-z0-9\-]/', '', $value);
+        $value = preg_replace('/[^A-Za-z0-9\- ]/', '', $value);
         return utf8_encode($value);
     }
 }
@@ -566,7 +566,7 @@ if (!function_exists('tableColumnsMapping')) {
                 'title' => 'Title',
                 'description' => 'Description',
                 'category' => 'Category',
-                'subCategory' => 'Document Subcategory',
+                'subCategory' => 'Sub Category',
                 'file' => 'File',
             ],
             'firewall_managments' => [
