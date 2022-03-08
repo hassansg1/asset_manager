@@ -124,6 +124,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::group(['prefix' => 'reports'], function () {
         Route::resource('ports', \App\Http\Controllers\PortsReportController::class);
         Route::resource('ip_address', \App\Http\Controllers\IPAddressReportController::class);
+        Route::resource('clauses_report', \App\Http\Controllers\ComplianceVersionReport::class);
+        Route::get('/clauses_report/{version_id}/{complaint}', [\App\Http\Controllers\ComplianceVersionReport::class, 'show']);
+        Route::get('/location_clauses_report/{location_id}/{complaint}', [\App\Http\Controllers\ComplianceVersionReport::class, 'location_wise_clauses']);
     });
 
     Route::post('PatchPage/LoadData', [\App\Http\Controllers\PatchApprovalAjaxController::class, 'loadData'])->name('PatchPage.loadData');

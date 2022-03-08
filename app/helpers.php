@@ -108,6 +108,31 @@ if (!function_exists('descriptionWrapText')) {
         return wordwrap($description, $width, "<br>\n");
     }
 }
+if (!function_exists('getComplaintCount')) {
+    function getComplaintCount($complianceVersionId)
+    {
+        return \App\Models\ComplianceVersionItem::where('compliance_version_id', $complianceVersionId)->where('compliant', 1)->count();
+    }
+}
+if (!function_exists('getNonComplaintCount')) {
+    function getNonComplaintCount($complianceVersionId)
+    {
+        return \App\Models\ComplianceVersionItem::where('compliance_version_id', $complianceVersionId)->where('compliant', 2)->count();
+    }
+}
+
+if (!function_exists('getUnderProcessComplaintCount')) {
+    function getUnderProcessComplaintCount($complianceVersionId)
+    {
+        return \App\Models\ComplianceVersionItem::where('compliance_version_id', $complianceVersionId)->where('compliant', 3)->count();
+    }
+}
+if (!function_exists('NotEvaluated')) {
+    function NotEvaluated($complianceVersionId)
+    {
+        return \App\Models\ComplianceVersionItem::where('compliance_version_id', $complianceVersionId)->where('compliant', 4)->count();
+    }
+}
 
 if (!function_exists('getSites')) {
     function getSites()

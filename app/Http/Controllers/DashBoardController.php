@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AssetFunction;
 use App\Models\ClauseData;
+use App\Models\ComplianceVersion;
 use App\Models\ComplianceVersionItem;
 use App\Models\Location;
 use Illuminate\Http\Request;
