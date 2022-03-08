@@ -3,6 +3,7 @@
     <th>Version Name</th>
     <th>Standard</th>
     <th>Compliance</th>
+    <th>Status</th>
     <th>Actions</th>
 
 @endsection

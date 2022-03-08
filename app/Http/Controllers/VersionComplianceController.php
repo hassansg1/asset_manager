@@ -149,4 +149,24 @@ class VersionComplianceController extends BaseController
     {
         return $this->index($standardId, 1);
     }
+
+    public function closeCompliance($id)
+    {
+        $version = ComplianceVersion::find($id);
+        $version->closed = 1;
+        $version->save();
+
+        flashSuccess('Success ...!!!');
+        return redirect()->back();
+    }
+    public function openCompliance($id)
+    {
+        $version = ComplianceVersion::find($id);
+        $version->closed = 0;
+        $version->save();
+
+        flashSuccess('Success ...!!!');
+        return redirect()->back();
+    }
+
 }

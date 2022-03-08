@@ -7,11 +7,34 @@
             {{ $item->standard->name ?? '' }}
         </td>
         <td>
-            <button style="margin-left: 5px;
+            {{ $item->closed ? 'Closed' : 'Open' }}
+        </td>
+        <td>
+            @if($item->closed)
+                <button style="margin-left: 5px;
                 " class="btn btn-primary  app_action_btns{{ $item->id }}">
-                <a style="color: white" href="{{ route('version.compliance.index',$item->id) }}">Update
-                    Compliance</a>
-            </button>
+                    <a style="color: white" href="{{ route('version.compliance.index',$item->id) }}">View
+                        Compliance</a>
+                </button>
+                @if(checkIfSuperAdmin())
+                    <button style="margin-left: 5px;
+                " class="btn btn-primary  app_action_btns{{ $item->id }}">
+                        <a style="color: white" href="{{ url('openCompliance/'.$item->id) }}">Re Open
+                            Compliance</a>
+                    </button>
+                @endif
+            @else
+                <button {{ $item->closed ? 'disabled' : '' }} style="margin-left: 5px;
+                " class="btn btn-primary  app_action_btns{{ $item->id }}">
+                    <a style="color: white" href="{{ route('version.compliance.index',$item->id) }}">View/Update
+                        Compliance</a>
+                </button>
+                <button {{ $item->closed ? 'disabled' : '' }} style="margin-left: 5px;
+                " class="btn btn-primary  app_action_btns{{ $item->id }}">
+                    <a style="color: white" href="{{ url('closeCompliance/'.$item->id) }}">Close
+                        Compliance</a>
+                </button>
+            @endif
         </td>
         <td>
             @include('components.edit_delete_button')

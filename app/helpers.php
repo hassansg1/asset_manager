@@ -911,3 +911,30 @@ function getAttchments()
 {
     return Attachment::all();
 }
+
+function getComplianceVersionItem($versionId, $clauseId, $locationId, $column = 'compliant')
+{
+    $versionItem = \App\Models\ComplianceVersionItem::where([
+        'compliance_version_id' => $versionId,
+        'clause_id' => $clauseId,
+        'location_id' => $locationId,
+    ])->first();
+    if ($column && $versionItem)
+        return $versionItem->{$column};
+    if (!$versionItem)
+        return 0;
+
+    return $versionItem;
+}
+
+function getPercent($number, $divider, $precision = 2)
+{
+    if ($divider == 0) return 0;
+    return number_format(($number / $divider) * 100, $precision);
+}
+
+function divideNumber($number, $divider, $precision = 2)
+{
+    if ($divider == 0) return 0;
+    return number_format(($number / $divider), $precision);
+}

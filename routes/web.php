@@ -129,6 +129,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/location_clauses_report/{location_id}/{complaint}', [\App\Http\Controllers\ComplianceVersionReport::class, 'location_wise_clauses']);
     });
 
+    Route::get('closeCompliance/{id}', [\App\Http\Controllers\VersionComplianceController::class, 'closeCompliance']);
+    Route::get('openCompliance/{id}', [\App\Http\Controllers\VersionComplianceController::class, 'openCompliance']);
     Route::post('PatchPage/LoadData', [\App\Http\Controllers\PatchApprovalAjaxController::class, 'loadData'])->name('PatchPage.loadData');
     Route::get('standards/view/{standard}/clause', [\App\Http\Controllers\StandardClauseController::class, 'index']);
     Route::get('standards/edit/{standard}/clause', [\App\Http\Controllers\StandardClauseEditController::class, 'index']);
@@ -145,6 +147,9 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('network', \App\Http\Controllers\NetworkAssetController::class);
         Route::resource('computer', \App\Http\Controllers\ComputerAssetController::class);
         Route::resource('l_one', \App\Http\Controllers\LoneAssetController::class);
+    });
+    Route::group(['prefix' => 'chart'], function () {
+        Route::get('compliance_chart', [\App\Http\Controllers\ComplianceChartController::class, 'render']);
     });
 
     Route::get('/filterAssets/{parent}/{model?}', [\App\Http\Controllers\FilterAssetController::class, 'index']);

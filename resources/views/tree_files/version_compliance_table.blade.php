@@ -5,7 +5,7 @@
             <span title="View Compliance by Locations" style="cursor: pointer;color: #337ab7"
                   class="fas fa-eye icon_{{ $item->id }}"></span>
         @endif
-        {{ $item->number ?? '' }}
+        {{ $item->number ?? '' }} {{ !$item->applicable ? '(Not Applicable)' : '' }}
     </td>
     <td>
         {!!descriptionWrapText($item->title,50)!!}

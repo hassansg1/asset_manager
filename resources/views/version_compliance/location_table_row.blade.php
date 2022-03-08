@@ -25,10 +25,12 @@
         @endif
     </td>
     <td>
-        <button onclick="showCompliancePopup('{{$location->id}}','{{$item_id}}','{{ $versionId }}')"
-                class="btn btn-primary">
-            Update
-        </button>
+        @if(!$version->closed)
+            <button onclick="showCompliancePopup('{{$location->id}}','{{$item_id}}','{{ $versionId }}')"
+                    class="btn btn-primary">
+                Update
+            </button>
+        @endif
         <button onclick="showCompliancePopup('{{$location->id}}','{{$item_id}}','{{ $versionId }}',true)"
                 class="btn btn-primary">View
         </button>

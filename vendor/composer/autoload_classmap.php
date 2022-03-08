@@ -38,6 +38,7 @@ return array(
     'App\\Http\\Controllers\\ClauseImportController' => $baseDir . '/app/Http/Controllers/ClauseImportController.php',
     'App\\Http\\Controllers\\ClientController' => $baseDir . '/app/Http/Controllers/ClientController.php',
     'App\\Http\\Controllers\\CompanyController' => $baseDir . '/app/Http/Controllers/CompanyController.php',
+    'App\\Http\\Controllers\\ComplianceChartController' => $baseDir . '/app/Http/Controllers/ComplianceChartController.php',
     'App\\Http\\Controllers\\ComplianceDataImportController' => $baseDir . '/app/Http/Controllers/ComplianceDataImportController.php',
     'App\\Http\\Controllers\\ComplianceImportController' => $baseDir . '/app/Http/Controllers/ComplianceImportController.php',
     'App\\Http\\Controllers\\ComplianceListController' => $baseDir . '/app/Http/Controllers/ComplianceListController.php',

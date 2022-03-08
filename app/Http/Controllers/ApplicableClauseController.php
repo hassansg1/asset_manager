@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attachment;
-use App\Models\Clause;
 use App\Models\ClauseData;
 use App\Models\Company;
+use App\Models\ComplianceVersion;
 use App\Models\ComplianceVersionItem;
 use App\Models\ComplianceVersionItemAttachment;
 use App\Models\StandardClause;
@@ -200,8 +200,9 @@ class ApplicableClauseController extends BaseController
         $locationModel = 'App\Models\\' . $complianceD->location;
         $locations = $locationModel::get();
         $attachments = Attachment::get();
+        $version = ComplianceVersion::find($request->version);
         return response()->json([
-            'html' => \view('version_compliance.location_table')->with(['locations' => $locations, 'versionId' => $request->version, 'item_id' => $request->trId, 'attachments' => $attachments])->render(),
+            'html' => \view('version_compliance.location_table')->with(['locations' => $locations, 'version' => $version, 'versionId' => $request->version, 'item_id' => $request->trId, 'attachments' => $attachments])->render(),
             'status' => true
         ]);
     }

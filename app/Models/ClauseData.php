@@ -38,7 +38,7 @@ class ClauseData extends Model
     {
         switch ($compliant) {
             case 0:
-                return "noting selected";
+                return "Not Evaluated";
                 break;
             case 1:
                 return "Yes";
