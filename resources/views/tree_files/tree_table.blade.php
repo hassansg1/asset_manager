@@ -1,7 +1,7 @@
 <?php
 $nodes = \App\Models\Location::get()->toTree();
-
-$traverse = function ($categories, $prefix = '&nbsp') use (&$traverse) {
+$depth = 0;
+$traverse = function ($categories, $prefix = '&nbsp') use (&$traverse, $depth) {
 foreach ($categories as $category) {
 ?>
 <tr
@@ -19,7 +19,7 @@ foreach ($categories as $category) {
     </td>
     <?php
     foreach (getAllPossibleChildTablesOfParent() as $objType) {
-        ?>
+    ?>
     <td>
         <input data-rand="" data-type="View{{$category->type}}"
                class="View{{$category->type}} form-check-input permission_check  "
@@ -52,13 +52,15 @@ foreach ($categories as $category) {
         <label class="form-check-label">Delete</label>
     </td>
 
-<?php
+    <?php
     }
     ?>
 </tr>
 
 <?php
-$traverse($category->children, $prefix . '&nbsp&nbsp');
+$depth++;
+if ($depth < 2)
+    $traverse($category->children, $prefix . '&nbsp&nbsp');
 }
 };
 

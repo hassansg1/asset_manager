@@ -25,6 +25,7 @@ class ComplianceChartController extends Controller
         } else {
             $clauses->where('parent_id', null);
         }
+        $clauses = $clauses->where('standard_id',$version->standard_id);
         $clauses = $clauses->get();
         $data = [];
         for ($x = 0; $x < 10; $x++) {

@@ -43,6 +43,7 @@ return array(
     'App\\Http\\Controllers\\ComplianceImportController' => $baseDir . '/app/Http/Controllers/ComplianceImportController.php',
     'App\\Http\\Controllers\\ComplianceListController' => $baseDir . '/app/Http/Controllers/ComplianceListController.php',
     'App\\Http\\Controllers\\ComplianceUpdateController' => $baseDir . '/app/Http/Controllers/ComplianceUpdateController.php',
+    'App\\Http\\Controllers\\ComplianceVersionReport' => $baseDir . '/app/Http/Controllers/ComplianceVersionReport.php',
     'App\\Http\\Controllers\\ComputerAssetController' => $baseDir . '/app/Http/Controllers/ComputerAssetController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\DashBoardController' => $baseDir . '/app/Http/Controllers/DashBoardController.php',

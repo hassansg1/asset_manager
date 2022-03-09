@@ -13,7 +13,7 @@
             </tr>
             </thead>
             <tbody>
-            @include('components.tree',['file' => 'tree_table'])
+            @include('tree_files.tree_table')
             </tbody>
         </table>
     </div>
