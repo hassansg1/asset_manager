@@ -16,6 +16,7 @@
                         $('#select_location_' + clause_id).removeAttr('disabled');
                     } else if (value == 0 && column_name == "applicable") {
                         $('#select_location_' + clause_id).prop('disabled', true);
+                        $('#select_location_' + clause_id).prop('selectedIndex',0);
                     }
                     doSuccessToast('Success ...!!!');
                 } else
