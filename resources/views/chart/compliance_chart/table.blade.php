@@ -17,7 +17,7 @@
         $tNe = 0;
     @endphp
     @foreach($clauses as $clause)
-        @if(!isset($clause->notShow))
+        @if(!$clause->notShow)
             <tr>
                 <td><a href="javascript:void(0)"
                        onclick="renderComplianceChart('{{ $clause->id }}')">{{ $clause->number }}</a>

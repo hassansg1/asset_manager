@@ -5,13 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
-use function Symfony\Component\Translation\t;
 
 class Location extends Model
 {
     use HasFactory;
 
     use NodeTrait;
+
+    public static function getTypeToModel($type)
+    {
+        $arr = [
+            'companies' => 'Company',
+            'units' => 'Unit',
+            'sites' => 'Site',
+        ];
+
+        return $arr[$type] ?? '';
+    }
 
     protected $guarded = [];
 

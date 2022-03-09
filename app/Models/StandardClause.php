@@ -68,4 +68,13 @@ class StandardClause extends Model
 
         return $this->descendants->where('applicable', 1)->count() > 0;
     }
+
+    public function isApplicableOnLocationType($types)
+    {
+        if (empty($types)) return true;
+
+        if (count($this->descendants) == 0) return in_array($this->location, $types) == 1;
+
+        return $this->descendants->whereIn('location', $types)->count() > 0;
+    }
 }

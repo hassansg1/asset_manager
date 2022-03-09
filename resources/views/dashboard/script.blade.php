@@ -79,6 +79,7 @@
             data: {
                 versionId: versionId,
                 parentClauseId: parentClauseId,
+                locationId: locationId,
             },
             success: function (result) {
                 if (result.status) {

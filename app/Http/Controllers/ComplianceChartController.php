@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ClauseData;
 use App\Models\ComplianceVersion;
+use App\Models\Location;
 use App\Models\StandardClause;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,7 @@ class ComplianceChartController extends Controller
     public function render(Request $request)
     {
         $versionId = $request->versionId ?? 4;
+        $locationInput = $request->locationId ?? null;
         $parentClauseId = $request->parentClauseId ?? null;
 
         $totalClauses = 0;
@@ -30,9 +32,15 @@ class ComplianceChartController extends Controller
             if ($label != "Unknown")
                 $data[$label] = 0;
         }
+        $locationTypes = [];
+        if ($locationInput) {
+            $locationsModels = Location::whereIn('id', $locationInput)->get();
+            foreach ($locationsModels as $locationsModel)
+                $locationTypes[] = Location::getTypeToModel($locationsModel->type);
+        }
 
         foreach ($clauses as $clause) {
-            if ($clause->isApplicable()) {
+            if ($clause->isApplicable() && $clause->isApplicableOnLocationType($locationTypes)) {
                 $clauseNumbers = [];
                 $total = 0;
                 for ($x = 0; $x < 10; $x++) {
@@ -43,13 +51,15 @@ class ComplianceChartController extends Controller
                 $allClauses = $clause->descendants;
                 $allClauses->push($clause);
                 foreach ($allClauses as $descendant) {
-                    if ($descendant->applicable) {
+                    if ($descendant->applicable && $descendant->isApplicableOnLocationType($locationTypes)) {
                         $applicability = $descendant->location;
                         if ($applicability) {
                             $locationModel = 'App\Models\\' . $applicability;
-                            $locations = $locationModel::get();
+                            $locations = $locationModel::pluck('id')->toArray();
+                            if (isset($locationInput))
+                                $locations = $locationInput;
                             foreach ($locations as $location) {
-                                $compliance = getComplianceVersionItem($versionId, $descendant->id, $location->id);
+                                $compliance = getComplianceVersionItem($versionId, $descendant->id, $location);
                                 $complianceLabel = ClauseData::getLabel($compliance);
                                 if (!isset($data[$complianceLabel])) $data[$complianceLabel] = 1;
                                 else $data[$complianceLabel] = $data[$complianceLabel] + 1;
@@ -63,6 +73,7 @@ class ComplianceChartController extends Controller
                 $clause->clauseNumbers = $clauseNumbers;
                 $clause->totalNumber = $total;
                 $totalClauses += 1;
+                $clause->notShow = 0;
             } else
                 $clause->notShow = 1;
         }
