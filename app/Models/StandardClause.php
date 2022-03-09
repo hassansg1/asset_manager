@@ -61,4 +61,11 @@ class StandardClause extends Model
         }
         return $item;
     }
+
+    public function isApplicable()
+    {
+        if (count($this->descendants) == 0) return $this->applicable == 1;
+
+        return $this->descendants->where('applicable', 1)->count() > 0;
+    }
 }

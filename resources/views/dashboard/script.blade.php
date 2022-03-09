@@ -68,9 +68,11 @@
 </script>
 
 <script>
-    renderComplianceChart(4);
+    renderComplianceChart();
 
-    function renderComplianceChart(versionId, parentClauseId = null) {
+    function renderComplianceChart(parentClauseId = null) {
+        let versionId = $('#select_version').val();
+        let locationId = $('#select_location').val();
         $.ajax({
             type: "GET",
             url: '{{ url('chart/compliance_chart') }}',

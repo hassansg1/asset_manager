@@ -15,17 +15,14 @@ class ComplianceChartController extends Controller
         $versionId = $request->versionId ?? 4;
         $parentClauseId = $request->parentClauseId ?? null;
 
+        $totalClauses = 0;
         $version = ComplianceVersion::find($versionId);
         $clauses = StandardClause::with('descendants');
         if ($parentClauseId) {
-            $clauses->where('parent_id', $parentClauseId)->where('applicable', 1);
+            $clauses->where('parent_id', $parentClauseId);
         } else {
-            $clauses->where('parent_id', null)->whereHas('descendants', function ($query) {
-                $query->where('applicable', 1);
-            });
+            $clauses->where('parent_id', null);
         }
-
-
         $clauses = $clauses->get();
         $data = [];
         for ($x = 0; $x < 10; $x++) {
@@ -35,52 +32,42 @@ class ComplianceChartController extends Controller
         }
 
         foreach ($clauses as $clause) {
-            $clauseNumbers = [];
-            $total = 0;
-            for ($x = 0; $x < 10; $x++) {
-                $label = ClauseData::getLabel($x);
-                if ($label != "Unknown")
-                    $clauseNumbers[$label] = 0;
-            }
-            if ($clause->applicable) {
-                $applicability = $clause->location;
-                if ($applicability) {
-                    $locationModel = 'App\Models\\' . $applicability;
-                    $locations = $locationModel::get();
-                    foreach ($locations as $location) {
-                        $compliance = getComplianceVersionItem($versionId, $clause->id, $location->id);
-                        $complianceLabel = ClauseData::getLabel($compliance);
-                        if (!isset($data[$complianceLabel])) $data[$complianceLabel] = 1;
-                        else $data[$complianceLabel] = $data[$complianceLabel] + 1;
-                        if (!isset($clauseNumbers[$complianceLabel])) $clauseNumbers[$complianceLabel] = 1;
-                        else $clauseNumbers[$complianceLabel] = $clauseNumbers[$complianceLabel] + 1;
-                        $total += 1;
-                    }
+            if ($clause->isApplicable()) {
+                $clauseNumbers = [];
+                $total = 0;
+                for ($x = 0; $x < 10; $x++) {
+                    $label = ClauseData::getLabel($x);
+                    if ($label != "Unknown")
+                        $clauseNumbers[$label] = 0;
                 }
-            }
-            foreach ($clause->descendants as $descendant) {
-                if ($descendant->applicable) {
-                    $applicability = $descendant->location;
-                    if ($applicability) {
-                        $locationModel = 'App\Models\\' . $applicability;
-                        $locations = $locationModel::get();
-                        foreach ($locations as $location) {
-                            $compliance = getComplianceVersionItem($versionId, $descendant->id, $location->id);
-                            $complianceLabel = ClauseData::getLabel($compliance);
-                            if (!isset($data[$complianceLabel])) $data[$complianceLabel] = 1;
-                            else $data[$complianceLabel] = $data[$complianceLabel] + 1;
-                            if (!isset($clauseNumbers[$complianceLabel])) $clauseNumbers[$complianceLabel] = 1;
-                            else $clauseNumbers[$complianceLabel] = $clauseNumbers[$complianceLabel] + 1;
-                            $total += 1;
+                $allClauses = $clause->descendants;
+                $allClauses->push($clause);
+                foreach ($allClauses as $descendant) {
+                    if ($descendant->applicable) {
+                        $applicability = $descendant->location;
+                        if ($applicability) {
+                            $locationModel = 'App\Models\\' . $applicability;
+                            $locations = $locationModel::get();
+                            foreach ($locations as $location) {
+                                $compliance = getComplianceVersionItem($versionId, $descendant->id, $location->id);
+                                $complianceLabel = ClauseData::getLabel($compliance);
+                                if (!isset($data[$complianceLabel])) $data[$complianceLabel] = 1;
+                                else $data[$complianceLabel] = $data[$complianceLabel] + 1;
+                                if (!isset($clauseNumbers[$complianceLabel])) $clauseNumbers[$complianceLabel] = 1;
+                                else $clauseNumbers[$complianceLabel] = $clauseNumbers[$complianceLabel] + 1;
+                                $total += 1;
+                            }
                         }
                     }
                 }
-            }
-            $clause->clauseNumbers = $clauseNumbers;
-            $clause->totalNumber = $total;
+                $clause->clauseNumbers = $clauseNumbers;
+                $clause->totalNumber = $total;
+                $totalClauses += 1;
+            } else
+                $clause->notShow = 1;
         }
 
-        $table = view('chart.compliance_chart.table')->with(['clauses' => $clauses, 'version' => $version])->render();
+        $table = view('chart.compliance_chart.table')->with(['clauses' => $clauses, 'version' => $version, 'totalClauses' => $totalClauses])->render();
 
         $returnObj = [];
         foreach ($data as $label => $count) {

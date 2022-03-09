@@ -185,7 +185,8 @@ class ComplianceUpdateController extends BaseController
                     'location' => Location::find($request->location_id),
                     'item_id' => $item->clause_id,
                     'location_id' => $request->location_id,
-                    'versionId' => $request->compliance_version_id
+                    'versionId' => $request->compliance_version_id,
+                    'version' => ComplianceVersion::find($request->compliance_version_id)
                 ])->render()
         ]);
     }

@@ -137,7 +137,7 @@ if (!function_exists('NotEvaluated')) {
 if (!function_exists('getSites')) {
     function getSites()
     {
-        return \App\Models\Location::where('type', 'sites')->get();
+        return \App\Models\Site::all();
     }
 }
 
