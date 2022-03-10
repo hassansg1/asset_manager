@@ -13,7 +13,7 @@
             </tr>
             </thead>
             <tbody>
-            @include('tree_files.tree_table')
+            @include('tree_files.tree_table_test')
             </tbody>
         </table>
     </div>

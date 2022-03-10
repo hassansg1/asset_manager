@@ -19,6 +19,7 @@ class AddLocationIdColumnToUserLocationsTable extends Migration
             $table->dropColumn('locationable_id');
             $table->integer('location_id')->after('id');
             $table->string('type',255)->after('id');
+            $table->string('action',255)->after('role_id');
         });
     }
 

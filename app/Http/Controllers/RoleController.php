@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Location;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
@@ -92,6 +93,7 @@ class RoleController extends BaseController
      */
     public function edit(Request $request, $item)
     {
+//        dd($nodes = Location::withDepth()->having('depth', '=', 3)->get()->toFlatTree());
         if ($item == 0) {
             if (is_array($request->item))
                 $item = $this->model->find('id', $request->item);
@@ -114,8 +116,6 @@ class RoleController extends BaseController
      */
     public function update(Request $request, $item)
     {
-
-
         $item = $this->model->find($item);
         $this->model->saveFormData($item, $request);
 

@@ -16,7 +16,7 @@
                     else
                         elm.attr('readonly', false);
                     $(ref).attr('readonly', false);
-                    $('.'+rand).attr('readonly', false);
+                    $('.' + rand).attr('readonly', false);
                 }
             });
         });
@@ -30,8 +30,10 @@
             let ref = this;
             let rand = $(this).attr('data-rand');
             let type = $(this).attr('data-type');
+            console.log(lastEl);
             $(".permission_check").each(function () {
-                if ($(this).hasClass(lastEl) && !$(this).hasClass(rand) && $(this).hasClass(type)) {
+                if ($(this).hasClass(lastEl) && $(this).hasClass(type)) {
+                    console.log("As");
                     elm = $(this);
                     elm.prop('checked', ref.checked);
                     if (ref.checked)
@@ -43,6 +45,12 @@
                 }
             });
         });
+    });
+
+    $('.submit_form').click(function (e) {
+        $('input[readonly]').remove();
+        e.preventDefault();
+        $('.item_form').submit();
     });
 
     (function () {

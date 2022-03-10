@@ -326,7 +326,7 @@ if (!function_exists('checkIfSuperAdmin')) {
 if (!function_exists('getAllPossibleChildTablesOfParent')) {
     function getAllPossibleChildTablesOfParent()
     {
-        return ['hierarcy', 'assets', 'l01 assets', 'network assets'];
+        return ['hierarcy', 'assets', 'l01_assets', 'network_assets'];
     }
 }
 
