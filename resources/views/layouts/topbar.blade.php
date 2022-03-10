@@ -292,13 +292,14 @@
                     </form>
                 </div>
             </div>
-
+            @if(checkIfSuperAdmin())
             <div class="dropdown d-inline-block">
                 <button type="button" onclick="location.href='{{ url('/settings') }}'"
                         class="btn header-item noti-icon right-bar-toggle waves-effect">
                     <i class="bx bx-cog bx-spin"></i>
                 </button>
             </div>
+            @endif
 
         </div>
     </div>
