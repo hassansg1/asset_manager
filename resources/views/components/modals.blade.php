@@ -86,14 +86,14 @@
 </div><!-- /.modal -->
 <div id="default_modal" class="modal fade bs-example-modal-lg" tabindex="-1"
      aria-labelledby="myLargeModalLabel">
-    <div class="modal-dialog modal-lg" id="default_modal_content">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="myLargeModalLabel"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
             </div>
-            <div class="modal-body default_modal_body">
+            <div class="modal-body default_modal_body" id="default_modal_content">
                 <p>Cras mattis consectetur purus sit amet fermentum.
                     Cras justo odio, dapibus ac facilisis in,
                     egestas eget quam. Morbi leo risus, porta ac
