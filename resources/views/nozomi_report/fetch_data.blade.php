@@ -1,4 +1,4 @@
-<button class="btn btn-success" onclick="location.href='{{ url('nozomi/print/pdf') }}'">
+<button class="btn btn-success" onclick="location.href='{{ url('nozomi/print/pdf') }}'" style="display: none">
     Print Report
 </button>
 

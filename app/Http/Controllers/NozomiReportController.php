@@ -40,7 +40,6 @@ class NozomiReportController extends Controller
     public function pdf()
     {
         $report = app(NozomiReport::class)->generate(true);
-
         return $report->download('nozomi_report.pdf');
     }
 

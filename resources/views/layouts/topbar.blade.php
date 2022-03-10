@@ -56,6 +56,7 @@
                     </a>
                 </div>
             </div>
+            @if(checkIfSuperAdmin())
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
@@ -147,7 +148,7 @@
                     </a>
                 </div>
             </div>
-
+            @endif
         </div>
 
         <div class="d-flex">
