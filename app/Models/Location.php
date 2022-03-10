@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Scopes\LocationPermissionScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
@@ -11,6 +12,13 @@ class Location extends Model
     use HasFactory;
 
     use NodeTrait;
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        return static::addGlobalScope(new LocationPermissionScope);
+    }
 
     public static function getTypeToModel($type)
     {

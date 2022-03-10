@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class UserLocation extends Model
 {
@@ -11,37 +12,13 @@ class UserLocation extends Model
 
     protected $guarded = [];
 
-    protected $appends = ['combine_name'];
-
-    public function getCombineNameAttribute()
+    public static function getLocations($type, $user = null)
     {
-        return $this->locationable_type . "??" . $this->locationable_id;
-    }
+        if (!$user) $user = Auth::user();
+        $roles = $user->roles->pluck('id')->toArray();
 
-    public function getSelfNameAttribute()
-    {
-        $obj = $this->locationable_type::find($this->locationable_id);
-        if ($obj)
-            return $obj->show_name;
-        return null;
-    }
+        $locations = UserLocation::whereIn('role_id', $roles)->where('type', $type)->pluck('location_id')->toArray();
 
-    public function getSelfPermissionAttribute()
-    {
-        $obj = $this->locationable_type::find($this->locationable_id);
-        if ($obj)
-            return  get_class($obj) . $obj->id;
-        return null;
-    }
-
-    public static function addNew($locationAbleType, $locationAbleId, $useId)
-    {
-        $arr = [
-            'locationable_type' => $locationAbleType,
-            'locationable_id' => $locationAbleId,
-            'role_id' => $useId
-        ];
-
-        return self::create($arr);
+        return $locations;
     }
 }
