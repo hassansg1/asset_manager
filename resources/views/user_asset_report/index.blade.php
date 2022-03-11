@@ -1,4 +1,5 @@
 @extends('components.datatable')
+@include('components.ui_formatter.hide_new_btn')
 @section('table_header')
     <th style="width: 200px">User</th>
     <th >User ID</th>
