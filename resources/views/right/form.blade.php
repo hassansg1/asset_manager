@@ -22,7 +22,7 @@
                             <select class="form-control select2" id="asset_function" name="asset_function" required>
                                 <option value="">-Select System/Asset Type-</option>
                                 @foreach($asset_functions as $value)
-                                    <option value="{{$value->id}}" {{ isset($item) && $item->asset_function == $value->id  ? 'selected' : ''}}>{{$value->name}} ({{$value->type}})</option>
+                                    <option value="{{$value->id}}" {{ isset($item) && $item->asset_function == $value->id  ? 'selected' : ''}}>{{$value->name}}</option>
                                 @endforeach
                             </select>
                         </div>

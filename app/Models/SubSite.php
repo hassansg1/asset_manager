@@ -32,6 +32,13 @@ class SubSite extends Model
             'rec_id' => 'required | unique:locations,rec_id',
         ];
 
+    protected $appends = ['show_name'];
+
+    public function getShowNameAttribute()
+    {
+        return $this->name;
+    }
+
     /**
      * @param $item
      * @param $request

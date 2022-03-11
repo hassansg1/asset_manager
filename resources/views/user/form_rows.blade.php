@@ -5,7 +5,6 @@
         <td>{{ $item->first_name }}</td>
         <td>{{ $item->last_name }}</td>
         <td>{{ $item->email }}</td>
-        <td>{{ $item->mobile_no }}</td>
         <td>
             {{ implode(',',$item->roles->pluck('name')->toArray()) }}
         </td>

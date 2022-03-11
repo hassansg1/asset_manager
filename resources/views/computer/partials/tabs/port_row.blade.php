@@ -27,11 +27,15 @@
             <select onchange="loadIpAddress(this,'{{ $rand1 }}','{{ $port->ip_address ?? '' }}')" name="ports[connected_port_id][]" id=""
                     class="form-control mt-3 {{ $rand }} port_auto_drop_down">
                 <option value="">Select Port</option>
+                @if($port->connectedPort)
                 @foreach(\App\Models\Port::where('location_id',$port->connectedPort->location_id)->get() as $ent)
                     <option
                         {{ isset($port->connectedPort->location_id) && $port->connectedPort->id == $ent->id ? 'selected' :'' }}
                         value="{{ $ent->id }}">{{ $ent->name }}</option>
                 @endforeach
+                @else
+                    <option value="">--No Port Available--</option>
+                @endif
             </select>
         </td>
         <td>

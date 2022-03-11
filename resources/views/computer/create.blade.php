@@ -13,5 +13,5 @@
     </div>
 @endsection
 @section('script-bottom')
-    @include('computer.script-bottom')
+    @include('computer.script')
 @endsection

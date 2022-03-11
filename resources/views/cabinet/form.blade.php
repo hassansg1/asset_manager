@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}short_name" class="form-label required">Parent</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}short_name" class="form-label required">Cabinet Parent</label>
                             <select class="form-control select2" name="parent_id" id="{{ isset($item) ? $item->id:'' }}short_name" required>
                                 <option value="">Search by Name</option>
                                 <optgroup label="Company">
