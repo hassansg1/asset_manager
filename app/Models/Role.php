@@ -68,7 +68,7 @@ class Role extends Authenticatable
         } else {
             $roles = Auth::user()->roles->pluck('id')->toArray();
             if ($roles) {
-                $locations = UserLocation::getLocations('location');
+                $locations = UserLocation::whereIn('role_id', $roles)->where('type', 'location')->pluck('location_id')->toArray();
             }
         }
         return $locations;

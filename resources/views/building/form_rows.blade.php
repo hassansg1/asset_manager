@@ -6,7 +6,7 @@
         <td>{{ $item->rec_id }}</td>
         <td>{{ $item->name }}</td>
         <td>
-            @include('components.edit_delete_button')
+            @include('components.edit_delete_button_asset')
         </td>
     </tr>
 @endforeach

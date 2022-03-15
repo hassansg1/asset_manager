@@ -6,6 +6,7 @@ use App\Models\Location;
 use App\Models\UserLocation;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Session;
 
 class BaseController extends Controller
 {
@@ -60,8 +61,8 @@ class BaseController extends Controller
         if (!checkIfSuperAdmin()) {
             $query = $query->where(function ($query) use ($userLocations, $model) {
                 $locations = $userLocations->where('type', 'location')->pluck('location_id')->toArray();
-                $query = $query->whereIn('id', $locations);
                 $type = getTypeForPermission($model);
+                $query = $query->whereIn('id', $locations);
                 $hierarchyLocations = $userLocations->where('type', $type)->pluck('location_id')->toArray();
                 foreach ($hierarchyLocations as $location) {
                     $query->orWhere(function ($innerQuery) use ($location) {
@@ -69,6 +70,10 @@ class BaseController extends Controller
                     });
                 }
             });
+            if (assetCondition($model)) {
+                $location = Session::get('asset_location_id');
+                $query = $query->whereDescendantOrSelf($location);
+            }
         }
 
         return $query;
