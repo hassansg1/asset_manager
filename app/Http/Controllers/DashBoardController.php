@@ -10,7 +10,6 @@ class DashBoardController extends Controller
 {
     public function index(Request $request)
     {
-        Location::fixTree();
 //        $compliances = ComplianceVersionItem::all();
 //        foreach ($compliances as $compliance)
 //        {

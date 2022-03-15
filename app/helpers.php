@@ -954,3 +954,14 @@ function getTypeForPermission($model)
 
     return $type;
 }
+
+function checkIfButtonAllowed($locations, $item, $action)
+{
+    $viewPermissions = $locations->where('action', $action)->pluck('location');
+    foreach ($viewPermissions as $location) {
+        if ($item->isDescendantOf($location) || $item->id == $location->id  ) {
+            return true;
+        }
+    }
+    return false;
+}

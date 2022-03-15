@@ -31,23 +31,7 @@ class BaseController extends Controller
         if (isset($model::$type)) {
             $type = getTypeForPermission($model);
             $typeLocations = $userLocations->where('type', $type);
-            $viewPermissions = $typeLocations->where('action', 'view')->pluck('location_id')->toArray();
-            $editPermissions = $typeLocations->where('action', 'edit')->pluck('location_id')->toArray();
-            $deletePermissions = $typeLocations->where('action', 'delete')->pluck('location_id')->toArray();
-            $items = $data['items'] ?? null;
-            if ($items) {
-                foreach ($items as $item) {
-                    if (in_array($item->parent_id, $viewPermissions) || in_array($item->id, $viewPermissions)) {
-                        $item->can_view = 1;
-                    }
-                    if (in_array($item->parent_id, $editPermissions) || in_array($item->id, $editPermissions)) {
-                        $item->can_edit = 1;
-                    }
-                    if (in_array($item->parent_id, $deletePermissions) || in_array($item->id, $deletePermissions)) {
-                        $item->can_delete = 1;
-                    }
-                }
-            }
+            $data['typeLocations'] = $typeLocations ?? [];
         }
 
         $data['items_per_page'] = $items_per_page;

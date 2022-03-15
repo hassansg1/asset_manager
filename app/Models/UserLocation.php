@@ -17,11 +17,16 @@ class UserLocation extends Model
         if (!$user) $user = Auth::user();
         $roles = $user->roles->pluck('id')->toArray();
 
-        $locations = UserLocation::whereIn('role_id', $roles);
+        $locations = UserLocation::with('location')->whereIn('role_id', $roles);
 
         if ($type)
             $locations = $locations->where('type', $type);
 
         return $locations->get();
+    }
+
+    public function location()
+    {
+        return $this->belongsTo(Location::class);
     }
 }
