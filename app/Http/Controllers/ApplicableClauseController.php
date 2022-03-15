@@ -150,6 +150,9 @@ class ApplicableClauseController extends BaseController
     {
 //        $data = ClauseData::saveFormData($request);
         $clause = StandardClause::find($request->clause_id);
+        if ($request->column_name ==  'applicable' && $request->value == 0){
+            $clause->location = null;
+        }
         $clause->{$request->column_name} = $request->value;
         $clause->save();
 
@@ -197,6 +200,11 @@ class ApplicableClauseController extends BaseController
     public function getLocationsOfCompliance(Request $request)
     {
         $complianceD = StandardClause::find($request->trId);
+        if ($complianceD->location ==null){
+            return response()->json([
+                'status' => false
+            ]);
+        }
         $locationModel = 'App\Models\\' . $complianceD->location;
         $locations = $locationModel::get();
         $attachments = Attachment::get();

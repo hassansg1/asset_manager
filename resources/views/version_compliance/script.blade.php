@@ -45,11 +45,15 @@
             type: 'GET',
             data: {trId: trId, version: '{{ $version }}'},
             success: function (data) {
-                row.child(data.html).show();
-                tr.addClass('shown');
-                $('.select2').select2();
-                iconClass.removeClass('fas fa-eye');
-                iconClass.addClass('fas fa-eye-slash');
+                if(data.status == false){
+                    doErrorToast('Clause Location is not added');
+                }else{
+                    row.child(data.html).show();
+                    tr.addClass('shown');
+                    $('.select2').select2();
+                    iconClass.removeClass('fas fa-eye');
+                    iconClass.addClass('fas fa-eye-slash');
+                }
             }
         });
     }
