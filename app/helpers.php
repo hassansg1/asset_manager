@@ -170,7 +170,7 @@ if (!function_exists('getDepartments')) {
 if (!function_exists('getSystemType')) {
     function getSystemType()
     {
-        return \App\Models\AssetFunction::where('type', 'SYS')->get();
+        return \App\Models\AssetFunction::get();
     }
 }
 
@@ -204,7 +204,7 @@ if (!function_exists('riskAssesments')) {
 if (!function_exists('getComputerAssets')) {
     function getComputerAssets()
     {
-        return DB::table('locations')->where('type', ['computer_assets', 'lone_assets', 'network_assets'])->get();
+        return DB::table('locations')->where('type', ['computer', 'lone', 'network'])->get();
     }
 }
 if (!function_exists('getPolicy')) {

@@ -122,7 +122,7 @@ class UserController extends BaseController
 
         flashSuccess(getLang($this->heading . " Successfully Updated."));
 
-        return redirect(route($this->route . ".edit",$item));
+        return redirect(route($this->route . ".index"));
     }
 
     /**

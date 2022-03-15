@@ -2,7 +2,7 @@
 {{ csrf_field() }}
 @php
     $assets = getComputerAssets();
-    $system_types = getSystemType();
+    $system_types = getAssetFunctions();
  @endphp
 <input type="hidden" name="id" value="{{ isset($clone) && $clone ? '' : (isset($item) ? $item->id : '') }}">
 <div class="row">

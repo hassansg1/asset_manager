@@ -7,7 +7,6 @@
     <th>First Name</th>
     <th>Last Name</th>
     <th>Email</th>
-    <th>Mobile No.</th>
     <th>Role</th>
     <th>Actions</th>
 @endsection
