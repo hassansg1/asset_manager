@@ -12,13 +12,16 @@ class UserLocation extends Model
 
     protected $guarded = [];
 
-    public static function getLocations($type, $user = null)
+    public static function getLocations($type = null, $user = null)
     {
         if (!$user) $user = Auth::user();
         $roles = $user->roles->pluck('id')->toArray();
 
-        $locations = UserLocation::whereIn('role_id', $roles)->where('type', $type)->pluck('location_id')->toArray();
+        $locations = UserLocation::whereIn('role_id', $roles);
 
-        return $locations;
+        if ($type)
+            $locations = $locations->where('type', $type);
+
+        return $locations->get();
     }
 }

@@ -17,28 +17,28 @@
         <td>
             <input data-rand="{{ $rand }}" data-type="View{{$objType}}"
                    class="View{{$objType}} form-check-input permission_check {{ $rand }} {{ $class }}"
-                   name="permissions[{{ $objType }}][{{ $location->id }}]"
+                   name="permissions[{{ $objType }}][view][]"
                    type="checkbox"
-                   value="view"
+                   value="{{ $location->id }}"
             >
             <label class="form-check-label">View</label>
 
             <input data-rand="{{ $rand }}" data-type="Create{{$objType}}"
                    class="Create{{$objType}} form-check-input permission_check {{ $rand }} {{ $class }}"
-                   name="permissions[{{ $objType }}][{{ $location->id }}]"
-                   type="checkbox" value="create">
+                   name="permissions[{{ $objType }}][create][]"
+                   type="checkbox" value="{{ $location->id }}">
             <label class="form-check-label">Create</label>
 
             <input data-rand="{{ $rand }}" data-type="Edit{{$objType}}"
                    class="Edit{{$objType}} form-check-input permission_check {{ $rand }} {{ $class }}"
-                   name="permissions[{{ $objType }}][{{ $location->id }}]"
-                   type="checkbox" value="edit">
+                   name="permissions[{{ $objType }}][edit][]"
+                   type="checkbox" value="{{ $location->id }}">
             <label class="form-check-label">Edit</label>
 
             <input data-rand="{{ $rand }}" data-type="Delete{{$objType}}"
                    class="Delete{{$objType}} form-check-input permission_check {{ $rand }}  {{ $class }}"
-                   name="permissions[{{ $objType }}][{{ $location->id }}]"
-                   type="checkbox" value="delete">
+                   name="permissions[{{ $objType }}][delete][]"
+                   type="checkbox" value="{{ $location->id }}">
             <label class="form-check-label">Delete</label>
         </td>
     @endforeach

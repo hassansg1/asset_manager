@@ -43,13 +43,15 @@ class Role extends Authenticatable
             ]);
         }
         foreach ($request->permissions as $type => $permission) {
-            foreach ($permission as $location => $action)
-                UserLocation::create([
-                    'type' => $type,
-                    'location_id' => $location,
-                    'role_id' => $item->id,
-                    'action' => $action,
-                ]);
+            foreach ($permission as $action => $locations)
+                foreach ($locations as $location){
+                    UserLocation::create([
+                        'type' => $type,
+                        'location_id' => $location,
+                        'role_id' => $item->id,
+                        'action' => $action,
+                    ]);
+                }
         }
     }
 
@@ -58,7 +60,7 @@ class Role extends Authenticatable
         return $this->hasMany(UserLocation::class, 'role_id');
     }
 
-    public static function locationsArray()
+    public static function locationsArray(): array
     {
         $locations = [];
         if (checkIfSuperAdmin()) {
@@ -66,7 +68,7 @@ class Role extends Authenticatable
         } else {
             $roles = Auth::user()->roles->pluck('id')->toArray();
             if ($roles) {
-                $locations = UserLocation::whereIn('role_id', $roles)->where('type', 'location')->pluck('location_id')->toArray();
+                $locations = UserLocation::getLocations('location');
             }
         }
         return $locations;

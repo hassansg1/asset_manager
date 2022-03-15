@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Location;
+use App\Models\UserLocation;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\Session;
 
 class BaseController extends Controller
 {
@@ -15,38 +15,68 @@ class BaseController extends Controller
     {
         $query = $model;
         $items_per_page = 10;
+
         if (isset($model::$type)) {
-            $location = 1;
-            if (assetCondition($model)) {
-                $location = Session::get('asset_location_id');
+            $query = new Location();
+            $userLocations = UserLocation::getLocations();
+            $query = $this->applyLocationFilter($userLocations, $query, $model);
+            $query = $query->where('type', $model::$type);
+        }
+
+        $query = $this->applyKeywordSearch($request, $query, $model);
+        $query = $this->applyRepo($request, $query, $model, $repository);
+        $data = $this->getData($request, $query, $items_per_page);
+
+        if (isset($model::$type)) {
+            $type = getTypeForPermission($model);
+            $typeLocations = $userLocations->where('type', $type);
+            $viewPermissions = $typeLocations->where('action', 'view')->pluck('location_id')->toArray();
+            $editPermissions = $typeLocations->where('action', 'edit')->pluck('location_id')->toArray();
+            $deletePermissions = $typeLocations->where('action', 'delete')->pluck('location_id')->toArray();
+            $items = $data['items'] ?? null;
+            if ($items) {
+                foreach ($items as $item) {
+                    if (in_array($item->parent_id, $viewPermissions) || in_array($item->id, $viewPermissions)) {
+                        $item->can_view = 1;
+                    }
+                    if (in_array($item->parent_id, $editPermissions) || in_array($item->id, $editPermissions)) {
+                        $item->can_edit = 1;
+                    }
+                    if (in_array($item->parent_id, $deletePermissions) || in_array($item->id, $deletePermissions)) {
+                        $item->can_delete = 1;
+                    }
+                }
             }
-            $doesLocationExist = Location::find($location);
-            if ($doesLocationExist && $model::$type != "companies")
-                $query = Location::whereDescendantOf($location)->where('type', $model::$type);
-        } else
-            $query = $model;
+        }
 
-        $columns = Schema::getColumnListing($model->getTable());
+        $data['items_per_page'] = $items_per_page;
+        $data['request'] = $request;
+        $data['request']['url'] = Request::url();
+        return $data;
+    }
 
-
-        if (isset($request->search_keyword) && $request->search_keyword != "") {
-            $keyword = $request->search_keyword;
-            $query = $query->where(function ($query) use ($keyword, $columns) {
-                foreach ($columns as $column) {
-                    $query = $query->orWhere($column, 'LIKE', "%$keyword%");
+    public function applyLocationFilter($userLocations, $query, $model)
+    {
+        if (!checkIfSuperAdmin()) {
+            $query = $query->where(function ($query) use ($userLocations, $model) {
+                $locations = $userLocations->where('type', 'location')->pluck('location_id')->toArray();
+                $query = $query->whereIn('id', $locations);
+                $type = getTypeForPermission($model);
+                $hierarchyLocations = $userLocations->where('type', $type)->pluck('location_id')->toArray();
+                foreach ($hierarchyLocations as $location) {
+                    $query->orWhere(function ($innerQuery) use ($location) {
+                        $innerQuery->whereDescendantOrSelf($location);
+                    });
                 }
             });
         }
 
-        if (!isset($repository)) {
-            if (isset($model::$repo)) {
-                $repository = "App\\Repos\\" . $model::$repo;
-                $repository = new $repository;
-            }
-        }
-        if ($repository) {
-            $query = $repository->filter($query, $request);
-        }
+        return $query;
+    }
+
+    public function getData($request, $query, $items_per_page)
+    {
+        $data = [];
         if (getSetting()) {
             $items_per_page = getSetting()->item_per_page;
         }
@@ -60,9 +90,38 @@ class BaseController extends Controller
             $items = $query->paginate($items_per_page);
 
         $data['items'] = $items;
-        $data['items_per_page'] = $items_per_page;
-        $data['request'] = $request;
-        $data['request']['url'] = Request::url();
+
         return $data;
+    }
+
+    public function applyRepo($request, $query, $model, $repository)
+    {
+        if (!isset($repository)) {
+            if (isset($model::$repo)) {
+                $repository = "App\\Repos\\" . $model::$repo;
+                $repository = new $repository;
+            }
+        }
+        if ($repository) {
+            $query = $repository->filter($query, $request);
+        }
+
+        return $query;
+    }
+
+    public function applyKeywordSearch($request, $query, $model)
+    {
+        $columns = Schema::getColumnListing($model->getTable());
+
+        if (isset($request->search_keyword) && $request->search_keyword != "") {
+            $keyword = $request->search_keyword;
+            $query = $query->where(function ($query) use ($keyword, $columns) {
+                foreach ($columns as $column) {
+                    $query = $query->orWhere($column, 'LIKE', "%$keyword%");
+                }
+            });
+        }
+
+        return $query;
     }
 }

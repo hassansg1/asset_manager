@@ -453,15 +453,20 @@ if (!function_exists('assetCondition')) {
     function assetCondition($model)
     {
         $modelClass = get_class($model);
-        return $modelClass == "App\Models\Computer" || $modelClass == "App\Models\NetworkAsset" || $modelClass == "App\Models\LoneAsset";
-    }
-}
-
-if (!function_exists('assetCondition')) {
-    function assetCondition($model)
-    {
-        $modelClass = get_class($model);
-        return $modelClass == "App\Models\Computer" || $modelClass == "App\Models\NetworkAsset" || $modelClass == "App\Models\LoneAsset";
+        switch ($modelClass) {
+            case "App\Models\Computer":
+                return "assets";
+                break;
+            case "App\Models\NetworkAsset":
+                return "network_assets";
+                break;
+            case "App\Models\LoneAsset":
+                return "l01_assets";
+                break;
+            default:
+                return false;
+                break;
+        }
     }
 }
 
@@ -937,4 +942,15 @@ function divideNumber($number, $divider, $precision = 2)
 {
     if ($divider == 0) return 0;
     return number_format(($number / $divider), $precision);
+}
+
+function getTypeForPermission($model)
+{
+    $assetCondition = assetCondition($model);
+    $type = "hierarcy";
+    if ($assetCondition) {
+        $type = $assetCondition;
+    }
+
+    return $type;
 }

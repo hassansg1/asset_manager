@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Http\Traits\Observable;
-use App\Scopes\LocationPermissionScope;
 use App\Scopes\LocationScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -30,8 +29,7 @@ class Unit extends Model
     {
         parent::boot();
 
-        static::addGlobalScope(new LocationScope(self::$type));
-        return static::addGlobalScope(new LocationPermissionScope);
+        return static::addGlobalScope(new LocationScope(self::$type));
     }
 
     public function getShowNameAttribute()

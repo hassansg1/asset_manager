@@ -2,12 +2,11 @@
 
 namespace App\Http\Traits;
 
+use App\Models\Log;
 use App\Models\Notification;
 use App\Models\Task;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
-
-use App\Models\Log;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
@@ -16,35 +15,36 @@ trait Observable
     // bootObservable() will be called on model instantiation automatically
     public static function bootObservable()
     {
-//        static::saved(function (Model $model) {
-//            // create or update?
-//            if ($model->wasRecentlyCreated) {
-//                static::logChange($model, 'CREATED');
-//            } else {
-//                if (!$model->getChanges()) {
-//                    return;
-//                }
-//                static::logChange($model, 'UPDATED');
-//            }
-//        });
-//
-//        static::deleted(function (Model $model) {
-//            static::logChange($model, 'DELETED');
-//        });
+        static::saved(function (Model $model) {
+            // create or update?
+            if ($model->wasRecentlyCreated) {
+                static::logChange($model, 'CREATED');
+            } else {
+                if (!$model->getChanges()) {
+                    return;
+                }
+                static::logChange($model, 'UPDATED');
+            }
+        });
+
+        static::deleted(function (Model $model) {
+            static::logChange($model, 'DELETED');
+        });
     }
 
     public static function logChange(Model $model, string $action)
     {
-        if (!checkIfSuperAdmin()) {
-            if ($action == 'CREATED') {
-                DB::table($model->getTable())->where('id', $model->id)->delete();
-            } elseif ($action == 'UPDATED') {
-                $arr = array_diff_key($model->getOriginal(), ['id' => 'aa']);
-                DB::table($model->getTable())->where('id', $model->id)->update($arr);
-            } elseif ($action == 'DELETED') {
-                DB::table($model->getTable())->insert($model->getOriginal());
-            }
-        }
+//        if (!checkIfSuperAdmin()) {
+//            if ($action == 'CREATED') {
+//                DB::table($model->getTable())->where('id', $model->id)->delete();
+//            } elseif ($action == 'UPDATED') {
+//                $arr = array_diff_key($model->getOriginal(), ['id' => 'aa']);
+//                DB::table($model->getTable())->where('id', $model->id)->update($arr);
+//            } elseif ($action == 'DELETED') {
+//                DB::table($model->getTable())->insert($model->getOriginal());
+//            }
+//        }
+        dd("A");
         $log = Log::create([
             'user_id' => Auth::user()->id ?? null,
             'model' => static::class,
@@ -53,7 +53,7 @@ trait Observable
             'action' => $action,
             'reason' => Session::get('reason') ?? '',
             'message' => self::logSubject($model),
-            'approval_request' => checkIfSuperAdmin() ? 0 : 1,
+            'approval_request' => 1,
             'models' => json_encode([
                 'new' => $action !== 'DELETED' ? $model->getAttributes() : null,
                 'old' => $action !== 'CREATED' ? $model->getOriginal() : null,
@@ -61,11 +61,11 @@ trait Observable
             ])
         ]);
 
-        if (!checkIfSuperAdmin()) {
-            Notification::addNotification(Notification::APPROVAL_REQUEST, 1);
-            Task::addTask(Notification::APPROVAL_REQUEST, 1, $log->id, $action . ' ' . $model->getTable() . ' entry');
-            Session::put('approvalRequest', 1);
-        }
+//        if (!checkIfSuperAdmin()) {
+//            Notification::addNotification(Notification::APPROVAL_REQUEST, 1);
+//            Task::addTask(Notification::APPROVAL_REQUEST, 1, $log->id, $action . ' ' . $model->getTable() . ' entry');
+//            Session::put('approvalRequest', 1);
+//        }
     }
 
     /**
