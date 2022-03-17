@@ -136,16 +136,16 @@
                     {{--                     <a href="{{ route('compliance.applicable') }}" class="dropdown-item notify-item language" data-lang="eng">--}}
                     {{--                        <span class="align-middle">Applicable Compliance</span>--}}
                     {{--                    </a>--}}
-                    <a href="{{ route('task') }}" class="dropdown-item notify-item language" data-lang="eng">
-                        <span class="align-middle">Task</span>
-                    </a>
+{{--                    <a href="{{ route('task') }}" class="dropdown-item notify-item language" data-lang="eng">--}}
+{{--                        <span class="align-middle">Task</span>--}}
+{{--                    </a>--}}
                     <a href="{{ route('attachment.index') }}" class="dropdown-item notify-item language"
                        data-lang="eng">
                         <span class="align-middle">Document Library</span>
                     </a>
-                    <a href="{{ route('approver.index') }}" class="dropdown-item notify-item language" data-lang="eng">
-                        <span class="align-middle">Approvers</span>
-                    </a>
+{{--                    <a href="{{ route('approver.index') }}" class="dropdown-item notify-item language" data-lang="eng">--}}
+{{--                        <span class="align-middle">Approvers</span>--}}
+{{--                    </a>--}}
                 </div>
             </div>
             @endif

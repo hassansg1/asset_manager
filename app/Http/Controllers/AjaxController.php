@@ -265,4 +265,8 @@ class AjaxController extends Controller
             'html' => $html
         ]);
     }
+
+    public  function  approveStatus(Request $request){
+        dd($request->all());
+    }
 }
