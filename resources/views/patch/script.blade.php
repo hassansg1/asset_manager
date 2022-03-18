@@ -14,6 +14,7 @@
     });
     $(document).on('change', '.select_patch_cb', function () {
         let id = $(this).val();
+        $('#show_patch_' + id).remove();
         let show_name = $(this).attr('data-show_name');
         if (this.checked) {
             $('.selected_patch_list').append('<li id="show_patch_' + id + '">' + show_name + '</li>');

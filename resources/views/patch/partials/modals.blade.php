@@ -38,7 +38,7 @@
             <div class="modal-body">
                 <ul>
                     <li>Select one or multiple assets</li>
-                    <li>Click on the save button at the bottom to install the selected patches on selected assets
+                    <li>Click on the install button at the bottom to install the selected patches on selected assets
                     </li>
                 </ul>
                 Selected Patches are as following

@@ -32,7 +32,7 @@ class NetworkAssetController extends BaseController
         $data = $this->fetchData($this->model, $request);
 
         return view($this->route . "/index")
-            ->with(['items' => $data['items'], 'data' => $data, 'filter' => $filter[0] ?? null, 'route' => $this->route, 'heading' => $this->heading]);
+            ->with(['items' => $data['items'], 'data' => $data, 'filter' => $filter[0] ?? null, 'model' => $this->model, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**
@@ -57,7 +57,7 @@ class NetworkAssetController extends BaseController
     public function create()
     {
         return view($this->route . "/create")
-            ->with(['route' => $this->route, 'heading' => $this->heading]);
+            ->with(['route' => $this->route, 'model' => $this->model, 'heading' => $this->heading]);
     }
 
     /**
@@ -102,7 +102,7 @@ class NetworkAssetController extends BaseController
         if ($request->ajax) {
             return response()->json([
                 'status' => true,
-                'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item, 'clone' => $request->clone ?? null])->render()
+                'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'model' => $this->model, 'item' => $item, 'clone' => $request->clone ?? null])->render()
             ]);
         } else
             return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'heading' => $heading, 'clone' => $request->clone ?? null]);

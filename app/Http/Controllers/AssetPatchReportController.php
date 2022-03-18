@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Computer;
 use App\Models\Patch;
 use App\Models\PatchPolicy;
+use App\Repos\ComputerRepo;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory;
@@ -31,7 +32,7 @@ class AssetPatchReportController extends BaseController
      */
     public function index(Request $request)
     {
-        $data = $this->fetchData(new Computer(), $request, 'PatchReportRepo');
+        $data = $this->fetchData(new Computer(), $request, new ComputerRepo());
 
         return view("asset_patch_report/index")
             ->with(['items' => $data['items'], 'heading' => 'Asset Patch Report', 'route' => 'asset_patch_report']);

@@ -10,46 +10,9 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}short_name" class="form-label required">Parent</label>
-                            <select class="form-control select2" name="parent_id" id="{{ isset($item) ? $item->id:'' }}short_name" required>
-                                <option value="">Search by Name</option>
-                                <optgroup label="Company">
-                                    @foreach(getCompanies() as $row)
-                                        <option
-                                            {{ isset($item) && $item->parent_id == $row->id ? 'selected' : '' }}
-                                            value="{{ $row->id }}">{{ $row->show_name }}</option>
-                                    @endforeach
-                                </optgroup>
-                                <optgroup label="Unit">
-                                    @foreach(\App\Models\Unit::all() as $row)
-                                        <option
-                                            {{ isset($item) && $item->parent_id == $row->id ? 'selected' : '' }}
-                                            value="{{ $row->id }}">{{ $row->show_name }}</option>
-                                    @endforeach
-                                </optgroup>
-                                <optgroup label="Site">
-                                    @foreach(\App\Models\Site::all() as $row)
-                                        <option
-                                            {{ isset($item) && $item->parent_id == $row->id ? 'selected' : '' }}
-                                            value="{{ $row->id }}">{{ $row->show_name }}</option>
-                                    @endforeach
-                                </optgroup>
-                                <optgroup label="SubSite">
-                                    @foreach(\App\Models\SubSite::all() as $row)
-                                        <option
-                                            {{ isset($item) && $item->parent_id == $row->id ? 'selected' : '' }}
-                                            value="{{ $row->id }}">{{ $row->show_name }}</option>
-                                    @endforeach
-                                </optgroup>
-                                <optgroup label="Building">
-                                    @foreach(\App\Models\Building::all() as $row)
-                                        <option
-                                            {{ isset($item) && $item->parent_id == $row->id ? 'selected' : '' }}
-                                            value="{{ $row->id }}">{{ $row->show_name }}</option>
-                                    @endforeach
-                                </optgroup>
-                            </select>
-
+                            <label for="{{ isset($item) ? $item->id:'' }}short_name" class="form-label required">Room
+                                Parent</label>
+                            @include('hierarchy.create_drop_down',['type' => 'rooms'])
                         </div>
                     </div>
                     <div class="col-lg-4">

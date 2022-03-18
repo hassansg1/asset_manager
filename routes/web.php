@@ -234,4 +234,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('patchApprovalPolicy/delete', [\App\Http\Controllers\PatchSoftwareApprovalController::class, 'patchPolicyDelete'])->name('patchPolicyDelete');
     Route::get('showCompliancePopup', [\App\Http\Controllers\AjaxController::class, 'showCompliancePopup']);
     Route::post('submitCompliance', [\App\Http\Controllers\ComplianceUpdateController::class, 'submitCompliance']);
+
+    //
+    Route::get('getLocationsOfRole/{roleId}', [\App\Http\Controllers\RoleController::class, 'getLocationsOfRole']);
 });

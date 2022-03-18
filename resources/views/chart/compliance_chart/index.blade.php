@@ -17,29 +17,20 @@
                     </div>
                     <div class="col-md-3">
                         <label for="select_location">Select Location</label>
-                        <select multiple class="form-control select2" onchange="renderComplianceChart()"
-                                name="select_location[]"
-                                id="select_location">
+                        <select onchange="renderComplianceChart()" class="form-control select2" name="select_location[]"
+                                id="select_location" multiple required>
                             <option value="">Search by Name</option>
-                            <optgroup label="Company">
-                                @foreach(getCompanies() as $row)
-                                    <option
-                                        value="{{ $row->id }}">{{ $row->show_name }}</option>
-                                @endforeach
-                            </optgroup>
-                            <optgroup label="Unit">
-                                @foreach(getUnit() as $row)
-                                    <option
-                                        value="{{ $row->id }}">{{ $row->show_name }}</option>
-                                @endforeach
-                            </optgroup>
-                            <optgroup label="Site">
-                                @foreach(getSites() as $row)
-                                    <option
-                                        value="{{ $row->id }}">{{ $row->show_name }}</option>
-                                @endforeach
-                            </optgroup>
+                            @foreach(getLocationsForDropDown('assets',null,$model ?? null) as $heading => $locations)
+                                <optgroup label={{ \App\Models\Location::getTypeToModel($heading) }}>
+                                    @foreach($locations as $location)
+                                        <option
+                                            {{ isset($item) && $item->parent_id == $location->id ? 'selected' : '' }}
+                                            value="{{ $location->id }}">{{ $location->text }}</option>
+                                    @endforeach
+                                </optgroup>
+                            @endforeach
                         </select>
+
                     </div>
                     <div class="col-md-3">
                         <button class="btn btn-primary" style="margin-top: 25px" onclick="renderComplianceChart()">Reload</button>

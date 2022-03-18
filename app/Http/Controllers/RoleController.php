@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Location;
 use App\Models\Role;
-use Illuminate\Http\Request;
-use Illuminate\Contracts\View\View;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 class RoleController extends BaseController
 {
@@ -121,6 +120,7 @@ class RoleController extends BaseController
 
         flashSuccess(getLang($this->heading . " Successfully Updated."));
 
+        return redirect()->back();
         return redirect(route($this->route . ".index"));
     }
 
@@ -135,5 +135,16 @@ class RoleController extends BaseController
         flashSuccess(getLang($this->heading . " Successfully Deleted."));
 
         return redirect(route($this->route . ".index"));
+    }
+
+    public function getLocationsOfRole($roleId)
+    {
+        $role = Role::find($roleId);
+
+        return response()->json([
+            'status' => true,
+            'locations' => $role->locations->where('type', 'location')->pluck('identifier')->toArray(),
+            'permissions' => $role->locations->where('type', '!=', 'location')->pluck('identifier')->toArray(),
+        ]);
     }
 }

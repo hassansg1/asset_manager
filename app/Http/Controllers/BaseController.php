@@ -6,7 +6,6 @@ use App\Models\Location;
 use App\Models\UserLocation;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\Session;
 
 class BaseController extends Controller
 {
@@ -20,7 +19,7 @@ class BaseController extends Controller
         if (isset($model::$type)) {
             $query = new Location();
             $userLocations = UserLocation::getLocations();
-            $query = $this->applyLocationFilter($userLocations, $query, $model);
+            $query = Location::applyLocationFilter($userLocations, $model, $query);
             $query = $query->where('type', $model::$type);
         }
 
@@ -40,28 +39,6 @@ class BaseController extends Controller
         return $data;
     }
 
-    public function applyLocationFilter($userLocations, $query, $model)
-    {
-        if (!checkIfSuperAdmin()) {
-            $query = $query->where(function ($query) use ($userLocations, $model) {
-                $locations = $userLocations->where('type', 'location')->pluck('location_id')->toArray();
-                $type = getTypeForPermission($model);
-                $query = $query->whereIn('id', $locations);
-                $hierarchyLocations = $userLocations->where('type', $type)->pluck('location_id')->toArray();
-                foreach ($hierarchyLocations as $location) {
-                    $query->orWhere(function ($innerQuery) use ($location) {
-                        $innerQuery->whereDescendantOrSelf($location);
-                    });
-                }
-            });
-            if (assetCondition($model)) {
-                $location = Session::get('asset_location_id');
-                $query = $query->whereDescendantOrSelf($location);
-            }
-        }
-
-        return $query;
-    }
 
     public function getData($request, $query, $items_per_page)
     {
@@ -104,9 +81,9 @@ class BaseController extends Controller
 
         if (isset($request->search_keyword) && $request->search_keyword != "") {
             $keyword = $request->search_keyword;
-            $query = $query->where(function ($query) use ($keyword, $columns) {
+            $query = $query->where(function ($query) use ($keyword, $columns, $model) {
                 foreach ($columns as $column) {
-                    $query = $query->orWhere($column, 'LIKE', "%$keyword%");
+                    $query = $query->orWhere($model->getTable() . '.' . $column, 'LIKE', "%$keyword%");
                 }
             });
         }

@@ -27,6 +27,7 @@ class Role extends Authenticatable
         return '';
     }
 
+
     /**
      * @param $request
      * @param $item
@@ -34,25 +35,27 @@ class Role extends Authenticatable
     function updateLocations($request, $item)
     {
         UserLocation::where(['role_id' => $item->id])->delete();
-        foreach ($request->location as $location) {
-            UserLocation::create([
-                'type' => 'location',
-                'location_id' => $location,
-                'role_id' => $item->id,
-                'action' => '',
-            ]);
-        }
-        foreach ($request->permissions as $type => $permission) {
-            foreach ($permission as $action => $locations)
-                foreach ($locations as $location){
-                    UserLocation::create([
-                        'type' => $type,
-                        'location_id' => $location,
-                        'role_id' => $item->id,
-                        'action' => $action,
-                    ]);
-                }
-        }
+        if ($request->location)
+            foreach ($request->location as $location) {
+                UserLocation::create([
+                    'type' => 'location',
+                    'location_id' => $location,
+                    'role_id' => $item->id,
+                    'action' => '',
+                ]);
+            }
+        if ($request->permissions)
+            foreach ($request->permissions as $type => $permission) {
+                foreach ($permission as $action => $locations)
+                    foreach ($locations as $location) {
+                        UserLocation::create([
+                            'type' => $type,
+                            'location_id' => $location,
+                            'role_id' => $item->id,
+                            'action' => $action,
+                        ]);
+                    }
+            }
     }
 
     public function locations(): \Illuminate\Database\Eloquent\Relations\HasMany

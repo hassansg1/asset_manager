@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Patch;
 use App\Models\PatchPolicy;
+use App\Repos\PatchRepo;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory;
@@ -30,7 +31,7 @@ class PatchReportController extends BaseController
      */
     public function index(Request $request)
     {
-        $data = $this->fetchData($this->model, $request, 'PatchReportRepo');
+        $data = $this->fetchData($this->model, $request, new PatchRepo());
 
         return view("patch_report/index")
             ->with(['items' => $data['items'], 'heading' => 'Patch Report', 'route' => 'patch_report']);

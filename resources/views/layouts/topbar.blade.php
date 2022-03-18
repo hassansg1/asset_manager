@@ -130,15 +130,9 @@
                     <a href="{{ route('log.index') }}" class="dropdown-item notify-item language" data-lang="eng">
                         <span class="align-middle">Logs</span>
                     </a>
-                    {{--                    <a href="{{ route('compliance.index') }}" class="dropdown-item notify-item language" data-lang="eng">--}}
-                    {{--                        <span class="align-middle">Compliance</span>--}}
-                    {{--                    </a>--}}
-                    {{--                     <a href="{{ route('compliance.applicable') }}" class="dropdown-item notify-item language" data-lang="eng">--}}
-                    {{--                        <span class="align-middle">Applicable Compliance</span>--}}
-                    {{--                    </a>--}}
-{{--                    <a href="{{ route('task') }}" class="dropdown-item notify-item language" data-lang="eng">--}}
-{{--                        <span class="align-middle">Task</span>--}}
-{{--                    </a>--}}
+                    <a href="{{ route('task') }}" class="dropdown-item notify-item language" data-lang="eng">
+                        <span class="align-middle">Task</span>
+                    </a>
                     <a href="{{ route('attachment.index') }}" class="dropdown-item notify-item language"
                        data-lang="eng">
                         <span class="align-middle">Document Library</span>

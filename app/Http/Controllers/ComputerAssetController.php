@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Computer;
-use Illuminate\Http\Request;
-use Illuminate\Contracts\View\View;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 class ComputerAssetController extends BaseController
 {
@@ -33,7 +31,7 @@ class ComputerAssetController extends BaseController
         $data = $this->fetchData($this->model, $request);
 
         return view($this->route . "/index")
-            ->with(['items' => $data['items'], 'data' => $data,'filter' => $filter[0] ?? null, 'route' => $this->route, 'heading' => $this->heading]);
+            ->with(['items' => $data['items'], 'data' => $data, 'filter' => $filter[0] ?? null, 'route' => $this->route, 'model' => $this->model, 'heading' => $this->heading]);
     }
 
     /**
@@ -58,7 +56,7 @@ class ComputerAssetController extends BaseController
     public function create()
     {
         return view($this->route . "/create")
-            ->with(['route' => $this->route, 'heading' => $this->heading]);
+            ->with(['route' => $this->route, 'model' => $this->model, 'heading' => $this->heading]);
     }
 
     /**
@@ -83,7 +81,7 @@ class ComputerAssetController extends BaseController
     public function show($item)
     {
         $item = $this->model->find($item);
-        $heading = $this->heading.' ('.$item->rec_id.')';
+        $heading = $this->heading . ' (' . $item->rec_id . ')';
         return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'heading' => $heading, 'clone' => $request->clone ?? null]);
     }
 
@@ -99,11 +97,11 @@ class ComputerAssetController extends BaseController
                 $item = $this->model->find('id', $request->item);
         }
         $item = $this->model->find($item);
-        $heading = $this->heading.' ('.$item->rec_id.')';
+        $heading = $this->heading . ' (' . $item->rec_id . ')';
         if ($request->ajax) {
             return response()->json([
                 'status' => true,
-                'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item, 'clone' => $request->clone ?? null])->render()
+                'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'model' => $this->model, 'item' => $item, 'clone' => $request->clone ?? null])->render()
             ]);
         } else
             return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'heading' => $heading, 'clone' => $request->clone ?? null]);

@@ -959,9 +959,25 @@ function checkIfButtonAllowed($locations, $item, $action)
 {
     $viewPermissions = $locations->where('action', $action)->pluck('location');
     foreach ($viewPermissions as $location) {
-        if ($item->isDescendantOf($location) || $item->id == $location->id  ) {
+        if ($item->isDescendantOf($location) || $item->id == $location->id) {
             return true;
         }
     }
     return false;
+}
+
+function getLocationsForDropDown($type, $action, $model = null)
+{
+    $locations = \App\Models\Location::applyLocationFilter(null, $model, null, null, $action, true)->get();
+    if ($type) {
+        $types = \App\Models\Location::getHierarchyLevelForCreation($type);
+        $locations = $locations->whereIn('type', $types);
+    }
+
+    $sorted = [];
+    foreach ($locations as $location) {
+        $sorted[$location->type][] = $location;
+    }
+
+    return $sorted;
 }

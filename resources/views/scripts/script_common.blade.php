@@ -15,8 +15,9 @@
     //     }
     // });
 
-    $(document).on('search', '#search_keyword', function (e) {
-        $('#keyword_search_btn').trigger("click");
+    $(document).on('search', '.search_universal', function (e) {
+        let id = $(this).attr('id');
+        $('#'+id+'keyword_search_btn').trigger("click");
     });
 
     function loadDataTableDynamically(type, div) {
@@ -32,7 +33,7 @@
         let software_id = $('#software_id_filter').val();
         let patch_id = $('#patch_id_filter').val();
         let asset_id_filter = $('#asset_id_filter').val();
-        let search_keyword = $('#search_keyword').val();
+        let search_keyword = $('#ser'+div).val();
         let patch_ids = $("input[name='checked_patch[]']")
             .map(function () {
                 return $(this).val();
@@ -61,7 +62,7 @@
             },
             success: function (result) {
                 $('#' + div).html($(result).find('#' + div).html());
-                makeDatatable('datatable-buttons');
+                makeDatatable('datatable-buttons'+div);
             },
         });
     }

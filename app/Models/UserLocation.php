@@ -25,6 +25,11 @@ class UserLocation extends Model
         return $locations->get();
     }
 
+    public function getIdentifierAttribute()
+    {
+        return $this->location_id . $this->type . $this->action;
+    }
+
     public function location()
     {
         return $this->belongsTo(Location::class);

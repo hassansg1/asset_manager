@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <h4 class="card-title mb-4">Devices that exist in Nozomi but missing in OTCM
                         ({{ count($existInNozomi) }} Devices)</h4>
-                    <table class="table table-responsive" id="nozomi_table">
+                    <table class="table table-responsive" id="{{ 'datatable-buttons' }}">
                         <thead>
                         <tr>
                             <th>
@@ -32,7 +32,6 @@
                                     <button type="button" class="btn btn-default btn-sm" data-mdb-toggle="tooltip"
                                             data-mdb-placement="top"
                                             title="{{ checkNetworkOfIpAddressHtml($device->ip_address) }}">
-                                        <i class="fas fa-plus-circle" aria-hidden="true"></i>
                                     </button>
                                 </td>
                                 <td>
@@ -54,7 +53,7 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title mb-4">Devices found but the underlying data is different</h4>
-            <table class="table table-responsive" id="nozomi_table">
+            <table class="table table-responsive" id="{{ 'datatable-buttons' }}">
                 <tr>
                     <th>
                         Ip Address
@@ -118,7 +117,7 @@
         <div class="card-body">
             <h4 class="card-title mb-4">Devices that exist in OTCM but missing in
                 Nozomi({{ count($existInOTCM) }} Devices)</h4>
-            <table class="table table-responsive" id="nozomi_table">
+            <table class="table table-responsive" id="{{ 'datatable-buttons' }}">
                 <thead>
                 <tr>
                     <th>

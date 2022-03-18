@@ -8,7 +8,7 @@
                         <div class="mt-2">
                         </div>
                         <div class="custom_table_div">
-                            <table id="{{ $id ?? 'datatable-buttons' }}"
+                            <table id="{{ $id ?? 'datatable-buttons'.$route }}"
                                    class="table table-bordered dt-responsive nowrap w-100 dataTable no-footer dtr-inline">
                                 <thead class="table-light custom_table_head">
                                 <tr>

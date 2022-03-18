@@ -1,4 +1,30 @@
 <script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: '{{ url('getLocationsOfRole'.'/'.$item->id) }}',
+            success: function (result) {
+                if (result.status) {
+                    let locations = result.locations;
+                    for (let count = 0; count < locations.length; count++) {
+                        locationClass = locations[count];
+                        $('#' + locationClass).prop('checked', true);
+                        $('#' + locationClass).trigger("change");
+                    }
+                    $('input:checkbox.permission_check').each(function () {
+                       $(this).prop('checked', false);
+                    });
+
+                    let permissions = result.permissions;
+                    for (let count = 0; count < permissions.length; count++) {
+                        permissionClass = permissions[count];
+                        $('#' + permissionClass).prop('checked', true);
+                        $('#' + permissionClass).trigger("change");
+                    }
+                }
+            },
+        });
+    });
     $(function () {
         $("input[type='checkbox'].location_check").change(function () {
 

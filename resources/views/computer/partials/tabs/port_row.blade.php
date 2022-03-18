@@ -13,7 +13,7 @@
         @php($rand = rand(100000,1000000))
         <td class="ports_selection_div">
             <select onchange="loadPorts(this,'{{ $rand }}')" name="" id="" class="form-control">
-                <option value="">Select Network</option>
+                <option value="">Select Network Asset</option>
                 @foreach(\App\Models\NetworkAsset::all() as $entity)
                     <option
                         {{

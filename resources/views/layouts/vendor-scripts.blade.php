@@ -82,7 +82,7 @@
     }
 
     $(document).ready(function () {
-        makeDatatable('datatable-buttons');
+        makeDatatable('datatable-buttons'+'{{ $route ?? '' }}');
         let editor1 = CKEDITOR.replace('help_text', {
             width: '100%',
             height: 900,

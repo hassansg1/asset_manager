@@ -7,7 +7,7 @@
         @include('tree_files.location_tree_row',['location' => $unit,'spaces'=>5,'class'=>$unitClass])
 
         @foreach (\App\Models\Site::where('parent_id',$unit->id)->get() as $site)
-            @php($siteClass = $companyClass.' '.$unitClass.' loc'.$unit->id)
+            @php($siteClass = $companyClass.' '.$unitClass.' loc'.$site->id)
             @include('tree_files.location_tree_row',['location' => $site,'spaces'=>10,'class'=>$siteClass])
         @endforeach
     @endforeach

@@ -25,9 +25,12 @@
                 <td><input type="text" name="type"
                            class="form-control" value="network"></td>
                 <td></td>
-                <td><input type="text" name="speed"
+                <td><input type="text" name="network"
                            class="form-control"></td>
-                <td></td>
+                <td>
+                    <input type="text" name="speed"
+                           class="form-control">
+                </td>
                 @php($rand = rand(100000,1000000))
             </tr>
             <tr>
