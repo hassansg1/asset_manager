@@ -105,7 +105,7 @@ class NetworkAssetController extends BaseController
                 'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'model' => $this->model, 'item' => $item, 'clone' => $request->clone ?? null])->render()
             ]);
         } else
-            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'heading' => $heading, 'clone' => $request->clone ?? null]);
+            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'model' => $this->model, 'heading' => $heading, 'clone' => $request->clone ?? null]);
     }
 
     /**
