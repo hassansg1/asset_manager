@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table mb-0" id="location_table">
+    <table class="table mb-0 location_table_compliance_run lcc_{{$item_id}}" id="">
         <thead class="table-light">
         <tr>
             <th>Location Name</th>

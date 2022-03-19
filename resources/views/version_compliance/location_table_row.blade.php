@@ -1,25 +1,30 @@
 <tr class="parent_row" id="compl_{{ $location->id }}{{$item_id}}">
-    <td>
+    <td class="compl_name">
         {{ $location->long_name }}
     </td>
-    <td>
+    <td class="">
         {{ isset($dt) ? \App\Models\ClauseData::getLabel($dt->compliant) : '-' }}
     </td>
-    <td>
-        {!! descriptionWrapText($dt->comment ?? '-',50) !!}
+    <td class="compl_comment">
+        {!! descriptionWrapText($dt->comment ?? '-',20) !!}
     </td>
-    <td>
+    <td class="compl_attachment">
         @isset($dt)
             @foreach($dt->attachments as $attachment)
                 @foreach($attachment->attachment->attachmentItems as $attachmentItem)
                     <a target="_blank"
-                       href="{{ $attachmentItem->fileLink() }}">{{ $attachment->attachment->title ?? '' }}</a>
+                       href="{{ $attachmentItem->fileLink() }}">
+                        {!! descriptionWrapText($attachment->attachment->title ?? '-',20) !!}
+                    </a>
+                    <br>
                     <br>
                 @endforeach
             @endforeach
             @if($dt->link)
                 <a target="_blank"
-                   href="{{ $dt->link ?? '' }}">{{ $dt->link ?? '' }}</a>
+                   href="{{ $dt->link ?? '' }}">
+                    {!! descriptionWrapText($dt->link ?? '',20,"") !!}
+                </a>
                 <br>
             @endif
         @endif

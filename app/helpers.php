@@ -103,9 +103,9 @@ if (!function_exists('getDevicePorts')) {
     }
 }
 if (!function_exists('descriptionWrapText')) {
-    function descriptionWrapText($description, $width = 100)
+    function descriptionWrapText($description, $width = 100,$break = "<br>\n")
     {
-        return wordwrap($description, $width, "<br>\n");
+        return chunk_split($description,$width,"<br>");
     }
 }
 if (!function_exists('getComplaintCount')) {

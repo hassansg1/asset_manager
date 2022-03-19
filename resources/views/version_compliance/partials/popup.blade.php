@@ -102,7 +102,10 @@
                     let locationId = $('#location_id').val();
                     let clauseId = $('#clause_id').val();
                     let el = $('#' + "compl_" + locationId + clauseId);
-                    el.replaceWith(data.html);
+                    el.find('.compl_compliant').html($(data.html).find('.compl_compliant').html());
+                    el.find('.compl_comment').html($(data.html).find('.compl_comment').html());
+                    el.find('.compl_attachment').html($(data.html).find('.compl_attachment').html());
+                    // el.replaceWith(data.html);
                     $('.modal').modal('hide');
                     doSuccessToast();
                 } else

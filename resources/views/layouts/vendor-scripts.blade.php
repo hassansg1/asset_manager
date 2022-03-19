@@ -56,11 +56,31 @@
         },
     ];
 
+    function makeDatatableByClass(className) {
+        renderDataTable('.'+className);
+    }
     function makeDatatable(id) {
-        $("#"+id).find("thead tr").prepend("<th></th>");
-        $("#"+id).find("tbody tr").prepend("<td></td>");
+        let table = renderDataTable('#'+id);
+        $("#dtb").find("thead tr").prepend("<th></th>");
+        $("#dtb").find("tbody tr").prepend("<td></td>");
+        complianceTable = $('#dtb').DataTable({
+            lengthChange: false,
+            buttons: ['copy', 'excel', 'pdf', 'colvis'],
+            "searching": false,
+            "ordering": false,
+            "bPaginate": false,
+            "bSortable": false,
+        });
+        table.buttons().container().appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
+        $(".dataTables_length select").addClass('form-select form-select-sm');
+    }
 
-        var table = $('#' + id).DataTable({
+    function renderDataTable(selector)
+    {
+        $(selector).find("thead tr").prepend("<th></th>");
+        $(selector).find("tbody tr").prepend("<td></td>");
+
+        var table = $(selector).DataTable({
             responsive: {
                 details: {
                     type: 'column',
@@ -81,18 +101,8 @@
             "bSortable": false,
             "bPaginate": false,
         });
-        $("#dtb").find("thead tr").prepend("<th></th>");
-        $("#dtb").find("tbody tr").prepend("<td></td>");
-        complianceTable = $('#dtb').DataTable({
-            lengthChange: false,
-            buttons: ['copy', 'excel', 'pdf', 'colvis'],
-            "searching": false,
-            "ordering": false,
-            "bPaginate": false,
-            "bSortable": false,
-        });
-        table.buttons().container().appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
-        $(".dataTables_length select").addClass('form-select form-select-sm');
+
+        return table;
     }
 
     $(document).ready(function () {

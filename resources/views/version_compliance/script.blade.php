@@ -53,6 +53,7 @@
                     $('.select2').select2();
                     iconClass.removeClass('fas fa-eye');
                     iconClass.addClass('fas fa-eye-slash');
+                    makeDatatableByClass('lcc_'+trId);
                 }
             }
         });

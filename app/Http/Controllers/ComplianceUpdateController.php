@@ -177,17 +177,20 @@ class ComplianceUpdateController extends BaseController
             }
         }
 
+        $location = Location::find($request->location_id);
         return response()->json([
             'status' => true,
             'html' => view('version_compliance.location_table_row')->with(
                 [
                     'dt' => $item,
-                    'location' => Location::find($request->location_id),
+                    'location' => $location,
                     'item_id' => $item->clause_id,
                     'location_id' => $request->location_id,
                     'versionId' => $request->compliance_version_id,
+                    'ajax' => true,
                     'version' => ComplianceVersion::find($request->compliance_version_id)
-                ])->render()
+                ])->render(),
+            'location' => $location
         ]);
     }
 }
