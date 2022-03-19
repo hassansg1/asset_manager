@@ -22,7 +22,7 @@
         });
     }
 
-    $('body').on('click', '.details-control', function () {
+    $('body').on('click', '.details-control', function (e) {
         var tr = $(this).closest('tr');
         var row = complianceTable.row(tr);
         var trId = $(this).attr('data-id');

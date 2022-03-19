@@ -111,14 +111,7 @@
 
 @section('script')
 <script>
-    $('#datatable-logs').DataTable({
-        lengthChange: false,
-        buttons: ['copy', 'excel', 'pdf', 'colvis'],
-        "searching": false,
-        "ordering": false,
-        "bPaginate": false,
-        "bSortable": false,
-    });
+    makeDatatable('datatable-logs');
     function toggleSelectAll() {
         $('.select_row').prop('checked', $('#select_all').is(":checked"));
     }

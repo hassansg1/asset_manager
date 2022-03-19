@@ -1,9 +1,9 @@
 <tr id="{{ $item->id }}">
     <td style="padding-left: {{ $padding }}" data-id="{{ $item->id }}"
-        class="{{ $item->applicable ? 'details-control' : '' }}">
+        >
         @if($item->applicable)
-            <span title="View Compliance by Locations" style="cursor: pointer;color: #337ab7"
-                  class="fas fa-eye icon_{{ $item->id }}"></span>
+            <span data-id="{{ $item->id }}" title="View Compliance by Locations" style="cursor: pointer;color: #337ab7"
+                  class="fas fa-eye icon_{{ $item->id }} {{ $item->applicable ? 'details-control' : '' }}"></span>
         @endif
         {{ $item->number ?? '' }} {{ !$item->applicable ? '(Not Applicable)' : '' }}
     </td>

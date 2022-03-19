@@ -49,13 +49,6 @@
 
 @section('script')
     <script>
-        $('#datatable-logs').DataTable({
-            lengthChange: false,
-            buttons: ['copy', 'excel', 'pdf', 'colvis'],
-            "searching": false,
-            "ordering": false,
-            "bPaginate": false,
-            "bSortable": false,
-        });
+        makeDatatable('datatable-logs');
     </script>
 @endsection

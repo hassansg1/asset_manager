@@ -57,7 +57,20 @@
     ];
 
     function makeDatatable(id) {
+        $("#"+id).find("thead tr").prepend("<th></th>");
+        $("#"+id).find("tbody tr").prepend("<td></td>");
+
         var table = $('#' + id).DataTable({
+            responsive: {
+                details: {
+                    type: 'column',
+                }
+            },
+            columnDefs: [ {
+                className: 'dtr-control',
+                orderable: false,
+                targets:   0
+            } ],
             lengthChange: false,
             dom: 'Bfrtip',
             buttons: [
@@ -67,8 +80,9 @@
             "ordering": false,
             "bSortable": false,
             "bPaginate": false,
-
         });
+        $("#dtb").find("thead tr").prepend("<th></th>");
+        $("#dtb").find("tbody tr").prepend("<td></td>");
         complianceTable = $('#dtb').DataTable({
             lengthChange: false,
             buttons: ['copy', 'excel', 'pdf', 'colvis'],
