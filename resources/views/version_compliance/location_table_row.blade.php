@@ -2,7 +2,7 @@
     <td class="compl_name">
         {{ $location->long_name }}
     </td>
-    <td class="">
+    <td class="compl_compliant">
         {{ isset($dt) ? \App\Models\ClauseData::getLabel($dt->compliant) : '-' }}
     </td>
     <td class="compl_comment">
