@@ -13,7 +13,6 @@ class AttachmentItem extends Model
 
     public function fileLink()
     {
-        return asset('storage/library_documents/' . $this->fileName);
+        return url('/docs/' . $this->fileName);
     }
-
 }

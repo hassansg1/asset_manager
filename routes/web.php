@@ -241,3 +241,4 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('/linkstorage', function () {
     \Illuminate\Support\Facades\Artisan::call('storage:link');
 });
+Route::get('/docs/{filename}', [\App\Http\Controllers\FileAccessController::class,'getFile']);
