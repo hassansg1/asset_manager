@@ -238,3 +238,6 @@ Route::group(['middleware' => ['auth']], function () {
     //
     Route::get('getLocationsOfRole/{roleId}', [\App\Http\Controllers\RoleController::class, 'getLocationsOfRole']);
 });
+Route::get('/linkstorage', function () {
+    \Illuminate\Support\Facades\Artisan::call('storage:link');
+});
