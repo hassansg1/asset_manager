@@ -41,7 +41,7 @@ class Attachment extends Model
                 $imageName = $image->getClientOriginalName();
                 $name = time() . $imageName;
                 $path = Storage::disk('library_documents')->putFileAs(
-                    'library_documents', $image, $name
+                    '/', $image, $name
                 );
                 $attachmentItem = new AttachmentItem();
                 $attachmentItem->attachment_id = $item->id;
