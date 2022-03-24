@@ -82,7 +82,7 @@ class ComputerAssetController extends BaseController
     {
         $item = $this->model->find($item);
         $heading = $this->heading . ' (' . $item->rec_id . ')';
-        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'heading' => $heading, 'clone' => $request->clone ?? null]);
+        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'model' => $this->model, 'heading' => $heading, 'clone' => $request->clone ?? null]);
     }
 
     /**
