@@ -97,6 +97,8 @@ return [
     'password' => 'The password is incorrect.',
     'present' => 'The :attribute field must be present.',
     'regex' => 'The :attribute format is invalid.',
+    'regex' => 'The :attribute must be at least 7 characters.',
+    'regex' => 'The :attribute must contain at least one lowercase, uppercase, digit and a special character.',
     'required' => 'The :attribute field is required.',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',

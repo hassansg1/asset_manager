@@ -75,7 +75,18 @@ class User extends Authenticatable
     public $rules =
         [
             'first_name' => 'required | max:255',
+            'last_name' => 'required | max:255',
+            'username' => 'required | max:255',
             'email' => 'required | email',
+            'password' => [
+                'required',
+                'string',
+                'min:7',             // must be at least 7 characters in length
+                'regex:/[a-z]/',      // must contain at least one lowercase letter
+                'regex:/[A-Z]/',      // must contain at least one uppercase letter
+                'regex:/[0-9]/',      // must contain at least one digit
+                'regex:/[@$!%*#?&]/', // must contain a special character
+            ],
         ];
 
 
