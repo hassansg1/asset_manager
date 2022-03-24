@@ -75,6 +75,8 @@ class User extends Authenticatable
     public $rules =
         [
             'first_name' => 'required | max:255',
+            'last_name' => 'required | max:255',
+            'username' => 'required | max:255',
             'email' => 'required | email',
         ];
 
@@ -110,6 +112,7 @@ class User extends Authenticatable
         if (isset($request->last_name)) $item->last_name = $request->last_name;
         if (isset($request->mobile_no)) $item->mobile_no = $request->mobile_no;
         if (isset($request->email)) $item->email = $request->email;
+        if (isset($request->username)) $item->username = $request->username;
         if (isset($request->password)) $item->password = Hash::make($request->password);
         if (isset($request->dob)) $item->dob = Hash::make($request->dob);
         $item->save();
