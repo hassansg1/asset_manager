@@ -444,8 +444,9 @@ if (!function_exists('shortClassName')) {
 if (!function_exists('sanitizeInput')) {
     function sanitizeInput($value)
     {
-        $value = preg_replace('/[^A-Za-z0-9\- .,]/', '', $value);
+        $value = preg_replace('/[^A-Za-z0-9\-_ .,()]/', '', $value);
         return utf8_encode($value);
+//        return $value;
     }
 }
 
@@ -497,7 +498,7 @@ if (!function_exists('tableColumnsMapping')) {
                 'location_dec_coordinate' => 'Site Location(Coordinates - Dec)',
                 'location_deg_coordinate' => 'Site Location(Coordinates - Deg)',
                 'location_google_link' => 'Site Location(Google Link)',
-                'main_process_equipment' => 'Main Process / Equipment',
+                'main_process_equipment' => 'Main Process or Equipment',
             ],
             'sub_sites' => [
                 'parent_type' => 'Parent Type',
@@ -510,7 +511,7 @@ if (!function_exists('tableColumnsMapping')) {
                 'location_dec_coordinate' => 'SubSite Location(Coordinates - Dec)',
                 'location_deg_coordinate' => 'SubSite Location(Coordinates - Deg)',
                 'location_google_link' => 'SubSite Location(Google Link)',
-                'main_process_equipment' => 'Main Process / Equipment',
+                'main_process_equipment' => 'Main Process or Equipment',
             ],
             'buildings' => [
                 'parent_type' => 'Parent Type',

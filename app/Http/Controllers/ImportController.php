@@ -74,12 +74,12 @@ class ImportController extends Controller
                     for ($i = 0; $i < count($obj); $i++) {
                         $clm = tableColumnsMapping($tableNameRaw, 'import', $header[$i]);
                         if ($clm) {
-                            $arr[$clm] = sanitizeInput($obj[$header[$i]]);
+                            $arr[$clm] = $obj[$header[$i]];
                         }
                     }
 
-                    $parentType = $obj['Parent Type'];
-                    $parentId = $obj['Parent ID'];
+                    $parentType = $arr['parent_type'];
+                    $parentId = $arr['parent_id'];
 
                     if (!in_array($parentType, ['Company', 'Unit', 'Site', 'SubSite', 'Unit', 'Building', 'Room', 'Cabinet'])) {
                         $logs[] = 'Error : Invalid Parent Type : ' . $parentType;
