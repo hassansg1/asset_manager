@@ -43,23 +43,23 @@ trait Observable
             } elseif ($action == 'DELETED') {
                 DB::table($model->getTable())->insert($model->getOriginal());
             }
+            $log = Log::create([
+                'user_id' => Auth::user()->id ?? null,
+                'model' => static::class,
+                'model_id' => $model->id,
+                'table_name' => $model->getTable(),
+                'action' => $action,
+                'reason' => Session::get('reason') ?? '',
+                'message' => self::logSubject($model),
+                'approval_request' => 1,
+                'models' => json_encode([
+                    'new' => $action !== 'DELETED' ? $model->getAttributes() : null,
+                    'old' => $action !== 'CREATED' ? $model->getOriginal() : null,
+                    'changed' => $action === 'UPDATED' ? $model->getChanges() : null,
+                ])
+            ]);
         }
-        $log = Log::create([
-            'user_id' => Auth::user()->id ?? null,
-            'model' => static::class,
-            'model_id' => $model->id,
-            'table_name' => $model->getTable(),
-            'action' => $action,
-            'reason' => Session::get('reason') ?? '',
-            'message' => self::logSubject($model),
-            'approval_request' => 1,
-            'models' => json_encode([
-                'new' => $action !== 'DELETED' ? $model->getAttributes() : null,
-                'old' => $action !== 'CREATED' ? $model->getOriginal() : null,
-                'changed' => $action === 'UPDATED' ? $model->getChanges() : null,
-            ])
-        ]);
-        $log = Log::create([
+        $logsd = Log::create([
             'user_id' => Auth::user()->id ?? null,
             'model' => static::class,
             'model_id' => $model->id,
