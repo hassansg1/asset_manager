@@ -132,6 +132,7 @@ class ImportController extends Controller
             if ($success) {
                 $logs[] = '<br>';
                 $logs[] = 'All the Data processed successfully.';
+                Location::fixtree();
                 DB::commit();
             } else {
                 $logs[] = '<br>';
