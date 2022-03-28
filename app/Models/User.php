@@ -124,6 +124,7 @@ class User extends Authenticatable
         if (isset($request->username)) $item->username = $request->username;
         if (isset($request->password)) $item->password = Hash::make($request->password);
         if (isset($request->dob)) $item->dob = Hash::make($request->dob);
+        $item->user_type = "OTCM-USER";
         $item->save();
         if (isset($request->roles)) {
             $item->syncRoles($request->roles);

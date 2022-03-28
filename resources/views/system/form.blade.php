@@ -11,14 +11,16 @@
             <div class="card-body">
                 <h4 class="card-title mb-4">{{ $heading }} Information</h4>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-lg-6">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}system_type_id"
-                                   class="form-label required">System Type</label>
-                            <select class="form-control select2" id="system_type_id" name="system_type_id" required>
-                                <option value="">-Select System Type-</option>
-                                @foreach($system_types as $value)
-                                    <option value="{{$value->id}}" {{ isset($item) && $item->system_type_id == $value->id  ? 'selected' : ''}}>{{$value->name}}</option>
+                            <label for="{{ isset($item) ? $item->id:'' }}function" class="form-label required">Asset Function</label>
+                            <select class="form-select form-select-input" name="function"
+                                    id="{{ isset($item) ? $item->id:'' }}function">
+                                @foreach(\App\Models\AssetFunction::all() as $function)
+                                    <option value=""></option>
+                                    <option
+                                        {{ $function->id == (isset($item) ? $item->function:old('last_name') ?? '') ? 'selected' : ''  }}
+                                        value="{{ $function->id }}">{{ $function->name }}</option>
                                 @endforeach
                             </select>
                         </div>

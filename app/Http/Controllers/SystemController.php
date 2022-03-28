@@ -46,7 +46,7 @@ class SystemController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate($this->model->rules($request->system_type_id));
+        $request->validate($this->model->rules($request->function));
         $this->model->saveFormData($this->model, $request);
 
         flashSuccess(getLang($this->heading . " Successfully Created."));
