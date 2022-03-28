@@ -9,10 +9,10 @@ class System extends Model
 {
 	use HasFactory;
 
-    public function rules($system_type_id = null)
+    public function rules($function = null)
     {
         return [
-            'name' => 'required|unique:systems,name,NULL,id,system_type_id,' . $system_type_id
+            'name' => 'required|unique:systems,name,NULL,id,function,' . $function
         ];
     }
 
@@ -21,13 +21,24 @@ class System extends Model
     }
 
     public function system_type(){
-        return $this->hasOne(AssetFunction::class, 'id', 'system_type_id');
+        return $this->hasOne(AssetFunction::class, 'id', 'function');
+    }
+
+    /**
+     * @param $value
+     */
+    public function setFunctionAttribute($value)
+    {
+        if (!is_numeric($value) || AssetFunction::find($value) == null) {
+            $value = AssetFunction::createNew($value);
+        }
+        $this->attributes['function'] = $value;
     }
 
 	public function saveFormData($item, $request)
 	{
 		if (isset($request->name)) $item->name = $request->name;
-		if (isset($request->system_type_id)) $item->system_type_id = $request->system_type_id;
+        if (isset($request->function)) $item->function = $request->function;
 		if (isset($request->description)) $item->description = $request->description;
 		$item->save();
         $result= SystemAssets::where('system_id',$item->id)->delete();

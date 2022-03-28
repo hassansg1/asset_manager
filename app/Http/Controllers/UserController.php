@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Foundation\Application;
+use App\Repos\UserRepo;
 use Spatie\Permission\Models\Role;
 
 class UserController extends BaseController
@@ -29,7 +30,7 @@ class UserController extends BaseController
      */
     public function index(Request $request)
     {
-        $data = $this->fetchData($this->model, $request);
+        $data = $this->fetchData($this->model, $request, new UserRepo());
 
         return view($this->route . "/index")
             ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading]);
