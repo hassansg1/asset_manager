@@ -64,7 +64,7 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate($this->model->rules($request->id));
+        $request->validate($this->model->rules);
         $this->model->saveFormData($this->model, $request);
 
         flashSuccess(getLang($this->heading . " Successfully Created."));

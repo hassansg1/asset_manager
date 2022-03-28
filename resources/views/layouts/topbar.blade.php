@@ -94,6 +94,10 @@
                        data-lang="eng">
                         <span class="align-middle">Import Firewall Data</span>
                     </a>
+                    <a href="{{ route('user_import.index') }}" class="dropdown-item notify-item language"
+                       data-lang="eng">
+                        <span class="align-middle">Import Users</span>
+                    </a>
                     <a href="{{ route('nozomi_import.index') }}" class="dropdown-item notify-item language"
                        data-lang="eng">
                         <span class="align-middle">Import Nozomi Data</span>
