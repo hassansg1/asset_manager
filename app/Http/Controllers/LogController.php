@@ -5,21 +5,31 @@ namespace App\Http\Controllers;
 use App\Models\Log;
 use App\Models\Notification;
 use App\Models\Task;
+use App\Models\Unit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
-class LogController extends Controller
+class LogController extends BaseController
 {
+    public function __construct()
+    {
+        $this->model = new Log();
+        $this->route = 'log';
+        $this->heading = 'Log';
+        \Illuminate\Support\Facades\View::share('top_heading', 'Logs');
+    }
+
     /**
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index(Request $request)
     {
-        $logs = Log::orderBy('id', 'desc')->where('approval_request', 0)->get();
+        $data = $this->fetchData($this->model, $request);
 
-        return view('log.index')->with(['items' => $logs, 'heading' => 'Log', 'route' => 'log']);
+        return view($this->route . "/index")
+            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**

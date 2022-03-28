@@ -64,6 +64,7 @@
         $("#dtb").find("thead tr").prepend("<th></th>");
         $("#dtb").find("tbody tr").prepend("<td></td>");
         complianceTable = $('#dtb').DataTable({
+            "bInfo" : false,
             lengthChange: false,
             buttons: ['copy', 'excel', 'pdf', 'colvis'],
             "searching": false,
@@ -93,6 +94,7 @@
             } ],
             lengthChange: false,
             dom: 'Bfrtip',
+            "bInfo" : false,
             buttons: [
                 'copy', 'csv', 'excel', 'pdf', 'print'
             ],
