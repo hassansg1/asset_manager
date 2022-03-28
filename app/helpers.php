@@ -2,6 +2,7 @@
 
 use App\Models\AssetUserId;
 use App\Models\Attachment;
+use App\Models\Log;
 use App\Models\StandardClause;
 use App\Models\User;
 use App\Models\UserAccount;
@@ -601,25 +602,32 @@ if (!function_exists('tableColumnsMapping')) {
                 'file' => 'File',
             ],
             'firewall_managments' => [
-                'source_zone' => 'SourceZone',
-                'source_location' => 'SourceLocation',
-                'source_asset' => 'SourceAssets',
-                'destination_zone' => 'DestinationZone',
-                'destination_location' => 'DestinationLocation',
-                'destination_asset' => 'DestinationAssets',
-                'applicatin_port' => 'Application/Port',
-                'port' => 'Port',
+                'source_zone' => 'Source Zone',
+                'source_location' => 'Source Location',
+                'source_asset' => 'Source Asset ID',
+                'destination_zone' => 'Destination Zone',
+                'destination_location' => 'Destination Location',
+                'destination_asset' => 'Destination Asset ID',
+                'applicatin_port' => 'Application or Port',
                 'description' => 'Justification',
-                'condition' => 'Temp/Permanent',
-                'approvel_expirey_date' => 'Approval Expiry',
-                'approved_by' => 'Approved by',
-                'status' => 'Approval Status',
-                'approvel_date' => 'Approval date',
+                'condition' => 'Policy Validity',
+                'approvel_expirey_date' => 'Validity Date',
+                'approved_by' => 'Approved By',
             ],
             'nozomi_data' => [
                 'ip' => 'ip_address',
                 'os' => 'operating_system',
                 'vendor' => 'make_vendor',
+            ],
+            'users' => [
+                'unit_id' => 'Unit ID',
+                'first_name' => 'User Full Name',
+                'email' => 'Email',
+                'department_id' => 'Department',
+                'designation_id' => 'Designation',
+                'mobile_no' => 'Contact No',
+                'status' => 'Status',
+
             ],
 
         ];
