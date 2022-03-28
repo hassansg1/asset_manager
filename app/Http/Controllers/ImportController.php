@@ -76,7 +76,7 @@ class ImportController extends Controller
                     for ($i = 0; $i < count($obj); $i++) {
                         $clm = tableColumnsMapping($tableNameRaw, 'import', $header[$i]);
                         if ($clm) {
-                            $arr[$clm] = $obj[$header[$i]];
+                            $arr[$clm] = utf8_encode($obj[$header[$i]]);
                         }
                     }
 
