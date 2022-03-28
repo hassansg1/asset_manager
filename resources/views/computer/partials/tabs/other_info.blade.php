@@ -3,7 +3,7 @@
         <div class="mb-3">
             <label for="{{ isset($item) ? $item->id:'' }}vm_host"
                    class="form-label">VM Host</label>
-            <input type="text" value="{{ isset($item) ? $item->name:old('vm_host') ?? ''  }}"
+            <input type="text" value="{{ isset($item) ? $item->vm_host:old('vm_host') ?? ''  }}"
                    class="form-control" id="{{ isset($item) ? $item->id:'' }}vm_host"
                    name="vm_host">
         </div>

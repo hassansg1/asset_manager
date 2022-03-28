@@ -31,7 +31,7 @@ class NetworkAsset extends Model
 
     public $rules =
         [
-            'rec_id' => 'required | unique:network_assets,rec_id',
+            'rec_id' => 'required | unique:locations,rec_id',
         ];
 
     protected $appends = ['show_name'];

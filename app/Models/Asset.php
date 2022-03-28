@@ -15,7 +15,7 @@ class Asset extends Model
 
     public $rules =
         [
-            'rec_id' => 'required | max:255',
+            'rec_id' => 'required | unique:locations,rec_id',
         ];
 
     protected $appends = ['show_name'];

@@ -30,7 +30,7 @@ class LoneAsset extends Model
     }
     public $rules =
         [
-            'rec_id' => 'required | unique:computer_assets,rec_id',
+            'rec_id' => 'required | unique:locations,rec_id',
         ];
 
     protected $appends = ['show_name'];

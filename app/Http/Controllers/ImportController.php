@@ -39,7 +39,9 @@ class ImportController extends Controller
      */
     public function store(Request $request)
     {
+        set_time_limit(0);
         $file = $request->file('csv_file');
+        $editMode = $request->edit_mode ?? null;
         $fileName = $file->getClientOriginalName();
         $name = rand(1000000, 10000000) . $fileName;
         try {
@@ -105,10 +107,10 @@ class ImportController extends Controller
                     $request = new Request();
                     $request->replace($arr);
                     $validator = Validator::make($request->all(), $model->rules);
-                    if ($validator->fails()) {
+                    if ($validator->fails() && !$editMode) {
                         foreach ($validator->errors()->all() as $error) {
                             $logs[] = 'Error : ' . rec_id_replacer($error);
-                            $logs[] = 'Data : ' . print_r($request->all(),true);
+                            $logs[] = 'Data : ' . print_r($request->all(), true);
                             $success = false;
                         }
                         $logs[] = 'Rolling back the changes.';
@@ -116,6 +118,13 @@ class ImportController extends Controller
                         break;
                     } else {
                         try {
+                            $location = null;
+                            if (isset($editMode)) {
+                                $location = $model::where('rec_id', $request->rec_id)->first();
+                                if ($location) {
+                                    $model = $location;
+                                }
+                            }
                             $model->saveFormData($model, $request);
                         } catch (\Exception $exception) {
                             $logs[] = 'Internal Error. Message  : ' . $exception->getMessage() . ' . Please contact the administer.';

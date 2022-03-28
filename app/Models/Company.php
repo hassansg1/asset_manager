@@ -30,7 +30,7 @@ class Company extends Model
 
     public $rules =
         [
-            'rec_id' => 'required | unique:companies,rec_id',
+            'rec_id' => 'required | unique:locations,rec_id',
         ];
 
     protected $appends = ['show_name', 'parentable_type', 'parentable_id'];

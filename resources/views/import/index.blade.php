@@ -32,6 +32,13 @@
                         <br>
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
+                                <label for="edit_mode"> Edit Mode</label>
+                                <input type="checkbox" name="edit_mode" id="edit_mode" value="1" class="">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Parse CSV
                                 </button>
