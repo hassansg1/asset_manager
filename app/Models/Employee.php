@@ -17,14 +17,13 @@ class Employee extends Model
      {
      	return $this->first_name . " " . $this->last_name;
      }
-    public function rules($parentId = null)
-    {
-        return [
+
+    public $rules =
+        [
             'first_name' => 'required | max:255',
             'unit_id' => 'required',
             'email' => 'required',
         ];
-    }
 
     public function designation(){
         return $this->belongsTo(Designation::class, 'designation_id');
@@ -38,7 +37,7 @@ class Employee extends Model
      {
          $item->rec_id = 0;
        if (isset($request->first_name)) $item->first_name = $request->first_name;
-       if (isset($request->last_name)) $item->last_name = $request->last_name;
+       if (isset($request->first_name)) $item->first_name = $request->first_name;
        if (isset($request->email)) $item->email = $request->email;
        if (isset($request->designation_id)) $item->designation_id = $request->designation_id;
        if (isset($request->department_id)) $item->department_id = $request->department_id;
@@ -46,7 +45,7 @@ class Employee extends Model
        if (isset($request->mobile_no)) $item->mobile_no = $request->mobile_no;
        if (isset($request->unit_id)) $item->unit_id = $request->unit_id;
        $item->username = $request->first_name;
-       $item->user_type = "OTCM-USERS";
+       $item->user_type = "SYSTEM-USERS";
        $item->save();
 
        $accounts= $request->account_id;

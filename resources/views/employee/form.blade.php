@@ -40,11 +40,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-8">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}first_name"
-                                   class="form-label required">First
-                                Name</label>
+                                   class="form-label required">User Full Name</label>
                             <input type="text"
                                    value="{{ isset($item) ? $item->first_name:old('first_name') ?? ''  }}"
                                    class="form-control"
@@ -53,18 +52,18 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4">
-                        <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}last_name"
-                                   class="form-label">Last
-                                Name</label>
-                            <input type="text"
-                                   value="{{ isset($item) ? $item->last_name:old('last_name') ?? ''  }}"
-                                   class="form-control"
-                                   id="{{ isset($item) ? $item->id:'' }}last_name"
-                                   name="last_name">
-                        </div>
-                    </div>
+{{--                    <div class="col-lg-4">--}}
+{{--                        <div class="mb-3">--}}
+{{--                            <label for="{{ isset($item) ? $item->id:'' }}last_name"--}}
+{{--                                   class="form-label">Last--}}
+{{--                                Name</label>--}}
+{{--                            <input type="text"--}}
+{{--                                   value="{{ isset($item) ? $item->last_name:old('last_name') ?? ''  }}"--}}
+{{--                                   class="form-control"--}}
+{{--                                   id="{{ isset($item) ? $item->id:'' }}last_name"--}}
+{{--                                   name="last_name">--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     <div class="col-lg-4">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}email"
