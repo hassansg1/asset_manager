@@ -42,9 +42,9 @@
                                 <div class="col-lg-6 system" style="display: none" }}>
                                     @endif
                                     <div class="mb-3">
-                                        <label for="{{ isset($item) ? $item->id:'' }}system_id"
+                                        <label for="{{ isset($item) ? $item->id:'' }}parent_id"
                                                class="form-label required">System Name</label>
-                                        <select class="form-control select2" id="system_id" name="system_id">
+                                        <select class="form-control select2" id="parent_id" name="parent_id">
                                             <option value="">-Select System-</option>
                                             @foreach($system as $value)
                                                 <option
@@ -61,7 +61,7 @@
                                                 <div class="mb-3">
                                                     <label for="{{ isset($item) ? $item->id:'' }}asset_id"
                                                            class="form-label required">Asset ID</label>
-                                                    <select class="form-control select2" id="asset_id" name="asset_id">
+                                                    <select class="form-control select2" id="parent_id" name="parent_id">
                                                         <option value="">-Select Asset ID-</option>
                                                         @foreach($assets as $value)
                                                             <option

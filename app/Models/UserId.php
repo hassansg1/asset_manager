@@ -38,7 +38,7 @@ class UserId extends Model
 	{
         if ($request->user_type == "asset") {
 		if (isset($request->user_id)) $item->user_id = $request->user_id;
-            if (isset($request->asset_id)) $item->parent_id = $request->asset_id;
+            if (isset($request->parent_id)) $item->parent_id = $request->parent_id;
         $item->parent = "asset";
 		if (isset($request->description)) $item->description = $request->description;
 		$item->save();
@@ -59,7 +59,7 @@ class UserId extends Model
 		}
 	if($request->user_type == "system"){
         if (isset($request->user_id)) $item->user_id = $request->user_id;
-        if (isset($request->system_id)) $item->parent_id = $request->system_id;
+        if (isset($request->parent_id)) $item->parent_id = $request->parent_id;
         $item->parent = "system";
         if (isset($request->description)) $item->description = $request->description;
         $item->save();

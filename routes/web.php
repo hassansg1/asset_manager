@@ -58,6 +58,7 @@ Route::group(['middleware' => ['auth']], function () {
         'patch_import' => \App\Http\Controllers\PatchImportController::class,
         'firewall_import' => \App\Http\Controllers\FirewallImportController::class,
         'user_import' => \App\Http\Controllers\UserImportController::class,
+        'user_id_import' => \App\Http\Controllers\UserIdImportController::class,
         'nozomi_import' => \App\Http\Controllers\NozomiImportController::class,
         'clause' => \App\Http\Controllers\ClauseController::class,
         'clause_edit' => \App\Http\Controllers\StandardClauseEditController::class,

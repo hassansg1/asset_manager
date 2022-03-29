@@ -629,6 +629,14 @@ if (!function_exists('tableColumnsMapping')) {
                 'status' => 'Status',
 
             ],
+            'user_ids' => [
+                'user_type' => 'User ID Type',
+                'parent_id' => 'System Name or Asset ID',
+                'user_id' => 'User ID',
+                'description' => 'Description',
+                'right_id' => 'User ID Rights',
+
+            ],
 
         ];
 
