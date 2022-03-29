@@ -22,6 +22,8 @@
         </div>
     </div>
 </div>
+@if(isset($item))
 @section('script')
     @include('role.script')
 @endsection
+@endif

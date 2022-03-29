@@ -74,6 +74,8 @@ class UserImportController extends Controller
                             $arr[$clm] = sanitizeInput($obj[$header[$i]]);
                         }
                     }
+                    $unit_id = Location::where('rec_id', $obj['Unit ID'])->pluck('id');
+                    $arr['unit_id'] =$unit_id[0];
                     $request = new Request();
                     $request->replace($arr);
                     $validator = Validator::make($request->all(), $model->rules);

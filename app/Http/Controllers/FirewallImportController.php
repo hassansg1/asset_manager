@@ -7,6 +7,7 @@ use App\Models\FirewallImport;
 use App\Http\Controllers\Controller;
 use App\Models\FirewallManagment;
 use App\Models\Location;
+use App\Models\NozomiData;
 use App\Models\Standard;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -67,6 +68,7 @@ class FirewallImportController extends Controller
             $count = 0;
             DB::beginTransaction();
             foreach ($data as $obj) {
+
                 if ($success) {
                     $count++;
                     $logs[] = 'Precessing row no. ' . $count;
@@ -78,6 +80,12 @@ class FirewallImportController extends Controller
                             $arr[$clm] = sanitizeInput($obj[$header[$i]]);
                         }
                     }
+                    $source_asset = Location::whereIn('rec_id',explode(',', $obj['Source Asset ID']))->pluck('id');
+                    $arr['source_asset'] = json_encode($source_asset);
+
+                    $destination_asset = Location::whereIn('rec_id',explode(',', $obj['Destination Asset ID']))->pluck('id');
+                    $arr['destination_asset'] = json_encode($destination_asset);
+
                     $request = new Request();
                     $request->replace($arr);
                     $validator = Validator::make($request->all(), $model->rules);
