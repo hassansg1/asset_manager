@@ -164,7 +164,7 @@ class StandardClauseEditController extends BaseController
 
         flashSuccess(getLang($this->heading . " Successfully Deleted."));
 
-        return redirect(route($this->route . ".index"));
+        return redirect()->back();
     }
 
     public function viewStandards($standardId)
