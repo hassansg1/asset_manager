@@ -87,12 +87,11 @@
                                             <div class="mb-3">
                                                 <label for="{{ isset($item) ? $item->id:'' }}right"
                                                        class="form- required">User ID Rights</label>
-                                                <select class="form-control select2" id="right_id" name="right_id"
-                                                        required>
+                                                <select class="form-control select2" id="right_id" name="right_id[]"
+                                                        required multiple>
                                                     <option value="">-Select Right-</option>
                                                     @foreach($rights as $value)
-                                                        <option
-                                                            value="{{$value->id}}" {{ isset($item) && $item->user_rights_id->right_id == $value->id  ? 'selected' : ''}}>{{$value->name}}</option>
+                                                        <option value="{{$value->id}}" {{ isset($item, $item->user_rights_id->right_id) && in_array($value->id, $selectedRights)  ? 'selected' : ''}}>{{$value->name}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>

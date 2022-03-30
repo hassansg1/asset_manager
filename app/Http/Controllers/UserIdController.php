@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SystemAssets;
 use App\Models\User;
 use App\Models\UserAccount;
 use App\Models\UserId;
@@ -67,9 +68,9 @@ class UserIdController extends Controller
     public function store(Request $request)
     {
             if($request->user_type == "asset"){
-                $request->validate($this->model->rules($request->asset_id, $request->otcm_user_id));
+                $request->validate($this->model->rules($request->asset_id));
             }if($request->user_type == "system"){
-                $request->validate($this->model->rules($request->system_id, $request->otcm_user_id));
+                $request->validate($this->model->rules($request->system_id));
             }
         $this->model->saveFormData($this->model, $request);
 
@@ -85,11 +86,16 @@ class UserIdController extends Controller
      */
     public function show($item)
     {
+        $SelectedRights = UserRight::select('right_id')->where('parent_id', $item)->get();
+        $child_arr = [];
+        foreach($SelectedRights as $subchild) {
+            $child_arr[] = $subchild->right_id;
+        }
         $assign_users = UserAccount::select('user_id')->where('account_id', $item)->get();
         $users = User::whereIn('id', $assign_users)->get();
         $item = $this->model->find($item);
         $heading = $this->heading.' ('.$item->user_id.')';
-        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'users' => $users,'heading' => $heading, 'clone' => $request->clone ?? null]);
+        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'users' => $users,'selectedRights'=>$child_arr ,'heading' => $heading, 'clone' => $request->clone ?? null]);
     }
 
     /**
@@ -103,6 +109,11 @@ class UserIdController extends Controller
             if (is_array($request->item))
                 $item = $this->model->find('id', $request->item);
         }
+        $SelectedRights = UserRight::select('right_id')->where('parent_id', $item)->get();
+        $child_arr = [];
+        foreach($SelectedRights as $subchild) {
+            $child_arr[] = $subchild->right_id;
+        }
         $assign_users = UserAccount::select('user_id')->where('account_id', $item)->get();
         $users = User::whereIn('id', $assign_users)->get();
         $item = $this->model->find($item);
@@ -110,10 +121,10 @@ class UserIdController extends Controller
         if ($request->ajax) {
             return response()->json([
                 'status' => true,
-                'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item,'users' => $users, 'clone' => $request->clone ?? null])->render()
+                'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item,'users' => $users, 'selectedRights'=>$child_arr ,'clone' => $request->clone ?? null])->render()
             ]);
         } else
-            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'users' => $users,'heading' => $heading, 'clone' => $request->clone ?? null]);
+            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'users' => $users, 'selectedRights'=>$child_arr , 'heading' => $heading, 'clone' => $request->clone ?? null]);
     }
 
     /**
@@ -127,7 +138,7 @@ class UserIdController extends Controller
 
         flashSuccess(getLang($this->heading . " Successfully Updated."));
 
-        return redirect(route($this->route . ".edit",$item));
+        return redirect(route($this->route . ".index",$item));
     }
 
     /**

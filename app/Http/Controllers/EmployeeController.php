@@ -120,13 +120,13 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $item)
     {
-        $request->validate($this->model->rules($request->id));
+        $request->validate($this->model->rules);
         $item = $this->model->find($item);
         $this->model->saveFormData($item, $request);
 
         flashSuccess(getLang($this->heading . " Successfully Updated."));
 
-        return redirect(route($this->route . ".edit",$item));
+        return redirect(route($this->route . ".index",$item));
     }
 
     /**
