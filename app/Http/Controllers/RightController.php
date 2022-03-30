@@ -25,10 +25,10 @@ class RightController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Right::paginate();
+        $data = $this->fetchData($this->model, $request);
 
         return view($this->route . "/index")
-        ->with(['items' => $data, 'route' => $this->route, 'heading' => $this->heading]);
+        ->with(['items' => $data['items'], 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**

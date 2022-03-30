@@ -8,9 +8,10 @@ use App\Models\UserAccount;
 use App\Models\UserId;
 use App\Models\Right;
 use App\Models\UserRight;
+use Faker\Provider\Base;
 use Illuminate\Http\Request;
 
-class UserIdController extends Controller
+class UserIdController extends BaseController
 {
     protected $model;
     protected $route;
@@ -30,10 +31,10 @@ class UserIdController extends Controller
      */
     public function index(Request $request)
     {
-        $data = UserId::paginate();
+        $data = $this->fetchData($this->model, $request);
 
         return view($this->route . "/index")
-            ->with(['items' => $data, 'route' => $this->route, 'heading' => $this->heading]);
+            ->with(['items' => $data['items'], 'route' => $this->route,'data' => $data, 'heading' => $this->heading]);
     }
 
     /**

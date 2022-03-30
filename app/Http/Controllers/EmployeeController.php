@@ -6,9 +6,11 @@ use App\Models\Employee;
 use App\Models\SystemAssets;
 use App\Models\UserAccount;
 use App\Models\UserId;
+use App\Repos\SystemUserRepo;
+use App\Repos\UserRepo;
 use Illuminate\Http\Request;
 
-class EmployeeController extends Controller
+class EmployeeController extends BaseController
 {
     protected $model;
     protected $route;
@@ -28,9 +30,9 @@ class EmployeeController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Employee::where('user_type', 'SYSTEM-USER')->paginate();
+        $data = $this->fetchData($this->model, $request, new SystemUserRepo());
         return view($this->route . "/index")
-        ->with(['items' => $data, 'route' => $this->route, 'heading' => $this->heading]);
+        ->with(['items' => $data['items'], 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**

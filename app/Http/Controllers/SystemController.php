@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\System;
 use App\Models\SystemAssets;
+use App\Repos\UserRepo;
 use Illuminate\Http\Request;
 
-class SystemController extends Controller
+class SystemController extends BaseController
 {
  protected $model;
  protected $route;
@@ -26,10 +27,9 @@ class SystemController extends Controller
      */
     public function index(Request $request)
     {
-        $data = System::paginate();
-
+        $data = $this->fetchData($this->model, $request);
         return view($this->route . "/index")
-        ->with(['items' => $data, 'route' => $this->route, 'heading' => $this->heading]);
+        ->with(['items' => $data['items'], 'route' => $this->route, 'data' => $data,'heading' => $this->heading]);
     }
     /**
      * @return Application|Factory|View
