@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Right;
 use Illuminate\Http\Request;
 
-class RightController extends Controller
+class RightController extends BaseController
 {
    protected $model;
    protected $route;
