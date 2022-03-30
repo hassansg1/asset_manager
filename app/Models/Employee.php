@@ -21,7 +21,7 @@ class Employee extends Model
     public $rules =
         [
             'first_name' => 'required | max:255',
-            'unit_id' => 'required',
+            'parent_id' => 'required',
             'email' => 'required',
         ];
 
@@ -43,7 +43,7 @@ class Employee extends Model
        if (isset($request->department_id)) $item->department_id = $request->department_id;
        if (isset($request->status)) $item->status = $request->status ?? 1;
        if (isset($request->mobile_no)) $item->mobile_no = $request->mobile_no;
-       if (isset($request->unit_id)) $item->unit_id = $request->unit_id;
+       if (isset($request->parent_id)) $item->unit_id = $request->parent_id;
        $item->username = $request->first_name;
        $item->user_type = "SYSTEM-USER";
        $item->save();

@@ -35,7 +35,6 @@ class ApplicableClauseController extends BaseController
      */
     public function index(Request $request)
     {
-        dd("as");
 //        $data = $this->fetchData($this->model, $request);
         $items = Compliance::orderBy('id', 'desc')->get();
 

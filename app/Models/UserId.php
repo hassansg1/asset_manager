@@ -15,7 +15,7 @@ class UserId extends Model
         'description',
     ];
 
-    public function rules($parentId = null, $otcmUser = null)
+    public function rules($parentId = null)
     {
         return [
             'right_id'=>'required',
@@ -36,6 +36,7 @@ class UserId extends Model
     }
 	public function saveFormData($item, $request)
 	{
+        $res=UserRight::where('parent_id',$request->id)->delete();
         if ($request->user_type == "asset") {
 		if (isset($request->user_id)) $item->user_id = $request->user_id;
             if (isset($request->parent_id)) $item->parent_id = $request->parent_id;
@@ -45,15 +46,17 @@ class UserId extends Model
             if($request->right_id){
                 $rights= $request->right_id;
                 if($item && $rights){
-                    $assets_rights = UserRight::updateOrCreate(
-                        [
-                            'parent_id'   => $item->id,
-                        ],
-                        [
-                            'right_id'     => $request->right_id,
-                            'parent_type' => "asset"
-                        ]
-                    );
+                    foreach ($rights as $right){
+                        $assets_rights = UserRight::updateOrCreate(
+                            [
+                                'right_id'     => $right,
+                            ],
+                            [
+                                'parent_id'   => $item->id,
+                                'parent_type' => "asset"
+                            ]
+                        );
+                    }
                 }
             }
 		}
@@ -67,15 +70,17 @@ class UserId extends Model
         if($request->right_id){
             $rights= $request->right_id;
             if($item && $rights){
-                $assets_rights = UserRight::updateOrCreate(
-                    [
-                        'parent_id'   => $item->id,
-                    ],
-                    [
-                        'right_id'     => $request->right_id,
-                        'parent_type' => "system"
-                    ]
-                );
+                foreach ($rights as $right) {
+                    $assets_rights = UserRight::updateOrCreate(
+                        [
+                            'right_id'     => $right,
+                        ],
+                        [
+                            'parent_id'   => $item->id,
+                            'parent_type' => "system"
+                        ]
+                    );
+                }
             }
         }
 	}

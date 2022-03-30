@@ -71,7 +71,7 @@ class UserImportController extends Controller
                     for ($i = 0; $i < count($obj); $i++) {
                         $clm = tableColumnsMapping($tableNameRaw, 'import', $header[$i]);
                         if ($clm) {
-                            $arr[$clm] = sanitizeInput($obj[$header[$i]]);
+                            $arr[$clm] = $obj[$header[$i]];
                         }
                     }
                     $unit_id = Location::where('rec_id', $obj['Unit ID'])->pluck('id');

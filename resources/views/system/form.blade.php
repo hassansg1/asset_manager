@@ -40,7 +40,7 @@
                             <select class="form-control select2" id="asset_id" name="asset_id[]" multiple>
                                 <option value="">-Select Asset ID-</option>
                                 @foreach($assets as $value)
-                                <option value="{{$value->id}}" {{ isset($item, $item->system_assets->asset_id) && in_array($value->id, $selectedAssets)  ? 'selected' : ''}}>{{$value->name}}</option>
+                                <option value="{{$value->id}}" {{ isset($item, $item->system_assets->asset_id) && in_array($value->id, $selectedAssets)  ? 'selected' : ''}}>{{$value->rec_id}}</option>
                                 @endforeach
                             </select>
                         </div>

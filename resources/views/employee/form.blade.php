@@ -29,13 +29,8 @@
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}unit_id"
-                                   class="form-label required">Unit</label>
-                            <select class="form-control select2" id="unit_id" name="unit_id" required>
-                                <option value="">-Select Unit-</option>
-                                @foreach($units as $value)
-                                    <option value="{{$value->id}}" {{ isset($item) && $item->unit_id == $value->id  ? 'selected' : ''}}>{{$value->rec_id}}</option>
-                                @endforeach
-                            </select>
+                                   class="form-label required">Unit ID</label>
+                            @include('hierarchy.create_drop_down',['type' => 'sites'])
                         </div>
                     </div>
                 </div>
