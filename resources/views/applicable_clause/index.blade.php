@@ -7,6 +7,9 @@
     <th>Applicable</th>
     <th>Applicability</th>
 @endsection
+@section('below_filters')
+    @include('components.clause_filter')
+@endsection
 @section('table_rows')
     @include($route.'.form_rows')
 @endsection

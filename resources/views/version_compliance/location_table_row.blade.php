@@ -10,20 +10,20 @@
     </td>
     <td class="compl_attachment">
         @isset($dt)
+            @php($count = 0)
             @foreach($dt->attachments as $attachment)
                 @foreach($attachment->attachment->attachmentItems as $attachmentItem)
-                    <a target="_blank"
+                    @php($count += 1)
+                    <a title="{{ $attachment->attachment->title }}" target="_blank"
                        href="{{ $attachmentItem->fileLink() }}">
-                        {!! descriptionWrapText($attachment->attachment->title ?? '-',20) !!}
+                        <i class="fas fa-paperclip"></i><sup>{{ $count }}</sup>
                     </a>
-                    <br>
-                    <br>
                 @endforeach
             @endforeach
             @if($dt->link)
                 <a target="_blank"
                    href="{{ $dt->link ?? '' }}">
-                    {!! descriptionWrapText($dt->link ?? '',20,"") !!}
+                    <i class="fas fa-paperclip"></i><sup>{{ $count + 1 }}</sup>
                 </a>
                 <br>
             @endif

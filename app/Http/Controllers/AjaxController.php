@@ -8,6 +8,7 @@ use App\Models\ComplianceVersionItem;
 use App\Models\Location;
 use App\Models\Networks;
 use App\Models\Port;
+use App\Models\StandardClause;
 use App\Models\SystemUserId;
 use App\Models\User;
 use App\Models\UserAccount;
@@ -253,13 +254,16 @@ class AjaxController extends Controller
 
     public function showCompliancePopup(Request $request)
     {
-        $compliance = ComplianceVersionItem::where([
+        $compliance = ComplianceVersionItem::with('clause','location','version')->where([
             'compliance_version_id' => $request->versionId,
             'clause_id' => $request->clauseId,
             'location_id' => $request->locationId,
         ])->first();
 
-        $html = view('version_compliance.partials.popup')->with(compact('compliance','request'))->render();
+        $location = Location::find($request->locationId);
+        $clause = StandardClause::find($request->clauseId);
+
+        $html = view('version_compliance.partials.popup')->with(compact('compliance','request','location','clause'))->render();
         return response()->json([
             'status' => true,
             'html' => $html

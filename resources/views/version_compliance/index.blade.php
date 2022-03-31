@@ -6,9 +6,10 @@
 @endsection
 @section('table_rows')
     @include($route.'.form_rows')
-
 @endsection
-
+@section('below_filters')
+    @include('components.clause_filter')
+@endsection
 @section('script')
     @include('applicable_clause.script')
 @endsection

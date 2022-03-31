@@ -37,13 +37,14 @@ class StandardApplicableClauseController extends BaseController
      */
     public function index(Request $request, $standardId)
     {
-        $tree = getClauseTree($standardId);
+        $tree = getClauseTree($standardId, $request->clause_id_filter);
+
         $data['no_pagination'] = true;
         $standard = Standard::find($standardId);
         $this->heading = "$standard->name > Clauses";
 
         return view($this->route . "/index")
-            ->with(['items' => $tree, 'data' => $data, 'route' => $this->route, 'heading' => "Applicable Clauses of " . $standard->name]);
+            ->with(['items' => $tree, 'standardId' => $standardId, 'request' => $request, 'data' => $data, 'route' => $this->route, 'heading' => "Applicable Clauses of " . $standard->name]);
     }
 
     /**

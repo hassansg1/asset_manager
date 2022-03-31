@@ -2,11 +2,11 @@
     <table class="table mb-0 location_table_compliance_run lcc_{{$item_id}}" id="">
         <thead class="table-light">
         <tr>
-            <th>Location Name</th>
+            <th style="max-width: 20px;width: 20px !important;">Location Name</th>
             <th>Compliant</th>
             <th>Comment</th>
             <th>Attachments</th>
-            <th>Compliance Actions</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>

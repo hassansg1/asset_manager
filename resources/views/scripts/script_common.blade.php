@@ -34,6 +34,7 @@
         let patch_id = $('#patch_id_filter').val();
         let asset_id_filter = $('#asset_id_filter').val();
         let search_keyword = $('#ser'+div).val();
+        let clause_id_filter = $('#clause_id_filter').val();
         let patch_ids = $("input[name='checked_patch[]']")
             .map(function () {
                 return $(this).val();
@@ -54,6 +55,7 @@
                 software_id: software_id,
                 patch_id: patch_id,
                 asset_id_filter: asset_id_filter,
+                clause_id_filter: clause_id_filter,
                 search_keyword: search_keyword,
                 items_per_page: items_per_page,
                 patch_ids: patch_ids,
@@ -63,6 +65,7 @@
             success: function (result) {
                 $('#' + div).html($(result).find('#' + div).html());
                 makeDatatable('datatable-buttons'+div);
+                $('.select2').select2();
             },
         });
     }

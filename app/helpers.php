@@ -2,7 +2,6 @@
 
 use App\Models\AssetUserId;
 use App\Models\Attachment;
-use App\Models\Log;
 use App\Models\StandardClause;
 use App\Models\User;
 use App\Models\UserAccount;
@@ -104,9 +103,9 @@ if (!function_exists('getDevicePorts')) {
     }
 }
 if (!function_exists('descriptionWrapText')) {
-    function descriptionWrapText($description, $width = 100,$break = "<br>\n")
+    function descriptionWrapText($description, $width = 100, $break = "<br>\n")
     {
-        return chunk_split($description,$width,"<br>");
+        return chunk_split($description, $width, "<br>");
     }
 }
 if (!function_exists('getComplaintCount')) {
@@ -841,18 +840,21 @@ function getClauses($standardId)
     return StandardClause::where('standard_id', $standardId)->get();
 }
 
-function getClauseTree($standardId)
+function getClauseTree($standardId, $clauseId)
 {
     $tree = [];
-    $locations = StandardClause::where('standard_id', $standardId)->get()->toTree()->toArray();
-    foreach ($locations as $location) {
-        $nodes = StandardClause::descendantsAndSelf($location['id'])->toFlatTree()->toArray();
-        $subTree = buildClauseTree($nodes, $location['id']);
-        $parentNode = $nodes[0];
-        $parentNode['nodes'] = $subTree;
-        $nodeTree[0] = (object)$parentNode;
-        $tree = array_merge($tree, $nodeTree);
+    if ($clauseId) {
+        $locations = StandardClause::where('standard_id', $standardId)->where('id', $clauseId)->get()->toArray();
+        foreach ($locations as $location) {
+            $nodes = StandardClause::descendantsAndSelf($location['id'])->toFlatTree()->toArray();
+            $subTree = buildClauseTree($nodes, $location['id']);
+            $parentNode = $nodes[0];
+            $parentNode['nodes'] = $subTree;
+            $nodeTree[0] = (object)$parentNode;
+            $tree = array_merge($tree, $nodeTree);
+        }
     }
+
     return $tree;
 }
 

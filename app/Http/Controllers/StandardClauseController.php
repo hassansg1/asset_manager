@@ -32,12 +32,13 @@ class StandardClauseController extends BaseController
      */
     public function index(Request $request, $standardId)
     {
-        $tree = getClauseTree($standardId);
+        $tree = getClauseTree($standardId, $request->clause_id_filter);
+
         $standard = Standard::find($standardId);
         $data['no_pagination'] = true;
         $this->heading = "$standard->name > Clauses";
         return view($this->route . "/index")
-            ->with(['items' => $tree, 'data' => $data, 'route' => $this->route, 'heading' => $this->heading, 'standard' => $standard, 'customHeading' => true]);
+            ->with(['items' => $tree, 'data' => $data, 'standardId' => $standardId, 'request' => $request,'route' => $this->route, 'heading' => $this->heading, 'standard' => $standard, 'customHeading' => true]);
     }
 
     /**
