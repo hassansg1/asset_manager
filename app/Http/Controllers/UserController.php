@@ -116,7 +116,16 @@ class UserController extends BaseController
      */
     public function update(Request $request, $item)
     {
-        $request->validate($this->model->rules);
+        if ($request->password == null){
+                $this->validate($request,[
+                    'first_name' => 'required | max:255',
+                    'last_name' => 'required | max:255',
+                    'username' => 'required | max:255',
+                    'email' => 'required | email',
+                ]);
+        }else{
+            $request->validate($this->model->rules);
+        }
         $item = $this->model->find($item);
         $this->model->saveFormData($item, $request);
 
