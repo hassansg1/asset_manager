@@ -42,14 +42,9 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <label for="link" class="form-label">Attachment URL</label>
-                                    <input value="{{ $compliance->link ?? '' }}" type="text" name="link" id="link"
-                                           class="form-control">
-                                </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
                                     <div class="mb-3">
                                         <label for="comment" class="form-label">Comment</label>
                                         <textarea
@@ -58,7 +53,10 @@
                                             rows="4">{!! $compliance->comment ?? '' !!}</textarea>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
                                     <label for="attachments" class="form-label">Attachments</label>
                                     <select class="form-control select2" name="attachments[]" id="attachments"
                                             multiple>
@@ -73,6 +71,14 @@
                                         @endforeach
                                     </select>
                                 </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label for="link" class="form-label">Attachment URL</label>
+                                    <input value="{{ $compliance->link ?? '' }}" type="text" name="link" id="link"
+                                           class="form-control">
+                                </div>
+
                             </div>
                         </div>
                     </div>

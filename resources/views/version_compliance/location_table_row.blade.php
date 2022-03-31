@@ -7,7 +7,7 @@
     </td>
     <td class="compl_comment">
         @if($dt)
-            <iframe style="width: 100%;height: 300px" src="{{ url('getCommentIframe/'.$dt->id ?? null) }}">
+            <iframe style="width: 100%;height: 150px" src="{{ url('getCommentIframe/'.$dt->id ?? null) }}">
             </iframe>
         @endif
     </td>
@@ -21,6 +21,9 @@
                        href="{{ $attachmentItem->fileLink() }}">
                         <i class="fas fa-paperclip"></i><sup>{{ $count }}</sup>
                     </a>
+                    @if($count % 5 == 0)
+                        <br>
+                    @endif
                 @endforeach
             @endforeach
             @if($dt->link)
