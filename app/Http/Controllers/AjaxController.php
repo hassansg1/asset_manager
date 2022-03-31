@@ -254,7 +254,7 @@ class AjaxController extends Controller
 
     public function showCompliancePopup(Request $request)
     {
-        $compliance = ComplianceVersionItem::with('clause','location','version')->where([
+        $compliance = ComplianceVersionItem::with('attachments.attachment.attachmentItems', 'clause', 'location', 'version')->where([
             'compliance_version_id' => $request->versionId,
             'clause_id' => $request->clauseId,
             'location_id' => $request->locationId,
@@ -263,14 +263,15 @@ class AjaxController extends Controller
         $location = Location::find($request->locationId);
         $clause = StandardClause::find($request->clauseId);
 
-        $html = view('version_compliance.partials.popup')->with(compact('compliance','request','location','clause'))->render();
+        $html = view('version_compliance.partials.popup')->with(compact('compliance', 'request', 'location', 'clause'))->render();
         return response()->json([
             'status' => true,
             'html' => $html
         ]);
     }
 
-    public  function  approveStatus(Request $request){
+    public function approveStatus(Request $request)
+    {
         dd($request->all());
     }
 }

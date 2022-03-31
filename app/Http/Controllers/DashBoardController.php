@@ -37,17 +37,17 @@ class DashBoardController extends Controller
 //            $values[] = $compliant['Not evaluated'];
 //        }
 
-        $computer_assets = Location::where('type', 'computer_assets')->count();
-        $lone_assets = Location::where('type', 'lone_assets')->count();
-        $network_assets = Location::where('type', 'network_assets')->count();
-        $asset_functions = AssetFunction::select('id', 'name')->get();
+//        $computer_assets = Location::where('type', 'computer_assets')->count();
+//        $lone_assets = Location::where('type', 'lone_assets')->count();
+//        $network_assets = Location::where('type', 'network_assets')->count();
+//        $asset_functions = AssetFunction::select('id', 'name')->get();
 //        dd($asset_functions);
 //        $asse_functions_name = [];
 //        foreach($asset_functions as $subchild) {
 //            $asse_functions_name[] = $subchild->name;
 //        }
 
-        return view('dashboard.index')->with(['values' => $values ?? [], 'computer_assets' => $computer_assets, 'lone_assets' => $lone_assets, 'network_assets' => $network_assets, 'asset_functions' => $asset_functions]);
+        return view('dashboard.index');
 
     }
 

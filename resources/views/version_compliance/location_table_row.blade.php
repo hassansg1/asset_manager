@@ -6,7 +6,7 @@
         {{ isset($dt) ? \App\Models\ClauseData::getLabel($dt->compliant) : '-' }}
     </td>
     <td class="compl_comment">
-        {!! descriptionWrapText($dt->comment ?? '-',20) !!}
+        {!! html_entity_decode($dt->comment ?? '') !!}
     </td>
     <td class="compl_attachment">
         @isset($dt)

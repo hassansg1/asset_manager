@@ -53,9 +53,9 @@
                                     <div class="mb-3">
                                         <label for="comment" class="form-label">Comment</label>
                                         <textarea
-                                            class="form-control"
+                                            class="form-control comment_ck_compliance"
                                             name="comment" id="comment" cols="30"
-                                            rows="4">{{ $compliance->comment ?? '' }}</textarea>
+                                            rows="4">{!! $compliance->comment ?? '' !!}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">

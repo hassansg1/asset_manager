@@ -11,6 +11,6 @@
     @include('components.clause_filter')
 @endsection
 @section('script')
+    @include('components.ui_formatter.hide_new_btn')
     @include('applicable_clause.script')
 @endsection
-@include('components.ui_formatter.hide_new_btn')

@@ -14,8 +14,7 @@
                 if (data.status) {
                     showModal(defaultModal, data.html);
                     $('.select2').select2();
-                    // if (view)
-                    //     disableForm('.default_modal_body');
+                    initEditor('.comment_ck_compliance');
                 } else
                     doErrorToast();
             }

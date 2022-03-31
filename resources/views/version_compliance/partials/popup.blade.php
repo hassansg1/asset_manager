@@ -5,6 +5,7 @@
 @endif
 <script>
     $("#complianceForm").on('submit', function (e) {
+        tinymce.triggerSave();
         e.preventDefault();
         $.ajax({
             url: '{{url('/submitCompliance')}}',

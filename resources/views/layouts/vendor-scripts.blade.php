@@ -23,6 +23,7 @@
 <script src="{{ URL::asset('/assets/libs/table-edits/table-edits.min.js') }}"></script>
 <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
 <script src="{{ URL::asset('/assets/js/bootstrap-treeview.js') }}"></script>
+<script src="{{ URL::asset('/assets/libs/tinymce/tinymce.min.js') }}"></script>
 
 <script>
 
@@ -138,7 +139,6 @@
         $('#tree-input-search').on('keyup', search);
 
         editor1.on('change', function () {
-            console.log(CKEDITOR.instances.help_text.getData());
             $.ajax({
                 type: "POST",
                 url: '{{ url('saveHelp') }}',
@@ -157,6 +157,32 @@
     });
     var $searchableTree;
     sidebar_tree();
+
+    function initEditor(element)
+    {
+        while (tinymce.editors.length > 0) {
+            tinymce.remove(tinymce.editors[0]);
+        }
+        tinymce.init({
+            selector: "textarea"+element,
+            height: 300,
+            plugins: [
+                "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                "save table contextmenu directionality emoticons template paste textcolor"
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
+            style_formats: [
+                {title: 'Bold text', inline: 'b'},
+                {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+                {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+                {title: 'Example 1', inline: 'span', classes: 'example1'},
+                {title: 'Example 2', inline: 'span', classes: 'example2'},
+                {title: 'Table styles'},
+                {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+            ]
+        });
+    }
 
     function sidebar_tree() {
 

@@ -162,7 +162,7 @@ class ComplianceUpdateController extends BaseController
         }
 
         $item->compliant = $request->compliant;
-        $item->comment = $request->comment;
+        $item->comment = htmlentities($request->comment);
         $item->link = $request->link;
         $item->save();
         $item->attachments()->delete();

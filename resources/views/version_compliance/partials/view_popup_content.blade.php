@@ -31,7 +31,7 @@
                                     <div class="mb-3">
                                         <label for="comment" class="form-label">Comment</label>
                                         <p>
-                                            {!! $compliance->comment ?? '' !!}
+                                            {!! html_entity_decode($compliance->comment) !!}
                                         </p>
                                     </div>
                                 </div>

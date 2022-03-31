@@ -694,7 +694,7 @@ if (!function_exists('getComplianceStatus')) {
     function getComplianceStatus($version, $id, $location)
     {
 
-        $data = \App\Models\ComplianceVersionItem::where([
+        $data = \App\Models\ComplianceVersionItem::with('attachments.attachment.attachmentItems')->where([
             'compliance_version_id' => $version,
             'clause_id' => $id,
             'location_id' => $location,
