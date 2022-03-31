@@ -6,7 +6,8 @@
         {{ isset($dt) ? \App\Models\ClauseData::getLabel($dt->compliant) : '-' }}
     </td>
     <td class="compl_comment">
-        {!! html_entity_decode($dt->comment ?? '') !!}
+        <iframe style="width: 100%;height: 300px" src="{{ url('getCommentIframe/'.$dt->id) }}">
+        </iframe>
     </td>
     <td class="compl_attachment">
         @isset($dt)

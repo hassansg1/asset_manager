@@ -243,6 +243,7 @@ Route::get('/linkstorage', function () {
     \Illuminate\Support\Facades\Artisan::call('storage:link');
 });
 Route::get('/docs/{filename}', [\App\Http\Controllers\FileAccessController::class,'getFile']);
+Route::get('/getCommentIframe/{id}', [\App\Http\Controllers\AjaxController::class,'getCommentIframe']);
 Route::get('syncAssets',function (){
     \App\Models\Location::fixtree();
 });
