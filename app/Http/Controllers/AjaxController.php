@@ -277,8 +277,10 @@ class AjaxController extends Controller
 
     public function getCommentIframe($id)
     {
-        $comment = ComplianceVersionItem::find($id)->comment ?? '';
+        $comment = "";
+        if ($id)
+            $comment = ComplianceVersionItem::find($id)->comment ?? '';
 
-        return view('iframe.comment')->with('comment',$comment);
+        return view('iframe.comment')->with('comment', $comment);
     }
 }
