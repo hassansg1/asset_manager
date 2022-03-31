@@ -987,7 +987,7 @@ function checkIfButtonAllowed($locations, $item, $action)
 
 function getLocationsForDropDown($type, $action, $model = null)
 {
-    $locations = \App\Models\Location::applyLocationFilter(null, $model, null, null, $action, true)->get();
+    $locations = \App\Models\Location::applyLocationFilter(null, $model, null, null, $action, true,true)->get();
     if ($type) {
         $types = \App\Models\Location::getHierarchyLevelForCreation($type);
         $locations = $locations->whereIn('type', $types);

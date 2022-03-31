@@ -62,7 +62,7 @@ class Location extends Model
         return $this->hasMany(InstalledSoftware::class, 'asset_id');
     }
 
-    public static function applyLocationFilter($userLocations = null, $model = null, $query = null, $type = null, $action = null, $withOutAssets = false)
+    public static function applyLocationFilter($userLocations = null, $model = null, $query = null, $type = null, $action = null, $withOutAssets = false,$noAssetLocationFilter = false)
     {
         if (!$query)
             $query = new Location();
@@ -91,7 +91,7 @@ class Location extends Model
                 }
             });
         }
-        if (assetCondition($model)) {
+        if (assetCondition($model) && !$noAssetLocationFilter) {
             $location = Session::get('asset_location_id');
             $query = $query->whereDescendantOrSelf($location);
         }
