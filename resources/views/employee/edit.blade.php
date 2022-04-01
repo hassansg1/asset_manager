@@ -112,7 +112,13 @@
                                                 <i>SYS:</i> {{ $value->user_id_systems->name }}
                                             @endif
                                         </td>
-                                        <td>{{ $value->user_rights_id->rights_name->name }}</td>
+                                        <td>
+                                            @foreach(\App\Models\UserRight::where('parent_id', $value->id)->get() as $function)
+                                                @if($function)
+                                                    {{  $function->rights_name->name }},
+                                                @endif
+                                            @endforeach
+                                        </td>
                                         <td><button type="button" class="btn btn-default btn-sm delete_id" id="{{ $value->id }}" onclick="return confirm('Are you sure want to unassign ID?')"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
                                 @endforeach
                                 </tbody>

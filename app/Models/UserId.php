@@ -50,9 +50,9 @@ class UserId extends Model
                         $assets_rights = UserRight::updateOrCreate(
                             [
                                 'right_id'     => $right,
+                                'parent_id'   => $item->id,
                             ],
                             [
-                                'parent_id'   => $item->id,
                                 'parent_type' => "asset"
                             ]
                         );
@@ -74,9 +74,9 @@ class UserId extends Model
                     $assets_rights = UserRight::updateOrCreate(
                         [
                             'right_id'     => $right,
+                            'parent_id'   => $item->id,
                         ],
                         [
-                            'parent_id'   => $item->id,
                             'parent_type' => "system"
                         ]
                     );
