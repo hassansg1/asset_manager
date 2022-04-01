@@ -450,6 +450,17 @@ if (!function_exists('sanitizeInput')) {
 //        return $value;
     }
 }
+if (!function_exists('policyValidity')) {
+    function policyValidity()
+    {
+        return [
+            '1' => 'temporary',
+            '0' => 'permanent',
+        ];
+    }
+}
+
+
 
 if (!function_exists('assetCondition')) {
     function assetCondition($model)

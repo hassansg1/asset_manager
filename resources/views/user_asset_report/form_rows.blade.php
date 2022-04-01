@@ -20,6 +20,14 @@
                 @endforeach
             @endif
         </td>
-        <td>{{ $item->user_rights_id->rights_name->name }}</td>
+            <td>
+                @foreach(\App\Models\UserRight::where('parent_id', $item->id)->get() as $function)
+                    @if($function)
+                        {{  $function->rights_name->name }},
+                    @else
+                        {{}}
+                    @endif
+                @endforeach
+            </td>
     </tr>
 @endforeach

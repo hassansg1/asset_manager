@@ -3,7 +3,8 @@
 {{--        <td colspan="1"><input type="checkbox" name="select_row" value="{{ $item->id }}"--}}
 {{--                               id="select_check_{{ $item->id }}" class="select_row"></td>--}}
         @if($item->right_type)
-            <td><i>{{$item->right_type->type}}:</i> {{ $item->right_type->name }}</td>
+{{--            <i>{{$item->right_type->type}}:</i>--}}
+            <td> {{ $item->right_type->name }}</td>
         @else
             <td></td>
         @endif
