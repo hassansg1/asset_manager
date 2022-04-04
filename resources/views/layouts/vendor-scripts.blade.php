@@ -470,6 +470,18 @@
     });
 </script>
 
+<script>
+    $('#condition').on('change', function(){
+        var condition= this.value;
+        if(condition == 'permanent'){
+            $('#approvel_expirey_date').attr('disabled',true);
+        }
+        if(condition == 'temporary'){
+            $('#approvel_expirey_date').attr('disabled',false);
+        }
+    });
+</script>
+
 @yield('script')
 
 <!-- App js -->

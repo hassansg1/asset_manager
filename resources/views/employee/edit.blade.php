@@ -114,7 +114,7 @@
                                         </td>
                                         <td>
                                             @foreach(\App\Models\UserRight::where('parent_id', $value->id)->get() as $function)
-                                                @if($function)
+                                                @if($function->rights_name)
                                                     {{  $function->rights_name->name }},
                                                 @endif
                                             @endforeach
