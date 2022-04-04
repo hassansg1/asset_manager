@@ -126,16 +126,17 @@ class RightController extends BaseController
      */
     public function destroy($item)
     {
-        $assign_rights = UserRight::where('right_id', $item)->get();
-        if ($assign_rights){
-            flashSuccess(getLang("Right is assigned to User ID cannot be deleted."));
+        $assign_rights = UserRight::where('right_id', $item)->first();
+
+        if ($assign_rights == ''){
+            $item = $this->model->find($item);
+            $item->delete();
+
+            flashSuccess(getLang($this->heading . " Successfully Deleted."));
+
             return redirect(route($this->route . ".index"));
         }
-        $item = $this->model->find($item);
-        $item->delete();
-
-        flashSuccess(getLang($this->heading . " Successfully Deleted."));
-
+        flashSuccess(getLang("Right is assigned to User ID cannot be deleted."));
         return redirect(route($this->route . ".index"));
     }
 }
