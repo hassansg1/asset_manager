@@ -122,7 +122,7 @@
                                         <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label for="{{ isset($item) ? $item->id:'' }}approvel_expirey_date" class="form-label">User ID Validity Date</label>
-                                                <input type="date" value="{{ isset($item) ? $item->approvel_expirey_date:old('approvel_expirey_date') ?? ''  }}"
+                                                <input type="date" {{ isset($item) && $item->condition == 'permanent'  ? 'disabled' : ''}} value="{{ isset($item) ? $item->approvel_expirey_date:old('approvel_expirey_date') ?? ''  }}"
                                                        class="form-control" id="{{ isset($item) ? $item->id:'' }}approvel_expirey_date" name="approvel_expirey_date">
                                             </div>
                                         </div>
@@ -142,15 +142,6 @@
                         $('.asset').hide();
                         $('.system').show();
                     }
-                });
-                    $('#condition').on('change', function(){
-                    var condition= this.value;
-                    if(condition == 'permanent'){
-                    $('#approvel_expirey_date').attr('disabled',true);
-                }
-                    if(condition == 'temporary'){
-                    $('#approvel_expirey_date').attr('disabled',false);
-                }
                 });
             </script>
 @endsection
