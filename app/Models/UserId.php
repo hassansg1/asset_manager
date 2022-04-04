@@ -19,6 +19,7 @@ class UserId extends Model
     {
         return [
             'right_id'=>'required',
+            'condition' => 'required',
             'user_id' => 'required|unique:user_ids,user_id,NULL,id,parent_id,' . $parentId,
         ];
     }
@@ -40,6 +41,8 @@ class UserId extends Model
         if ($request->user_type == "asset") {
 		if (isset($request->user_id)) $item->user_id = $request->user_id;
             if (isset($request->asset_id)) $item->parent_id = $request->asset_id;
+            if (isset($request->condition)) $item->condition = $request->condition;
+            if (isset($request->approvel_expirey_date)) $item->approvel_expirey_date = $request->approvel_expirey_date;
         $item->parent = "asset";
 		if (isset($request->description)) $item->description = $request->description;
 		$item->save();
