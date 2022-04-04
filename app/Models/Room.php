@@ -39,6 +39,15 @@ class Room extends Model
         return $this->name;
     }
 
+    public function getParentableTypeAttribute()
+    {
+        return $this->name;
+    }
+    public function getParentableIdAttribute()
+    {
+        return '';
+    }
+
 
     /**
      * @param $item

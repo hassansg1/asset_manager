@@ -77,6 +77,7 @@ class User extends Authenticatable
             'first_name' => 'required | max:255',
             'last_name' => 'required | max:255',
             'username' => 'required | max:255',
+            'roles' => 'required',
             'email' => 'required | email',
             'password' => [
                 'required',

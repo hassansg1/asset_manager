@@ -11,7 +11,11 @@
 {{--        <td>{{ $item->name }}</td>--}}
 {{--        <td>{{ $item->ip_address }}</td>--}}
 {{--        <td>{{ $item->mac_address }}</td>--}}
-        <td><a href="{{ route("networks.show",$item->network->id) }}" target="_blank">{{$item->network->name}}</a></td>
+        <td>
+            @if($item->network)
+            <a href="{{ route("networks.show",$item->network->id) }}" target="_blank">{{$item->network->name}}</a>
+            @endif
+        </td>
 {{--        <td>{{ $item->connectedPort->name ?? '' }}</td>--}}
     </tr>
     @endif

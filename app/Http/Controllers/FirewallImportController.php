@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 
 class FirewallImportController extends Controller
 {
@@ -77,7 +78,7 @@ class FirewallImportController extends Controller
                     for ($i = 0; $i < count($obj); $i++) {
                         $clm = tableColumnsMapping($tableNameRaw, 'import', $header[$i]);
                         if ($clm) {
-                            $arr[$clm] = sanitizeInput($obj[$header[$i]]);
+                            $arr[$clm] = $obj[$header[$i]];
                         }
                     }
                     $source_asset = Location::whereIn('rec_id',explode(',', $obj['Source Asset ID']))->pluck('id');
@@ -85,6 +86,22 @@ class FirewallImportController extends Controller
 
                     $destination_asset = Location::whereIn('rec_id',explode(',', $obj['Destination Asset ID']))->pluck('id');
                     $arr['destination_asset'] = json_encode($destination_asset);
+
+                    $arr['approvel_expirey_date'] = Carbon::parse($arr['approvel_expirey_date'])->format('Y-m-d');
+                    if ($arr['condition'] == '') {
+                        $logs[] = 'Error : Policy Validity Should not  be Empty';
+                        $success = false;
+                        break;
+                    }
+                    $policyValidity = policyValidity();
+                    if (!in_array($arr['condition'], $policyValidity)) {
+                        $logs[] = 'Error : Policy Validity Should be temporary or permanent';
+                        $success = false;
+                        break;
+                    }
+                    if ($arr['condition'] == 'permanent'){
+                        $arr['approvel_expirey_date'] = null;
+                    }
 
                     $request = new Request();
                     $request->replace($arr);
