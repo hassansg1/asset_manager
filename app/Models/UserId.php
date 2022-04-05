@@ -63,6 +63,7 @@ class UserId extends Model
                 }
             }
 		}
+
 	if($request->user_type == "system"){
         if (isset($request->user_id)) $item->user_id = $request->user_id;
         if (isset($request->system_id)) $item->parent_id = $request->system_id;
