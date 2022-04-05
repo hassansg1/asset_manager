@@ -40,7 +40,7 @@ class UserId extends Model
         $res=UserRight::where('parent_id',$request->id)->delete();
         if ($request->user_type == "asset") {
 		if (isset($request->user_id)) $item->user_id = $request->user_id;
-            if (isset($request->parent_id)) $item->parent_id = $request->parent_id;
+            if (isset($request->asset_id)) $item->parent_id = $request->asset_id;
             if (isset($request->condition)) $item->condition = $request->condition;
             if (isset($request->approvel_expirey_date)) $item->approvel_expirey_date = $request->approvel_expirey_date;
         $item->parent = "asset";
@@ -65,7 +65,7 @@ class UserId extends Model
 		}
 	if($request->user_type == "system"){
         if (isset($request->user_id)) $item->user_id = $request->user_id;
-        if (isset($request->parent_id)) $item->parent_id = $request->parent_id;
+        if (isset($request->system_id)) $item->parent_id = $request->system_id;
         $item->parent = "system";
         if (isset($request->description)) $item->description = $request->description;
         $item->save();

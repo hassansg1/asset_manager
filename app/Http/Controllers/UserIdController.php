@@ -70,7 +70,7 @@ class UserIdController extends BaseController
     {
             if($request->user_type == "asset"){
                 $request->validate($this->model->rules($request->asset_id));
-            }if($request->user_type == "system"){
+            }else{
                 $request->validate($this->model->rules($request->system_id));
             }
         $this->model->saveFormData($this->model, $request);
@@ -137,7 +137,7 @@ class UserIdController extends BaseController
         $item = $this->model->find($item);
         $this->model->saveFormData($item, $request);
 
-        flashSuccess(getLang($this->heading . " Successfully Updated."));
+        flashSuccess(getLang($this->heading . "Successfully Updated."));
 
         return redirect(route($this->route . ".index",$item));
     }
