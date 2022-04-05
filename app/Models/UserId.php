@@ -45,6 +45,7 @@ class UserId extends Model
         }else{
             if (isset($request->system_id)) $item->parent_id = $request->system_id;
             $item->parent = $request->user_type;
+
         }
         if (isset($request->condition)) $item->condition = $request->condition;
         if (isset($request->approvel_expirey_date)) $item->approvel_expirey_date = $request->approvel_expirey_date;
