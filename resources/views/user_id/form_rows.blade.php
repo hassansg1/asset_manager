@@ -4,11 +4,13 @@
 {{--                               id="select_check_{{ $item->id }}" class="select_row"></td>--}}
         <td>{{ $item->user_id }}</td>
         <td>
-                @if($item->parent == "asset")
+                @if($item->user_id_assets && $item->parent == "asset")
                     <i>AST:</i> {{ $item->user_id_assets->rec_id }}
-                @elseif($item->parent == "system")
+                @elseif($item->user_id_systems && $item->parent == "system")
                     <i>SYS:</i> {{ $item->user_id_systems->name }}
-                @endif
+            @else
+
+            @endif
 </td>
         <td>
             @foreach(\App\Models\UserRight::where('parent_id', $item->id)->get() as $function)
