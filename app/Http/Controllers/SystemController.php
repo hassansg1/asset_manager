@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\System;
 use App\Models\SystemAssets;
+use App\Models\UserId;
+use App\Models\UserRight;
 use App\Repos\UserRepo;
 use Illuminate\Http\Request;
 
@@ -117,6 +119,13 @@ class SystemController extends BaseController
      */
     public function destroy($item)
     {
+
+        $assign_systems = UserId::where('parent_id', $item)->first();
+
+        if ($assign_systems){
+            flashSuccess(getLang("System is assigned to User ID cannot be deleted."));
+            return redirect(route($this->route . ".index"));
+        }
         $item = $this->model->find($item);
         $item->delete();
 

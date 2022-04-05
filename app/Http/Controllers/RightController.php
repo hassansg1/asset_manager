@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Right;
+use App\Models\UserId;
 use App\Models\UserRight;
 use Illuminate\Http\Request;
 
@@ -128,15 +129,15 @@ class RightController extends BaseController
     {
         $assign_rights = UserRight::where('right_id', $item)->first();
 
-        if ($assign_rights == ''){
-            $item = $this->model->find($item);
-            $item->delete();
-
-            flashSuccess(getLang($this->heading . " Successfully Deleted."));
-
+        if ($assign_rights){
+            flashSuccess(getLang("Right is assigned to User ID cannot be deleted."));
             return redirect(route($this->route . ".index"));
         }
-        flashSuccess(getLang("Right is assigned to User ID cannot be deleted."));
+        $item = $this->model->find($item);
+        $item->delete();
+
+        flashSuccess(getLang($this->heading . " Successfully Deleted."));
+
         return redirect(route($this->route . ".index"));
     }
 }
