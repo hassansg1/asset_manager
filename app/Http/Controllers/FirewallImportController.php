@@ -80,11 +80,23 @@ class FirewallImportController extends Controller
                             $arr[$clm] = $obj[$header[$i]];
                         }
                     }
-                    $source_asset = Location::whereIn('rec_id',explode(',', $obj['Source Asset ID']))->pluck('id');
-                    $arr['source_asset'] = json_encode($source_asset);
 
-                    $destination_asset = Location::whereIn('rec_id',explode(',', $obj['Destination Asset ID']))->pluck('id');
-                    $arr['destination_asset'] = json_encode($destination_asset);
+                    if ($arr['source_asset'] == '') {
+                        $logs[] = 'Error : Source Asset Should not  be Empty';
+                        $success = false;
+                        break;
+                    }
+
+                    if ($arr['destination_asset'] == '') {
+                        $logs[] = 'Error : Destination Asset Should not  be Empty';
+                        $success = false;
+                        break;
+                    }
+//                    $source_asset = Location::whereIn('rec_id',explode(',', $obj['Source Asset ID']))->pluck('id');
+//                    $arr['source_asset'] = json_encode($source_asset);
+//
+//                    $destination_asset = Location::whereIn('rec_id',explode(',', $obj['Destination Asset ID']))->pluck('id');
+//                    $arr['destination_asset'] = json_encode($destination_asset);
 
                     $arr['approvel_expirey_date'] = Carbon::parse($arr['approvel_expirey_date'])->format('Y-m-d');
                     if ($arr['condition'] == '') {

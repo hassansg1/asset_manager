@@ -25,13 +25,15 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="mb-3">
-                                <label for="{{ isset($item) ? $item->id:'' }}source_asset" class="form-label required">Source Asset ID</label>
-                                <select class="form-control select2" id="source_asset" name="source_asset[]" multiple>
-                                    <option value="">-Select Source Asset ID-</option>
-                                    @foreach($firewallAssets as $value)
-                                        <option value="{{$value->id}}" {{ isset($item) && in_array($value->id, $item->source_asset)  ? 'selected' : ''}}>{{$value->rec_id}}</option>
-                                    @endforeach
-                                </select>
+                                <label for="{{ isset($item) ? $item->id:'' }}source_asset" class="form-label required">Source Assets</label>
+                                <input type="text" value="{{ isset($item) ? $item->source_asset:old('source_asset') ?? ''  }}"
+                                       class="form-control" id="{{ isset($item) ? $item->id:'' }}source_asset" name="source_asset">
+{{--                                <select class="form-control select2" id="source_asset" name="source_asset[]" multiple>--}}
+{{--                                    <option value="">-Select Source Asset ID-</option>--}}
+{{--                                    @foreach($firewallAssets as $value)--}}
+{{--                                        <option value="{{$value->id}}" {{ isset($item) && in_array($value->id, $item->source_asset)  ? 'selected' : ''}}>{{$value->rec_id}}</option>--}}
+{{--                                    @endforeach--}}
+{{--                                </select>--}}
                             </div>
                         </div>
                     </div>
@@ -54,13 +56,15 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="mb-3">
-                                <label for="{{ isset($item) ? $item->id:'' }}destination_asset" class="form-label required">Destination Asset ID</label>
-                                <select class="form-control select2" id="destination_asset" name="destination_asset[]" multiple>
-                                    <option value="">-Select Destination Asset ID-</option>
-                                    @foreach($firewallAssets as $value)
-                                        <option value="{{$value->id}}" {{ isset($item) && in_array($value->id, $item->destination_asset)  ? 'selected' : ''}}>{{$value->rec_id}}</option>
-                                    @endforeach
-                                </select>
+                                <label for="{{ isset($item) ? $item->id:'' }}destination_asset" class="form-label required">Destination Assets</label>
+                                <input type="text" value="{{ isset($item) ? $item->destination_asset:old('destination_asset') ?? ''  }}"
+                                       class="form-control" id="{{ isset($item) ? $item->id:'' }}destination_asset" name="destination_asset">
+{{--                                <select class="form-control select2" id="destination_asset" name="destination_asset[]" multiple>--}}
+{{--                                    <option value="">-Select Destination Asset ID-</option>--}}
+{{--                                    @foreach($firewallAssets as $value)--}}
+{{--                                        <option value="{{$value->id}}" {{ isset($item) && in_array($value->id, $item->destination_asset)  ? 'selected' : ''}}>{{$value->rec_id}}</option>--}}
+{{--                                    @endforeach--}}
+{{--                                </select>--}}
                             </div>
                         </div>
                     </div>

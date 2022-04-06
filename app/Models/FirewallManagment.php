@@ -34,10 +34,12 @@ class FirewallManagment extends Model
     {
         if (isset($request->source_zone)) $item->source_zone = $request->source_zone;
         if (isset($request->source_location)) $item->source_location = $request->source_location;
-        if (isset($request->source_asset)) $item->source_asset = json_encode($request->source_asset);
+//        if (isset($request->source_asset)) $item->source_asset = json_encode($request->source_asset);
+        if (isset($request->source_asset)) $item->source_asset = $request->source_asset;
         if (isset($request->destination_zone)) $item->destination_zone = $request->destination_zone;
         if (isset($request->destination_location)) $item->destination_location = $request->destination_location;
-        if (isset($request->destination_asset)) $item->destination_asset = json_encode($request->destination_asset);
+        if (isset($request->destination_asset)) $item->destination_asset = $request->destination_asset;
+//        if (isset($request->destination_asset)) $item->destination_asset = json_encode($request->destination_asset);
         if (isset($request->applicatin_port)) $item->applicatin_port = $request->applicatin_port;
         if (isset($request->port)) $item->port = $request->port;
         if (isset($request->description)) $item->description = $request->description;
