@@ -53,7 +53,6 @@ class FirewallImportController extends Controller
         $file->move(public_path('assets/files'), $name);
 
         $file = public_path('assets/files/' . $name);
-
         $csvContent = csvToArray($file);
         $header = $csvContent['header'];
         $data = $csvContent['data'];
