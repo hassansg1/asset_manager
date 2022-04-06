@@ -35,7 +35,6 @@ class Employee extends Model
     public function user_unit(){
         return $this->belongsTo(Location::class, 'unit_id', 'id');
     }
-
      public function saveFormData($item, $request)
      {
          $item->rec_id = 0;
