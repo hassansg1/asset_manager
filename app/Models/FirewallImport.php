@@ -22,7 +22,6 @@ class FirewallImport extends Model
             'applicatin_port' => 'required',
             'condition' => 'required',
         ];
-
     public function saveFormData($item, $request)
     {
         if (isset($request->source_zone)) $item->source_zone = $request->source_zone;
