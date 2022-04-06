@@ -44,7 +44,7 @@
                                     <div class="mb-3">
                                         <label for="{{ isset($item) ? $item->id:'' }}parent_id"
                                                class="form-label required">System Name</label>
-                                        <select class="form-control select2" id="parent_id" name="parent_id">
+                                        <select class="form-control select2" id="system_id" name="system_id">
                                             <option value="">-Select System-</option>
                                             @foreach($system as $value)
                                                 <option
