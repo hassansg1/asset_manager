@@ -1,9 +1,10 @@
 @extends('components.datatable')
 @section('table_header')
-    <th>Source Location</th>
-    <th>Source Zone</th>
-    <th>Destination Location</th>
-    <th>Destination Zone</th>
+    <th>Location</th>
+    <th>Source Assets</th>
+    <th>Destination Assets</th>
+    <th>Policy Validity</th>
+    <th>Justification</th>
     <th>Actions</th>
 @endsection
 @section('table_rows')
