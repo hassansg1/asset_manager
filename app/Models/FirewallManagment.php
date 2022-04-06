@@ -20,7 +20,6 @@ class FirewallManagment extends Model
             'destination_asset' => 'required',
             'applicatin_port' => 'required',
             'condition' => 'required',
-            'approved_by' => 'required',
         ];
 
     public function source_assets(){
