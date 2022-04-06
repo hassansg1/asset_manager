@@ -134,6 +134,7 @@ class FirewallImportController extends Controller
                 $success = false;
                 DB::rollBack();
             }
+
         } else {
             $success = false;
             $logs[] = 'Invalid file name';
