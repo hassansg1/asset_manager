@@ -614,10 +614,10 @@ if (!function_exists('tableColumnsMapping')) {
             'firewall_managments' => [
                 'source_zone' => 'Source Zone',
                 'source_location' => 'Source Location',
-                'source_asset' => 'Source Asset ID',
+                'source_asset' => 'Source Assets',
                 'destination_zone' => 'Destination Zone',
                 'destination_location' => 'Destination Location',
-                'destination_asset' => 'Destination Asset ID',
+                'destination_asset' => 'Destination Assets',
                 'applicatin_port' => 'Application or Port',
                 'description' => 'Justification',
                 'condition' => 'Policy Validity',

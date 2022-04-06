@@ -32,6 +32,9 @@ class Employee extends Model
     public function department(){
         return $this->belongsTo(Department::class, 'department_id');
     }
+    public function user_unit(){
+        return $this->belongsTo(Location::class, 'unit_id', 'id');
+    }
 
      public function saveFormData($item, $request)
      {
