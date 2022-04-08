@@ -15,7 +15,7 @@
         <td>
             @foreach(\App\Models\UserRight::where('parent_id', $item->id)->get() as $function)
                 @if($function->rights_name)
-                    {{  $function->rights_name->name }},
+                    {{  $function->rights_name->name }},<br>
 
                 @else
 

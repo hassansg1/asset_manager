@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\SystemAssets;
 use Illuminate\Http\Request;
 
-class FirewallManagmentController extends Controller
+class FirewallManagmentController extends BaseController
 {
     protected $model;
     protected $route;
@@ -26,12 +26,11 @@ class FirewallManagmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = FirewallManagment::paginate();
-
+        $data = $this->fetchData($this->model, $request);
         return view($this->route . "/index")
-            ->with(['items' => $data, 'route' => $this->route, 'heading' => $this->heading]);
+            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**

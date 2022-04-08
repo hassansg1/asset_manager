@@ -32,7 +32,7 @@ class EmployeeController extends BaseController
     {
         $data = $this->fetchData($this->model, $request, new SystemUserRepo());
         return view($this->route . "/index")
-        ->with(['items' => $data['items'], 'route' => $this->route, 'heading' => $this->heading]);
+            ->with(['items' => $data['items'], 'data' => $data, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**
