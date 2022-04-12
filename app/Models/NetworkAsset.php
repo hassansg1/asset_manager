@@ -122,4 +122,5 @@ class NetworkAsset extends Model
         }
         return $item;
     }
+
 }
