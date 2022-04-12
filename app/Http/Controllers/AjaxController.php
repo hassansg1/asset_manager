@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\DB;
 class AjaxController extends Controller
 {
     //
+
     public function getNewAjaxRow(Request $request)
     {
         return response()->json(
