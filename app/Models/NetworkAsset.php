@@ -97,7 +97,6 @@ class NetworkAsset extends Model
      */
     public function saveFormData($item, $request)
     {
-
         if (isset($request->name)) $item->name = $request->name;
         if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
         if (isset($request->description)) $item->description = $request->description;
