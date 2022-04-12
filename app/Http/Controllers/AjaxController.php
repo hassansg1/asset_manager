@@ -38,7 +38,9 @@ class AjaxController extends Controller
             ]
         );
     }
-
+    public  function  deletePortsRow(Request $request){
+        Port::where('id', $request->rowId)->delete();
+    }
     public function getPortsOfNetwork(Request $request)
     {
         $ports = Port::where('location_id', $request->network_id)->get();

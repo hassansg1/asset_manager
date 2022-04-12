@@ -37,7 +37,15 @@
         });
     }
 
-    function deletePortRow(rand) {
+    function deletePortRow(rand, rowId) {
+        $.ajax({
+            type: "POST",
+            url: '{{ url('deletePortsRow') }}',
+            data: {rowId: rowId, '_token': '{{ csrf_token() }}', },
+            success: function (result) {
+                $('.' + rand).html(result.html);
+            }
+        });
         if (confirm('Are you sure?')) {
             $('#' + rand).remove();
         }
