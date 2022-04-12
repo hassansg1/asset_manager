@@ -102,13 +102,12 @@ class SoftwareImportController extends Controller
                         $logs[] = 'Vendor Saved.';
                     }
                 }
-
                 $request = new Request();
                 $model = new Software();
-                $softwareName = trim($obj['Generalized Software Name']) != "" ? $obj['Generalized Software Name'] : $obj['Software Name'];
+                $softwareName = $obj['Software Name'] != "" ? $obj['Software Name']  : $obj['Generalized Software Name'];
                 $software = Software::where('name', $softwareName)->first();
                 if (!$software) {
-                    $arr = ['name' => $softwareName, 'vendor_id' => $vendor->id];
+                    $arr = ['name' => $softwareName, 'vendor_id' => $vendor->id, 'version'=>$obj['Software Version']];
                     $request->replace($arr);
                     $validator = Validator::make($request->all(), $model->rules);
                     if ($validator->fails()) {
