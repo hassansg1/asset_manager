@@ -4,7 +4,8 @@
         <td>{{ $item->ip_address }}</td>
 {{--        <td>{{ $item->number }}</td>--}}
         <td>
-            @if($item->location_id)
+            @if($item->location_id && $item->location)
+
                 <a href="{{ route($item->location->type.".show",$item->location->id ?? '') }}" target="_blank">{{$item->location->name ?? ''}}</a>
             @endif
         </td>
