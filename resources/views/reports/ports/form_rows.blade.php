@@ -7,7 +7,11 @@
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapse{{ $item->location_id  }}" aria-expanded="true"
                                 aria-controls="collapseOne">
-                            <strong>{{ $item->location->name }}</strong>
+                            <strong>
+                                @if($item->location)
+                                {{ $item->location->name }}
+                                @endif
+                            </strong>
                         </button>
                     </h2>
                     <div id="collapse{{ $item->location_id  }}" class="accordion-collapse collapse show"
