@@ -118,7 +118,7 @@ class NetworkAsset extends Model
         $parent->appendNode($newItem);
 
         if (isset($request->ports)) {
-            $port = Port::whereIn('location_id', $item->id)->delete();
+            $port = Port::where('location_id', $item->id)->delete();
             Port::updatePorts($item, $request->ports);
         }
         return $item;
