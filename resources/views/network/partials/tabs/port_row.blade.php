@@ -39,7 +39,7 @@
         </div>
     </td>
     <td style="width: 100px">
-        <a onclick="deletePortRow('{{ $rand }}');"
+        <a onclick="deletePortRow('{{ $rand }}', {{$port->id}});"
            class="btn btn-outline-secondary btn-sm edit" title="Edit">
             <i class="fas fa-trash-alt"></i>
         </a>
