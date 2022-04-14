@@ -8,9 +8,9 @@
 @section('table_rows')
     @foreach($items as $item)
         <tr id="{{ $item->id }}">
-            <td>{{ $item->version->name }}</td>
-            <td>{{ $item->clause->title }}</td>
-            <td>{{ $item->comment}}</td>
+            <td>@if($item->version){{ $item->version->name }}@endif</td>
+            <td>@if($item->clause){{ $item->clause->title }}@endif</td>
+            <td>{!!descriptionWrapText($item->comment,50)!!}</td>
             <td>
                 @if($item->compliant == 1)
                     Yes

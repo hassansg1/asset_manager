@@ -112,8 +112,11 @@
         makeDatatable('datatable-buttons'+'{{ $route ?? '' }}');
         let editor1 = CKEDITOR.replace('help_text', {
             width: '100%',
-            height: 900,
+            height: 300,
         });
+
+
+
 
         var search = function (e) {
             var pattern = $('#tree-input-search').val();
@@ -137,8 +140,7 @@
         });
 
         $('#tree-input-search').on('keyup', search);
-
-        editor1.on('change', function () {
+        $('#helpSaveButton').on('click', function (){
             $.ajax({
                 type: "POST",
                 url: '{{ url('saveHelp') }}',
@@ -154,6 +156,22 @@
                 },
             });
         });
+        {{--editor1.on('change', function () {--}}
+        {{--    $.ajax({--}}
+        {{--        type: "POST",--}}
+        {{--        url: '{{ url('saveHelp') }}',--}}
+        {{--        data: {--}}
+        {{--            '_token': '{{ csrf_token() }}',--}}
+        {{--            'text': CKEDITOR.instances.help_text.getData(),--}}
+        {{--            'route': '{{ \Illuminate\Support\Facades\Route::currentRouteAction() }}',--}}
+        {{--        },--}}
+        {{--        success: function (result) {--}}
+        {{--            if (result.status) {--}}
+        {{--                doSuccessToast();--}}
+        {{--            }--}}
+        {{--        },--}}
+        {{--    });--}}
+        {{--});--}}
     });
     var $searchableTree;
     sidebar_tree();

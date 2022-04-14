@@ -22,6 +22,9 @@
                 @endif
 
             </div>
+            <div align="right">
+                <button class="btn btn-primary" id="helpSaveButton" style="display: none">Save</button>
+            </div>
         </div>
     </div>
 </div>
@@ -29,5 +32,6 @@
     function showTextArea() {
         $('#text_hel_div').css('display', 'block');
         $('#text_manager').css('display', 'none');
+        $('#helpSaveButton').show();
     }
 </script>
