@@ -18,7 +18,6 @@ class HelpController extends Controller
             'help_content' => $request->text,
             'route_name' => $request->route,
         ]);
-
         return response()->json([
             'status' => true
         ]);
