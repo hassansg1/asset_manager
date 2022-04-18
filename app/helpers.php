@@ -851,43 +851,28 @@ function getClauses($standardId)
     return StandardClause::where('standard_id', $standardId)->get();
 }
 
+
 function getClauseTree($standardId, $clauseId)
 {
-    $tree = [];
-    $locations = StandardClause::where('standard_id', $standardId)->get()->toArray();
-    foreach ($locations as $location) {
-        $nodes = StandardClause::descendantsAndSelf($location['id'])->toFlatTree()->toArray();
-        $subTree = buildClauseTree($nodes, $location['id']);
-        $parentNode = $nodes[0];
-        $parentNode['nodes'] = $subTree;
-        $nodeTree[0] = (object)$parentNode;
-        $tree = array_merge($tree, $nodeTree);
-    }
-
+    $tree = \Illuminate\Support\Facades\Cache::rememberForever('clauseCached', function () use ($standardId, $clauseId) {
+        $tree = [];
+        $query = StandardClause::where('standard_id', $standardId);
+        if ($clauseId) {
+            $query = $query->where('id', $clauseId);
+        }
+        $locations = $query->get()->toArray();
+        foreach ($locations as $location) {
+            $nodes = StandardClause::descendantsAndSelf($location['id'])->toFlatTree()->toArray();
+            $subTree = buildClauseTree($nodes, $location['id']);
+            $parentNode = $nodes[0];
+            $parentNode['nodes'] = $subTree;
+            $nodeTree[0] = (object)$parentNode;
+            $tree = array_merge($tree, $nodeTree);
+        }
+        return $tree;
+    });
     return $tree;
 }
-
-//function getClauseTree($standardId, $clauseId)
-//{
-//    $tree = \Illuminate\Support\Facades\Cache::rememberForever('clauseCached', function () use ($standardId, $clauseId){
-//        $tree = [];
-//        $query = StandardClause::where('standard_id', $standardId);
-//        if ($clauseId) {
-//            $query = $query->where('id', $clauseId);
-//        }
-//        $locations = $query->get()->toArray();
-//        foreach ($locations as $location) {
-//            $nodes = StandardClause::descendantsAndSelf($location['id'])->toFlatTree()->toArray();
-//            $subTree = buildClauseTree($nodes, $location['id']);
-//            $parentNode = $nodes[0];
-//            $parentNode['nodes'] = $subTree;
-//            $nodeTree[0] = (object)$parentNode;
-//            $tree = array_merge($tree, $nodeTree);
-//        }
-//        return $tree;
-//    });
-//    return $tree;
-//}
 
 function buildClauseTree(array $elements, $parentId = 0)
 {

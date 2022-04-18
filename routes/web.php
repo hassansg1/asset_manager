@@ -247,3 +247,4 @@ Route::get('/getCommentIframe/{id}', [\App\Http\Controllers\AjaxController::clas
 Route::get('syncAssets',function (){
     \App\Models\Location::fixtree();
 });
+Route::get('clauseLoad/smartLoad',[\App\Http\Controllers\SmartClauseLoadController::class,'index'])->name('clauses.smartLoad');
