@@ -854,7 +854,9 @@ function getClauses($standardId)
 
 function getClauseTree($standardId, $clauseId)
 {
-    $tree = \Illuminate\Support\Facades\Cache::rememberForever('clauseCached', function () use ($standardId, $clauseId) {
+    if (\Illuminate\Support\Facades\Cache::has('clauseCached' . $standardId)) {
+        return \Illuminate\Support\Facades\Cache::get('clauseCached' . $standardId);
+    } else {
         $tree = [];
         $query = StandardClause::where('standard_id', $standardId);
         if ($clauseId) {
@@ -869,9 +871,9 @@ function getClauseTree($standardId, $clauseId)
             $nodeTree[0] = (object)$parentNode;
             $tree = array_merge($tree, $nodeTree);
         }
+        \Illuminate\Support\Facades\Cache::forever('clauseCached' . $standardId, $tree);
         return $tree;
-    });
-    return $tree;
+    }
 }
 
 function buildClauseTree(array $elements, $parentId = 0)

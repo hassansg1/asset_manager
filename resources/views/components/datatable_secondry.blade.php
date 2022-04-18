@@ -23,7 +23,7 @@
             },
             success: function (result) {
                 if (result.status) {
-                    $('#delete_' + id).submit();
+                    $('.delete_' + id).submit();
                 } else
                 doErrorToast('This company cannot be deleted. Reason : Underlying data exists.Delete underlying data first..');
             },

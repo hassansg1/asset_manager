@@ -7,7 +7,7 @@
     aria-expanded="false">
     <i class="fas fa-trash-alt"></i>
 </button>
-<form action="{{ route($route.".destroy",$item->id) }}" name="delete_{{ $item->id }}" id="delete_{{ $item->id }}"
+<form action="{{ route($route.".destroy",$item->id) }}" name="delete_{{ $item->id }}" class="delete_{{ $item->id }}"
       method="post">
     {{ csrf_field() }}
     @method('DELETE')
