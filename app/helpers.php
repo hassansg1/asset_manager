@@ -854,20 +854,40 @@ function getClauses($standardId)
 function getClauseTree($standardId, $clauseId)
 {
     $tree = [];
-    if ($clauseId) {
-        $locations = StandardClause::where('standard_id', $standardId)->where('id', $clauseId)->get()->toArray();
-        foreach ($locations as $location) {
-            $nodes = StandardClause::descendantsAndSelf($location['id'])->toFlatTree()->toArray();
-            $subTree = buildClauseTree($nodes, $location['id']);
-            $parentNode = $nodes[0];
-            $parentNode['nodes'] = $subTree;
-            $nodeTree[0] = (object)$parentNode;
-            $tree = array_merge($tree, $nodeTree);
-        }
+    $locations = StandardClause::where('standard_id', $standardId)->get()->toArray();
+    foreach ($locations as $location) {
+        $nodes = StandardClause::descendantsAndSelf($location['id'])->toFlatTree()->toArray();
+        $subTree = buildClauseTree($nodes, $location['id']);
+        $parentNode = $nodes[0];
+        $parentNode['nodes'] = $subTree;
+        $nodeTree[0] = (object)$parentNode;
+        $tree = array_merge($tree, $nodeTree);
     }
 
     return $tree;
 }
+
+//function getClauseTree($standardId, $clauseId)
+//{
+//    $tree = \Illuminate\Support\Facades\Cache::rememberForever('clauseCached', function () use ($standardId, $clauseId){
+//        $tree = [];
+//        $query = StandardClause::where('standard_id', $standardId);
+//        if ($clauseId) {
+//            $query = $query->where('id', $clauseId);
+//        }
+//        $locations = $query->get()->toArray();
+//        foreach ($locations as $location) {
+//            $nodes = StandardClause::descendantsAndSelf($location['id'])->toFlatTree()->toArray();
+//            $subTree = buildClauseTree($nodes, $location['id']);
+//            $parentNode = $nodes[0];
+//            $parentNode['nodes'] = $subTree;
+//            $nodeTree[0] = (object)$parentNode;
+//            $tree = array_merge($tree, $nodeTree);
+//        }
+//        return $tree;
+//    });
+//    return $tree;
+//}
 
 function buildClauseTree(array $elements, $parentId = 0)
 {
@@ -998,7 +1018,7 @@ function checkIfButtonAllowed($locations, $item, $action)
 
 function getLocationsForDropDown($type, $action, $model = null)
 {
-    $locations = \App\Models\Location::applyLocationFilter(null, $model, null, null, $action, true,true)->get();
+    $locations = \App\Models\Location::applyLocationFilter(null, $model, null, null, $action, true, true)->get();
     if ($type) {
         $types = \App\Models\Location::getHierarchyLevelForCreation($type);
         $locations = $locations->whereIn('type', $types);
