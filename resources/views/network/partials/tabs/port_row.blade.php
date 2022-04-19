@@ -2,6 +2,7 @@
 @for($i = 0; $i < $rows ; $i ++)
 @php($rand = rand(10000,100000))
 <tr data-id="1" id="{{ $rand }}">
+    <input type="hidden" name="ports[rand][]" value="{{ $rand }}">
     <td><input value="{{ isset($port) ? $port->name : '' }}" type="text" name="ports[name][]"
                class="form-control"></td>
     <td><input value="{{ isset($port) ? $port->number : '' }}" type="text" name="ports[number][]"
@@ -21,7 +22,7 @@
                class="form-control"></td>
     <td>
         <div class="form-check mb-3">
-            <input class="form-check-input" type="radio" name="ports[status][]" id="formRadios1"
+            <input class="form-check-input" type="radio" name="ports[status][{{ $rand }}]" id="formRadios1"
                     {{ isset($port) && $port->status == 1 ? 'checked' : '' }}
             >
             <label class="form-check-label" for="formRadios1">
@@ -29,7 +30,7 @@
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="ports[status][]" id="formRadios2"
+            <input class="form-check-input" type="radio" name="ports[status][{{ $rand }}]" id="formRadios2"
                    value="off"
                     {{ isset($port) && $port->status == 0 ? 'checked' : '' }}
             >

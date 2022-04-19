@@ -858,7 +858,7 @@ function getClauseTree($standardId, $clauseId)
         return \Illuminate\Support\Facades\Cache::get('clauseCached' . $standardId);
     } else {
         $tree = [];
-        $query = StandardClause::where('standard_id', $standardId);
+        $query = StandardClause::where('standard_id', $standardId)->select('id')->where('parent_id',null);
         if ($clauseId) {
             $query = $query->where('id', $clauseId);
         }

@@ -33,13 +33,14 @@ class Port extends Model
                 $networkId = $connectedPort->network_id ?? '';
             }
 
+            $rand = $ports['rand'][$count];
             $port->update([
                 'location_id' => $model->id,
                 'name' => $ports['name'][$count] ?? '',
                 'number' => $ports['number'][$count] ?? '',
                 'type' => $ports['type'][$count] ?? '',
                 'speed' => $ports['speed'][$count] ?? '',
-                'status' => isset($ports['status'][$count]) && $ports['status'][$count] && $ports['status'][$count] == 'on' ? 1 : 0,
+                'status' => isset($ports['status'][$rand]) && $ports['status'][$rand] && $ports['status'][$rand] == 'on' ? 1 : 0,
                 'ip_address' => $ports['ip_address'][$count] ?? '',
                 'mac_address' => $ports['mac_address'][$count] ?? '',
                 'nic' => $ports['nic'][$count] ?? '',
