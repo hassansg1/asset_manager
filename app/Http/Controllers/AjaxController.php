@@ -10,12 +10,14 @@ use App\Models\Networks;
 use App\Models\Port;
 use App\Models\StandardClause;
 use App\Models\SystemUserId;
+use App\Models\Unit;
 use App\Models\User;
 use App\Models\UserAccount;
 use App\Models\UserId;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
+use Response;
 
 class AjaxController extends Controller
 {
@@ -84,12 +86,16 @@ class AjaxController extends Controller
 
     public function exportDataTemplates()
     {
+
+        $headers = array(
+            'Content-Type' => 'text/csv',
+        );
         $tables = ['units', 'sites', 'sub_sites', 'buildings', 'rooms', 'cabinets', 'network_assets', 'computer_assets', 'lone_assets', 'attachments'];
 
         foreach ($tables as $table) {
             $columns = tableColumnsMapping($table, 'export');
             $path = public_path('csv/' . tableNamesMapping($table, 'export') . '.csv');
-
+            $fileName  = tableNamesMapping($table, 'export') . '.csv';
             $file = fopen($path, 'w');
             fputcsv($file, $columns);
             fclose($file);
@@ -110,6 +116,8 @@ class AjaxController extends Controller
 
         flashSuccess("Successfully generated");
         return redirect()->back();
+
+//        Response::download($file, $fileName, $headers);
     }
 
     public function checkDeleteCriteria(Request $request)
