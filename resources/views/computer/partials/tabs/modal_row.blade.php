@@ -14,7 +14,7 @@
                 <th>IP Address</th>
                 <th>SubNetMask</th>
                 <th>Default Gateway</th>
-                <th>Connected To</th>
+{{--                <th>Connected To</th>--}}
                 <th></th>
             </tr>
             </thead>
@@ -36,7 +36,7 @@
             </tr>
             <tr>
                 <td>Number of rows</td>
-                <td><input type="number" minlength="1" name="rows"  value="1"></td>
+                <td><input type="number" minlength="1" name="rows"  value="1" class="form-control"></td>
             </tr>
             </tbody>
         </table>

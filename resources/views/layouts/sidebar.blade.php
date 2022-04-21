@@ -6,7 +6,7 @@
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li>
                     <a href="{{url('dashboard')}}" class="waves-effect">
-                        <i class="far fa-dot-circle"></i>
+                        <i class="fa fa-home"></i>
                         <span class="badge rounded-pill bg-info float-end"></span>
                         <span key="t-dashboards">Dashboard</span>
                     </a>
@@ -24,14 +24,14 @@
                 <div id="default-tree"></div>
                 <li>
                     <a href="{{ route('networks.index') }}" class="waves-effect">
-                        <i class="far fa-dot-circle"></i>
+                        <i class="fas fa-network-wired"></i>
                         <span class="badge rounded-pill bg-info float-end"></span>
                         <span key="t-dashboards">Networks</span>
                     </a>
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-store"></i>
+                        <i class="far fa-user"></i>
                         <span key="t-ecommerce">User Management</span>
                     </a>
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
@@ -43,7 +43,7 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-store"></i>
+                        <i class="bx bx-cast"></i>
                         <span key="t-ecommerce">Software Management</span>
                     </a>
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
@@ -67,7 +67,7 @@
                 </li>
                 <li>
                     <a href="{{route('firewall_managment.index')}}" class="">
-                        <i class="bx bx-store"></i>
+                        <i class="bx bx-shield"></i>
                         <span key="t-ecommerce">Firewall Management</span>
                     </a>
                 </li>
@@ -84,7 +84,7 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-store"></i>
+                        <i class="bx bx-file"></i>
                         <span key="t-ecommerce">Reports</span>
                     </a>
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
@@ -96,7 +96,7 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-store"></i>
+                        <i class="bx bx-align-justify"></i>
                         <span key="t-ecommerce">Nozomi Reports</span>
                     </a>
                     <ul class="sub-menu mm-collapse" aria-expanded="false">

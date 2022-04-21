@@ -8,7 +8,7 @@
     <li class="nav-item">
         <a class="nav-link" data-bs-toggle="tab" href="#com_info" role="tab">
             <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-            <span class="d-none d-sm-block">Comm Info</span>
+            <span class="d-none d-sm-block">Common Info</span>
         </a>
     </li>
     <li class="nav-item">

@@ -12,7 +12,7 @@
                 <th>Type</th>
                 <th>Netwrok</th>
                 <th>Speed</th>
-                <th>Status</th>
+{{--                <th>Status</th>--}}
                 <th></th>
             </tr>
             </thead>
@@ -22,9 +22,8 @@
                 <td><input type="text" name="name" class="form-control"></td>
                 <td><input type="text" name="number"
                            class="form-control"></td>
-                <td><input type="text" name="type"
+                <td><input type="text" readonly name="type"
                            class="form-control" value="network"></td>
-                <td></td>
                 <td><input type="text" name="network"
                            class="form-control"></td>
                 <td>
@@ -35,7 +34,7 @@
             </tr>
             <tr>
                 <td>Number of rows</td>
-                <td><input type="number" minlength="1" name="rows"  value="1"></td>
+                <td><input type="number" minlength="1" name="rows"  value="1" class="form-control"></td>
             </tr>
             </tbody>
         </table>

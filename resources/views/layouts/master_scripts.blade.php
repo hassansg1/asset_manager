@@ -84,7 +84,7 @@
     }
 
     function getBulckRows(network) {
-        var modal = 'exampleModalFullscreen';
+        var modal = 'default_modal';
         $.ajax({
             type: "GET",
             url: '{{ url('getNewAjaxForm') }}',
