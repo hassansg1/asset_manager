@@ -4,12 +4,12 @@
             <table class="table table-editable table-nowrap align-middle">
                 <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Number</th>
-                    <th>Type</th>
-                    <th>Network</th>
-                    <th>Speed</th>
-                    <th>Status</th>
+                    <th>Port Name</th>
+                    <th>Port Number</th>
+                    <th>Port Type</th>
+                    <th>Port Network</th>
+                    <th>Port Speed</th>
+                    <th>Port Status</th>
                 </tr>
                 </thead>
                 <tbody id="ports_table_row">

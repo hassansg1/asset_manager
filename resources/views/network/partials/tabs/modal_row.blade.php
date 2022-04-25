@@ -7,11 +7,11 @@
         <table>
             <thead>
             <tr>
-                <th>Name</th>
-                <th>Number</th>
-                <th>Type</th>
-                <th>Netwrok</th>
-                <th>Speed</th>
+                <th>Port Name</th>
+                <th>Port Number</th>
+                <th>Port Type</th>
+                <th>Port Netwrok</th>
+                <th>Port Speed</th>
 {{--                <th>Status</th>--}}
                 <th></th>
             </tr>
