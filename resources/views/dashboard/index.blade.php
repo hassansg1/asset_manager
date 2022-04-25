@@ -1,7 +1,6 @@
 @extends('layouts.master')
 
 @section('title') Dashboard @endsection
-
 @section('content')
     @yield('top_content')
     <div>
