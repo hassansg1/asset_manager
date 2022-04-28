@@ -42,12 +42,12 @@ class DatabaseSeeder extends Seeder
 //        $crud = ['company', 'unit', 'site', 'subsite', 'building', 'room', 'cabinet', 'asset','user', 'networks_list', 'systems', 'rights', 'user_ids', 'vendors', 'installed_softwares', 'softwares', 'software_components', 'installed_patches', 'patches', 'firewall_managments', 'risks', 'risk_assessments'];
 //
 //        foreach ($crud as $cr) {
-//            Permission::updateOrCreate(["name" => 'See ' . $cr], ["name" => 'See ' . $cr, 'guard_name' => 'web', 'group' => $cr]);
-//            Permission::updateOrCreate(["name" => 'List ' . $cr], ["name" => 'List ' . $cr, 'guard_name' => 'web', 'group' => $cr]);
-//            Permission::updateOrCreate(["name" => 'View ' . $cr], ["name" => 'View ' . $cr, 'guard_name' => 'web', 'group' => $cr]);
-//            Permission::updateOrCreate(["name" => 'Create ' . $cr], ["name" => 'Create ' . $cr, 'guard_name' => 'web', 'group' => $cr]);
-//            Permission::updateOrCreate(["name" => 'Edit ' . $cr], ["name" => 'Edit ' . $cr, 'guard_name' => 'web', 'group' => $cr]);
-//            Permission::updateOrCreate(["name" => 'Delete ' . $cr], ["name" => 'Delete ' . $cr, 'guard_name' => 'web', 'group' => $cr]);
+            Permission::updateOrCreate(["name" => 'can-access-import-export'], ["name" => 'can-access-import-export', 'guard_name' => 'web', 'group' => 'can-access-import-export']);
+            Permission::updateOrCreate(["name" => 'can-access-standard-compliance'], ["name" => 'can-access-standard-compliance', 'guard_name' => 'web', 'group' => 'can-access-standard-compliance']);
+            Permission::updateOrCreate(["name" => 'can-access-approvel-requests'], ["name" => 'can-access-approvel-requests', 'guard_name' => 'web', 'group' => 'can-access-approvel-requests']);
+            Permission::updateOrCreate(["name" => 'can-access-logs'], ["name" => 'can-access-logs', 'guard_name' => 'web', 'group' => 'can-access-logs']);
+            Permission::updateOrCreate(["name" => 'can-access-task'], ["name" => 'can-access-task', 'guard_name' => 'web', 'group' => 'can-access-task']);
+            Permission::updateOrCreate(["name" => 'can-access-document-liberary'], ["name" => 'can-access-document-liberary', 'guard_name' => 'web', 'group' => 'can-access-document-liberary']);
 //            Permission::updateOrCreate(["name" => 'Export ' . $cr], ["name" => 'Export ' . $cr, 'guard_name' => 'web', 'group' => $cr]);
 //        }
 
