@@ -39,8 +39,7 @@ class DatabaseSeeder extends Seeder
         Role::updateOrCreate(["name" => "Super Admin"], ["name" => "Super Admin"]);
 
         $user->assignRole("Super Admin");
-//
-//        $crud = ['company', 'unit', 'site', 'subsite', 'building', 'room', 'cabinet', 'asset','user'];
+//        $crud = ['company', 'unit', 'site', 'subsite', 'building', 'room', 'cabinet', 'asset','user', 'networks_list', 'systems', 'rights', 'user_ids', 'vendors', 'installed_softwares', 'softwares', 'software_components', 'installed_patches', 'patches', 'firewall_managments', 'risks', 'risk_assessments'];
 //
 //        foreach ($crud as $cr) {
 //            Permission::updateOrCreate(["name" => 'See ' . $cr], ["name" => 'See ' . $cr, 'guard_name' => 'web', 'group' => $cr]);
@@ -53,5 +52,8 @@ class DatabaseSeeder extends Seeder
 //        }
 
         // \App\Models\User::factory(10)->create();
+
+//        $role = Role::create(['name' => 'Administrator'])
+//            ->givePermissionTo(['List company']);
     }
 }
