@@ -7,6 +7,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use DB;
 
 class RoleController extends BaseController
 {
@@ -99,14 +100,22 @@ class RoleController extends BaseController
         }
         $item = $this->model->find($item);
 
+        $assigned_permissions = DB::table('role_has_permissions')
+            ->select('permission_id')
+            ->where('role_id', $item->id)
+            ->get();
+        $child_arr = [];
+        foreach($assigned_permissions as $subchild) {
+            $child_arr[] = $subchild->permission_id ;
+        }
 
         if ($request->ajax) {
             return response()->json([
                 'status' => true,
-                'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item, 'clone' => $request->clone ?? null])->render()
+                'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item, 'assigned_permissions'=>$child_arr,'clone' => $request->clone ?? null])->render()
             ]);
         } else
-            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
+            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item,'assigned_permissions'=>$child_arr, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
     }
 
     /**

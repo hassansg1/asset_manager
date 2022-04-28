@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Traits\HasRoles;
 
 class Role extends Authenticatable
 {
+    use HasRoles;
     /**
      * The attributes that are mass assignable.
      *
@@ -84,11 +86,14 @@ class Role extends Authenticatable
      */
     public function saveFormData($item, $request)
     {
-        if (isset($request->name)) $item->name = $request->name;
-        $item->guard_name = 'web';
-        $item->save();
+//        if (isset($request->name)) $item->name = $request->name;
+//        $item->guard_name = 'web';
+//        $item->save();
 
-        $this->updateLocations($request, $item);
+        $role = \Spatie\Permission\Models\Role::updateOrCreate(["name" => $request->name], ["name" => $request->name])
+            ->syncPermissions([$request->allow_permissions]);
+        $this->updateLocations($request, $role);
+
         return $item;
     }
 }
