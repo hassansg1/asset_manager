@@ -36,7 +36,9 @@ class Permission extends Authenticatable
      * @return mixed
      */
     public function saveFormData($item, $request)
-    {if (isset($request->name)) $item->name = $request->name;
+    {
+        if (isset($request->name)) $item->name = $request->name;
+         $item->guard_name  = 'web';
 
         $item->save();
         return $item;
