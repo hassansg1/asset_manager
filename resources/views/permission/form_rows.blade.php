@@ -7,5 +7,6 @@
             @include('components.edit_delete_button')
         </td>
     </tr>
+
 @endforeach
 
