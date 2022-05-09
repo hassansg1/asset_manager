@@ -51,6 +51,7 @@ class DatabaseSeeder extends Seeder
 //            Permission::updateOrCreate(["name" => 'Export ' . $cr], ["name" => 'Export ' . $cr, 'guard_name' => 'web', 'group' => $cr]);
 //        }
 
+
         // \App\Models\User::factory(10)->create();
 
 //        $role = Role::create(['name' => 'Administrator'])
