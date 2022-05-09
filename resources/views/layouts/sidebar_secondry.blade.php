@@ -44,6 +44,7 @@
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
                         <li><a href="{{ route('user.index') }}" key="t-products">User List</a></li>
                         <li><a href="{{ route('role.index') }}" key="t-product-detail">Roles</a></li>
+{{--                        <li><a href="{{ route('permission.index') }}" key="t-product-detail">Permissions</a></li>--}}
                     </ul>
                 </li>
                 <li>
