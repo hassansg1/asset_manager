@@ -330,6 +330,20 @@ if (!function_exists('getAllPossibleChildTablesOfParent')) {
     }
 }
 
+if (!function_exists('getAllPermissions')) {
+    function getAllPermissions()
+    {
+        return \Spatie\Permission\Models\Permission::get();
+    }
+}
+
+if (!function_exists('getAllModules')) {
+    function getAllModules()
+    {
+        return ['company', 'unit', 'site', 'subsite', 'building', 'room', 'cabinet', 'asset','user', 'networks_list', 'systems', 'rights', 'user_ids', 'vendors', 'installed_softwares', 'softwares', 'software_components', 'installed_patches', 'patches', 'firewall_managments', 'risks', 'risk_assessments'];
+    }
+}
+
 
 if (!function_exists('getHelpSectionText')) {
     function getHelpSectionText()
