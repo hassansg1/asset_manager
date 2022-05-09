@@ -333,6 +333,7 @@ if (!function_exists('getAllPossibleChildTablesOfParent')) {
 if (!function_exists('getAllPermissions')) {
     function getAllPermissions()
     {
+
         return \Spatie\Permission\Models\Permission::get();
     }
 }
