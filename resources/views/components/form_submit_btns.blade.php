@@ -16,6 +16,6 @@
 
     function addNewAfterSave() {
         $('form').append('<input type="hidden" name="add_new" value="1" />');
-        // $('.submit_form').click();
+        $('.submit_form').click();
     }
 </script>
