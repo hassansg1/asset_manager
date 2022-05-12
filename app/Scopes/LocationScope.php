@@ -22,6 +22,9 @@ class LocationScope implements Scope
 
     public function apply(Builder $builder, Model $model)
     {
-        $builder->where('type', $this->locationType);
+        if (is_array($this->locationType))
+            $builder->whereIn('type', $this->locationType);
+        else
+            $builder->where('type', $this->locationType);
     }
 }

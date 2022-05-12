@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Traits\LocationTrait;
 use App\Http\Traits\Observable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -13,6 +14,7 @@ class Location extends Model
     use HasFactory;
     use Observable;
     use NodeTrait;
+    use LocationTrait;
 
     public static function getHierarchyLevelForCreation($type)
     {

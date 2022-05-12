@@ -242,9 +242,17 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('/linkstorage', function () {
     \Illuminate\Support\Facades\Artisan::call('storage:link');
 });
-Route::get('/docs/{filename}', [\App\Http\Controllers\FileAccessController::class,'getFile']);
-Route::get('/getCommentIframe/{id}', [\App\Http\Controllers\AjaxController::class,'getCommentIframe']);
-Route::get('syncAssets',function (){
+Route::get('/docs/{filename}', [\App\Http\Controllers\FileAccessController::class, 'getFile']);
+Route::get('/getCommentIframe/{id}', [\App\Http\Controllers\AjaxController::class, 'getCommentIframe']);
+Route::get('syncAssets', function () {
     \App\Models\Location::fixtree();
 });
-Route::get('clauseLoad/smartLoad',[\App\Http\Controllers\SmartClauseLoadController::class,'index'])->name('clauses.smartLoad');
+Route::get('clauseLoad/smartLoad', [\App\Http\Controllers\SmartClauseLoadController::class, 'index'])->name('clauses.smartLoad');
+
+// Reports Module
+
+Route::group(['prefix' => 'reports'], function () {
+    Route::resource('asset_report', \App\Http\Controllers\AssetReportController::class);
+});
+
+Route::get('getColumnSearchRow',[\App\Http\Controllers\AjaxController::class,'getColumnSearchRow']);

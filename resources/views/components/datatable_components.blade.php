@@ -6,6 +6,7 @@
                     <div class="card-body">
                         @include('filters.common')
                         <div class="mt-2">
+                                @yield('top_content_tertiary')
                         </div>
                         <div class="custom_table_div">
                             <table id="{{ $id ?? 'datatable-buttons'.$route }}"

@@ -341,7 +341,7 @@ if (!function_exists('getAllPermissions')) {
 if (!function_exists('getAllModules')) {
     function getAllModules()
     {
-        return ['company', 'unit', 'site', 'subsite', 'building', 'room', 'cabinet', 'asset','user', 'networks_list', 'systems', 'rights', 'user_ids', 'vendors', 'installed_softwares', 'softwares', 'software_components', 'installed_patches', 'patches', 'firewall_managments', 'risks', 'risk_assessments'];
+        return ['company', 'unit', 'site', 'subsite', 'building', 'room', 'cabinet', 'asset', 'user', 'networks_list', 'systems', 'rights', 'user_ids', 'vendors', 'installed_softwares', 'softwares', 'software_components', 'installed_patches', 'patches', 'firewall_managments', 'risks', 'risk_assessments'];
     }
 }
 
@@ -473,7 +473,6 @@ if (!function_exists('policyValidity')) {
         ];
     }
 }
-
 
 
 if (!function_exists('assetCondition')) {
@@ -873,7 +872,7 @@ function getClauseTree($standardId, $clauseId)
         return \Illuminate\Support\Facades\Cache::get('clauseCached' . $standardId);
     } else {
         $tree = [];
-        $query = StandardClause::where('standard_id', $standardId)->select('id')->where('parent_id',null);
+        $query = StandardClause::where('standard_id', $standardId)->select('id')->where('parent_id', null);
         if ($clauseId) {
             $query = $query->where('id', $clauseId);
         }
@@ -1032,4 +1031,23 @@ function getLocationsForDropDown($type, $action, $model = null)
     }
 
     return $sorted;
+}
+
+function getFilterHtml($columns)
+{
+    return view('components.columns_filter')->with(['columns' => $columns])->render();
+}
+
+function processQueryFiltersOnQuery($query, $crOperation, $crWhere, $crValue)
+{
+    if ($crOperation == "LIKE %%")
+        $query = $query->where($crWhere, 'LIKE', '%' . $crValue . '%');
+    else if ($crOperation == "IN")
+        $query = $query->where($crWhere, 'IN', $crValue);
+    else if ($crOperation == "NOT IN")
+        $query = $query->where($crWhere, 'NOT IN', $crValue);
+    else
+        $query = $query->where($crWhere, $crOperation, $crValue);
+
+    return $query;
 }

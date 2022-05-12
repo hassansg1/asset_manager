@@ -20,7 +20,10 @@ class BaseController extends Controller
             $query = new Location();
             $userLocations = UserLocation::getLocations();
             $query = Location::applyLocationFilter($userLocations, $model, $query);
-            $query = $query->where('type', $model::$type);
+            if (is_array( $model::$type))
+                $query = $query->whereIn('type', $model::$type);
+            else
+                $query = $query->where('type', $model::$type);
         }
 
         $query = $this->applyKeywordSearch($request, $query, $model);

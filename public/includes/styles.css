@@ -355,3 +355,7 @@ svg {
 table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before, table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
     left: 50% !important;
 }
+.column_slctr{
+    font-size: 15px;
+    font-weight: bold;
+}

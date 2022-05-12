@@ -10,7 +10,6 @@ use App\Models\Networks;
 use App\Models\Port;
 use App\Models\StandardClause;
 use App\Models\SystemUserId;
-use App\Models\Unit;
 use App\Models\User;
 use App\Models\UserAccount;
 use App\Models\UserId;
@@ -40,9 +39,12 @@ class AjaxController extends Controller
             ]
         );
     }
-    public  function  deletePortsRow(Request $request){
+
+    public function deletePortsRow(Request $request)
+    {
         Port::where('id', $request->rowId)->delete();
     }
+
     public function getPortsOfNetwork(Request $request)
     {
         $ports = Port::where('location_id', $request->network_id)->get();
@@ -95,7 +97,7 @@ class AjaxController extends Controller
         foreach ($tables as $table) {
             $columns = tableColumnsMapping($table, 'export');
             $path = public_path('csv/' . tableNamesMapping($table, 'export') . '.csv');
-            $fileName  = tableNamesMapping($table, 'export') . '.csv';
+            $fileName = tableNamesMapping($table, 'export') . '.csv';
             $file = fopen($path, 'w');
             fputcsv($file, $columns);
             fclose($file);
@@ -291,5 +293,14 @@ class AjaxController extends Controller
             $comment = ComplianceVersionItem::find($id)->comment ?? '';
 
         return view('iframe.comment')->with('comment', $comment);
+    }
+
+    public function getColumnSearchRow(Request $request)
+    {
+        $repo = "App\Repos\\" . $request->repo;
+        $instance = new $repo();
+        $columns = $instance->getColumns();
+
+        return view('components.columns_filter_row')->with(['columns' => $columns])->render();
     }
 }
