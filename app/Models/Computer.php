@@ -116,6 +116,11 @@ class Computer extends Model
         if (isset($request->contact)) $item->contact = $request->contact;
         if (isset($request->comment)) $item->comment = $request->comment;
 
+        if (isset($request->hardware_legacy)) $item->hardware_legacy = $request->hardware_legacy;
+        if (isset($request->software_legacy)) $item->software_legacy = $request->software_legacy;
+        if (isset($request->single_point_of_failure)) $item->single_point_of_failure = $request->single_point_of_failure;
+        if (isset($request->criticality)) $item->criticality = $request->criticality;
+
         $item->type = self::$type;
         $parent = Location::find($request->parent_id);
         $item->save();

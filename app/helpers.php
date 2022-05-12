@@ -160,6 +160,57 @@ if (!function_exists('getStatus')) {
         ];
     }
 }
+if (!function_exists('hardwareLegacy')) {
+    /**
+     * return status array
+     */
+    function hardwareLegacy()
+    {
+        return [
+            '1' => 'Active',
+            '0' => 'Obsolete',
+        ];
+    }
+}
+
+if (!function_exists('SinglePointofFailure')) {
+    /**
+     * return status array
+     */
+    function SinglePointofFailure()
+    {
+        return [
+            '1' => 'Yes',
+            '0' => 'No',
+        ];
+    }
+}
+
+if (!function_exists('softwareLegacy')) {
+    /**
+     * return status array
+     */
+    function softwareLegacy()
+    {
+        return [
+            '1' => 'Active',
+            '0' => 'Obsolete',
+        ];
+    }
+}
+if (!function_exists('Criticality')) {
+    /**
+     * return status array
+     */
+    function Criticality()
+    {
+        return [
+            '1' => 'High',
+            '0' => 'Low',
+            '2' => 'Medium',
+        ];
+    }
+}
 if (!function_exists('getDepartments')) {
     function getDepartments()
     {

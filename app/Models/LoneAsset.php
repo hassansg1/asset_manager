@@ -110,6 +110,11 @@ class LoneAsset extends Model
         if (isset($request->asset_parent_code)) $item->asset_parent_code = $request->asset_parent_code;
         if (isset($request->owner_contact)) $item->owner_contact = $request->owner_contact;
 
+        if (isset($request->hardware_legacy)) $item->hardware_legacy = $request->hardware_legacy;
+        if (isset($request->process)) $item->process = $request->process;
+        if (isset($request->single_point_of_failure)) $item->single_point_of_failure = $request->single_point_of_failure;
+        if (isset($request->criticality)) $item->criticality = $request->criticality;
+
         $item->type = self::$type;
         $parent = Location::find($request->parent_id);
         $item->save();

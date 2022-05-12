@@ -110,6 +110,10 @@ class NetworkAsset extends Model
         if (isset($request->redundant_pair_id)) $item->redundant_pair_id = $request->redundant_pair_id;
         if (isset($request->comment)) $item->comment = $request->comment;
         if (isset($request->asset_contact_person)) $item->asset_contact_person = $request->asset_contact_person;
+
+        if (isset($request->hardware_legacy)) $item->hardware_legacy = $request->hardware_legacy;
+        if (isset($request->single_point_of_failure)) $item->single_point_of_failure = $request->single_point_of_failure;
+        if (isset($request->criticality)) $item->criticality = $request->criticality;
         $item->type = self::$type;
         $parent = Location::find($request->parent_id);
         $item->save();
