@@ -33,7 +33,6 @@ class DatabaseSeeder extends Seeder
             ]);
 
         $user = User::find(1);
-
         $role = Role::updateOrCreate(["name" => "Super Admin"], ["name" => "Super Admin"]);
         $user->assignRole("Super Admin");
         $role->syncPermissions(getAllPermissions());
