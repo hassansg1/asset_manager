@@ -39,7 +39,6 @@ class DatabaseSeeder extends Seeder
         $role = Role::updateOrCreate(["name" => "Super Admin"], ["name" => "Super Admin"]);
         $user->assignRole("Super Admin");
         $role->syncPermissions(getAllPermissions());
-
 //        $crud = ['company', 'unit', 'site', 'subsite', 'building', 'room', 'cabinet', 'asset','user', 'networks_list', 'systems', 'rights', 'user_ids', 'vendors', 'installed_softwares', 'softwares', 'software_components', 'installed_patches', 'patches', 'firewall_managments', 'risks', 'risk_assessments'];
 //
 //        foreach ($crud as $cr) {
