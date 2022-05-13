@@ -32,8 +32,8 @@ class DatabaseSeeder extends Seeder
                 "password" => Hash::make("123456789"),
             ]);
         $user = User::find(1);
-         Role::updateOrCreate(["name" => "Super Admin"], ["name" => "Super Admin"]);
-        $user->assignRole("Super Admin");
+        $role = Role::updateOrCreate(["name" => "Super Admin"], ["name" => "Super Admin"]);
+        $user->assignRole($role);
 //        $crud = ['company', 'unit', 'site', 'subsite', 'building', 'room', 'cabinet', 'asset','user', 'networks_list', 'systems', 'rights', 'user_ids', 'vendors', 'installed_softwares', 'softwares', 'software_components', 'installed_patches', 'patches', 'firewall_managments', 'risks', 'risk_assessments'];
 //
 //        foreach ($crud as $cr) {
@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
 //            Permission::updateOrCreate(["name" => 'Export ' . $cr], ["name" => 'Export ' . $cr, 'guard_name' => 'web', 'group' => $cr]);
 //        }
 
-//        $role->syncPermissions(getAllPermissions());
+        $role->syncPermissions(getAllPermissions());
 
 
         // \App\Models\User::factory(10)->create();
