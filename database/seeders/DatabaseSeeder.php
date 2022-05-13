@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
                 "status" => "1",
                 "password" => Hash::make("123456789"),
             ]);
-        $user = User::find(1);
+        $user = User::find($user->id);
         $role = Role::updateOrCreate(["name" => "Super Admin"], ["name" => "Super Admin"]);
         $user->assignRole("Super Admin");
 //        $crud = ['company', 'unit', 'site', 'subsite', 'building', 'room', 'cabinet', 'asset','user', 'networks_list', 'systems', 'rights', 'user_ids', 'vendors', 'installed_softwares', 'softwares', 'software_components', 'installed_patches', 'patches', 'firewall_managments', 'risks', 'risk_assessments'];
