@@ -35,8 +35,7 @@ class DatabaseSeeder extends Seeder
         $user = User::find(1);
         $role = Role::updateOrCreate(["name" => "Super Admin"], ["name" => "Super Admin"]);
         $user->assignRole("Super Admin");
-//        $crud = ['company', 'unit', 'site', 'subsite', 'building', 'room', 'cabinet', 'asset','user', 'networks_list', 'systems', 'rights', 'user_ids', 'vendors', 'installed_softwares', 'softwares', 'software_components', 'installed_patches', 'patches', 'firewall_managments', 'risks', 'risk_assessments'];
-//
+        $role->syncPermissions(getAllPermissions());
 //        foreach ($crud as $cr) {
             Permission::updateOrCreate(["name" => 'can-access-import-export'], ["name" => 'can-access-import-export', 'guard_name' => 'web', 'group' => 'can-access-import-export']);
             Permission::updateOrCreate(["name" => 'can-access-standard-compliance'], ["name" => 'can-access-standard-compliance', 'guard_name' => 'web', 'group' => 'can-access-standard-compliance']);
@@ -47,12 +46,7 @@ class DatabaseSeeder extends Seeder
 //            Permission::updateOrCreate(["name" => 'Export ' . $cr], ["name" => 'Export ' . $cr, 'guard_name' => 'web', 'group' => $cr]);
 //        }
 
-        $role->syncPermissions(getAllPermissions());
-
 
         // \App\Models\User::factory(10)->create();
-
-//        $role = Role::create(['name' => 'Administrator'])
-//            ->givePermissionTo(['List company']);
     }
 }
