@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AssetFunction;
+use App\Models\FirewallManagment;
 use App\Models\Location;
 use Illuminate\Http\Request;
 
@@ -10,6 +11,8 @@ class DashBoardController extends Controller
 {
     public function index(Request $request)
     {
+
+        $firewallManagment = FirewallManagment::latest()->take(10)->get();
 //        $compliances = ComplianceVersionItem::all();
 //        foreach ($compliances as $compliance)
 //        {
@@ -47,7 +50,7 @@ class DashBoardController extends Controller
 //            $asse_functions_name[] = $subchild->name;
 //        }
 
-        return view('dashboard.index');
+        return view('dashboard.index')->with(['firewall' => $firewallManagment]);;
 
     }
 

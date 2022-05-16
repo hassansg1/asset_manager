@@ -24,6 +24,8 @@
 <script src="{{ URL::asset('/assets/js/pages/table-editable.int.js') }}"></script>
 <script src="{{ URL::asset('/assets/js/bootstrap-treeview.js') }}"></script>
 <script src="{{ URL::asset('/assets/libs/tinymce/tinymce.min.js') }}"></script>
+<script src="{{ URL::asset('assets/libs/apexcharts/apexcharts.min.js') }}"></script>
+<script src="{{ URL::asset('assets/js/pages/apexcharts.init.js') }}"></script>
 
 <script>
 
