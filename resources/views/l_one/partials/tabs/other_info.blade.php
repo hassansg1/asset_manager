@@ -39,6 +39,7 @@
                    name="owner_contact">
         </div>
     </div>
+
     <div class="col-lg-4">
         <div class="mb-3">
             <label for="{{ isset($item) ? $item->id:'' }}hardware_legacy" class="form-label">Hardware Legacy</label>
