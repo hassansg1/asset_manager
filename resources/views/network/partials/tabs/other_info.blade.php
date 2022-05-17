@@ -31,42 +31,32 @@
     <div class="col-lg-4">
         <div class="mb-3">
             <label for="{{ isset($item) ? $item->id:'' }}hardware_legacy" class="form-label">Hardware Legacy</label>
-            <select class="form-select form-select-input" name="hardware_legacy"
-                    id="{{ isset($item) ? $item->id:'' }}hardware_legacy">
-                <option value=""></option>
-                @foreach(hardwareLegacy() as $key => $var)
-                    <option
-                        {{ $key == (isset($item) ? $item->hardware_legacy:old('hardware_legacy') ?? '') ? 'selected' : ''  }}
-                        value="{{ $key }}">{{ $var }}</option>
-                @endforeach
+            <select class="form-control select2" id="hardware_legacy" name="hardware_legacy">
+                <option value="">-Select Hardware Legacy-</option>
+                <option value="1" {{ isset($item) && $item->hardware_legacy == 1  ? 'selected' : ''}}>Active</option>
+                <option value="2" {{ isset($item)  && $item->hardware_legacy == 2  ? 'selected' : ''}}>Obsolete</option>
             </select>
         </div>
     </div>
     <div class="col-lg-4">
         <div class="mb-3">
             <label for="{{ isset($item) ? $item->id:'' }}single_point_of_failure" class="form-label">Single Point of Failure</label>
-            <select class="form-select form-select-input" name="single_point_of_failure"
+            <select class="form-select select2" name="single_point_of_failure"
                     id="{{ isset($item) ? $item->id:'' }}single_point_of_failure">
-                <option value=""></option>
-                @foreach(SinglePointofFailure() as $key => $var)
-                    <option
-                        {{ $key == (isset($item) ? $item->single_point_of_failure:old('single_point_of_failure') ?? '') ? 'selected' : ''  }}
-                        value="{{ $key }}">{{ $var }}</option>
-                @endforeach
+                <option value="">-Select Point of Failure-</option>
+                <option value="1" {{ isset($item) && $item->single_point_of_failure == 1  ? 'selected' : ''}}>Yes</option>
+                <option value="2" {{ isset($item)  && $item->single_point_of_failure == 2  ? 'selected' : ''}}>No</option>
             </select>
         </div>
     </div>
     <div class="col-lg-4">
         <div class="mb-3">
             <label for="{{ isset($item) ? $item->id:'' }}criticality" class="form-label">Criticality</label>
-            <select class="form-select form-select-input" name="criticality"
-                    id="{{ isset($item) ? $item->id:'' }}criticality">
-                <option value=""></option>
-                @foreach(Criticality() as $key => $var)
-                    <option
-                        {{ $key == (isset($item) ? $item->criticality:old('criticality') ?? '') ? 'selected' : ''  }}
-                        value="{{ $key }}">{{ $var }}</option>
-                @endforeach
+            <select class="form-control select2" id="criticality" name="criticality">
+                <option value="">-Select Policy Validity-</option>
+                <option value="1" {{ isset($item) && $item->criticality == 1  ? 'selected' : ''}}>High</option>
+                <option value="2" {{ isset($item)  && $item->criticality == 2  ? 'selected' : ''}}>Medium</option>
+                <option value="3" {{ isset($item)  && $item->criticality == 3  ? 'selected' : ''}}>Low</option>
             </select>
         </div>
     </div>
