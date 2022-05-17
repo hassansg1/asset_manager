@@ -45,14 +45,10 @@
     <div class="col-lg-4">
         <div class="mb-3">
             <label for="{{ isset($item) ? $item->id:'' }}hardware_legacy" class="form-label">Hardware Legacy</label>
-            <select class="form-select form-select-input" name="hardware_legacy"
-                    id="{{ isset($item) ? $item->id:'' }}hardware_legacy">
-                <option value=""></option>
-                @foreach(hardwareLegacy() as $key => $var)
-                    <option
-                        {{ $key == (isset($item) ? $item->hardware_legacy:old('hardware_legacy') ?? '') ? 'selected' : ''  }}
-                        value="{{ $key }}">{{ $var }}</option>
-                @endforeach
+            <select class="form-control select2" id="hardware_legacy" name="hardware_legacy">
+                <option value="">-Select Hardware Legacy-</option>
+                <option value="1" {{ isset($item) && $item->hardware_legacy == 1  ? 'selected' : ''}}>Active</option>
+                <option value="2" {{ isset($item)  && $item->hardware_legacy == 2  ? 'selected' : ''}}>Obsolete</option>
             </select>
         </div>
     </div>
