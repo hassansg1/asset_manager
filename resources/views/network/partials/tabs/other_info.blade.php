@@ -54,7 +54,7 @@
         <div class="mb-3">
             <label for="{{ isset($item) ? $item->id:'' }}criticality" class="form-label">Criticality</label>
             <select class="form-control select2" id="criticality" name="criticality">
-                <option value="">-Select Policy Validity-</option>
+                <option value="">-Select Criticality-</option>
                 <option value="1" {{ isset($item) && $item->criticality == 1  ? 'selected' : ''}}>High</option>
                 <option value="2" {{ isset($item)  && $item->criticality == 2  ? 'selected' : ''}}>Medium</option>
                 <option value="3" {{ isset($item)  && $item->criticality == 3  ? 'selected' : ''}}>Low</option>

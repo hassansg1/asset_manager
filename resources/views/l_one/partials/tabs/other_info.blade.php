@@ -56,8 +56,8 @@
             <select class="form-select select2" name="single_point_of_failure"
                     id="{{ isset($item) ? $item->id:'' }}single_point_of_failure">
                 <option value="">-Select Point of Failure-</option>
-                <option value="1" {{ isset($item) && $item->single_point_of_failure == 0  ? 'selected' : ''}}>Yes</option>
-                <option value="2" {{ isset($item)  && $item->single_point_of_failure == 1  ? 'selected' : ''}}>No</option>
+                <option value="1" {{ isset($item) && $item->single_point_of_failure == 1  ? 'selected' : ''}}>Yes</option>
+                <option value="2" {{ isset($item)  && $item->single_point_of_failure == 2  ? 'selected' : ''}}>No</option>
             </select>
         </div>
     </div>
@@ -76,7 +76,7 @@
         <div class="mb-3">
             <label for="{{ isset($item) ? $item->id:'' }}criticality" class="form-label">Criticality</label>
             <select class="form-control select2" id="criticality" name="criticality">
-                <option value="">-Select Policy Validity-</option>
+                <option value="">-Select Criticality-</option>
                 <option value="1" {{ isset($item) && $item->criticality == 1  ? 'selected' : ''}}>High</option>
                 <option value="2" {{ isset($item)  && $item->criticality == 2  ? 'selected' : ''}}>Medium</option>
                 <option value="3" {{ isset($item)  && $item->criticality == 3  ? 'selected' : ''}}>Low</option>

@@ -56,7 +56,7 @@
         <div class="mb-3">
             <label for="{{ isset($item) ? $item->id:'' }}software_legacy" class="form-label">Software Legacy</label>
             <select class="form-control select2" id="hardware_legacy" name="hardware_legacy">
-                <option value="">-Select Hardware Legacy-</option>
+                <option value="">-Select Software Legacy-</option>
                 <option value="1" {{ isset($item) && $item->hardware_legacy == 1  ? 'selected' : ''}}>Active</option>
                 <option value="2" {{ isset($item)  && $item->hardware_legacy == 2  ? 'selected' : ''}}>Obsolete</option>
             </select>
