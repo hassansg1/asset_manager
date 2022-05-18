@@ -109,7 +109,7 @@
                 </div>
             </div>
             @endif
-            @if(Auth::user()->hasPermissionTo('can-access-standard-compliance'))
+            @if(Auth::user()->hasPermissionTo('Standard Compliance'))
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
@@ -131,29 +131,29 @@
             @endif
 
 <div class="dropdown d-inline-block">
-    @if(Auth::user()->hasAnyPermission(['can-access-approvel-requests', 'can-access-logs', 'can-access-task', 'can-access-document-liberary']))
+    @if(Auth::user()->hasAnyPermission(['Approvel Requests', 'Logs', 'Task', 'Document library']))
    <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
            aria-haspopup="true" aria-expanded="false">
        <span class="align-middle">More</span>
    </button>
     @endif
    <div class="dropdown-menu dropdown-menu-end" style="">
-       @if(Auth::user()->hasPermissionTo('can-access-approvel-requests'))
+       @if(Auth::user()->hasPermissionTo('Approvel Requests'))
        <a href="{{ route('approval.index') }}" class="dropdown-item notify-item language" data-lang="eng">
            <span class="align-middle">Approval Requests</span>
        </a>
        @endif
-           @if(Auth::user()->hasPermissionTo('can-access-logs'))
+           @if(Auth::user()->hasPermissionTo('Logs'))
        <a href="{{ route('log.index') }}" class="dropdown-item notify-item language" data-lang="eng">
            <span class="align-middle">Logs</span>
        </a>
            @endif
-               @if(Auth::user()->hasPermissionTo('can-access-task'))
+               @if(Auth::user()->hasPermissionTo('Task'))
        <a href="{{ route('task') }}" class="dropdown-item notify-item language" data-lang="eng">
            <span class="align-middle">Task</span>
        </a>
            @endif
-                   @if(Auth::user()->hasPermissionTo('can-access-document-liberary'))
+           @if(Auth::user()->hasPermissionTo('Document library'))
        <a href="{{ route('attachment.index') }}" class="dropdown-item notify-item language"
           data-lang="eng">
            <span class="align-middle">Document Library</span>

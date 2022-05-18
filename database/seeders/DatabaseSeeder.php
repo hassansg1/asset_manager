@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
 //
 //        foreach ($crud as $cr) {
             Permission::updateOrCreate(["name" => 'Import Export'], ["name" => 'Import Export', 'guard_name' => 'web', 'group' => 'Import Export']);
-            Permission::updateOrCreate(["name" => 'Standard compliance'], ["name" => 'Standard compliance', 'guard_name' => 'web', 'group' => 'Standard compliance']);
+            Permission::updateOrCreate(["name" => 'Standard Compliance'], ["name" => 'Standard Compliance', 'guard_name' => 'web', 'group' => 'Standard Compliance']);
             Permission::updateOrCreate(["name" => 'Approvel Requests'], ["name" => 'Approvel Requests', 'guard_name' => 'web', 'group' => 'Approvel Requests']);
             Permission::updateOrCreate(["name" => 'Logs'], ["name" => 'Logs', 'guard_name' => 'web', 'group' => 'Logs']);
             Permission::updateOrCreate(["name" => 'Task'], ["name" => 'Task', 'guard_name' => 'web', 'group' => 'Task']);
