@@ -151,6 +151,8 @@ Route::group(['middleware' => ['auth']], function () {
     });
     Route::group(['prefix' => 'chart'], function () {
         Route::get('compliance_chart', [\App\Http\Controllers\ComplianceChartController::class, 'render']);
+        Route::get('assets_chart', [\App\Http\Controllers\ComplianceChartController::class, 'assets_chart']);
+        Route::get('assets_functions_chart', [\App\Http\Controllers\ComplianceChartController::class, 'assets_functions_chart']);
     });
     Route::get('/filterAssets/{parent}/{model?}', [\App\Http\Controllers\FilterAssetController::class, 'index']);
     Route::get('getNewAjaxRow', [\App\Http\Controllers\AjaxController::class, 'getNewAjaxRow']);

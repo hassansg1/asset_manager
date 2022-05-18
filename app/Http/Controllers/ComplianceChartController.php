@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AssetFunction;
 use App\Models\ClauseData;
 use App\Models\ComplianceVersion;
 use App\Models\Location;
@@ -90,6 +91,39 @@ class ComplianceChartController extends Controller
             'status' => true,
             'data' => $returnObj,
             'table' => $table
+        ]);
+    }
+
+    public function  assets_chart()
+    {
+        $data = [];
+        foreach (Location::assetTypes() as $key => $value) {
+            $data[$value]= Location::where('type', $value)->count();
+        }
+        $assetChartArray = [];
+        foreach ($data as $type => $count) {
+            array_push($assetChartArray, (object)['value' => $count, 'name' => $type . "($count)"]);
+        }
+        return response()->json([
+            'status' => true,
+            'data' => $assetChartArray,
+        ]);
+    }
+
+    public function  assets_functions_chart()
+    {
+        $data = [];
+        $assetFunctions = AssetFunction::get();
+        foreach ($assetFunctions as $key => $value) {
+            $data[$value->name]= Location::where('function', $value->id)->count();
+        }
+        $assetFunctionChartArray = [];
+        foreach ($data as $assetFunction => $count) {
+            array_push($assetFunctionChartArray, (object)['value' => $count, 'name' => $assetFunction . "('Assets'$count)"]);
+        }
+        return response()->json([
+            'status' => true,
+            'data' => $assetFunctionChartArray,
         ]);
     }
 }
