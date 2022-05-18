@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Session;
 use Kalnoy\Nestedset\NodeTrait;
 
-class Location extends Model
+class  Location extends Model
 {
     use HasFactory;
     use Observable;
@@ -42,6 +42,14 @@ class Location extends Model
             'rooms' => 'Room',
             'cabinets' => 'Cabinet',
             'assets' => 'Assets',
+        ];
+    }
+
+    public function assetTypes(){
+        return [
+            '0' => 'computer',
+            '1' => 'lone',
+            '2' => 'network',
         ];
     }
 
