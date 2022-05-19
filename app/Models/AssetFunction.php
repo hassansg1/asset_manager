@@ -13,6 +13,12 @@ class AssetFunction extends Model
 
     protected $guarded = [];
 
+    public $rules =
+        [
+            'name' => 'required',
+        ];
+
+
     /**
      * @param $name
      * @param bool $returnId
@@ -27,5 +33,15 @@ class AssetFunction extends Model
         ]);
         if ($returnId) return $new->id;
         return $new;
+    }
+    /**
+     * @param $value
+     */
+
+    public function saveFormData($item, $request)
+    {
+        if (isset($request->name)) $item->name = $request->name;
+        $item->save();
+        return $item;
     }
 }

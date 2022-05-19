@@ -112,6 +112,8 @@ Route::group(['middleware' => ['auth']], function () {
         'asset_lending_page' => \App\Http\Controllers\AssetLandingPageController::class,
         'risk_assesment' => \App\Http\Controllers\RiskAssessmentController::class,
         'risk' => \App\Http\Controllers\RiskController::class,
+        'process' => \App\Http\Controllers\ProcessController::class,
+        'asset_function' => \App\Http\Controllers\AssetFunctionController::class,
     ]);
 
     Route::post('nozomi_settings/save', [\App\Http\Controllers\NozomiSettingsController::class, 'saveSettings']);
