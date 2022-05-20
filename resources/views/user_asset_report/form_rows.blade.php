@@ -13,10 +13,14 @@
 {{--        </td>--}}
         <td>
             @if($item->parent == "asset")
+                @if($item->user_id_assets)
                 <span class="badge bg-primary" style="padding: 1px">{{ $item->user_id_assets->rec_id }}</span>
+                @endif
             @elseif($item->parent == "system")
                 @foreach(getSystemAssets($item->user_id_systems->id) as $system_asset)
+                    @if($item->system_assets)
                     <span class="badge bg-success" style="margin-top: 1px;padding: 1px">{{$system_asset->system_assets->rec_id}}</span><br>
+                    @endif
                 @endforeach
             @endif
         </td>
