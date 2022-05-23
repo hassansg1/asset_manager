@@ -3,6 +3,7 @@
         <div class="table-responsive">
             <table class="table table-editable table-nowrap align-middle table-edits">
                 <thead>
+
                 <tr>
                     <th>Network Interface Card</th>
                     <th>Port Number</th>
