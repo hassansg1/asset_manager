@@ -34,7 +34,7 @@
                     <div class="col-lg-12">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}comment" class="form-label">Comment</label>
-                            <textarea class="form-control" name="comment" id="comment">{{ isset($item) ? $item->comment:old('comment') ?? ''  }}</textarea>
+                            <textarea class="form-control" name="comment" id="comment" rows="6">{{ isset($item) ? $item->comment:old('comment') ?? ''  }}</textarea>
                         </div>
                     </div>
                 </div>
