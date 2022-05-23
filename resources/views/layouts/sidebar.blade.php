@@ -12,23 +12,22 @@
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" onclick="javascript:void(0)" class="waves-effect">
-                        <span class="badge rounded-pill bg-info float-end"></span>
-                        <span key="t-dashboards">Asset Navigation</span>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="far fa-user"></i>
+                        <span key="t-ecommerce">Asset Navigation</span>
                     </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="false">
+                        <li><a href="{{route('asset_function.index')}}" key="t-product-detail">Asset Functions</a></li>
+                        <li><a href="{{route('process.index')}}" key="t-products">Process Criticality</a></li>
+                        <li><a href="{{ route('networks.index') }}" class="waves-effect">Networks</a></li>
+                        <li class="loc_tree"></li>
+                        <div id="default-tree"></div>
+                    </ul>
                 </li>
-                <li class="loc_tree"></li>
+
 {{--                <input type="input" class="form-control asset_search"--}}
 {{--                       id="tree-input-search" placeholder="Type to search location..."--}}
 {{--                       value="">--}}
-                <div id="default-tree"></div>
-                <li>
-                    <a href="{{ route('networks.index') }}" class="waves-effect">
-                        <i class="fas fa-network-wired"></i>
-                        <span class="badge rounded-pill bg-info float-end"></span>
-                        <span key="t-dashboards">Networks</span>
-                    </a>
-                </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="far fa-user"></i>
