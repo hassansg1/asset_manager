@@ -6,7 +6,7 @@
             <input type="hidden" name="ports[id][]" value="{{ $port->id ?? '' }}">
             <input value="{{ isset($port) ? $port->nic : '' }}" type="text" name="ports[nic][]" class="form-control">
         </td>
-        <td><input value="{{ isset($port) ? $port->number : '' }}" type="text" name="ports[number][]"
+        <td><input value="{{ isset($port, $port->rows) ? $port->number+$i : '' }}" type="number" name="ports[number][]"
                    class="form-control"></td>
         <td><input value="{{ isset($port) ? $port->mac_address : '' }}" type="text" name="ports[mac_address][]"
                    class="form-control"></td>

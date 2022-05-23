@@ -23,6 +23,13 @@ class AjaxController extends Controller
     //
     public function getNewAjaxRow(Request $request)
     {
+        if ($request->main_type){
+            return response()->json(
+                [
+                    'html' => view('network.partials.tabs.port_row')->with('port', $request)->render()
+                ]
+            );
+        }
         return response()->json(
             [
                 'html' => view($request->type . '.partials.tabs.port_row')->with('port', $request)->render()

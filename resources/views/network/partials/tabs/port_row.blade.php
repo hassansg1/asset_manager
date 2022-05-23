@@ -5,7 +5,7 @@
     <input type="hidden" name="ports[rand][]" value="{{ $rand }}">
     <td><input value="{{ isset($port) ? $port->name : '' }}" type="text" name="ports[name][]"
                class="form-control"></td>
-    <td><input value="{{ isset($port) ? $port->number : '' }}" type="text" name="ports[number][]"
+    <td><input type="number" value="{{ isset($port) ? $port->number+$i : '' }}" name="ports[number][]"
                class="form-control"></td>
     <td><input value="{{ isset($port) ? $port->type : '' }}" type="text" name="ports[type][]" class="form-control"></td>
     <td>
@@ -23,19 +23,18 @@
     <td>
         <div class="form-check mb-3">
             <input class="form-check-input" type="radio" name="ports[status][{{ $rand }}]" id="formRadios1"
-                    {{ isset($port) && $port->status == 1 ? 'checked' : '' }}
-            >
+                    {{ isset($port) && $port->status == 0 ? 'checked' : '' }}>
             <label class="form-check-label" for="formRadios1">
-                Enabled
+                Enable
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="ports[status][{{ $rand }}]" id="formRadios2"
                    value="off"
-                    {{ isset($port) && $port->status == 0 ? 'checked' : '' }}
+                    {{ isset($port) && $port->status == 1 ? 'checked' : '' }}
             >
             <label class="form-check-label" for="formRadios2">
-                Disabled
+                Disable
             </label>
         </div>
     </td>

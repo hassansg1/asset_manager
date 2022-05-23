@@ -2,7 +2,7 @@
 <form  id="getBulckRowsNetwork" action="{{url('getNewAjaxRow')}}" >
     {{csrf_field()}}
     <input type="hidden" id="modalCloseId" value="{{$modal}}">
-{{--    <input type="hidden" name="type" value="network">--}}
+    <input type="hidden" name="main_type" value="network">
     <div class="modal-body">
         <table>
             <thead>
@@ -22,10 +22,16 @@
                 <td><input type="text" name="name" class="form-control"></td>
                 <td><input type="text" name="number"
                            class="form-control"></td>
-                <td><input type="text" readonly name="type"
-                           class="form-control" value="network"></td>
-                <td><input type="text" name="network"
+                <td><input type="text" name="type"
                            class="form-control"></td>
+                <td>
+                    <select name="network_id" id="" class="form-control">
+                        <option value="">-Select Network-</option>
+                        @foreach(\App\Models\Networks::all() as $network)
+                            <option value="{{ $network->id }}">{{ $network->name }}</option>
+                        @endforeach
+                    </select>
+                </td>
                 <td>
                     <input type="text" name="speed"
                            class="form-control">
