@@ -12,8 +12,8 @@
                    class="form-control"></td>
         @php($rand = rand(100000,1000000))
         <td class="ports_selection_div">
-            <select onchange="loadPorts(this,'{{ $rand }}')" name="" id="" class="form-control">
-                <option value="">Select Network Asset</option>
+            <select onchange="loadPorts(this,'{{ $rand }}')" name="" id="" class="form-select form-select-input">
+                <option value="">-Select Network Asset-</option>
                 @foreach(\App\Models\NetworkAsset::all() as $entity)
                     <option
                         {{
@@ -25,8 +25,8 @@
             </select>
             @php($rand1 = rand(100000,1000000))
             <select onchange="loadIpAddress(this,'{{ $rand1 }}','{{ $port->ip_address ?? '' }}')" name="ports[connected_port_id][]" id=""
-                    class="form-control mt-3 {{ $rand }} port_auto_drop_down">
-                <option value="">Select Port</option>
+                    class="form-control mt-3 {{ $rand }} port_auto_drop_down form-select form-select-input">
+                <option value="">-Select Port-</option>
                 @if($port->connectedPort)
                 @foreach(\App\Models\Port::where('location_id',$port->connectedPort->location_id)->get() as $ent)
                     <option
@@ -39,7 +39,7 @@
             </select>
         </td>
         <td>
-            <select name="ports[ip_address][]" id="ip_address" class="form-control mt-3 {{ $rand1 }}">
+            <select name="ports[ip_address][]" id="ip_address" class="form-select form-select-input mt-3 {{ $rand1 }} ">
                 <option value="">Select IP Address</option>
             </select>
         </td>

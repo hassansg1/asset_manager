@@ -10,7 +10,7 @@
                 <th>Port Name</th>
                 <th>Port Number</th>
                 <th>Port Type</th>
-                <th>Port Netwrok</th>
+                <th>Netwrok Name</th>
                 <th>Port Speed</th>
 {{--                <th>Status</th>--}}
                 <th></th>
@@ -25,7 +25,7 @@
                 <td><input type="text" name="type"
                            class="form-control"></td>
                 <td>
-                    <select name="network_id" id="" class="form-control">
+                    <select name="network_id" id="" class="form-select form-select-input">
                         <option value="">-Select Network-</option>
                         @foreach(\App\Models\Networks::all() as $network)
                             <option value="{{ $network->id }}">{{ $network->name }}</option>
