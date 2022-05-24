@@ -17,11 +17,11 @@
                         <span key="t-ecommerce">Asset Navigation</span>
                     </a>
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
-                        <li><a href="{{route('asset_function.index')}}" key="t-product-detail">Asset Functions</a></li>
-                        <li><a href="{{route('process.index')}}" key="t-products">Process Criticality</a></li>
-                        <li><a href="{{ route('networks.index') }}" class="waves-effect">Networks</a></li>
                         <li class="loc_tree"></li>
                         <div id="default-tree"></div>
+                        <li><a href="{{route('asset_function.index')}}" key="t-product-detail">Asset Functions</a></li>
+                        <li><a href="{{route('process.index')}}" key="t-products">Processes & Criticality</a></li>
+                        <li><a href="{{ route('networks.index') }}" class="waves-effect">Networks</a></li>
                     </ul>
                 </li>
 

@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}name" class="form-label required">Fucntion Name</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}name" class="form-label required">Asset Fucntion</label>
                             <input type="text" value="{{ isset($item) ? $item->name:old('name') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}name" name="name">
                         </div>

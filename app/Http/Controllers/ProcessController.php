@@ -17,7 +17,7 @@ class ProcessController extends BaseController
         $this->model = new Process();
         $this->route = 'process';
         $this->heading = 'Process';
-        \Illuminate\Support\Facades\View::share('top_heading', 'Process');
+        \Illuminate\Support\Facades\View::share('top_heading', 'Processes');
     }
 
     /**
