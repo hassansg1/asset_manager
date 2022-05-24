@@ -4,7 +4,7 @@
 {{--            onclick="toggleSelectAll()"--}}
 {{--            type="checkbox" name=""--}}
 {{--            id="select_all"></th>--}}
-    <th style="width: 200px">Asset Function</th>
+    <th style="width: 200px">Asset Functions</th>
     <th style="width: 100px">Actions</th>
 @endsection
 @section('table_rows')
