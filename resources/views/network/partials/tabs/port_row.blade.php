@@ -9,8 +9,8 @@
                class="form-control"></td>
     <td><input value="{{ isset($port) ? $port->type : '' }}" type="text" name="ports[type][]" class="form-control"></td>
     <td>
-        <select name="ports[network][]" id="" class="form-control">
-            <option value="">Select Network</option>
+        <select name="ports[network][]" id="" class="form-select form-select-input">
+            <option value="">-Select Network-</option>
             @foreach(\App\Models\Networks::all() as $network)
                 <option
                         {{ isset($port) && $port->network_id == $network->id ? 'selected' : '' }}
