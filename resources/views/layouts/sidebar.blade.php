@@ -82,59 +82,59 @@
                     </ul>
                 </li>
 
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-file"></i>
-                        <span key="t-ecommerce">Reports</span>
-                    </a>
+{{--                <li>--}}
+{{--                    <a href="javascript: void(0);" class="has-arrow waves-effect">--}}
+{{--                        <i class="bx bx-file"></i>--}}
+{{--                        <span key="t-ecommerce">Reports</span>--}}
+{{--                    </a>--}}
 
-                    <ul class="sub-menu mm-collapse" aria-expanded="false">
-                        <li><a href="{{route('user_asset_report.index')}}" key="t-orders">User Asset Report</a></li>
-                        <li><a href="{{url('reports/ports')}}" key="t-orders">Ports Report</a></li>
-                        <li><a href="{{url('reports/ip_address')}}" key="t-orders">IP Address Report</a></li>
-                        <li><a href="{{url('reports/clauses_report')}}" key="t-orders">Clauses Report</a></li>
-                        <li>
-                    <a href="{{ url('reports/asset_report') }}" class="waves-effect">
-                        <span key="t-dashboards">Asset Report</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url('reports/location_report') }}" class="waves-effect">
-                        <span key="t-dashboards">Location Report</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url('reports/location_report') }}" class="waves-effect">
-                        <span key="t-dashboards">User Management Report</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url('reports/location_report') }}" class="waves-effect">
-                        <span key="t-dashboards">Networks Report</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url('reports/location_report') }}" class="waves-effect">
-                        <span key="t-dashboards">Software Report</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url('reports/location_report') }}" class="waves-effect">
-                        <span key="t-dashboards">Patch Report</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url('reports/location_report') }}" class="waves-effect">
-                        <span key="t-dashboards">Firewall Report</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url('reports/location_report') }}" class="waves-effect">
-                        <span key="t-dashboards">Risk Management Report</span>
-                    </a>
-                </li>
-                    </ul>
-                </li>
+{{--                    <ul class="sub-menu mm-collapse" aria-expanded="false">--}}
+{{--                        <li><a href="{{route('user_asset_report.index')}}" key="t-orders">User Asset Report</a></li>--}}
+{{--                        <li><a href="{{url('reports/ports')}}" key="t-orders">Ports Report</a></li>--}}
+{{--                        <li><a href="{{url('reports/ip_address')}}" key="t-orders">IP Address Report</a></li>--}}
+{{--                        <li><a href="{{url('reports/clauses_report')}}" key="t-orders">Clauses Report</a></li>--}}
+{{--                        <li>--}}
+{{--                    <a href="{{ url('reports/asset_report') }}" class="waves-effect">--}}
+{{--                        <span key="t-dashboards">Asset Report</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <a href="{{ url('reports/location_report') }}" class="waves-effect">--}}
+{{--                        <span key="t-dashboards">Location Report</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <a href="{{ url('reports/location_report') }}" class="waves-effect">--}}
+{{--                        <span key="t-dashboards">User Management Report</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <a href="{{ url('reports/location_report') }}" class="waves-effect">--}}
+{{--                        <span key="t-dashboards">Networks Report</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <a href="{{ url('reports/location_report') }}" class="waves-effect">--}}
+{{--                        <span key="t-dashboards">Software Report</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <a href="{{ url('reports/location_report') }}" class="waves-effect">--}}
+{{--                        <span key="t-dashboards">Patch Report</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <a href="{{ url('reports/location_report') }}" class="waves-effect">--}}
+{{--                        <span key="t-dashboards">Firewall Report</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <a href="{{ url('reports/location_report') }}" class="waves-effect">--}}
+{{--                        <span key="t-dashboards">Risk Management Report</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-align-justify"></i>
