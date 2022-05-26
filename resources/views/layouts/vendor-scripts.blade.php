@@ -71,7 +71,7 @@
             lengthChange: false,
             buttons: ['copy', 'excel', 'pdf', 'colvis'],
             "searching": false,
-            "ordering": false,
+            "ordering": true,
             "bPaginate": false,
             "bSortable": false,
         });
@@ -102,7 +102,7 @@
                 'copy', 'csv', 'excel', 'pdf', 'print'
             ],
             "searching": false,
-            "ordering": false,
+            "ordering": true,
             "bSortable": false,
             "bPaginate": false,
         });
@@ -499,6 +499,13 @@
         if(condition == 'temporary'){
             $('#approvel_expirey_date').attr('disabled',false);
         }
+    });
+</script>
+<script>
+    $("#process").on('change', function() {
+        var selectedCriticality = $('option:selected', this).attr('data-id');
+        //  ret = DetailsView.GetProject($(this).attr("#data-id"), OnComplete, OnTimeOut, OnError);
+        $("#criticality").val(selectedCriticality).change();
     });
 </script>
 

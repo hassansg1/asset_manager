@@ -66,16 +66,18 @@
     <div class="col-lg-4">
         <div class="mb-3">
             <label for="{{ isset($item) ? $item->id:'' }}process" class="form-label">Process</label>
-            <input type="text"
-                   value="{{ isset($item) ? $item->process:old('process') ?? ''  }}"
-                   class="form-control" id="{{ isset($item) ? $item->id:'' }}process"
-                   name="process">
+            <select class="form-control select2" id="process" name="process">
+                <option value="">-Select Process-</option>
+                @foreach(\App\Models\Process::all() as $process)
+                    <option value="{{ $process->id }}" data-id="{{$process->criticality}}" {{ isset($item) && $item->process == $process->id  ? 'selected' : ''}}>{{ $process->process }}</option>
+                @endforeach
+            </select>
         </div>
     </div>
     <div class="col-lg-4">
         <div class="mb-3">
             <label for="{{ isset($item) ? $item->id:'' }}criticality" class="form-label">Criticality</label>
-            <select class="form-control select2" id="criticality" name="criticality">
+            <select class="form-control" id="criticality" name="criticality" readonly>
                 <option value="">-Select Criticality-</option>
                 <option value="1" {{ isset($item) && $item->criticality == 1  ? 'selected' : ''}}>High</option>
                 <option value="2" {{ isset($item)  && $item->criticality == 2  ? 'selected' : ''}}>Medium</option>
@@ -84,3 +86,4 @@
         </div>
     </div>
 </div>
+

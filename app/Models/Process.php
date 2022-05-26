@@ -8,11 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Process extends Model
 {
     use HasFactory;
-    public $rules =
-        [
-            'process' => 'required',
+
+    public function rules($process = null)
+    {
+        return [
+            'process' => 'required|unique:processes,process,NULL,process,process,' . $process,
             'criticality' => 'required',
         ];
+    }
 
     /**
      * @param $value
