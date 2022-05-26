@@ -25,6 +25,7 @@
                     </ul>
                 </li>
 
+
 {{--                <input type="input" class="form-control asset_search"--}}
 {{--                       id="tree-input-search" placeholder="Type to search location..."--}}
 {{--                       value="">--}}
