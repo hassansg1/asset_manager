@@ -14,7 +14,7 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="far fa-user"></i>
-                        <span key="t-ecommerce">Asset Navigation</span>
+                        <span key="t-ecommerce">Asset Managment</span>
                     </a>
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
                         <li class="loc_tree"></li>
