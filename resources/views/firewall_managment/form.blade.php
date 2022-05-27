@@ -99,7 +99,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}approvel_expirey_date" class="form-label">Policy Validity Date</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}approvel_expirey_date" class="form-label">Policy Expirey Date</label>
                             <input type="date" value="{{ isset($item) ? $item->approvel_expirey_date:old('approvel_expirey_date') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}approvel_expirey_date" name="approvel_expirey_date">
                         </div>
