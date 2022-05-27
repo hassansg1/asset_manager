@@ -26,9 +26,9 @@
                 </li>
 
 
-{{--                <input type="input" class="form-control asset_search"--}}
-{{--                       id="tree-input-search" placeholder="Type to search location..."--}}
-{{--                       value="">--}}
+                {{--                <input type="input" class="form-control asset_search"--}}
+                {{--                       id="tree-input-search" placeholder="Type to search location..."--}}
+                {{--                       value="">--}}
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="far fa-user"></i>
@@ -95,45 +95,40 @@
                         <li><a href="{{url('reports/ip_address')}}" key="t-orders">IP Address Report</a></li>
                         <li><a href="{{url('reports/clauses_report')}}" key="t-orders">Clauses Report</a></li>
                         <li>
-                    <a href="{{ url('reports/asset_report') }}" class="waves-effect">
-                        <span key="t-dashboards">Asset Report</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url('reports/location_report') }}" class="waves-effect">
-                        <span key="t-dashboards">Location Report</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url('reports/location_report') }}" class="waves-effect">
-                        <span key="t-dashboards">User Management Report</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url('reports/location_report') }}" class="waves-effect">
-                        <span key="t-dashboards">Networks Report</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url('reports/location_report') }}" class="waves-effect">
-                        <span key="t-dashboards">Software Report</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url('reports/location_report') }}" class="waves-effect">
-                        <span key="t-dashboards">Patch Report</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url('reports/location_report') }}" class="waves-effect">
-                        <span key="t-dashboards">Firewall Report</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url('reports/location_report') }}" class="waves-effect">
-                        <span key="t-dashboards">Risk Management Report</span>
-                    </a>
-                </li>
+                            <a href="{{ url('reports/asset_report') }}" class="waves-effect">
+                                <span key="t-dashboards">Asset Report</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('reports/firewall_report') }}" class="waves-effect">
+                                <span key="t-dashboards">Firewall Report</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('reports/risk_management_report') }}" class="waves-effect">
+                                <span key="t-dashboards">Risk Management Report</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('reports/software_report') }}" class="waves-effect">
+                                <span key="t-dashboards">Software Report</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('reports/patch_report') }}" class="waves-effect">
+                                <span key="t-dashboards">Patch Management Report</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('reports/installed_software_report') }}" class="waves-effect">
+                                <span key="t-dashboards">Installed Software Report</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('reports/installed_patch_report') }}" class="waves-effect">
+                                <span key="t-dashboards">Installed Patches Report</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li>
@@ -142,22 +137,25 @@
                         <span key="t-ecommerce">Nozomi Reports</span>
                     </a>
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
-                        <li><a href="{{url('nozomi/devices/report')}}" key="t-orders">Devices found in nozomi but missing in OTCM </a></li>
-                        <li><a href="{{url('nozomi/otcm/devices/report')}}" key="t-orders">Devices found in OTCM but missing in Nozomi</a></li>
-                        <li><a href="{{url('nozomi/otcm/nozomi/devices/report')}}" key="t-orders">Devices found in both but data is different</a></li>
+                        <li><a href="{{url('nozomi/devices/report')}}" key="t-orders">Devices found in nozomi but
+                                missing in OTCM </a></li>
+                        <li><a href="{{url('nozomi/otcm/devices/report')}}" key="t-orders">Devices found in OTCM but
+                                missing in Nozomi</a></li>
+                        <li><a href="{{url('nozomi/otcm/nozomi/devices/report')}}" key="t-orders">Devices found in both
+                                but data is different</a></li>
                     </ul>
                 </li>
-{{--                <li>--}}
-{{--                    <a href="javascript: void(0);" class="has-arrow waves-effect">--}}
-{{--                        <i class="bx bx-store"></i>--}}
-{{--                        <span key="t-ecommerce">Nozomi Management</span>--}}
-{{--                    </a>--}}
-{{--                    <ul class="sub-menu mm-collapse" aria-expanded="false">--}}
+                {{--                <li>--}}
+                {{--                    <a href="javascript: void(0);" class="has-arrow waves-effect">--}}
+                {{--                        <i class="bx bx-store"></i>--}}
+                {{--                        <span key="t-ecommerce">Nozomi Management</span>--}}
+                {{--                    </a>--}}
+                {{--                    <ul class="sub-menu mm-collapse" aria-expanded="false">--}}
 
-{{--                        <li><a href="{{url('nozomi/report')}}" key="t-orders">Devices in Nozomi Report</a></li>--}}
-{{--                        <li><a href="{{url('nozomi/otcm/devices/report')}}" key="t-orders">Devices in OTCM Report</a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
+                {{--                        <li><a href="{{url('nozomi/report')}}" key="t-orders">Devices in Nozomi Report</a></li>--}}
+                {{--                        <li><a href="{{url('nozomi/otcm/devices/report')}}" key="t-orders">Devices in OTCM Report</a></li>--}}
+                {{--                    </ul>--}}
+                {{--                </li>--}}
             </ul>
         </div>
         <!-- Sidebar -->

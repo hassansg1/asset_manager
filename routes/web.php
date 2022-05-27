@@ -257,6 +257,12 @@ Route::get('clauseLoad/smartLoad', [\App\Http\Controllers\SmartClauseLoadControl
 
 Route::group(['prefix' => 'reports'], function () {
     Route::resource('asset_report', \App\Http\Controllers\AssetReportController::class);
+    Route::resource('firewall_report', \App\Http\Controllers\FirewallReportController::class);
+    Route::resource('risk_management_report', \App\Http\Controllers\RiskManagementReportController::class);
+    Route::resource('software_report', \App\Http\Controllers\SoftwareReportController::class);
+    Route::resource('patch_report', \App\Http\Controllers\PatchReportController::class);
+    Route::resource('installed_software_report', \App\Http\Controllers\InstalledSoftwareReportController::class);
+    Route::resource('installed_patch_report', \App\Http\Controllers\InstalledPatchReportController::class);
 });
 
 Route::get('getColumnSearchRow',[\App\Http\Controllers\AjaxController::class,'getColumnSearchRow']);

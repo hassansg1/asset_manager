@@ -356,6 +356,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before, table
     left: 50% !important;
 }
 .column_slctr{
+    color: #50575f;
     font-size: 15px;
     font-weight: bold;
+}
+.column_slctr_selected{
+    color: #556ee6 !important;
 }

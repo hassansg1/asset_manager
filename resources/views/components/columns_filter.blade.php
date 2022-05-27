@@ -20,7 +20,7 @@
                 New
             </i>
         </button>
-        <button onclick="loadTableData('{{ $data['request']['url'] ?? '' }}','{{ $route }}')" title="Add New"
+        <button onclick="loadTableDataForReport('{{ $data['request']['url'] ?? '' }}','{{ $route }}')" title="Add New"
                 type="button"
                 class="btn btn-primary btn-filter dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">

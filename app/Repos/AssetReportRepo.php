@@ -37,9 +37,15 @@ class AssetReportRepo
                     $this->query->whereHas('assetFunction', function ($subQuery) use ($crOperation, $crWhere, $crValue) {
                         $subQuery = processQueryFiltersOnQuery($subQuery, $crOperation, $crWhere, $crValue);
                     });
+                }
+                else if ($crWhere == "operating_system") {
+                    $crWhere = "name";
+                    $this->query->whereHas('operatingSystem', function ($subQuery) use ($crOperation, $crWhere, $crValue) {
+                        $subQuery = processQueryFiltersOnQuery($subQuery, $crOperation, $crWhere, $crValue);
+                    });
                 } else {
                     if ($crWhere && $crValue) {
-                        processQueryFiltersOnQuery($this->query, $crOperation, $crWhere, $crValue);
+                        $this->query = processQueryFiltersOnQuery($this->query, $crOperation, $crWhere, $crValue);
                     }
                 }
             }
@@ -50,6 +56,7 @@ class AssetReportRepo
     public function getColumns()
     {
         return [
+            'parent' => 'Asset Hierarchy',
             'rec_id' => 'ID',
             'name' => 'Name',
             'description' => 'Description',
@@ -60,6 +67,15 @@ class AssetReportRepo
             'serial_number' => 'Serial Number',
             'comments' => 'Comments',
             'asset_security_zone' => 'Asset Security Zone',
+            'vm_host' => 'VM Host',
+            'operating_system' => 'Operating System',
+            'asset_firmware' => 'Asset Firmware',
+            'connected_scada_server' => 'Connected SCADA Server',
+            'hardware_legacy' => 'Hardware Legacy',
+            'software_legacy' => 'Software Legacy',
+            'single_point_of_failure' => 'Single Point of Failure',
+            'criticality' => 'Criticality',
+            'contact' => 'Owner Contact',
         ];
     }
 }

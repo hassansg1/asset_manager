@@ -17,7 +17,7 @@
                 @foreach(\App\Models\OperatingSystem::all() as $var)
                     <option
                         {{ $var->id == (isset($item) ? $item->function:old('operating_system') ?? '') ? 'selected' : ''  }}
-                        value="{{ $var->id }}">{{ $var->operating_system }}</option>
+                        value="{{ $var->id }}">{{ $var->name }}</option>
                 @endforeach
             </select>
         </div>
@@ -55,7 +55,7 @@
     <div class="col-lg-4">
         <div class="mb-3">
             <label for="{{ isset($item) ? $item->id:'' }}software_legacy" class="form-label">Software Legacy</label>
-            <select class="form-control select2" id="hardware_legacy" name="hardware_legacy">
+            <select class="form-control select2" id="software_legacy" name="software_legacy">
                 <option value="">-Select Software Legacy-</option>
                 <option value="1" {{ isset($item) && $item->hardware_legacy == 1  ? 'selected' : ''}}>Active</option>
                 <option value="2" {{ isset($item)  && $item->hardware_legacy == 2  ? 'selected' : ''}}>Obsolete</option>

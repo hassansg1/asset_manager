@@ -5,8 +5,8 @@
     <input type="hidden" name="ports[rand][]" value="{{ $rand }}">
     <td><input value="{{ isset($port) ? $port->name : '' }}" type="text" name="ports[name][]"
                class="form-control"></td>
-    <td><input type="number" value="{{ isset($port) ? $port->number+$i : '' }}" name="ports[number][]"
-               class="form-control"></td>
+{{--    <td><input type="number" value="{{ isset($port) ? $port->number+$i : '' }}" name="ports[number][]"--}}
+{{--               class="form-control"></td>--}}
     <td><input value="{{ isset($port) ? $port->type : '' }}" type="text" name="ports[type][]" class="form-control"></td>
     <td>
         <select name="ports[network][]" id="" class="form-select form-select-input">

@@ -2,7 +2,7 @@
     <fieldset>
         <legend>Toggle column:</legend>
         @foreach($columns as $key => $label)
-            <a class="column_slctr"
+            <a class="column_slctr {{ in_array($key,$selectedColumns) ? 'column_slctr_selected' : '' }}"
                onclick="showHideColumns('{{ $key }}','{{ $data['request']['url'] ?? '' }}','{{ $route }}')"
                href="javascript:void(0)">{{ $label }}</a>
             @if (!$loop->last)
