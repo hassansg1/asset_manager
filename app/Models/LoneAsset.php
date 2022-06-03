@@ -115,6 +115,17 @@ class LoneAsset extends Model
         if (isset($request->single_point_of_failure)) $item->single_point_of_failure = $request->single_point_of_failure;
         if (isset($request->criticality)) $item->criticality = $request->criticality;
 
+        if (isset($request->parent_asset_id)) $item->parent_asset_id = $request->parent_asset_id;
+        if (isset($request->sim_ssid)) $item->sim_ssid = $request->sim_ssid;
+        if (isset($request->sim_imsi)) $item->sim_imsi = $request->sim_imsi;
+        if (isset($request->sim_misisdn)) $item->sim_misisdn = $request->sim_misisdn;
+        if (isset($request->communication_type)) $item->communication_type = $request->communication_type;
+        if (isset($request->controll)) $item->controll = $request->controll;
+        if (isset($request->impact_of_equipment)) $item->impact_of_equipment = $request->impact_of_equipment;
+        if (isset($request->connected_site)) $item->connected_site = $request->connected_site;
+        if (isset($request->ot_apn)) $item->ot_apn = $request->ot_apn;
+
+
         $item->type = self::$type;
         $parent = Location::find($request->parent_id);
         $item->save();

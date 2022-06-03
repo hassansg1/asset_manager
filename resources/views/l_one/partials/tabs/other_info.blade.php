@@ -86,6 +86,96 @@
             </select>
         </div>
     </div>
+    <div class="col-lg-4">
+        <div class="mb-3">
+            <label for="{{ isset($item) ? $item->id:'' }}parent_asset_id" class="form-label">Asset Parent</label>
+            <select class="form-control select2" id="parent_asset_id" name="parent_asset_id">
+                <option value="">-Select Parent Asset ID-</option>
+                @foreach(\App\Models\Location::all() as $parent_asset_id)
+                    <option value="{{ $parent_asset_id->id }}" {{ isset($item) && $item->parent_asset_id == $parent_asset_id->id  ? 'selected' : ''}}>{{ $parent_asset_id->name }}</option>
+                @endforeach
+            </select>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="mb-3">
+            <label for="{{ isset($item) ? $item->id:'' }}sim_ssid"
+                   class="form-label">Sim SSID</label>
+            <input type="text" value="{{ isset($item) ? $item->sim_ssid:old('sim_ssid') ?? ''  }}"
+                   class="form-control" id="{{ isset($item) ? $item->id:'' }}sim_ssid"
+                   name="sim_ssid">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="mb-3">
+            <label for="{{ isset($item) ? $item->id:'' }}sim_imsi"
+                   class="form-label">Sim IMSI</label>
+            <input type="text" value="{{ isset($item) ? $item->sim_imsi:old('sim_imsi') ?? ''  }}"
+                   class="form-control" id="{{ isset($item) ? $item->id:'' }}sim_imsi"
+                   name="sim_imsi">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="mb-3">
+            <label for="{{ isset($item) ? $item->id:'' }}sim_misisdn" class="form-label">Sim MISISDN</label>
+            <input type="text"
+                   value="{{ isset($item) ? $item->sim_misisdn:old('sim_misisdn') ?? ''  }}"
+                   class="form-control" id="{{ isset($item) ? $item->id:'' }}sim_misisdn"
+                   name="sim_misisdn">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="mb-3">
+            <label for="{{ isset($item) ? $item->id:'' }}communication_type"
+                   class="form-label">Communication Type</label>
+            <input type="text" value="{{ isset($item) ? $item->communication_type:old('communication_type') ?? ''  }}"
+                   class="form-control" id="{{ isset($item) ? $item->id:'' }}communication_type"
+                   name="communication_type">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="mb-3">
+            <label for="{{ isset($item) ? $item->id:'' }}parent_asset_id" class="form-label">Controlll</label>
+            <select class="form-control" id="controll" name="controll">
+                <option value="">-Select Controll-</option>
+                <option value="1" {{ isset($item) && $item->controll == 1  ? 'selected' : ''}}>Yes</option>
+                <option value="2" {{ isset($item)  && $item->controll == 2  ? 'selected' : ''}}>No</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="mb-3">
+            <label for="{{ isset($item) ? $item->id:'' }}impact_of_equipment" class="form-label">Impact of equipment</label>
+            <input type="text"
+                   value="{{ isset($item) ? $item->impact_of_equipment:old('impact_of_equipment') ?? ''  }}"
+                   class="form-control" id="{{ isset($item) ? $item->id:'' }}impact_of_equipment"
+                   name="impact_of_equipment">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="mb-3">
+            <label for="{{ isset($item) ? $item->id:'' }}connected_site"
+                   class="form-label">Connected to Site</label>
+            <input type="text" value="{{ isset($item) ? $item->connected_site:old('connected_site') ?? ''  }}"
+                   class="form-control" id="{{ isset($item) ? $item->id:'' }}connected_site"
+                   name="connected_site">
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="mb-3">
+            <label for="{{ isset($item) ? $item->id:'' }}ot_apn" class="form-label">OT APN</label>
+            <input type="text"
+                   value="{{ isset($item) ? $item->ot_apn:old('ot_apn') ?? ''  }}"
+                   class="form-control" id="{{ isset($item) ? $item->id:'' }}ot_apn"
+                   name="ot_apn">
+        </div>
+    </div>
 </div>
 
 
