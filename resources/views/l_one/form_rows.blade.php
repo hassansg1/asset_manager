@@ -9,4 +9,5 @@
             @include('components.edit_delete_button_asset',['assetString' => 'l01'])
         </td>
     </tr>
+
 @endforeach
