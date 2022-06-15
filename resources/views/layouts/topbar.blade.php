@@ -78,10 +78,6 @@
                        data-lang="eng">
                         <span class="align-middle">Import Compliance Data</span>
                     </a>
-                    <a href="{{ route('export_templates') }}" class="dropdown-item notify-item language"
-                       data-lang="eng">
-                        <span class="align-middle">Export Data Templates</span>
-                    </a>
                     <a href="{{ route('software_import.index') }}" class="dropdown-item notify-item language"
                        data-lang="eng">
                         <span class="align-middle">Import Software Data</span>
@@ -105,6 +101,10 @@
                     <a href="{{ route('nozomi_import.index') }}" class="dropdown-item notify-item language"
                        data-lang="eng">
                         <span class="align-middle">Import Nozomi Data</span>
+                    </a>
+                    <a href="{{ route('export_templates') }}" class="dropdown-item notify-item language"
+                       data-lang="eng">
+                        <span class="align-middle">Export Data Templates</span>
                     </a>
                 </div>
             </div>
