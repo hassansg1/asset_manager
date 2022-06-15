@@ -234,7 +234,6 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
             'cookies'         => false,
             'idn_conversion'  => false,
         ];
-
         // Use the standard Linux HTTP_PROXY and HTTPS_PROXY if set.
 
         // We can only trust the HTTP_PROXY environment variable in a CLI
