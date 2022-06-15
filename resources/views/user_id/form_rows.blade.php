@@ -15,14 +15,14 @@
         <td>
             @foreach(\App\Models\UserRight::where('parent_id', $item->id)->get() as $function)
                 @if($function->rights_name)
-                    {{  $function->rights_name->name }},<br>
+                    {{  $function->rights_name->name }}<br>
 
                 @else
 
                 @endif
             @endforeach
         </td>
-        <td>{{ $item->condition }}</td>
+        <td>{{ ucfirst($item->condition) }}</td>
 <td>
     @include('components.edit_delete_button')
 </td>
