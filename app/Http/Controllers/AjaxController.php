@@ -17,6 +17,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Response;
+use ZipArchive;
+use File;
 
 class AjaxController extends Controller
 {
@@ -123,10 +125,20 @@ class AjaxController extends Controller
             fclose($file);
         }
 
-        flashSuccess("Successfully generated");
-        return redirect()->back();
+        $zip      = new ZipArchive();
+        $zipFileName = 'total_templates.zip';
+        if ($zip->open($zipFileName, ZIPARCHIVE::CREATE)==TRUE){
+            $files = File::files(public_path('csv'));
+            foreach ($files as $key => $value) {
+                $file = (string)$value;
+                $relativePath = substr($file, strlen($zipFileName) + 1);
+                $relativeName = basename($value);
+                $zip->addFile($file, $relativeName);
+            }
+            $zip->close();
+        }
 
-//        Response::download($file, $fileName, $headers);
+        return response()->download(public_path($zipFileName));
     }
 
     public function checkDeleteCriteria(Request $request)
