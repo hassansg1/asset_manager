@@ -137,7 +137,6 @@ class AjaxController extends Controller
             }
             $zip->close();
         }
-
         return response()->download(public_path($zipFileName));
     }
 
