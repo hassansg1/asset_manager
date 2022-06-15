@@ -28,7 +28,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">User Assignment</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
@@ -36,13 +36,21 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="{{ isset($item) ? $item->id:'' }}unit_id"
-                                                   class="form-label required">Unit</label>
-                                            <select class="form-control select2" id="unit_id" name="unit_id" required>
-                                                <option value="">-Select Unit-</option>
-                                                @foreach($units as $value)
-                                                    <option value="{{$value->id}}" {{ isset($item) && $item->unit_id == $value->id  ? 'selected' : ''}}>{{$value->rec_id}}</option>
+                                                   class="form-label required">Unit name</label>
+                                            <select class="form-control select2" name="parent_id"
+                                                    id="{{ isset($item) ? $item->id:'' }}short_name" required>
+                                                <option value="">Search by Name</option>
+                                                @foreach(getLocationsForDropDown('sites',isset($item)?'edit':'create',$model ?? null) as $heading => $locations)
+                                                    <optgroup label={{ \App\Models\Location::getTypeToModel($heading) }}>
+                                                        @foreach($locations as $location)
+                                                            <option
+                                                                {{ isset($item) && $item->unit_id == $location->id ? 'selected' : '' }}
+                                                                value="{{ $location->id }}">{{ $location->text }}</option>
+                                                        @endforeach
+                                                    </optgroup>
                                                 @endforeach
                                             </select>
+
                                         </div>
                                     </div>
                                 </div>
@@ -50,7 +58,7 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="{{ isset($item) ? $item->id:'' }}sub_site_id"
-                                                   class="form-label">User</label>
+                                                   class="form-label">User Name</label>
                                             <select class="form-control select2" id="user_id" name="user_id">
                                                 <option value="">-Select User-</option>
                                             </select>

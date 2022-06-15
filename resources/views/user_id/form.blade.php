@@ -123,7 +123,7 @@
                                             <div class="mb-3">
                                                 <label for="{{ isset($item) ? $item->id:'' }}approvel_expirey_date" class="form-label">User ID Expirey Date</label>
                                                 <input type="date" value="{{ isset($item) ? $item->approvel_expirey_date:old('approvel_expirey_date') ?? ''  }}"
-                                                       class="form-control" id="{{ isset($item) ? $item->id:'' }}approvel_expirey_date" name="approvel_expirey_date">
+                                                       class="form-control" id="{{ isset($item) ? $item->id:'' }}approvel_expirey_date" name="approvel_expirey_date" {{ isset($item)  && $item->condition == 'permanent'  ? 'readonly' : ''}}>
                                             </div>
                                         </div>
                                     </div>
