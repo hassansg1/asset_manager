@@ -70,6 +70,5 @@ class NozomiDataTaskScheduling extends Command
             );
         }
 
-
     }
 }
