@@ -4,7 +4,9 @@ namespace App\Console\Commands;
 
 use App\Models\NozomiData;
 use App\Models\NozomiSettings;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 use GuzzleHttp\Client;
+use Psr\Http\Message\RequestInterface;
 use Illuminate\Console\Command;
 use Log;
 class NozomiDataTaskScheduling extends Command
@@ -46,8 +48,19 @@ class NozomiDataTaskScheduling extends Command
         $nozomiURL = $nozomicredentilas ? $nozomicredentilas->path : 'https://192.168.100.40/api/open/query/do';
         $nozomiUsername = $nozomicredentilas->username;
         $nozomiPassword = $nozomicredentilas->password;
-        $client = new Client();
+        $client = new Client([
+            'verify' => false
+        ]);
         $request = $client->get($nozomiURL.'?query=assets', ['auth' => [$nozomiUsername, $nozomiPassword, 'verify'=>false]]);
+        $chnageDefaultConfigration = new ImageAnnotatorClient([
+            'transportConfig' => [
+                'rest' => [
+                    'httpHandler' => function (RequestInterface $request, array $options = []) use ($client) {
+                        return $client->sendAsync($request, $options);
+                    }
+                ]
+            ]
+        ]);
         $response = $request->getBody()->getContents();
         $jsonData = json_decode($response);
         foreach ($jsonData->result as $result){
