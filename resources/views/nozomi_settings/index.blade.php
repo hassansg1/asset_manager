@@ -47,6 +47,23 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="mb-3">
+                                    <label for="password"
+                                           class="form-label required">Task Schedule</label>
+                                    <select class="form-select form-select-input" name="task_schedule"
+                                            id="task_schedule">
+                                        <option value="">-- Schedule Your Task --</option>
+                                        <option value="everyMinute">everyMinute</option>
+                                        <option value="everyFifteenMinutes">everyFifteenMinutes</option>
+                                        <option value="everyThirtyMinutes">everyThirtyMinutes</option>
+                                        <option value="hourly">hourly</option>
+                                        <option value="everySixHours">everySixHours</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <button type="submit" class="btn btn-primary w-md submit_form mb-2">Save</button>
