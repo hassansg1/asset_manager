@@ -7,14 +7,8 @@
             <td style="font-weight: bold;">{{ $item->name }}</td>
         @endif
 
-        @if(checkIfAssetFunctionUsed($item->id))
-            <td>
-                @include('components.edit_view_button')
-            </td>
-        @else
             <td>
                 @include('components.edit_delete_button')
             </td>
-        @endif
     </tr>
 @endforeach

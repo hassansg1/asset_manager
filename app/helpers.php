@@ -40,6 +40,14 @@ if (!function_exists('getUserName')) {
     }
 }
 
+if (!function_exists('checkIfAssetFunctionUsed')) {
+    function checkIfAssetFunctionUsed($asset_id)
+    {
+        $asset_ids = \App\Models\Location::where('function', $asset_id)->first();
+        return $asset_ids;
+    }
+}
+
 if (!function_exists('flashSession')) {
     function flashSession($message, $type = 'success')
     {
