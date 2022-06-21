@@ -24,11 +24,11 @@
                         Assign User
                     </button>
                 </div>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">User Assignment</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Assign User ID</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
@@ -50,7 +50,6 @@
                                                     </optgroup>
                                                 @endforeach
                                             </select>
-
                                         </div>
                                     </div>
                                 </div>
@@ -58,7 +57,7 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="{{ isset($item) ? $item->id:'' }}sub_site_id"
-                                                   class="form-label">User Name</label>
+                                                   class="form-label">User</label>
                                             <select class="form-control select2" id="user_id" name="user_id">
                                                 <option value="">-Select User-</option>
                                             </select>
