@@ -264,5 +264,4 @@ Route::group(['prefix' => 'reports'], function () {
     Route::resource('installed_software_report', \App\Http\Controllers\InstalledSoftwareReportController::class);
     Route::resource('installed_patch_report', \App\Http\Controllers\InstalledPatchReportController::class);
 });
-
 Route::get('getColumnSearchRow',[\App\Http\Controllers\AjaxController::class,'getColumnSearchRow']);
