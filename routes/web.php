@@ -254,7 +254,6 @@ Route::get('syncAssets', function () {
 Route::get('clauseLoad/smartLoad', [\App\Http\Controllers\SmartClauseLoadController::class, 'index'])->name('clauses.smartLoad');
 
 // Reports Module
-
 Route::group(['prefix' => 'reports'], function () {
     Route::resource('asset_report', \App\Http\Controllers\AssetReportController::class);
     Route::resource('firewall_report', \App\Http\Controllers\FirewallReportController::class);
