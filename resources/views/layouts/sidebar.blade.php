@@ -5,7 +5,7 @@
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li>
-                    <a href="{{url('dashboard')}}" class="waves-effect">
+                    <a onclick="location.href='{{url('dashboard')}}'" class="waves-effect">
                         <i class="fa fa-home"></i>
                         <span class="badge rounded-pill bg-info float-end"></span>
                         <span key="t-dashboards">Dashboard</span>
