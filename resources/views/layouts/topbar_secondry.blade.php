@@ -12,7 +12,7 @@
                     </span>
                 </a>
 
-                <a href="{{ url('') }}" class="logo logo-light">
+                <a onclick="location.href='{{url('')}}'" class="logo logo-light">
                     <h3 style="    margin-top: 20px;color: white;font-size: 25px;">@if(getSetting()) {{getSetting()->title}} @else OTCM @endif</h3>
                     {{--                    <span class="logo-sm">--}}
                         {{--                        <img src="{{ URL::asset ('/assets/images/logo.png') }}" alt="" height="22">--}}
@@ -171,7 +171,7 @@ aria-labelledby="page-header-notifications-dropdown">
 </div>
 </div>
 <div>
-<a href="{{url('dashboard')}}">
+<a onclick="location.href='{{url('dashboard')}}'">
     <div class="dropdown d-inline-block">
         <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
             <i class="bx bx-windows
