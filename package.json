@@ -68,6 +68,7 @@
         "jquery": "^3.5.1",
         "jquery-countdown": "^2.2.0",
         "jquery-knob": "^1.2.11",
+        "jquery-pjax": "^2.0.1",
         "jquery-sparkline": "^2.4.0",
         "jquery-steps": "^1.1.0",
         "jquery-validation": "^1.19.3",
