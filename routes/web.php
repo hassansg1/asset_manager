@@ -115,7 +115,6 @@ Route::group(['middleware' => ['auth']], function () {
         'process' => \App\Http\Controllers\ProcessController::class,
         'asset_function' => \App\Http\Controllers\AssetFunctionController::class,
     ]);
-
     Route::post('nozomi_settings/save', [\App\Http\Controllers\NozomiSettingsController::class, 'saveSettings']);
     Route::group(['prefix' => 'nozomi'], function () {
         Route::resource('credentials', \App\Http\Controllers\NozomiSettingsController::class);
