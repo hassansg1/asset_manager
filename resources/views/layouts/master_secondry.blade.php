@@ -27,7 +27,7 @@
         <div class="main-content">
             <div class="page-content">
                 <!-- Start content -->
-                <div class="container-fluid">
+                <div class="container-fluid" id="pjax">
                     @yield('content')
                     @include('components.help_section')
                 </div> <!-- content -->

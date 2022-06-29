@@ -26,9 +26,10 @@
 <script src="{{ URL::asset('/assets/libs/tinymce/tinymce.min.js') }}"></script>
 <script src="{{ URL::asset('assets/libs/apexcharts/apexcharts.min.js') }}"></script>
 <script src="{{ URL::asset('assets/js/pages/apexcharts.init.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js" integrity="sha512-7G7ueVi8m7Ldo2APeWMCoGjs4EjXDhJ20DrPglDQqy8fnxsFQZeJNtuQlTT0xoBQJzWRFp4+ikyMdzDOcW36kQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
 <script>
-
     let complianceTable;
 
     var myTree = [
@@ -111,6 +112,11 @@
     }
 
     $(document).ready(function () {
+        $(document).pjax('a', '#pjax');
+        $(document).on("pjax:timeout", function(event) {
+            //Link jump event due to block timeout
+            event.preventDefault()
+        });
         makeDatatable('datatable-buttons'+'{{ $route ?? '' }}');
         let editor1 = CKEDITOR.replace('help_text', {
             width: '100%',

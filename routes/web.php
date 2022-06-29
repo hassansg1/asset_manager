@@ -235,6 +235,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('patchInstall/asset/save', [\App\Http\Controllers\PatchSoftwareApprovalController::class, 'patchAssetInstallSave'])->name('patch.patchAssetInstallSave');
     Route::post('assetInstall/patch/save', [\App\Http\Controllers\PatchSoftwareApprovalController::class, 'assetPatchInstallSave'])->name('asset.assetPatchInstallSave');
 
+
     //Patch Policy delete
     Route::post('patchApprovalPolicy/delete', [\App\Http\Controllers\PatchSoftwareApprovalController::class, 'patchPolicyDelete'])->name('patchPolicyDelete');
     Route::get('showCompliancePopup', [\App\Http\Controllers\AjaxController::class, 'showCompliancePopup']);
