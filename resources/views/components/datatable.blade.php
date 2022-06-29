@@ -29,20 +29,7 @@
         }
 
         function deleteItem(item, id) {
-            $.ajax({
-                type: "POST",
-                url: '{{ route('resource.deleteCheck') }}',
-                data: {
-                    item: item,
-                    '_token': '{{ csrf_token() }}'
-                },
-                success: function (result) {
-                    if (result.status) {
-                        $('#delete_' + id).submit();
-                    } else
-                        doErrorToast('This company cannot be deleted. Reason : Underlying data exists.Delete underlying data first..');
-                },
-            });
+            $('#delete_' + id).submit();
         }
     </script>
     @include('scripts.script_datatable')

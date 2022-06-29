@@ -116,7 +116,7 @@
                         </li>
                         <li>
                             <a href="{{ url('reports/patch_report') }}" class="waves-effect">
-                                <span key="t-dashboards">Patch Management Report</span>
+                                <span key="t-dashboards">Patch Report</span>
                             </a>
                         </li>
                         <li>
@@ -126,7 +126,12 @@
                         </li>
                         <li>
                             <a href="{{ url('reports/installed_patch_report') }}" class="waves-effect">
-                                <span key="t-dashboards">Installed Patches Report</span>
+                                <span key="t-dashboards">Installed Patch Report</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('reports/user_report') }}" class="waves-effect">
+                                <span key="t-dashboards">User Report</span>
                             </a>
                         </li>
                     </ul>

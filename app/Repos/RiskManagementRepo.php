@@ -39,7 +39,7 @@ class RiskManagementRepo
                     || $crWhere == "participants"
                     || $crWhere == "reason_of_assessment"
                 ) {
-                    $this->query->whereHas('risk_assessment', function ($subQuery) use ($crOperation, $crWhere, $crValue) {
+                    $this->query = $this->query->whereHas('risk_assessment', function ($subQuery) use ($crOperation, $crWhere, $crValue) {
                         $subQuery = processQueryFiltersOnQuery($subQuery, $crOperation, $crWhere, $crValue);
                     });
                 } else {

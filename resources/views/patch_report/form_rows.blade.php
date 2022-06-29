@@ -1,47 +1,25 @@
 @foreach($items as $item)
-    @php($found = 0)
     <tr id="{{ $item->id }}">
-        <td>{{ $item->software->name ?? '' }}</td>
-        <td>{{ $item->name ?? '' }}</td>
-        <td>
-            @foreach(getPatchAssets($item) as $asset)
-                @if(!checkIfPatchInstalled($asset,$item))
-                    @php($app = getApprovedStatus($asset,$item))
-                    @php($found = 1)
-                    <input
-                        data-type="{{ $route ?? '' }}"
-                        data-asset="{{ $item->id }}_{{ $asset->id }}"
-                        {{ count($app['pending']) > 0 ? 'disabled' : '' }} type="checkbox"
-                        name="select_row" value="{{ $asset->id }}"
-                        id="select_check_{{ $item->id }}" class="select_row select_patch">
-                    {{ $asset->name  ?? '' }}
-                    <br>
-                    <span style="color: green;background-color: #e4ece4;">
-                    Approved :
-                    @foreach($app['approved'] as $approved)
-                            {{ $approved->name }}
-                            @if(!$loop->last)
-                                ,
-                            @endif
-                        @endforeach
-                    </span>
-                    <br>
-                    <span style="color: red;background-color: #f4dfdf;">
-                      Pending :
-                    @foreach($app['pending'] as $pending)
-                            {{ $pending->name }}
-                            @if(!$loop->last)
-                                ,
-                            @endif
-                        @endforeach
-                  </span>
-                    <br>
-                    <br>
-                @endif
-            @endforeach
-            @if(!$found)
-                -
+        @foreach($selectedColumns as $selectedColumn)
+            @if($selectedColumn == "is_required")
+                <td>{{ $item->{$selectedColumn} == 1 ? 'Yes' : 'No' }}</td>
+            @elseif($selectedColumn == "is_critical")
+                <td>{{ $item->{$selectedColumn} == 1 ? 'Yes' : 'No' }}</td>
+            @elseif($selectedColumn == "vendor_name")
+                <td>{{ $item->software->vendor->name ?? '' }}</td>
+            @elseif($selectedColumn == "profile")
+                <td>{{ $item->software->vendor->profile ?? '' }}</td>
+            @elseif($selectedColumn == "contact")
+                <td>{{ $item->vendor->contact ?? '' }}</td>
+            @elseif($selectedColumn == "software_name")
+                <td>{{ $item->software->name ?? '' }}</td>
+            @elseif($selectedColumn == "software_version")
+                <td>{{ $item->software->version ?? '' }}</td>
+            @elseif($selectedColumn == "software_description")
+                <td>{{ $item->software->description ?? '' }}</td>
+            @else
+                <td>{{ $item->{$selectedColumn} }}</td>
             @endif
-        </td>
+        @endforeach
     </tr>
 @endforeach

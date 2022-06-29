@@ -34,13 +34,13 @@ class AssetReportRepo
                 $crValue = $value[$index];
                 if ($crWhere == "asset_function") {
                     $crWhere = "name";
-                    $this->query->whereHas('assetFunction', function ($subQuery) use ($crOperation, $crWhere, $crValue) {
+                    $this->query = $this->query->whereHas('assetFunction', function ($subQuery) use ($crOperation, $crWhere, $crValue) {
                         $subQuery = processQueryFiltersOnQuery($subQuery, $crOperation, $crWhere, $crValue);
                     });
                 }
                 else if ($crWhere == "operating_system") {
                     $crWhere = "name";
-                    $this->query->whereHas('operatingSystem', function ($subQuery) use ($crOperation, $crWhere, $crValue) {
+                    $this->query = $this->query->whereHas('operatingSystem', function ($subQuery) use ($crOperation, $crWhere, $crValue) {
                         $subQuery = processQueryFiltersOnQuery($subQuery, $crOperation, $crWhere, $crValue);
                     });
                 } else {

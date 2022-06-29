@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\NetworkAsset;
-use App\Repos\AssetReportRepo;
+use App\Models\Asset;
+use App\Models\InstalledPatch;
+use App\Models\InstalledSoftware;
+use App\Models\Software;
+use App\Repos\InstalledPatchReportRepo;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
-class NetworkAssetController extends BaseController
+class InstalledPatchReportController extends BaseController
 {
     protected $model;
     protected $repo;
@@ -19,11 +22,11 @@ class NetworkAssetController extends BaseController
 
     public function __construct()
     {
-        $this->model = new NetworkAsset();
-        $this->repo = new AssetReportRepo();
-        $this->route = 'network';
-        $this->heading = 'Network Asset';
-        \Illuminate\Support\Facades\View::share('top_heading', 'Network Asset');
+        $this->model = new InstalledPatch();
+        $this->repo = new InstalledPatchReportRepo();
+        $this->route = 'installed_patch_report';
+        $this->heading = 'Installed Patch Report';
+        \Illuminate\Support\Facades\View::share('top_heading', 'Installed Patch');
     }
 
     /**
@@ -31,8 +34,7 @@ class NetworkAssetController extends BaseController
      */
     public function index(Request $request)
     {
-        $data = $this->fetchData($this->model, $request);
-
+        $data = $this->fetchData($this->model, $request, $this->repo);
         $columns = $this->repo->getColumns();
         $requestedColumns = json_decode($request->columns) ?? [];
         $selectedColumns = [];
@@ -68,8 +70,6 @@ class NetworkAssetController extends BaseController
      */
     public function create()
     {
-        return view($this->route . "/create")
-            ->with(['route' => $this->route, 'model' => $this->model, 'heading' => $this->heading]);
     }
 
     /**
@@ -78,14 +78,6 @@ class NetworkAssetController extends BaseController
      */
     public function store(Request $request)
     {
-        $request->validate($this->model->rules);
-        $this->model->saveFormData($this->model, $request);
-
-        flashSuccess(getLang($this->heading . " Successfully Created."));
-
-        if (isset($request->add_new)) return redirect(route($this->route . ".create"));
-
-        return redirect(route($this->route . ".index"));
     }
 
     /**
@@ -93,9 +85,6 @@ class NetworkAssetController extends BaseController
      */
     public function show($item)
     {
-        $item = $this->model->find($item);
-        $heading = $this->heading . ' (' . $item->rec_id . ')';
-        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'model' => $this->model, 'heading' => $heading, 'clone' => $request->clone ?? null]);
     }
 
     /**
@@ -105,19 +94,6 @@ class NetworkAssetController extends BaseController
      */
     public function edit(Request $request, $item)
     {
-        if ($item == 0) {
-            if (is_array($request->item))
-                $item = $this->model->find('id', $request->item);
-        }
-        $item = $this->model->find($item);
-        $heading = $this->heading . ' (' . $item->rec_id . ')';
-        if ($request->ajax) {
-            return response()->json([
-                'status' => true,
-                'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'model' => $this->model, 'item' => $item, 'clone' => $request->clone ?? null])->render()
-            ]);
-        } else
-            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'model' => $this->model, 'heading' => $heading, 'clone' => $request->clone ?? null]);
     }
 
     /**
@@ -126,14 +102,6 @@ class NetworkAssetController extends BaseController
      */
     public function update(Request $request, $item)
     {
-
-
-        $item = $this->model->find($item);
-        $this->model->saveFormData($item, $request);
-
-        flashSuccess(getLang($this->heading . " Successfully Updated."));
-
-        return redirect(route($this->route . ".index"));
     }
 
     /**
@@ -141,11 +109,5 @@ class NetworkAssetController extends BaseController
      */
     public function destroy($item)
     {
-        $item = $this->model->find($item);
-        $item->delete();
-
-        flashSuccess(getLang($this->heading . " Successfully Deleted."));
-
-        return redirect(route($this->route . ".index"));
     }
 }

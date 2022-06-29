@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Asset;
 use App\Models\Patch;
-use App\Models\PatchPolicy;
-use App\Repos\PatchRepo;
-use Illuminate\Http\Request;
-use Illuminate\Contracts\View\View;
-use Illuminate\Contracts\View\Factory;
+use App\Models\Software;
+use App\Repos\PatchReportRepo;
 use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 class PatchReportController extends BaseController
 {
     protected $model;
+    protected $repo;
     protected $route;
     protected $heading;
     protected $topHeading;
@@ -21,9 +22,10 @@ class PatchReportController extends BaseController
     public function __construct()
     {
         $this->model = new Patch();
-        $this->route = 'patch';
-        $this->heading = 'Patch';
-        \Illuminate\Support\Facades\View::share('top_heading', 'Patches');
+        $this->repo = new PatchReportRepo();
+        $this->route = 'patch_report';
+        $this->heading = 'Patch Report';
+        \Illuminate\Support\Facades\View::share('top_heading', 'Patch');
     }
 
     /**
@@ -31,10 +33,19 @@ class PatchReportController extends BaseController
      */
     public function index(Request $request)
     {
-        $data = $this->fetchData($this->model, $request, new PatchRepo());
+        $data = $this->fetchData($this->model, $request, $this->repo);
+        $columns = $this->repo->getColumns();
+        $requestedColumns = json_decode($request->columns) ?? [];
+        $selectedColumns = [];
+        foreach ($columns as $key => $column) {
+            if (in_array($key, $requestedColumns))
+                $selectedColumns[] = $key;
+        }
 
-        return view("patch_report/index")
-            ->with(['items' => $data['items'], 'heading' => 'Patch Report', 'route' => 'patch_report']);
+        $reflect = new \ReflectionClass($this->repo);
+
+        return view($this->route . "/index")
+            ->with(['items' => $data['items'], 'request' => $request, 'repo' => $reflect->getShortName(), 'selectedColumns' => $selectedColumns, 'columns' => $columns, 'data' => $data, 'filter' => $filter[0] ?? null, 'model' => $this->model, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**
@@ -58,8 +69,6 @@ class PatchReportController extends BaseController
      */
     public function create()
     {
-        return view($this->route . "/create")
-            ->with(['route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**
@@ -68,14 +77,6 @@ class PatchReportController extends BaseController
      */
     public function store(Request $request)
     {
-        $request->validate($this->model->rules);
-        $this->model->saveFormData($this->model, $request);
-
-        flashSuccess(getLang($this->heading . " Successfully Created."));
-
-        if (isset($request->add_new)) return redirect(route($this->route . ".create"));
-
-        return redirect(route($this->route . ".index"));
     }
 
     /**
@@ -83,9 +84,6 @@ class PatchReportController extends BaseController
      */
     public function show($item)
     {
-        $item = $this->model->find($item);
-
-        return view($this->route . '.view')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
     }
 
     /**
@@ -95,20 +93,6 @@ class PatchReportController extends BaseController
      */
     public function edit(Request $request, $item)
     {
-        if ($item == 0) {
-            if (is_array($request->item))
-                $item = $this->model->find('id', $request->item);
-        }
-        $item = $this->model->find($item);
-
-
-        if ($request->ajax) {
-            return response()->json([
-                'status' => true,
-                'html' => view($this->route . '.edit_modal')->with(['route' => $this->route, 'item' => $item, 'clone' => $request->clone ?? null])->render()
-            ]);
-        } else
-            return view($this->route . '.edit')->with(['route' => $this->route, 'item' => $item, 'heading' => $this->heading, 'clone' => $request->clone ?? null]);
     }
 
     /**
@@ -117,14 +101,6 @@ class PatchReportController extends BaseController
      */
     public function update(Request $request, $item)
     {
-
-
-        $item = $this->model->find($item);
-        $this->model->saveFormData($item, $request);
-
-        flashSuccess(getLang($this->heading . " Successfully Updated."));
-
-        return redirect(route($this->route . ".index"));
     }
 
     /**
@@ -132,11 +108,5 @@ class PatchReportController extends BaseController
      */
     public function destroy($item)
     {
-        $item = $this->model->find($item);
-        $item->delete();
-
-        flashSuccess(getLang($this->heading . " Successfully Deleted."));
-
-        return redirect(route($this->route . ".index"));
     }
 }

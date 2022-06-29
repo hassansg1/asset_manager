@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Computer;
+use App\Repos\AssetReportRepo;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -12,6 +13,7 @@ class ComputerAssetController extends BaseController
 {
     protected $model;
     protected $route;
+    protected $repo;
     protected $heading;
     protected $topHeading;
 
@@ -19,6 +21,7 @@ class ComputerAssetController extends BaseController
     {
         $this->model = new Computer();
         $this->route = 'computer';
+        $this->repo = new AssetReportRepo();
         $this->heading = 'Computer Asset';
         \Illuminate\Support\Facades\View::share('top_heading', 'Computer Asset');
     }
@@ -30,8 +33,18 @@ class ComputerAssetController extends BaseController
     {
         $data = $this->fetchData($this->model, $request);
 
+        $columns = $this->repo->getColumns();
+        $requestedColumns = json_decode($request->columns) ?? [];
+        $selectedColumns = [];
+        foreach ($columns as $key => $column) {
+            if (in_array($key, $requestedColumns))
+                $selectedColumns[] = $key;
+        }
+
+        $reflect = new \ReflectionClass($this->repo);
+
         return view($this->route . "/index")
-            ->with(['items' => $data['items'], 'data' => $data, 'filter' => $filter[0] ?? null, 'route' => $this->route, 'model' => $this->model, 'heading' => $this->heading]);
+            ->with(['items' => $data['items'], 'request' => $request, 'repo' => $reflect->getShortName(), 'selectedColumns' => $selectedColumns, 'columns' => $columns, 'data' => $data, 'filter' => $filter[0] ?? null, 'model' => $this->model, 'route' => $this->route, 'heading' => $this->heading]);
     }
 
     /**
