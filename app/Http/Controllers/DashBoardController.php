@@ -12,6 +12,8 @@ class DashBoardController extends Controller
     public function index(Request $request)
     {
 
+        Location::fixTree();
+
         $firewallManagment = FirewallManagment::latest()->take(10)->get();
 //        $compliances = ComplianceVersionItem::all();
 //        foreach ($compliances as $compliance)
