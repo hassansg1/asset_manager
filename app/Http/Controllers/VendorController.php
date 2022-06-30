@@ -56,6 +56,7 @@ class VendorController extends BaseController
      */
     public function create()
     {
+        dd("As");
         return view($this->route . "/create")
             ->with(['route' => $this->route, 'heading' => $this->heading]);
     }
