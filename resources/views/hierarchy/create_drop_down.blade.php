@@ -6,7 +6,7 @@
             @foreach($locations as $location)
                 <option
                     {{ isset($item) && $item->parent_id == $location->id ? 'selected' : '' }}
-                    value="{{ $location->id }}">{{ $location->text }}</option>
+                    value="{{ $location->id }}">{{ $location->parentName }}</option>
             @endforeach
         </optgroup>
     @endforeach
