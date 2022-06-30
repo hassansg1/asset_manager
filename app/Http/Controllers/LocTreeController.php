@@ -23,7 +23,6 @@ class LocTreeController extends Controller
             $nodeTree[0] = (object) $parentNode;
             $tree = array_merge($tree,$nodeTree );
         }
-
         return response()->json([
             'status' => true,
             'tree' => $tree
