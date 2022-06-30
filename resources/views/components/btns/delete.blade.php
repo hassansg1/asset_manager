@@ -1,5 +1,5 @@
 <button
-    onclick="if(confirm('Are you sure you want to delete?')) deleteItem('{{ $item->combine_short ?? '' }}','{{ $item->id }}')"
+    onclick="if(confirm('Are you sure you want to delete?')) $('.delete_{{ $item->id }}').submit()"
     title="Delete" type="button"
     style="display: {{ isset($onlyView) && $onlyView == 1 ? 'none' : 'inline' }}"
     class="btn btn-light btn-form btn-no-color dropdown-toggle btn_delete_row" data-bs-toggle="dropdown"

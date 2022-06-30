@@ -14,7 +14,7 @@
     }
 
     function deleteItem(item, id) {
-        $('#delete_' + id).submit();
+        $('.delete_' + id).submit();
     }
 </script>
 @include('scripts.script_datatable')
