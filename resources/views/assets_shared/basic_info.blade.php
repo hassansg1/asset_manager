@@ -4,6 +4,7 @@
             <label for="{{ isset($item) ? $item->id:'' }}short_name" class="form-label required">Asset
                 Parent</label>
             @include('hierarchy.create_drop_down',['type' => 'assets','model'=> $model])
+
         </div>
     </div>
     <div class="col-lg-4">
