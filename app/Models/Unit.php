@@ -52,6 +52,7 @@ class Unit extends Model
     {
         if (isset($item->id)) $item = Location::find($item->id);
         else $item = new Location();
+        if (isset($request->short_name)) $item->name = $request->short_name;
         if (isset($request->short_name)) $item->short_name = $request->short_name;
         if (isset($request->long_name)) $item->long_name = $request->long_name;
         if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
