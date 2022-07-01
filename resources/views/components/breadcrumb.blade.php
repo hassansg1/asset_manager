@@ -12,11 +12,11 @@
                     @foreach($items as $item)
                         <li class="breadcrumb-item {{ $loop->last ? 'active' : '' }}"
                         ><a href="{{ route('view/assets', $item->id) }}">
-{{--                                @if($heading == 'dropDown')--}}
-{{--                                {{ $item->text ?? '' }}\--}}
-{{--                                @else--}}
+                                @if($heading == 'dropDown')
+                                {{ $item->text ?? '' }} |
+                                @else
                                     {{ $item->text ?? '' }}
-{{--                                @endif--}}
+                                @endif
                             </a></li>
                     @endforeach
                 </ol>
