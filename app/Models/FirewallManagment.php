@@ -20,6 +20,7 @@ class FirewallManagment extends Model
             'destination_asset' => 'required',
             'applicatin_port' => 'required',
             'condition' => 'required',
+            'approvel_expirey_date' => 'required_if:condition,==,temporary',
         ];
 
     public function source_assets(){
