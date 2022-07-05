@@ -54,6 +54,7 @@ class SoftwareLegacyController extends BaseController
         return redirect(route($this->route . ".index"));
     }
 
+
     /**
      * @param $item
      */
