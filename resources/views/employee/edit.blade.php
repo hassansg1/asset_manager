@@ -137,3 +137,4 @@
                 });
             </script>
 @endsection
+@include('layouts.vendor-scripts')

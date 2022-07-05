@@ -38,7 +38,7 @@
                                             <label for="{{ isset($item) ? $item->id:'' }}unit_id"
                                                    class="form-label required">Unit name</label>
                                             <select class="form-control select2" name="parent_id"
-                                                    id="{{ isset($item) ? $item->id:'' }}short_name" required>
+                                                    id="unit_id" required>
                                                 <option value="">Search by Name</option>
                                                 @foreach(getLocationsForDropDown('sites',isset($item)?'edit':'create',$model ?? null) as $heading => $locations)
                                                     <optgroup label={{ \App\Models\Location::getTypeToModel($heading) }}>
@@ -105,3 +105,4 @@
         @endif
     </div>
 @endsection
+@include('layouts.vendor-scripts')
