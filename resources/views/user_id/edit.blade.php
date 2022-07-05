@@ -28,7 +28,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Assign User ID</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">User Assignment</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
@@ -36,7 +36,7 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="{{ isset($item) ? $item->id:'' }}unit_id"
-                                                   class="form-label required">Unit name</label>
+                                                   class="form-label required">Associated with</label>
                                             <select class="form-control select2" name="parent_id"
                                                     id="unit_id" required>
                                                 <option value="">Search by Name</option>
@@ -57,7 +57,7 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="{{ isset($item) ? $item->id:'' }}sub_site_id"
-                                                   class="form-label">User</label>
+                                                   class="form-label">User Name</label>
                                             <select class="form-control select2" id="user_id" name="user_id">
                                                 <option value="">-Select User-</option>
                                             </select>
