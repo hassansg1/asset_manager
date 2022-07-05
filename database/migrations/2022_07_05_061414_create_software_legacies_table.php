@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProcessesTable extends Migration
+class CreateSoftwareLegaciesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateProcessesTable extends Migration
      */
     public function up()
     {
-        Schema::create('processes', function (Blueprint $table) {
+        Schema::create('software_legacies', function (Blueprint $table) {
             $table->id();
-            $table->string('process');
-            $table->tinyInteger('criticality');
-            $table->longText('comment')->nullable();
+            $table->string('software_name');
+            $table->string('software_version');
+            $table->tinyInteger('software_type');
+            $table->tinyInteger('status');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateProcessesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('processes');
+        Schema::dropIfExists('software_legacies');
     }
 }

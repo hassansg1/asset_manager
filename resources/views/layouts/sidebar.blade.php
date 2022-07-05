@@ -20,8 +20,9 @@
                         <li class="loc_tree"></li>
                         <div id="default-tree"></div>
                         <li><a href="{{route('asset_function.index')}}" key="t-product-detail">Asset Functions</a></li>
-                        <li><a href="{{route('process.index')}}" key="t-products">Processes & Criticality</a></li>
+{{--                        <li><a href="{{route('process.index')}}" key="t-products">Processes & Criticality</a></li>--}}
                         <li><a href="{{ route('networks.index') }}" class="waves-effect">Networks</a></li>
+                        <li><a href="{{ route('legacy_system.index') }}" class="waves-effect">Legacy System</a></li>
                     </ul>
                 </li>
 

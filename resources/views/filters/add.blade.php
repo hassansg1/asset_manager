@@ -1,6 +1,6 @@
 <span class="mr-5 add_btn_in_header">
   <span class="btn-group" role="group">
-       <button class="btn btn-primary mr-10 mb-3">
+       <button class="btn btn-primary mr-5 mb-0">
                         <a style="color: white" href="{{  route($route.".create") }}" title="Add New">
                             <i class="fas fa-plus-circle">New</i>
                         </a>

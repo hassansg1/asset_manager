@@ -110,10 +110,13 @@ Route::group(['middleware' => ['auth']], function () {
         'policy' => \App\Http\Controllers\PolicyController::class,
         'user_asset_report' => \App\Http\Controllers\ReportsController::class,
         'asset_lending_page' => \App\Http\Controllers\AssetLandingPageController::class,
+        'legacy_system' => \App\Http\Controllers\LegacySystem::class,
         'risk_assesment' => \App\Http\Controllers\RiskAssessmentController::class,
         'risk' => \App\Http\Controllers\RiskController::class,
         'process' => \App\Http\Controllers\ProcessController::class,
         'asset_function' => \App\Http\Controllers\AssetFunctionController::class,
+        'hardware_legacy' => \App\Http\Controllers\HardwareLegacyController::class,
+        'software_legacy' => \App\Http\Controllers\SoftwareLegacyController::class,
     ]);
     Route::post('nozomi_settings/save', [\App\Http\Controllers\NozomiSettingsController::class, 'saveSettings']);
     Route::group(['prefix' => 'nozomi'], function () {
