@@ -96,15 +96,15 @@ class AssetFunctionController extends BaseController
     public function destroy($item)
     {
         $assignedAssets = Location::where('function', $item)->get();
-        if ($assignedAssets){
-            flashSuccess(getLang("Asset Function is assigned to Assets cannot be deleted."));
+        if ($assignedAssets->isEmpty()){
+            $item = $this->model->find($item);
+            $item->delete();
+
+            flashSuccess(getLang($this->heading . " Successfully Deleted."));
+
             return redirect(route($this->route . ".index"));
         }
-        $item = $this->model->find($item);
-        $item->delete();
-
-        flashSuccess(getLang($this->heading . " Successfully Deleted."));
-
+        flashSuccess(getLang("Asset Function is assigned to Assets cannot be deleted."));
         return redirect(route($this->route . ".index"));
     }
 }
