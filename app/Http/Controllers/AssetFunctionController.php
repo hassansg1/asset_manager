@@ -95,6 +95,7 @@ class AssetFunctionController extends BaseController
      */
     public function destroy($item)
     {
+
         $assignedAssets = Location::where('function', $item)->get();
         if ($assignedAssets->isEmpty()){
             $item = $this->model->find($item);
