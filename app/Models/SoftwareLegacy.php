@@ -13,14 +13,13 @@ class SoftwareLegacy extends Model
 
     protected $guarded = [];
 
-    public $rules =
-        [
-            'software_type' => 'required',
-            'software_name' => 'required',
+    public function rules($software_version = null)
+    {
+        return [
+            'software_name' => 'required|unique:software_legacies,software_name,NULL,id,software_version,' . $software_version,
             'software_version' => 'required',
-            'status' => 'required',
         ];
-
+    }
 
     /**
      * @param $name

@@ -44,7 +44,7 @@ class SoftwareLegacyController extends BaseController
      */
     public function store(Request $request)
     {
-        $request->validate($this->model->rules);
+        $request->validate($this->model->rules($request->software_version));
         $this->model->saveFormData($this->model, $request);
 
         flashSuccess(getLang($this->heading . " Successfully Created."));

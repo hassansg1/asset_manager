@@ -17,8 +17,8 @@ class CreateSoftwareLegaciesTable extends Migration
             $table->id();
             $table->string('software_name');
             $table->string('software_version');
-            $table->tinyInteger('software_type');
-            $table->tinyInteger('status');
+            $table->tinyInteger('software_type')->nullable();
+            $table->tinyInteger('status')->nullable();
             $table->timestamps();
         });
     }

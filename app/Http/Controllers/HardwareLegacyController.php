@@ -44,7 +44,7 @@ class HardwareLegacyController extends BaseController
      */
     public function store(Request $request)
     {
-        $request->validate($this->model->rules);
+        $request->validate($this->model->rules($request->part_number));
         $this->model->saveFormData($this->model, $request);
 
         flashSuccess(getLang($this->heading . " Successfully Created."));

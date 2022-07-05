@@ -17,8 +17,8 @@ class CreateHardwareLegaciesTable extends Migration
             $table->id();
             $table->string('hardware_make');
             $table->string('hardware_model');
-            $table->string('part_number');
-            $table->tinyInteger('status');
+            $table->string('part_number')->nullable();
+            $table->tinyInteger('status')->nullable();
             $table->timestamps();
         });
     }

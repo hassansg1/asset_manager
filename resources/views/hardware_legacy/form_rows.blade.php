@@ -5,13 +5,17 @@
         <td>{{ $item->hardware_make }}</td>
         <td>{{ $item->hardware_model }}</td>
         <td>{{ $item->part_number }}</td>
-        <td>@if($item->status == 1)
+        <td>
+            @if($item->status == 1)
                 Active
             @elseif($item->status == 2)
                 End of sale
-            @else
+            @elseif($item->status == 3)
                 End of service / support
-            @endif</td>
+            @else
+
+            @endif
+        </td>
         <td>
             @include('components.edit_delete_button')
         </td>

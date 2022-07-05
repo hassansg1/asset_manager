@@ -7,8 +7,9 @@
         <td>
             @if($item->software_type == 1)
                 Application
-            @else
+            @elseif($item->software_type == 2)
                 Operating System
+            @else
             @endif
         </td>
         <td>
@@ -16,8 +17,10 @@
                 Active
             @elseif($item->status == 2)
                 End of sale
-            @else
+            @elseif($item->status == 3)
             End of service / support
+            @else
+
             @endif
         </td>
         <td>

@@ -30,8 +30,10 @@
                                         Active
                                     @elseif($value->status == 2)
                                         End of sale
-                                    @else
+                                    @elseif($value->status == 3)
                                         End of service / support
+                                    @else
+
                                     @endif
                                 </td>
                             </tr>
@@ -63,17 +65,20 @@
                                 <td>
                                     @if($value->software_type == 1)
                                         Application
-                                    @else
+                                    @elseif($value->software_type == 2)
                                         Operating System
+                                    @else
                                     @endif
                                 </td>
                                 <td>
                                     @if($value->status == 1)
                                         Active
-                                    @elseif($item->status == 2)
+                                    @elseif($value->status == 2)
                                         End of sale
-                                    @else
+                                    @elseif($value->status == 3)
                                         End of service / support
+                                    @else
+
                                     @endif
                                 </td>
                             </tr>

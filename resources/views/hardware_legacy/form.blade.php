@@ -20,7 +20,7 @@
                     <div class="col-lg-6">
                         <div class="mb-3">
                             <label for="{{ isset($item) ? $item->id:'' }}hardware_model"
-                                   class="form-label required">Hardware Model</label>
+                                   class="form-label">Hardware Model</label>
                             <input type="text" value="{{ isset($item) ? $item->hardware_model:old('hardware_model') ?? ''  }}"
                                    class="form-control" id="{{ isset($item) ? $item->id:'' }}hardware_model"
                                    name="hardware_model">
@@ -40,7 +40,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}status" class="form-label required">Legacy Status</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}status" class="form-label">Legacy Status</label>
                             <select class="form-select form-select-input" name="status"
                                     id="{{ isset($item) ? $item->id:'' }}status">
                                     <option value=""></option>

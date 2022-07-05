@@ -13,13 +13,13 @@ class HardwareLegacy extends Model
 
     protected $guarded = [];
 
-    public $rules =
-        [
-            'hardware_make' => 'required',
-            'hardware_model' => 'required',
+    public function rules($part_number = null)
+    {
+        return [
+            'hardware_make' => 'required|unique:hardware_legacies,hardware_make,NULL,id,hardware_model,' . $part_number,
             'part_number' => 'required',
-            'status' => 'required',
         ];
+    }
 
 
     /**

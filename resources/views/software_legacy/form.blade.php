@@ -30,7 +30,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}software_type" class="form-label required">Software Type</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}software_type" class="form-label">Software Type</label>
                             <select class="form-select form-select-input" name="software_type"
                                     id="{{ isset($item) ? $item->id:'' }}software_type">
                                 <option value=""></option>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="mb-3">
-                            <label for="{{ isset($item) ? $item->id:'' }}status" class="form-label required">Legacy Status</label>
+                            <label for="{{ isset($item) ? $item->id:'' }}status" class="form-label">Legacy Status</label>
                             <select class="form-select form-select-input" name="status"
                                     id="{{ isset($item) ? $item->id:'' }}status">
                                 <option value=""></option>
