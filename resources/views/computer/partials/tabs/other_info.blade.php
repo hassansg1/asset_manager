@@ -14,10 +14,10 @@
             <select class="form-select form-select-input" name="operating_system"
                     id="{{ isset($item) ? $item->id:'' }}operating_system">
                 <option value=""></option>
-                @foreach(\App\Models\OperatingSystem::all() as $var)
+                @foreach(\App\Models\SoftwareLegacy::where('software_type', 2)->get() as $var)
                     <option
                         {{ $var->id == (isset($item) ? $item->function:old('operating_system') ?? '') ? 'selected' : ''  }}
-                        value="{{ $var->id }}">{{ $var->name }}</option>
+                        value="{{ $var->id }}">{{ $var->software_name }} ({{ $var->software_version }})</option>
                 @endforeach
             </select>
         </div>
@@ -44,28 +44,6 @@
     </div>
     <div class="col-lg-4">
         <div class="mb-3">
-            <label for="{{ isset($item) ? $item->id:'' }}hardware_legacy" class="form-label">Hardware Legacy</label>
-            <select class="form-control select2" id="hardware_legacy" name="hardware_legacy">
-                <option value="">-Select Hardware Legacy-</option>
-                <option value="1" {{ isset($item) && $item->hardware_legacy == 1  ? 'selected' : ''}}>Active</option>
-                <option value="2" {{ isset($item)  && $item->hardware_legacy == 2  ? 'selected' : ''}}>Obsolete</option>
-            </select>
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="mb-3">
-            <label for="{{ isset($item) ? $item->id:'' }}software_legacy" class="form-label">Software Legacy</label>
-            <select class="form-control select2" id="software_legacy" name="software_legacy">
-                <option value="">-Select Software Legacy-</option>
-                <option value="1" {{ isset($item) && $item->hardware_legacy == 1  ? 'selected' : ''}}>Active</option>
-                <option value="2" {{ isset($item)  && $item->hardware_legacy == 2  ? 'selected' : ''}}>Obsolete</option>
-            </select>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-4">
-        <div class="mb-3">
             <label for="{{ isset($item) ? $item->id:'' }}single_point_of_failure" class="form-label">Single Point of Failure</label>
             <select class="form-select select2" name="single_point_of_failure"
                     id="{{ isset($item) ? $item->id:'' }}single_point_of_failure">
@@ -88,4 +66,24 @@
 
         </div>
     </div>
+{{--    <div class="col-lg-4">--}}
+{{--        <div class="mb-3">--}}
+{{--            <label for="{{ isset($item) ? $item->id:'' }}hardware_legacy" class="form-label">Hardware Legacy</label>--}}
+{{--            <select class="form-control select2" id="hardware_legacy" name="hardware_legacy">--}}
+{{--                <option value="">-Select Hardware Legacy-</option>--}}
+{{--                <option value="1" {{ isset($item) && $item->hardware_legacy == 1  ? 'selected' : ''}}>Active</option>--}}
+{{--                <option value="2" {{ isset($item)  && $item->hardware_legacy == 2  ? 'selected' : ''}}>Obsolete</option>--}}
+{{--            </select>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <div class="col-lg-4">--}}
+{{--        <div class="mb-3">--}}
+{{--            <label for="{{ isset($item) ? $item->id:'' }}software_legacy" class="form-label">Software Legacy</label>--}}
+{{--            <select class="form-control select2" id="software_legacy" name="software_legacy">--}}
+{{--                <option value="">-Select Software Legacy-</option>--}}
+{{--                <option value="1" {{ isset($item) && $item->hardware_legacy == 1  ? 'selected' : ''}}>Active</option>--}}
+{{--                <option value="2" {{ isset($item)  && $item->hardware_legacy == 2  ? 'selected' : ''}}>Obsolete</option>--}}
+{{--            </select>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 </div>
