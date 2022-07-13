@@ -54,11 +54,12 @@
             <label for="{{ isset($item) ? $item->id:'' }}make" class="form-label">Make</label>
             <select class="form-select form-select-input" name="make"
                     id="{{ isset($item) ? $item->id:'' }}make">
-                @foreach(\App\Models\AssetMake::all() as $make)
+                <option value="">-Select hardware make-</option>
+                @foreach(\App\Models\HardwareLegacy::groupBy('hardware_make')->get() as $make)
                     <option value=""></option>
                     <option
                         {{ $make->id == (isset($item) ? $item->make:old('last_name') ?? '') ? 'selected' : ''  }}
-                        value="{{ $make->id }}">{{ $make->name }}</option>
+                        value="{{ $make->id }}">{{ $make->hardware_make }}</option>
                 @endforeach
             </select>
         </div>
@@ -68,18 +69,38 @@
     <div class="col-lg-4">
         <div class="mb-3">
             <label for="{{ isset($item) ? $item->id:'' }}model" class="form-label">Model</label>
-            <input type="text" value="{{ isset($item) ? $item->model:old('model') ?? ''  }}"
-                   class="form-control" id="{{ isset($item) ? $item->id:'' }}model" name="model">
+{{--            <input type="text" value="{{ isset($item) ? $item->model:old('model') ?? ''  }}"--}}
+{{--                   class="form-control" id="{{ isset($item) ? $item->id:'' }}model" name="model">--}}
+            <select class="form-control select2" id="model" name="model">
+                <option value="">-Select hardware Model-</option>
+                @if(isset($item))
+                    @foreach(\App\Models\HardwareLegacy::whereNotNull('hardware_model')->groupBy('hardware_model')->get() as $make)
+                        <option
+                            {{ $make->id == (isset($item) ? $item->model:old('last_name') ?? '') ? 'selected' : ''  }}
+                            value="{{ $make->id }}">{{ $make->hardware_model }}</option>
+                    @endforeach
+                @endif
+            </select>
         </div>
     </div>
     <div class="col-lg-4">
         <div class="mb-3">
             <label for="{{ isset($item) ? $item->id:'' }}part_number" class="form-label">Part
                 Number</label>
-            <input type="text"
-                   value="{{ isset($item) ? $item->part_number:old('part_number') ?? ''  }}"
-                   class="form-control" id="{{ isset($item) ? $item->id:'' }}part_number"
-                   name="part_number">
+            <select class="form-control select2" id="part_number" name="part_number">
+                <option value="">-Select Part Number-</option>
+                @if(isset($item))
+                    @foreach(\App\Models\HardwareLegacy::get() as $make)
+                        <option
+                            {{ $make->id == (isset($item) ? $item->part_number:old('last_name') ?? '') ? 'selected' : ''  }}
+                            value="{{ $make->id }}">{{ $make->part_number }}</option>
+                    @endforeach
+                @endif
+            </select>
+{{--            <input type="text"--}}
+{{--                   value="{{ isset($item) ? $item->part_number:old('part_number') ?? ''  }}"--}}
+{{--                   class="form-control" id="{{ isset($item) ? $item->id:'' }}part_number"--}}
+{{--                   name="part_number">--}}
         </div>
     </div>
     <div class="col-lg-4">
