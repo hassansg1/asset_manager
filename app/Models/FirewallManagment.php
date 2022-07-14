@@ -44,7 +44,8 @@ class FirewallManagment extends Model
         if (isset($request->port)) $item->port = $request->port;
         if (isset($request->description)) $item->description = $request->description;
         if (isset($request->condition)) $item->condition = $request->condition;
-        if (isset($request->approvel_expirey_date)) $item->approvel_expirey_date = $request->approvel_expirey_date;
+        if (isset($request->approvel_expirey_date) && $request->condition == "permanent") $item->approvel_expirey_date = null; else $item->approvel_expirey_date = $request->approvel_expirey_date;
+//        if (isset($request->approvel_expirey_date)) $item->approvel_expirey_date = $request->condition == "permanent" ? $request->approvel_expirenull = null : $request->approvel_expirey_date;
         if (isset($request->approved_by)) $item->approved_by = $request->approved_by;
         $item->save();
         return $item;

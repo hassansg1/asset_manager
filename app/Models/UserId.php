@@ -18,12 +18,19 @@ class UserId extends Model
     public function rules($parentId = null)
     {
         return [
-            'right_id'=>'required',
             'condition' => 'required',
-            'user_id' => 'required|unique:user_ids,user_id,NULL,id,parent_id,'.$parentId,
             'approvel_expirey_date' => 'required_if:condition,==,temporary',
+            'right_id'=>'required',
+            'user_id' => 'required|unique:user_ids,user_id,NULL,id,parent_id,'.$parentId,
         ];
     }
+
+    public $rules =
+        [
+            'condition' => 'required',
+            'approvel_expirey_date' => 'required_if:condition,==,temporary',
+            'right_id'=>'required',
+        ];
     public function user_rights_id(){
         return $this->belongsTo(UserRight::class, 'id', 'parent_id');
     }
@@ -49,7 +56,7 @@ class UserId extends Model
 
         }
         if (isset($request->condition)) $item->condition = $request->condition;
-        if (isset($request->approvel_expirey_date)) $item->approvel_expirey_date = $request->approvel_expirey_date;
+        if (isset($request->approvel_expirey_date) && $request->condition == "permanent") $item->approvel_expirey_date = null; else $item->approvel_expirey_date = $request->approvel_expirey_date;
         if (isset($request->description)) $item->description = $request->description;
         $item->save();
 

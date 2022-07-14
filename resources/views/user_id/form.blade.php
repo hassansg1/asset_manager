@@ -146,6 +146,7 @@
                 $('#condition').on('change', function(){
                     var condition= this.value;
                     if(condition == 'permanent'){
+                        $("input[type=date]").val('');
                         $("input[name=approvel_expirey_date]").attr('disabled',true);
                     }
                     if(condition == 'temporary'){
