@@ -101,4 +101,52 @@
             },
         });
     }
+
+    $("select[name=make]").on('change', function () {
+        var make = this.value;
+        if (make) {
+            $.ajax({
+                type: "get",
+                url: "{{url('make/value')}}/" + make,
+                success: function (res) {
+                    if (res) {
+                        $("#model").empty();
+                        $("#model").append(
+                            '<option value="">-- Select Hardware Model --</option>'+
+                            '<option value="0">N/A</option>'
+                        );
+                        $.each(res, function (key, value) {
+                            $("#model").append(
+                                '<option value="' + key + '">' + value + '</option>'
+                            );
+                        });
+                    }
+                }
+
+            });
+        }
+    });
+    $("select[name=model]").on('change', function () {
+        var model_value = this.value;
+        var make_value = $("select[name=make]").val();;
+        if (model_value) {
+            $.ajax({
+                type: "get",
+                url: "{{url('model/value')}}",
+                data:{'model_value':model_value, 'make_value':make_value},
+                success: function (res) {
+                    if (res) {
+                        $("#part_number").empty();
+                        $("#part_number").append('<option value="">-- Select Part Number --</option>');
+                        $.each(res, function (key, value) {
+                            $("#part_number").append(
+                                '<option value="' + key + '">' + value + '</option>'
+                            );
+                        });
+                    }
+                }
+
+            });
+        }
+    });
 </script>

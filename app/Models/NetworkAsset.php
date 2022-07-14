@@ -101,7 +101,7 @@ class NetworkAsset extends Model
         if (isset($request->rec_id)) $item->rec_id = $request->rec_id;
         if (isset($request->description)) $item->description = $request->description;
         if (isset($request->function)) $item->function = $request->function;
-        if (isset($request->make)) $item->make = $request->make;
+        if (isset($request->make)) $item->make = $request->part_number;
         if (isset($request->model)) $item->model = $request->model;
         if (isset($request->part_number)) $item->part_number = $request->part_number;
         if (isset($request->serial_number)) $item->serial_number = $request->serial_number;

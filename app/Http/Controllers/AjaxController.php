@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ClauseData;
 use App\Models\ComplianceVersion;
 use App\Models\ComplianceVersionItem;
+use App\Models\HardwareLegacy;
 use App\Models\Location;
 use App\Models\Networks;
 use App\Models\Port;
@@ -191,10 +192,32 @@ class AjaxController extends Controller
         return response()->json($user_accounts);
     }
 
-    public function unit_wise_users($unit_id)
+    public function unit_wise_users(Request  $request, $selected_id)
     {
-        $users = User::where('unit_id', $unit_id)->pluck('first_name', 'id');
+        if ($request->type == 'companies'){
+            $units = Location::select('id')->where('parent_id',$selected_id)->get();
+            $users = User::whereIn('unit_id', $units)->pluck('first_name', 'id');
+        }else{
+            $users = User::where('unit_id', $selected_id)->pluck('first_name', 'id');
+        }
         return response()->json($users);
+    }
+    public function getmake($make)
+    {
+        $hardware_make = HardwareLegacy::select('hardware_make')->where('id', $make)->first();
+        $hardware_model = HardwareLegacy::whereNotNull('hardware_model')->whereIn('hardware_make', $hardware_make)->pluck('hardware_model', 'id');
+        return response()->json($hardware_model);
+    }
+
+    public function getPartNo(Request  $request){
+        $hardware_make = HardwareLegacy::select('hardware_make')->where('id', $request->make_value)->first();
+        if ($request->model_value == 0){
+            $hardware_partno = HardwareLegacy::whereIn('hardware_make', $hardware_make)->pluck('part_number', 'id');
+        }else{
+            $hardware_model = HardwareLegacy::select('hardware_model')->where('id', $request->model_value)->first();
+            $hardware_partno = HardwareLegacy::whereIn('hardware_make', $hardware_make)->whereIn('hardware_model', $hardware_model)->pluck('part_number', 'id');
+        }
+        return response()->json($hardware_partno);
     }
 
     public function delete_assigned_user_id(Request $request, $user_id)

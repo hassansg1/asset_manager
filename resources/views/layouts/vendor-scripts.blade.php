@@ -380,12 +380,15 @@
             });
         }
     });
+
     $('#unit_id').on('change', function () {
         var unit_id = this.value;
+        var selected_type = this.options[this.selectedIndex].getAttribute('type');
         if (unit_id) {
             $.ajax({
                 type: "get",
-                url: "{{url('unit/type')}}/" + unit_id,
+                url: "{{url('unit/type')}}/"+ unit_id,
+                data : {'type': selected_type},
                 success: function (res) {
                     if (res) {
                         $("#user_id").empty();
