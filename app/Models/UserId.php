@@ -21,6 +21,7 @@ class UserId extends Model
             'right_id'=>'required',
             'condition' => 'required',
             'user_id' => 'required|unique:user_ids,user_id,NULL,id,parent_id,'.$parentId,
+            'approvel_expirey_date' => 'required_if:condition,==,temporary',
         ];
     }
     public function user_rights_id(){
