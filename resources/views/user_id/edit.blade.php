@@ -45,7 +45,7 @@
                                                         @foreach($locations as $location)
                                                             <option
                                                                 {{ isset($item) && $item->unit_id == $location->id ? 'selected' : '' }}
-                                                                value="{{ $location->id }}">{{ $location->text }}</option>
+                                                                type="{{$location->type}}" value="{{ $location->id }}">{{ $location->text }}</option>
                                                         @endforeach
                                                     </optgroup>
                                                 @endforeach

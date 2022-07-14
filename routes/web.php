@@ -177,7 +177,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('system/user_accounts/{id}', [\App\Http\Controllers\AjaxController::class, 'system_user_accounts']);
     Route::get('asset/type/{type}', [\App\Http\Controllers\AjaxController::class, 'type_wise_assets']);
     Route::get('system/type/{type}', [\App\Http\Controllers\AjaxController::class, 'system_wise_user_accounts']);
-    Route::get('unit/type/{type}', [\App\Http\Controllers\AjaxController::class, 'unit_wise_users']);
+    Route::get('unit/type/{unit_id}', [\App\Http\Controllers\AjaxController::class, 'unit_wise_users']);
     Route::get('make/value/{type}', [\App\Http\Controllers\AjaxController::class, 'getmake']);
     Route::get('model/value', [\App\Http\Controllers\AjaxController::class, 'getPartNo']);
     Route::get('asset/location/{type}', [\App\Http\Controllers\AjaxController::class, 'asset_wise_ip_address']);

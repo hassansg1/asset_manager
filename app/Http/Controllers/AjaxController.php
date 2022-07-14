@@ -192,9 +192,14 @@ class AjaxController extends Controller
         return response()->json($user_accounts);
     }
 
-    public function unit_wise_users($unit_id)
+    public function unit_wise_users(Request  $request, $selected_id)
     {
-        $users = User::where('unit_id', $unit_id)->pluck('first_name', 'id');
+        if ($request->type == 'companies'){
+            $units = Location::select('id')->where('parent_id',$selected_id)->get();
+            $users = User::whereIn('unit_id', $units)->pluck('first_name', 'id');
+        }else{
+            $users = User::where('unit_id', $selected_id)->pluck('first_name', 'id');
+        }
         return response()->json($users);
     }
     public function getmake($make)
