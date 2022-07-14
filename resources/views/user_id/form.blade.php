@@ -122,8 +122,8 @@
                                         <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label for="{{ isset($item) ? $item->id:'' }}approvel_expirey_date" class="form-label">User ID Expirey Date</label>
-                                                <input type="date" value="{{ isset($item) ? $item->approvel_expirey_date:old('approvel_expirey_date') ?? ''  }}"
-                                                       class="form-control" id="{{ isset($item) ? $item->id:'' }}approvel_expirey_date" name="approvel_expirey_date" {{ isset($item)  && $item->condition == 'permanent'  ? 'readonly' : ''}}>
+                                                <input type="date" value="{{ isset($item) ? $item->approvel_expirey_date:old('approvel_expirey_date') ?? ''  }}" {{ isset($item) && $item->condition == 'permanent'  ? 'disabled' : ''}}
+                                                class="form-control" id="{{ isset($item) ? $item->id:'' }}approvel_expirey_date" name="approvel_expirey_date">
                                             </div>
                                         </div>
                                     </div>
@@ -142,6 +142,16 @@
                         $('.asset').hide();
                         $('.system').show();
                     }
+                });
+                $('#condition').on('change', function(){
+                    var condition= this.value;
+                    if(condition == 'permanent'){
+                        $("input[name=approvel_expirey_date]").attr('disabled',true);
+                    }
+                    if(condition == 'temporary'){
+                        $("input[name=approvel_expirey_date]").attr('disabled',false);
+                    }
+
                 });
             </script>
 @endsection
