@@ -19,8 +19,8 @@ class LoneAssetController extends BaseController
     {
         $this->model = new LoneAsset();
         $this->route = 'l_one';
-        $this->heading = 'L01 Asset';
-        \Illuminate\Support\Facades\View::share('top_heading', 'L01 Asset');
+        $this->heading = 'Level01 Asset';
+        \Illuminate\Support\Facades\View::share('top_heading', 'Level01 Asset');
     }
 
     /**
