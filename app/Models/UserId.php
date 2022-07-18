@@ -14,7 +14,6 @@ class UserId extends Model
         'parent',
         'description',
     ];
-
     public function rules($parentId = null)
     {
         return [
