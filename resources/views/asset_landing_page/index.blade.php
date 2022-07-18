@@ -58,7 +58,7 @@
                     <button class="btn btn-primary mr-10 mb-3">
                         <a style="color: white"
                            href="{{ url('assets/l_one') }}">
-                            L01
+                            Level01
                             Assets</a>
                     </button>
                     <table class="table table-bordered">

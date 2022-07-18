@@ -37,6 +37,7 @@ class HardwareLegacy extends Model
         if (isset($request->hardware_model)) $item->hardware_model = $request->hardware_model;
         if (isset($request->part_number)) $item->part_number = $request->part_number;
         if (isset($request->status)) $item->status = $request->status;
+        if (isset($request->latest_firmware)) $item->latest_firmware = $request->latest_firmware;
         $item->save();
         return $item;
     }

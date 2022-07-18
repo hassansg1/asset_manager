@@ -51,6 +51,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label for="{{ isset($item) ? $item->id:'' }}latest_firmware"
+                                   class="form-label">Latest Firmware</label>
+                            <input type="text"
+                                   value="{{ isset($item) ? $item->latest_firmware:old('latest_firmware') ?? ''  }}"
+                                   class="form-control" id="{{ isset($item) ? $item->id:'' }}latest_firmware"
+                                   name="latest_firmware">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
