@@ -17,7 +17,6 @@ class AddLatestFirmwareToHardwareLegaciesTable extends Migration
             $table->string('latest_firmware')->nullable();
         });
     }
-
     /**
      * Reverse the migrations.
      *
