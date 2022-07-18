@@ -94,7 +94,6 @@ class SoftwareLegacyController extends BaseController
      */
     public function update(Request $request, $item)
     {
-        $request->validate($this->model->rules($request->software_version));
         $item = $this->model->find($item);
         $this->model->saveFormData($item, $request);
 
