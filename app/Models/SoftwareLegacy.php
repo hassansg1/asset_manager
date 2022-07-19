@@ -20,7 +20,6 @@ class SoftwareLegacy extends Model
             'software_version' => 'required',
         ];
     }
-
     public $rules =
         [
             'software_name' => 'required',
