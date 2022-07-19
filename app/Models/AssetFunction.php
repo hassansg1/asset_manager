@@ -15,7 +15,7 @@ class AssetFunction extends Model
 
     public $rules =
         [
-            'name' => 'required',
+            'name' => 'required|unique:asset_function',
         ];
 
 
