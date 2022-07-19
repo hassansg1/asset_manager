@@ -16,8 +16,8 @@ class HardwareLegacyController extends BaseController
     {
         $this->model = new HardwareLegacy();
         $this->route = 'hardware_legacy';
-        $this->heading = 'HardwareLegacy';
-        \Illuminate\Support\Facades\View::share('top_heading', 'HardwareLegacy');
+        $this->heading = 'Hardware Legacy';
+        \Illuminate\Support\Facades\View::share('top_heading', 'Hardware Legacy');
     }
 
     /**

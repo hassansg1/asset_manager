@@ -16,8 +16,8 @@ class SoftwareLegacyController extends BaseController
     {
         $this->model = new SoftwareLegacy();
         $this->route = 'software_legacy';
-        $this->heading = 'SoftwareLegacy';
-        \Illuminate\Support\Facades\View::share('top_heading', 'SoftwareLegacy');
+        $this->heading = 'Software Legacy';
+        \Illuminate\Support\Facades\View::share('top_heading', 'Software Legacy');
     }
 
     /**
