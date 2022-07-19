@@ -21,6 +21,12 @@ class SoftwareLegacy extends Model
         ];
     }
 
+    public $rules =
+        [
+            'software_name' => 'required',
+            'software_version' => 'required',
+        ];
+
     /**
      * @param $name
      * @param bool $returnId
