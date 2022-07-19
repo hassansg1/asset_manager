@@ -21,6 +21,12 @@ class HardwareLegacy extends Model
         ];
     }
 
+    public $rules =
+        [
+            'hardware_make' => 'required',
+            'part_number' => 'required',
+        ];
+
 
     /**
      * @param $name
