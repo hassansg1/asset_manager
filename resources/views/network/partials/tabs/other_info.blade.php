@@ -20,7 +20,7 @@
     <div class="col-lg-4">
         <div class="mb-3">
             <label for="{{ isset($item) ? $item->id:'' }}asset_contact_person"
-                   class="form-label">Asset Contact Person</label>
+                   class="form-label">Asset Owner</label>
             <input type="text" value="{{ isset($item) ? $item->asset_contact_person:old('asset_contact_person') ?? ''  }}"
                    class="form-control" id="{{ isset($item) ? $item->id:'' }}asset_contact_person"
                    name="asset_contact_person">

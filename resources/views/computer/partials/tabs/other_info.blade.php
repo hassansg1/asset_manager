@@ -35,7 +35,7 @@
 <div class="row">
     <div class="col-lg-4">
         <div class="mb-3">
-            <label for="{{ isset($item) ? $item->id:'' }}contact" class="form-label">Owner Contact</label>
+            <label for="{{ isset($item) ? $item->id:'' }}contact" class="form-label">Asset Owner</label>
             <input type="text"
                    value="{{ isset($item) ? $item->contact:old('contact') ?? ''  }}"
                    class="form-control" id="{{ isset($item) ? $item->id:'' }}contact"
